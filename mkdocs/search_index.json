@@ -1,0 +1,44 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-mkdocs", 
+            "text": "For full documentation visit  mkdocs.org .", 
+            "title": "Welcome to MkDocs"
+        }, 
+        {
+            "location": "/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/about/", 
+            "text": "Fluctus frugis adicit solidam\n\n\nPhrygiaeque satis canibusve hastam pertimuit dextrae ficti\n\n\nLorem markdownum super nostroque defecta duris mariti, rigebant! Iuvenemque\ncorpora \npendentia Parrhasio tegebat\n gaudet\nante monstra concretam auctor quamquam ferunt inpulerat gelidoque.\n\n\nvar rdfAdfDdr = multitasking;\nbingSearch -= 59;\npup_buffer_uri(fat(4), supplyIntellectualDv, pixel_clipboard_sd);\nif (restoreNonVlb) {\n    program_copy.enterprise_cd_jre = addressDigitize;\n    forum.extranetFile = client + 1 + 1;\n    copyrightZoneSip.boot = cyberspace;\n} else {\n    memoryLink = latency_copy;\n    ofGnuBuffer += errorAnalogTwain;\n}\n\n\n\nCupidoque colloquium Aeoliique ferarum Sidonida ut pavit ignesque iusto partem\nlacrimis \nbracchia inpensior dicta\n missi desine. Venus Minos cum vallibus\ntractu concurrere incursu acuto ipsas, possis. Sed puppim nequiquam procul\ncinctum praebetque mirum traxerat aurea, inani tegemus spectare dare.\n\n\nIn solacia nocti adfusaque est est a\n\n\nNe patulos vota quaeque avidum refoventque \nurbe auras\npascitur\n et iam tonitruque tutius Phorcidas.\nLocum puta, saepe ac cerva adsumit Cephalus artes; tibi olor abies montibus\npectore. O animae est \naequalique inridet et\n atri\ndiscedens resque partus omnia lacerto saepe \nsurrexere et\nrapior\n.\n\n\nshellInterpreterMenu(4, flood_data_insertion + artificialCpa);\njava_bcc.text_dbms_twain = metadata_mnemonic(ramVisual, webAddress) +\n        bluetooth_bus;\nwavelengthSdram = pebibyte_web_directx;\nvar megapixelMemoryRw = 1;\n\n\n\nOmnes \nduo telluris\n, saxo natos rotatis:\ntulit cuncta, vix est hic maxime Pelia manusque precibus. In minus flavum\nagitasse et, quam amor lumbis mortale quibus est nardi nocuisse, non. Nisi\nBacchi, Delphis numen ruunt, mea praeferri illa: bella.\n\n\n\n\nErat ad interea currum ait talia\n\n\nUlta tantum precor\n\n\nCorpora datis quaterque mirantes artus colunt\n\n\n\n\nVideres memorique \nnumerare\n vitta, ferat dona reliquerat \nmultis exigit\nAmazone\n necopina corpora, silentibus. Leones in, et et, ab siccatque,\ntremulasque quoniam, parente ignes liquet in divitias et novas Pelops.\nReparasque nos tutus sapiente Mycenida ubi: amicis Sidonide, Iapygis. At tellus\nnullo, sonum neque duxere iste medio transibant nullos. Memnonis nec referam,\nquestaque naides tandemque lacrimas, desilit, in ut et.", 
+            "title": "About"
+        }, 
+        {
+            "location": "/about/#fluctus-frugis-adicit-solidam", 
+            "text": "", 
+            "title": "Fluctus frugis adicit solidam"
+        }, 
+        {
+            "location": "/about/#phrygiaeque-satis-canibusve-hastam-pertimuit-dextrae-ficti", 
+            "text": "Lorem markdownum super nostroque defecta duris mariti, rigebant! Iuvenemque\ncorpora  pendentia Parrhasio tegebat  gaudet\nante monstra concretam auctor quamquam ferunt inpulerat gelidoque.  var rdfAdfDdr = multitasking;\nbingSearch -= 59;\npup_buffer_uri(fat(4), supplyIntellectualDv, pixel_clipboard_sd);\nif (restoreNonVlb) {\n    program_copy.enterprise_cd_jre = addressDigitize;\n    forum.extranetFile = client + 1 + 1;\n    copyrightZoneSip.boot = cyberspace;\n} else {\n    memoryLink = latency_copy;\n    ofGnuBuffer += errorAnalogTwain;\n}  Cupidoque colloquium Aeoliique ferarum Sidonida ut pavit ignesque iusto partem\nlacrimis  bracchia inpensior dicta  missi desine. Venus Minos cum vallibus\ntractu concurrere incursu acuto ipsas, possis. Sed puppim nequiquam procul\ncinctum praebetque mirum traxerat aurea, inani tegemus spectare dare.", 
+            "title": "Phrygiaeque satis canibusve hastam pertimuit dextrae ficti"
+        }, 
+        {
+            "location": "/about/#in-solacia-nocti-adfusaque-est-est-a", 
+            "text": "Ne patulos vota quaeque avidum refoventque  urbe auras\npascitur  et iam tonitruque tutius Phorcidas.\nLocum puta, saepe ac cerva adsumit Cephalus artes; tibi olor abies montibus\npectore. O animae est  aequalique inridet et  atri\ndiscedens resque partus omnia lacerto saepe  surrexere et\nrapior .  shellInterpreterMenu(4, flood_data_insertion + artificialCpa);\njava_bcc.text_dbms_twain = metadata_mnemonic(ramVisual, webAddress) +\n        bluetooth_bus;\nwavelengthSdram = pebibyte_web_directx;\nvar megapixelMemoryRw = 1;  Omnes  duo telluris , saxo natos rotatis:\ntulit cuncta, vix est hic maxime Pelia manusque precibus. In minus flavum\nagitasse et, quam amor lumbis mortale quibus est nardi nocuisse, non. Nisi\nBacchi, Delphis numen ruunt, mea praeferri illa: bella.   Erat ad interea currum ait talia  Ulta tantum precor  Corpora datis quaterque mirantes artus colunt   Videres memorique  numerare  vitta, ferat dona reliquerat  multis exigit\nAmazone  necopina corpora, silentibus. Leones in, et et, ab siccatque,\ntremulasque quoniam, parente ignes liquet in divitias et novas Pelops.\nReparasque nos tutus sapiente Mycenida ubi: amicis Sidonide, Iapygis. At tellus\nnullo, sonum neque duxere iste medio transibant nullos. Memnonis nec referam,\nquestaque naides tandemque lacrimas, desilit, in ut et.", 
+            "title": "In solacia nocti adfusaque est est a"
+        }
+    ]
+}
