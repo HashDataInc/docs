@@ -1,6 +1,6 @@
 dependencies:
   pre:
-    - pip install mkdocs
+    - sudo pip install mkdocs
 
 test:
   override:
