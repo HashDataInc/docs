@@ -9,4 +9,60 @@
     </url>
     
 
+    
+    <url>
+     <loc>None/overview/</loc>
+     <lastmod>2016-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/management/</loc>
+     <lastmod>2016-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/sql-ref/</loc>
+     <lastmod>2016-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/sql-ref/sql-ref-summary/</loc>
+     <lastmod>2016-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/meta-ref/</loc>
+     <lastmod>2016-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/meta-ref/meta-ref-all/</loc>
+     <lastmod>2016-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/history/</loc>
+     <lastmod>2016-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
 </urlset>

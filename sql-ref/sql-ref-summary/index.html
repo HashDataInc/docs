@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>列表 - HashData</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "列表";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HashData</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">欢迎使用</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../overview/"><&product-name> 系统概述</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../management/"><&product-name> 管理介绍</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>SQL命令参考</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">SQL命令参考</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">列表</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#sql-syntax-summary">SQL Syntax Summary</a></li>
+                
+                    <li><a class="toctree-l4" href="#abort">ABORT</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-aggregate">ALTER AGGREGATE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-conversion">ALTER CONVERSION</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-database">ALTER DATABASE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-domain">ALTER DOMAIN</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-external-table">ALTER EXTERNAL TABLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-filespace">ALTER FILESPACE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-function">ALTER FUNCTION</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-group">ALTER GROUP</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-index">ALTER INDEX</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-language">ALTER LANGUAGE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-operator">ALTER OPERATOR</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-operator-class">ALTER OPERATOR CLASS</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-protocol">ALTER PROTOCOL</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-resource-queue">ALTER RESOURCE QUEUE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-role">ALTER ROLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-schema">ALTER SCHEMA</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-sequence">ALTER SEQUENCE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-table">ALTER TABLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-tablespace">ALTER TABLESPACE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-type">ALTER TYPE</a></li>
+                
+                    <li><a class="toctree-l4" href="#alter-user">ALTER USER</a></li>
+                
+                    <li><a class="toctree-l4" href="#analyze">ANALYZE</a></li>
+                
+                    <li><a class="toctree-l4" href="#begin">BEGIN</a></li>
+                
+                    <li><a class="toctree-l4" href="#checkpoint">CHECKPOINT</a></li>
+                
+                    <li><a class="toctree-l4" href="#close">CLOSE</a></li>
+                
+                    <li><a class="toctree-l4" href="#cluster">CLUSTER</a></li>
+                
+                    <li><a class="toctree-l4" href="#comment">COMMENT</a></li>
+                
+                    <li><a class="toctree-l4" href="#commit">COMMIT</a></li>
+                
+                    <li><a class="toctree-l4" href="#copy">COPY</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-aggregate">CREATE AGGREGATE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-cast">CREATE CAST</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-conversion">CREATE CONVERSION</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-database">CREATE DATABASE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-domain">CREATE DOMAIN</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-external-table">CREATE EXTERNAL TABLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-function">CREATE FUNCTION</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-group">CREATE GROUP</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-index">CREATE INDEX</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-language">CREATE LANGUAGE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-operator">CREATE OPERATOR</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-operator-class">CREATE OPERATOR CLASS</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-resource-queue">CREATE RESOURCE QUEUE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-role">CREATE ROLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-rule">CREATE RULE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-schema">CREATE SCHEMA</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-sequence">CREATE SEQUENCE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-table">CREATE TABLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-table-as">CREATE TABLE AS</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-tablespace">CREATE TABLESPACE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-type">CREATE TYPE</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-user">CREATE USER</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-view">CREATE VIEW</a></li>
+                
+                    <li><a class="toctree-l4" href="#deallocate">DEALLOCATE</a></li>
+                
+                    <li><a class="toctree-l4" href="#declare">DECLARE</a></li>
+                
+                    <li><a class="toctree-l4" href="#delete">DELETE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-aggregate">DROP AGGREGATE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-cast">DROP CAST</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-conversion">DROP CONVERSION</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-database">DROP DATABASE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-domain">DROP DOMAIN</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-external-table">DROP EXTERNAL TABLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-filespace">DROP FILESPACE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-function">DROP FUNCTION</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-group">DROP GROUP</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-index">DROP INDEX</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-language">DROP LANGUAGE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-operator">DROP OPERATOR</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-operator-class">DROP OPERATOR CLASS</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-owned">DROP OWNED</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-resource-queue">DROP RESOURCE QUEUE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-role">DROP ROLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-rule">DROP RULE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-schema">DROP SCHEMA</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-sequence">DROP SEQUENCE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-table">DROP TABLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-tablespace">DROP TABLESPACE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-type">DROP TYPE</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-user">DROP USER</a></li>
+                
+                    <li><a class="toctree-l4" href="#drop-view">DROP VIEW</a></li>
+                
+                    <li><a class="toctree-l4" href="#end">END</a></li>
+                
+                    <li><a class="toctree-l4" href="#execute">EXECUTE</a></li>
+                
+                    <li><a class="toctree-l4" href="#explain">EXPLAIN</a></li>
+                
+                    <li><a class="toctree-l4" href="#fetch">FETCH</a></li>
+                
+                    <li><a class="toctree-l4" href="#grant">GRANT</a></li>
+                
+                    <li><a class="toctree-l4" href="#insert">INSERT</a></li>
+                
+                    <li><a class="toctree-l4" href="#load">LOAD</a></li>
+                
+                    <li><a class="toctree-l4" href="#lock">LOCK</a></li>
+                
+                    <li><a class="toctree-l4" href="#move">MOVE</a></li>
+                
+                    <li><a class="toctree-l4" href="#prepare">PREPARE</a></li>
+                
+                    <li><a class="toctree-l4" href="#reassign-owned">REASSIGN OWNED</a></li>
+                
+                    <li><a class="toctree-l4" href="#reindex">REINDEX</a></li>
+                
+                    <li><a class="toctree-l4" href="#release-savepoint">RELEASE SAVEPOINT</a></li>
+                
+                    <li><a class="toctree-l4" href="#reset">RESET</a></li>
+                
+                    <li><a class="toctree-l4" href="#revoke">REVOKE</a></li>
+                
+                    <li><a class="toctree-l4" href="#rollback">ROLLBACK</a></li>
+                
+                    <li><a class="toctree-l4" href="#rollback-to-savepoint">ROLLBACK TO SAVEPOINT</a></li>
+                
+                    <li><a class="toctree-l4" href="#savepoint">SAVEPOINT</a></li>
+                
+                    <li><a class="toctree-l4" href="#select">SELECT</a></li>
+                
+                    <li><a class="toctree-l4" href="#select-into">SELECT INTO</a></li>
+                
+                    <li><a class="toctree-l4" href="#set">SET</a></li>
+                
+                    <li><a class="toctree-l4" href="#set-role">SET ROLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#set-session-authorization">SET SESSION AUTHORIZATION</a></li>
+                
+                    <li><a class="toctree-l4" href="#set-transaction">SET TRANSACTION</a></li>
+                
+                    <li><a class="toctree-l4" href="#show">SHOW</a></li>
+                
+                    <li><a class="toctree-l4" href="#start-transaction">START TRANSACTION</a></li>
+                
+                    <li><a class="toctree-l4" href="#truncate">TRUNCATE</a></li>
+                
+                    <li><a class="toctree-l4" href="#update">UPDATE</a></li>
+                
+                    <li><a class="toctree-l4" href="#vacuum">VACUUM</a></li>
+                
+                    <li><a class="toctree-l4" href="#values">VALUES</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>系统表参考</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../meta-ref/">系统表参考</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../meta-ref/meta-ref-all/">系统表</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../history/">文档历史</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HashData</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>SQL命令参考 &raquo;</li>
+        
+      
+    
+    <li>列表</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="sql-syntax-summary">SQL Syntax Summary</h2>
+<h3 id="abort">ABORT</h3>
+<p>Aborts the current transaction.</p>
+<pre><code>ABORT [WORK | TRANSACTION]
+</code></pre>
+<p>See ABORT for more information.</p>
+<h3 id="alter-aggregate">ALTER AGGREGATE</h3>
+<p>Changes the definition of an aggregate function</p>
+<pre><code>ALTER AGGREGATE name ( type [ , ... ] ) RENAME TO new_name
+
+ALTER AGGREGATE name ( type [ , ... ] ) OWNER TO new_owner
+
+ALTER AGGREGATE name ( type [ , ... ] ) SET SCHEMA new_schema
+</code></pre>
+<p>See ALTER AGGREGATE for more information.</p>
+<h3 id="alter-conversion">ALTER CONVERSION</h3>
+<p>Changes the definition of a conversion.</p>
+<pre><code>ALTER CONVERSION name RENAME TO newname
+
+ALTER CONVERSION name OWNER TO newowner
+</code></pre>
+<p>See ALTER CONVERSION for more information.</p>
+<h3 id="alter-database">ALTER DATABASE</h3>
+<p>Changes the attributes of a database.</p>
+<pre><code>ALTER DATABASE name [ WITH CONNECTION LIMIT connlimit ]
+
+ALTER DATABASE name SET parameter { TO | = } { value | DEFAULT }
+
+ALTER DATABASE name RESET parameter
+
+ALTER DATABASE name RENAME TO newname
+
+ALTER DATABASE name OWNER TO new_owner
+</code></pre>
+<p>See ALTER DATABASE for more information.</p>
+<h3 id="alter-domain">ALTER DOMAIN</h3>
+<p>Changes the definition of a domain.</p>
+<pre><code>ALTER DOMAIN name { SET DEFAULT expression | DROP DEFAULT }
+
+ALTER DOMAIN name { SET | DROP } NOT NULL
+
+ALTER DOMAIN name ADD domain_constraint
+
+ALTER DOMAIN name DROP CONSTRAINT constraint_name [RESTRICT | CASCADE]
+
+ALTER DOMAIN name OWNER TO new_owner
+
+ALTER DOMAIN name SET SCHEMA new_schema
+</code></pre>
+<p>See ALTER DOMAIN for more information.</p>
+<h3 id="alter-external-table">ALTER EXTERNAL TABLE</h3>
+<p>Changes the definition of an external table.</p>
+<pre><code>ALTER EXTERNAL TABLE name RENAME [COLUMN] column TO new_column
+
+ALTER EXTERNAL TABLE name RENAME TO new_name
+
+ALTER EXTERNAL TABLE name SET SCHEMA new_schema
+
+ALTER EXTERNAL TABLE name action [, ... ]
+</code></pre>
+<p>See ALTER EXTERNAL TABLE for more information.</p>
+<h3 id="alter-filespace">ALTER FILESPACE</h3>
+<p>Changes the definition of a filespace.</p>
+<pre><code>ALTER FILESPACE name RENAME TO newname
+
+ALTER FILESPACE name OWNER TO newowner
+</code></pre>
+<p>See ALTER FILESPACE for more information.</p>
+<h3 id="alter-function">ALTER FUNCTION</h3>
+<p>Changes the definition of a function.</p>
+<pre><code>ALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] ) 
+   action [, ... ] [RESTRICT]
+
+ALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] )
+   RENAME TO new_name
+
+ALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] ) 
+   OWNER TO new_owner
+
+ALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] ) 
+   SET SCHEMA new_schema
+</code></pre>
+<p>See ALTER FUNCTION for more information.</p>
+<h3 id="alter-group">ALTER GROUP</h3>
+<p>Changes a role name or membership.</p>
+<pre><code>ALTER GROUP groupname ADD USER username [, ... ]
+
+ALTER GROUP groupname DROP USER username [, ... ]
+
+ALTER GROUP groupname RENAME TO newname
+</code></pre>
+<p>See ALTER GROUP for more information.</p>
+<h3 id="alter-index">ALTER INDEX</h3>
+<p>Changes the definition of an index.</p>
+<pre><code>ALTER INDEX name RENAME TO new_name
+
+ALTER INDEX name SET TABLESPACE tablespace_name
+
+ALTER INDEX name SET ( FILLFACTOR = value )
+
+ALTER INDEX name RESET ( FILLFACTOR )
+</code></pre>
+<p>See ALTER INDEX for more information.</p>
+<h3 id="alter-language">ALTER LANGUAGE</h3>
+<p>Changes the name of a procedural language.</p>
+<pre><code>ALTER LANGUAGE name RENAME TO newname
+</code></pre>
+<p>See ALTER LANGUAGE for more information.</p>
+<h3 id="alter-operator">ALTER OPERATOR</h3>
+<p>Changes the definition of an operator.</p>
+<pre><code>ALTER OPERATOR name ( {lefttype | NONE} , {righttype | NONE} ) 
+   OWNER TO newowner
+</code></pre>
+<p>See ALTER OPERATOR for more information.</p>
+<h3 id="alter-operator-class">ALTER OPERATOR CLASS</h3>
+<p>Changes the definition of an operator class.</p>
+<pre><code>ALTER OPERATOR CLASS name USING index_method RENAME TO newname
+
+ALTER OPERATOR CLASS name USING index_method OWNER TO newowner
+</code></pre>
+<p>See ALTER OPERATOR CLASS for more information.</p>
+<h3 id="alter-protocol">ALTER PROTOCOL</h3>
+<p>Changes the definition of a protocol.</p>
+<pre><code>ALTER PROTOCOL name RENAME TO newname
+
+ALTER PROTOCOL name OWNER TO newowner
+</code></pre>
+<p>See ALTER PROTOCOL for more information.</p>
+<h3 id="alter-resource-queue">ALTER RESOURCE QUEUE</h3>
+<p>Changes the limits of a resource queue.</p>
+<pre><code>ALTER RESOURCE QUEUE name WITH ( queue_attribute=value [, ... ] )
+</code></pre>
+<p>See ALTER RESOURCE QUEUE for more information.</p>
+<h3 id="alter-role">ALTER ROLE</h3>
+<p>Changes a database role (user or group).</p>
+<pre><code>ALTER ROLE name RENAME TO newname
+
+ALTER ROLE name SET config_parameter {TO | =} {value | DEFAULT}
+
+ALTER ROLE name RESET config_parameter
+
+ALTER ROLE name RESOURCE QUEUE {queue_name | NONE}
+
+ALTER ROLE name [ [WITH] option [ ... ] ]
+</code></pre>
+<p>See ALTER ROLE for more information.</p>
+<h3 id="alter-schema">ALTER SCHEMA</h3>
+<p>Changes the definition of a schema.</p>
+<pre><code>ALTER SCHEMA name RENAME TO newname
+
+ALTER SCHEMA name OWNER TO newowner
+</code></pre>
+<p>See ALTER SCHEMA for more information.</p>
+<h3 id="alter-sequence">ALTER SEQUENCE</h3>
+<p>Changes the definition of a sequence generator.</p>
+<pre><code>ALTER SEQUENCE name [INCREMENT [ BY ] increment] 
+     [MINVALUE minvalue | NO MINVALUE] 
+     [MAXVALUE maxvalue | NO MAXVALUE] 
+     [RESTART [ WITH ] start] 
+     [CACHE cache] [[ NO ] CYCLE] 
+     [OWNED BY {table.column | NONE}]
+
+ALTER SEQUENCE name SET SCHEMA new_schema
+</code></pre>
+<p>See ALTER SEQUENCE for more information.</p>
+<h3 id="alter-table">ALTER TABLE</h3>
+<p>Changes the definition of a table.</p>
+<pre><code>ALTER TABLE [ONLY] name RENAME [COLUMN] column TO new_column
+
+ALTER TABLE name RENAME TO new_name
+
+ALTER TABLE name SET SCHEMA new_schema
+
+ALTER TABLE [ONLY] name SET 
+     DISTRIBUTED BY (column, [ ... ] ) 
+   | DISTRIBUTED RANDOMLY 
+   | WITH (REORGANIZE=true|false)
+
+ALTER TABLE [ONLY] name action [, ... ]
+
+ALTER TABLE name
+   [ ALTER PARTITION { partition_name | FOR (RANK(number)) 
+   | FOR (value) } partition_action [...] ] 
+   partition_action
+</code></pre>
+<p>See ALTER TABLE for more information.</p>
+<h3 id="alter-tablespace">ALTER TABLESPACE</h3>
+<p>Changes the definition of a tablespace.</p>
+<pre><code>ALTER TABLESPACE name RENAME TO newname
+
+ALTER TABLESPACE name OWNER TO newowner
+</code></pre>
+<p>See ALTER TABLESPACE for more information.</p>
+<h3 id="alter-type">ALTER TYPE</h3>
+<p>Changes the definition of a data type.</p>
+<pre><code>ALTER TYPE name
+   OWNER TO new_owner | SET SCHEMA new_schema
+</code></pre>
+<p>See ALTER TYPE for more information.</p>
+<h3 id="alter-user">ALTER USER</h3>
+<p>Changes the definition of a database role (user).</p>
+<pre><code>ALTER USER name RENAME TO newname
+
+ALTER USER name SET config_parameter {TO | =} {value | DEFAULT}
+
+ALTER USER name RESET config_parameter
+
+ALTER USER name [ [WITH] option [ ... ] ]
+</code></pre>
+<p>See ALTER USER for more information.</p>
+<h3 id="analyze">ANALYZE</h3>
+<p>Collects statistics about a database.</p>
+<pre><code>ANALYZE [VERBOSE] [ROOTPARTITION [ALL] ] 
+   [table [ (column [, ...] ) ]]
+</code></pre>
+<p>See ANALYZE for more information.</p>
+<h3 id="begin">BEGIN</h3>
+<p>Starts a transaction block.</p>
+<pre><code>BEGIN [WORK | TRANSACTION] [transaction_mode]
+      [READ ONLY | READ WRITE]
+</code></pre>
+<p>See BEGIN for more information.</p>
+<h3 id="checkpoint">CHECKPOINT</h3>
+<p>Forces a transaction log checkpoint.</p>
+<pre><code>CHECKPOINT
+</code></pre>
+<p>See CHECKPOINT for more information.</p>
+<h3 id="close">CLOSE</h3>
+<p>Closes a cursor.</p>
+<pre><code>CLOSE cursor_name
+</code></pre>
+<p>See CLOSE for more information.</p>
+<h3 id="cluster">CLUSTER</h3>
+<p>Physically reorders a heap storage table on disk according to an index. Not a recommended operation in Greenplum Database.</p>
+<pre><code>CLUSTER indexname ON tablename
+
+CLUSTER tablename
+
+CLUSTER
+</code></pre>
+<p>See CLUSTER for more information.</p>
+<h3 id="comment">COMMENT</h3>
+<p>Defines or change the comment of an object.</p>
+<pre><code>COMMENT ON
+{ TABLE object_name |
+  COLUMN table_name.column_name |
+  AGGREGATE agg_name (agg_type [, ...]) |
+  CAST (sourcetype AS targettype) |
+  CONSTRAINT constraint_name ON table_name |
+  CONVERSION object_name |
+  DATABASE object_name |
+  DOMAIN object_name |
+  FILESPACE object_name |
+  FUNCTION func_name ([[argmode] [argname] argtype [, ...]]) |
+  INDEX object_name |
+  LARGE OBJECT large_object_oid |
+  OPERATOR op (leftoperand_type, rightoperand_type) |
+  OPERATOR CLASS object_name USING index_method |
+  [PROCEDURAL] LANGUAGE object_name |
+  RESOURCE QUEUE object_name |
+  ROLE object_name |
+  RULE rule_name ON table_name |
+  SCHEMA object_name |
+  SEQUENCE object_name |
+  TABLESPACE object_name |
+  TRIGGER trigger_name ON table_name |
+  TYPE object_name |
+  VIEW object_name } 
+IS 'text'
+</code></pre>
+<p>See COMMENT for more information.</p>
+<h3 id="commit">COMMIT</h3>
+<p>Commits the current transaction.</p>
+<pre><code>COMMIT [WORK | TRANSACTION]
+</code></pre>
+<p>See COMMIT for more information.</p>
+<h3 id="copy">COPY</h3>
+<p>Copies data between a file and a table.</p>
+<pre><code>COPY table [(column [, ...])] FROM {'file' | STDIN}
+     [ [WITH] 
+       [OIDS]
+       [HEADER]
+       [DELIMITER [ AS ] 'delimiter']
+       [NULL [ AS ] 'null string']
+       [ESCAPE [ AS ] 'escape' | 'OFF']
+       [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']
+       [CSV [QUOTE [ AS ] 'quote'] 
+            [FORCE NOT NULL column [, ...]]
+       [FILL MISSING FIELDS]
+       [[LOG ERRORS [INTO error_table] [KEEP] 
+       SEGMENT REJECT LIMIT count [ROWS | PERCENT] ]
+
+COPY {table [(column [, ...])] | (query)} TO {'file' | STDOUT}
+      [ [WITH] 
+        [OIDS]
+        [HEADER]
+        [DELIMITER [ AS ] 'delimiter']
+        [NULL [ AS ] 'null string']
+        [ESCAPE [ AS ] 'escape' | 'OFF']
+        [CSV [QUOTE [ AS ] 'quote'] 
+             [FORCE QUOTE column [, ...]] ]
+      [IGNORE EXTERNAL PARTITIONS ]
+</code></pre>
+<p>See COPY for more information.</p>
+<h3 id="create-aggregate">CREATE AGGREGATE</h3>
+<p>Defines a new aggregate function.</p>
+<pre><code>CREATE [ORDERED] AGGREGATE name (input_data_type [ , ... ]) 
+      ( SFUNC = sfunc,
+        STYPE = state_data_type
+        [, PREFUNC = prefunc]
+        [, FINALFUNC = ffunc]
+        [, INITCOND = initial_condition]
+        [, SORTOP = sort_operator] )
+</code></pre>
+<p>See CREATE AGGREGATE for more information.</p>
+<h3 id="create-cast">CREATE CAST</h3>
+<p>Defines a new cast.</p>
+<pre><code>CREATE CAST (sourcetype AS targettype) 
+       WITH FUNCTION funcname (argtypes) 
+       [AS ASSIGNMENT | AS IMPLICIT]
+
+CREATE CAST (sourcetype AS targettype) WITHOUT FUNCTION 
+       [AS ASSIGNMENT | AS IMPLICIT]
+</code></pre>
+<p>See CREATE CAST for more information.</p>
+<h3 id="create-conversion">CREATE CONVERSION</h3>
+<p>Defines a new encoding conversion.</p>
+<pre><code>CREATE [DEFAULT] CONVERSION name FOR source_encoding TO 
+     dest_encoding FROM funcname
+</code></pre>
+<p>See CREATE CONVERSION for more information.</p>
+<h3 id="create-database">CREATE DATABASE</h3>
+<p>Creates a new database.</p>
+<pre><code>CREATE DATABASE name [ [WITH] [OWNER [=] dbowner]
+                     [TEMPLATE [=] template]
+                     [ENCODING [=] encoding]
+                     [TABLESPACE [=] tablespace]
+                     [CONNECTION LIMIT [=] connlimit ] ]
+</code></pre>
+<p>See CREATE DATABASE for more information.</p>
+<h3 id="create-domain">CREATE DOMAIN</h3>
+<p>Defines a new domain.</p>
+<pre><code>CREATE DOMAIN name [AS] data_type [DEFAULT expression] 
+       [CONSTRAINT constraint_name
+       | NOT NULL | NULL 
+       | CHECK (expression) [...]]
+</code></pre>
+<p>See CREATE DOMAIN for more information.</p>
+<h3 id="create-external-table">CREATE EXTERNAL TABLE</h3>
+<p>Defines a new external table.</p>
+<pre><code>CREATE [READABLE] EXTERNAL TABLE table_name     
+    ( column_name data_type [, ...] | LIKE other_table )
+      LOCATION ('file://seghost[:port]/path/file' [, ...])
+        | ('gpfdist://filehost[:port]/file_pattern[#transform]'
+        | ('gpfdists://filehost[:port]/file_pattern[#transform]'
+            [, ...])
+        | ('gphdfs://hdfs_host[:port]/path/file')
+      FORMAT 'TEXT' 
+            [( [HEADER]
+               [DELIMITER [AS] 'delimiter' | 'OFF']
+               [NULL [AS] 'null string']
+               [ESCAPE [AS] 'escape' | 'OFF']
+               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']
+               [FILL MISSING FIELDS] )]
+           | 'CSV'
+            [( [HEADER]
+               [QUOTE [AS] 'quote'] 
+               [DELIMITER [AS] 'delimiter']
+               [NULL [AS] 'null string']
+               [FORCE NOT NULL column [, ...]]
+               [ESCAPE [AS] 'escape']
+               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']
+               [FILL MISSING FIELDS] )]
+           | 'AVRO' 
+           | 'PARQUET'
+
+           | 'CUSTOM' (Formatter=&lt;formatter specifications&gt;)
+     [ ENCODING 'encoding' ]
+     [ [LOG ERRORS [INTO error_table]] SEGMENT REJECT LIMIT count
+       [ROWS | PERCENT] ]
+
+CREATE [READABLE] EXTERNAL WEB TABLE table_name     
+   ( column_name data_type [, ...] | LIKE other_table )
+      LOCATION ('http://webhost[:port]/path/file' [, ...])
+    | EXECUTE 'command' [ON ALL 
+                          | MASTER
+                          | number_of_segments
+                          | HOST ['segment_hostname'] 
+                          | SEGMENT segment_id ]
+      FORMAT 'TEXT' 
+            [( [HEADER]
+               [DELIMITER [AS] 'delimiter' | 'OFF']
+               [NULL [AS] 'null string']
+               [ESCAPE [AS] 'escape' | 'OFF']
+               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']
+               [FILL MISSING FIELDS] )]
+           | 'CSV'
+            [( [HEADER]
+               [QUOTE [AS] 'quote'] 
+               [DELIMITER [AS] 'delimiter']
+               [NULL [AS] 'null string']
+               [FORCE NOT NULL column [, ...]]
+               [ESCAPE [AS] 'escape']
+               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']
+               [FILL MISSING FIELDS] )]
+           | 'CUSTOM' (Formatter=&lt;formatter specifications&gt;)
+     [ ENCODING 'encoding' ]
+     [ [LOG ERRORS [INTO error_table]] SEGMENT REJECT LIMIT count
+       [ROWS | PERCENT] ]
+
+CREATE WRITABLE EXTERNAL TABLE table_name
+    ( column_name data_type [, ...] | LIKE other_table )
+     LOCATION('gpfdist://outputhost[:port]/filename[#transform]'
+      | ('gpfdists://outputhost[:port]/file_pattern[#transform]'
+          [, ...])
+      | ('gphdfs://hdfs_host[:port]/path')
+      FORMAT 'TEXT' 
+               [( [DELIMITER [AS] 'delimiter']
+               [NULL [AS] 'null string']
+               [ESCAPE [AS] 'escape' | 'OFF'] )]
+          | 'CSV'
+               [([QUOTE [AS] 'quote'] 
+               [DELIMITER [AS] 'delimiter']
+               [NULL [AS] 'null string']
+               [FORCE QUOTE column [, ...]] ]
+               [ESCAPE [AS] 'escape'] )]
+           | 'AVRO' 
+           | 'PARQUET'
+
+           | 'CUSTOM' (Formatter=&lt;formatter specifications&gt;)
+    [ ENCODING 'write_encoding' ]
+    [ DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY ]
+
+CREATE WRITABLE EXTERNAL WEB TABLE table_name
+    ( column_name data_type [, ...] | LIKE other_table )
+    EXECUTE 'command' [ON ALL]
+    FORMAT 'TEXT' 
+               [( [DELIMITER [AS] 'delimiter']
+               [NULL [AS] 'null string']
+               [ESCAPE [AS] 'escape' | 'OFF'] )]
+          | 'CSV'
+               [([QUOTE [AS] 'quote'] 
+               [DELIMITER [AS] 'delimiter']
+               [NULL [AS] 'null string']
+               [FORCE QUOTE column [, ...]] ]
+               [ESCAPE [AS] 'escape'] )]
+           | 'CUSTOM' (Formatter=&lt;formatter specifications&gt;)
+    [ ENCODING 'write_encoding' ]
+    [ DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY ]
+</code></pre>
+<p>See CREATE EXTERNAL TABLE for more information.</p>
+<h3 id="create-function">CREATE FUNCTION</h3>
+<p>Defines a new function.</p>
+<pre><code>CREATE [OR REPLACE] FUNCTION name    
+    ( [ [argmode] [argname] argtype [, ...] ] )
+      [ RETURNS { [ SETOF ] rettype 
+        | TABLE ([{ argname argtype | LIKE other table }
+          [, ...]])
+        } ]
+    { LANGUAGE langname
+    | IMMUTABLE | STABLE | VOLATILE
+    | CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT
+    | [EXTERNAL] SECURITY INVOKER | [EXTERNAL] SECURITY DEFINER
+    | AS 'definition'
+    | AS 'obj_file', 'link_symbol' } ...
+    [ WITH ({ DESCRIBE = describe_function
+           } [, ...] ) ]
+</code></pre>
+<p>See CREATE FUNCTION for more information.</p>
+<h3 id="create-group">CREATE GROUP</h3>
+<p>Defines a new database role.</p>
+<pre><code>CREATE GROUP name [ [WITH] option [ ... ] ]
+</code></pre>
+<p>See CREATE GROUP for more information.</p>
+<h3 id="create-index">CREATE INDEX</h3>
+<p>Defines a new index.</p>
+<pre><code>CREATE [UNIQUE] INDEX name ON table
+       [USING btree|bitmap|gist]
+       ( {column | (expression)} [opclass] [, ...] )
+       [ WITH ( FILLFACTOR = value ) ]
+       [TABLESPACE tablespace]
+       [WHERE predicate]
+</code></pre>
+<p>See CREATE INDEX for more information.</p>
+<h3 id="create-language">CREATE LANGUAGE</h3>
+<p>Defines a new procedural language.</p>
+<pre><code>CREATE [PROCEDURAL] LANGUAGE name
+
+CREATE [TRUSTED] [PROCEDURAL] LANGUAGE name
+       HANDLER call_handler [VALIDATOR valfunction]
+</code></pre>
+<p>See CREATE LANGUAGE for more information.</p>
+<h3 id="create-operator">CREATE OPERATOR</h3>
+<p>Defines a new operator.</p>
+<pre><code>CREATE OPERATOR name ( 
+       PROCEDURE = funcname
+       [, LEFTARG = lefttype] [, RIGHTARG = righttype]
+       [, COMMUTATOR = com_op] [, NEGATOR = neg_op]
+       [, RESTRICT = res_proc] [, JOIN = join_proc]
+       [, HASHES] [, MERGES]
+       [, SORT1 = left_sort_op] [, SORT2 = right_sort_op]
+       [, LTCMP = less_than_op] [, GTCMP = greater_than_op] )
+</code></pre>
+<p>See CREATE OPERATOR for more information.</p>
+<h3 id="create-operator-class">CREATE OPERATOR CLASS</h3>
+<p>Defines a new operator class.</p>
+<pre><code>CREATE OPERATOR CLASS name [DEFAULT] FOR TYPE data_type  
+  USING index_method AS 
+  { 
+  OPERATOR strategy_number op_name [(op_type, op_type)] [RECHECK]
+  | FUNCTION support_number funcname (argument_type [, ...] )
+  | STORAGE storage_type
+  } [, ... ]
+</code></pre>
+<p>See CREATE OPERATOR CLASS for more information.</p>
+<h3 id="create-resource-queue">CREATE RESOURCE QUEUE</h3>
+<p>Defines a new resource queue.</p>
+<pre><code>CREATE RESOURCE QUEUE name WITH (queue_attribute=value [, ... ])
+</code></pre>
+<p>See CREATE RESOURCE QUEUE for more information.</p>
+<h3 id="create-role">CREATE ROLE</h3>
+<p>Defines a new database role (user or group).</p>
+<pre><code>CREATE ROLE name [[WITH] option [ ... ]]
+</code></pre>
+<p>See CREATE ROLE for more information.</p>
+<h3 id="create-rule">CREATE RULE</h3>
+<p>Defines a new rewrite rule.</p>
+<pre><code>CREATE [OR REPLACE] RULE name AS ON event
+  TO table [WHERE condition] 
+  DO [ALSO | INSTEAD] { NOTHING | command | (command; command 
+  ...) }
+</code></pre>
+<p>See CREATE RULE for more information.</p>
+<h3 id="create-schema">CREATE SCHEMA</h3>
+<p>Defines a new schema.</p>
+<pre><code>CREATE SCHEMA schema_name [AUTHORIZATION username] 
+   [schema_element [ ... ]]
+
+CREATE SCHEMA AUTHORIZATION rolename [schema_element [ ... ]]
+</code></pre>
+<p>See CREATE SCHEMA for more information.</p>
+<h3 id="create-sequence">CREATE SEQUENCE</h3>
+<p>Defines a new sequence generator.</p>
+<pre><code>CREATE [TEMPORARY | TEMP] SEQUENCE name
+       [INCREMENT [BY] value] 
+       [MINVALUE minvalue | NO MINVALUE] 
+       [MAXVALUE maxvalue | NO MAXVALUE] 
+       [START [ WITH ] start] 
+       [CACHE cache] 
+       [[NO] CYCLE] 
+       [OWNED BY { table.column | NONE }]
+</code></pre>
+<p>See CREATE SEQUENCE for more information.</p>
+<h3 id="create-table">CREATE TABLE</h3>
+<p>Defines a new table.</p>
+<pre><code>CREATE [[GLOBAL | LOCAL] {TEMPORARY | TEMP}] TABLE table_name ( 
+[ { column_name data_type [ DEFAULT default_expr ] 
+   [column_constraint [ ... ]
+[ ENCODING ( storage_directive [,...] ) ]
+] 
+   | table_constraint
+   | LIKE other_table [{INCLUDING | EXCLUDING} 
+                      {DEFAULTS | CONSTRAINTS}] ...}
+   [, ... ] ]
+   )
+   [ INHERITS ( parent_table [, ... ] ) ]
+   [ WITH ( storage_parameter=value [, ... ] )
+   [ ON COMMIT {PRESERVE ROWS | DELETE ROWS | DROP} ]
+   [ TABLESPACE tablespace ]
+   [ DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY ]
+   [ PARTITION BY partition_type (column)
+       [ SUBPARTITION BY partition_type (column) ] 
+          [ SUBPARTITION TEMPLATE ( template_spec ) ]
+       [...]
+    ( partition_spec ) 
+        | [ SUBPARTITION BY partition_type (column) ]
+          [...]
+    ( partition_spec
+      [ ( subpartition_spec
+           [(...)] 
+         ) ] 
+    )
+</code></pre>
+<p>See CREATE TABLE for more information.</p>
+<h3 id="create-table-as">CREATE TABLE AS</h3>
+<p>Defines a new table from the results of a query.</p>
+<pre><code>CREATE [ [GLOBAL | LOCAL] {TEMPORARY | TEMP} ] TABLE table_name
+   [(column_name [, ...] )]
+   [ WITH ( storage_parameter=value [, ... ] ) ]
+   [ON COMMIT {PRESERVE ROWS | DELETE ROWS | DROP}]
+   [TABLESPACE tablespace]
+   AS query
+   [DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY]
+</code></pre>
+<p>See CREATE TABLE AS for more information.</p>
+<h3 id="create-tablespace">CREATE TABLESPACE</h3>
+<p>Defines a new tablespace.</p>
+<pre><code>CREATE TABLESPACE tablespace_name [OWNER username] 
+       FILESPACE filespace_name
+</code></pre>
+<p>See CREATE TABLESPACE for more information.</p>
+<h3 id="create-type">CREATE TYPE</h3>
+<p>Defines a new data type.</p>
+<pre><code>CREATE TYPE name AS ( attribute_name data_type [, ... ] )
+
+CREATE TYPE name (
+    INPUT = input_function,
+    OUTPUT = output_function
+    [, RECEIVE = receive_function]
+    [, SEND = send_function]
+    [, INTERNALLENGTH = {internallength | VARIABLE}]
+    [, PASSEDBYVALUE]
+    [, ALIGNMENT = alignment]
+    [, STORAGE = storage]
+    [, DEFAULT = default]
+    [, ELEMENT = element]
+    [, DELIMITER = delimiter] )
+
+CREATE TYPE name
+</code></pre>
+<p>See CREATE TYPE for more information.</p>
+<h3 id="create-user">CREATE USER</h3>
+<p>Defines a new database role with the LOGIN privilege by default.</p>
+<pre><code>CREATE USER name [ [WITH] option [ ... ] ]
+</code></pre>
+<p>See CREATE USER for more information.</p>
+<h3 id="create-view">CREATE VIEW</h3>
+<p>Defines a new view.</p>
+<pre><code>CREATE [OR REPLACE] [TEMP | TEMPORARY] VIEW name
+       [ ( column_name [, ...] ) ]
+       AS query
+</code></pre>
+<p>See CREATE VIEW for more information.</p>
+<h3 id="deallocate">DEALLOCATE</h3>
+<p>Deallocates a prepared statement.</p>
+<pre><code>DEALLOCATE [PREPARE] name
+</code></pre>
+<p>See DEALLOCATE for more information.</p>
+<h3 id="declare">DECLARE</h3>
+<p>Defines a cursor.</p>
+<pre><code>DECLARE name [BINARY] [INSENSITIVE] [NO SCROLL] CURSOR 
+     [{WITH | WITHOUT} HOLD] 
+     FOR query [FOR READ ONLY]
+</code></pre>
+<p>See DECLARE for more information.</p>
+<h3 id="delete">DELETE</h3>
+<p>Deletes rows from a table.</p>
+<pre><code>DELETE FROM [ONLY] table [[AS] alias]
+      [USING usinglist]
+      [WHERE condition | WHERE CURRENT OF cursor_name ]
+</code></pre>
+<p>See DELETE for more information.</p>
+<h3 id="drop-aggregate">DROP AGGREGATE</h3>
+<p>Removes an aggregate function.</p>
+<pre><code>DROP AGGREGATE [IF EXISTS] name ( type [, ...] ) [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP AGGREGATE for more information.</p>
+<h3 id="drop-cast">DROP CAST</h3>
+<p>Removes a cast.</p>
+<pre><code>DROP CAST [IF EXISTS] (sourcetype AS targettype) [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP CAST for more information.</p>
+<h3 id="drop-conversion">DROP CONVERSION</h3>
+<p>Removes a conversion.</p>
+<pre><code>DROP CONVERSION [IF EXISTS] name [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP CONVERSION for more information.</p>
+<h3 id="drop-database">DROP DATABASE</h3>
+<p>Removes a database.</p>
+<pre><code>DROP DATABASE [IF EXISTS] name
+</code></pre>
+<p>See DROP DATABASE for more information.</p>
+<h3 id="drop-domain">DROP DOMAIN</h3>
+<p>Removes a domain.</p>
+<pre><code>DROP DOMAIN [IF EXISTS] name [, ...]  [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP DOMAIN for more information.</p>
+<h3 id="drop-external-table">DROP EXTERNAL TABLE</h3>
+<p>Removes an external table definition.</p>
+<pre><code>DROP EXTERNAL [WEB] TABLE [IF EXISTS] name [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP EXTERNAL TABLE for more information.</p>
+<h3 id="drop-filespace">DROP FILESPACE</h3>
+<p>Removes a filespace.</p>
+<pre><code>DROP FILESPACE [IF EXISTS] filespacename
+</code></pre>
+<p>See DROP FILESPACE for more information.</p>
+<h3 id="drop-function">DROP FUNCTION</h3>
+<p>Removes a function.</p>
+<pre><code>DROP FUNCTION [IF EXISTS] name ( [ [argmode] [argname] argtype 
+    [, ...] ] ) [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP FUNCTION for more information.</p>
+<h3 id="drop-group">DROP GROUP</h3>
+<p>Removes a database role.</p>
+<pre><code>DROP GROUP [IF EXISTS] name [, ...]
+</code></pre>
+<p>See DROP GROUP for more information.</p>
+<h3 id="drop-index">DROP INDEX</h3>
+<p>Removes an index.</p>
+<pre><code>DROP INDEX [IF EXISTS] name [, ...] [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP INDEX for more information.</p>
+<h3 id="drop-language">DROP LANGUAGE</h3>
+<p>Removes a procedural language.</p>
+<pre><code>DROP [PROCEDURAL] LANGUAGE [IF EXISTS] name [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP LANGUAGE for more information.</p>
+<h3 id="drop-operator">DROP OPERATOR</h3>
+<p>Removes an operator.</p>
+<pre><code>DROP OPERATOR [IF EXISTS] name ( {lefttype | NONE} , 
+    {righttype | NONE} ) [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP OPERATOR for more information.</p>
+<h3 id="drop-operator-class">DROP OPERATOR CLASS</h3>
+<p>Removes an operator class.</p>
+<pre><code>DROP OPERATOR CLASS [IF EXISTS] name USING index_method [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP OPERATOR CLASS for more information.</p>
+<h3 id="drop-owned">DROP OWNED</h3>
+<p>Removes database objects owned by a database role.</p>
+<pre><code>DROP OWNED BY name [, ...] [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP OWNED for more information.</p>
+<h3 id="drop-resource-queue">DROP RESOURCE QUEUE</h3>
+<p>Removes a resource queue.</p>
+<pre><code>DROP RESOURCE QUEUE queue_name
+</code></pre>
+<p>See DROP RESOURCE QUEUE for more information.</p>
+<h3 id="drop-role">DROP ROLE</h3>
+<p>Removes a database role.</p>
+<pre><code>DROP ROLE [IF EXISTS] name [, ...]
+</code></pre>
+<p>See DROP ROLE for more information.</p>
+<h3 id="drop-rule">DROP RULE</h3>
+<p>Removes a rewrite rule.</p>
+<pre><code>DROP RULE [IF EXISTS] name ON relation [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP RULE for more information.</p>
+<h3 id="drop-schema">DROP SCHEMA</h3>
+<p>Removes a schema.</p>
+<pre><code>DROP SCHEMA [IF EXISTS] name [, ...] [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP SCHEMA for more information.</p>
+<h3 id="drop-sequence">DROP SEQUENCE</h3>
+<p>Removes a sequence.</p>
+<pre><code>DROP SEQUENCE [IF EXISTS] name [, ...] [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP SEQUENCE for more information.</p>
+<h3 id="drop-table">DROP TABLE</h3>
+<p>Removes a table.</p>
+<pre><code>DROP TABLE [IF EXISTS] name [, ...] [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP TABLE for more information.</p>
+<h3 id="drop-tablespace">DROP TABLESPACE</h3>
+<p>Removes a tablespace.</p>
+<pre><code>DROP TABLESPACE [IF EXISTS] tablespacename
+</code></pre>
+<p>See DROP TABLESPACE for more information.</p>
+<h3 id="drop-type">DROP TYPE</h3>
+<p>Removes a data type.</p>
+<pre><code>DROP TYPE [IF EXISTS] name [, ...] [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP TYPE for more information.</p>
+<h3 id="drop-user">DROP USER</h3>
+<p>Removes a database role.</p>
+<pre><code>DROP USER [IF EXISTS] name [, ...]
+</code></pre>
+<p>See DROP USER for more information.</p>
+<h3 id="drop-view">DROP VIEW</h3>
+<p>Removes a view.</p>
+<pre><code>DROP VIEW [IF EXISTS] name [, ...] [CASCADE | RESTRICT]
+</code></pre>
+<p>See DROP VIEW for more information.</p>
+<h3 id="end">END</h3>
+<p>Commits the current transaction.</p>
+<pre><code>END [WORK | TRANSACTION]
+</code></pre>
+<p>See END for more information.</p>
+<h3 id="execute">EXECUTE</h3>
+<p>Executes a prepared SQL statement.</p>
+<pre><code>EXECUTE name [ (parameter [, ...] ) ]
+</code></pre>
+<p>See EXECUTE for more information.</p>
+<h3 id="explain">EXPLAIN</h3>
+<p>Shows the query plan of a statement.</p>
+<pre><code>EXPLAIN [ANALYZE] [VERBOSE] statement
+</code></pre>
+<p>See EXPLAIN for more information.</p>
+<h3 id="fetch">FETCH</h3>
+<p>Retrieves rows from a query using a cursor.</p>
+<pre><code>FETCH [ forward_direction { FROM | IN } ] cursorname
+</code></pre>
+<p>See FETCH for more information.</p>
+<h3 id="grant">GRANT</h3>
+<p>Defines access privileges.</p>
+<pre><code>GRANT { {SELECT | INSERT | UPDATE | DELETE | REFERENCES | 
+TRIGGER | TRUNCATE } [,...] | ALL [PRIVILEGES] }
+    ON [TABLE] tablename [, ...]
+    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]
+
+GRANT { {USAGE | SELECT | UPDATE} [,...] | ALL [PRIVILEGES] }
+    ON SEQUENCE sequencename [, ...]
+    TO { rolename | PUBLIC } [, ...] [WITH GRANT OPTION]
+
+GRANT { {CREATE | CONNECT | TEMPORARY | TEMP} [,...] | ALL 
+[PRIVILEGES] }
+    ON DATABASE dbname [, ...]
+    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]
+
+GRANT { EXECUTE | ALL [PRIVILEGES] }
+    ON FUNCTION funcname ( [ [argmode] [argname] argtype [, ...] 
+] ) [, ...]
+    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]
+
+GRANT { USAGE | ALL [PRIVILEGES] }
+    ON LANGUAGE langname [, ...]
+    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]
+
+GRANT { {CREATE | USAGE} [,...] | ALL [PRIVILEGES] }
+    ON SCHEMA schemaname [, ...]
+    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]
+
+GRANT { CREATE | ALL [PRIVILEGES] }
+    ON TABLESPACE tablespacename [, ...]
+    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]
+
+GRANT parent_role [, ...] 
+    TO member_role [, ...] [WITH ADMIN OPTION]
+
+GRANT { SELECT | INSERT | ALL [PRIVILEGES] } 
+    ON PROTOCOL protocolname
+    TO username
+</code></pre>
+<p>See GRANT for more information.</p>
+<h3 id="insert">INSERT</h3>
+<p>Creates new rows in a table.</p>
+<pre><code>INSERT INTO table [( column [, ...] )]
+   {DEFAULT VALUES | VALUES ( {expression | DEFAULT} [, ...] ) 
+   [, ...] | query}
+</code></pre>
+<p>See INSERT for more information.</p>
+<h3 id="load">LOAD</h3>
+<p>Loads or reloads a shared library file.</p>
+<pre><code>LOAD 'filename'
+</code></pre>
+<p>See LOAD for more information.</p>
+<h3 id="lock">LOCK</h3>
+<p>Locks a table.</p>
+<pre><code>LOCK [TABLE] name [, ...] [IN lockmode MODE] [NOWAIT]
+</code></pre>
+<p>See LOCK for more information.</p>
+<h3 id="move">MOVE</h3>
+<p>Positions a cursor.</p>
+<pre><code>MOVE [ forward_direction {FROM | IN} ] cursorname
+</code></pre>
+<p>See MOVE for more information.</p>
+<h3 id="prepare">PREPARE</h3>
+<p>Prepare a statement for execution.</p>
+<pre><code>PREPARE name [ (datatype [, ...] ) ] AS statement
+</code></pre>
+<p>See PREPARE for more information.</p>
+<h3 id="reassign-owned">REASSIGN OWNED</h3>
+<p>Changes the ownership of database objects owned by a database role.</p>
+<pre><code>REASSIGN OWNED BY old_role [, ...] TO new_role
+</code></pre>
+<p>See REASSIGN OWNED for more information.</p>
+<h3 id="reindex">REINDEX</h3>
+<p>Rebuilds indexes.</p>
+<pre><code>REINDEX {INDEX | TABLE | DATABASE | SYSTEM} name
+</code></pre>
+<p>See REINDEX for more information.</p>
+<h3 id="release-savepoint">RELEASE SAVEPOINT</h3>
+<p>Destroys a previously defined savepoint.</p>
+<pre><code>RELEASE [SAVEPOINT] savepoint_name
+</code></pre>
+<p>See RELEASE SAVEPOINT for more information.</p>
+<h3 id="reset">RESET</h3>
+<p>Restores the value of a system configuration parameter to the default value.</p>
+<pre><code>RESET configuration_parameter
+
+RESET ALL
+</code></pre>
+<p>See RESET for more information.</p>
+<h3 id="revoke">REVOKE</h3>
+<p>Removes access privileges.</p>
+<pre><code>REVOKE [GRANT OPTION FOR] { {SELECT | INSERT | UPDATE | DELETE 
+       | REFERENCES | TRIGGER | TRUNCATE } [,...] | ALL [PRIVILEGES] }
+       ON [TABLE] tablename [, ...]
+       FROM {rolename | PUBLIC} [, ...]
+       [CASCADE | RESTRICT]
+
+REVOKE [GRANT OPTION FOR] { {USAGE | SELECT | UPDATE} [,...] 
+       | ALL [PRIVILEGES] }
+       ON SEQUENCE sequencename [, ...]
+       FROM { rolename | PUBLIC } [, ...]
+       [CASCADE | RESTRICT]
+
+REVOKE [GRANT OPTION FOR] { {CREATE | CONNECT 
+       | TEMPORARY | TEMP} [,...] | ALL [PRIVILEGES] }
+       ON DATABASE dbname [, ...]
+       FROM {rolename | PUBLIC} [, ...]
+       [CASCADE | RESTRICT]
+
+REVOKE [GRANT OPTION FOR] {EXECUTE | ALL [PRIVILEGES]}
+       ON FUNCTION funcname ( [[argmode] [argname] argtype
+                              [, ...]] ) [, ...]
+       FROM {rolename | PUBLIC} [, ...]
+       [CASCADE | RESTRICT]
+
+REVOKE [GRANT OPTION FOR] {USAGE | ALL [PRIVILEGES]}
+       ON LANGUAGE langname [, ...]
+       FROM {rolename | PUBLIC} [, ...]
+       [ CASCADE | RESTRICT ]
+
+REVOKE [GRANT OPTION FOR] { {CREATE | USAGE} [,...] 
+       | ALL [PRIVILEGES] }
+       ON SCHEMA schemaname [, ...]
+       FROM {rolename | PUBLIC} [, ...]
+       [CASCADE | RESTRICT]
+
+REVOKE [GRANT OPTION FOR] { CREATE | ALL [PRIVILEGES] }
+       ON TABLESPACE tablespacename [, ...]
+       FROM { rolename | PUBLIC } [, ...]
+       [CASCADE | RESTRICT]
+
+REVOKE [ADMIN OPTION FOR] parent_role [, ...] 
+       FROM member_role [, ...]
+       [CASCADE | RESTRICT]
+</code></pre>
+<p>See REVOKE for more information.</p>
+<h3 id="rollback">ROLLBACK</h3>
+<p>Aborts the current transaction.</p>
+<pre><code>ROLLBACK [WORK | TRANSACTION]
+</code></pre>
+<p>See ROLLBACK for more information.</p>
+<h3 id="rollback-to-savepoint">ROLLBACK TO SAVEPOINT</h3>
+<p>Rolls back the current transaction to a savepoint.</p>
+<pre><code>ROLLBACK [WORK | TRANSACTION] TO [SAVEPOINT] savepoint_name
+</code></pre>
+<p>See ROLLBACK TO SAVEPOINT for more information.</p>
+<h3 id="savepoint">SAVEPOINT</h3>
+<p>Defines a new savepoint within the current transaction.</p>
+<pre><code>SAVEPOINT savepoint_name
+</code></pre>
+<p>See SAVEPOINT for more information.</p>
+<h3 id="select">SELECT</h3>
+<p>Retrieves rows from a table or view.</p>
+<pre><code>SELECT [ALL | DISTINCT [ON (expression [, ...])]]
+  * | expression [[AS] output_name] [, ...]
+  [FROM from_item [, ...]]
+  [WHERE condition]
+  [GROUP BY grouping_element [, ...]]
+  [HAVING condition [, ...]]
+  [WINDOW window_name AS (window_specification)]
+  [{UNION | INTERSECT | EXCEPT} [ALL] select]
+  [ORDER BY expression [ASC | DESC | USING operator] [, ...]]
+  [LIMIT {count | ALL}]
+  [OFFSET start]
+  [FOR {UPDATE | SHARE} [OF table_name [, ...]] [NOWAIT] [...]]
+</code></pre>
+<p>See SELECT for more information.</p>
+<h3 id="select-into">SELECT INTO</h3>
+<p>Defines a new table from the results of a query.</p>
+<pre><code>SELECT [ALL | DISTINCT [ON ( expression [, ...] )]]
+    * | expression [AS output_name] [, ...]
+    INTO [TEMPORARY | TEMP] [TABLE] new_table
+    [FROM from_item [, ...]]
+    [WHERE condition]
+    [GROUP BY expression [, ...]]
+    [HAVING condition [, ...]]
+    [{UNION | INTERSECT | EXCEPT} [ALL] select]
+    [ORDER BY expression [ASC | DESC | USING operator] [, ...]]
+    [LIMIT {count | ALL}]
+    [OFFSET start]
+    [FOR {UPDATE | SHARE} [OF table_name [, ...]] [NOWAIT] 
+    [...]]
+</code></pre>
+<p>See SELECT INTO for more information.</p>
+<h3 id="set">SET</h3>
+<p>Changes the value of a Greenplum Database configuration parameter.</p>
+<pre><code>SET [SESSION | LOCAL] configuration_parameter {TO | =} value | 
+    'value' | DEFAULT}
+
+SET [SESSION | LOCAL] TIME ZONE {timezone | LOCAL | DEFAULT}
+</code></pre>
+<p>See SET for more information.</p>
+<h3 id="set-role">SET ROLE</h3>
+<p>Sets the current role identifier of the current session.</p>
+<pre><code>SET [SESSION | LOCAL] ROLE rolename
+
+SET [SESSION | LOCAL] ROLE NONE
+
+RESET ROLE
+</code></pre>
+<p>See SET ROLE for more information.</p>
+<h3 id="set-session-authorization">SET SESSION AUTHORIZATION</h3>
+<p>Sets the session role identifier and the current role identifier of the current session.</p>
+<pre><code>SET [SESSION | LOCAL] SESSION AUTHORIZATION rolename
+
+SET [SESSION | LOCAL] SESSION AUTHORIZATION DEFAULT
+
+RESET SESSION AUTHORIZATION
+</code></pre>
+<p>See SET SESSION AUTHORIZATION for more information.</p>
+<h3 id="set-transaction">SET TRANSACTION</h3>
+<p>Sets the characteristics of the current transaction.</p>
+<pre><code>SET TRANSACTION [transaction_mode] [READ ONLY | READ WRITE]
+
+SET SESSION CHARACTERISTICS AS TRANSACTION transaction_mode 
+     [READ ONLY | READ WRITE]
+</code></pre>
+<p>See SET TRANSACTION for more information.</p>
+<h3 id="show">SHOW</h3>
+<p>Shows the value of a system configuration parameter.</p>
+<pre><code>SHOW configuration_parameter
+
+SHOW ALL
+</code></pre>
+<p>See SHOW for more information.</p>
+<h3 id="start-transaction">START TRANSACTION</h3>
+<p>Starts a transaction block.</p>
+<pre><code>START TRANSACTION [SERIALIZABLE | READ COMMITTED | READ UNCOMMITTED]
+                  [READ WRITE | READ ONLY]
+</code></pre>
+<p>See START TRANSACTION for more information.</p>
+<h3 id="truncate">TRUNCATE</h3>
+<p>Empties a table of all rows.</p>
+<pre><code>TRUNCATE [TABLE] name [, ...] [CASCADE | RESTRICT]
+</code></pre>
+<p>See TRUNCATE for more information.</p>
+<h3 id="update">UPDATE</h3>
+<p>Updates rows of a table.</p>
+<pre><code>UPDATE [ONLY] table [[AS] alias]
+   SET {column = {expression | DEFAULT} |
+   (column [, ...]) = ({expression | DEFAULT} [, ...])} [, ...]
+   [FROM fromlist]
+   [WHERE condition | WHERE CURRENT OF cursor_name ]
+</code></pre>
+<p>See UPDATE for more information.</p>
+<h3 id="vacuum">VACUUM</h3>
+<p>Garbage-collects and optionally analyzes a database.</p>
+<pre><code>VACUUM [FULL] [FREEZE] [VERBOSE] [table]
+
+VACUUM [FULL] [FREEZE] [VERBOSE] ANALYZE
+              [table [(column [, ...] )]]
+</code></pre>
+<p>See VACUUM for more information.</p>
+<h3 id="values">VALUES</h3>
+<p>Computes a set of rows.</p>
+<pre><code>VALUES ( expression [, ...] ) [, ...]
+   [ORDER BY sort_expression [ASC | DESC | USING operator] [, ...]]
+   [LIMIT {count | ALL}] [OFFSET start]
+</code></pre>
+<p>See VALUES for more information.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../meta-ref/" class="btn btn-neutral float-right" title="系统表参考"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="SQL命令参考"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../meta-ref/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

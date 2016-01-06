@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome\n\n\n\u60a8\u662f\u7b2c\u4e00\u6b21\u4f7f\u7528 \nproduct-name\n \u4e48\uff1f\n\n\n\u5982\u679c\u60a8\u8fd8\u662f\u7b2c\u4e00\u6b21\u4f7f\u7528 \nproduct-name\n\uff0c\u6211\u4eec\u5f3a\u70c8\u5efa\u8bae\u60a8\u5148\u9605\u8bfb\u4e0b\u9762\u7684\u5185\u5bb9\u3002\n\n \u670d\u52a1\u4f18\u52bf\u548c\u8ba1\u8d39\u6807\u51c6\uff0d\u53c2\u9605 TODO \u6765\u4e86\u89e3 \nproduct-name\n \u7684\u4ea7\u54c1\u5b9a\u4f4d\uff0c\u670d\u52a1\u4f18\u52bf\u53ca\u76f8\u5173\u8ba1\u8d39\u6807\u51c6\u3002\n\n \u5165\u95e8\u4ecb\u7ecd\uff0dTODO\u5305\u542b\u4e86\u5b8c\u6210\u7684\u793a\u4f8b\uff0c\u5e2e\u52a9\u4ece\u521b\u5efa\nproduct-name\n\u6570\u636e\u4ed3\u5e93\u96c6\u7fa4\uff0c\u5230\u521b\u5efa\u6570\u636e\u5e93\u4e2d\u7684\u8868\uff0c\u52a0\u8f7d\u6570\u636e\u5230\u6700\u540e\u7684\u6d4b\u8bd5\u67e5\u8be2\u53ca\u9a8c\u8bc1\u7ed3\u679c\u3002\n\n\n\u5728\u60a8\u9605\u8bfb\u5b8c\u5165\u95e8\u4ecb\u7ecd\u540e\uff0c\u4f60\u8fd8\u53ef\u4ee5\u53c2\u8003\u5982\u4e0b\u7684\u6587\u6863\u6765\u66f4\u52a0\u6df1\u5165\u7684\u4e86\u89e3 \nproduct-name\n\n\n\n\nproduct-name\n \u7ba1\u7406\u624b\u518c\uff0d\u96c6\u7fa4\u7ba1\u7406\u624b\u518c\u4e3a\u60a8\u4ecb\u7ecd\u5982\u4f55\u521b\u5efa\u548c\u7ba1\u7406\nproduct-name\n\u96c6\u7fa4\u3002\n\n\n\n\n\u5982\u679c\u5177\u6709\u5176\u5b83\u5173\u7cfb\u578b\u6570\u636e\u5e93\u6d3b\u7740\u6570\u636e\u4ed3\u5e93\u5e94\u7528\u7684\u7ecf\u9a8c\uff0c\u90a3\u4e48\u60a8\u9700\u8981\u6ce8\u610f\nproduct-name\n\u4e0e\u5176\u5b83\u4ea7\u54c1\u7684\u8bbe\u8ba1\u548c\u5b9e\u73b0\u533a\u522b\u3002\u60a8\u53ef\u4ee5\u53c2\u8003\u6700\u4f73\u5b9e\u8df5\u7ae0\u8282\u6765\u4e86\u89e3\u548c\u5b66\u4e60\u5982\u4f55\u66f4\u597d\u7684\u4f7f\u7528\nproduct-name\n\u6765\u52a0\u8f7d\u6570\u636e\u548c\u8bbe\u8ba1\u8868\u7ed3\u6784\u3002\n\n\nproduct-name\n \u662f\u57fa\u4e8e Greenplum 4.6.3.2 \u548c PostgreSQL 8.2.5 \u5f00\u53d1\u7684\u3002\n\n\n\u60a8\u662f\u6570\u636e\u5e93\u5f00\u53d1\u8005\u4e48\uff1f\n\n\n\u5982\u679c\u60a8\u662f\u4e00\u4f4d\u6570\u636e\u5e93\u7528\u6237\uff0c\u6570\u636e\u5e93\u8bbe\u8ba1\u8005\uff0c\u6216\u8005\u6570\u636e\u5e93\u5f00\u53d1\u8005\uff0c\u53c8\u6216\u662f\u6570\u636e\u5e93\u7ba1\u7406\u5458\uff0c\u8bf7\u53c2\u8003\u4e0b\u9762\u8868\u683c\uff0c\u6765\u5e2e\u52a9\u60a8\u5feb\u901f\u5b9a\u4f4d\u60a8\u6240\u9700\u8981\u67e5\u627e\u7684\u76f8\u5173\u4fe1\u606f\u3002\n\n\n\n\n\n\n\n\n\u60a8\u9700\u8981\u7684\u4fe1\u606f\n\n\n\u63a8\u8350\u53c2\u8003\n\n\n\n\n\n\n\n\n\n\n\u5feb\u901f\u5730\u521b\u5efa\u5e76\u4f7f\u7528 \nproduct-name\n\n\n\n\n\n\n\n\n\u4e86\u89e3\u548c\u5b66\u4e60 \nproduct-name\n \u7684\u5185\u90e8\u67b6\u6784\n\n\n\n\n\n\n\n\n\u521b\u5efa\u6570\u636e\u5e93\uff0c\u8868\uff0c\u7528\u6237\uff0c\u53ca\u5176\u5b83\u6570\u636e\u5e93\u5bf9\u8c61\n\n\n\n\n\n\n\n\n\u5982\u4f55\u6b63\u786e\u7684\u8bbe\u8ba1\u8868\u6a21\u5f0f\n\n\n\n\n\n\n\n\n\u52a0\u8f7d\u6570\u636e\n\n\n\n\n\n\n\n\n\u7ba1\u7406\u7528\u6237, \u7528\u6237\u7ec4\u548c\u6570\u636e\u5e93\u5b89\u5168\n\n\n\n\n\n\n\n\n\u76d1\u63a7\u548c\u4f18\u5316\u7cfb\u7edf\u6027\u80fd\n\n\n\n\n\n\n\n\n\u7b2c\u4e09\u65b9\u652f\u6301\n\n\n\n\n\n\n\n\n\n\n\u9605\u8bfb\u524d\u9700\u8981\u505a\u7684\u51c6\u5907\u5de5\u4f5c\n\n\n\u5728\u6b63\u5f0f\u9605\u8bfb\u6587\u6863\u524d\uff0c\u60a8\u53ef\u4ee5\u5b8c\u6210\u4e0b\u9762\u7684\u4efb\u52a1\u6765\u52a0\u901f\u60a8\u5bf9 \nproduct-name\n \u7406\u89e3\u548c\u638c\u63e1\uff1a\n\n \u5b89\u88c5\u4e00\u4e2a SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\n\n \u542f\u52a8\u4e00\u4e2a \nproduct-name\n \u96c6\u7fa4\n* \u4f7f\u7528 SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\u8fde\u63a5\u5230\u96c6\u7fa4\u7684 master \u8282\u70b9\n\n\n\u5982\u679c\u60a8\u9700\u8981\u5173\u4e8e\u4e0a\u9762\u6b65\u9aa4\u7684\u76f8\u5173\u64cd\u4f5c\u5e2e\u52a9\uff0c\u8bf7\u53c2\u9605\uff1a\ndoc-getting-started\n\u3002\n\n\n\u60a8\u6700\u597d\u4e86\u89e3 SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\u7684\u4f7f\u7528\u65b9\u6cd5\uff0c\u5e76\u638c\u63e1\u4e00\u4e9b\u57fa\u7840\u7684 SQL \u8bed\u8a00\u77e5\u8bc6\u3002", 
+            "text": "Welcome\n\n\n\u60a8\u662f\u7b2c\u4e00\u6b21\u4f7f\u7528 \nproduct-name\n \u4e48\uff1f\n\n\n\u5982\u679c\u60a8\u8fd8\u662f\u7b2c\u4e00\u6b21\u4f7f\u7528 \nproduct-name\n\uff0c\u6211\u4eec\u5f3a\u70c8\u5efa\u8bae\u60a8\u5148\u9605\u8bfb\u4e0b\u9762\u7684\u5185\u5bb9\u3002\n\n\n\n\n\u670d\u52a1\u4f18\u52bf\u548c\u8ba1\u8d39\u6807\u51c6\uff0d\u53c2\u9605 TODO \u6765\u4e86\u89e3 \nproduct-name\n \u7684\u4ea7\u54c1\u5b9a\u4f4d\uff0c\u670d\u52a1\u4f18\u52bf\u53ca\u76f8\u5173\u8ba1\u8d39\u6807\u51c6\u3002\n\n\n\u5165\u95e8\u4ecb\u7ecd\uff0dTODO\u5305\u542b\u4e86\u5b8c\u6210\u7684\u793a\u4f8b\uff0c\u5e2e\u52a9\u4ece\u521b\u5efa\nproduct-name\n\u6570\u636e\u4ed3\u5e93\u96c6\u7fa4\uff0c\u5230\u521b\u5efa\u6570\u636e\u5e93\u4e2d\u7684\u8868\uff0c\u52a0\u8f7d\u6570\u636e\u5230\u6700\u540e\u7684\u6d4b\u8bd5\u67e5\u8be2\u53ca\u9a8c\u8bc1\u7ed3\u679c\u3002\n\n\n\n\n\u5728\u60a8\u9605\u8bfb\u5b8c\u5165\u95e8\u4ecb\u7ecd\u540e\uff0c\u4f60\u8fd8\u53ef\u4ee5\u53c2\u8003\u5982\u4e0b\u7684\u6587\u6863\u6765\u66f4\u52a0\u6df1\u5165\u7684\u4e86\u89e3 \nproduct-name\n\n\n\n\nproduct-name\n \u7ba1\u7406\u624b\u518c\uff0d\u96c6\u7fa4\u7ba1\u7406\u624b\u518c\u4e3a\u60a8\u4ecb\u7ecd\u5982\u4f55\u521b\u5efa\u548c\u7ba1\u7406\nproduct-name\n\u96c6\u7fa4\u3002\n\n\n\n\n\u5982\u679c\u5177\u6709\u5176\u5b83\u5173\u7cfb\u578b\u6570\u636e\u5e93\u6d3b\u7740\u6570\u636e\u4ed3\u5e93\u5e94\u7528\u7684\u7ecf\u9a8c\uff0c\u90a3\u4e48\u60a8\u9700\u8981\u6ce8\u610f\nproduct-name\n\u4e0e\u5176\u5b83\u4ea7\u54c1\u7684\u8bbe\u8ba1\u548c\u5b9e\u73b0\u533a\u522b\u3002\u60a8\u53ef\u4ee5\u53c2\u8003\u6700\u4f73\u5b9e\u8df5\u7ae0\u8282\u6765\u4e86\u89e3\u548c\u5b66\u4e60\u5982\u4f55\u66f4\u597d\u7684\u4f7f\u7528\nproduct-name\n\u6765\u52a0\u8f7d\u6570\u636e\u548c\u8bbe\u8ba1\u8868\u7ed3\u6784\u3002\n\n\nproduct-name\n \u662f\u57fa\u4e8e Greenplum 4.6.3.2 \u548c PostgreSQL 8.2.5 \u5f00\u53d1\u7684\u3002\n\n\n\u60a8\u662f\u6570\u636e\u5e93\u5f00\u53d1\u8005\u4e48\uff1f\n\n\n\u5982\u679c\u60a8\u662f\u4e00\u4f4d\u6570\u636e\u5e93\u7528\u6237\uff0c\u6570\u636e\u5e93\u8bbe\u8ba1\u8005\uff0c\u6216\u8005\u6570\u636e\u5e93\u5f00\u53d1\u8005\uff0c\u53c8\u6216\u662f\u6570\u636e\u5e93\u7ba1\u7406\u5458\uff0c\u8bf7\u53c2\u8003\u4e0b\u9762\u8868\u683c\uff0c\u6765\u5e2e\u52a9\u60a8\u5feb\u901f\u5b9a\u4f4d\u60a8\u6240\u9700\u8981\u67e5\u627e\u7684\u76f8\u5173\u4fe1\u606f\u3002\n\n\n\n\n\n\n\n\n\u60a8\u9700\u8981\u7684\u4fe1\u606f\n\n\n\u63a8\u8350\u53c2\u8003\n\n\n\n\n\n\n\n\n\n\n\u5feb\u901f\u5730\u521b\u5efa\u5e76\u4f7f\u7528 \nproduct-name\n\n\n\n\n\n\n\n\n\u4e86\u89e3\u548c\u5b66\u4e60 \nproduct-name\n \u7684\u5185\u90e8\u67b6\u6784\n\n\n\n\n\n\n\n\n\u521b\u5efa\u6570\u636e\u5e93\uff0c\u8868\uff0c\u7528\u6237\uff0c\u53ca\u5176\u5b83\u6570\u636e\u5e93\u5bf9\u8c61\n\n\n\n\n\n\n\n\n\u5982\u4f55\u6b63\u786e\u7684\u8bbe\u8ba1\u8868\u6a21\u5f0f\n\n\n\n\n\n\n\n\n\u52a0\u8f7d\u6570\u636e\n\n\n\n\n\n\n\n\n\u7ba1\u7406\u7528\u6237, \u7528\u6237\u7ec4\u548c\u6570\u636e\u5e93\u5b89\u5168\n\n\n\n\n\n\n\n\n\u76d1\u63a7\u548c\u4f18\u5316\u7cfb\u7edf\u6027\u80fd\n\n\n\n\n\n\n\n\n\u7b2c\u4e09\u65b9\u652f\u6301\n\n\n\n\n\n\n\n\n\n\n\u9605\u8bfb\u524d\u9700\u8981\u505a\u7684\u51c6\u5907\u5de5\u4f5c\n\n\n\u5728\u6b63\u5f0f\u9605\u8bfb\u6587\u6863\u524d\uff0c\u60a8\u53ef\u4ee5\u5b8c\u6210\u4e0b\u9762\u7684\u4efb\u52a1\u6765\u52a0\u901f\u60a8\u5bf9 \nproduct-name\n \u7406\u89e3\u548c\u638c\u63e1\uff1a\n\n\n\n\n\u5b89\u88c5\u4e00\u4e2a SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\n\n\n\u542f\u52a8\u4e00\u4e2a \nproduct-name\n \u96c6\u7fa4\n\n\n\u4f7f\u7528 SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\u8fde\u63a5\u5230\u96c6\u7fa4\u7684 master \u8282\u70b9\n\n\n\n\n\u5982\u679c\u60a8\u9700\u8981\u5173\u4e8e\u4e0a\u9762\u6b65\u9aa4\u7684\u76f8\u5173\u64cd\u4f5c\u5e2e\u52a9\uff0c\u8bf7\u53c2\u9605\uff1a\ndoc-getting-started\n\u3002\n\n\n\u60a8\u6700\u597d\u4e86\u89e3 SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\u7684\u4f7f\u7528\u65b9\u6cd5\uff0c\u5e76\u638c\u63e1\u4e00\u4e9b\u57fa\u7840\u7684 SQL \u8bed\u8a00\u77e5\u8bc6\u3002", 
             "title": "\u6b22\u8fce\u4f7f\u7528"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#product-name", 
-            "text": "\u5982\u679c\u60a8\u8fd8\u662f\u7b2c\u4e00\u6b21\u4f7f\u7528  product-name \uff0c\u6211\u4eec\u5f3a\u70c8\u5efa\u8bae\u60a8\u5148\u9605\u8bfb\u4e0b\u9762\u7684\u5185\u5bb9\u3002  \u670d\u52a1\u4f18\u52bf\u548c\u8ba1\u8d39\u6807\u51c6\uff0d\u53c2\u9605 TODO \u6765\u4e86\u89e3  product-name  \u7684\u4ea7\u54c1\u5b9a\u4f4d\uff0c\u670d\u52a1\u4f18\u52bf\u53ca\u76f8\u5173\u8ba1\u8d39\u6807\u51c6\u3002  \u5165\u95e8\u4ecb\u7ecd\uff0dTODO\u5305\u542b\u4e86\u5b8c\u6210\u7684\u793a\u4f8b\uff0c\u5e2e\u52a9\u4ece\u521b\u5efa product-name \u6570\u636e\u4ed3\u5e93\u96c6\u7fa4\uff0c\u5230\u521b\u5efa\u6570\u636e\u5e93\u4e2d\u7684\u8868\uff0c\u52a0\u8f7d\u6570\u636e\u5230\u6700\u540e\u7684\u6d4b\u8bd5\u67e5\u8be2\u53ca\u9a8c\u8bc1\u7ed3\u679c\u3002  \u5728\u60a8\u9605\u8bfb\u5b8c\u5165\u95e8\u4ecb\u7ecd\u540e\uff0c\u4f60\u8fd8\u53ef\u4ee5\u53c2\u8003\u5982\u4e0b\u7684\u6587\u6863\u6765\u66f4\u52a0\u6df1\u5165\u7684\u4e86\u89e3  product-name   product-name  \u7ba1\u7406\u624b\u518c\uff0d\u96c6\u7fa4\u7ba1\u7406\u624b\u518c\u4e3a\u60a8\u4ecb\u7ecd\u5982\u4f55\u521b\u5efa\u548c\u7ba1\u7406 product-name \u96c6\u7fa4\u3002   \u5982\u679c\u5177\u6709\u5176\u5b83\u5173\u7cfb\u578b\u6570\u636e\u5e93\u6d3b\u7740\u6570\u636e\u4ed3\u5e93\u5e94\u7528\u7684\u7ecf\u9a8c\uff0c\u90a3\u4e48\u60a8\u9700\u8981\u6ce8\u610f product-name \u4e0e\u5176\u5b83\u4ea7\u54c1\u7684\u8bbe\u8ba1\u548c\u5b9e\u73b0\u533a\u522b\u3002\u60a8\u53ef\u4ee5\u53c2\u8003\u6700\u4f73\u5b9e\u8df5\u7ae0\u8282\u6765\u4e86\u89e3\u548c\u5b66\u4e60\u5982\u4f55\u66f4\u597d\u7684\u4f7f\u7528 product-name \u6765\u52a0\u8f7d\u6570\u636e\u548c\u8bbe\u8ba1\u8868\u7ed3\u6784\u3002  product-name  \u662f\u57fa\u4e8e Greenplum 4.6.3.2 \u548c PostgreSQL 8.2.5 \u5f00\u53d1\u7684\u3002", 
+            "text": "\u5982\u679c\u60a8\u8fd8\u662f\u7b2c\u4e00\u6b21\u4f7f\u7528  product-name \uff0c\u6211\u4eec\u5f3a\u70c8\u5efa\u8bae\u60a8\u5148\u9605\u8bfb\u4e0b\u9762\u7684\u5185\u5bb9\u3002   \u670d\u52a1\u4f18\u52bf\u548c\u8ba1\u8d39\u6807\u51c6\uff0d\u53c2\u9605 TODO \u6765\u4e86\u89e3  product-name  \u7684\u4ea7\u54c1\u5b9a\u4f4d\uff0c\u670d\u52a1\u4f18\u52bf\u53ca\u76f8\u5173\u8ba1\u8d39\u6807\u51c6\u3002  \u5165\u95e8\u4ecb\u7ecd\uff0dTODO\u5305\u542b\u4e86\u5b8c\u6210\u7684\u793a\u4f8b\uff0c\u5e2e\u52a9\u4ece\u521b\u5efa product-name \u6570\u636e\u4ed3\u5e93\u96c6\u7fa4\uff0c\u5230\u521b\u5efa\u6570\u636e\u5e93\u4e2d\u7684\u8868\uff0c\u52a0\u8f7d\u6570\u636e\u5230\u6700\u540e\u7684\u6d4b\u8bd5\u67e5\u8be2\u53ca\u9a8c\u8bc1\u7ed3\u679c\u3002   \u5728\u60a8\u9605\u8bfb\u5b8c\u5165\u95e8\u4ecb\u7ecd\u540e\uff0c\u4f60\u8fd8\u53ef\u4ee5\u53c2\u8003\u5982\u4e0b\u7684\u6587\u6863\u6765\u66f4\u52a0\u6df1\u5165\u7684\u4e86\u89e3  product-name   product-name  \u7ba1\u7406\u624b\u518c\uff0d\u96c6\u7fa4\u7ba1\u7406\u624b\u518c\u4e3a\u60a8\u4ecb\u7ecd\u5982\u4f55\u521b\u5efa\u548c\u7ba1\u7406 product-name \u96c6\u7fa4\u3002   \u5982\u679c\u5177\u6709\u5176\u5b83\u5173\u7cfb\u578b\u6570\u636e\u5e93\u6d3b\u7740\u6570\u636e\u4ed3\u5e93\u5e94\u7528\u7684\u7ecf\u9a8c\uff0c\u90a3\u4e48\u60a8\u9700\u8981\u6ce8\u610f product-name \u4e0e\u5176\u5b83\u4ea7\u54c1\u7684\u8bbe\u8ba1\u548c\u5b9e\u73b0\u533a\u522b\u3002\u60a8\u53ef\u4ee5\u53c2\u8003\u6700\u4f73\u5b9e\u8df5\u7ae0\u8282\u6765\u4e86\u89e3\u548c\u5b66\u4e60\u5982\u4f55\u66f4\u597d\u7684\u4f7f\u7528 product-name \u6765\u52a0\u8f7d\u6570\u636e\u548c\u8bbe\u8ba1\u8868\u7ed3\u6784\u3002  product-name  \u662f\u57fa\u4e8e Greenplum 4.6.3.2 \u548c PostgreSQL 8.2.5 \u5f00\u53d1\u7684\u3002", 
             "title": "\u60a8\u662f\u7b2c\u4e00\u6b21\u4f7f\u7528 &lt;&amp;product-name&gt; \u4e48\uff1f"
         }, 
         {
@@ -22,8 +22,683 @@
         }, 
         {
             "location": "/#_2", 
-            "text": "\u5728\u6b63\u5f0f\u9605\u8bfb\u6587\u6863\u524d\uff0c\u60a8\u53ef\u4ee5\u5b8c\u6210\u4e0b\u9762\u7684\u4efb\u52a1\u6765\u52a0\u901f\u60a8\u5bf9  product-name  \u7406\u89e3\u548c\u638c\u63e1\uff1a  \u5b89\u88c5\u4e00\u4e2a SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f  \u542f\u52a8\u4e00\u4e2a  product-name  \u96c6\u7fa4\n* \u4f7f\u7528 SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\u8fde\u63a5\u5230\u96c6\u7fa4\u7684 master \u8282\u70b9  \u5982\u679c\u60a8\u9700\u8981\u5173\u4e8e\u4e0a\u9762\u6b65\u9aa4\u7684\u76f8\u5173\u64cd\u4f5c\u5e2e\u52a9\uff0c\u8bf7\u53c2\u9605\uff1a doc-getting-started \u3002  \u60a8\u6700\u597d\u4e86\u89e3 SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\u7684\u4f7f\u7528\u65b9\u6cd5\uff0c\u5e76\u638c\u63e1\u4e00\u4e9b\u57fa\u7840\u7684 SQL \u8bed\u8a00\u77e5\u8bc6\u3002", 
+            "text": "\u5728\u6b63\u5f0f\u9605\u8bfb\u6587\u6863\u524d\uff0c\u60a8\u53ef\u4ee5\u5b8c\u6210\u4e0b\u9762\u7684\u4efb\u52a1\u6765\u52a0\u901f\u60a8\u5bf9  product-name  \u7406\u89e3\u548c\u638c\u63e1\uff1a   \u5b89\u88c5\u4e00\u4e2a SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f  \u542f\u52a8\u4e00\u4e2a  product-name  \u96c6\u7fa4  \u4f7f\u7528 SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\u8fde\u63a5\u5230\u96c6\u7fa4\u7684 master \u8282\u70b9   \u5982\u679c\u60a8\u9700\u8981\u5173\u4e8e\u4e0a\u9762\u6b65\u9aa4\u7684\u76f8\u5173\u64cd\u4f5c\u5e2e\u52a9\uff0c\u8bf7\u53c2\u9605\uff1a doc-getting-started \u3002  \u60a8\u6700\u597d\u4e86\u89e3 SQL \u5ba2\u6237\u7aef\u7a0b\u5e8f\u7684\u4f7f\u7528\u65b9\u6cd5\uff0c\u5e76\u638c\u63e1\u4e00\u4e9b\u57fa\u7840\u7684 SQL \u8bed\u8a00\u77e5\u8bc6\u3002", 
             "title": "\u9605\u8bfb\u524d\u9700\u8981\u505a\u7684\u51c6\u5907\u5de5\u4f5c"
+        }, 
+        {
+            "location": "/overview/", 
+            "text": "product-name\n \u7cfb\u7edf\u6982\u8ff0\n\n\n\u672c\u7ae0\u8282\u5c06\u4f1a\u4ecb\u7ecd\nproduce-name\n\u7684\u6a21\u5757\u53ca\u4e00\u4e9b\u5173\u952e\u7279\u6027\uff0c\u8ba9\u60a8\u5bf9\u672c\u4ea7\u54c1\u62e5\u6709\u66f4\u52a0\u6df1\u523b\u7684\u8ba4\u8bc6\u548c\u7406\u89e3\u3002\n\n\n\u672c\u7ae0\u8282\u6db5\u76d6\u4ee5\u4e0b\u5185\u5bb9:\n\n\n\n\nproduct-name\n \u67b6\u6784\n\n\n\u7ba1\u7406\u548c\u76d1\u63a7\u5de5\u5177\n\n\n\u5e76\u884c\u6570\u636e\u52a0\u8f7d\n\n\n\u7cfb\u7edf\u5197\u4f59\u548c\u5bb9\u9519\n\n\n\u7edf\u8ba1\u4fe1\u606f\n\n\n\n\nproduct-name\n \u67b6\u6784\n\n\ncompany-product-name\n \u662f\u4e3a\u4e86\u7ba1\u7406\u5927\u5bb9\u91cf\u5206\u6790\u578b\u6570\u636e\u4ed3\u5e93\u548c\u5546\u4e1a\u667a\u80fd\u5206\u6790\u4e1a\u52a1\u513f\u8bbe\u8ba1\u7684\u5927\u89c4\u6a21\u5e76\u884c\u5904\u7406\uff08MPP\uff09\u6570\u636e\u5e93\u670d\u52a1\u7cfb\u7edf\u3002\n\n\nMPP\uff08\u4e5f\u88ab\u79f0\u4f5c shared nothing \u67b6\u6784\uff09\u662f\u6307\u4e00\u4e2a\u7cfb\u7edf\u62e5\u6709\u4e24\u4e2a\u6216\u8005\u4e24\u4e2a\u4ee5\u4e0a\u7684\u5904\u7406\u5668\uff0c\u76f8\u4e92\u5408\u4f5c\u6765\u6267\u884c\u4efb\u52a1\u3002\u6bcf\u4e2a\u5904\u7406\u5668\u90fd\u914d\u6709\u72ec\u7acb\u7684\u5185\u5b58\uff0c\u64cd\u4f5c\u7cfb\u7edf\u548c\u78c1\u76d8\u3002\nproduct-name\n\u91c7\u7528\u9ad8\u6027\u80fd\u7684\u7cfb\u7edf\u67b6\u6784\u53ef\u4ee5\u5c06\u8bf7\u6c42\u5747\u5300\u5206\u6563\u5230\u5b58\u50a8 TB \u7ea7\u522b\u7684\u6570\u636e\u4ed3\u5e93\u4e0a\uff0c\u540c\u65f6\u5145\u5206\u5229\u7528\u7cfb\u7edf\u4e2d\u6240\u6709\u7684\u8d44\u6e90\uff0c\u5e76\u884c\u7684\u5904\u7406\u8bf7\u6c42\u3002\n\n\nproduct-name\n\u662f\u57fa\u4e8e PostgreSQL \u5f00\u6e90\u6570\u636e\u5e93\u6280\u672f\uff0c\u901a\u8fc7\u5bf9 PostgreSQL\u7684\u4fee\u6539\uff0c\u5f97\u5230\u7684\u5e76\u884c\u67b6\u6784\u6570\u636e\u5e93\u3002\u4ece\u7cfb\u7edf\u4fe1\u606f\u8868\uff0c\u4f18\u5316\u5668\uff0c\u67e5\u8be2\u6267\u884c\u5668\uff0c\u4e8b\u52a1\u7ba1\u7406\u7b49\u5404\u4e2a\u65b9\u9762\u90fd\u8fdb\u884c\u4e86\u4fee\u6539\u548c\u589e\u5f3a\uff0c\u6765\u6ee1\u8db3\u771f\u6b63\u5c06\u67e5\u8be2\u4ece\u5185\u90e8\u5e76\u884c\u8fd0\u884c\u5728\u591a\u4e2a\u8ba1\u7b97\u8282\u70b9\u4e0a\u3002\u901a\u8fc7\u5feb\u901f\u7684\u5185\u90e8\u8f6f\u4ef6\u6570\u636e\u4ea4\u4e92\u6a21\u5757\uff0c\u6ee1\u8db3\u7cfb\u7edf\u5728\u591a\u4e2a\u8282\u70b9\u95f4\u6570\u636e\u7684\u7a7f\u51fa\u548c\u5904\u7406\u8981\u6c42\uff0c\u4f7f\u5f97\u6574\u4e2a\u7cfb\u7edf\u5bf9\u5916\u6765\u770b\u50cf\u662f\u4e00\u4e2a\u8ba1\u7b97\u80fd\u529b\u7b49\u4e8e\u4e0a\u767e\u53f0\u673a\u5668\u7684\u5355\u4e00\u6570\u636e\u5e93\u7cfb\u7edf\u3002\n\n\nproduct-name\n \u7684 master \u8282\u70b9\u662f\u6574\u4e2a\u6570\u636e\u5e93\u7cfb\u7edf\u7684\u5165\u53e3\u8282\u70b9\uff0c\u7528\u6237\u901a\u8fc7\u5ba2\u6237\u7aef\u8fde\u63a5 master \u6765\u63d0\u4ea4 SQL \u67e5\u8be2\u8bed\u53e5\u3002master\u8282\u70b9\u5c06\u4f1a\u534f\u8c03\u5176\u5b83\u8ba1\u7b97\u8282\u70b9\uff0c\u88ab\u79f0\u4e3a segment\uff0c\u6765\u901a\u8fc7\u5b58\u50a8\u548c\u5904\u7406\u7528\u6237\u7684\u6570\u636e\u3002\n\n\n\n\nMaster \u8282\u70b9\n\n\nproduct-name\n \u7684 master \u8282\u70b9\u662f\u6574\u4e2a\u6570\u636e\u5e93\u7cfb\u7edf\u7684\u5165\u53e3\uff0c\u7528\u6765\u63a5\u53d7\u5ba2\u6237\u7aef\u8fde\u63a5\uff0c\u63a5\u6536SQL\u67e5\u8be2\uff0c\u5e76\u5c06\u4f5c\u4e1a\u5206\u53d1\u5230segment\u4e0a\u6267\u884c\u3002\n\n\nproduct-name\n \u7684\u7528\u6237\u53ef\u4ee5\u50cf\u4f7f\u7528 PostgreSQL \u4e00\u6837\uff0c\u901a\u8fc7 master \u8282\u70b9\u6765\u8bbf\u95ee \nproduct-name\n\u7cfb\u7edf\u3002\u76ee\u524d\u652f\u6301\u5ba2\u6237\u7aef\u7a0b\u5e8f psql \u6216\u5e94\u7528\u7f16\u7a0b\u63a5\u53e3 ODBC \u6216 JDBC\u3002\n\n\nmaster\u8282\u70b9\u5b58\u50a8\u4e86\u63cf\u8ff0\u7cfb\u7edf\u5168\u5c40\u7ed3\u6784\u7684\u7cfb\u7edf\u4fe1\u606f\u8868\uff08global system catalog\uff09\uff0c\u8fd9\u4e9b\u4fe1\u606f\u8868\u4e2d\u5b58\u50a8\u4e86\nproduct-name\n\u81ea\u5df1\u7684\u5143\u4fe1\u606f\uff08metadata\uff09\u3002master\u8282\u70b9\u6ca1\u6709\u5b58\u50a8\u7528\u6237\u6570\u636e\u7684\u4fe1\u606f\uff0c\u6240\u6709\u7684\u7528\u6237\u6570\u636e\u90fd\u5b58\u50a8\u5728 segment \u8282\u70b9\uff0cmaster \u8ba4\u8bc1\u5ba2\u6237\u7aef\u8fde\u63a5\uff0c\u5904\u7406\u5ba2\u6237\u63d0\u4ea4\u7684 SQL  \u547d\u4ee4\uff0c\u5c06\u67e5\u8be2\u5206\u53d1\u5230\u5b58\u50a8\u6570\u636e\u7684 segment \u8282\u70b9\uff0c\u534f\u8c03\u5404\u4e2a segment \u8282\u70b9\u6267\u884c\uff0c\u5e76\u6c47\u603b\u6267\u884c\u7ed3\u679c\uff0c\u6700\u540e\u8fd4\u56de\u7ed9\u5ba2\u6237\u7aef\u7a0b\u5e8f\u3002\n\n\nSegment \u8282\u70b9\n\n\nproduct-name\n segment \u8282\u70b9\u5b9e\u9645\u4e0a\u4e5f\u662f\u4e00\u4e2a\u4fee\u6539\u7684 PostgreSQL \u6570\u636e\u5e93\uff0c\u6bcf\u4e2a segment \u90fd\u5b58\u50a8\u4e86\u4e00\u90e8\u5206\u7528\u6237\u6570\u636e\uff0c\u5e76\u4e3b\u8981\u8d1f\u8d23\u6267\u884c\u7528\u6237\u7684\u67e5\u8be2\u3002\n\n\n\u6bcf\u5f53\u7528\u6237\u8fde\u63a5\u5230 master \u8282\u70b9\uff0c\u5e76\u4e14\u53d1\u9001\u4e00\u4e2a\u67e5\u8be2\u65f6\uff0c\u6bcf\u4e2a segment \u8282\u70b9\u90fd\u4f1a\u521b\u5efa\u4e00\u4e9b\u8fdb\u7a0b\u6765\u5171\u540c\u5904\u7406\u6539\u67e5\u8be2\u3002\u8981\u4e86\u89e3\u66f4\u591a\u5173\u4e8e\u67e5\u8be2\u7684\u5904\u7406\u8fc7\u7a0b\uff0c\u8bf7\u53c2\u8003 TODO\u3002\n\n\n\u7528\u6237\u5b9a\u4e49\u7684\u6570\u636e\u8868\u548c\u76f8\u5e94\u7684\u7d22\u5f15\u5c06\u4f1a\u81ea\u52a8\u88ab\u5206\u6563\u5230 \nproduct-name\n \u7684\u8282\u70b9\u4e0a\uff0c\u6bcf\u4e2a segment \u4e0a\u90fd\u5b58\u50a8\u4e86\u4e00\u90e8\u5206\u7528\u6237\u6570\u636e\uff0c\u5e76\u4e14\u8fd9\u4e9b\u6570\u636e\u662f\u4e0d\u76f8\u4ea4\u7684\u3002\n\n\n\u8f6f\u4ef6\u6570\u636e\u4ea4\u6362\u6a21\u5757\n\n\n\u8f6f\u4ef6\u6570\u636e\u4ea4\u6362\u6a21\u5757\u662f\nproduct-name\n \u67b6\u6784\u4e2d\u7684\u7f51\u7edc\u5c42\u3002\u6b64\u6a21\u5757\u8d1f\u8d23\u5904\u7406segment\u4e4b\u95f4\u548c\u7f51\u7edc\u4e4b\u95f4\u7684\u8fdb\u7a0b\u95f4\u901a\u4fe1\u3002\u6b64\u6a21\u5757\u9ed8\u8ba4\u4f7f\u7528\u7ecf\u8fc7\u6df1\u5ea6\u8c03\u4f18\u7684\u5e26\u6d41\u91cf\u63a7\u5236\u7684UDP\u534f\u8bae\u6765\u4f20\u8f93\u6570\u636e\u3002\u8fd9\u79cd\u7b97\u6cd5\u9664\u4e86\u63d0\u4f9bTCP\u534f\u8bae\u652f\u6301\u7684\u53ef\u9760\u6027\u5916\uff0c\u5728\u6027\u80fd\u548c\u6c34\u5e73\u6269\u5c55\u80fd\u529b\u90fd\u4f18\u4e8eTCP\u534f\u8bae\u3002\n\n\n\u7ba1\u7406\u548c\u76d1\u63a7\n\n\n\u6570\u636e\u5e93\u7ba1\u7406\n  gpstart\n  gpstop\n  gpcheck\n\n\n\u78c1\u76d8\u6269\u5bb9\n  gpfilespace\n\n\n\u6269\u5c55\n  gpexpand\n\n\nHA\n  gpinitstandby\n  gpactivatestandby\n\n\nReplica\n  gpaddmirrors\n  gprecoverseg\n\n\n\u7cfb\u7edf\u8868\n\n\n\u5e76\u884c\u6570\u636e\u52a0\u8f7d\n\n\n\u7cfb\u7edf\u5197\u4f59\u548c\u5bb9\u9519\n\n\n\u7edf\u8ba1\u4fe1\u606f", 
+            "title": "<&product-name> \u7cfb\u7edf\u6982\u8ff0"
+        }, 
+        {
+            "location": "/overview/#product-name", 
+            "text": "\u672c\u7ae0\u8282\u5c06\u4f1a\u4ecb\u7ecd produce-name \u7684\u6a21\u5757\u53ca\u4e00\u4e9b\u5173\u952e\u7279\u6027\uff0c\u8ba9\u60a8\u5bf9\u672c\u4ea7\u54c1\u62e5\u6709\u66f4\u52a0\u6df1\u523b\u7684\u8ba4\u8bc6\u548c\u7406\u89e3\u3002  \u672c\u7ae0\u8282\u6db5\u76d6\u4ee5\u4e0b\u5185\u5bb9:   product-name  \u67b6\u6784  \u7ba1\u7406\u548c\u76d1\u63a7\u5de5\u5177  \u5e76\u884c\u6570\u636e\u52a0\u8f7d  \u7cfb\u7edf\u5197\u4f59\u548c\u5bb9\u9519  \u7edf\u8ba1\u4fe1\u606f", 
+            "title": "&lt;&amp;product-name&gt; \u7cfb\u7edf\u6982\u8ff0"
+        }, 
+        {
+            "location": "/overview/#product-name_1", 
+            "text": "company-product-name  \u662f\u4e3a\u4e86\u7ba1\u7406\u5927\u5bb9\u91cf\u5206\u6790\u578b\u6570\u636e\u4ed3\u5e93\u548c\u5546\u4e1a\u667a\u80fd\u5206\u6790\u4e1a\u52a1\u513f\u8bbe\u8ba1\u7684\u5927\u89c4\u6a21\u5e76\u884c\u5904\u7406\uff08MPP\uff09\u6570\u636e\u5e93\u670d\u52a1\u7cfb\u7edf\u3002  MPP\uff08\u4e5f\u88ab\u79f0\u4f5c shared nothing \u67b6\u6784\uff09\u662f\u6307\u4e00\u4e2a\u7cfb\u7edf\u62e5\u6709\u4e24\u4e2a\u6216\u8005\u4e24\u4e2a\u4ee5\u4e0a\u7684\u5904\u7406\u5668\uff0c\u76f8\u4e92\u5408\u4f5c\u6765\u6267\u884c\u4efb\u52a1\u3002\u6bcf\u4e2a\u5904\u7406\u5668\u90fd\u914d\u6709\u72ec\u7acb\u7684\u5185\u5b58\uff0c\u64cd\u4f5c\u7cfb\u7edf\u548c\u78c1\u76d8\u3002 product-name \u91c7\u7528\u9ad8\u6027\u80fd\u7684\u7cfb\u7edf\u67b6\u6784\u53ef\u4ee5\u5c06\u8bf7\u6c42\u5747\u5300\u5206\u6563\u5230\u5b58\u50a8 TB \u7ea7\u522b\u7684\u6570\u636e\u4ed3\u5e93\u4e0a\uff0c\u540c\u65f6\u5145\u5206\u5229\u7528\u7cfb\u7edf\u4e2d\u6240\u6709\u7684\u8d44\u6e90\uff0c\u5e76\u884c\u7684\u5904\u7406\u8bf7\u6c42\u3002  product-name \u662f\u57fa\u4e8e PostgreSQL \u5f00\u6e90\u6570\u636e\u5e93\u6280\u672f\uff0c\u901a\u8fc7\u5bf9 PostgreSQL\u7684\u4fee\u6539\uff0c\u5f97\u5230\u7684\u5e76\u884c\u67b6\u6784\u6570\u636e\u5e93\u3002\u4ece\u7cfb\u7edf\u4fe1\u606f\u8868\uff0c\u4f18\u5316\u5668\uff0c\u67e5\u8be2\u6267\u884c\u5668\uff0c\u4e8b\u52a1\u7ba1\u7406\u7b49\u5404\u4e2a\u65b9\u9762\u90fd\u8fdb\u884c\u4e86\u4fee\u6539\u548c\u589e\u5f3a\uff0c\u6765\u6ee1\u8db3\u771f\u6b63\u5c06\u67e5\u8be2\u4ece\u5185\u90e8\u5e76\u884c\u8fd0\u884c\u5728\u591a\u4e2a\u8ba1\u7b97\u8282\u70b9\u4e0a\u3002\u901a\u8fc7\u5feb\u901f\u7684\u5185\u90e8\u8f6f\u4ef6\u6570\u636e\u4ea4\u4e92\u6a21\u5757\uff0c\u6ee1\u8db3\u7cfb\u7edf\u5728\u591a\u4e2a\u8282\u70b9\u95f4\u6570\u636e\u7684\u7a7f\u51fa\u548c\u5904\u7406\u8981\u6c42\uff0c\u4f7f\u5f97\u6574\u4e2a\u7cfb\u7edf\u5bf9\u5916\u6765\u770b\u50cf\u662f\u4e00\u4e2a\u8ba1\u7b97\u80fd\u529b\u7b49\u4e8e\u4e0a\u767e\u53f0\u673a\u5668\u7684\u5355\u4e00\u6570\u636e\u5e93\u7cfb\u7edf\u3002  product-name  \u7684 master \u8282\u70b9\u662f\u6574\u4e2a\u6570\u636e\u5e93\u7cfb\u7edf\u7684\u5165\u53e3\u8282\u70b9\uff0c\u7528\u6237\u901a\u8fc7\u5ba2\u6237\u7aef\u8fde\u63a5 master \u6765\u63d0\u4ea4 SQL \u67e5\u8be2\u8bed\u53e5\u3002master\u8282\u70b9\u5c06\u4f1a\u534f\u8c03\u5176\u5b83\u8ba1\u7b97\u8282\u70b9\uff0c\u88ab\u79f0\u4e3a segment\uff0c\u6765\u901a\u8fc7\u5b58\u50a8\u548c\u5904\u7406\u7528\u6237\u7684\u6570\u636e\u3002   Master \u8282\u70b9  product-name  \u7684 master \u8282\u70b9\u662f\u6574\u4e2a\u6570\u636e\u5e93\u7cfb\u7edf\u7684\u5165\u53e3\uff0c\u7528\u6765\u63a5\u53d7\u5ba2\u6237\u7aef\u8fde\u63a5\uff0c\u63a5\u6536SQL\u67e5\u8be2\uff0c\u5e76\u5c06\u4f5c\u4e1a\u5206\u53d1\u5230segment\u4e0a\u6267\u884c\u3002  product-name  \u7684\u7528\u6237\u53ef\u4ee5\u50cf\u4f7f\u7528 PostgreSQL \u4e00\u6837\uff0c\u901a\u8fc7 master \u8282\u70b9\u6765\u8bbf\u95ee  product-name \u7cfb\u7edf\u3002\u76ee\u524d\u652f\u6301\u5ba2\u6237\u7aef\u7a0b\u5e8f psql \u6216\u5e94\u7528\u7f16\u7a0b\u63a5\u53e3 ODBC \u6216 JDBC\u3002  master\u8282\u70b9\u5b58\u50a8\u4e86\u63cf\u8ff0\u7cfb\u7edf\u5168\u5c40\u7ed3\u6784\u7684\u7cfb\u7edf\u4fe1\u606f\u8868\uff08global system catalog\uff09\uff0c\u8fd9\u4e9b\u4fe1\u606f\u8868\u4e2d\u5b58\u50a8\u4e86 product-name \u81ea\u5df1\u7684\u5143\u4fe1\u606f\uff08metadata\uff09\u3002master\u8282\u70b9\u6ca1\u6709\u5b58\u50a8\u7528\u6237\u6570\u636e\u7684\u4fe1\u606f\uff0c\u6240\u6709\u7684\u7528\u6237\u6570\u636e\u90fd\u5b58\u50a8\u5728 segment \u8282\u70b9\uff0cmaster \u8ba4\u8bc1\u5ba2\u6237\u7aef\u8fde\u63a5\uff0c\u5904\u7406\u5ba2\u6237\u63d0\u4ea4\u7684 SQL  \u547d\u4ee4\uff0c\u5c06\u67e5\u8be2\u5206\u53d1\u5230\u5b58\u50a8\u6570\u636e\u7684 segment \u8282\u70b9\uff0c\u534f\u8c03\u5404\u4e2a segment \u8282\u70b9\u6267\u884c\uff0c\u5e76\u6c47\u603b\u6267\u884c\u7ed3\u679c\uff0c\u6700\u540e\u8fd4\u56de\u7ed9\u5ba2\u6237\u7aef\u7a0b\u5e8f\u3002  Segment \u8282\u70b9  product-name  segment \u8282\u70b9\u5b9e\u9645\u4e0a\u4e5f\u662f\u4e00\u4e2a\u4fee\u6539\u7684 PostgreSQL \u6570\u636e\u5e93\uff0c\u6bcf\u4e2a segment \u90fd\u5b58\u50a8\u4e86\u4e00\u90e8\u5206\u7528\u6237\u6570\u636e\uff0c\u5e76\u4e3b\u8981\u8d1f\u8d23\u6267\u884c\u7528\u6237\u7684\u67e5\u8be2\u3002  \u6bcf\u5f53\u7528\u6237\u8fde\u63a5\u5230 master \u8282\u70b9\uff0c\u5e76\u4e14\u53d1\u9001\u4e00\u4e2a\u67e5\u8be2\u65f6\uff0c\u6bcf\u4e2a segment \u8282\u70b9\u90fd\u4f1a\u521b\u5efa\u4e00\u4e9b\u8fdb\u7a0b\u6765\u5171\u540c\u5904\u7406\u6539\u67e5\u8be2\u3002\u8981\u4e86\u89e3\u66f4\u591a\u5173\u4e8e\u67e5\u8be2\u7684\u5904\u7406\u8fc7\u7a0b\uff0c\u8bf7\u53c2\u8003 TODO\u3002  \u7528\u6237\u5b9a\u4e49\u7684\u6570\u636e\u8868\u548c\u76f8\u5e94\u7684\u7d22\u5f15\u5c06\u4f1a\u81ea\u52a8\u88ab\u5206\u6563\u5230  product-name  \u7684\u8282\u70b9\u4e0a\uff0c\u6bcf\u4e2a segment \u4e0a\u90fd\u5b58\u50a8\u4e86\u4e00\u90e8\u5206\u7528\u6237\u6570\u636e\uff0c\u5e76\u4e14\u8fd9\u4e9b\u6570\u636e\u662f\u4e0d\u76f8\u4ea4\u7684\u3002  \u8f6f\u4ef6\u6570\u636e\u4ea4\u6362\u6a21\u5757  \u8f6f\u4ef6\u6570\u636e\u4ea4\u6362\u6a21\u5757\u662f product-name  \u67b6\u6784\u4e2d\u7684\u7f51\u7edc\u5c42\u3002\u6b64\u6a21\u5757\u8d1f\u8d23\u5904\u7406segment\u4e4b\u95f4\u548c\u7f51\u7edc\u4e4b\u95f4\u7684\u8fdb\u7a0b\u95f4\u901a\u4fe1\u3002\u6b64\u6a21\u5757\u9ed8\u8ba4\u4f7f\u7528\u7ecf\u8fc7\u6df1\u5ea6\u8c03\u4f18\u7684\u5e26\u6d41\u91cf\u63a7\u5236\u7684UDP\u534f\u8bae\u6765\u4f20\u8f93\u6570\u636e\u3002\u8fd9\u79cd\u7b97\u6cd5\u9664\u4e86\u63d0\u4f9bTCP\u534f\u8bae\u652f\u6301\u7684\u53ef\u9760\u6027\u5916\uff0c\u5728\u6027\u80fd\u548c\u6c34\u5e73\u6269\u5c55\u80fd\u529b\u90fd\u4f18\u4e8eTCP\u534f\u8bae\u3002", 
+            "title": "&lt;&amp;product-name&gt; \u67b6\u6784"
+        }, 
+        {
+            "location": "/overview/#_2", 
+            "text": "\u6570\u636e\u5e93\u7ba1\u7406\n  gpstart\n  gpstop\n  gpcheck  \u78c1\u76d8\u6269\u5bb9\n  gpfilespace  \u6269\u5c55\n  gpexpand  HA\n  gpinitstandby\n  gpactivatestandby  Replica\n  gpaddmirrors\n  gprecoverseg  \u7cfb\u7edf\u8868", 
+            "title": "\u7ba1\u7406\u548c\u76d1\u63a7"
+        }, 
+        {
+            "location": "/overview/#_3", 
+            "text": "", 
+            "title": "\u5e76\u884c\u6570\u636e\u52a0\u8f7d"
+        }, 
+        {
+            "location": "/overview/#_4", 
+            "text": "", 
+            "title": "\u7cfb\u7edf\u5197\u4f59\u548c\u5bb9\u9519"
+        }, 
+        {
+            "location": "/overview/#_5", 
+            "text": "", 
+            "title": "\u7edf\u8ba1\u4fe1\u606f"
+        }, 
+        {
+            "location": "/management/", 
+            "text": "", 
+            "title": "<&product-name> \u7ba1\u7406\u4ecb\u7ecd"
+        }, 
+        {
+            "location": "/sql-ref/", 
+            "text": "SQL \u547d\u4ee4\u53c2\u8003\n\n\nSQL \u8bed\u6cd5\u5217\u8868\n\n\nABORT\n\n\nALTER AGGREGATE\n\n\nALTER CONVERSION\n\n\nALTER DATABASE\n\n\nALTER DOMAIN\n\n\nALTER EXTERNAL TABLE\n\n\nALTER FILESPACE\n\n\nALTER FUNCTION\n\n\nALTER GROUP\n\n\nALTER INDEX\n\n\nALTER LANGUAGE\n\n\nALTER OPERATOR\n\n\nALTER OPERATOR CLASS\n\n\nALTER PROTOCOL\n\n\nALTER RESOURCE QUEUE\n\n\nALTER ROLE\n\n\nALTER SCHEMA\n\n\nALTER SEQUENCE\n\n\nALTER TABLE\n\n\nALTER TABLESPACE\n\n\nALTER TYPE\n\n\nALTER USER\n\n\nANALYZE\n\n\nBEGIN\n\n\nCHECKPOINT\n\n\nCLOSE\n\n\nCLUSTER\n\n\nCOMMENT\n\n\nCOMMIT\n\n\nCOPY\n\n\nCREATE AGGREGATE\n\n\nCREATE CAST\n\n\nCREATE CONVERSION\n\n\nCREATE DATABASE\n\n\nCREATE DOMAIN\n\n\nCREATE EXTERNAL TABLE\n\n\nCREATE FUNCTION\n\n\nCREATE GROUP\n\n\nCREATE INDEX\n\n\nCREATE LANGUAGE\n\n\nCREATE OPERATOR\n\n\nCREATE OPERATOR CLASS\n\n\nCREATE RESOURCE QUEUE\n\n\nCREATE ROLE\n\n\nCREATE RULE\n\n\nCREATE SCHEMA\n\n\nCREATE SEQUENCE\n\n\nCREATE TABLE\n\n\nCREATE TABLE AS\n\n\nCREATE TABLESPACE\n\n\nCREATE TYPE\n\n\nCREATE USER\n\n\nCREATE VIEW\n\n\nDEALLOCATE\n\n\nDECLARE\n\n\nDELETE\n\n\nDROP AGGREGATE\n\n\nDROP CAST\n\n\nDROP CONVERSION\n\n\nDROP DATABASE\n\n\nDROP DOMAIN\n\n\nDROP EXTERNAL TABLE\n\n\nDROP FILESPACE\n\n\nDROP FUNCTION\n\n\nDROP GROUP\n\n\nDROP INDEX\n\n\nDROP LANGUAGE\n\n\nDROP OPERATOR\n\n\nDROP OPERATOR CLASS\n\n\nDROP OWNED\n\n\nDROP RESOURCE QUEUE\n\n\nDROP ROLE\n\n\nDROP RULE\n\n\nDROP SCHEMA\n\n\nDROP SEQUENCE\n\n\nDROP TABLE\n\n\nDROP TABLESPACE\n\n\nDROP TYPE\n\n\nDROP USER\n\n\nDROP VIEW\n\n\nEND\n\n\nEXECUTE\n\n\nEXPLAIN\n\n\nFETCH\n\n\nGRANT\n\n\nINSERT\n\n\nLOAD\n\n\nLOCK\n\n\nMOVE\n\n\nPREPARE\n\n\nREASSIGN OWNED\n\n\nREINDEX\n\n\nRELEASE SAVEPOINT\n\n\nRESET\n\n\nREVOKE\n\n\nROLLBACK\n\n\nROLLBACK TO SAVEPOINT\n\n\nSAVEPOINT\n\n\nSELECT\n\n\nSELECT INTO\n\n\nSET\n\n\nSET ROLE\n\n\nSET SESSION AUTHORIZATION\n\n\nSET TRANSACTION\n\n\nSHOW\n\n\nSTART TRANSACTION\n\n\nTRUNCATE\n\n\nUPDATE\n\n\nVACUUM\n\n\nVALUES", 
+            "title": "SQL\u547d\u4ee4\u53c2\u8003"
+        }, 
+        {
+            "location": "/sql-ref/#sql", 
+            "text": "", 
+            "title": "SQL \u547d\u4ee4\u53c2\u8003"
+        }, 
+        {
+            "location": "/sql-ref/#sql_1", 
+            "text": "", 
+            "title": "SQL \u8bed\u6cd5\u5217\u8868"
+        }, 
+        {
+            "location": "/sql-ref/#abort", 
+            "text": "", 
+            "title": "ABORT"
+        }, 
+        {
+            "location": "/sql-ref/#alter-aggregate", 
+            "text": "", 
+            "title": "ALTER AGGREGATE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-conversion", 
+            "text": "", 
+            "title": "ALTER CONVERSION"
+        }, 
+        {
+            "location": "/sql-ref/#alter-database", 
+            "text": "", 
+            "title": "ALTER DATABASE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-domain", 
+            "text": "", 
+            "title": "ALTER DOMAIN"
+        }, 
+        {
+            "location": "/sql-ref/#alter-external-table", 
+            "text": "", 
+            "title": "ALTER EXTERNAL TABLE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-filespace", 
+            "text": "", 
+            "title": "ALTER FILESPACE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-function", 
+            "text": "", 
+            "title": "ALTER FUNCTION"
+        }, 
+        {
+            "location": "/sql-ref/#alter-group", 
+            "text": "", 
+            "title": "ALTER GROUP"
+        }, 
+        {
+            "location": "/sql-ref/#alter-index", 
+            "text": "", 
+            "title": "ALTER INDEX"
+        }, 
+        {
+            "location": "/sql-ref/#alter-language", 
+            "text": "", 
+            "title": "ALTER LANGUAGE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-operator", 
+            "text": "", 
+            "title": "ALTER OPERATOR"
+        }, 
+        {
+            "location": "/sql-ref/#alter-operator-class", 
+            "text": "", 
+            "title": "ALTER OPERATOR CLASS"
+        }, 
+        {
+            "location": "/sql-ref/#alter-protocol", 
+            "text": "", 
+            "title": "ALTER PROTOCOL"
+        }, 
+        {
+            "location": "/sql-ref/#alter-resource-queue", 
+            "text": "", 
+            "title": "ALTER RESOURCE QUEUE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-role", 
+            "text": "", 
+            "title": "ALTER ROLE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-schema", 
+            "text": "", 
+            "title": "ALTER SCHEMA"
+        }, 
+        {
+            "location": "/sql-ref/#alter-sequence", 
+            "text": "", 
+            "title": "ALTER SEQUENCE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-table", 
+            "text": "", 
+            "title": "ALTER TABLE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-tablespace", 
+            "text": "", 
+            "title": "ALTER TABLESPACE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-type", 
+            "text": "", 
+            "title": "ALTER TYPE"
+        }, 
+        {
+            "location": "/sql-ref/#alter-user", 
+            "text": "", 
+            "title": "ALTER USER"
+        }, 
+        {
+            "location": "/sql-ref/#analyze", 
+            "text": "", 
+            "title": "ANALYZE"
+        }, 
+        {
+            "location": "/sql-ref/#begin", 
+            "text": "", 
+            "title": "BEGIN"
+        }, 
+        {
+            "location": "/sql-ref/#checkpoint", 
+            "text": "", 
+            "title": "CHECKPOINT"
+        }, 
+        {
+            "location": "/sql-ref/#close", 
+            "text": "", 
+            "title": "CLOSE"
+        }, 
+        {
+            "location": "/sql-ref/#cluster", 
+            "text": "", 
+            "title": "CLUSTER"
+        }, 
+        {
+            "location": "/sql-ref/#comment", 
+            "text": "", 
+            "title": "COMMENT"
+        }, 
+        {
+            "location": "/sql-ref/#commit", 
+            "text": "", 
+            "title": "COMMIT"
+        }, 
+        {
+            "location": "/sql-ref/#copy", 
+            "text": "", 
+            "title": "COPY"
+        }, 
+        {
+            "location": "/sql-ref/#create-aggregate", 
+            "text": "", 
+            "title": "CREATE AGGREGATE"
+        }, 
+        {
+            "location": "/sql-ref/#create-cast", 
+            "text": "", 
+            "title": "CREATE CAST"
+        }, 
+        {
+            "location": "/sql-ref/#create-conversion", 
+            "text": "", 
+            "title": "CREATE CONVERSION"
+        }, 
+        {
+            "location": "/sql-ref/#create-database", 
+            "text": "", 
+            "title": "CREATE DATABASE"
+        }, 
+        {
+            "location": "/sql-ref/#create-domain", 
+            "text": "", 
+            "title": "CREATE DOMAIN"
+        }, 
+        {
+            "location": "/sql-ref/#create-external-table", 
+            "text": "", 
+            "title": "CREATE EXTERNAL TABLE"
+        }, 
+        {
+            "location": "/sql-ref/#create-function", 
+            "text": "", 
+            "title": "CREATE FUNCTION"
+        }, 
+        {
+            "location": "/sql-ref/#create-group", 
+            "text": "", 
+            "title": "CREATE GROUP"
+        }, 
+        {
+            "location": "/sql-ref/#create-index", 
+            "text": "", 
+            "title": "CREATE INDEX"
+        }, 
+        {
+            "location": "/sql-ref/#create-language", 
+            "text": "", 
+            "title": "CREATE LANGUAGE"
+        }, 
+        {
+            "location": "/sql-ref/#create-operator", 
+            "text": "", 
+            "title": "CREATE OPERATOR"
+        }, 
+        {
+            "location": "/sql-ref/#create-operator-class", 
+            "text": "", 
+            "title": "CREATE OPERATOR CLASS"
+        }, 
+        {
+            "location": "/sql-ref/#create-resource-queue", 
+            "text": "", 
+            "title": "CREATE RESOURCE QUEUE"
+        }, 
+        {
+            "location": "/sql-ref/#create-role", 
+            "text": "", 
+            "title": "CREATE ROLE"
+        }, 
+        {
+            "location": "/sql-ref/#create-rule", 
+            "text": "", 
+            "title": "CREATE RULE"
+        }, 
+        {
+            "location": "/sql-ref/#create-schema", 
+            "text": "", 
+            "title": "CREATE SCHEMA"
+        }, 
+        {
+            "location": "/sql-ref/#create-sequence", 
+            "text": "", 
+            "title": "CREATE SEQUENCE"
+        }, 
+        {
+            "location": "/sql-ref/#create-table", 
+            "text": "", 
+            "title": "CREATE TABLE"
+        }, 
+        {
+            "location": "/sql-ref/#create-table-as", 
+            "text": "", 
+            "title": "CREATE TABLE AS"
+        }, 
+        {
+            "location": "/sql-ref/#create-tablespace", 
+            "text": "", 
+            "title": "CREATE TABLESPACE"
+        }, 
+        {
+            "location": "/sql-ref/#create-type", 
+            "text": "", 
+            "title": "CREATE TYPE"
+        }, 
+        {
+            "location": "/sql-ref/#create-user", 
+            "text": "", 
+            "title": "CREATE USER"
+        }, 
+        {
+            "location": "/sql-ref/#create-view", 
+            "text": "", 
+            "title": "CREATE VIEW"
+        }, 
+        {
+            "location": "/sql-ref/#deallocate", 
+            "text": "", 
+            "title": "DEALLOCATE"
+        }, 
+        {
+            "location": "/sql-ref/#declare", 
+            "text": "", 
+            "title": "DECLARE"
+        }, 
+        {
+            "location": "/sql-ref/#delete", 
+            "text": "", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-aggregate", 
+            "text": "", 
+            "title": "DROP AGGREGATE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-cast", 
+            "text": "", 
+            "title": "DROP CAST"
+        }, 
+        {
+            "location": "/sql-ref/#drop-conversion", 
+            "text": "", 
+            "title": "DROP CONVERSION"
+        }, 
+        {
+            "location": "/sql-ref/#drop-database", 
+            "text": "", 
+            "title": "DROP DATABASE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-domain", 
+            "text": "", 
+            "title": "DROP DOMAIN"
+        }, 
+        {
+            "location": "/sql-ref/#drop-external-table", 
+            "text": "", 
+            "title": "DROP EXTERNAL TABLE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-filespace", 
+            "text": "", 
+            "title": "DROP FILESPACE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-function", 
+            "text": "", 
+            "title": "DROP FUNCTION"
+        }, 
+        {
+            "location": "/sql-ref/#drop-group", 
+            "text": "", 
+            "title": "DROP GROUP"
+        }, 
+        {
+            "location": "/sql-ref/#drop-index", 
+            "text": "", 
+            "title": "DROP INDEX"
+        }, 
+        {
+            "location": "/sql-ref/#drop-language", 
+            "text": "", 
+            "title": "DROP LANGUAGE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-operator", 
+            "text": "", 
+            "title": "DROP OPERATOR"
+        }, 
+        {
+            "location": "/sql-ref/#drop-operator-class", 
+            "text": "", 
+            "title": "DROP OPERATOR CLASS"
+        }, 
+        {
+            "location": "/sql-ref/#drop-owned", 
+            "text": "", 
+            "title": "DROP OWNED"
+        }, 
+        {
+            "location": "/sql-ref/#drop-resource-queue", 
+            "text": "", 
+            "title": "DROP RESOURCE QUEUE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-role", 
+            "text": "", 
+            "title": "DROP ROLE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-rule", 
+            "text": "", 
+            "title": "DROP RULE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-schema", 
+            "text": "", 
+            "title": "DROP SCHEMA"
+        }, 
+        {
+            "location": "/sql-ref/#drop-sequence", 
+            "text": "", 
+            "title": "DROP SEQUENCE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-table", 
+            "text": "", 
+            "title": "DROP TABLE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-tablespace", 
+            "text": "", 
+            "title": "DROP TABLESPACE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-type", 
+            "text": "", 
+            "title": "DROP TYPE"
+        }, 
+        {
+            "location": "/sql-ref/#drop-user", 
+            "text": "", 
+            "title": "DROP USER"
+        }, 
+        {
+            "location": "/sql-ref/#drop-view", 
+            "text": "", 
+            "title": "DROP VIEW"
+        }, 
+        {
+            "location": "/sql-ref/#end", 
+            "text": "", 
+            "title": "END"
+        }, 
+        {
+            "location": "/sql-ref/#execute", 
+            "text": "", 
+            "title": "EXECUTE"
+        }, 
+        {
+            "location": "/sql-ref/#explain", 
+            "text": "", 
+            "title": "EXPLAIN"
+        }, 
+        {
+            "location": "/sql-ref/#fetch", 
+            "text": "", 
+            "title": "FETCH"
+        }, 
+        {
+            "location": "/sql-ref/#grant", 
+            "text": "", 
+            "title": "GRANT"
+        }, 
+        {
+            "location": "/sql-ref/#insert", 
+            "text": "", 
+            "title": "INSERT"
+        }, 
+        {
+            "location": "/sql-ref/#load", 
+            "text": "", 
+            "title": "LOAD"
+        }, 
+        {
+            "location": "/sql-ref/#lock", 
+            "text": "", 
+            "title": "LOCK"
+        }, 
+        {
+            "location": "/sql-ref/#move", 
+            "text": "", 
+            "title": "MOVE"
+        }, 
+        {
+            "location": "/sql-ref/#prepare", 
+            "text": "", 
+            "title": "PREPARE"
+        }, 
+        {
+            "location": "/sql-ref/#reassign-owned", 
+            "text": "", 
+            "title": "REASSIGN OWNED"
+        }, 
+        {
+            "location": "/sql-ref/#reindex", 
+            "text": "", 
+            "title": "REINDEX"
+        }, 
+        {
+            "location": "/sql-ref/#release-savepoint", 
+            "text": "", 
+            "title": "RELEASE SAVEPOINT"
+        }, 
+        {
+            "location": "/sql-ref/#reset", 
+            "text": "", 
+            "title": "RESET"
+        }, 
+        {
+            "location": "/sql-ref/#revoke", 
+            "text": "", 
+            "title": "REVOKE"
+        }, 
+        {
+            "location": "/sql-ref/#rollback", 
+            "text": "", 
+            "title": "ROLLBACK"
+        }, 
+        {
+            "location": "/sql-ref/#rollback-to-savepoint", 
+            "text": "", 
+            "title": "ROLLBACK TO SAVEPOINT"
+        }, 
+        {
+            "location": "/sql-ref/#savepoint", 
+            "text": "", 
+            "title": "SAVEPOINT"
+        }, 
+        {
+            "location": "/sql-ref/#select", 
+            "text": "", 
+            "title": "SELECT"
+        }, 
+        {
+            "location": "/sql-ref/#select-into", 
+            "text": "", 
+            "title": "SELECT INTO"
+        }, 
+        {
+            "location": "/sql-ref/#set", 
+            "text": "", 
+            "title": "SET"
+        }, 
+        {
+            "location": "/sql-ref/#set-role", 
+            "text": "", 
+            "title": "SET ROLE"
+        }, 
+        {
+            "location": "/sql-ref/#set-session-authorization", 
+            "text": "", 
+            "title": "SET SESSION AUTHORIZATION"
+        }, 
+        {
+            "location": "/sql-ref/#set-transaction", 
+            "text": "", 
+            "title": "SET TRANSACTION"
+        }, 
+        {
+            "location": "/sql-ref/#show", 
+            "text": "", 
+            "title": "SHOW"
+        }, 
+        {
+            "location": "/sql-ref/#start-transaction", 
+            "text": "", 
+            "title": "START TRANSACTION"
+        }, 
+        {
+            "location": "/sql-ref/#truncate", 
+            "text": "", 
+            "title": "TRUNCATE"
+        }, 
+        {
+            "location": "/sql-ref/#update", 
+            "text": "", 
+            "title": "UPDATE"
+        }, 
+        {
+            "location": "/sql-ref/#vacuum", 
+            "text": "", 
+            "title": "VACUUM"
+        }, 
+        {
+            "location": "/sql-ref/#values", 
+            "text": "", 
+            "title": "VALUES"
+        }, 
+        {
+            "location": "/sql-ref/sql-ref-summary/", 
+            "text": "SQL Syntax Summary\n\n\nABORT\n\n\nAborts the current transaction.\n\n\nABORT [WORK | TRANSACTION]\n\n\n\nSee ABORT for more information.\n\n\nALTER AGGREGATE\n\n\nChanges the definition of an aggregate function\n\n\nALTER AGGREGATE name ( type [ , ... ] ) RENAME TO new_name\n\nALTER AGGREGATE name ( type [ , ... ] ) OWNER TO new_owner\n\nALTER AGGREGATE name ( type [ , ... ] ) SET SCHEMA new_schema\n\n\n\nSee ALTER AGGREGATE for more information.\n\n\nALTER CONVERSION\n\n\nChanges the definition of a conversion.\n\n\nALTER CONVERSION name RENAME TO newname\n\nALTER CONVERSION name OWNER TO newowner\n\n\n\nSee ALTER CONVERSION for more information.\n\n\nALTER DATABASE\n\n\nChanges the attributes of a database.\n\n\nALTER DATABASE name [ WITH CONNECTION LIMIT connlimit ]\n\nALTER DATABASE name SET parameter { TO | = } { value | DEFAULT }\n\nALTER DATABASE name RESET parameter\n\nALTER DATABASE name RENAME TO newname\n\nALTER DATABASE name OWNER TO new_owner\n\n\n\nSee ALTER DATABASE for more information.\n\n\nALTER DOMAIN\n\n\nChanges the definition of a domain.\n\n\nALTER DOMAIN name { SET DEFAULT expression | DROP DEFAULT }\n\nALTER DOMAIN name { SET | DROP } NOT NULL\n\nALTER DOMAIN name ADD domain_constraint\n\nALTER DOMAIN name DROP CONSTRAINT constraint_name [RESTRICT | CASCADE]\n\nALTER DOMAIN name OWNER TO new_owner\n\nALTER DOMAIN name SET SCHEMA new_schema\n\n\n\nSee ALTER DOMAIN for more information.\n\n\nALTER EXTERNAL TABLE\n\n\nChanges the definition of an external table.\n\n\nALTER EXTERNAL TABLE name RENAME [COLUMN] column TO new_column\n\nALTER EXTERNAL TABLE name RENAME TO new_name\n\nALTER EXTERNAL TABLE name SET SCHEMA new_schema\n\nALTER EXTERNAL TABLE name action [, ... ]\n\n\n\nSee ALTER EXTERNAL TABLE for more information.\n\n\nALTER FILESPACE\n\n\nChanges the definition of a filespace.\n\n\nALTER FILESPACE name RENAME TO newname\n\nALTER FILESPACE name OWNER TO newowner\n\n\n\nSee ALTER FILESPACE for more information.\n\n\nALTER FUNCTION\n\n\nChanges the definition of a function.\n\n\nALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] ) \n   action [, ... ] [RESTRICT]\n\nALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] )\n   RENAME TO new_name\n\nALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] ) \n   OWNER TO new_owner\n\nALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] ) \n   SET SCHEMA new_schema\n\n\n\nSee ALTER FUNCTION for more information.\n\n\nALTER GROUP\n\n\nChanges a role name or membership.\n\n\nALTER GROUP groupname ADD USER username [, ... ]\n\nALTER GROUP groupname DROP USER username [, ... ]\n\nALTER GROUP groupname RENAME TO newname\n\n\n\nSee ALTER GROUP for more information.\n\n\nALTER INDEX\n\n\nChanges the definition of an index.\n\n\nALTER INDEX name RENAME TO new_name\n\nALTER INDEX name SET TABLESPACE tablespace_name\n\nALTER INDEX name SET ( FILLFACTOR = value )\n\nALTER INDEX name RESET ( FILLFACTOR )\n\n\n\nSee ALTER INDEX for more information.\n\n\nALTER LANGUAGE\n\n\nChanges the name of a procedural language.\n\n\nALTER LANGUAGE name RENAME TO newname\n\n\n\nSee ALTER LANGUAGE for more information.\n\n\nALTER OPERATOR\n\n\nChanges the definition of an operator.\n\n\nALTER OPERATOR name ( {lefttype | NONE} , {righttype | NONE} ) \n   OWNER TO newowner\n\n\n\nSee ALTER OPERATOR for more information.\n\n\nALTER OPERATOR CLASS\n\n\nChanges the definition of an operator class.\n\n\nALTER OPERATOR CLASS name USING index_method RENAME TO newname\n\nALTER OPERATOR CLASS name USING index_method OWNER TO newowner\n\n\n\nSee ALTER OPERATOR CLASS for more information.\n\n\nALTER PROTOCOL\n\n\nChanges the definition of a protocol.\n\n\nALTER PROTOCOL name RENAME TO newname\n\nALTER PROTOCOL name OWNER TO newowner\n\n\n\nSee ALTER PROTOCOL for more information.\n\n\nALTER RESOURCE QUEUE\n\n\nChanges the limits of a resource queue.\n\n\nALTER RESOURCE QUEUE name WITH ( queue_attribute=value [, ... ] )\n\n\n\nSee ALTER RESOURCE QUEUE for more information.\n\n\nALTER ROLE\n\n\nChanges a database role (user or group).\n\n\nALTER ROLE name RENAME TO newname\n\nALTER ROLE name SET config_parameter {TO | =} {value | DEFAULT}\n\nALTER ROLE name RESET config_parameter\n\nALTER ROLE name RESOURCE QUEUE {queue_name | NONE}\n\nALTER ROLE name [ [WITH] option [ ... ] ]\n\n\n\nSee ALTER ROLE for more information.\n\n\nALTER SCHEMA\n\n\nChanges the definition of a schema.\n\n\nALTER SCHEMA name RENAME TO newname\n\nALTER SCHEMA name OWNER TO newowner\n\n\n\nSee ALTER SCHEMA for more information.\n\n\nALTER SEQUENCE\n\n\nChanges the definition of a sequence generator.\n\n\nALTER SEQUENCE name [INCREMENT [ BY ] increment] \n     [MINVALUE minvalue | NO MINVALUE] \n     [MAXVALUE maxvalue | NO MAXVALUE] \n     [RESTART [ WITH ] start] \n     [CACHE cache] [[ NO ] CYCLE] \n     [OWNED BY {table.column | NONE}]\n\nALTER SEQUENCE name SET SCHEMA new_schema\n\n\n\nSee ALTER SEQUENCE for more information.\n\n\nALTER TABLE\n\n\nChanges the definition of a table.\n\n\nALTER TABLE [ONLY] name RENAME [COLUMN] column TO new_column\n\nALTER TABLE name RENAME TO new_name\n\nALTER TABLE name SET SCHEMA new_schema\n\nALTER TABLE [ONLY] name SET \n     DISTRIBUTED BY (column, [ ... ] ) \n   | DISTRIBUTED RANDOMLY \n   | WITH (REORGANIZE=true|false)\n\nALTER TABLE [ONLY] name action [, ... ]\n\nALTER TABLE name\n   [ ALTER PARTITION { partition_name | FOR (RANK(number)) \n   | FOR (value) } partition_action [...] ] \n   partition_action\n\n\n\nSee ALTER TABLE for more information.\n\n\nALTER TABLESPACE\n\n\nChanges the definition of a tablespace.\n\n\nALTER TABLESPACE name RENAME TO newname\n\nALTER TABLESPACE name OWNER TO newowner\n\n\n\nSee ALTER TABLESPACE for more information.\n\n\nALTER TYPE\n\n\nChanges the definition of a data type.\n\n\nALTER TYPE name\n   OWNER TO new_owner | SET SCHEMA new_schema\n\n\n\nSee ALTER TYPE for more information.\n\n\nALTER USER\n\n\nChanges the definition of a database role (user).\n\n\nALTER USER name RENAME TO newname\n\nALTER USER name SET config_parameter {TO | =} {value | DEFAULT}\n\nALTER USER name RESET config_parameter\n\nALTER USER name [ [WITH] option [ ... ] ]\n\n\n\nSee ALTER USER for more information.\n\n\nANALYZE\n\n\nCollects statistics about a database.\n\n\nANALYZE [VERBOSE] [ROOTPARTITION [ALL] ] \n   [table [ (column [, ...] ) ]]\n\n\n\nSee ANALYZE for more information.\n\n\nBEGIN\n\n\nStarts a transaction block.\n\n\nBEGIN [WORK | TRANSACTION] [transaction_mode]\n      [READ ONLY | READ WRITE]\n\n\n\nSee BEGIN for more information.\n\n\nCHECKPOINT\n\n\nForces a transaction log checkpoint.\n\n\nCHECKPOINT\n\n\n\nSee CHECKPOINT for more information.\n\n\nCLOSE\n\n\nCloses a cursor.\n\n\nCLOSE cursor_name\n\n\n\nSee CLOSE for more information.\n\n\nCLUSTER\n\n\nPhysically reorders a heap storage table on disk according to an index. Not a recommended operation in Greenplum Database.\n\n\nCLUSTER indexname ON tablename\n\nCLUSTER tablename\n\nCLUSTER\n\n\n\nSee CLUSTER for more information.\n\n\nCOMMENT\n\n\nDefines or change the comment of an object.\n\n\nCOMMENT ON\n{ TABLE object_name |\n  COLUMN table_name.column_name |\n  AGGREGATE agg_name (agg_type [, ...]) |\n  CAST (sourcetype AS targettype) |\n  CONSTRAINT constraint_name ON table_name |\n  CONVERSION object_name |\n  DATABASE object_name |\n  DOMAIN object_name |\n  FILESPACE object_name |\n  FUNCTION func_name ([[argmode] [argname] argtype [, ...]]) |\n  INDEX object_name |\n  LARGE OBJECT large_object_oid |\n  OPERATOR op (leftoperand_type, rightoperand_type) |\n  OPERATOR CLASS object_name USING index_method |\n  [PROCEDURAL] LANGUAGE object_name |\n  RESOURCE QUEUE object_name |\n  ROLE object_name |\n  RULE rule_name ON table_name |\n  SCHEMA object_name |\n  SEQUENCE object_name |\n  TABLESPACE object_name |\n  TRIGGER trigger_name ON table_name |\n  TYPE object_name |\n  VIEW object_name } \nIS 'text'\n\n\n\nSee COMMENT for more information.\n\n\nCOMMIT\n\n\nCommits the current transaction.\n\n\nCOMMIT [WORK | TRANSACTION]\n\n\n\nSee COMMIT for more information.\n\n\nCOPY\n\n\nCopies data between a file and a table.\n\n\nCOPY table [(column [, ...])] FROM {'file' | STDIN}\n     [ [WITH] \n       [OIDS]\n       [HEADER]\n       [DELIMITER [ AS ] 'delimiter']\n       [NULL [ AS ] 'null string']\n       [ESCAPE [ AS ] 'escape' | 'OFF']\n       [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n       [CSV [QUOTE [ AS ] 'quote'] \n            [FORCE NOT NULL column [, ...]]\n       [FILL MISSING FIELDS]\n       [[LOG ERRORS [INTO error_table] [KEEP] \n       SEGMENT REJECT LIMIT count [ROWS | PERCENT] ]\n\nCOPY {table [(column [, ...])] | (query)} TO {'file' | STDOUT}\n      [ [WITH] \n        [OIDS]\n        [HEADER]\n        [DELIMITER [ AS ] 'delimiter']\n        [NULL [ AS ] 'null string']\n        [ESCAPE [ AS ] 'escape' | 'OFF']\n        [CSV [QUOTE [ AS ] 'quote'] \n             [FORCE QUOTE column [, ...]] ]\n      [IGNORE EXTERNAL PARTITIONS ]\n\n\n\nSee COPY for more information.\n\n\nCREATE AGGREGATE\n\n\nDefines a new aggregate function.\n\n\nCREATE [ORDERED] AGGREGATE name (input_data_type [ , ... ]) \n      ( SFUNC = sfunc,\n        STYPE = state_data_type\n        [, PREFUNC = prefunc]\n        [, FINALFUNC = ffunc]\n        [, INITCOND = initial_condition]\n        [, SORTOP = sort_operator] )\n\n\n\nSee CREATE AGGREGATE for more information.\n\n\nCREATE CAST\n\n\nDefines a new cast.\n\n\nCREATE CAST (sourcetype AS targettype) \n       WITH FUNCTION funcname (argtypes) \n       [AS ASSIGNMENT | AS IMPLICIT]\n\nCREATE CAST (sourcetype AS targettype) WITHOUT FUNCTION \n       [AS ASSIGNMENT | AS IMPLICIT]\n\n\n\nSee CREATE CAST for more information.\n\n\nCREATE CONVERSION\n\n\nDefines a new encoding conversion.\n\n\nCREATE [DEFAULT] CONVERSION name FOR source_encoding TO \n     dest_encoding FROM funcname\n\n\n\nSee CREATE CONVERSION for more information.\n\n\nCREATE DATABASE\n\n\nCreates a new database.\n\n\nCREATE DATABASE name [ [WITH] [OWNER [=] dbowner]\n                     [TEMPLATE [=] template]\n                     [ENCODING [=] encoding]\n                     [TABLESPACE [=] tablespace]\n                     [CONNECTION LIMIT [=] connlimit ] ]\n\n\n\nSee CREATE DATABASE for more information.\n\n\nCREATE DOMAIN\n\n\nDefines a new domain.\n\n\nCREATE DOMAIN name [AS] data_type [DEFAULT expression] \n       [CONSTRAINT constraint_name\n       | NOT NULL | NULL \n       | CHECK (expression) [...]]\n\n\n\nSee CREATE DOMAIN for more information.\n\n\nCREATE EXTERNAL TABLE\n\n\nDefines a new external table.\n\n\nCREATE [READABLE] EXTERNAL TABLE table_name     \n    ( column_name data_type [, ...] | LIKE other_table )\n      LOCATION ('file://seghost[:port]/path/file' [, ...])\n        | ('gpfdist://filehost[:port]/file_pattern[#transform]'\n        | ('gpfdists://filehost[:port]/file_pattern[#transform]'\n            [, ...])\n        | ('gphdfs://hdfs_host[:port]/path/file')\n      FORMAT 'TEXT' \n            [( [HEADER]\n               [DELIMITER [AS] 'delimiter' | 'OFF']\n               [NULL [AS] 'null string']\n               [ESCAPE [AS] 'escape' | 'OFF']\n               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n               [FILL MISSING FIELDS] )]\n           | 'CSV'\n            [( [HEADER]\n               [QUOTE [AS] 'quote'] \n               [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [FORCE NOT NULL column [, ...]]\n               [ESCAPE [AS] 'escape']\n               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n               [FILL MISSING FIELDS] )]\n           | 'AVRO' \n           | 'PARQUET'\n\n           | 'CUSTOM' (Formatter=\nformatter specifications\n)\n     [ ENCODING 'encoding' ]\n     [ [LOG ERRORS [INTO error_table]] SEGMENT REJECT LIMIT count\n       [ROWS | PERCENT] ]\n\nCREATE [READABLE] EXTERNAL WEB TABLE table_name     \n   ( column_name data_type [, ...] | LIKE other_table )\n      LOCATION ('http://webhost[:port]/path/file' [, ...])\n    | EXECUTE 'command' [ON ALL \n                          | MASTER\n                          | number_of_segments\n                          | HOST ['segment_hostname'] \n                          | SEGMENT segment_id ]\n      FORMAT 'TEXT' \n            [( [HEADER]\n               [DELIMITER [AS] 'delimiter' | 'OFF']\n               [NULL [AS] 'null string']\n               [ESCAPE [AS] 'escape' | 'OFF']\n               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n               [FILL MISSING FIELDS] )]\n           | 'CSV'\n            [( [HEADER]\n               [QUOTE [AS] 'quote'] \n               [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [FORCE NOT NULL column [, ...]]\n               [ESCAPE [AS] 'escape']\n               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n               [FILL MISSING FIELDS] )]\n           | 'CUSTOM' (Formatter=\nformatter specifications\n)\n     [ ENCODING 'encoding' ]\n     [ [LOG ERRORS [INTO error_table]] SEGMENT REJECT LIMIT count\n       [ROWS | PERCENT] ]\n\nCREATE WRITABLE EXTERNAL TABLE table_name\n    ( column_name data_type [, ...] | LIKE other_table )\n     LOCATION('gpfdist://outputhost[:port]/filename[#transform]'\n      | ('gpfdists://outputhost[:port]/file_pattern[#transform]'\n          [, ...])\n      | ('gphdfs://hdfs_host[:port]/path')\n      FORMAT 'TEXT' \n               [( [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [ESCAPE [AS] 'escape' | 'OFF'] )]\n          | 'CSV'\n               [([QUOTE [AS] 'quote'] \n               [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [FORCE QUOTE column [, ...]] ]\n               [ESCAPE [AS] 'escape'] )]\n           | 'AVRO' \n           | 'PARQUET'\n\n           | 'CUSTOM' (Formatter=\nformatter specifications\n)\n    [ ENCODING 'write_encoding' ]\n    [ DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY ]\n\nCREATE WRITABLE EXTERNAL WEB TABLE table_name\n    ( column_name data_type [, ...] | LIKE other_table )\n    EXECUTE 'command' [ON ALL]\n    FORMAT 'TEXT' \n               [( [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [ESCAPE [AS] 'escape' | 'OFF'] )]\n          | 'CSV'\n               [([QUOTE [AS] 'quote'] \n               [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [FORCE QUOTE column [, ...]] ]\n               [ESCAPE [AS] 'escape'] )]\n           | 'CUSTOM' (Formatter=\nformatter specifications\n)\n    [ ENCODING 'write_encoding' ]\n    [ DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY ]\n\n\n\nSee CREATE EXTERNAL TABLE for more information.\n\n\nCREATE FUNCTION\n\n\nDefines a new function.\n\n\nCREATE [OR REPLACE] FUNCTION name    \n    ( [ [argmode] [argname] argtype [, ...] ] )\n      [ RETURNS { [ SETOF ] rettype \n        | TABLE ([{ argname argtype | LIKE other table }\n          [, ...]])\n        } ]\n    { LANGUAGE langname\n    | IMMUTABLE | STABLE | VOLATILE\n    | CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT\n    | [EXTERNAL] SECURITY INVOKER | [EXTERNAL] SECURITY DEFINER\n    | AS 'definition'\n    | AS 'obj_file', 'link_symbol' } ...\n    [ WITH ({ DESCRIBE = describe_function\n           } [, ...] ) ]\n\n\n\nSee CREATE FUNCTION for more information.\n\n\nCREATE GROUP\n\n\nDefines a new database role.\n\n\nCREATE GROUP name [ [WITH] option [ ... ] ]\n\n\n\nSee CREATE GROUP for more information.\n\n\nCREATE INDEX\n\n\nDefines a new index.\n\n\nCREATE [UNIQUE] INDEX name ON table\n       [USING btree|bitmap|gist]\n       ( {column | (expression)} [opclass] [, ...] )\n       [ WITH ( FILLFACTOR = value ) ]\n       [TABLESPACE tablespace]\n       [WHERE predicate]\n\n\n\nSee CREATE INDEX for more information.\n\n\nCREATE LANGUAGE\n\n\nDefines a new procedural language.\n\n\nCREATE [PROCEDURAL] LANGUAGE name\n\nCREATE [TRUSTED] [PROCEDURAL] LANGUAGE name\n       HANDLER call_handler [VALIDATOR valfunction]\n\n\n\nSee CREATE LANGUAGE for more information.\n\n\nCREATE OPERATOR\n\n\nDefines a new operator.\n\n\nCREATE OPERATOR name ( \n       PROCEDURE = funcname\n       [, LEFTARG = lefttype] [, RIGHTARG = righttype]\n       [, COMMUTATOR = com_op] [, NEGATOR = neg_op]\n       [, RESTRICT = res_proc] [, JOIN = join_proc]\n       [, HASHES] [, MERGES]\n       [, SORT1 = left_sort_op] [, SORT2 = right_sort_op]\n       [, LTCMP = less_than_op] [, GTCMP = greater_than_op] )\n\n\n\nSee CREATE OPERATOR for more information.\n\n\nCREATE OPERATOR CLASS\n\n\nDefines a new operator class.\n\n\nCREATE OPERATOR CLASS name [DEFAULT] FOR TYPE data_type  \n  USING index_method AS \n  { \n  OPERATOR strategy_number op_name [(op_type, op_type)] [RECHECK]\n  | FUNCTION support_number funcname (argument_type [, ...] )\n  | STORAGE storage_type\n  } [, ... ]\n\n\n\nSee CREATE OPERATOR CLASS for more information.\n\n\nCREATE RESOURCE QUEUE\n\n\nDefines a new resource queue.\n\n\nCREATE RESOURCE QUEUE name WITH (queue_attribute=value [, ... ])\n\n\n\nSee CREATE RESOURCE QUEUE for more information.\n\n\nCREATE ROLE\n\n\nDefines a new database role (user or group).\n\n\nCREATE ROLE name [[WITH] option [ ... ]]\n\n\n\nSee CREATE ROLE for more information.\n\n\nCREATE RULE\n\n\nDefines a new rewrite rule.\n\n\nCREATE [OR REPLACE] RULE name AS ON event\n  TO table [WHERE condition] \n  DO [ALSO | INSTEAD] { NOTHING | command | (command; command \n  ...) }\n\n\n\nSee CREATE RULE for more information.\n\n\nCREATE SCHEMA\n\n\nDefines a new schema.\n\n\nCREATE SCHEMA schema_name [AUTHORIZATION username] \n   [schema_element [ ... ]]\n\nCREATE SCHEMA AUTHORIZATION rolename [schema_element [ ... ]]\n\n\n\nSee CREATE SCHEMA for more information.\n\n\nCREATE SEQUENCE\n\n\nDefines a new sequence generator.\n\n\nCREATE [TEMPORARY | TEMP] SEQUENCE name\n       [INCREMENT [BY] value] \n       [MINVALUE minvalue | NO MINVALUE] \n       [MAXVALUE maxvalue | NO MAXVALUE] \n       [START [ WITH ] start] \n       [CACHE cache] \n       [[NO] CYCLE] \n       [OWNED BY { table.column | NONE }]\n\n\n\nSee CREATE SEQUENCE for more information.\n\n\nCREATE TABLE\n\n\nDefines a new table.\n\n\nCREATE [[GLOBAL | LOCAL] {TEMPORARY | TEMP}] TABLE table_name ( \n[ { column_name data_type [ DEFAULT default_expr ] \n   [column_constraint [ ... ]\n[ ENCODING ( storage_directive [,...] ) ]\n] \n   | table_constraint\n   | LIKE other_table [{INCLUDING | EXCLUDING} \n                      {DEFAULTS | CONSTRAINTS}] ...}\n   [, ... ] ]\n   )\n   [ INHERITS ( parent_table [, ... ] ) ]\n   [ WITH ( storage_parameter=value [, ... ] )\n   [ ON COMMIT {PRESERVE ROWS | DELETE ROWS | DROP} ]\n   [ TABLESPACE tablespace ]\n   [ DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY ]\n   [ PARTITION BY partition_type (column)\n       [ SUBPARTITION BY partition_type (column) ] \n          [ SUBPARTITION TEMPLATE ( template_spec ) ]\n       [...]\n    ( partition_spec ) \n        | [ SUBPARTITION BY partition_type (column) ]\n          [...]\n    ( partition_spec\n      [ ( subpartition_spec\n           [(...)] \n         ) ] \n    )\n\n\n\nSee CREATE TABLE for more information.\n\n\nCREATE TABLE AS\n\n\nDefines a new table from the results of a query.\n\n\nCREATE [ [GLOBAL | LOCAL] {TEMPORARY | TEMP} ] TABLE table_name\n   [(column_name [, ...] )]\n   [ WITH ( storage_parameter=value [, ... ] ) ]\n   [ON COMMIT {PRESERVE ROWS | DELETE ROWS | DROP}]\n   [TABLESPACE tablespace]\n   AS query\n   [DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY]\n\n\n\nSee CREATE TABLE AS for more information.\n\n\nCREATE TABLESPACE\n\n\nDefines a new tablespace.\n\n\nCREATE TABLESPACE tablespace_name [OWNER username] \n       FILESPACE filespace_name\n\n\n\nSee CREATE TABLESPACE for more information.\n\n\nCREATE TYPE\n\n\nDefines a new data type.\n\n\nCREATE TYPE name AS ( attribute_name data_type [, ... ] )\n\nCREATE TYPE name (\n    INPUT = input_function,\n    OUTPUT = output_function\n    [, RECEIVE = receive_function]\n    [, SEND = send_function]\n    [, INTERNALLENGTH = {internallength | VARIABLE}]\n    [, PASSEDBYVALUE]\n    [, ALIGNMENT = alignment]\n    [, STORAGE = storage]\n    [, DEFAULT = default]\n    [, ELEMENT = element]\n    [, DELIMITER = delimiter] )\n\nCREATE TYPE name\n\n\n\nSee CREATE TYPE for more information.\n\n\nCREATE USER\n\n\nDefines a new database role with the LOGIN privilege by default.\n\n\nCREATE USER name [ [WITH] option [ ... ] ]\n\n\n\nSee CREATE USER for more information.\n\n\nCREATE VIEW\n\n\nDefines a new view.\n\n\nCREATE [OR REPLACE] [TEMP | TEMPORARY] VIEW name\n       [ ( column_name [, ...] ) ]\n       AS query\n\n\n\nSee CREATE VIEW for more information.\n\n\nDEALLOCATE\n\n\nDeallocates a prepared statement.\n\n\nDEALLOCATE [PREPARE] name\n\n\n\nSee DEALLOCATE for more information.\n\n\nDECLARE\n\n\nDefines a cursor.\n\n\nDECLARE name [BINARY] [INSENSITIVE] [NO SCROLL] CURSOR \n     [{WITH | WITHOUT} HOLD] \n     FOR query [FOR READ ONLY]\n\n\n\nSee DECLARE for more information.\n\n\nDELETE\n\n\nDeletes rows from a table.\n\n\nDELETE FROM [ONLY] table [[AS] alias]\n      [USING usinglist]\n      [WHERE condition | WHERE CURRENT OF cursor_name ]\n\n\n\nSee DELETE for more information.\n\n\nDROP AGGREGATE\n\n\nRemoves an aggregate function.\n\n\nDROP AGGREGATE [IF EXISTS] name ( type [, ...] ) [CASCADE | RESTRICT]\n\n\n\nSee DROP AGGREGATE for more information.\n\n\nDROP CAST\n\n\nRemoves a cast.\n\n\nDROP CAST [IF EXISTS] (sourcetype AS targettype) [CASCADE | RESTRICT]\n\n\n\nSee DROP CAST for more information.\n\n\nDROP CONVERSION\n\n\nRemoves a conversion.\n\n\nDROP CONVERSION [IF EXISTS] name [CASCADE | RESTRICT]\n\n\n\nSee DROP CONVERSION for more information.\n\n\nDROP DATABASE\n\n\nRemoves a database.\n\n\nDROP DATABASE [IF EXISTS] name\n\n\n\nSee DROP DATABASE for more information.\n\n\nDROP DOMAIN\n\n\nRemoves a domain.\n\n\nDROP DOMAIN [IF EXISTS] name [, ...]  [CASCADE | RESTRICT]\n\n\n\nSee DROP DOMAIN for more information.\n\n\nDROP EXTERNAL TABLE\n\n\nRemoves an external table definition.\n\n\nDROP EXTERNAL [WEB] TABLE [IF EXISTS] name [CASCADE | RESTRICT]\n\n\n\nSee DROP EXTERNAL TABLE for more information.\n\n\nDROP FILESPACE\n\n\nRemoves a filespace.\n\n\nDROP FILESPACE [IF EXISTS] filespacename\n\n\n\nSee DROP FILESPACE for more information.\n\n\nDROP FUNCTION\n\n\nRemoves a function.\n\n\nDROP FUNCTION [IF EXISTS] name ( [ [argmode] [argname] argtype \n    [, ...] ] ) [CASCADE | RESTRICT]\n\n\n\nSee DROP FUNCTION for more information.\n\n\nDROP GROUP\n\n\nRemoves a database role.\n\n\nDROP GROUP [IF EXISTS] name [, ...]\n\n\n\nSee DROP GROUP for more information.\n\n\nDROP INDEX\n\n\nRemoves an index.\n\n\nDROP INDEX [IF EXISTS] name [, ...] [CASCADE | RESTRICT]\n\n\n\nSee DROP INDEX for more information.\n\n\nDROP LANGUAGE\n\n\nRemoves a procedural language.\n\n\nDROP [PROCEDURAL] LANGUAGE [IF EXISTS] name [CASCADE | RESTRICT]\n\n\n\nSee DROP LANGUAGE for more information.\n\n\nDROP OPERATOR\n\n\nRemoves an operator.\n\n\nDROP OPERATOR [IF EXISTS] name ( {lefttype | NONE} , \n    {righttype | NONE} ) [CASCADE | RESTRICT]\n\n\n\nSee DROP OPERATOR for more information.\n\n\nDROP OPERATOR CLASS\n\n\nRemoves an operator class.\n\n\nDROP OPERATOR CLASS [IF EXISTS] name USING index_method [CASCADE | RESTRICT]\n\n\n\nSee DROP OPERATOR CLASS for more information.\n\n\nDROP OWNED\n\n\nRemoves database objects owned by a database role.\n\n\nDROP OWNED BY name [, ...] [CASCADE | RESTRICT]\n\n\n\nSee DROP OWNED for more information.\n\n\nDROP RESOURCE QUEUE\n\n\nRemoves a resource queue.\n\n\nDROP RESOURCE QUEUE queue_name\n\n\n\nSee DROP RESOURCE QUEUE for more information.\n\n\nDROP ROLE\n\n\nRemoves a database role.\n\n\nDROP ROLE [IF EXISTS] name [, ...]\n\n\n\nSee DROP ROLE for more information.\n\n\nDROP RULE\n\n\nRemoves a rewrite rule.\n\n\nDROP RULE [IF EXISTS] name ON relation [CASCADE | RESTRICT]\n\n\n\nSee DROP RULE for more information.\n\n\nDROP SCHEMA\n\n\nRemoves a schema.\n\n\nDROP SCHEMA [IF EXISTS] name [, ...] [CASCADE | RESTRICT]\n\n\n\nSee DROP SCHEMA for more information.\n\n\nDROP SEQUENCE\n\n\nRemoves a sequence.\n\n\nDROP SEQUENCE [IF EXISTS] name [, ...] [CASCADE | RESTRICT]\n\n\n\nSee DROP SEQUENCE for more information.\n\n\nDROP TABLE\n\n\nRemoves a table.\n\n\nDROP TABLE [IF EXISTS] name [, ...] [CASCADE | RESTRICT]\n\n\n\nSee DROP TABLE for more information.\n\n\nDROP TABLESPACE\n\n\nRemoves a tablespace.\n\n\nDROP TABLESPACE [IF EXISTS] tablespacename\n\n\n\nSee DROP TABLESPACE for more information.\n\n\nDROP TYPE\n\n\nRemoves a data type.\n\n\nDROP TYPE [IF EXISTS] name [, ...] [CASCADE | RESTRICT]\n\n\n\nSee DROP TYPE for more information.\n\n\nDROP USER\n\n\nRemoves a database role.\n\n\nDROP USER [IF EXISTS] name [, ...]\n\n\n\nSee DROP USER for more information.\n\n\nDROP VIEW\n\n\nRemoves a view.\n\n\nDROP VIEW [IF EXISTS] name [, ...] [CASCADE | RESTRICT]\n\n\n\nSee DROP VIEW for more information.\n\n\nEND\n\n\nCommits the current transaction.\n\n\nEND [WORK | TRANSACTION]\n\n\n\nSee END for more information.\n\n\nEXECUTE\n\n\nExecutes a prepared SQL statement.\n\n\nEXECUTE name [ (parameter [, ...] ) ]\n\n\n\nSee EXECUTE for more information.\n\n\nEXPLAIN\n\n\nShows the query plan of a statement.\n\n\nEXPLAIN [ANALYZE] [VERBOSE] statement\n\n\n\nSee EXPLAIN for more information.\n\n\nFETCH\n\n\nRetrieves rows from a query using a cursor.\n\n\nFETCH [ forward_direction { FROM | IN } ] cursorname\n\n\n\nSee FETCH for more information.\n\n\nGRANT\n\n\nDefines access privileges.\n\n\nGRANT { {SELECT | INSERT | UPDATE | DELETE | REFERENCES | \nTRIGGER | TRUNCATE } [,...] | ALL [PRIVILEGES] }\n    ON [TABLE] tablename [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { {USAGE | SELECT | UPDATE} [,...] | ALL [PRIVILEGES] }\n    ON SEQUENCE sequencename [, ...]\n    TO { rolename | PUBLIC } [, ...] [WITH GRANT OPTION]\n\nGRANT { {CREATE | CONNECT | TEMPORARY | TEMP} [,...] | ALL \n[PRIVILEGES] }\n    ON DATABASE dbname [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { EXECUTE | ALL [PRIVILEGES] }\n    ON FUNCTION funcname ( [ [argmode] [argname] argtype [, ...] \n] ) [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { USAGE | ALL [PRIVILEGES] }\n    ON LANGUAGE langname [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { {CREATE | USAGE} [,...] | ALL [PRIVILEGES] }\n    ON SCHEMA schemaname [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { CREATE | ALL [PRIVILEGES] }\n    ON TABLESPACE tablespacename [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT parent_role [, ...] \n    TO member_role [, ...] [WITH ADMIN OPTION]\n\nGRANT { SELECT | INSERT | ALL [PRIVILEGES] } \n    ON PROTOCOL protocolname\n    TO username\n\n\n\nSee GRANT for more information.\n\n\nINSERT\n\n\nCreates new rows in a table.\n\n\nINSERT INTO table [( column [, ...] )]\n   {DEFAULT VALUES | VALUES ( {expression | DEFAULT} [, ...] ) \n   [, ...] | query}\n\n\n\nSee INSERT for more information.\n\n\nLOAD\n\n\nLoads or reloads a shared library file.\n\n\nLOAD 'filename'\n\n\n\nSee LOAD for more information.\n\n\nLOCK\n\n\nLocks a table.\n\n\nLOCK [TABLE] name [, ...] [IN lockmode MODE] [NOWAIT]\n\n\n\nSee LOCK for more information.\n\n\nMOVE\n\n\nPositions a cursor.\n\n\nMOVE [ forward_direction {FROM | IN} ] cursorname\n\n\n\nSee MOVE for more information.\n\n\nPREPARE\n\n\nPrepare a statement for execution.\n\n\nPREPARE name [ (datatype [, ...] ) ] AS statement\n\n\n\nSee PREPARE for more information.\n\n\nREASSIGN OWNED\n\n\nChanges the ownership of database objects owned by a database role.\n\n\nREASSIGN OWNED BY old_role [, ...] TO new_role\n\n\n\nSee REASSIGN OWNED for more information.\n\n\nREINDEX\n\n\nRebuilds indexes.\n\n\nREINDEX {INDEX | TABLE | DATABASE | SYSTEM} name\n\n\n\nSee REINDEX for more information.\n\n\nRELEASE SAVEPOINT\n\n\nDestroys a previously defined savepoint.\n\n\nRELEASE [SAVEPOINT] savepoint_name\n\n\n\nSee RELEASE SAVEPOINT for more information.\n\n\nRESET\n\n\nRestores the value of a system configuration parameter to the default value.\n\n\nRESET configuration_parameter\n\nRESET ALL\n\n\n\nSee RESET for more information.\n\n\nREVOKE\n\n\nRemoves access privileges.\n\n\nREVOKE [GRANT OPTION FOR] { {SELECT | INSERT | UPDATE | DELETE \n       | REFERENCES | TRIGGER | TRUNCATE } [,...] | ALL [PRIVILEGES] }\n       ON [TABLE] tablename [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] { {USAGE | SELECT | UPDATE} [,...] \n       | ALL [PRIVILEGES] }\n       ON SEQUENCE sequencename [, ...]\n       FROM { rolename | PUBLIC } [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] { {CREATE | CONNECT \n       | TEMPORARY | TEMP} [,...] | ALL [PRIVILEGES] }\n       ON DATABASE dbname [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] {EXECUTE | ALL [PRIVILEGES]}\n       ON FUNCTION funcname ( [[argmode] [argname] argtype\n                              [, ...]] ) [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] {USAGE | ALL [PRIVILEGES]}\n       ON LANGUAGE langname [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [ CASCADE | RESTRICT ]\n\nREVOKE [GRANT OPTION FOR] { {CREATE | USAGE} [,...] \n       | ALL [PRIVILEGES] }\n       ON SCHEMA schemaname [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] { CREATE | ALL [PRIVILEGES] }\n       ON TABLESPACE tablespacename [, ...]\n       FROM { rolename | PUBLIC } [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [ADMIN OPTION FOR] parent_role [, ...] \n       FROM member_role [, ...]\n       [CASCADE | RESTRICT]\n\n\n\nSee REVOKE for more information.\n\n\nROLLBACK\n\n\nAborts the current transaction.\n\n\nROLLBACK [WORK | TRANSACTION]\n\n\n\nSee ROLLBACK for more information.\n\n\nROLLBACK TO SAVEPOINT\n\n\nRolls back the current transaction to a savepoint.\n\n\nROLLBACK [WORK | TRANSACTION] TO [SAVEPOINT] savepoint_name\n\n\n\nSee ROLLBACK TO SAVEPOINT for more information.\n\n\nSAVEPOINT\n\n\nDefines a new savepoint within the current transaction.\n\n\nSAVEPOINT savepoint_name\n\n\n\nSee SAVEPOINT for more information.\n\n\nSELECT\n\n\nRetrieves rows from a table or view.\n\n\nSELECT [ALL | DISTINCT [ON (expression [, ...])]]\n  * | expression [[AS] output_name] [, ...]\n  [FROM from_item [, ...]]\n  [WHERE condition]\n  [GROUP BY grouping_element [, ...]]\n  [HAVING condition [, ...]]\n  [WINDOW window_name AS (window_specification)]\n  [{UNION | INTERSECT | EXCEPT} [ALL] select]\n  [ORDER BY expression [ASC | DESC | USING operator] [, ...]]\n  [LIMIT {count | ALL}]\n  [OFFSET start]\n  [FOR {UPDATE | SHARE} [OF table_name [, ...]] [NOWAIT] [...]]\n\n\n\nSee SELECT for more information.\n\n\nSELECT INTO\n\n\nDefines a new table from the results of a query.\n\n\nSELECT [ALL | DISTINCT [ON ( expression [, ...] )]]\n    * | expression [AS output_name] [, ...]\n    INTO [TEMPORARY | TEMP] [TABLE] new_table\n    [FROM from_item [, ...]]\n    [WHERE condition]\n    [GROUP BY expression [, ...]]\n    [HAVING condition [, ...]]\n    [{UNION | INTERSECT | EXCEPT} [ALL] select]\n    [ORDER BY expression [ASC | DESC | USING operator] [, ...]]\n    [LIMIT {count | ALL}]\n    [OFFSET start]\n    [FOR {UPDATE | SHARE} [OF table_name [, ...]] [NOWAIT] \n    [...]]\n\n\n\nSee SELECT INTO for more information.\n\n\nSET\n\n\nChanges the value of a Greenplum Database configuration parameter.\n\n\nSET [SESSION | LOCAL] configuration_parameter {TO | =} value | \n    'value' | DEFAULT}\n\nSET [SESSION | LOCAL] TIME ZONE {timezone | LOCAL | DEFAULT}\n\n\n\nSee SET for more information.\n\n\nSET ROLE\n\n\nSets the current role identifier of the current session.\n\n\nSET [SESSION | LOCAL] ROLE rolename\n\nSET [SESSION | LOCAL] ROLE NONE\n\nRESET ROLE\n\n\n\nSee SET ROLE for more information.\n\n\nSET SESSION AUTHORIZATION\n\n\nSets the session role identifier and the current role identifier of the current session.\n\n\nSET [SESSION | LOCAL] SESSION AUTHORIZATION rolename\n\nSET [SESSION | LOCAL] SESSION AUTHORIZATION DEFAULT\n\nRESET SESSION AUTHORIZATION\n\n\n\nSee SET SESSION AUTHORIZATION for more information.\n\n\nSET TRANSACTION\n\n\nSets the characteristics of the current transaction.\n\n\nSET TRANSACTION [transaction_mode] [READ ONLY | READ WRITE]\n\nSET SESSION CHARACTERISTICS AS TRANSACTION transaction_mode \n     [READ ONLY | READ WRITE]\n\n\n\nSee SET TRANSACTION for more information.\n\n\nSHOW\n\n\nShows the value of a system configuration parameter.\n\n\nSHOW configuration_parameter\n\nSHOW ALL\n\n\n\nSee SHOW for more information.\n\n\nSTART TRANSACTION\n\n\nStarts a transaction block.\n\n\nSTART TRANSACTION [SERIALIZABLE | READ COMMITTED | READ UNCOMMITTED]\n                  [READ WRITE | READ ONLY]\n\n\n\nSee START TRANSACTION for more information.\n\n\nTRUNCATE\n\n\nEmpties a table of all rows.\n\n\nTRUNCATE [TABLE] name [, ...] [CASCADE | RESTRICT]\n\n\n\nSee TRUNCATE for more information.\n\n\nUPDATE\n\n\nUpdates rows of a table.\n\n\nUPDATE [ONLY] table [[AS] alias]\n   SET {column = {expression | DEFAULT} |\n   (column [, ...]) = ({expression | DEFAULT} [, ...])} [, ...]\n   [FROM fromlist]\n   [WHERE condition | WHERE CURRENT OF cursor_name ]\n\n\n\nSee UPDATE for more information.\n\n\nVACUUM\n\n\nGarbage-collects and optionally analyzes a database.\n\n\nVACUUM [FULL] [FREEZE] [VERBOSE] [table]\n\nVACUUM [FULL] [FREEZE] [VERBOSE] ANALYZE\n              [table [(column [, ...] )]]\n\n\n\nSee VACUUM for more information.\n\n\nVALUES\n\n\nComputes a set of rows.\n\n\nVALUES ( expression [, ...] ) [, ...]\n   [ORDER BY sort_expression [ASC | DESC | USING operator] [, ...]]\n   [LIMIT {count | ALL}] [OFFSET start]\n\n\n\nSee VALUES for more information.", 
+            "title": "\u5217\u8868"
+        }, 
+        {
+            "location": "/sql-ref/sql-ref-summary/#sql-syntax-summary", 
+            "text": "ABORT  Aborts the current transaction.  ABORT [WORK | TRANSACTION]  See ABORT for more information.  ALTER AGGREGATE  Changes the definition of an aggregate function  ALTER AGGREGATE name ( type [ , ... ] ) RENAME TO new_name\n\nALTER AGGREGATE name ( type [ , ... ] ) OWNER TO new_owner\n\nALTER AGGREGATE name ( type [ , ... ] ) SET SCHEMA new_schema  See ALTER AGGREGATE for more information.  ALTER CONVERSION  Changes the definition of a conversion.  ALTER CONVERSION name RENAME TO newname\n\nALTER CONVERSION name OWNER TO newowner  See ALTER CONVERSION for more information.  ALTER DATABASE  Changes the attributes of a database.  ALTER DATABASE name [ WITH CONNECTION LIMIT connlimit ]\n\nALTER DATABASE name SET parameter { TO | = } { value | DEFAULT }\n\nALTER DATABASE name RESET parameter\n\nALTER DATABASE name RENAME TO newname\n\nALTER DATABASE name OWNER TO new_owner  See ALTER DATABASE for more information.  ALTER DOMAIN  Changes the definition of a domain.  ALTER DOMAIN name { SET DEFAULT expression | DROP DEFAULT }\n\nALTER DOMAIN name { SET | DROP } NOT NULL\n\nALTER DOMAIN name ADD domain_constraint\n\nALTER DOMAIN name DROP CONSTRAINT constraint_name [RESTRICT | CASCADE]\n\nALTER DOMAIN name OWNER TO new_owner\n\nALTER DOMAIN name SET SCHEMA new_schema  See ALTER DOMAIN for more information.  ALTER EXTERNAL TABLE  Changes the definition of an external table.  ALTER EXTERNAL TABLE name RENAME [COLUMN] column TO new_column\n\nALTER EXTERNAL TABLE name RENAME TO new_name\n\nALTER EXTERNAL TABLE name SET SCHEMA new_schema\n\nALTER EXTERNAL TABLE name action [, ... ]  See ALTER EXTERNAL TABLE for more information.  ALTER FILESPACE  Changes the definition of a filespace.  ALTER FILESPACE name RENAME TO newname\n\nALTER FILESPACE name OWNER TO newowner  See ALTER FILESPACE for more information.  ALTER FUNCTION  Changes the definition of a function.  ALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] ) \n   action [, ... ] [RESTRICT]\n\nALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] )\n   RENAME TO new_name\n\nALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] ) \n   OWNER TO new_owner\n\nALTER FUNCTION name ( [ [argmode] [argname] argtype [, ...] ] ) \n   SET SCHEMA new_schema  See ALTER FUNCTION for more information.  ALTER GROUP  Changes a role name or membership.  ALTER GROUP groupname ADD USER username [, ... ]\n\nALTER GROUP groupname DROP USER username [, ... ]\n\nALTER GROUP groupname RENAME TO newname  See ALTER GROUP for more information.  ALTER INDEX  Changes the definition of an index.  ALTER INDEX name RENAME TO new_name\n\nALTER INDEX name SET TABLESPACE tablespace_name\n\nALTER INDEX name SET ( FILLFACTOR = value )\n\nALTER INDEX name RESET ( FILLFACTOR )  See ALTER INDEX for more information.  ALTER LANGUAGE  Changes the name of a procedural language.  ALTER LANGUAGE name RENAME TO newname  See ALTER LANGUAGE for more information.  ALTER OPERATOR  Changes the definition of an operator.  ALTER OPERATOR name ( {lefttype | NONE} , {righttype | NONE} ) \n   OWNER TO newowner  See ALTER OPERATOR for more information.  ALTER OPERATOR CLASS  Changes the definition of an operator class.  ALTER OPERATOR CLASS name USING index_method RENAME TO newname\n\nALTER OPERATOR CLASS name USING index_method OWNER TO newowner  See ALTER OPERATOR CLASS for more information.  ALTER PROTOCOL  Changes the definition of a protocol.  ALTER PROTOCOL name RENAME TO newname\n\nALTER PROTOCOL name OWNER TO newowner  See ALTER PROTOCOL for more information.  ALTER RESOURCE QUEUE  Changes the limits of a resource queue.  ALTER RESOURCE QUEUE name WITH ( queue_attribute=value [, ... ] )  See ALTER RESOURCE QUEUE for more information.  ALTER ROLE  Changes a database role (user or group).  ALTER ROLE name RENAME TO newname\n\nALTER ROLE name SET config_parameter {TO | =} {value | DEFAULT}\n\nALTER ROLE name RESET config_parameter\n\nALTER ROLE name RESOURCE QUEUE {queue_name | NONE}\n\nALTER ROLE name [ [WITH] option [ ... ] ]  See ALTER ROLE for more information.  ALTER SCHEMA  Changes the definition of a schema.  ALTER SCHEMA name RENAME TO newname\n\nALTER SCHEMA name OWNER TO newowner  See ALTER SCHEMA for more information.  ALTER SEQUENCE  Changes the definition of a sequence generator.  ALTER SEQUENCE name [INCREMENT [ BY ] increment] \n     [MINVALUE minvalue | NO MINVALUE] \n     [MAXVALUE maxvalue | NO MAXVALUE] \n     [RESTART [ WITH ] start] \n     [CACHE cache] [[ NO ] CYCLE] \n     [OWNED BY {table.column | NONE}]\n\nALTER SEQUENCE name SET SCHEMA new_schema  See ALTER SEQUENCE for more information.  ALTER TABLE  Changes the definition of a table.  ALTER TABLE [ONLY] name RENAME [COLUMN] column TO new_column\n\nALTER TABLE name RENAME TO new_name\n\nALTER TABLE name SET SCHEMA new_schema\n\nALTER TABLE [ONLY] name SET \n     DISTRIBUTED BY (column, [ ... ] ) \n   | DISTRIBUTED RANDOMLY \n   | WITH (REORGANIZE=true|false)\n\nALTER TABLE [ONLY] name action [, ... ]\n\nALTER TABLE name\n   [ ALTER PARTITION { partition_name | FOR (RANK(number)) \n   | FOR (value) } partition_action [...] ] \n   partition_action  See ALTER TABLE for more information.  ALTER TABLESPACE  Changes the definition of a tablespace.  ALTER TABLESPACE name RENAME TO newname\n\nALTER TABLESPACE name OWNER TO newowner  See ALTER TABLESPACE for more information.  ALTER TYPE  Changes the definition of a data type.  ALTER TYPE name\n   OWNER TO new_owner | SET SCHEMA new_schema  See ALTER TYPE for more information.  ALTER USER  Changes the definition of a database role (user).  ALTER USER name RENAME TO newname\n\nALTER USER name SET config_parameter {TO | =} {value | DEFAULT}\n\nALTER USER name RESET config_parameter\n\nALTER USER name [ [WITH] option [ ... ] ]  See ALTER USER for more information.  ANALYZE  Collects statistics about a database.  ANALYZE [VERBOSE] [ROOTPARTITION [ALL] ] \n   [table [ (column [, ...] ) ]]  See ANALYZE for more information.  BEGIN  Starts a transaction block.  BEGIN [WORK | TRANSACTION] [transaction_mode]\n      [READ ONLY | READ WRITE]  See BEGIN for more information.  CHECKPOINT  Forces a transaction log checkpoint.  CHECKPOINT  See CHECKPOINT for more information.  CLOSE  Closes a cursor.  CLOSE cursor_name  See CLOSE for more information.  CLUSTER  Physically reorders a heap storage table on disk according to an index. Not a recommended operation in Greenplum Database.  CLUSTER indexname ON tablename\n\nCLUSTER tablename\n\nCLUSTER  See CLUSTER for more information.  COMMENT  Defines or change the comment of an object.  COMMENT ON\n{ TABLE object_name |\n  COLUMN table_name.column_name |\n  AGGREGATE agg_name (agg_type [, ...]) |\n  CAST (sourcetype AS targettype) |\n  CONSTRAINT constraint_name ON table_name |\n  CONVERSION object_name |\n  DATABASE object_name |\n  DOMAIN object_name |\n  FILESPACE object_name |\n  FUNCTION func_name ([[argmode] [argname] argtype [, ...]]) |\n  INDEX object_name |\n  LARGE OBJECT large_object_oid |\n  OPERATOR op (leftoperand_type, rightoperand_type) |\n  OPERATOR CLASS object_name USING index_method |\n  [PROCEDURAL] LANGUAGE object_name |\n  RESOURCE QUEUE object_name |\n  ROLE object_name |\n  RULE rule_name ON table_name |\n  SCHEMA object_name |\n  SEQUENCE object_name |\n  TABLESPACE object_name |\n  TRIGGER trigger_name ON table_name |\n  TYPE object_name |\n  VIEW object_name } \nIS 'text'  See COMMENT for more information.  COMMIT  Commits the current transaction.  COMMIT [WORK | TRANSACTION]  See COMMIT for more information.  COPY  Copies data between a file and a table.  COPY table [(column [, ...])] FROM {'file' | STDIN}\n     [ [WITH] \n       [OIDS]\n       [HEADER]\n       [DELIMITER [ AS ] 'delimiter']\n       [NULL [ AS ] 'null string']\n       [ESCAPE [ AS ] 'escape' | 'OFF']\n       [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n       [CSV [QUOTE [ AS ] 'quote'] \n            [FORCE NOT NULL column [, ...]]\n       [FILL MISSING FIELDS]\n       [[LOG ERRORS [INTO error_table] [KEEP] \n       SEGMENT REJECT LIMIT count [ROWS | PERCENT] ]\n\nCOPY {table [(column [, ...])] | (query)} TO {'file' | STDOUT}\n      [ [WITH] \n        [OIDS]\n        [HEADER]\n        [DELIMITER [ AS ] 'delimiter']\n        [NULL [ AS ] 'null string']\n        [ESCAPE [ AS ] 'escape' | 'OFF']\n        [CSV [QUOTE [ AS ] 'quote'] \n             [FORCE QUOTE column [, ...]] ]\n      [IGNORE EXTERNAL PARTITIONS ]  See COPY for more information.  CREATE AGGREGATE  Defines a new aggregate function.  CREATE [ORDERED] AGGREGATE name (input_data_type [ , ... ]) \n      ( SFUNC = sfunc,\n        STYPE = state_data_type\n        [, PREFUNC = prefunc]\n        [, FINALFUNC = ffunc]\n        [, INITCOND = initial_condition]\n        [, SORTOP = sort_operator] )  See CREATE AGGREGATE for more information.  CREATE CAST  Defines a new cast.  CREATE CAST (sourcetype AS targettype) \n       WITH FUNCTION funcname (argtypes) \n       [AS ASSIGNMENT | AS IMPLICIT]\n\nCREATE CAST (sourcetype AS targettype) WITHOUT FUNCTION \n       [AS ASSIGNMENT | AS IMPLICIT]  See CREATE CAST for more information.  CREATE CONVERSION  Defines a new encoding conversion.  CREATE [DEFAULT] CONVERSION name FOR source_encoding TO \n     dest_encoding FROM funcname  See CREATE CONVERSION for more information.  CREATE DATABASE  Creates a new database.  CREATE DATABASE name [ [WITH] [OWNER [=] dbowner]\n                     [TEMPLATE [=] template]\n                     [ENCODING [=] encoding]\n                     [TABLESPACE [=] tablespace]\n                     [CONNECTION LIMIT [=] connlimit ] ]  See CREATE DATABASE for more information.  CREATE DOMAIN  Defines a new domain.  CREATE DOMAIN name [AS] data_type [DEFAULT expression] \n       [CONSTRAINT constraint_name\n       | NOT NULL | NULL \n       | CHECK (expression) [...]]  See CREATE DOMAIN for more information.  CREATE EXTERNAL TABLE  Defines a new external table.  CREATE [READABLE] EXTERNAL TABLE table_name     \n    ( column_name data_type [, ...] | LIKE other_table )\n      LOCATION ('file://seghost[:port]/path/file' [, ...])\n        | ('gpfdist://filehost[:port]/file_pattern[#transform]'\n        | ('gpfdists://filehost[:port]/file_pattern[#transform]'\n            [, ...])\n        | ('gphdfs://hdfs_host[:port]/path/file')\n      FORMAT 'TEXT' \n            [( [HEADER]\n               [DELIMITER [AS] 'delimiter' | 'OFF']\n               [NULL [AS] 'null string']\n               [ESCAPE [AS] 'escape' | 'OFF']\n               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n               [FILL MISSING FIELDS] )]\n           | 'CSV'\n            [( [HEADER]\n               [QUOTE [AS] 'quote'] \n               [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [FORCE NOT NULL column [, ...]]\n               [ESCAPE [AS] 'escape']\n               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n               [FILL MISSING FIELDS] )]\n           | 'AVRO' \n           | 'PARQUET'\n\n           | 'CUSTOM' (Formatter= formatter specifications )\n     [ ENCODING 'encoding' ]\n     [ [LOG ERRORS [INTO error_table]] SEGMENT REJECT LIMIT count\n       [ROWS | PERCENT] ]\n\nCREATE [READABLE] EXTERNAL WEB TABLE table_name     \n   ( column_name data_type [, ...] | LIKE other_table )\n      LOCATION ('http://webhost[:port]/path/file' [, ...])\n    | EXECUTE 'command' [ON ALL \n                          | MASTER\n                          | number_of_segments\n                          | HOST ['segment_hostname'] \n                          | SEGMENT segment_id ]\n      FORMAT 'TEXT' \n            [( [HEADER]\n               [DELIMITER [AS] 'delimiter' | 'OFF']\n               [NULL [AS] 'null string']\n               [ESCAPE [AS] 'escape' | 'OFF']\n               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n               [FILL MISSING FIELDS] )]\n           | 'CSV'\n            [( [HEADER]\n               [QUOTE [AS] 'quote'] \n               [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [FORCE NOT NULL column [, ...]]\n               [ESCAPE [AS] 'escape']\n               [NEWLINE [ AS ] 'LF' | 'CR' | 'CRLF']\n               [FILL MISSING FIELDS] )]\n           | 'CUSTOM' (Formatter= formatter specifications )\n     [ ENCODING 'encoding' ]\n     [ [LOG ERRORS [INTO error_table]] SEGMENT REJECT LIMIT count\n       [ROWS | PERCENT] ]\n\nCREATE WRITABLE EXTERNAL TABLE table_name\n    ( column_name data_type [, ...] | LIKE other_table )\n     LOCATION('gpfdist://outputhost[:port]/filename[#transform]'\n      | ('gpfdists://outputhost[:port]/file_pattern[#transform]'\n          [, ...])\n      | ('gphdfs://hdfs_host[:port]/path')\n      FORMAT 'TEXT' \n               [( [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [ESCAPE [AS] 'escape' | 'OFF'] )]\n          | 'CSV'\n               [([QUOTE [AS] 'quote'] \n               [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [FORCE QUOTE column [, ...]] ]\n               [ESCAPE [AS] 'escape'] )]\n           | 'AVRO' \n           | 'PARQUET'\n\n           | 'CUSTOM' (Formatter= formatter specifications )\n    [ ENCODING 'write_encoding' ]\n    [ DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY ]\n\nCREATE WRITABLE EXTERNAL WEB TABLE table_name\n    ( column_name data_type [, ...] | LIKE other_table )\n    EXECUTE 'command' [ON ALL]\n    FORMAT 'TEXT' \n               [( [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [ESCAPE [AS] 'escape' | 'OFF'] )]\n          | 'CSV'\n               [([QUOTE [AS] 'quote'] \n               [DELIMITER [AS] 'delimiter']\n               [NULL [AS] 'null string']\n               [FORCE QUOTE column [, ...]] ]\n               [ESCAPE [AS] 'escape'] )]\n           | 'CUSTOM' (Formatter= formatter specifications )\n    [ ENCODING 'write_encoding' ]\n    [ DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY ]  See CREATE EXTERNAL TABLE for more information.  CREATE FUNCTION  Defines a new function.  CREATE [OR REPLACE] FUNCTION name    \n    ( [ [argmode] [argname] argtype [, ...] ] )\n      [ RETURNS { [ SETOF ] rettype \n        | TABLE ([{ argname argtype | LIKE other table }\n          [, ...]])\n        } ]\n    { LANGUAGE langname\n    | IMMUTABLE | STABLE | VOLATILE\n    | CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT\n    | [EXTERNAL] SECURITY INVOKER | [EXTERNAL] SECURITY DEFINER\n    | AS 'definition'\n    | AS 'obj_file', 'link_symbol' } ...\n    [ WITH ({ DESCRIBE = describe_function\n           } [, ...] ) ]  See CREATE FUNCTION for more information.  CREATE GROUP  Defines a new database role.  CREATE GROUP name [ [WITH] option [ ... ] ]  See CREATE GROUP for more information.  CREATE INDEX  Defines a new index.  CREATE [UNIQUE] INDEX name ON table\n       [USING btree|bitmap|gist]\n       ( {column | (expression)} [opclass] [, ...] )\n       [ WITH ( FILLFACTOR = value ) ]\n       [TABLESPACE tablespace]\n       [WHERE predicate]  See CREATE INDEX for more information.  CREATE LANGUAGE  Defines a new procedural language.  CREATE [PROCEDURAL] LANGUAGE name\n\nCREATE [TRUSTED] [PROCEDURAL] LANGUAGE name\n       HANDLER call_handler [VALIDATOR valfunction]  See CREATE LANGUAGE for more information.  CREATE OPERATOR  Defines a new operator.  CREATE OPERATOR name ( \n       PROCEDURE = funcname\n       [, LEFTARG = lefttype] [, RIGHTARG = righttype]\n       [, COMMUTATOR = com_op] [, NEGATOR = neg_op]\n       [, RESTRICT = res_proc] [, JOIN = join_proc]\n       [, HASHES] [, MERGES]\n       [, SORT1 = left_sort_op] [, SORT2 = right_sort_op]\n       [, LTCMP = less_than_op] [, GTCMP = greater_than_op] )  See CREATE OPERATOR for more information.  CREATE OPERATOR CLASS  Defines a new operator class.  CREATE OPERATOR CLASS name [DEFAULT] FOR TYPE data_type  \n  USING index_method AS \n  { \n  OPERATOR strategy_number op_name [(op_type, op_type)] [RECHECK]\n  | FUNCTION support_number funcname (argument_type [, ...] )\n  | STORAGE storage_type\n  } [, ... ]  See CREATE OPERATOR CLASS for more information.  CREATE RESOURCE QUEUE  Defines a new resource queue.  CREATE RESOURCE QUEUE name WITH (queue_attribute=value [, ... ])  See CREATE RESOURCE QUEUE for more information.  CREATE ROLE  Defines a new database role (user or group).  CREATE ROLE name [[WITH] option [ ... ]]  See CREATE ROLE for more information.  CREATE RULE  Defines a new rewrite rule.  CREATE [OR REPLACE] RULE name AS ON event\n  TO table [WHERE condition] \n  DO [ALSO | INSTEAD] { NOTHING | command | (command; command \n  ...) }  See CREATE RULE for more information.  CREATE SCHEMA  Defines a new schema.  CREATE SCHEMA schema_name [AUTHORIZATION username] \n   [schema_element [ ... ]]\n\nCREATE SCHEMA AUTHORIZATION rolename [schema_element [ ... ]]  See CREATE SCHEMA for more information.  CREATE SEQUENCE  Defines a new sequence generator.  CREATE [TEMPORARY | TEMP] SEQUENCE name\n       [INCREMENT [BY] value] \n       [MINVALUE minvalue | NO MINVALUE] \n       [MAXVALUE maxvalue | NO MAXVALUE] \n       [START [ WITH ] start] \n       [CACHE cache] \n       [[NO] CYCLE] \n       [OWNED BY { table.column | NONE }]  See CREATE SEQUENCE for more information.  CREATE TABLE  Defines a new table.  CREATE [[GLOBAL | LOCAL] {TEMPORARY | TEMP}] TABLE table_name ( \n[ { column_name data_type [ DEFAULT default_expr ] \n   [column_constraint [ ... ]\n[ ENCODING ( storage_directive [,...] ) ]\n] \n   | table_constraint\n   | LIKE other_table [{INCLUDING | EXCLUDING} \n                      {DEFAULTS | CONSTRAINTS}] ...}\n   [, ... ] ]\n   )\n   [ INHERITS ( parent_table [, ... ] ) ]\n   [ WITH ( storage_parameter=value [, ... ] )\n   [ ON COMMIT {PRESERVE ROWS | DELETE ROWS | DROP} ]\n   [ TABLESPACE tablespace ]\n   [ DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY ]\n   [ PARTITION BY partition_type (column)\n       [ SUBPARTITION BY partition_type (column) ] \n          [ SUBPARTITION TEMPLATE ( template_spec ) ]\n       [...]\n    ( partition_spec ) \n        | [ SUBPARTITION BY partition_type (column) ]\n          [...]\n    ( partition_spec\n      [ ( subpartition_spec\n           [(...)] \n         ) ] \n    )  See CREATE TABLE for more information.  CREATE TABLE AS  Defines a new table from the results of a query.  CREATE [ [GLOBAL | LOCAL] {TEMPORARY | TEMP} ] TABLE table_name\n   [(column_name [, ...] )]\n   [ WITH ( storage_parameter=value [, ... ] ) ]\n   [ON COMMIT {PRESERVE ROWS | DELETE ROWS | DROP}]\n   [TABLESPACE tablespace]\n   AS query\n   [DISTRIBUTED BY (column, [ ... ] ) | DISTRIBUTED RANDOMLY]  See CREATE TABLE AS for more information.  CREATE TABLESPACE  Defines a new tablespace.  CREATE TABLESPACE tablespace_name [OWNER username] \n       FILESPACE filespace_name  See CREATE TABLESPACE for more information.  CREATE TYPE  Defines a new data type.  CREATE TYPE name AS ( attribute_name data_type [, ... ] )\n\nCREATE TYPE name (\n    INPUT = input_function,\n    OUTPUT = output_function\n    [, RECEIVE = receive_function]\n    [, SEND = send_function]\n    [, INTERNALLENGTH = {internallength | VARIABLE}]\n    [, PASSEDBYVALUE]\n    [, ALIGNMENT = alignment]\n    [, STORAGE = storage]\n    [, DEFAULT = default]\n    [, ELEMENT = element]\n    [, DELIMITER = delimiter] )\n\nCREATE TYPE name  See CREATE TYPE for more information.  CREATE USER  Defines a new database role with the LOGIN privilege by default.  CREATE USER name [ [WITH] option [ ... ] ]  See CREATE USER for more information.  CREATE VIEW  Defines a new view.  CREATE [OR REPLACE] [TEMP | TEMPORARY] VIEW name\n       [ ( column_name [, ...] ) ]\n       AS query  See CREATE VIEW for more information.  DEALLOCATE  Deallocates a prepared statement.  DEALLOCATE [PREPARE] name  See DEALLOCATE for more information.  DECLARE  Defines a cursor.  DECLARE name [BINARY] [INSENSITIVE] [NO SCROLL] CURSOR \n     [{WITH | WITHOUT} HOLD] \n     FOR query [FOR READ ONLY]  See DECLARE for more information.  DELETE  Deletes rows from a table.  DELETE FROM [ONLY] table [[AS] alias]\n      [USING usinglist]\n      [WHERE condition | WHERE CURRENT OF cursor_name ]  See DELETE for more information.  DROP AGGREGATE  Removes an aggregate function.  DROP AGGREGATE [IF EXISTS] name ( type [, ...] ) [CASCADE | RESTRICT]  See DROP AGGREGATE for more information.  DROP CAST  Removes a cast.  DROP CAST [IF EXISTS] (sourcetype AS targettype) [CASCADE | RESTRICT]  See DROP CAST for more information.  DROP CONVERSION  Removes a conversion.  DROP CONVERSION [IF EXISTS] name [CASCADE | RESTRICT]  See DROP CONVERSION for more information.  DROP DATABASE  Removes a database.  DROP DATABASE [IF EXISTS] name  See DROP DATABASE for more information.  DROP DOMAIN  Removes a domain.  DROP DOMAIN [IF EXISTS] name [, ...]  [CASCADE | RESTRICT]  See DROP DOMAIN for more information.  DROP EXTERNAL TABLE  Removes an external table definition.  DROP EXTERNAL [WEB] TABLE [IF EXISTS] name [CASCADE | RESTRICT]  See DROP EXTERNAL TABLE for more information.  DROP FILESPACE  Removes a filespace.  DROP FILESPACE [IF EXISTS] filespacename  See DROP FILESPACE for more information.  DROP FUNCTION  Removes a function.  DROP FUNCTION [IF EXISTS] name ( [ [argmode] [argname] argtype \n    [, ...] ] ) [CASCADE | RESTRICT]  See DROP FUNCTION for more information.  DROP GROUP  Removes a database role.  DROP GROUP [IF EXISTS] name [, ...]  See DROP GROUP for more information.  DROP INDEX  Removes an index.  DROP INDEX [IF EXISTS] name [, ...] [CASCADE | RESTRICT]  See DROP INDEX for more information.  DROP LANGUAGE  Removes a procedural language.  DROP [PROCEDURAL] LANGUAGE [IF EXISTS] name [CASCADE | RESTRICT]  See DROP LANGUAGE for more information.  DROP OPERATOR  Removes an operator.  DROP OPERATOR [IF EXISTS] name ( {lefttype | NONE} , \n    {righttype | NONE} ) [CASCADE | RESTRICT]  See DROP OPERATOR for more information.  DROP OPERATOR CLASS  Removes an operator class.  DROP OPERATOR CLASS [IF EXISTS] name USING index_method [CASCADE | RESTRICT]  See DROP OPERATOR CLASS for more information.  DROP OWNED  Removes database objects owned by a database role.  DROP OWNED BY name [, ...] [CASCADE | RESTRICT]  See DROP OWNED for more information.  DROP RESOURCE QUEUE  Removes a resource queue.  DROP RESOURCE QUEUE queue_name  See DROP RESOURCE QUEUE for more information.  DROP ROLE  Removes a database role.  DROP ROLE [IF EXISTS] name [, ...]  See DROP ROLE for more information.  DROP RULE  Removes a rewrite rule.  DROP RULE [IF EXISTS] name ON relation [CASCADE | RESTRICT]  See DROP RULE for more information.  DROP SCHEMA  Removes a schema.  DROP SCHEMA [IF EXISTS] name [, ...] [CASCADE | RESTRICT]  See DROP SCHEMA for more information.  DROP SEQUENCE  Removes a sequence.  DROP SEQUENCE [IF EXISTS] name [, ...] [CASCADE | RESTRICT]  See DROP SEQUENCE for more information.  DROP TABLE  Removes a table.  DROP TABLE [IF EXISTS] name [, ...] [CASCADE | RESTRICT]  See DROP TABLE for more information.  DROP TABLESPACE  Removes a tablespace.  DROP TABLESPACE [IF EXISTS] tablespacename  See DROP TABLESPACE for more information.  DROP TYPE  Removes a data type.  DROP TYPE [IF EXISTS] name [, ...] [CASCADE | RESTRICT]  See DROP TYPE for more information.  DROP USER  Removes a database role.  DROP USER [IF EXISTS] name [, ...]  See DROP USER for more information.  DROP VIEW  Removes a view.  DROP VIEW [IF EXISTS] name [, ...] [CASCADE | RESTRICT]  See DROP VIEW for more information.  END  Commits the current transaction.  END [WORK | TRANSACTION]  See END for more information.  EXECUTE  Executes a prepared SQL statement.  EXECUTE name [ (parameter [, ...] ) ]  See EXECUTE for more information.  EXPLAIN  Shows the query plan of a statement.  EXPLAIN [ANALYZE] [VERBOSE] statement  See EXPLAIN for more information.  FETCH  Retrieves rows from a query using a cursor.  FETCH [ forward_direction { FROM | IN } ] cursorname  See FETCH for more information.  GRANT  Defines access privileges.  GRANT { {SELECT | INSERT | UPDATE | DELETE | REFERENCES | \nTRIGGER | TRUNCATE } [,...] | ALL [PRIVILEGES] }\n    ON [TABLE] tablename [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { {USAGE | SELECT | UPDATE} [,...] | ALL [PRIVILEGES] }\n    ON SEQUENCE sequencename [, ...]\n    TO { rolename | PUBLIC } [, ...] [WITH GRANT OPTION]\n\nGRANT { {CREATE | CONNECT | TEMPORARY | TEMP} [,...] | ALL \n[PRIVILEGES] }\n    ON DATABASE dbname [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { EXECUTE | ALL [PRIVILEGES] }\n    ON FUNCTION funcname ( [ [argmode] [argname] argtype [, ...] \n] ) [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { USAGE | ALL [PRIVILEGES] }\n    ON LANGUAGE langname [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { {CREATE | USAGE} [,...] | ALL [PRIVILEGES] }\n    ON SCHEMA schemaname [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT { CREATE | ALL [PRIVILEGES] }\n    ON TABLESPACE tablespacename [, ...]\n    TO {rolename | PUBLIC} [, ...] [WITH GRANT OPTION]\n\nGRANT parent_role [, ...] \n    TO member_role [, ...] [WITH ADMIN OPTION]\n\nGRANT { SELECT | INSERT | ALL [PRIVILEGES] } \n    ON PROTOCOL protocolname\n    TO username  See GRANT for more information.  INSERT  Creates new rows in a table.  INSERT INTO table [( column [, ...] )]\n   {DEFAULT VALUES | VALUES ( {expression | DEFAULT} [, ...] ) \n   [, ...] | query}  See INSERT for more information.  LOAD  Loads or reloads a shared library file.  LOAD 'filename'  See LOAD for more information.  LOCK  Locks a table.  LOCK [TABLE] name [, ...] [IN lockmode MODE] [NOWAIT]  See LOCK for more information.  MOVE  Positions a cursor.  MOVE [ forward_direction {FROM | IN} ] cursorname  See MOVE for more information.  PREPARE  Prepare a statement for execution.  PREPARE name [ (datatype [, ...] ) ] AS statement  See PREPARE for more information.  REASSIGN OWNED  Changes the ownership of database objects owned by a database role.  REASSIGN OWNED BY old_role [, ...] TO new_role  See REASSIGN OWNED for more information.  REINDEX  Rebuilds indexes.  REINDEX {INDEX | TABLE | DATABASE | SYSTEM} name  See REINDEX for more information.  RELEASE SAVEPOINT  Destroys a previously defined savepoint.  RELEASE [SAVEPOINT] savepoint_name  See RELEASE SAVEPOINT for more information.  RESET  Restores the value of a system configuration parameter to the default value.  RESET configuration_parameter\n\nRESET ALL  See RESET for more information.  REVOKE  Removes access privileges.  REVOKE [GRANT OPTION FOR] { {SELECT | INSERT | UPDATE | DELETE \n       | REFERENCES | TRIGGER | TRUNCATE } [,...] | ALL [PRIVILEGES] }\n       ON [TABLE] tablename [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] { {USAGE | SELECT | UPDATE} [,...] \n       | ALL [PRIVILEGES] }\n       ON SEQUENCE sequencename [, ...]\n       FROM { rolename | PUBLIC } [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] { {CREATE | CONNECT \n       | TEMPORARY | TEMP} [,...] | ALL [PRIVILEGES] }\n       ON DATABASE dbname [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] {EXECUTE | ALL [PRIVILEGES]}\n       ON FUNCTION funcname ( [[argmode] [argname] argtype\n                              [, ...]] ) [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] {USAGE | ALL [PRIVILEGES]}\n       ON LANGUAGE langname [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [ CASCADE | RESTRICT ]\n\nREVOKE [GRANT OPTION FOR] { {CREATE | USAGE} [,...] \n       | ALL [PRIVILEGES] }\n       ON SCHEMA schemaname [, ...]\n       FROM {rolename | PUBLIC} [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [GRANT OPTION FOR] { CREATE | ALL [PRIVILEGES] }\n       ON TABLESPACE tablespacename [, ...]\n       FROM { rolename | PUBLIC } [, ...]\n       [CASCADE | RESTRICT]\n\nREVOKE [ADMIN OPTION FOR] parent_role [, ...] \n       FROM member_role [, ...]\n       [CASCADE | RESTRICT]  See REVOKE for more information.  ROLLBACK  Aborts the current transaction.  ROLLBACK [WORK | TRANSACTION]  See ROLLBACK for more information.  ROLLBACK TO SAVEPOINT  Rolls back the current transaction to a savepoint.  ROLLBACK [WORK | TRANSACTION] TO [SAVEPOINT] savepoint_name  See ROLLBACK TO SAVEPOINT for more information.  SAVEPOINT  Defines a new savepoint within the current transaction.  SAVEPOINT savepoint_name  See SAVEPOINT for more information.  SELECT  Retrieves rows from a table or view.  SELECT [ALL | DISTINCT [ON (expression [, ...])]]\n  * | expression [[AS] output_name] [, ...]\n  [FROM from_item [, ...]]\n  [WHERE condition]\n  [GROUP BY grouping_element [, ...]]\n  [HAVING condition [, ...]]\n  [WINDOW window_name AS (window_specification)]\n  [{UNION | INTERSECT | EXCEPT} [ALL] select]\n  [ORDER BY expression [ASC | DESC | USING operator] [, ...]]\n  [LIMIT {count | ALL}]\n  [OFFSET start]\n  [FOR {UPDATE | SHARE} [OF table_name [, ...]] [NOWAIT] [...]]  See SELECT for more information.  SELECT INTO  Defines a new table from the results of a query.  SELECT [ALL | DISTINCT [ON ( expression [, ...] )]]\n    * | expression [AS output_name] [, ...]\n    INTO [TEMPORARY | TEMP] [TABLE] new_table\n    [FROM from_item [, ...]]\n    [WHERE condition]\n    [GROUP BY expression [, ...]]\n    [HAVING condition [, ...]]\n    [{UNION | INTERSECT | EXCEPT} [ALL] select]\n    [ORDER BY expression [ASC | DESC | USING operator] [, ...]]\n    [LIMIT {count | ALL}]\n    [OFFSET start]\n    [FOR {UPDATE | SHARE} [OF table_name [, ...]] [NOWAIT] \n    [...]]  See SELECT INTO for more information.  SET  Changes the value of a Greenplum Database configuration parameter.  SET [SESSION | LOCAL] configuration_parameter {TO | =} value | \n    'value' | DEFAULT}\n\nSET [SESSION | LOCAL] TIME ZONE {timezone | LOCAL | DEFAULT}  See SET for more information.  SET ROLE  Sets the current role identifier of the current session.  SET [SESSION | LOCAL] ROLE rolename\n\nSET [SESSION | LOCAL] ROLE NONE\n\nRESET ROLE  See SET ROLE for more information.  SET SESSION AUTHORIZATION  Sets the session role identifier and the current role identifier of the current session.  SET [SESSION | LOCAL] SESSION AUTHORIZATION rolename\n\nSET [SESSION | LOCAL] SESSION AUTHORIZATION DEFAULT\n\nRESET SESSION AUTHORIZATION  See SET SESSION AUTHORIZATION for more information.  SET TRANSACTION  Sets the characteristics of the current transaction.  SET TRANSACTION [transaction_mode] [READ ONLY | READ WRITE]\n\nSET SESSION CHARACTERISTICS AS TRANSACTION transaction_mode \n     [READ ONLY | READ WRITE]  See SET TRANSACTION for more information.  SHOW  Shows the value of a system configuration parameter.  SHOW configuration_parameter\n\nSHOW ALL  See SHOW for more information.  START TRANSACTION  Starts a transaction block.  START TRANSACTION [SERIALIZABLE | READ COMMITTED | READ UNCOMMITTED]\n                  [READ WRITE | READ ONLY]  See START TRANSACTION for more information.  TRUNCATE  Empties a table of all rows.  TRUNCATE [TABLE] name [, ...] [CASCADE | RESTRICT]  See TRUNCATE for more information.  UPDATE  Updates rows of a table.  UPDATE [ONLY] table [[AS] alias]\n   SET {column = {expression | DEFAULT} |\n   (column [, ...]) = ({expression | DEFAULT} [, ...])} [, ...]\n   [FROM fromlist]\n   [WHERE condition | WHERE CURRENT OF cursor_name ]  See UPDATE for more information.  VACUUM  Garbage-collects and optionally analyzes a database.  VACUUM [FULL] [FREEZE] [VERBOSE] [table]\n\nVACUUM [FULL] [FREEZE] [VERBOSE] ANALYZE\n              [table [(column [, ...] )]]  See VACUUM for more information.  VALUES  Computes a set of rows.  VALUES ( expression [, ...] ) [, ...]\n   [ORDER BY sort_expression [ASC | DESC | USING operator] [, ...]]\n   [LIMIT {count | ALL}] [OFFSET start]  See VALUES for more information.", 
+            "title": "SQL Syntax Summary"
+        }, 
+        {
+            "location": "/meta-ref/", 
+            "text": "System Catalog Reference\n\n\nThis reference describes the Greenplum Database system catalog tables and views. System tables prefixed with \ngp_\n relate to the parallel features of Greenplum Database. Tables prefixed with \npg_\n are either standard PostgreSQL system catalog tables supported in Greenplum Database, or are related to features Greenplum that provides to enhance PostgreSQL for data warehousing workloads. Note that the global system catalog for Greenplum Database resides on the master instance.\n\n\nSystem Tables\n\n\nSystem Views\n\n\nSystem Catalogs Definitions\n\n\ngp_configuration_history\n\n\ngp_db_interfaces\n\n\ngp_distributed_log\n\n\ngp_distributed_xacts\n\n\ngp_distribution_policy\n\n\ngpexpand.expansion_progress\n\n\ngpexpand.status\n\n\ngpexpand.status_detail\n\n\ngp_fastsequence\n\n\ngp_fault_strategy\n\n\ngp_global_sequence\n\n\ngp_id\n\n\ngp_interfaces\n\n\ngp_persistent_database_node\n\n\ngp_persistent_filespace_node\n\n\ngp_persistent_relation_node\n\n\ngp_persistent_tablespace_node\n\n\ngp_pgdatabase\n\n\ngp_relation_node\n\n\ngp_resqueue_status\n\n\ngp_san_configuration\n\n\ngp_segment_configuration\n\n\ngp_transaction_log\n\n\ngp_version_at_initdb\n\n\npg_aggregate\n\n\npg_am\n\n\npg_amop\n\n\npg_amproc\n\n\npg_appendonly\n\n\npg_attrdef\n\n\npg_attribute\n\n\npg_attribute_encoding\n\n\npg_auth_members\n\n\npg_authid\n\n\npg_cast\n\n\npg_class\n\n\npg_compression\n\n\npg_constraint\n\n\npg_conversion\n\n\npg_database\n\n\npg_depend\n\n\npg_description\n\n\npg_exttable\n\n\npg_filespace\n\n\npg_filespace_entry\n\n\npg_index\n\n\npg_inherits\n\n\npg_language\n\n\npg_largeobject\n\n\npg_listener\n\n\npg_locks\n\n\npg_namespace\n\n\npg_opclass\n\n\npg_operator\n\n\npg_partition\n\n\npg_partition_columns\n\n\npg_partition_encoding\n\n\npg_partition_rule\n\n\npg_partition_templates\n\n\npg_partitions\n\n\npg_pltemplate\n\n\npg_proc\n\n\npg_resourcetype\n\n\npg_resqueue\n\n\npg_resqueue_attributes\n\n\npg_resqueuecapability\n\n\npg_rewrite\n\n\npg_roles\n\n\npg_shdepend\n\n\npg_shdescription\n\n\npg_stat_activity\n\n\npg_stat_last_operation\n\n\npg_stat_last_shoperation\n\n\npg_stat_operations\n\n\npg_stat_partition_operations\n\n\npg_stat_replication\n\n\npg_statistic\n\n\npg_stat_resqueues\n\n\npg_tablespace\n\n\npg_trigger\n\n\npg_type\n\n\npg_type_encoding\n\n\npg_user_mapping\n\n\npg_window", 
+            "title": "\u7cfb\u7edf\u8868\u53c2\u8003"
+        }, 
+        {
+            "location": "/meta-ref/#system-catalog-reference", 
+            "text": "This reference describes the Greenplum Database system catalog tables and views. System tables prefixed with  gp_  relate to the parallel features of Greenplum Database. Tables prefixed with  pg_  are either standard PostgreSQL system catalog tables supported in Greenplum Database, or are related to features Greenplum that provides to enhance PostgreSQL for data warehousing workloads. Note that the global system catalog for Greenplum Database resides on the master instance.", 
+            "title": "System Catalog Reference"
+        }, 
+        {
+            "location": "/meta-ref/#system-tables", 
+            "text": "", 
+            "title": "System Tables"
+        }, 
+        {
+            "location": "/meta-ref/#system-views", 
+            "text": "", 
+            "title": "System Views"
+        }, 
+        {
+            "location": "/meta-ref/#system-catalogs-definitions", 
+            "text": "gp_configuration_history  gp_db_interfaces  gp_distributed_log  gp_distributed_xacts  gp_distribution_policy  gpexpand.expansion_progress  gpexpand.status  gpexpand.status_detail  gp_fastsequence  gp_fault_strategy  gp_global_sequence  gp_id  gp_interfaces  gp_persistent_database_node  gp_persistent_filespace_node  gp_persistent_relation_node  gp_persistent_tablespace_node  gp_pgdatabase  gp_relation_node  gp_resqueue_status  gp_san_configuration  gp_segment_configuration  gp_transaction_log  gp_version_at_initdb  pg_aggregate  pg_am  pg_amop  pg_amproc  pg_appendonly  pg_attrdef  pg_attribute  pg_attribute_encoding  pg_auth_members  pg_authid  pg_cast  pg_class  pg_compression  pg_constraint  pg_conversion  pg_database  pg_depend  pg_description  pg_exttable  pg_filespace  pg_filespace_entry  pg_index  pg_inherits  pg_language  pg_largeobject  pg_listener  pg_locks  pg_namespace  pg_opclass  pg_operator  pg_partition  pg_partition_columns  pg_partition_encoding  pg_partition_rule  pg_partition_templates  pg_partitions  pg_pltemplate  pg_proc  pg_resourcetype  pg_resqueue  pg_resqueue_attributes  pg_resqueuecapability  pg_rewrite  pg_roles  pg_shdepend  pg_shdescription  pg_stat_activity  pg_stat_last_operation  pg_stat_last_shoperation  pg_stat_operations  pg_stat_partition_operations  pg_stat_replication  pg_statistic  pg_stat_resqueues  pg_tablespace  pg_trigger  pg_type  pg_type_encoding  pg_user_mapping  pg_window", 
+            "title": "System Catalogs Definitions"
+        }, 
+        {
+            "location": "/meta-ref/meta-ref-all/", 
+            "text": "System Catalog Reference\n\n\nThis reference describes the Greenplum Database system catalog tables and views. System tables prefixed with gp_ relate to the parallel features of Greenplum Database. Tables prefixed with pg_ are either standard PostgreSQL system catalog tables supported in Greenplum Database, or are related to features Greenplum that provides to enhance PostgreSQL for data warehousing workloads. Note that the global system catalog for Greenplum Database resides on the master instance.\n\n\nSystem Tables\n\n\n\n\ngp_configuration (Deprecated. See gp_segment_configuration.)\n\n\ngp_configuration_history\n\n\ngp_db_interfaces\n\n\ngp_distribution_policy\n\n\ngp_fastsequence\n\n\ngp_fault_strategy\n\n\ngp_global_sequence\n\n\ngp_id\n\n\ngp_interfaces\n\n\ngp_master_mirroring (Deprecated. See pg_stat_replication.)\n\n\ngp_persistent_database_node\n\n\ngp_persistent_filespace_node\n\n\ngp_persistent_relation_node\n\n\ngp_persistent_tablespace_node\n\n\ngp_relation_node\n\n\ngp_san_configuration\n\n\ngp_segment_configuration\n\n\ngp_version_at_initdb\n\n\ngpexpand.status\n\n\ngpexpand.status_detail\n\n\npg_aggregate\n\n\npg_am\n\n\npg_amop\n\n\npg_amproc\n\n\npg_appendonly\n\n\npg_appendonly_alter_column (not supported in 4.3)\n\n\npg_attrdef\n\n\npg_attribute\n\n\npg_auth_members\n\n\npg_authid\n\n\npg_autovacuum (not supported in 4.2.5 and later)\n\n\npg_cast\n\n\npg_class\n\n\npg_constraint\n\n\npg_conversion\n\n\npg_database\n\n\npg_depend\n\n\npg_description\n\n\npg_exttable\n\n\npg_filespace\n\n\npg_filespace_entry\n\n\npg_foreign_data_wrapper (not supported in 4.3)\n\n\npg_foreign_server (not supported in 4.3)\n\n\npg_foreign_table (not supported in 4.3)\n\n\npg_index\n\n\npg_inherits\n\n\npg_language\n\n\npg_largeobject\n\n\npg_listener\n\n\npg_namespace\n\n\npg_opclass\n\n\npg_operator\n\n\npg_partition\n\n\npg_partition_rule\n\n\npg_pltemplate\n\n\npg_proc\n\n\npg_resourcetype\n\n\npg_resqueue\n\n\npg_resqueuecapability\n\n\npg_rewrite\n\n\npg_shdepend\n\n\npg_shdescription\n\n\npg_stat_last_operation\n\n\npg_stat_last_shoperation\n\n\npg_statistic\n\n\npg_tablespace\n\n\npg_trigger\n\n\npg_type\n\n\npg_user_mapping (not supported in 4.3)\n\n\npg_window\n\n\n\n\nSystem Views\n\n\nGreenplum Database provides the following system views not available in PostgreSQL.\n\n gp_distributed_log\n\n gp_distributed_xacts\n\n gp_pgdatabase\n\n gp_resqueue_status\n\n gp_transaction_log\n\n gpexpand.expansion_progress\n\n pg_max_external_files (shows number of external table files allowed per segment host when using the file protocol)\n\n pg_partition_columns\n\n pg_partition_templates\n\n pg_partitions\n\n pg_stat_activity\n\n pg_stat_replication\n\n pg_resqueue_attributes\n\n pg_resqueue_status (Deprecated. Use gp_toolkit.gp_resqueue_status.)\n\n pg_stat_resqueues\n\n pg_user_mappings (not supported)\n* session_level_memory_consumption 4.3.4.0\n\n\nFor more information about the standard system views supported in PostgreSQL and Greenplum Database, see the following sections of the PostgreSQL documentation:\n\n\n\n\nSystem Views\n\n\nStatistics Collector Views\n\n\nThe Information Schema\n\n\n\n\nSystem Catalogs Definitions\n\n\nSystem catalog table and view definitions in alphabetical order.\n\n\ngp_configuration_history\n\n\nThe \ngp_configuration_history\n table contains information about system changes related to fault detection and recovery operations. The fts_probe process logs data to this table, as do certain related management utilities such as gpcheck, gprecoverseg, and gpinitsystem. For example, when you add a new segment and mirror segment to the system, records for these events are logged to gp_configuration_history.\nThe event descriptions stored in this table may be helpful for troubleshooting serious system issues in collaboration with Greenplum support technicians.\n\n\nThis table is populated only on the master. This table is defined in the pg_global tablespace, meaning it is globally shared across all databases in the system.\n\n\n\n\n\n\n\n\ncolumn\n\n\ntype\n\n\nreferences\n\n\ndescription\n\n\n\n\n\n\n\n\n\n\ntime\n\n\ntimestamp with time zone\n\n\nTimestamp for the event recorded.\n\n\n\n\n\n\n\n\ndbid\n\n\nsmallint\n\n\ngp_segment _ configuration.dbid\n\n\nSystem-assigned ID. The unique identifier of a segment (or master) instance.\n\n\n\n\n\n\ndesc\n\n\ntext\n\n\nText description of the event.\n\n\n\n\n\n\n\n\n\n\npg_partition_columns\n\n\nThe pg_partition_columns system view is used to show the partition key columns of a partitioned table.\n\n\n\n\n\n\n\n\ncolumn\n\n\ntype\n\n\nreferences\n\n\ndescription\n\n\n\n\n\n\n\n\n\n\nschemaname\n\n\nname\n\n\nThe name of the schema the partitioned table is in.\n\n\n\n\n\n\n\n\ntablename\n\n\nname\n\n\nThe table name of the top-level parent table.\n\n\n\n\n\n\n\n\ncolumnname\n\n\nname\n\n\n\n\nThe name of the partition key column.\n\n\n\n\n\n\npartitionleve\n\n\nsmallint\n\n\n\n\nThe level of this subpartition in the hierarchy.\n\n\n\n\n\n\nposition_in_partition_key\n\n\ninteger\n\n\nFor list partitions you can have a composite (multi-column) partition key. This shows the position of the column in a composite key.", 
+            "title": "\u7cfb\u7edf\u8868"
+        }, 
+        {
+            "location": "/meta-ref/meta-ref-all/#system-catalog-reference", 
+            "text": "This reference describes the Greenplum Database system catalog tables and views. System tables prefixed with gp_ relate to the parallel features of Greenplum Database. Tables prefixed with pg_ are either standard PostgreSQL system catalog tables supported in Greenplum Database, or are related to features Greenplum that provides to enhance PostgreSQL for data warehousing workloads. Note that the global system catalog for Greenplum Database resides on the master instance.", 
+            "title": "System Catalog Reference"
+        }, 
+        {
+            "location": "/meta-ref/meta-ref-all/#system-tables", 
+            "text": "gp_configuration (Deprecated. See gp_segment_configuration.)  gp_configuration_history  gp_db_interfaces  gp_distribution_policy  gp_fastsequence  gp_fault_strategy  gp_global_sequence  gp_id  gp_interfaces  gp_master_mirroring (Deprecated. See pg_stat_replication.)  gp_persistent_database_node  gp_persistent_filespace_node  gp_persistent_relation_node  gp_persistent_tablespace_node  gp_relation_node  gp_san_configuration  gp_segment_configuration  gp_version_at_initdb  gpexpand.status  gpexpand.status_detail  pg_aggregate  pg_am  pg_amop  pg_amproc  pg_appendonly  pg_appendonly_alter_column (not supported in 4.3)  pg_attrdef  pg_attribute  pg_auth_members  pg_authid  pg_autovacuum (not supported in 4.2.5 and later)  pg_cast  pg_class  pg_constraint  pg_conversion  pg_database  pg_depend  pg_description  pg_exttable  pg_filespace  pg_filespace_entry  pg_foreign_data_wrapper (not supported in 4.3)  pg_foreign_server (not supported in 4.3)  pg_foreign_table (not supported in 4.3)  pg_index  pg_inherits  pg_language  pg_largeobject  pg_listener  pg_namespace  pg_opclass  pg_operator  pg_partition  pg_partition_rule  pg_pltemplate  pg_proc  pg_resourcetype  pg_resqueue  pg_resqueuecapability  pg_rewrite  pg_shdepend  pg_shdescription  pg_stat_last_operation  pg_stat_last_shoperation  pg_statistic  pg_tablespace  pg_trigger  pg_type  pg_user_mapping (not supported in 4.3)  pg_window", 
+            "title": "System Tables"
+        }, 
+        {
+            "location": "/meta-ref/meta-ref-all/#system-views", 
+            "text": "Greenplum Database provides the following system views not available in PostgreSQL.  gp_distributed_log  gp_distributed_xacts  gp_pgdatabase  gp_resqueue_status  gp_transaction_log  gpexpand.expansion_progress  pg_max_external_files (shows number of external table files allowed per segment host when using the file protocol)  pg_partition_columns  pg_partition_templates  pg_partitions  pg_stat_activity  pg_stat_replication  pg_resqueue_attributes  pg_resqueue_status (Deprecated. Use gp_toolkit.gp_resqueue_status.)  pg_stat_resqueues  pg_user_mappings (not supported)\n* session_level_memory_consumption 4.3.4.0  For more information about the standard system views supported in PostgreSQL and Greenplum Database, see the following sections of the PostgreSQL documentation:   System Views  Statistics Collector Views  The Information Schema", 
+            "title": "System Views"
+        }, 
+        {
+            "location": "/meta-ref/meta-ref-all/#system-catalogs-definitions", 
+            "text": "System catalog table and view definitions in alphabetical order.  gp_configuration_history  The  gp_configuration_history  table contains information about system changes related to fault detection and recovery operations. The fts_probe process logs data to this table, as do certain related management utilities such as gpcheck, gprecoverseg, and gpinitsystem. For example, when you add a new segment and mirror segment to the system, records for these events are logged to gp_configuration_history.\nThe event descriptions stored in this table may be helpful for troubleshooting serious system issues in collaboration with Greenplum support technicians.  This table is populated only on the master. This table is defined in the pg_global tablespace, meaning it is globally shared across all databases in the system.     column  type  references  description      time  timestamp with time zone  Timestamp for the event recorded.     dbid  smallint  gp_segment _ configuration.dbid  System-assigned ID. The unique identifier of a segment (or master) instance.    desc  text  Text description of the event.      pg_partition_columns  The pg_partition_columns system view is used to show the partition key columns of a partitioned table.     column  type  references  description      schemaname  name  The name of the schema the partitioned table is in.     tablename  name  The table name of the top-level parent table.     columnname  name   The name of the partition key column.    partitionleve  smallint   The level of this subpartition in the hierarchy.    position_in_partition_key  integer  For list partitions you can have a composite (multi-column) partition key. This shows the position of the column in a composite key.", 
+            "title": "System Catalogs Definitions"
+        }, 
+        {
+            "location": "/history/", 
+            "text": "\u6587\u6863\u5386\u53f2", 
+            "title": "\u6587\u6863\u5386\u53f2"
+        }, 
+        {
+            "location": "/history/#_1", 
+            "text": "", 
+            "title": "\u6587\u6863\u5386\u53f2"
         }
     ]
 }
