@@ -5,10 +5,12 @@ pages:
 - 欢迎使用: 'index.md'
 - "<&product-name> 系统概述": 'overview.md'
 - "<&product-name> 管理介绍" : 'management.md'
-- " SQL命令参考 " : 'sql-ref.md'
-    - "" : 'sql-ref/sql-ref-summary.md'
-- " 系统表参考 " : 'meta-ref.md'
-    - "" : 'meta-ref/meta-ref-all.md'
+- "SQL命令参考" :
+  - 'SQL命令参考': 'sql-ref.md' 
+  - "列表" : 'sql-ref/sql-ref-summary.md'
+- "系统表参考" :
+  - "系统表参考" : 'meta-ref.md'
+  - "系统表" : 'meta-ref/meta-ref-all.md'
 # - "" : 'func-ref.md'
 # - "" : 'guc-ref.md'
 - "文档历史" : 'history.md'
