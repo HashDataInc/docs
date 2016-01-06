@@ -1,0 +1,8 @@
+dependencies:
+  pre:
+    - pip mkdocs
+
+test:
+  override:
+    - mkdocs gh-deploy -c
+
