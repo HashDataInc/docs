@@ -2,4 +2,5 @@ site_name: HashData
 theme: readthedocs 
 
 pages:
-- 欢迎使用: 'welcome.md'
+- 欢迎使用: 'index.md'
+
