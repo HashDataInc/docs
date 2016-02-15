@@ -5,6 +5,9 @@ pages:
 - 欢迎使用: 'index.md'
 - "<&product-name> 系统概述": 'overview.md'
 - "<&product-name> 管理介绍" : 'management.md'
+  - '定义数据库对象': 'management-defining-database-objects.md'
+  - '数据管理': 'management-managing-data.md'
+  - '查询数据': 'management-quering-data.md'
 - "SQL命令参考" :
   - 'SQL命令参考': 'sql-ref.md' 
   - "列表" : 'sql-ref/sql-ref-summary.md'

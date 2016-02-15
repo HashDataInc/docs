@@ -30,137 +30,104 @@
 * 选择公网ip
 * 选择机房
 
-## 数据导入和数据导出 ##
-基于云服务的数据导入导出操作一般通过云存储来做桥梁，例如：亚马逊要求数据是在S3或者DynamoDB中。
+## 开始使用 ##
+丽荣部分？
 
-在<&cloud-provider>上，我们通过<&cloud-provider-ojbect-storage>服务来做数据中转。用户首现将自有的数据服务上的数据，转储到存储服务上。
+## 访问<&product-name> ##
+本小结向您介绍使用不同工具连接 <&product-name> 系统会话的方法。
+### 建立会话 ###
+Users can connect to Greenplum Database using a PostgreSQL-compatible client program, such as psql. Users and administrators always connect to Greenplum Database through the master; the segments cannot accept client connections.
+In order to establish a connection to the Greenplum Database master, you will need to know the following connection information and configure your client program accordingly.
 
-<&product-name> 通过如下架构来加速数据加载：
+| Connection Parameter | Description | Environment Variable |
+| --- | --- | --- |
+| Application name | The application name that is connecting to the database. The default value, held in the application_name connection parameter is psql. | $PGAPPNAME |
+| Database name | The name of the database to which you want to connect. For a newly initialized system, use the template1 database to connect for the first time. | $PGDATABASE |
+| Host name | The host name of the Greenplum Database master. The default host is the local host. | $PGHOST |
+| Port | The port number that the Greenplum Database master instance is running on. The default is 5432. | $PGPORT |
+| User name | The database user (role) name to connect as. This is not necessarily the same as your OS user name. Check with your Greenplum administrator if you are not sure what you database user name is. Note that every Greenplum Database system has one superuser account that is created automatically at initialization time. This account has the same name as the OS name of the user who initialized the Greenplum system (typically gpadmin). | $PGUSER |
 
-图：todo：
+### 支持客户端列表 ###
+Users can connect to Greenplum Database using various client applications:
+* A number of Greenplum Database Client Applications are provided with your Greenplum installation.
+The psql client application provides an interactive command-line interface to Greenplum Database.
+* pgAdmin III for Greenplum Database is an enhanced version of the popular management tool pgAdmin III. Since version 1.10.0, the pgAdmin III client available from PostgreSQL Tools includes support
+for Greenplum-specific features. Installation packages are available for download from the pgAdmin download site .
+* Using standard Database Application Interfaces, such as ODBC and JDBC, users can create their own client applications that interface to Greenplum Database. Because Greenplum Database is based on PostgreSQL, it uses the standard PostgreSQL database drivers.
+* Most Third-Party Client Tools that use standard database interfaces, such as ODBC and JDBC, can be configured to connect to Greenplum Database.
 
-上图中包含如下几个重要角色：
+### Connecting with psql ###
+Depending on the default values used or the environment variables you have set, the following examples show how to access a database via psql:
 
-* 云存储服务：通过标准 HTTP API 对外提供文件读取和写入功能，提供基础元数据服务（数据格式，本份信息，加密信息等）。
-* 格式转换模块：为了支持多种不同数据结构，通过格式转换模块，可以将不同数据格式文件转化为标准的数据格式，加速数据导入导出速度。
-* 数据传输加速模块：通过专用数据传输加速模块，可以充分利用云服务特点，根据需求来动态调整数据导入导出时系统间流量的控制，在需要时可以动态限制速度，满足用户数据导入导出和正常业务之间的资源平衡问题。
-* <&product-name>数据加载进程：用来读取和写入数据传输加速模块的数据库进程，解除程序间强耦合，提高数据库自身的可靠性。
-* <&product-name> 数据模式定义及配置：通过在数据库内部创建外部表，来将数据导入和导出数据库。允许系统灵活扩展，适应更佳各种需求不同的云服务场景。
+	$ psql -d gpdatabase -h master_host -p 5432 -U gpadmin
 
-### 云存储服务 ###
-第一阶段需要支持青云的对象存储功能，一般云服务都是通过HTTP API来工作的。
+	$ psql gpdatabase
 
-问题：
+	$ psql
 
-* 这里需要注意对象存储功能最大支持存储5T数据。因此，如果用户将MySQL的备份文件整体作为一个对象存储起来，那么加载时可能就需要再解析文件后才可能进行数据并行加载。
+If a user-defined database has not yet been created, you can access the system by connecting to the template1 database. For example:
 
-* 不同的软件备份的数据可能在格式上不同，因此对象存储服务是否提供相应的元信息？这里需要非常清楚，青云如何帮助用户将数据存储到对象存储上的。
+    $ psql template1
 
-* 在明确了存储的内容格式，存储粒度后，就能够直接进行后续操作。
+After connecting to a database, psql provides a prompt with the name of the database to which psql is currently connected, followed by the string => (or =# if you are the database superuser). For example:
 
-###  格式转换模块 ###
+	gpdatabase=>
 
-格式转化和协议转换主要是利用目前<&product-name>的能力外表，自定义协议，来尽可能减少我们对Greenplum数据库的修改，尽量通过利用已有的API来进行二次开发。
+At the prompt, you may type in SQL commands. A SQL command must end with a ; (semicolon) in order to be sent to the server and executed. For example:
 
-这里的格式转换主要是就是针对不同数据源存储到云存储服务后，如何转换为数据库对象而言的。如果对方能够直接存储为通用数据格式，那么就不需要这个额外的模块，利用现在支持的文本协议即可。
+	=> SELECT * FROM mytable;
 
-### 数据传输加速模块 ###
+See the Greenplum Reference Guide for information about using the psql client application and SQL commands and syntax.
 
-此模块主要提供几个特定的feature，支持功能就是目前gpfdist的功能。
+### pgAdmin III for Greenplum Database ###
 
-问题：
+If you prefer a graphic interface, use pgAdmin III for Greenplum Database. This GUI client supports PostgreSQL databases with all standard pgAdmin III features, while adding support for Greenplum-specific features.
+pgAdmin III for Greenplum Database supports the following Greenplum-specific features:
 
-* 目前Greenplum中支持的协议是gpfdist协议或者管道，因此无法直接和云存储服务直接进行对接。
-* 如果我们决定不在使用 gpfdist，那么使用 golang 开发一个类似gpfdist的程序，允许其连接云存储对象服务，就能简化我们的很多开发工作，新程序可以通过管道和外部表来提供数据加载服务。
-* 如果我们希望使用C语言其它标准化协议，可以尝试开发自定义协议。这部分也是目前Greenplum内置就能支持的。
-* 如果利用管道来进行文件外部表加载，那么传输程序就是和数据库进程运行在一个虚拟机上的。
-* golang 目前我可以很快速的开发，坑什么的也都碰过很多了。
+* External tables
+* Append-optimized tables, including compressed append-optimized tables
+* Table partitioning
+* Resource queues
+* Graphical EXPLAIN ANALYZE
+* Greenplum server configuration parameters
 
-###  UI认为调度 ###
-这部分工作应该和gpload非常像，我们可以修改gpload来贴合我们的需求。将UI的配置最终通过gpload来进行加载上的控制。
+### Database Application Interfaces ###
+You may want to develop your own client applications that interface to Greenplum Database. PostgreSQL provides a number of database drivers for the most commonly used database application programming interfaces (APIs), which can also be used with Greenplum Database. These drivers are available as
+a separate download. Each driver is an independent PostgreSQL development project and must be downloaded, installed and configured to connect to Greenplum Database. The following drivers are available:
 
-问题：
+| API | PostgreSQL Driver | Download Link |
+| --- | --- | --- |
+| ODBC | pgodbc | Available in the Greenplum Database Connectivity package, which can be downloaded from https://network.pivotal.io/ products. |
+| JDBC | pgjdbc | Available in the Greenplum Database Connectivity package, which can be downloaded from https://network.pivotal.io/ products. |
+| Perl DBI | pgperl | http://search.cpan.org/dist/DBD-Pg/ |
+| Python DBI | pygresql | http://www.pygresql.org/ |
 
-* 限速
-* 支持非 gpfdist 的功能
+General instructions for accessing a Greenplum Database with an API are:
+1. Download your programming language platform and respective API from the appropriate source. For example, you can get the Java Development Kit (JDK) and JDBC API from Sun.
 
-综上，我们需要首先确认数据在云存储服务的格式和相关元信息，其次在界面提供用户选择加载的相关配置（这些配置应该类似gpload还有aws）。
+1. Write your client application according to the API specifications. When programming your application, be aware of the SQL support in Greenplum Database so you do not include any unsupported SQL syntax.
 
-应用加载后（独立的image，并且支持事件服务，管理加载进度），向指定数据库进行加载。
+Download the appropriate PostgreSQL driver and configure connectivity to your Greenplum Database master instance. Greenplum Database provides a client tools package that contains the supported database drivers for Greenplum Database. Download the client tools package from Pivotal Network and documentation from Pivotal Documentation.
 
-决策：
+### Third-Party Client Tools ###
+Most third-party extract-transform-load (ETL) and business intelligence (BI) tools use standard database interfaces, such as ODBC and JDBC, and can be configured to connect to Greenplum Database. Pivotal has worked with the following tools on previous customer engagements and is in the process of becoming officially certified:
 
-* 尽快了解青云的对象存储和外部数据源直接的关系！
-* 是否继续使用 gpfdist
-* 是否继续使用 gpload
+* Business Objects
+* Microstrategy
+* Informatica Power Center
+* Microsoft SQL Server Integration Services (SSIS) and Reporting Services (SSRS)
+* Ascential Datastage
+* SAS
+* IBM Cognos
 
------------------------------------
+Pivotal Professional Services can assist users in configuring their chosen third-party tool for use with Greenplum Database.
 
-1. 硬件配置
-	1. 我们应该了解青云虚拟机情况，来决定如何设计我们的低配节点和高配节点上对应的segment数量。
-	1. 这里需要考虑 cpu 数量，内存容量，磁盘io，网卡。我们需要平衡这些数据。
-	1. 青云内部网络硬件架构和软件架构，以及对应用的潜在影响。
-    1. 青云内部的硬盘是如何和主机关联的，性能指标，例如：吞吐，iops。
-	1. 通过这些，我们需要制定一个测试计划。来系统性的了解云上环境，青云的环境，以及得到最优的配置组合
-	1. 定义一个合理的基线非常重要，这一点可能需要和青云工程师认真的去看看。
-	1. 节点损坏后，多久内可以得到一个新的节点并且配置好指定的磁盘快照。
-	1. 机器使用网卡是否可以多张？多个vm如何share磁盘和网卡？性能如何？
-  
-1. 网络问题
-	1. 虚拟网络的分配规则，性能影响
-	1. 假设服务器故障，虚拟ip是否可以立即分配给一台新的虚拟设备
-	1. 节点挂掉后，外部ip能否自动漂移到其它节点
-    1. 虚拟ip和本地网卡之间的关系
-	1. 网络性能，tcp／udp
-	1. 网络数据很多时候，对青云系统是否影响，是否存在可能的保护系统
-	1. 是否能够在软件路由层面提供限速机制
-	1. 网络监控和网络问题排查是如何进行的？
+## 使用数据库 ##
 
-1. 快照性能问题
-	1. 如果配置一份数据双写到两块磁盘，两块磁盘是如何分配的？同一个机器？还是不同机器？跨机机架么？
-	1. 系统如果发起flush操作，双写的平均和最大延迟是多少？
-	1. 系统是如何将磁盘接入到虚拟机的？延迟，吞吐和iops分别是多少？
-	1. 系统进行全量快照备份速度大概是多少？对系统性能的影响是在什么层面的？影响是否有量化指标？
-	1. 系统进行增量快照速度如何？对系统影响如何？影响是否有量化指标？
-	1. 如果我们希望使用磁盘双写作为镜像节点是否可行？也就是说，如果节点A及其相应配置的磁盘同时失效，是否可以利用双写的镜像来启动一个新的节点来提供后续服务？这样的操作，硬盘挂载是网络上的么？是否存在性能问题？
-	1. 目前青云对磁盘的监控主要有哪些工作？数据的一致性又是如何校验和保证的？
-	1. 青云能否提供足够的扫描带宽给我们的高配大容量存储和高配高性能节点？
+### 定义数据库对象
+### 管理数据 ###
+### 查询数据 ###
 
-1. 网络性能问题
-	1. 虚拟机间网络性能是多少？全虚／半虚／容器
-	1. 跨主机网络性能是多少？经过每个数据包都需要经过基于软件的节点么？
-	1. 主机间的包延迟和正常机架上过交换机速度差异多少？吞吐差异多少？
-	1. 跨机架的问题是否更加严重？
-	1. 是否有网络intensive的应用相关的测试结果？例如：nginx的压测数据？keepalive，非keepalive模式等等。
-	1. 单机上是否支持多块网卡，如果支持多块网卡，如何绑定到虚拟机？
-	1. 网卡是千兆还是万兆？
-	1. 是否遇到网络intensive应用的问题？如何调优和解决？最终和非云架构相比，在延迟，吞吐上是否对比数据？
-	1. 私有网络如何访问青云其它服务？例如MySQL／对象存储？带宽如何控制？
-
-1. 云上的测试工作
-	1. 上面的问题，我们需要对上面的一些问题进行一些合理的整理，并考虑类似gpcheckperf来进行一些基础数据收集，让我们更佳了解云架构的特点。
-
-1. 数据加载的安全性问题
-	1. 对象存储的请求是如何进行安全认证的？
-	1. 从私有网络访问外部服务是否必须通过私有ip？
-	1. 是否有其它通道进行访问？如果不支持，是否有计划支持？
-	1. 传输是否加密？
-
-1. 青云对象服务的特点
-
-## 针对paas业务的监控平台（搭建）##
-这部分工作是我们自己的管理后台程序，方便我们了解用户的相关情况。一些我们的软件和云服务交互的信息和日志，需要在这里进行分类归档，方便我们排查问题。（也可能是云本身需要做？存疑）
-
-基础服务：
-
-* 发现服务
-	* 注册
-* 事件服务
-	* 启动
-	* 停止
-	* 数据加载状态更新
-	* 容错信息
-* 云服务管理
-	* 新建集群
-	* 删除集群
-	* 状态管理
+## 数据库安全管理 ##
+## 数据的导入导出 ##
+## 性能优化 ##
