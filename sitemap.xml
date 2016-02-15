@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-01-10</lastmod>
+     <lastmod>2016-02-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,30 +12,50 @@
     
     <url>
      <loc>None/overview/</loc>
-     <lastmod>2016-01-10</lastmod>
+     <lastmod>2016-02-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
     <url>
-     <loc>None/management/</loc>
-     <lastmod>2016-01-10</lastmod>
+     <loc>None/management-accessing-database/</loc>
+     <lastmod>2016-02-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>None/management-defining-database-objects/</loc>
+     <lastmod>2016-02-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/management-managing-data/</loc>
+     <lastmod>2016-02-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/management-quering-data/</loc>
+     <lastmod>2016-02-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
         
     <url>
      <loc>None/sql-ref/</loc>
-     <lastmod>2016-01-10</lastmod>
+     <lastmod>2016-02-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/sql-ref/sql-ref-summary/</loc>
-     <lastmod>2016-01-10</lastmod>
+     <lastmod>2016-02-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -45,13 +65,13 @@
         
     <url>
      <loc>None/meta-ref/</loc>
-     <lastmod>2016-01-10</lastmod>
+     <lastmod>2016-02-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/meta-ref/meta-ref-all/</loc>
-     <lastmod>2016-01-10</lastmod>
+     <lastmod>2016-02-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -60,7 +80,7 @@
     
     <url>
      <loc>None/history/</loc>
-     <lastmod>2016-01-10</lastmod>
+     <lastmod>2016-02-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

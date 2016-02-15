@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>访问数据库 - HashData</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "访问数据库";
+    var mkdocs_page_input_path = "management-accessing-database.md";
+    var mkdocs_page_url = "/management-accessing-database/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> HashData</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">欢迎使用</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../overview/"><&product-name> 系统概述</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span><&product-name> 管理介绍</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">访问数据库</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#product-name">&lt;&amp;product-name&gt; 创建和管理</a></li>
+                
+                    <li><a class="toctree-l4" href="#product-name_1">创建 &lt;&amp;product-name&gt; 集群</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">开始使用</a></li>
+                
+                    <li><a class="toctree-l4" href="#product-name_2">访问&lt;&amp;product-name&gt;</a></li>
+                
+                    <li><a class="toctree-l4" href="#_4">使用数据库</a></li>
+                
+                    <li><a class="toctree-l4" href="#_8">数据库安全管理</a></li>
+                
+                    <li><a class="toctree-l4" href="#_9">数据的导入导出</a></li>
+                
+                    <li><a class="toctree-l4" href="#_10">性能优化</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../management-defining-database-objects/">定义数据库对象</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../management-managing-data/">数据管理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../management-quering-data/">查询数据</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>SQL命令参考</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../sql-ref/">SQL命令参考</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../sql-ref/sql-ref-summary/">列表</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>系统表参考</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../meta-ref/">系统表参考</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../meta-ref/meta-ref-all/">系统表</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../history/">文档历史</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">HashData</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li><&product-name> 管理介绍 &raquo;</li>
+        
+      
+    
+    <li>访问数据库</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="product-name">&lt;&amp;product-name&gt; 创建和管理</h1>
+<h2 id="product-name_1">创建 &lt;&amp;product-name&gt; 集群</h2>
+<p>集群详情</p>
+<ul>
+<li>集群名称</li>
+<li>初始化数据库名称（默认）</li>
+<li>端口</li>
+<li>初始用户名</li>
+<li>密码</li>
+</ul>
+<p>节点配置</p>
+<ul>
+<li>版本：软件大版本</li>
+<li>
+<p>类型</p>
+<ul>
+<li>低配大容量</li>
+<li>高配大容量</li>
+<li>低配高速存储</li>
+<li>高配高速存储</li>
+</ul>
+</li>
+<li>
+<p>集群类型</p>
+<ul>
+<li>单节点集群（1节点）</li>
+<li>多节点集群（1-16节点）</li>
+</ul>
+</li>
+</ul>
+<p>额外配置</p>
+<ul>
+<li>默认配置组</li>
+<li>加密(不支持)</li>
+<li>VPC 配置</li>
+<li>公网访问</li>
+<li>选择公网ip</li>
+<li>选择机房</li>
+</ul>
+<h2 id="_1">开始使用</h2>
+<p>丽荣部分？</p>
+<h2 id="product-name_2">访问&lt;&amp;product-name&gt;</h2>
+<p>本小结向您介绍使用不同工具连接 &lt;&amp;product-name&gt; 系统会话的方法。</p>
+<h3 id="_2">建立会话</h3>
+<p>Users can connect to Greenplum Database using a PostgreSQL-compatible client program, such as psql. Users and administrators always connect to Greenplum Database through the master; the segments cannot accept client connections.
+In order to establish a connection to the Greenplum Database master, you will need to know the following connection information and configure your client program accordingly.</p>
+<table>
+<thead>
+<tr>
+<th>Connection Parameter</th>
+<th>Description</th>
+<th>Environment Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application name</td>
+<td>The application name that is connecting to the database. The default value, held in the application_name connection parameter is psql.</td>
+<td>$PGAPPNAME</td>
+</tr>
+<tr>
+<td>Database name</td>
+<td>The name of the database to which you want to connect. For a newly initialized system, use the template1 database to connect for the first time.</td>
+<td>$PGDATABASE</td>
+</tr>
+<tr>
+<td>Host name</td>
+<td>The host name of the Greenplum Database master. The default host is the local host.</td>
+<td>$PGHOST</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>The port number that the Greenplum Database master instance is running on. The default is 5432.</td>
+<td>$PGPORT</td>
+</tr>
+<tr>
+<td>User name</td>
+<td>The database user (role) name to connect as. This is not necessarily the same as your OS user name. Check with your Greenplum administrator if you are not sure what you database user name is. Note that every Greenplum Database system has one superuser account that is created automatically at initialization time. This account has the same name as the OS name of the user who initialized the Greenplum system (typically gpadmin).</td>
+<td>$PGUSER</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">支持客户端列表</h3>
+<p>Users can connect to Greenplum Database using various client applications:
+<em> A number of Greenplum Database Client Applications are provided with your Greenplum installation.
+The psql client application provides an interactive command-line interface to Greenplum Database.
+</em> pgAdmin III for Greenplum Database is an enhanced version of the popular management tool pgAdmin III. Since version 1.10.0, the pgAdmin III client available from PostgreSQL Tools includes support
+for Greenplum-specific features. Installation packages are available for download from the pgAdmin download site .
+<em> Using standard Database Application Interfaces, such as ODBC and JDBC, users can create their own client applications that interface to Greenplum Database. Because Greenplum Database is based on PostgreSQL, it uses the standard PostgreSQL database drivers.
+</em> Most Third-Party Client Tools that use standard database interfaces, such as ODBC and JDBC, can be configured to connect to Greenplum Database.</p>
+<h3 id="connecting-with-psql">Connecting with psql</h3>
+<p>Depending on the default values used or the environment variables you have set, the following examples show how to access a database via psql:</p>
+<pre><code>$ psql -d gpdatabase -h master_host -p 5432 -U gpadmin
+
+$ psql gpdatabase
+
+$ psql
+</code></pre>
+<p>If a user-defined database has not yet been created, you can access the system by connecting to the template1 database. For example:</p>
+<pre><code>$ psql template1
+</code></pre>
+<p>After connecting to a database, psql provides a prompt with the name of the database to which psql is currently connected, followed by the string =&gt; (or =# if you are the database superuser). For example:</p>
+<pre><code>gpdatabase=&gt;
+</code></pre>
+<p>At the prompt, you may type in SQL commands. A SQL command must end with a ; (semicolon) in order to be sent to the server and executed. For example:</p>
+<pre><code>=&gt; SELECT * FROM mytable;
+</code></pre>
+<p>See the Greenplum Reference Guide for information about using the psql client application and SQL commands and syntax.</p>
+<h3 id="pgadmin-iii-for-greenplum-database">pgAdmin III for Greenplum Database</h3>
+<p>If you prefer a graphic interface, use pgAdmin III for Greenplum Database. This GUI client supports PostgreSQL databases with all standard pgAdmin III features, while adding support for Greenplum-specific features.
+pgAdmin III for Greenplum Database supports the following Greenplum-specific features:</p>
+<ul>
+<li>External tables</li>
+<li>Append-optimized tables, including compressed append-optimized tables</li>
+<li>Table partitioning</li>
+<li>Resource queues</li>
+<li>Graphical EXPLAIN ANALYZE</li>
+<li>Greenplum server configuration parameters</li>
+</ul>
+<h3 id="database-application-interfaces">Database Application Interfaces</h3>
+<p>You may want to develop your own client applications that interface to Greenplum Database. PostgreSQL provides a number of database drivers for the most commonly used database application programming interfaces (APIs), which can also be used with Greenplum Database. These drivers are available as
+a separate download. Each driver is an independent PostgreSQL development project and must be downloaded, installed and configured to connect to Greenplum Database. The following drivers are available:</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>PostgreSQL Driver</th>
+<th>Download Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ODBC</td>
+<td>pgodbc</td>
+<td>Available in the Greenplum Database Connectivity package, which can be downloaded from https://network.pivotal.io/ products.</td>
+</tr>
+<tr>
+<td>JDBC</td>
+<td>pgjdbc</td>
+<td>Available in the Greenplum Database Connectivity package, which can be downloaded from https://network.pivotal.io/ products.</td>
+</tr>
+<tr>
+<td>Perl DBI</td>
+<td>pgperl</td>
+<td>http://search.cpan.org/dist/DBD-Pg/</td>
+</tr>
+<tr>
+<td>Python DBI</td>
+<td>pygresql</td>
+<td>http://www.pygresql.org/</td>
+</tr>
+</tbody>
+</table>
+<p>General instructions for accessing a Greenplum Database with an API are:
+1. Download your programming language platform and respective API from the appropriate source. For example, you can get the Java Development Kit (JDK) and JDBC API from Sun.</p>
+<ol>
+<li>Write your client application according to the API specifications. When programming your application, be aware of the SQL support in Greenplum Database so you do not include any unsupported SQL syntax.</li>
+</ol>
+<p>Download the appropriate PostgreSQL driver and configure connectivity to your Greenplum Database master instance. Greenplum Database provides a client tools package that contains the supported database drivers for Greenplum Database. Download the client tools package from Pivotal Network and documentation from Pivotal Documentation.</p>
+<h3 id="third-party-client-tools">Third-Party Client Tools</h3>
+<p>Most third-party extract-transform-load (ETL) and business intelligence (BI) tools use standard database interfaces, such as ODBC and JDBC, and can be configured to connect to Greenplum Database. Pivotal has worked with the following tools on previous customer engagements and is in the process of becoming officially certified:</p>
+<ul>
+<li>Business Objects</li>
+<li>Microstrategy</li>
+<li>Informatica Power Center</li>
+<li>Microsoft SQL Server Integration Services (SSIS) and Reporting Services (SSRS)</li>
+<li>Ascential Datastage</li>
+<li>SAS</li>
+<li>IBM Cognos</li>
+</ul>
+<p>Pivotal Professional Services can assist users in configuring their chosen third-party tool for use with Greenplum Database.</p>
+<h2 id="_4">使用数据库</h2>
+<h3 id="_5">定义数据库对象</h3>
+<h3 id="_6">管理数据</h3>
+<h3 id="_7">查询数据</h3>
+<h2 id="_8">数据库安全管理</h2>
+<h2 id="_9">数据的导入导出</h2>
+<h2 id="_10">性能优化</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../management-defining-database-objects/" class="btn btn-neutral float-right" title="定义数据库对象">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../overview/" class="btn btn-neutral" title="<&product-name> 系统概述"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../management-defining-database-objects/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

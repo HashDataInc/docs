@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>定义数据库对象 - HashData</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "定义数据库对象";
+    var mkdocs_page_input_path = "management-defining-database-objects.md";
+    var mkdocs_page_url = "/management-defining-database-objects/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> HashData</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">欢迎使用</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../overview/"><&product-name> 系统概述</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span><&product-name> 管理介绍</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../management-accessing-database/">访问数据库</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">定义数据库对象</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">定义数据库对象</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-and-managing-databases">Creating and Managing Databases</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-and-managing-schemas">Creating and Managing Schemas</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#creating-and-managing-tables">Creating and Managing Tables</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-a-table">Creating a Table</a></li>
+                
+                    <li><a class="toctree-l4" href="#choosing-column-data-types">Choosing Column Data Types</a></li>
+                
+                    <li><a class="toctree-l4" href="#setting-table-and-column-constraints">Setting Table and Column Constraints</a></li>
+                
+                    <li><a class="toctree-l4" href="#choosing-the-table-distribution-policy">Choosing the Table Distribution Policy</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#todo">TODO</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#creating-and-using-sequences">Creating and Using Sequences</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-a-sequence">Creating a Sequence</a></li>
+                
+                    <li><a class="toctree-l4" href="#using-a-sequence">Using a Sequence</a></li>
+                
+                    <li><a class="toctree-l4" href="#altering-a-sequence">Altering a Sequence</a></li>
+                
+                    <li><a class="toctree-l4" href="#dropping-a-sequence">Dropping a Sequence</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#using-indexes-in-greenplum-database">Using Indexes in Greenplum Database</a></li>
+                
+                    <li><a class="toctree-l4" href="#to-cluster-an-index-in-greenplum-database">To cluster an index in Greenplum Database</a></li>
+                
+                    <li><a class="toctree-l4" href="#index-types">Index Types</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-an-index">Creating an Index</a></li>
+                
+                    <li><a class="toctree-l4" href="#examining-index-usage">Examining Index Usage</a></li>
+                
+                    <li><a class="toctree-l4" href="#managing-indexes">Managing Indexes</a></li>
+                
+                    <li><a class="toctree-l4" href="#dropping-an-index">Dropping an Index</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#creating-and-managing-views">Creating and Managing Views</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-views">Creating Views</a></li>
+                
+                    <li><a class="toctree-l4" href="#dropping-views">Dropping Views</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../management-managing-data/">数据管理</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../management-quering-data/">查询数据</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>SQL命令参考</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../sql-ref/">SQL命令参考</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../sql-ref/sql-ref-summary/">列表</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>系统表参考</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../meta-ref/">系统表参考</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../meta-ref/meta-ref-all/">系统表</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../history/">文档历史</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">HashData</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li><&product-name> 管理介绍 &raquo;</li>
+        
+      
+    
+    <li>定义数据库对象</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="_1">定义数据库对象</h3>
+<p>This section covers data definition language (DDL) in Greenplum Database and how to create and manage database objects.
+Creating objects in a Greenplum Database includes making up-front choices about data distribution, storage options, data loading, and other Greenplum features that will affect the ongoing performance of your database system. Understanding the options that are available and how the database will be used will help you make the right decisions.
+Most of the advanced Greenplum features are enabled with extensions to the SQL CREATE DDL statements.</p>
+<h4 id="creating-and-managing-databases">Creating and Managing Databases</h4>
+<p>A Greenplum Database system is a single instance of Greenplum Database. There can be several separate Greenplum Database systems installed, but usually just one is selected by environment variable settings. See your Greenplum administrator for details.</p>
+<p>There can be multiple databases in a Greenplum Database system. This is different from some database management systems (such as Oracle) where the database instance is the database. Although you can create many databases in a Greenplum system, client programs can connect to and access only one database at a time — you cannot cross-query between databases.</p>
+<h5 id="about-template-databases">About Template Databases</h5>
+<p>Each new database you create is based on a template. Greenplum provides a default database, template1. Use template1 to connect to Greenplum Database for the first time. Greenplum Database uses template1 to create databases unless you specify another template. Do not create any objects in template1 unless you want those objects to be in every database you create.</p>
+<p>Greenplum Database uses two other database templates, template0 and postgres, internally. Do not drop or modify template0 or postgres. You can use template0 to create a completely clean database containing only the standard objects predefined by Greenplum Database at initialization, especially if you modified template1.</p>
+<h5 id="creating-a-database">Creating a Database</h5>
+<p>The CREATE DATABASE command creates a new database. For example:</p>
+<pre><code>=&gt; CREATE DATABASE new_dbname;
+</code></pre>
+<p>To create a database, you must have privileges to create a database or be a Greenplum Database superuser. If you do not have the correct privileges, you cannot create a database. Contact your Greenplum Database administrator to either give you the necessary privilege or to create a database for you.</p>
+<p>You can also use the client program createdb to create a database. For example, running the following command in a command line terminal connects to Greenplum Database using the provided host name and port and creates a database named mydatabase:</p>
+<pre><code>$ createdb -h masterhost -p 5432 mydatabase
+</code></pre>
+<p>The host name and port must match the host name and port of the installed Greenplum Database system.
+Some objects, such as roles, are shared by all the databases in a Greenplum Database system. Other objects, such as tables that you create, are known only in the database in which you create them.</p>
+<h5 id="cloning-a-database">Cloning a Database</h5>
+<p>By default, a new database is created by cloning the standard system database template, template1. Any database can be used as a template when creating a new database, thereby providing the capability to 'clone' or copy an existing database and all objects and data within that database. For example:</p>
+<pre><code>=&gt; CREATE DATABASE new_dbname TEMPLATE old_dbname;
+</code></pre>
+<h5 id="viewing-the-list-of-databases">Viewing the List of Databases</h5>
+<p>If you are working in the psql client program, you can use the \l meta-command to show the list of databases and templates in your Greenplum Database system. If using another client program and you are a superuser, you can query the list of databases from the pg_database system catalog table. For example:</p>
+<pre><code>=&gt; SELECT datname from pg_database;
+</code></pre>
+<h5 id="altering-a-database">Altering a Database</h5>
+<p>The ALTER DATABASE command changes database attributes such as owner, name, or default configuration attributes. For example, the following command alters a database by setting its default schema search path (the search_path configuration parameter):</p>
+<pre><code>=&gt; ALTER DATABASE mydatabase SET search_path TO myschema, public, pg_catalog;
+</code></pre>
+<p>To alter a database, you must be the owner of the database or a superuser.</p>
+<h5 id="dropping-a-database">Dropping a Database</h5>
+<p>The DROP DATABASE command drops (or deletes) a database. It removes the system catalog entries for the database and deletes the database directory on disk that contains the data. You must be the database owner or a superuser to drop a database, and you cannot drop a database while you or anyone else is connected to it. Connect to template1 (or another database) before dropping a database. For example:</p>
+<pre><code>=&gt; \c template1
+=&gt; DROP DATABASE mydatabase;
+</code></pre>
+<p>You can also use the client program dropdb to drop a database. For example, the following command connects to Greenplum Database using the provided host name and port and drops the database mydatabase:</p>
+<pre><code>$ dropdb -h masterhost -p 5432 mydatabase
+</code></pre>
+<p>Warning: Dropping a database cannot be undone.</p>
+<h4 id="creating-and-managing-schemas">Creating and Managing Schemas</h4>
+<p>Schemas logically organize objects and data in a database. Schemas allow you to have more than one object (such as tables) with the same name in the database without conflict if the objects are in different schemas.</p>
+<h5 id="the-default-public-schema">The Default "Public" Schema</h5>
+<p>Every database has a default schema named public. If you do not create any schemas, objects are created in the public schema. All database roles (users) have CREATE and USAGE privileges in the public schema. When you create a schema, you grant privileges to your users to allow access to the schema.</p>
+<h5 id="creating-a-schema">Creating a Schema</h5>
+<p>Use the <strong>CREATE SCHEMA</strong> command to create a new schema. For example: </p>
+<pre><code>=&gt; CREATE SCHEMA myschema;
+</code></pre>
+<p>To create or access objects in a schema, write a qualified name consisting of the schema name and table name separated by a period. For example:</p>
+<pre><code>myschema.table
+</code></pre>
+<p>See <code>Schema Search Paths</code> for information about accessing a schema.
+You can create a schema owned by someone else, for example, to restrict the activities of your users to
+well-defined namespaces. The syntax is:</p>
+<pre><code>=&gt; CREATE SCHEMA schemaname AUTHORIZATION username;
+</code></pre>
+<h5 id="schema-search-paths">Schema Search Paths</h5>
+<p>To specify an object's location in a database, use the schema-qualified name. For example:</p>
+<pre><code>=&gt; SELECT * FROM myschema.mytable;
+</code></pre>
+<p>You can set the search_path configuration parameter to specify the order in which to search the available schemas for objects. The schema listed first in the search path becomes the default schema. If a schema is not specified, objects are created in the default schema.</p>
+<h6 id="setting-the-schema-search-path">Setting the Schema Search Path</h6>
+<p>The search_path configuration parameter sets the schema search order. The ALTER DATABASE command sets the search path. For example:</p>
+<pre><code> =&gt; ALTER DATABASE mydatabase SET search_path TO myschema, public, pg_catalog;
+</code></pre>
+<p>You can also set search_path for a particular role (user) using the ALTER ROLE command. For example:</p>
+<pre><code> =&gt; ALTER ROLE sally SET search_path TO myschema, public, pg_catalog;
+</code></pre>
+<h6 id="viewing-the-current-schema">Viewing the Current Schema</h6>
+<p>Use the current_schema() function to view the current schema. For example:</p>
+<pre><code>=&gt; SELECT current_schema();
+</code></pre>
+<p>Use the SHOW command to view the current search path. For example:</p>
+<pre><code>=&gt; SHOW search_path;
+</code></pre>
+<h5 id="dropping-a-schema">Dropping a Schema</h5>
+<p>Use the DROP SCHEMA command to drop (delete) a schema. For example:</p>
+<pre><code>=&gt; DROP SCHEMA myschema;
+</code></pre>
+<p>By default, the schema must be empty before you can drop it. To drop a schema and all of its objects (tables, data, functions, and so on) use:</p>
+<pre><code>=&gt; DROP SCHEMA myschema CASCADE;
+</code></pre>
+<h5 id="system-schemas">System Schemas</h5>
+<p>The following system-level schemas exist in every database:
+<em> pg_catalog contains the system catalog tables, built-in data types, functions, and operators. It is always part of the schema search path, even if it is not explicitly named in the search path.
+</em> information_schema consists of a standardized set of views that contain information about the objects in the database. These views get system information from the system catalog tables in a standardized way.
+<em> pg_toast stores large objects such as records that exceed the page size. This schema is used internally by the Greenplum Database system.
+</em> pg_bitmapindex stores bitmap index objects such as lists of values. This schema is used internally by the Greenplum Database system.
+<em> pg_aoseg stores append-optimized table objects. This schema is used internally by the Greenplum Database system.
+</em> gp_toolkit is an administrative schema that contains external tables, views, and functions that you can access with SQL commands. All database users can access gp_toolkit to view and query the system log files and other system metrics.</p>
+<h3 id="creating-and-managing-tables">Creating and Managing Tables</h3>
+<p>Greenplum Database tables are similar to tables in any relational database, except that table rows are distributed across the different segments in the system. When you create a table, you specify the table's distribution policy.</p>
+<h4 id="creating-a-table">Creating a Table</h4>
+<p>The CREATE TABLE command creates a table and defines its structure. When you create a table, you define:</p>
+<ul>
+<li>The columns of the table and their associated data types. See Choosing Column Data Types.</li>
+<li>Any table or column constraints to limit the data that a column or table can contain. See Setting Table and Column Constraints.</li>
+<li>The distribution policy of the table, which determines how Greenplum Database divides data is across the segments. See Choosing the Table Distribution Policy.</li>
+<li>The way the table is stored on disk. See Choosing the Table Storage Model.</li>
+<li>The table partitioning strategy for large tables. See Creating and Managing Databases.</li>
+</ul>
+<h4 id="choosing-column-data-types">Choosing Column Data Types</h4>
+<p>The data type of a column determines the types of data values the column can contain. Choose the data type that uses the least possible space but can still accommodate your data and that best constrains the data. For example, use character data types for strings, date or timestamp data types for dates, and numeric data types for numbers.</p>
+<p>For table columns that contain textual data, Pivotal recommends specifying the data type VARCHAR or TEXT. Specifying the data type CHAR is not recommended. In Greenplum Database, the data types VARCHAR or TEXT handles padding added to the data (space characters added after the last non-space character) as significant characters, the data type CHAR does not. For information on the character data types, see the CREATE TABLE command in the Greenplum Database Reference Guide.</p>
+<p>Use the smallest numeric data type that will accommodate your numeric data and allow for future expansion. For example, using BIGINT for data that fits in INT or SMALLINT wastes storage space. If you expect that your data values will expand over time, consider that changing from a smaller datatype to a larger datatype after loading large amounts of data is costly. For example, if your current data values fit in a SMALLINT but it is likely that the values will expand, INT is the better long-term choice.</p>
+<p>Use the same data types for columns that you plan to use in cross-table joins. Cross-table joins usually use the primary key in one table and a foreign key in the other table. When the data types are different, the database must convert one of them so that the data values can be compared correctly, which adds unnecessary overhead.</p>
+<p>Greenplum Database has a rich set of native data types available to users. See the Greenplum Database Reference Guide for information about the built-in data types.</p>
+<h4 id="setting-table-and-column-constraints">Setting Table and Column Constraints</h4>
+<p>You can define constraints on columns and tables to restrict the data in your tables. Greenplum Database support for constraints is the same as PostgreSQL with some limitations, including:</p>
+<ul>
+<li>CHECK constraints can refer only to the table on which they are</li>
+<li>UNIQUE and PRIMARY KEY constraints must be compatible with their tableʼs distribution key and partitioning key, if any.</li>
+<li>FOREIGN KEY constraints are allowed, but not enforced.</li>
+<li>Constraints that you define on partitioned tables apply to the partitioned table as a whole. You cannot define constraints on the individual parts of the table.</li>
+</ul>
+<h5 id="check-constraints">Check Constraints</h5>
+<p>Check constraints allow you to specify that the value in a certain column must satisfy a Boolean (truth-value) expression. For example, to require positive product prices:</p>
+<pre><code>=&gt; CREATE TABLE products 
+           ( product_no integer, 
+             name text, 
+             price numeric CHECK (price &gt; 0) );
+</code></pre>
+<h5 id="not-null-constraints">Not-Null Constraints</h5>
+<p>Not-null constraints specify that a column must not assume the null value. A not-null constraint is always written as a column constraint. For example:</p>
+<pre><code>=&gt; CREATE TABLE products 
+           ( product_no integer NOT NULL,
+             name text NOT NULL,
+             price numeric );
+</code></pre>
+<h5 id="unique-constraints">Unique Constraints</h5>
+<p>Unique constraints ensure that the data contained in a column or a group of columns is unique with respect to all the rows in the table. The table must be hash-distributed (not DISTRIBUTED RANDOMLY), and the constraint columns must be the same as (or a superset of) the table's distribution key columns. For example:</p>
+<pre><code>=&gt; CREATE TABLE products 
+           ( product_no integer UNIQUE, 
+             name text, 
+             price numeric)
+          DISTRIBUTED BY (product_no);
+</code></pre>
+<h5 id="primary-keys">Primary Keys</h5>
+<p>A primary key constraint is a combination of a UNIQUE constraint and a NOT NULL constraint. The table must be hash-distributed (not DISTRIBUTED RANDOMLY), and the primary key columns must be the same as (or a superset of) the table's distribution key columns. If a table has a primary key, this column (or group of columns) is chosen as the distribution key for the table by default. For example:</p>
+<pre><code>=&gt; CREATE TABLE products 
+           ( product_no integer PRIMARY KEY, 
+             name text, 
+             price numeric)
+          DISTRIBUTED BY (product_no);
+</code></pre>
+<h5 id="foreign-keys">Foreign Keys</h5>
+<p>Foreign keys are not supported. You can declare them, but referential integrity is not enforced.</p>
+<p>Foreign key constraints specify that the values in a column or a group of columns must match the values appearing in some row of another table to maintain referential integrity between two related tables. Referential integrity checks cannot be enforced between the distributed table segments of a Greenplum database.</p>
+<h4 id="choosing-the-table-distribution-policy">Choosing the Table Distribution Policy</h4>
+<p>All Greenplum Database tables are distributed. When you create or alter a table, you optionally specify DISTRIBUTED BY (hash distribution) or DISTRIBUTED RANDOMLY (round-robin distribution) to determine the table row distribution.</p>
+<p>Note: The Greenplum Database server configuration parameter gp_create_table_random_default_distribution controls the table distribution policy if the DISTRIBUTED BY clause is not specified when you create a table.
+For information about the parameter, see "Server Configuration Parameters" of the Greenplum Database Reference Guide.</p>
+<p>Consider the following points when deciding on a table distribution policy.</p>
+<ul>
+<li>Even Data Distribution — For the best possible performance, all segments should contain equal portions of data. If the data is unbalanced or skewed, the segments with more data must work harder to perform their portion of the query processing. Choose a distribution key that is unique for each record, such as the primary key.</li>
+<li>Local and Distributed Operations — Local operations are faster than distributed operations. Query processing is fastest if the work associated with join, sort, or aggregation operations is done locally, at the segment level. Work done at the system level requires distributing tuples across the segments, which is less efficient. When tables share a common distribution key, the work of joining or sorting on their shared distribution key columns is done locally. With a random distribution policy, local join operations are not an option.</li>
+<li>Even Query Processing — For best performance, all segments should handle an equal share of the query workload. Query workload can be skewed if a table's data distribution policy and the query predicates are not well matched. For example, suppose that a sales transactions table is distributed on the customer ID column (the distribution key). If a predicate in a query references a single customer ID, the query processing work is concentrated on just one segment.</li>
+</ul>
+<h5 id="declaring-distribution-keys">Declaring Distribution Keys</h5>
+<p>CREATE TABLE's optional clauses DISTRIBUTED BY and DISTRIBUTED RANDOMLY specify the distribution policy for a table. The default is a hash distribution policy that uses either the PRIMARY KEY (if the table has one) or the first column of the table as the distribution key. Columns with geometric or user-defined data types are not eligible as Greenplum distribution key columns. If a table does not have an eligible column, Greenplum distributes the rows randomly or in round-robin fashion.</p>
+<p>To ensure even distribution of data, choose a distribution key that is unique for each record. If that is not possible, choose DISTRIBUTED RANDOMLY. For example:</p>
+<pre><code>=&gt; CREATE TABLE products
+                        (name varchar(40),
+                         prod_id integer,
+                         supplier_id integer)
+             DISTRIBUTED BY (prod_id);
+
+=&gt; CREATE TABLE random_stuff
+                        (things text,
+                         doodads text,
+                         etc text)
+             DISTRIBUTED RANDOMLY;
+</code></pre>
+<h3 id="todo">TODO</h3>
+<h3 id="creating-and-using-sequences">Creating and Using Sequences</h3>
+<p>You can use sequences to auto-increment unique ID columns of a table whenever a record is added. Sequences are often used to assign unique identification numbers to rows added to a table. You can declare an identifier column of type SERIAL to implicitly create a sequence for use with a column.</p>
+<p>Parent topic: Defining Database Objects</p>
+<h4 id="creating-a-sequence">Creating a Sequence</h4>
+<p>The CREATE SEQUENCE command creates and initializes a special single-row sequence generator table with the given sequence name. The sequence name must be distinct from the name of any other sequence, table, index, or view in the same schema. For example:</p>
+<pre><code>CREATE SEQUENCE myserial START 101;
+</code></pre>
+<h4 id="using-a-sequence">Using a Sequence</h4>
+<p>After you create a sequence generator table using CREATE SEQUENCE, you can use the nextval function to operate on the sequence. For example, to insert a row into a table that gets the next value of a sequence:</p>
+<pre><code>INSERT INTO vendors VALUES (nextval('myserial'), 'acme');
+</code></pre>
+<p>You can also use the setval function to reset a sequence's counter value. For example:</p>
+<pre><code>SELECT setval('myserial', 201);
+</code></pre>
+<p>A nextval operation is never rolled back. Afetched value is considered used, even if the transaction that performed the nextval fails. This means that failed transactions can leave unused holes in the sequence of assigned values. setval operations are never rolled back.</p>
+<p>Note that the nextval function is not allowed in UPDATE or DELETE statements if mirroring is enabled, and the currval and lastval functions are not supported in Greenplum Database.</p>
+<p>To examine the current settings of a sequence, query the sequence table:</p>
+<pre><code>SELECT * FROM myserial;
+</code></pre>
+<h4 id="altering-a-sequence">Altering a Sequence</h4>
+<p>The ALTER SEQUENCE command changes the parameters of an existing sequence generator. For example:</p>
+<pre><code>ALTER SEQUENCE myserial RESTART WITH 105;
+</code></pre>
+<p>Any parameters not set in the ALTER SEQUENCE command retain their prior settings.</p>
+<h4 id="dropping-a-sequence">Dropping a Sequence</h4>
+<p>The DROP SEQUENCE command removes a sequence generator table. For example:</p>
+<pre><code>DROP SEQUENCE myserial;
+</code></pre>
+<h3 id="using-indexes-in-greenplum-database">Using Indexes in Greenplum Database</h3>
+<p>In most traditional databases, indexes can greatly improve data access times. However, in a distributed database such as Greenplum, indexes should be used more sparingly. Greenplum Database performs very fast sequential scans; indexes use a random seek pattern to locate records on disk. Greenplum data is distributed across the segments, so each segment scans a smaller portion of the overall data to get the result. With table partitioning, the total data to scan may be even smaller. Because business intelligence (BI) query workloads generally return very large data sets, using indexes is not efficient.</p>
+<p>Greenplum recommends trying your query workload without adding indexes. Indexes are more likely to improve performance for OLTP workloads, where the query is returning a single record or a small subset of data. Indexes can also improve performance on compressed append-optimized tables for queries that return a targeted set of rows, as the optimizer can use an index access method rather than a full table scan when appropriate. For compressed data, an index access method means only the necessary rows are uncompressed.</p>
+<p>Greenplum Database automatically creates PRIMARY KEY constraints for tables with primary keys. To create an index on a partitioned table, create an index on the partitioned table that you created. The index is propagated to all the child tables created by Greenplum Database. Creating an index on a table that is created by Greenplum Database for use by a partitioned table is not supported.</p>
+<p>Note that a UNIQUE CONSTRAINT (such as a PRIMARY KEY CONSTRAINT) implicitly creates a UNIQUE INDEX that must include all the columns of the distribution key and any partitioning key. The UNIQUE CONSTRAINT is enforced across the entire table, including all table partitions (if any).</p>
+<p>Indexes add some database overhead — they use storage space and must be maintained when the table is updated. Ensure that the query workload uses the indexes that you create, and check that the indexes you add improve query performance (as compared to a sequential scan of the table). To determine whether indexes are being used, examine the query EXPLAIN plans. See Query Profiling.</p>
+<p>Consider the following points when you create indexes.</p>
+<ul>
+<li>Your Query Workload. Indexes improve performance for workloads where queries return a single record or a very small data set, such as OLTP workloads.</li>
+<li>Compressed Tables. Indexes can improve performance on compressed append-optimized tables for queries that return a targeted set of rows. For compressed data, an index access method means only the necessary rows are uncompressed.</li>
+<li>Avoid indexes on frequently updated columns. Creating an index on a column that is frequently updated increases the number of writes required when the column is updated.</li>
+<li>Create selective B-tree indexes. Index selectivity is a ratio of the number of distinct values a column has divided by the number of rows in a table. For example, if a table has 1000 rows and a column has 800 distinct values, the selectivity of the index is 0.8, which is considered good. Unique indexes always have a selectivity ratio of 1.0, which is the best possible. Greenplum Database allows unique indexes only on distribution key columns.</li>
+<li>Use Bitmap indexes for low selectivity columns. The Greenplum Database Bitmap index type is not available in regular PostgreSQL. See About Bitmap Indexes.</li>
+<li>Index columns used in joins. An index on a column used for frequent joins (such as a foreign key column) can improve join performance by enabling more join methods for the query optimizer to use.</li>
+<li>Index columns frequently used in predicates. Columns that are frequently referenced in WHERE clauses are good candidates for indexes.</li>
+<li>Avoid overlapping indexes. Indexes that have the same leading column are redundant.</li>
+<li>Drop indexes for bulk loads. For mass loads of data into a table, consider dropping the indexes and re-creating them after the load completes. This is often faster than updating the indexes.</li>
+<li>Consider a clustered index. Clustering an index means that the records are physically ordered on disk according to the index. If the records you need are distributed randomly on disk, the database has to seek across the disk to fetch the records requested. If the records are stored close together, the fetching operation is more efficient. For example, a clustered index on a date column where the data is ordered sequentially by date. A query against a specific date range results in an ordered fetch from the disk, which leverages fast sequential access.</li>
+</ul>
+<h4 id="to-cluster-an-index-in-greenplum-database">To cluster an index in Greenplum Database</h4>
+<p>Using the CLUSTER command to physically reorder a table based on an index can take a long time with very large tables. To achieve the same results much faster, you can manually reorder the data on disk by creating an intermediate table and loading the data in the desired order. For example:</p>
+<pre><code>CREATE TABLE new_table (LIKE old_table) 
+       AS SELECT * FROM old_table ORDER BY myixcolumn;
+DROP old_table;
+ALTER TABLE new_table RENAME TO old_table;
+CREATE INDEX myixcolumn_ix ON old_table;
+VACUUM ANALYZE old_table;
+</code></pre>
+<p>Parent topic: Defining Database Objects</p>
+<h4 id="index-types">Index Types</h4>
+<p>Greenplum Database supports the Postgres index types B-tree and GiST. Hash and GIN indexes are not supported. Each index type uses a different algorithm that is best suited to different types of queries. B-tree indexes fit the most common situations and are the default index type. See Index Types in the PostgreSQL documentation for a description of these types.</p>
+<p>Note: Greenplum Database allows unique indexes only if the columns of the index key are the same as (or a superset of) the Greenplum distribution key. Unique indexes are not supported on append-optimized tables. On partitioned tables, a unique index cannot be enforced across all child table partitions of a partitioned table. A unique index is supported only within a partition.</p>
+<h5 id="about-bitmap-indexes">About Bitmap Indexes</h5>
+<p>Greenplum Database provides the Bitmap index type. Bitmap indexes are best suited to data warehousing applications and decision support systems with large amounts of data, many ad hoc queries, and few data modification (DML) transactions.</p>
+<p>An index provides pointers to the rows in a table that contain a given key value. A regular index stores a list of tuple IDs for each key corresponding to the rows with that key value. Bitmap indexes store a bitmap for each key value. Regular indexes can be several times larger than the data in the table, but bitmap indexes provide the same functionality as a regular index and use a fraction of the size of the indexed data.</p>
+<p>Each bit in the bitmap corresponds to a possible tuple ID. If the bit is set, the row with the corresponding tuple ID contains the key value. A mapping function converts the bit position to a tuple ID. Bitmaps are compressed for storage. If the number of distinct key values is small, bitmap indexes are much smaller, compress better, and save considerable space compared with a regular index. The size of a bitmap index is proportional to the number of rows in the table times the number of distinct values in the indexed column.</p>
+<p>Bitmap indexes are most effective for queries that contain multiple conditions in the WHERE clause. Rows that satisfy some, but not all, conditions are filtered out before the table is accessed. This improves response time, often dramatically.</p>
+<h5 id="when-to-use-bitmap-indexes">When to Use Bitmap Indexes</h5>
+<p>Bitmap indexes are best suited to data warehousing applications where users query the data rather than update it. Bitmap indexes perform best for columns that have between 100 and 100,000 distinct values and when the indexed column is often queried in conjunction with other indexed columns. Columns with fewer than 100 distinct values, such as a gender column with two distinct values (male and female), usually do not benefit much from any type of index. On a column with more than 100,000 distinct values, the performance and space efficiency of a bitmap index decline.</p>
+<p>Bitmap indexes can improve query performance for ad hoc queries. AND and OR conditions in the WHERE clause of a query can be resolved quickly by performing the corresponding Boolean operations directly on the bitmaps before converting the resulting bitmap to tuple ids. If the resulting number of rows is small, the query can be answered quickly without resorting to a full table scan.</p>
+<h5 id="when-not-to-use-bitmap-indexes">When Not to Use Bitmap Indexes</h5>
+<p>Do not use bitmap indexes for unique columns or columns with high cardinality data, such as customer names or phone numbers. The performance gains and disk space advantages of bitmap indexes start to diminish on columns with 100,000 or more unique values, regardless of the number of rows in the table.</p>
+<p>Bitmap indexes are not suitable for OLTP applications with large numbers of concurrent transactions modifying the data.</p>
+<p>Use bitmap indexes sparingly. Test and compare query performance with and without an index. Add an index only if query performance improves with indexed columns.</p>
+<h4 id="creating-an-index">Creating an Index</h4>
+<p>The CREATE INDEX command defines an index on a table. A B-tree index is the default index type. For example, to create a B-tree index on the column gender in the table employee:</p>
+<pre><code>CREATE INDEX gender_idx ON employee (gender);
+</code></pre>
+<p>To create a bitmap index on the column title in the table films:</p>
+<pre><code>CREATE INDEX title_bmp_idx ON films USING bitmap (title);
+</code></pre>
+<h4 id="examining-index-usage">Examining Index Usage</h4>
+<p>Greenplum Database indexes do not require maintenance and tuning. You can check which indexes are used by the real-life query workload. Use the EXPLAIN command to examine index usage for a query.</p>
+<p>The query plan shows the steps or plan nodes that the database will take to answer a query and time estimates for each plan node. To examine the use of indexes, look for the following query plan node types in your EXPLAIN output:</p>
+<ul>
+<li>Index Scan - A scan of an index.</li>
+<li>Bitmap Heap Scan - Retrieves all</li>
+<li>from the bitmap generated by BitmapAnd, BitmapOr, or BitmapIndexScan and accesses the heap to retrieve the relevant rows.</li>
+<li>Bitmap Index Scan - Compute a bitmap by OR-ing all bitmaps that satisfy the query predicates from the underlying index.</li>
+<li>BitmapAnd or BitmapOr - Takes the bitmaps generated from multiple BitmapIndexScan nodes, ANDs or ORs them together, and generates a new bitmap as its output.</li>
+</ul>
+<p>You have to experiment to determine the indexes to create. Consider the following points.</p>
+<ul>
+<li>Run ANALYZE after you create or update an index. ANALYZE collects table statistics. The query optimizer uses table statistics to estimate the number of rows returned by a query and to assign realistic costs to each possible query plan.</li>
+<li>Use real data for experimentation. Using test data for setting up indexes tells you what indexes you need for the test data, but that is all.</li>
+<li>Do not use very small test data sets as the results can be unrealistic or skewed.</li>
+<li>Be careful when developing test data. Values that are similar, completely random, or inserted in sorted order will skew the statistics away from the distribution that real data would have.</li>
+<li>You can force the use of indexes for testing purposes by using run-time parameters to turn off specific plan types. For example, turn off sequential scans (enable_seqscan) and nested-loop joins (enable_nestloop), the most basic plans, to force the system to use a different plan. Time your query with and without indexes and use the EXPLAIN ANALYZE command to compare the results.</li>
+</ul>
+<h4 id="managing-indexes">Managing Indexes</h4>
+<p>Use the REINDEX command to rebuild a poorly-performing index. REINDEX rebuilds an index using the data stored in the index's table, replacing the old copy of the index.</p>
+<p>To rebuild all indexes on a table</p>
+<pre><code>REINDEX my_table;
+
+REINDEX my_index;
+</code></pre>
+<h4 id="dropping-an-index">Dropping an Index</h4>
+<p>The DROP INDEX command removes an index. For example:</p>
+<pre><code>DROP INDEX title_idx;
+</code></pre>
+<p>When loading data, it can be faster to drop all indexes, load, then recreate the indexes.</p>
+<h3 id="creating-and-managing-views">Creating and Managing Views</h3>
+<p>Views enable you to save frequently used or complex queries, then access them in a SELECT statement as if they were a table. A view is not physically materialized on disk: the query runs as a subquery when you access the view.</p>
+<p>If a subquery is associated with a single query, consider using the WITH clause of the SELECT command instead of creating a seldom-used view.</p>
+<p>Parent topic: Defining Database Objects</p>
+<h4 id="creating-views">Creating Views</h4>
+<p>The CREATE VIEW command defines a view of a query. For example:</p>
+<pre><code>CREATE VIEW comedies AS SELECT * FROM films WHERE kind = 'comedy';
+</code></pre>
+<p>Views ignore ORDER BY and SORT operations stored in the view.</p>
+<h4 id="dropping-views">Dropping Views</h4>
+<p>The DROP VIEW command removes a view. For example:</p>
+<pre><code>DROP VIEW topten;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../management-managing-data/" class="btn btn-neutral float-right" title="数据管理">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../management-accessing-database/" class="btn btn-neutral" title="访问数据库"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../management-accessing-database/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../management-managing-data/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

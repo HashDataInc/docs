@@ -8,26 +8,30 @@
   
   
   
-  <title>HashData</title>
+  <title>查询数据 - HashData</title>
   
 
-  <link rel="shortcut icon" href="./img/favicon.ico">
+  <link rel="shortcut icon" href="../img/favicon.ico">
 
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="./css/highlight.css">
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
 
   
-  <script src="./js/jquery-2.1.1.min.js"></script>
-  <script src="./js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="./js/highlight.pack.js"></script>
-  <script src="./js/theme.js"></script>
-  <script>var base_url = '.';</script>
-  <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-
+  <script>
+    // Current page data
+    var mkdocs_page_name = "查询数据";
+    var mkdocs_page_input_path = "management-quering-data.md";
+    var mkdocs_page_url = "/management-quering-data/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
 
   
 </head>
@@ -39,9 +43,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> HashData</a>
+        <a href=".." class="icon icon-home"> HashData</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
@@ -52,14 +56,14 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href=".">欢迎使用</a>
+        <a class="" href="..">欢迎使用</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="overview/"><&product-name> 系统概述</a>
+        <a class="" href="../overview/"><&product-name> 系统概述</a>
         
     </li>
 <li>
@@ -71,28 +75,35 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="management-accessing-database/">访问数据库</a>
+        <a class="" href="../management-accessing-database/">访问数据库</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="management-defining-database-objects/">定义数据库对象</a>
+        <a class="" href="../management-defining-database-objects/">定义数据库对象</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="management-managing-data/">数据管理</a>
+        <a class="" href="../management-managing-data/">数据管理</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="management-quering-data/">查询数据</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">查询数据</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#querying-data">Querying Data</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -107,14 +118,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="sql-ref/">SQL命令参考</a>
+        <a class="" href="../sql-ref/">SQL命令参考</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="sql-ref/sql-ref-summary/">列表</a>
+        <a class="" href="../sql-ref/sql-ref-summary/">列表</a>
         
     </li>
 
@@ -129,14 +140,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="meta-ref/">系统表参考</a>
+        <a class="" href="../meta-ref/">系统表参考</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="meta-ref/meta-ref-all/">系统表</a>
+        <a class="" href="../meta-ref/meta-ref-all/">系统表</a>
         
     </li>
 
@@ -146,7 +157,7 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="history/">文档历史</a>
+        <a class="" href="../history/">文档历史</a>
         
     </li>
 <li>
@@ -161,7 +172,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">HashData</a>
+        <a href="..">HashData</a>
       </nav>
 
       
@@ -169,9 +180,15 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".">Docs</a> &raquo;</li>
+    <li><a href="..">Docs</a> &raquo;</li>
     
+      
+        
+          <li><&product-name> 管理介绍 &raquo;</li>
+        
+      
     
+    <li>查询数据</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -181,22 +198,31 @@
           <div role="main">
             <div class="section">
               
-
-  <h1 id="search">Search Results</h1>
-
-  <form id="content_search" action="search.html">
-    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-    <input name="q" id="mkdocs-search-query" type="text" class="search_input search-query ui-autocomplete-input" placeholder="Search the Docs" autocomplete="off" autofocus>
-  </form>
-
-  <div id="mkdocs-search-results">
-    Sorry, page not found.
-  </div>
-
-
+                <h3 id="querying-data">Querying Data</h3>
+<p>This topic provides information about using SQL in Greenplum databases.
+You enter SQL statements called queries to view, change, and analyze data in a database using the psql interactive SQL client and other client tools.</p>
+<ul>
+<li>About Greenplum Query Processing</li>
+<li>About the Pivotal Query Optimizer</li>
+<li>Defining Queries</li>
+<li>Using Functions and Operators</li>
+<li>Query Performance</li>
+<li>Managing Spill Files Generated by Queries</li>
+<li>Query Profiling</li>
+</ul>
+              
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../sql-ref/" class="btn btn-neutral float-right" title="SQL命令参考">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../management-managing-data/" class="btn btn-neutral" title="数据管理"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -220,6 +246,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../management-managing-data/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../sql-ref/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
