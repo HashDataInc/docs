@@ -4,7 +4,8 @@ theme: readthedocs
 pages:
 - 欢迎使用: 'index.md'
 - "<&product-name> 系统概述": 'overview.md'
-- "<&product-name> 管理介绍" : 'management.md'
+- "<&product-name> 管理介绍" :
+  - '访问数据库' : 'management-accessing-database.md'
   - '定义数据库对象': 'management-defining-database-objects.md'
   - '数据管理': 'management-managing-data.md'
   - '查询数据': 'management-quering-data.md'
