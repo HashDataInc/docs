@@ -79,21 +79,19 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#product-name">&lt;&amp;product-name&gt; 创建和管理</a></li>
+                <li class="toctree-l3"><a href="#product-name">访问&lt;&amp;product-name&gt;</a></li>
                 
-                    <li><a class="toctree-l4" href="#product-name_1">创建 &lt;&amp;product-name&gt; 集群</a></li>
+                    <li><a class="toctree-l4" href="#_1">建立会话</a></li>
                 
-                    <li><a class="toctree-l4" href="#_1">开始使用</a></li>
+                    <li><a class="toctree-l4" href="#_2">支持客户端列表</a></li>
                 
-                    <li><a class="toctree-l4" href="#product-name_2">访问&lt;&amp;product-name&gt;</a></li>
+                    <li><a class="toctree-l4" href="#connecting-with-psql">Connecting with psql</a></li>
                 
-                    <li><a class="toctree-l4" href="#_4">使用数据库</a></li>
+                    <li><a class="toctree-l4" href="#pgadmin-iii-for-greenplum-database">pgAdmin III for Greenplum Database</a></li>
                 
-                    <li><a class="toctree-l4" href="#_8">数据库安全管理</a></li>
+                    <li><a class="toctree-l4" href="#database-application-interfaces">Database Application Interfaces</a></li>
                 
-                    <li><a class="toctree-l4" href="#_9">数据的导入导出</a></li>
-                
-                    <li><a class="toctree-l4" href="#_10">性能优化</a></li>
+                    <li><a class="toctree-l4" href="#third-party-client-tools">Third-Party Client Tools</a></li>
                 
             
             </ul>
@@ -212,50 +210,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="product-name">&lt;&amp;product-name&gt; 创建和管理</h1>
-<h2 id="product-name_1">创建 &lt;&amp;product-name&gt; 集群</h2>
-<p>集群详情</p>
-<ul>
-<li>集群名称</li>
-<li>初始化数据库名称（默认）</li>
-<li>端口</li>
-<li>初始用户名</li>
-<li>密码</li>
-</ul>
-<p>节点配置</p>
-<ul>
-<li>版本：软件大版本</li>
-<li>
-<p>类型</p>
-<ul>
-<li>低配大容量</li>
-<li>高配大容量</li>
-<li>低配高速存储</li>
-<li>高配高速存储</li>
-</ul>
-</li>
-<li>
-<p>集群类型</p>
-<ul>
-<li>单节点集群（1节点）</li>
-<li>多节点集群（1-16节点）</li>
-</ul>
-</li>
-</ul>
-<p>额外配置</p>
-<ul>
-<li>默认配置组</li>
-<li>加密(不支持)</li>
-<li>VPC 配置</li>
-<li>公网访问</li>
-<li>选择公网ip</li>
-<li>选择机房</li>
-</ul>
-<h2 id="_1">开始使用</h2>
-<p>丽荣部分？</p>
-<h2 id="product-name_2">访问&lt;&amp;product-name&gt;</h2>
+                <h2 id="product-name">访问&lt;&amp;product-name&gt;</h2>
 <p>本小结向您介绍使用不同工具连接 &lt;&amp;product-name&gt; 系统会话的方法。</p>
-<h3 id="_2">建立会话</h3>
+<h3 id="_1">建立会话</h3>
 <p>Users can connect to Greenplum Database using a PostgreSQL-compatible client program, such as psql. Users and administrators always connect to Greenplum Database through the master; the segments cannot accept client connections.
 In order to establish a connection to the Greenplum Database master, you will need to know the following connection information and configure your client program accordingly.</p>
 <table>
@@ -294,7 +251,7 @@ In order to establish a connection to the Greenplum Database master, you will ne
 </tr>
 </tbody>
 </table>
-<h3 id="_3">支持客户端列表</h3>
+<h3 id="_2">支持客户端列表</h3>
 <p>Users can connect to Greenplum Database using various client applications:
 <em> A number of Greenplum Database Client Applications are provided with your Greenplum installation.
 The psql client application provides an interactive command-line interface to Greenplum Database.
@@ -383,13 +340,6 @@ a separate download. Each driver is an independent PostgreSQL development projec
 <li>IBM Cognos</li>
 </ul>
 <p>Pivotal Professional Services can assist users in configuring their chosen third-party tool for use with Greenplum Database.</p>
-<h2 id="_4">使用数据库</h2>
-<h3 id="_5">定义数据库对象</h3>
-<h3 id="_6">管理数据</h3>
-<h3 id="_7">查询数据</h3>
-<h2 id="_8">数据库安全管理</h2>
-<h2 id="_9">数据的导入导出</h2>
-<h2 id="_10">性能优化</h2>
               
             </div>
           </div>
