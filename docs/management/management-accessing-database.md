@@ -1,40 +1,6 @@
-# <&product-name> 创建和管理 #
-## 创建 <&product-name> 集群 ##
-集群详情
-
-* 集群名称
-* 初始化数据库名称（默认）
-* 端口
-* 初始用户名
-* 密码
-
-节点配置
-
-* 版本：软件大版本
-* 类型
-	* 低配大容量
-	* 高配大容量
-	* 低配高速存储
-	* 高配高速存储
-
-* 集群类型
-	* 单节点集群（1节点）
-	* 多节点集群（1-16节点）
-
-额外配置
-
-* 默认配置组
-* 加密(不支持)
-* VPC 配置
-* 公网访问
-* 选择公网ip
-* 选择机房
-
-## 开始使用 ##
-丽荣部分？
-
 ## 访问<&product-name> ##
 本小结向您介绍使用不同工具连接 <&product-name> 系统会话的方法。
+
 ### 建立会话 ###
 Users can connect to Greenplum Database using a PostgreSQL-compatible client program, such as psql. Users and administrators always connect to Greenplum Database through the master; the segments cannot accept client connections.
 In order to establish a connection to the Greenplum Database master, you will need to know the following connection information and configure your client program accordingly.
@@ -121,13 +87,3 @@ Most third-party extract-transform-load (ETL) and business intelligence (BI) too
 * IBM Cognos
 
 Pivotal Professional Services can assist users in configuring their chosen third-party tool for use with Greenplum Database.
-
-## 使用数据库 ##
-
-### 定义数据库对象
-### 管理数据 ###
-### 查询数据 ###
-
-## 数据库安全管理 ##
-## 数据的导入导出 ##
-## 性能优化 ##
