@@ -1,131 +1,118 @@
 ### 定义数据库对象
-This section covers data definition language (DDL) in Greenplum Database and how to create and manage database objects.
-Creating objects in a Greenplum Database includes making up-front choices about data distribution, storage options, data loading, and other Greenplum features that will affect the ongoing performance of your database system. Understanding the options that are available and how the database will be used will help you make the right decisions.
-Most of the advanced Greenplum features are enabled with extensions to the SQL CREATE DDL statements.
+本节介绍 <&product-name> 支持的数据定义语言 (DDL) 以及如何创建和管理数据库对象。
 
-#### Creating and Managing Databases
-A Greenplum Database system is a single instance of Greenplum Database. There can be several separate Greenplum Database systems installed, but usually just one is selected by environment variable settings. See your Greenplum administrator for details.
+在 Greenplum Database 中创建对象包括前期选择数据分布、 存储选项、 数据加载和其他会影响您的数据库系统运行性能的功能。了解可用的选项和数据库内部如何支持这些选项将帮助您做出正确的决定。
+大部分 Greenplum 高级特性是通过使用扩展的 SQL CREATE DDL 语句完成的。
 
-There can be multiple databases in a Greenplum Database system. This is different from some database management systems (such as Oracle) where the database instance is the database. Although you can create many databases in a Greenplum system, client programs can connect to and access only one database at a time — you cannot cross-query between databases.
+#### 创建和管理数据库
+<&product-name> 支持创建多个独立的数据库对数据进行隔离。这个特性与某些数据库并不相同，例如：Oracle数据库。虽然 <&product-name> 支持多个数据库，但是客户端程序一次只能连接并使用一个数据库。
 
-##### About Template Databases
-Each new database you create is based on a template. Greenplum provides a default database, template1. Use template1 to connect to Greenplum Database for the first time. Greenplum Database uses template1 to create databases unless you specify another template. Do not create any objects in template1 unless you want those objects to be in every database you create.
+##### 关于数据库模版
+您创建的每一个数据库都是基于一个模版得到的。系统中的默认模版数据库叫做：template1。我们建议您不要在template1中创建任何数据对象，否则您后续创建的数据库都会包含这些数据。
 
-Greenplum Database uses two other database templates, template0 and postgres, internally. Do not drop or modify template0 or postgres. You can use template0 to create a completely clean database containing only the standard objects predefined by Greenplum Database at initialization, especially if you modified template1.
+<&product-name> 内部还使用另外两个内置模版：template0 和 postgres。因此请勿删除或修改 template0 和 postgres 数据库。您也可以使用 template0 作为模版，创建一个只含有标准预定义对象的空白数据库。
 
-##### Creating a Database
-The CREATE DATABASE command creates a new database. For example:
+##### 创建数据库
+使用 CREATE DATABASE 命令来创建一个新的数据库. 例如:
 
 	=> CREATE DATABASE new_dbname;
 
-To create a database, you must have privileges to create a database or be a Greenplum Database superuser. If you do not have the correct privileges, you cannot create a database. Contact your Greenplum Database administrator to either give you the necessary privilege or to create a database for you.
+若要创建新的数据库, 您需要拥有创建数据库的权限或者超级用户权限。如果您没有相应的权限，创建数据库的操作将会失败。可以联系数据管理员来取得创建数据库的权限。
 
-You can also use the client program createdb to create a database. For example, running the following command in a command line terminal connects to Greenplum Database using the provided host name and port and creates a database named mydatabase:
-
-	$ createdb -h masterhost -p 5432 mydatabase
-
-The host name and port must match the host name and port of the installed Greenplum Database system.
-Some objects, such as roles, are shared by all the databases in a Greenplum Database system. Other objects, such as tables that you create, are known only in the database in which you create them.
-
-##### Cloning a Database
-By default, a new database is created by cloning the standard system database template, template1. Any database can be used as a template when creating a new database, thereby providing the capability to 'clone' or copy an existing database and all objects and data within that database. For example:
+##### 克隆数据库
+创建新的数据库时，系统实际上通过克隆一个默认的标准数据库模版 template1 来完成。实际上，您可以指定任意一个数据作为创建新数据库的模版，这样新的数据库就会自动包含模版数据库中的所有对象和数据。例如：
 
 	=> CREATE DATABASE new_dbname TEMPLATE old_dbname;
 
-##### Viewing the List of Databases
-If you are working in the psql client program, you can use the \l meta-command to show the list of databases and templates in your Greenplum Database system. If using another client program and you are a superuser, you can query the list of databases from the pg_database system catalog table. For example:
+##### 列出所有数据库
+如果您使用 psql 客户端程序，您可以使用 \l 命令列出系统中的模版数据库和数据库。如果您使用其他客户端程序并且拥有超级用户权限，您可以通过查询 pg_database 系统表列出所有数据库。例如：
 
 	=> SELECT datname from pg_database;
 
-##### Altering a Database
-The ALTER DATABASE command changes database attributes such as owner, name, or default configuration attributes. For example, the following command alters a database by setting its default schema search path (the search_path configuration parameter):
+##### 修改数据库
+ALTER DATABASE 命令可以用来修改数据库的属主，名称或者默认参数配置。例如, 下面的命令修改了数据库默认模式搜索路径：
 
 	=> ALTER DATABASE mydatabase SET search_path TO myschema, public, pg_catalog;
 
-To alter a database, you must be the owner of the database or a superuser.
+你需要是数据库的属主或拥有超级用户权限，才可以对数据库信息进行修改。
 
-##### Dropping a Database
-The DROP DATABASE command drops (or deletes) a database. It removes the system catalog entries for the database and deletes the database directory on disk that contains the data. You must be the database owner or a superuser to drop a database, and you cannot drop a database while you or anyone else is connected to it. Connect to template1 (or another database) before dropping a database. For example:
+##### 删除数据库
+DROP DATABASE 命令可以删除数据库。该命令将会从系统表中删除数据库相关信息，并在磁盘上删除该数据库相关的所有数据。只有数据库的属主或者超级用户才能够删除数据库。正在被使用的数据库是无法被删除的。例如：
 
 	=> \c template1
 	=> DROP DATABASE mydatabase;
 
-You can also use the client program dropdb to drop a database. For example, the following command connects to Greenplum Database using the provided host name and port and drops the database mydatabase:
+警告：删除数据库是不可逆的过程，请小心使用。
 
-	$ dropdb -h masterhost -p 5432 mydatabase
+#### 创建和管理模式
+通过模式（Schema）对数据库对象进行逻辑上的分类组织。通过使用模式允许您在同一个数据库中，创建同名对象（例如：表）。
 
+##### 默认模式 "Public"
+数据库默认包含一个默认模式：public。如果您没有创建任何模式，新创见的对象会默认使用 public 模式。数据库所有的用户都拥有 public 模式上的 CREATE （创建）和 USAGE（使用）权限。当您创建额外的模式时，您可以对用户授予权限，来控制访问。
 
-Warning: Dropping a database cannot be undone.
-
-#### Creating and Managing Schemas
-Schemas logically organize objects and data in a database. Schemas allow you to have more than one object (such as tables) with the same name in the database without conflict if the objects are in different schemas.
-
-##### The Default "Public" Schema
-Every database has a default schema named public. If you do not create any schemas, objects are created in the public schema. All database roles (users) have CREATE and USAGE privileges in the public schema. When you create a schema, you grant privileges to your users to allow access to the schema.
-
-##### Creating a Schema
-Use the **CREATE SCHEMA** command to create a new schema. For example: 
+##### 创建模式
+使用 **CREATE SCHEMA** 命令来创建一个新的模式. 例如: 
 
 	=> CREATE SCHEMA myschema;
 
-To create or access objects in a schema, write a qualified name consisting of the schema name and table name separated by a period. For example:
+要在指定的模式下创建对象或访问对象，您需要使用限定名格式来进行。限定名格式是模式名”.“表名的方式，例如：
 
 	myschema.table
 
-See `Schema Search Paths` for information about accessing a schema.
-You can create a schema owned by someone else, for example, to restrict the activities of your users to
-well-defined namespaces. The syntax is:
+参考 `模式搜索路径` 了解更多关于访问模式的说明.
+可以通过为用户创建私有的模式，来更好的限制用户对名称空间的使用。语法如下：
 
 	=> CREATE SCHEMA schemaname AUTHORIZATION username;
 
-##### Schema Search Paths
-To specify an object's location in a database, use the schema-qualified name. For example:
+##### 模式的搜索路径
+通过使用模式限定名，可以指向数据库中特定位置的对象。例如：
 
 	=> SELECT * FROM myschema.mytable;
 
-You can set the search_path configuration parameter to specify the order in which to search the available schemas for objects. The schema listed first in the search path becomes the default schema. If a schema is not specified, objects are created in the default schema.
+可以通过设置参数 search_path 来指定模式的搜索顺序。搜索路径中第一个模式就是系统使用的默认模式，当没有引用模式时，对象将会自动创建在默认模式下。
 
-###### Setting the Schema Search Path
-The search_path configuration parameter sets the schema search order. The ALTER DATABASE command sets the search path. For example:
+###### 设置模式搜索路径
+search_path 配置参数涌来设置模式搜索顺序。ALTER DATABASE 命令可以设置数据库内默认搜索路径。例如：
 
 	 => ALTER DATABASE mydatabase SET search_path TO myschema, public, pg_catalog;
 
-You can also set search_path for a particular role (user) using the ALTER ROLE command. For example:
+还可以通过 ALTER ROLE 命令来为指定的用户修改 search_path 参数。例如：
 
 	 => ALTER ROLE sally SET search_path TO myschema, public, pg_catalog;
 
-###### Viewing the Current Schema
-Use the current_schema() function to view the current schema. For example:
+###### 查看当前模式
+通过 current_schema() 函数，系统可以显示当前模式。例如：
 
 	=> SELECT current_schema();
 
-Use the SHOW command to view the current search path. For example:
+类似的，使用 SHOW 命令也可以显示当前搜索路径。例如：
 
 	=> SHOW search_path;
 
-##### Dropping a Schema
-Use the DROP SCHEMA command to drop (delete) a schema. For example:
+##### 删除模式
+使用 DROP SCHEMA 命令可以删除一个模式。例如：
 
 	=> DROP SCHEMA myschema;
 
-By default, the schema must be empty before you can drop it. To drop a schema and all of its objects (tables, data, functions, and so on) use:
+默认的删除命令只能删除一个空的模式。要删除模式及其内部包含的所有对象（表，数据，函数，等），使用下面的命令：
 
 	=> DROP SCHEMA myschema CASCADE;
 
-##### System Schemas
+##### 系统预定义模式
 
-The following system-level schemas exist in every database:
-* pg_catalog contains the system catalog tables, built-in data types, functions, and operators. It is always part of the schema search path, even if it is not explicitly named in the search path.
-* information_schema consists of a standardized set of views that contain information about the objects in the database. These views get system information from the system catalog tables in a standardized way.
-* pg_toast stores large objects such as records that exceed the page size. This schema is used internally by the Greenplum Database system.
-* pg_bitmapindex stores bitmap index objects such as lists of values. This schema is used internally by the Greenplum Database system.
-* pg_aoseg stores append-optimized table objects. This schema is used internally by the Greenplum Database system.
-* gp_toolkit is an administrative schema that contains external tables, views, and functions that you can access with SQL commands. All database users can access gp_toolkit to view and query the system log files and other system metrics.
+每个数据库中内置了下列系统模式：
 
-### Creating and Managing Tables
+* pg_catalog 包含了系统表，内建数据类型，函数和运算符对象。模式搜索路径时，系统总是会考虑此模式下的所有对象。
+* information_schema 模式包含了大量标准化视图来描述数据库内部对象信息。这些视图以标准化方式来展现系统表中的信息。
+* pg_toast 存储大对象，例如：记录大笑超过页面大小的对象。此模式下的信息是数据库内部使用的。
+* pg_bitmapindex 存储bitmap所有对象，例如：值列表。此模式下的信息是数据库内部使用的。
+* pg_aoseg 存储 append-optimized 表对象. 此模式下的信息是数据库内部使用的。
+* gp_toolkit 是一个管理视图，内置一些外部表，视图和函数。可以通过SQL语句进行访问。所有数据库用户都能够访问 gp_toolkit 来查看日志文件和其它系统参数。
+
+### 创建和管理表
 Greenplum Database tables are similar to tables in any relational database, except that table rows are distributed across the different segments in the system. When you create a table, you specify the table's distribution policy.
 
-#### Creating a Table
+#### 创建表
 The CREATE TABLE command creates a table and defines its structure. When you create a table, you define:
 
 * The columns of the table and their associated data types. See Choosing Column Data Types.
