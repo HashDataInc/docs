@@ -110,57 +110,56 @@ search_path 配置参数涌来设置模式搜索顺序。ALTER DATABASE 命令�
 * gp_toolkit 是一个管理视图，内置一些外部表，视图和函数。可以通过SQL语句进行访问。所有数据库用户都能够访问 gp_toolkit 来查看日志文件和其它系统参数。
 
 ### 创建和管理表
-Greenplum Database tables are similar to tables in any relational database, except that table rows are distributed across the different segments in the system. When you create a table, you specify the table's distribution policy.
+<&product-name> 中的表和其它关系型数据库十分相似，但是为了适应分布式需求，数据将会分散到多个节点进行存储。每次创建表时，你可以指定数据的分布策略。
 
 #### 创建表
-The CREATE TABLE command creates a table and defines its structure. When you create a table, you define:
+CREATE TABLE命令用来创建和定义表结构，创建表时，您需要定义下面信息：
 
-* The columns of the table and their associated data types. See Choosing Column Data Types.
-* Any table or column constraints to limit the data that a column or table can contain. See Setting Table and Column Constraints.
-* The distribution policy of the table, which determines how Greenplum Database divides data is across the segments. See Choosing the Table Distribution Policy.
-* The way the table is stored on disk. See Choosing the Table Storage Model.
-* The table partitioning strategy for large tables. See Creating and Managing Databases.
+* 表中包含的列及其对应数据类型。请参考 选择列数据类型。
+* 用于限制表或列存储数据的表约束或列约束。请参考 设置表约束和列约束。
+* 数据分布策略，系统将会根据策略将数据存储到不同节点。请参考 选择数据分布策略。
+* 磁盘存储格式。请参考 表存储模型。
+* 大表的数据分区策略。请参考 创建和管理数据库（TODO: 错误？）。
 
-#### Choosing Column Data Types
-The data type of a column determines the types of data values the column can contain. Choose the data type that uses the least possible space but can still accommodate your data and that best constrains the data. For example, use character data types for strings, date or timestamp data types for dates, and numeric data types for numbers.
+#### 选择列数据类型
+列数据类型的选择是根据存储该列的数据值决定的。选择数据类型应该尽可能选择占用空间更小，同时能够保证存储所有数据并能最合理的表达数据。例如：使用字符型数据类型保存字符串，日期或者日期时间戳类型保存日期类型，数值类型来保存数值。
 
-For table columns that contain textual data, Pivotal recommends specifying the data type VARCHAR or TEXT. Specifying the data type CHAR is not recommended. In Greenplum Database, the data types VARCHAR or TEXT handles padding added to the data (space characters added after the last non-space character) as significant characters, the data type CHAR does not. For information on the character data types, see the CREATE TABLE command in the Greenplum Database Reference Guide.
+我们建议您使用 VARCHAR 或者 TEXT 来保存文本类数据。我们不推荐使用 CHAR 类型保存文本类型。VARCHAR 或 TEXT 类型对于数据末尾的空白字符将原样保存和处理，但是 CHAR 类型不能满足这个需求。请参考 CREATE TABLE 命令了解更多相关信息。 
 
-Use the smallest numeric data type that will accommodate your numeric data and allow for future expansion. For example, using BIGINT for data that fits in INT or SMALLINT wastes storage space. If you expect that your data values will expand over time, consider that changing from a smaller datatype to a larger datatype after loading large amounts of data is costly. For example, if your current data values fit in a SMALLINT but it is likely that the values will expand, INT is the better long-term choice.
+您应该使用最小的数值类型同时满足数值存储和未来的扩展需求。例如：使用 BIGINT 类型存储 INT 或者 SMALLINT 会浪费存储空间。如果数据随时间推移需要扩展，并且数据重新加载比较浪费时间，就应该考虑开始就使用更大的数据类型。例如：如果当前数值能够用SMALLINT存储，但是数值会越来越大，那么使用INT类型可能是一个长期来看更好的选择。
 
-Use the same data types for columns that you plan to use in cross-table joins. Cross-table joins usually use the primary key in one table and a foreign key in the other table. When the data types are different, the database must convert one of them so that the data values can be compared correctly, which adds unnecessary overhead.
+如果您考虑连接两张表，那么连接参与的数据类型应该保持一致。通常表连接是用一张表的主键和另一张表的外键进行的。当数据类型不一致时，数据库就需要进行额外的类型转换，然而这完全是无意义的开销。
 
-Greenplum Database has a rich set of native data types available to users. See the Greenplum Database Reference Guide for information about the built-in data types.
+系统支持大量原生的数据类型，文档后面会进行详细介绍。
 
-#### Setting Table and Column Constraints
+#### 设置表约束和列约束
 
-You can define constraints on columns and tables to restrict the data in your tables. Greenplum Database support for constraints is the same as PostgreSQL with some limitations, including:
+您可以通过在表或者列上创建约束来限制存储到表中的数据。<&product-name> 支持 PostgreSQL 的所有种类的约束，但是您需要注意一些额外的限制条件：
 
-* CHECK constraints can refer only to the table on which they are
-* UNIQUE and PRIMARY KEY constraints must be compatible with their tableʼs distribution key and partitioning key, if any.
-* FOREIGN KEY constraints are allowed, but not enforced.
-* Constraints that you define on partitioned tables apply to the partitioned table as a whole. You cannot define constraints on the individual parts of the table.
+* CHECK 约束只能引用 CHECK 的目标表。
+* UNIQUE 和 PRIMARY KEY 约束必须和数据分布键和分区键兼容。
+* FOREIGN KEY 约束能够创建，但是系统不会检查此约束是否满足条件。
+* 创建在分区表上的约束将会把整个分区表当成一个整体处理。系统不允许针对表中特定分区定义约束条件。
 
-##### Check Constraints
-Check constraints allow you to specify that the value in a certain column must satisfy a Boolean (truth-value) expression. For example, to require positive product prices:
+##### Check 约束
+Check 约束允许你限制某个列值必须满足一个布尔（真值）表达式。例如，要求产品价格必须是一个正数：
 
 	=> CREATE TABLE products 
 	           ( product_no integer, 
 	             name text, 
 	             price numeric CHECK (price > 0) );
 
-##### Not-Null Constraints
-
-Not-null constraints specify that a column must not assume the null value. A not-null constraint is always written as a column constraint. For example:
+##### 非空约束
+非空约束允许你限制某个列值不能为空，此约束总是以列约束形式使用。例如：
 
 	=> CREATE TABLE products 
 	           ( product_no integer NOT NULL,
 	             name text NOT NULL,
 	             price numeric );
 
-##### Unique Constraints
+##### 约束约束
 
-Unique constraints ensure that the data contained in a column or a group of columns is unique with respect to all the rows in the table. The table must be hash-distributed (not DISTRIBUTED RANDOMLY), and the constraint columns must be the same as (or a superset of) the table's distribution key columns. For example:
+唯一约束确保存储在一张表中的一列或多列数据数据已定唯一。要使用唯一约束，表必须使用Hash分布策略，并且约束列必须和表的分布键对应的列一致（或者是超集）。例如：
 
 	=> CREATE TABLE products 
 	           ( product_no integer UNIQUE, 
@@ -168,9 +167,8 @@ Unique constraints ensure that the data contained in a column or a group of colu
 	             price numeric)
 	          DISTRIBUTED BY (product_no);
 
-##### Primary Keys
-
-A primary key constraint is a combination of a UNIQUE constraint and a NOT NULL constraint. The table must be hash-distributed (not DISTRIBUTED RANDOMLY), and the primary key columns must be the same as (or a superset of) the table's distribution key columns. If a table has a primary key, this column (or group of columns) is chosen as the distribution key for the table by default. For example:
+##### 主键约束
+主键约束是唯一约束和非空约束的组合。要使用主键约束，表必须使用Hash分布策略，并且约束列必须和表的分布键对应的列一致（或者是超集）。如果一张表指定主键约束，分布键值默认会使用主键约束指定的列。例如：
 
 	=> CREATE TABLE products 
 	           ( product_no integer PRIMARY KEY, 
@@ -178,11 +176,10 @@ A primary key constraint is a combination of a UNIQUE constraint and a NOT NULL 
 	             price numeric)
 	          DISTRIBUTED BY (product_no);
 
-##### Foreign Keys
+##### 外键约束
+<&product-name> 不支持外键约束，但是允许您声明外键约束。系统不会进行参照完整性检查。
 
-Foreign keys are not supported. You can declare them, but referential integrity is not enforced.
-
-Foreign key constraints specify that the values in a column or a group of columns must match the values appearing in some row of another table to maintain referential integrity between two related tables. Referential integrity checks cannot be enforced between the distributed table segments of a Greenplum database.
+外键约束指定一列或多列必须与另一张表中值相匹配，满足两张表之间的参照完整性。<&product-name>不支持数据分布到多个节点的参照完整性检查。
 
 #### Choosing the Table Distribution Policy
 All Greenplum Database tables are distributed. When you create or alter a table, you optionally specify DISTRIBUTED BY (hash distribution) or DISTRIBUTED RANDOMLY (round-robin distribution) to determine the table row distribution.
