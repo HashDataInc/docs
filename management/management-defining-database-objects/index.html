@@ -104,7 +104,7 @@
                     <li><a class="toctree-l4" href="#_24">选择表的数据分布列</a></li>
                 
             
-                <li class="toctree-l3"><a href="#partitioning-large-tables">Partitioning Large Tables</a></li>
+                <li class="toctree-l3"><a href="#_26">对大表进行分区处理</a></li>
                 
                     <li><a class="toctree-l4" href="#about-table-partitioning">About Table Partitioning</a></li>
                 
@@ -117,37 +117,37 @@
                     <li><a class="toctree-l4" href="#maintaining-partitioned-tables">Maintaining Partitioned Tables</a></li>
                 
             
-                <li class="toctree-l3"><a href="#_26">创建和使用序列</a></li>
+                <li class="toctree-l3"><a href="#_27">创建和使用序列</a></li>
                 
-                    <li><a class="toctree-l4" href="#_27">创建序列</a></li>
+                    <li><a class="toctree-l4" href="#_28">创建序列</a></li>
                 
-                    <li><a class="toctree-l4" href="#_28">使用序列</a></li>
+                    <li><a class="toctree-l4" href="#_29">使用序列</a></li>
                 
-                    <li><a class="toctree-l4" href="#_29">修改序列</a></li>
+                    <li><a class="toctree-l4" href="#_30">修改序列</a></li>
                 
-                    <li><a class="toctree-l4" href="#_30">删除序列</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#_31">使用索引</a></li>
-                
-                    <li><a class="toctree-l4" href="#_32">聚簇索引</a></li>
-                
-                    <li><a class="toctree-l4" href="#_33">索引类型</a></li>
-                
-                    <li><a class="toctree-l4" href="#_34">创建索引</a></li>
-                
-                    <li><a class="toctree-l4" href="#_35">检查索引的</a></li>
-                
-                    <li><a class="toctree-l4" href="#_36">索引管理</a></li>
-                
-                    <li><a class="toctree-l4" href="#_37">删除索引</a></li>
+                    <li><a class="toctree-l4" href="#_31">删除序列</a></li>
                 
             
-                <li class="toctree-l3"><a href="#_38">创建和管理视图</a></li>
+                <li class="toctree-l3"><a href="#_32">使用索引</a></li>
                 
-                    <li><a class="toctree-l4" href="#_39">创建视图</a></li>
+                    <li><a class="toctree-l4" href="#_33">聚簇索引</a></li>
                 
-                    <li><a class="toctree-l4" href="#_40">删除视图</a></li>
+                    <li><a class="toctree-l4" href="#_34">索引类型</a></li>
+                
+                    <li><a class="toctree-l4" href="#_35">创建索引</a></li>
+                
+                    <li><a class="toctree-l4" href="#_36">检查索引的使用情况</a></li>
+                
+                    <li><a class="toctree-l4" href="#_37">索引管理</a></li>
+                
+                    <li><a class="toctree-l4" href="#_38">删除索引</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_39">创建和管理视图</a></li>
+                
+                    <li><a class="toctree-l4" href="#_40">创建视图</a></li>
+                
+                    <li><a class="toctree-l4" href="#_41">删除视图</a></li>
                 
             
             </ul>
@@ -274,7 +274,7 @@
 </code></pre>
 <p>若要创建新的数据库, 您需要拥有创建数据库的权限或者超级用户权限。如果您没有相应的权限，创建数据库的操作将会失败。可以联系数据管理员来取得创建数据库的权限。</p>
 <h5 id="_5">克隆数据库</h5>
-<p>创建新的数据库时，系统实际上通过克隆一个默认的标准数据库模版 template1 来完成。实际上，您可以指定任意一个数据作为创建新数据库的模版，这样新的数据库就会自动包含模版数据库中的所有对象和数据。例如：</p>
+<p>创建新的数据库时，系统实际上通过克隆一个默认的标准数据库模版 template1 来完成。实际上，您可以指定任意一个数据库作为创建新数据库的模版，这样新的数据库就会自动包含模版数据库中的所有对象和数据。例如：</p>
 <pre><code>=&gt; CREATE DATABASE new_dbname TEMPLATE old_dbname;
 </code></pre>
 <h5 id="_6">列出所有数据库</h5>
@@ -295,7 +295,7 @@
 <h4 id="_9">创建和管理模式</h4>
 <p>通过模式（Schema）对数据库对象进行逻辑上的分类组织。通过使用模式允许您在同一个数据库中，创建同名对象（例如：表）。</p>
 <h5 id="public">默认模式 "Public"</h5>
-<p>数据库默认包含一个默认模式：public。如果您没有创建任何模式，新创见的对象会默认使用 public 模式。数据库所有的用户都拥有 public 模式上的 CREATE （创建）和 USAGE（使用）权限。当您创建额外的模式时，您可以对用户授予权限，来控制访问。</p>
+<p>数据库默认包含一个默认模式：public。如果您没有创建任何模式，新创建的对象会默认使用 public 模式。数据库所有的用户都拥有 public 模式上的 CREATE （创建）和 USAGE（使用）权限。当您创建额外的模式时，您可以对用户授予权限，来控制访问。</p>
 <h5 id="_10">创建模式</h5>
 <p>使用 <strong>CREATE SCHEMA</strong> 命令来创建一个新的模式. 例如: </p>
 <pre><code>=&gt; CREATE SCHEMA myschema;
@@ -313,7 +313,7 @@
 </code></pre>
 <p>可以通过设置参数 search_path 来指定模式的搜索顺序。搜索路径中第一个模式就是系统使用的默认模式，当没有引用模式时，对象将会自动创建在默认模式下。</p>
 <h6 id="_12">设置模式搜索路径</h6>
-<p>search_path 配置参数涌来设置模式搜索顺序。ALTER DATABASE 命令可以设置数据库内默认搜索路径。例如：</p>
+<p>search_path 配置参数用来设置模式搜索顺序。ALTER DATABASE 命令可以设置数据库内默认搜索路径。例如：</p>
 <pre><code> =&gt; ALTER DATABASE mydatabase SET search_path TO myschema, public, pg_catalog;
 </code></pre>
 <p>还可以通过 ALTER ROLE 命令来为指定的用户修改 search_path 参数。例如：</p>
@@ -338,7 +338,7 @@
 <ul>
 <li>pg_catalog 包含了系统表，内建数据类型，函数和运算符对象。模式搜索路径时，系统总是会考虑此模式下的所有对象。</li>
 <li>information_schema 模式包含了大量标准化视图来描述数据库内部对象信息。这些视图以标准化方式来展现系统表中的信息。</li>
-<li>pg_toast 存储大对象，例如：记录大笑超过页面大小的对象。此模式下的信息是数据库内部使用的。</li>
+<li>pg_toast 存储大对象，例如：记录大小超过页面大小的对象。此模式下的信息是数据库内部使用的。</li>
 <li>pg_bitmapindex 存储bitmap所有对象，例如：值列表。此模式下的信息是数据库内部使用的。</li>
 <li>pg_aoseg 存储 append-optimized 表对象. 此模式下的信息是数据库内部使用的。</li>
 <li>gp_toolkit 是一个管理视图，内置一些外部表，视图和函数。可以通过SQL语句进行访问。所有数据库用户都能够访问 gp_toolkit 来查看日志文件和其它系统参数。</li>
@@ -382,7 +382,7 @@
              name text NOT NULL,
              price numeric );
 </code></pre>
-<h5 id="_21">约束约束</h5>
+<h5 id="_21">唯一约束</h5>
 <p>唯一约束确保存储在一张表中的一列或多列数据数据已定唯一。要使用唯一约束，表必须使用Hash分布策略，并且约束列必须和表的分布键对应的列一致（或者是超集）。例如：</p>
 <pre><code>=&gt; CREATE TABLE products 
            ( product_no integer UNIQUE, 
@@ -408,7 +408,7 @@ For information about the parameter, see "Server Configuration Parameters" of th
 <p>当您在考虑表的数据分布策略时，您可以考虑下面的问题来帮助决策：</p>
 <ul>
 <li>均匀的分布数据 — 为了尽可能获得最佳性能，每个节点应该尽可能获得均匀的数据。如果数据呈现出极度不均匀，那么数据量较大的节点就需要更多资源甚至是时间才能完成相应的工作。选择数据分布键值时尽量保证键值唯一，例如使用主键约束。</li>
-<li>局部和分布式运算 — 局部运算远远快于分布是运算。如果连接，排序或聚合运算能够在局部进行（计算和数据在一个节点完成），那么查询的整体速度就会更快。如果某些计算需要在整个系统来完成，那么数据需要进行交换，这样的操作就会降低效率。如果参与连接活着排序的操表都包含相同的数据分布键，那么这样的操作就可以在局部进行。如果数据采用随机分布策略，系统就无法在局部完成像连接这样的操作。</li>
+<li>局部和分布式运算 — 局部运算远远快于分布式运算。如果连接，排序或聚合运算能够在局部进行（计算和数据在一个节点完成），那么查询的整体速度就会更快。如果某些计算需要在整个系统来完成，那么数据需要进行交换，这样的操作就会降低效率。如果参与连接或者排序的操表都包含相同的数据分布键，那么这样的操作就可以在局部进行。如果数据采用随机分布策略，系统就无法在局部完成像连接这样的操作。</li>
 <li>均匀的处理请求 — 为了最优的性能，每个节点应该处理均匀的查询工作。如果表的数据分布策略和查询使用数据不匹配，查询的负载就会产生倾斜。例如：销售交易记录表是按照客户ID进行分布的，那么一个查询特定客户ID的查询就只会在一个特定的节点进行计算。</li>
 </ul>
 <h5 id="_25">声明数据分布</h5>
@@ -426,7 +426,7 @@ For information about the parameter, see "Server Configuration Parameters" of th
                          etc text)
              DISTRIBUTED RANDOMLY;
 </code></pre>
-<h3 id="partitioning-large-tables">Partitioning Large Tables</h3>
+<h3 id="_26">对大表进行分区处理</h3>
 <p>Table partitioning enables supporting very large tables, such as fact tables, by logically dividing them into smaller, more manageable pieces. Partitioned tables can improve query performance by allowing the Greenplum Database query optimizer to scan only the data needed to satisfy a given query instead of scanning all the contents of a large table.</p>
 <ul>
 <li>About Table Partitioning</li>
@@ -876,13 +876,13 @@ Warning: In order to ensure queries against the partitioned table return the cor
 <p>This example command changes the partitionname to yr_1_ext and the name of the child leaf partition table to sales_1_prt_yr_1_ext.</p>
 <pre><code>ALTER TABLE sales RENAME PARTITION yr_1 TO  yr_1_ext ;
 </code></pre>
-<h3 id="_26">创建和使用序列</h3>
-<p>通过使用序列，系统可以在新的纪录插入表中时，自动地按照自增方式分配一个唯一ID。使用序列一半就是为插入表中的纪录自动分配一个唯一标识符。您可以通过声明一个 SERIAL 类型的标识符列，该类型将会自动创建一个序列来分配ID。</p>
-<h4 id="_27">创建序列</h4>
+<h3 id="_27">创建和使用序列</h3>
+<p>通过使用序列，系统可以在新的纪录插入表中时，自动地按照自增方式分配一个唯一ID。使用序列一般就是为插入表中的纪录自动分配一个唯一标识符。您可以通过声明一个 SERIAL 类型的标识符列，该类型将会自动创建一个序列来分配ID。</p>
+<h4 id="_28">创建序列</h4>
 <p>CREATE SEQUENCE 命令用来创建和初始化一张特殊的单行序列生成器表，该表名称就是指定序列的名称。序列的名称在同一个模式下，不能与其它序列，表，索引或者视图重名。示例：</p>
 <pre><code>CREATE SEQUENCE myserial START 101;
 </code></pre>
-<h4 id="_28">使用序列</h4>
+<h4 id="_29">使用序列</h4>
 <p>在使用 CREATE SEQUENCE 创建系列生成器表后，可以通过 nextval 函数来使用序列。例如下面例子，向表中插入新数据时，自动获得下一个序列值：</p>
 <pre><code>INSERT INTO vendors VALUES (nextval('myserial'), 'acme');
 </code></pre>
@@ -893,19 +893,19 @@ Warning: In order to ensure queries against the partitioned table return the cor
 <p>通过下面的查询，可以检查序列的当前值：</p>
 <pre><code>SELECT * FROM myserial;
 </code></pre>
-<h4 id="_29">修改序列</h4>
+<h4 id="_30">修改序列</h4>
 <p>ALTER SEQUENCE 命令可以修改已经存在的序列生成器参数。例如：</p>
 <pre><code>ALTER SEQUENCE myserial RESTART WITH 105;
 </code></pre>
-<h4 id="_30">删除序列</h4>
+<h4 id="_31">删除序列</h4>
 <p>DROP SEQUENCE 命令删除序列生成表。例如：</p>
 <pre><code>DROP SEQUENCE myserial;
 </code></pre>
-<h3 id="_31">使用索引</h3>
+<h3 id="_32">使用索引</h3>
 <p>在绝大部分传统数据中，索引都能够极大地提高数据访问速速。然而，在像 &lt;&amp;product-name&gt; 这样的分布式数据库系统中，索引的使用需要更加谨慎。</p>
 <p>&lt;&amp;product-name&gt; 执行顺序扫描的速度非常快，索引只用来随机访问时，在磁盘上定位特定数据。由于数据是分散在多个节点上的，因此每个节点数据相对更少。再加上使用分区表功能，实际的顺序扫描可能更小。因为商业智能(BI)类应用通常返回较大的结果数据，因此索引并不高效。</p>
 <p>请尝试在没有索引的情况下，运行查询。一般情况下，对于OLTP类型业务，索引对性能的影响更大。因为这类查询一般只返回一条或较少的数据。对于压缩的 append 表来说，对于返回一部分数据的查询来说性能也能得到提高。这是因为优化器可以使用索引访问来避免使用全表的顺序扫描。对于压缩的数据，使用索引访问方法时，只有需要的数据才会被解压缩。</p>
-<p>&lt;&amp;product-name&gt; 对于包含主键的表自动创建主键约束。要对分区表创建索引，只需要在分区表上创建所以即可。&lt;&amp;product-name&gt; 能够自动在分区表下的分区上创建对应索引。&lt;&amp;product-name&gt; 不支持对分区表下的分区创建单独的索引。</p>
+<p>&lt;&amp;product-name&gt; 对于包含主键的表自动创建主键约束。要对分区表创建索引，只需要在分区表上创建索引即可。&lt;&amp;product-name&gt; 能够自动在分区表下的分区上创建对应索引。&lt;&amp;product-name&gt; 不支持对分区表下的分区创建单独的索引。</p>
 <p>请注意，唯一约束会隐式地创建唯一索引，唯一索引会包含所有数据分布键和分区键。唯一约束是对整个表范围保证唯一性的（包括所有的分区）。</p>
 <p>索引会增加数据库系统的运行开销，它们占用存储空间并且在数据更新时，需要额外的维护工作。请确保查询集合在使用您创建的索引后，性能得到了改善（和全表顺序扫描相比）。您可以使用 EXPLAIN 命令来确认索引是否被使用。</p>
 <p>创建索引时，您需要注意下面的问题点：</p>
@@ -919,10 +919,10 @@ Warning: In order to ensure queries against the partitioned table return the cor
 <li>对经常出现在 WHERE 条件中的列创建索引。</li>
 <li>避免创建冗余的索引。如果索引开头几列重复出现在多个索引中，这些索引就是冗余的。</li>
 <li>在大量数据加载时，删除索引。如果要向表中加载大量数据，考虑加载数据前删除索引，加载后重新建立索引的方法。这样的操作通常比带着索引加载要快。</li>
-<li>考虑聚簇索引。聚簇索引是指数据在物理上，按照索引顺序存储。如果您访问的数据在磁盘是随机存储，那么数据库就需要磁盘上不断变更位置读取您需要的数据。如果数据更佳紧密的存储起来，读取数据的操作效率就会更高。例如：在日期列上创建聚簇索引，数据也是按照日期列顺序存储。一个查询如果读取一个日期范围的数据，那么就可以利用磁盘顺序扫描的快速特性。</li>
+<li>考虑聚簇索引。聚簇索引是指数据在物理上，按照索引顺序存储。如果您访问的数据在磁盘是随机存储，那么数据库就需要在磁盘上不断变更位置读取您需要的数据。如果数据更佳紧密的存储起来，读取数据的操作效率就会更高。例如：在日期列上创建聚簇索引，数据也是按照日期列顺序存储。一个查询如果读取一个日期范围的数据，那么就可以利用磁盘顺序扫描的快速特性。</li>
 </ul>
-<h4 id="_32">聚簇索引</h4>
-<p>对一张非常的表，使用 CLUSTER 命令来根据索引对表的物理存储进行重新排序可能花费非常长的时间。您可以通过手工将排序的表数据导入一张中间表，来加上面的操作，例如：</p>
+<h4 id="_33">聚簇索引</h4>
+<p>对一张非常大的表，使用 CLUSTER 命令来根据索引对表的物理存储进行重新排序可能花费非常长的时间。您可以通过手工将排序的表数据导入一张中间表，来加上面的操作，例如：</p>
 <pre><code>CREATE TABLE new_table (LIKE old_table) 
        AS SELECT * FROM old_table ORDER BY myixcolumn;
 DROP old_table;
@@ -930,8 +930,8 @@ ALTER TABLE new_table RENAME TO old_table;
 CREATE INDEX myixcolumn_ix ON old_table;
 VACUUM ANALYZE old_table;
 </code></pre>
-<h4 id="_33">索引类型</h4>
-<p>&lt;&amp;product-name&gt; 支持 Postgres 中索引类型 B树 和 GiST. Hash 和 GIN 索引不支持。每一种索引都使用不同算法，因此适用的查询也不同。B树索引适用于大部分常见情况，因此也是默认类型。您可以参考 PostgreSQL 文档中关于索引的相关介绍。</p>
+<h4 id="_34">索引类型</h4>
+<p>&lt;&amp;product-name&gt; 支持 Postgres 中索引类型 B树 和 GiST。索引类型 Hash 和 GIN 索引不支持。每一种索引都使用不同算法，因此适用的查询也不同。B树索引适用于大部分常见情况，因此也是默认类型。您可以参考 PostgreSQL 文档中关于索引的相关介绍。</p>
 <p>注意：唯一索引使用的列必须和表的分布键值一样（或超集）。append-optimized 存储类型的表不支持唯一索引。对于分区表来说，唯一索引不能对整张表（对所有子表）来保证唯一性。唯一索引可以对于一个子分区保证唯一性。</p>
 <h5 id="bitmap">关于 Bitmap 索引</h5>
 <p>&lt;&amp;product-name&gt; 提供了 Bitmap 索引类型。Bitmap 索引特别适合大数据量的数据仓库应用和决策支持系统这种查询，临时性查询特别多，数据改动少的业务。</p>
@@ -945,16 +945,16 @@ VACUUM ANALYZE old_table;
 <p>如果列的数据唯一或者重复非常少，就应该避免使用bitmap索引。bitmap索引的性能优势和存储优势在列的唯一值超过10,0000后就会开始下降。与表中的总纪录数没有任何关系。
 Bitmap索引也不适合并发修改数据事务特别多的OLTP类型应用。
 使用bitmap索引应该谨慎，仔细对比建立索引前后的查询性能。只添加那些对查询性能有帮助的索引。</p>
-<h4 id="_34">创建索引</h4>
+<h4 id="_35">创建索引</h4>
 <p>CREATE INDEX 命令可以给指定的表定义索引。索引的默认类型是：B树索引。下面例子给表 employee 的 gender 列，添加了一个B树索引：</p>
 <pre><code>CREATE INDEX gender_idx ON employee (gender);
 </code></pre>
 <p>为 films 表的 title 列创建 bitmap 索引：</p>
 <pre><code>CREATE INDEX title_bmp_idx ON films USING bitmap (title);
 </code></pre>
-<h4 id="_35">检查索引的</h4>
+<h4 id="_36">检查索引的使用情况</h4>
 <p>&lt;&amp;product-name&gt; 索引不需要维护和调优。你可以通过真实的查询来检查索引的使用情况。EXPLAIN 命令可以用来检查一个查询使用索引的情况。
-查询计划会显示数据库为了回答您的查询所需要的步骤和计划节点，并给出每个节点的时间开销评估。要检查索引的使用情况，可以通过检查 EXPLAIN 输出中下面查询计划节点：</p>
+查询计划用来显示数据库为了回答您的查询所需要的步骤和使用的计划节点类型，并给出每个节点的时间开销评估。要检查索引的使用情况，可以通过检查 EXPLAIN 中包含的查询计划节点来进行输出中下面查询：</p>
 <ul>
 <li>Index Scan - 扫描索引</li>
 <li>Bitmap Heap Scan - 根据 BitmapAnd， BitmapOr，或 BitmapIndexScan 生成位图，从 heap 文件中读取相应的记录。</li>
@@ -969,28 +969,28 @@ Bitmap索引也不适合并发修改数据事务特别多的OLTP类型应用。
 <li>设计测试数据时需要非常小心。测试数据如果过于相似，完全随机，按特定顺序导入，都可能导致统计数据与真实数据分布的巨大差异。</li>
 <li>你可以通过调整运行时参数来禁用某些特定查询类型，这样可以更加针对性对索引使用进行测试。例如：关闭顺序扫描（enable_seqscan）和嵌套连接（enable_nestloop），及其它基础查询计划，可以强制系统选择其它类型的查询计划。通过对查询计时和利用 EXPLAIN ANALYZE 命令来对比使用和不使用索引的查询结果。</li>
 </ul>
-<h4 id="_36">索引管理</h4>
-<p>使用 REINDEX 命令可以对戏能不好的索引进行重新创建。REINDEX 重建是对表中数据重建并替换就索引实现的。</p>
+<h4 id="_37">索引管理</h4>
+<p>使用 REINDEX 命令可以对性能不好的索引进行重新创建。REINDEX 重建是对表中数据重建并替换旧索引实现的。</p>
 <p>在指定表上重新生成所有索引：</p>
 <pre><code>REINDEX my_table;
 </code></pre>
 <p>对指定索引重新生成：</p>
 <pre><code>REINDEX my_index;
 </code></pre>
-<h4 id="_37">删除索引</h4>
+<h4 id="_38">删除索引</h4>
 <p>DROP INDEX 命令删除一个索引，例如：</p>
 <pre><code>DROP INDEX title_idx;
 </code></pre>
 <p>加载数据时，可以通过首先删除索引，加载数据，再重新建立索引的方式加快数据加载速度。</p>
-<h3 id="_38">创建和管理视图</h3>
+<h3 id="_39">创建和管理视图</h3>
 <p>视图能够将您常用或复杂的查询保存起来，并允许您在 SELECT 语句中像访问表一样访问保存的查询。视图并不会导致在磁盘上存储数据，而是在访问视图时，视图定义的查询以自查询的方式被饮用。</p>
 <p>如果某个自查询只被某个特定查询使用，考虑使用 SELECT 语句的 WITH 子句来避免创建一张不能被公用的视图。</p>
-<h4 id="_39">创建视图</h4>
+<h4 id="_40">创建视图</h4>
 <p>CREATE VIEW 命令根据一个查询定义一个视图，例如：</p>
 <pre><code>CREATE VIEW comedies AS SELECT * FROM films WHERE kind = 'comedy';
 </code></pre>
 <p>视图会忽略视图定义查询中的 ORDER BY 和 SORT 的功能。</p>
-<h4 id="_40">删除视图</h4>
+<h4 id="_41">删除视图</h4>
 <p>DROP VIEW 删除一张视图，例如:</p>
 <pre><code>DROP VIEW topten;
 </code></pre>
