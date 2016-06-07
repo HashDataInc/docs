@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>14.2. BEGIN &mdash; HashData Warehouse Document 1.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="HashData Warehouse Document 1.0 文档" href="../../index.html" />
+    <link rel="up" title="14. SQL 命令参考" href="../sql-ref.html" />
+    <link rel="next" title="15. 文档历史" href="../history.html" />
+    <link rel="prev" title="14.1. ABORT" href="sql-ref-abort.html" /> 
+    <script src="https://www.hashdata.cn/static/js/baidu.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../history.html" title="15. 文档历史"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="sql-ref-abort.html" title="14.1. ABORT"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sql-ref.html" accesskey="U">14. SQL 命令参考</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="begin">
+<span id="sql-ref-begin"></span><h1>14.2. BEGIN<a class="headerlink" href="#begin" title="永久链接至标题">¶</a></h1>
+<p>启动一个事务块。</p>
+<div class="section" id="id1">
+<h2>14.2.1. 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">BEGIN</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span> <span class="p">[</span><span class="n">transaction_mode</span><span class="p">]</span>
+      <span class="p">[</span><span class="n">READ</span> <span class="n">ONLY</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">WRITE</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>transaction_mode 可以是下面的一个值：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ISOLATION</span> <span class="n">LEVEL</span> <span class="o">|</span> <span class="p">{</span><span class="n">SERIALIZABLE</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">COMMITTED</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">UNCOMMITTED</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>14.2.2. 描述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>BEGIN 启动一个事务块，所有在 BEGIN 语句之道 COMMIT 或 ROLLBACK 的语句之间的 SQL 命令将会被当做一个单独的事务运行。默认情况下（不使用 BEGIN），HashData 数据仓库 工作在自动提交模式，每条语句将会自动启动一个事务快，并执行该语句，在语句执行后，自动执行事务提交命令（如果执行失败，将会自动执行回滚）。</p>
+<p>由于启动和提交事务需要额外的 CPU 和 磁盘资源，因此在同一个事务块中运行多个语句的速度更快。在同一个事务中运行多个语句也能更好的保证多个修改后的数据一致性：其他会话的操作不会观察到还没有完成的更新操作导致道数据中间状态。</p>
+<p>如果指定了隔离级别或读写模式，新事务将会具有设置的特性，此效果与执行 SET TRANSACTION 一致。</p>
+</div>
+<div class="section" id="id3">
+<h2>14.2.3. 参数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>WORK
+TRANSACTION</p>
+<blockquote>
+<div>可选的关键字，无任何效果。</div></blockquote>
+<p>SERIALIZABLE
+READ COMMITTED
+READ UNCOMMITTED</p>
+<p>SQL 标准定了四个事务隔离级别：READ COMMITTED，READ UNCOMMITTED，SERIALIZABLE 和 REPEATABLE READ。默认行为是一条命令只能看到在它开始运行时已经提交的结果（READ COMMITTED）。在 HashData 数据仓库 中，READ UNCOMMITTED 和 READ COMMITTED 行为相同。虽然不支持 REPEATABLE READ，但是可以使用更严格的 SERIALIZABLE 模式。SERIALIZABLE 是事务隔离级别中最严格的。在此模式下，事务的执行将会模拟串行化事务执行的效果，类似于事务是一个接着一个运行，而并不是并发执行。应用在使用 SERIALIZABLE 隔离级别时，需要处理由于串行化失败后重新执行事务的工作。</p>
+<p>READ WRITE
+READ ONLY</p>
+<p>决定事务是读写模式还是只读模式。默认模式为读写模式。当一个事务是只读模式，下面的 SQL 命令将会被禁用：访问非临时表的 INSERT，UPDATE，DELETE 和 COPY FROM命令； 所有的 CREATE，ALTER，和 DROP 命令；GRANT，REVOKE，TRUNCATE 命令；在 EXPLAIN ANALYZE 和 EXECUTE 中使用了前面提到的过的命令。</p>
+</div>
+<div class="section" id="id4">
+<h2>14.2.4. 注意<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>START TRANSACTION 和 BEGIN 命令功能相同。</p>
+<p>使用 COMMIT 或 ROLLBACK 来结束一个事务块。</p>
+<p>在启动的事务块内部执行 <a class="reference internal" href="#sql-ref-begin"><span class="std std-ref">BEGIN</span></a> 没有任何副作用，但是系统会发出一条警告信息。事务的状态不会受到任何影响。要在事务块中使用嵌套事务，使用保存点功能（ 参考 SAVEPOINT）。</p>
+</div>
+<div class="section" id="id5">
+<h2>14.2.5. 示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>要启动一个事务：</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>启动一个可串行化隔离级别的事务：</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">BEGIN</span> <span class="n">TRANSACTION</span> <span class="k">ISOLATION</span> <span class="k">LEVEL</span> <span class="k">SERIALIZABLE</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>14.2.6. 兼容性<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>BEGIN 是 PostgreSQL 和 Greenplum Database 的扩展命令。它等效于 SQL 标准命令 START TRANSACTION。</p>
+<p>然而，BEGIN 关键词在嵌入式 SQL 中具有其它含义。在您迁移数据库应用时，请小心留意事务语义。</p>
+</div>
+<div class="section" id="id7">
+<h2>14.2.7. 相关命令<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>COMMIT, ROLLBACK, START TRANSACTION, SAVEPOINT</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">14.2. BEGIN</a><ul>
+<li><a class="reference internal" href="#id1">14.2.1. 语法</a></li>
+<li><a class="reference internal" href="#id2">14.2.2. 描述</a></li>
+<li><a class="reference internal" href="#id3">14.2.3. 参数</a></li>
+<li><a class="reference internal" href="#id4">14.2.4. 注意</a></li>
+<li><a class="reference internal" href="#id5">14.2.5. 示例</a></li>
+<li><a class="reference internal" href="#id6">14.2.6. 兼容性</a></li>
+<li><a class="reference internal" href="#id7">14.2.7. 相关命令</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../history.html" title="15. 文档历史"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="sql-ref-abort.html" title="14.1. ABORT"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sql-ref.html" >14. SQL 命令参考</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; 版权所有 2016, HashData Warehouse Team.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.3 创建。
+    </div>
+  </body>
+</html>

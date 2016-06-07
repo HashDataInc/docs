@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>14.1. ABORT &mdash; HashData Warehouse Document 1.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="HashData Warehouse Document 1.0 文档" href="../../index.html" />
+    <link rel="up" title="14. SQL 命令参考" href="../sql-ref.html" />
+    <link rel="next" title="14.2. BEGIN" href="sql-ref-begin.html" />
+    <link rel="prev" title="14. SQL 命令参考" href="../sql-ref.html" /> 
+    <script src="https://www.hashdata.cn/static/js/baidu.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="sql-ref-begin.html" title="14.2. BEGIN"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="../sql-ref.html" title="14. SQL 命令参考"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sql-ref.html" accesskey="U">14. SQL 命令参考</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="abort">
+<span id="sql-ref-abort"></span><h1>14.1. ABORT<a class="headerlink" href="#abort" title="永久链接至标题">¶</a></h1>
+<p>终止当前事务。</p>
+<div class="section" id="id1">
+<h2>14.1.1. 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ABORT</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>14.1.2. 描述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>ABORT 回滚当前事务，所有由当前事务进行的修改都将被丢弃。此命令与标准 SQL 语句 ROLLBACK 命令行为完全一致。因为历史原因，因此保留此命令。</p>
+</div>
+<div class="section" id="id3">
+<h2>14.1.3. 参数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>WORK
+TRANSACTION</p>
+<blockquote>
+<div>可选的关键字，无任何效果。</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>14.1.4. 注意<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>请使用 COMMIT 来完成一个成功的事务。</p>
+<p>如果没有启动任何事务的情况下执行 <a class="reference internal" href="#sql-ref-abort"><span class="std std-ref">ABORT</span></a> 没有任何副作用，但是系统会发出一条警告信息。</p>
+</div>
+<div class="section" id="id5">
+<h2>14.1.5. 兼容性<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>此命令是因为历史原因造成的 PostgreSQL 和 Greenplum Database 的扩展。ROLLBACK 是标准 SQL 的等价命令。</p>
+</div>
+<div class="section" id="id6">
+<h2>14.1.6. 相关命令<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p><a class="reference internal" href="sql-ref-begin.html#sql-ref-begin"><span class="std std-ref">BEGIN</span></a>, COMMIT, ROLLBACK</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">14.1. ABORT</a><ul>
+<li><a class="reference internal" href="#id1">14.1.1. 语法</a></li>
+<li><a class="reference internal" href="#id2">14.1.2. 描述</a></li>
+<li><a class="reference internal" href="#id3">14.1.3. 参数</a></li>
+<li><a class="reference internal" href="#id4">14.1.4. 注意</a></li>
+<li><a class="reference internal" href="#id5">14.1.5. 兼容性</a></li>
+<li><a class="reference internal" href="#id6">14.1.6. 相关命令</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="sql-ref-begin.html" title="14.2. BEGIN"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="../sql-ref.html" title="14. SQL 命令参考"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sql-ref.html" >14. SQL 命令参考</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; 版权所有 2016, HashData Warehouse Team.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.3 创建。
+    </div>
+  </body>
+</html>

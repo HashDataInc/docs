@@ -1,0 +1,1572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>13. SQL 语法摘要 &mdash; HashData Warehouse Document 1.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="HashData Warehouse Document 1.0 文档" href="../../index.html" />
+    <link rel="next" title="14. SQL 命令参考" href="../sql-ref.html" />
+    <link rel="prev" title="12. 查询数据" href="../management/management-quering-data.html" /> 
+    <script src="https://www.hashdata.cn/static/js/baidu.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../sql-ref.html" title="14. SQL 命令参考"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="../management/management-quering-data.html" title="12. 查询数据"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sql">
+<span id="sql-syntax-summary"></span><h1>13. SQL 语法摘要<a class="headerlink" href="#sql" title="永久链接至标题">¶</a></h1>
+<div class="section" id="abort">
+<h2>13.1. ABORT<a class="headerlink" href="#abort" title="永久链接至标题">¶</a></h2>
+<p>终止当前事务。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ABORT</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>查看 <a class="reference internal" href="sql-ref-abort.html#sql-ref-abort"><span class="std std-ref">ABORT</span></a> 了解更多。</p>
+</div>
+<div class="section" id="alter-aggregate">
+<h2>13.2. ALTER AGGREGATE<a class="headerlink" href="#alter-aggregate" title="永久链接至标题">¶</a></h2>
+<p>修改聚合函数定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">AGGREGATE</span> <span class="n">name</span> <span class="p">(</span> <span class="nb">type</span> <span class="p">[</span> <span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
+
+<span class="n">ALTER</span> <span class="n">AGGREGATE</span> <span class="n">name</span> <span class="p">(</span> <span class="nb">type</span> <span class="p">[</span> <span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">new_owner</span>
+
+<span class="n">ALTER</span> <span class="n">AGGREGATE</span> <span class="n">name</span> <span class="p">(</span> <span class="nb">type</span> <span class="p">[</span> <span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="n">SET</span> <span class="n">SCHEMA</span> <span class="n">new_schema</span>
+</pre></div>
+</div>
+<p>See ALTER AGGREGATE for more information.</p>
+</div>
+<div class="section" id="alter-conversion">
+<h2>13.3. ALTER CONVERSION<a class="headerlink" href="#alter-conversion" title="永久链接至标题">¶</a></h2>
+<p>修改编码转换定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">CONVERSION</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+
+<span class="n">ALTER</span> <span class="n">CONVERSION</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
+</pre></div>
+</div>
+<p>See ALTER CONVERSION for more information.</p>
+</div>
+<div class="section" id="alter-database">
+<h2>13.4. ALTER DATABASE<a class="headerlink" href="#alter-database" title="永久链接至标题">¶</a></h2>
+<p>修改数据库属性。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="p">[</span> <span class="n">WITH</span> <span class="n">CONNECTION</span> <span class="n">LIMIT</span> <span class="n">connlimit</span> <span class="p">]</span>
+
+<span class="n">ALTER</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">parameter</span> <span class="p">{</span> <span class="n">TO</span> <span class="o">|</span> <span class="o">=</span> <span class="p">}</span> <span class="p">{</span> <span class="n">value</span> <span class="o">|</span> <span class="n">DEFAULT</span> <span class="p">}</span>
+
+<span class="n">ALTER</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="n">RESET</span> <span class="n">parameter</span>
+
+<span class="n">ALTER</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+
+<span class="n">ALTER</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">new_owner</span>
+</pre></div>
+</div>
+<p>See ALTER DATABASE for more information.</p>
+</div>
+<div class="section" id="alter-domain">
+<h2>13.5. ALTER DOMAIN<a class="headerlink" href="#alter-domain" title="永久链接至标题">¶</a></h2>
+<p>修改域的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="p">{</span> <span class="n">SET</span> <span class="n">DEFAULT</span> <span class="n">expression</span> <span class="o">|</span> <span class="n">DROP</span> <span class="n">DEFAULT</span> <span class="p">}</span>
+
+<span class="n">ALTER</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="p">{</span> <span class="n">SET</span> <span class="o">|</span> <span class="n">DROP</span> <span class="p">}</span> <span class="n">NOT</span> <span class="n">NULL</span>
+
+<span class="n">ALTER</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="n">ADD</span> <span class="n">domain_constraint</span>
+
+<span class="n">ALTER</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="n">DROP</span> <span class="n">CONSTRAINT</span> <span class="n">constraint_name</span> <span class="p">[</span><span class="n">RESTRICT</span> <span class="o">|</span> <span class="n">CASCADE</span><span class="p">]</span>
+
+<span class="n">ALTER</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">new_owner</span>
+
+<span class="n">ALTER</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">SCHEMA</span> <span class="n">new_schema</span>
+</pre></div>
+</div>
+<p>See ALTER DOMAIN for more information.</p>
+</div>
+<div class="section" id="alter-external-table">
+<h2>13.6. ALTER EXTERNAL TABLE<a class="headerlink" href="#alter-external-table" title="永久链接至标题">¶</a></h2>
+<p>修改外部表的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="p">[</span><span class="n">COLUMN</span><span class="p">]</span> <span class="n">column</span> <span class="n">TO</span> <span class="n">new_column</span>
+
+<span class="n">ALTER</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
+
+<span class="n">ALTER</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">SCHEMA</span> <span class="n">new_schema</span>
+
+<span class="n">ALTER</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">action</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See ALTER EXTERNAL TABLE for more information.</p>
+</div>
+<div class="section" id="alter-function">
+<h2>13.7. ALTER FUNCTION<a class="headerlink" href="#alter-function" title="永久链接至标题">¶</a></h2>
+<p>修改函数的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">FUNCTION</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+   <span class="n">action</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">[</span><span class="n">RESTRICT</span><span class="p">]</span>
+
+<span class="n">ALTER</span> <span class="n">FUNCTION</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+   <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
+
+<span class="n">ALTER</span> <span class="n">FUNCTION</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+   <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">new_owner</span>
+
+<span class="n">ALTER</span> <span class="n">FUNCTION</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+   <span class="n">SET</span> <span class="n">SCHEMA</span> <span class="n">new_schema</span>
+</pre></div>
+</div>
+<p>See ALTER FUNCTION for more information.</p>
+</div>
+<div class="section" id="alter-group">
+<h2>13.8. ALTER GROUP<a class="headerlink" href="#alter-group" title="永久链接至标题">¶</a></h2>
+<p>修改数据库角色的名称或者成员关系。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">GROUP</span> <span class="n">groupname</span> <span class="n">ADD</span> <span class="n">USER</span> <span class="n">username</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span>
+
+<span class="n">ALTER</span> <span class="n">GROUP</span> <span class="n">groupname</span> <span class="n">DROP</span> <span class="n">USER</span> <span class="n">username</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span>
+
+<span class="n">ALTER</span> <span class="n">GROUP</span> <span class="n">groupname</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+</pre></div>
+</div>
+<p>See ALTER GROUP for more information.</p>
+</div>
+<div class="section" id="alter-index">
+<h2>13.9. ALTER INDEX<a class="headerlink" href="#alter-index" title="永久链接至标题">¶</a></h2>
+<p>修改索引的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
+
+<span class="n">ALTER</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">TABLESPACE</span> <span class="n">tablespace_name</span>
+
+<span class="n">ALTER</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">SET</span> <span class="p">(</span> <span class="n">FILLFACTOR</span> <span class="o">=</span> <span class="n">value</span> <span class="p">)</span>
+
+<span class="n">ALTER</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">RESET</span> <span class="p">(</span> <span class="n">FILLFACTOR</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>See ALTER INDEX for more information.</p>
+</div>
+<div class="section" id="alter-language">
+<h2>13.10. ALTER LANGUAGE<a class="headerlink" href="#alter-language" title="永久链接至标题">¶</a></h2>
+<p>修改过程语言的名称。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">LANGUAGE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+</pre></div>
+</div>
+<p>See ALTER LANGUAGE for more information.</p>
+</div>
+<div class="section" id="alter-operator">
+<h2>13.11. ALTER OPERATOR<a class="headerlink" href="#alter-operator" title="永久链接至标题">¶</a></h2>
+<p>修改运算符的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">OPERATOR</span> <span class="n">name</span> <span class="p">(</span> <span class="p">{</span><span class="n">lefttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">,</span> <span class="p">{</span><span class="n">righttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">)</span>
+   <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
+</pre></div>
+</div>
+<p>See ALTER OPERATOR for more information.</p>
+</div>
+<div class="section" id="alter-operator-class">
+<h2>13.12. ALTER OPERATOR CLASS<a class="headerlink" href="#alter-operator-class" title="永久链接至标题">¶</a></h2>
+<p>修改运算符类的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="n">name</span> <span class="n">USING</span> <span class="n">index_method</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+
+<span class="n">ALTER</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="n">name</span> <span class="n">USING</span> <span class="n">index_method</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
+</pre></div>
+</div>
+<p>See ALTER OPERATOR CLASS for more information.</p>
+</div>
+<div class="section" id="alter-protocol">
+<h2>13.13. ALTER PROTOCOL<a class="headerlink" href="#alter-protocol" title="永久链接至标题">¶</a></h2>
+<p>修改外部表协议的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">PROTOCOL</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+
+<span class="n">ALTER</span> <span class="n">PROTOCOL</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
+</pre></div>
+</div>
+<p>See ALTER PROTOCOL for more information.</p>
+</div>
+<div class="section" id="alter-resource-queue">
+<h2>13.14. ALTER RESOURCE QUEUE<a class="headerlink" href="#alter-resource-queue" title="永久链接至标题">¶</a></h2>
+<p>修改资源队列的限制。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">name</span> <span class="n">WITH</span> <span class="p">(</span> <span class="n">queue_attribute</span><span class="o">=</span><span class="n">value</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>See ALTER RESOURCE QUEUE for more information.</p>
+</div>
+<div class="section" id="alter-role">
+<h2>13.15. ALTER ROLE<a class="headerlink" href="#alter-role" title="永久链接至标题">¶</a></h2>
+<p>修改数据库角色（用户或组）。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+
+<span class="n">ALTER</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">config_parameter</span> <span class="p">{</span><span class="n">TO</span> <span class="o">|</span> <span class="o">=</span><span class="p">}</span> <span class="p">{</span><span class="n">value</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span>
+
+<span class="n">ALTER</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="n">RESET</span> <span class="n">config_parameter</span>
+
+<span class="n">ALTER</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="p">{</span><span class="n">queue_name</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span>
+
+<span class="n">ALTER</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See ALTER ROLE for more information.</p>
+</div>
+<div class="section" id="alter-schema">
+<h2>13.16. ALTER SCHEMA<a class="headerlink" href="#alter-schema" title="永久链接至标题">¶</a></h2>
+<p>修改模式的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">SCHEMA</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+
+<span class="n">ALTER</span> <span class="n">SCHEMA</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
+</pre></div>
+</div>
+<p>See ALTER SCHEMA for more information.</p>
+</div>
+<div class="section" id="alter-sequence">
+<h2>13.17. ALTER SEQUENCE<a class="headerlink" href="#alter-sequence" title="永久链接至标题">¶</a></h2>
+<p>修改序列生成器的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">SEQUENCE</span> <span class="n">name</span> <span class="p">[</span><span class="n">INCREMENT</span> <span class="p">[</span> <span class="n">BY</span> <span class="p">]</span> <span class="n">increment</span><span class="p">]</span>
+     <span class="p">[</span><span class="n">MINVALUE</span> <span class="n">minvalue</span> <span class="o">|</span> <span class="n">NO</span> <span class="n">MINVALUE</span><span class="p">]</span>
+     <span class="p">[</span><span class="n">MAXVALUE</span> <span class="n">maxvalue</span> <span class="o">|</span> <span class="n">NO</span> <span class="n">MAXVALUE</span><span class="p">]</span>
+     <span class="p">[</span><span class="n">RESTART</span> <span class="p">[</span> <span class="n">WITH</span> <span class="p">]</span> <span class="n">start</span><span class="p">]</span>
+     <span class="p">[</span><span class="n">CACHE</span> <span class="n">cache</span><span class="p">]</span> <span class="p">[[</span> <span class="n">NO</span> <span class="p">]</span> <span class="n">CYCLE</span><span class="p">]</span>
+     <span class="p">[</span><span class="n">OWNED</span> <span class="n">BY</span> <span class="p">{</span><span class="n">table</span><span class="o">.</span><span class="n">column</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}]</span>
+
+<span class="n">ALTER</span> <span class="n">SEQUENCE</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">SCHEMA</span> <span class="n">new_schema</span>
+</pre></div>
+</div>
+<p>See ALTER SEQUENCE for more information.</p>
+</div>
+<div class="section" id="alter-table">
+<h2>13.18. ALTER TABLE<a class="headerlink" href="#alter-table" title="永久链接至标题">¶</a></h2>
+<p>修改表的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="p">[</span><span class="n">COLUMN</span><span class="p">]</span> <span class="n">column</span> <span class="n">TO</span> <span class="n">new_column</span>
+
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
+
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">SCHEMA</span> <span class="n">new_schema</span>
+
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">name</span> <span class="n">SET</span>
+     <span class="n">DISTRIBUTED</span> <span class="n">BY</span> <span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
+   <span class="o">|</span> <span class="n">DISTRIBUTED</span> <span class="n">RANDOMLY</span>
+   <span class="o">|</span> <span class="n">WITH</span> <span class="p">(</span><span class="n">REORGANIZE</span><span class="o">=</span><span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">)</span>
+
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">name</span> <span class="n">action</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span>
+
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">name</span>
+   <span class="p">[</span> <span class="n">ALTER</span> <span class="n">PARTITION</span> <span class="p">{</span> <span class="n">partition_name</span> <span class="o">|</span> <span class="n">FOR</span> <span class="p">(</span><span class="n">RANK</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+   <span class="o">|</span> <span class="n">FOR</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">}</span> <span class="n">partition_action</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="p">]</span>
+   <span class="n">partition_action</span>
+</pre></div>
+</div>
+<p>See ALTER TABLE for more information.</p>
+</div>
+<div class="section" id="alter-tablespace">
+<h2>13.19. ALTER TABLESPACE<a class="headerlink" href="#alter-tablespace" title="永久链接至标题">¶</a></h2>
+<p>修改表空间的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLESPACE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+
+<span class="n">ALTER</span> <span class="n">TABLESPACE</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
+</pre></div>
+</div>
+<p>See ALTER TABLESPACE for more information.</p>
+</div>
+<div class="section" id="alter-type">
+<h2>13.20. ALTER TYPE<a class="headerlink" href="#alter-type" title="永久链接至标题">¶</a></h2>
+<p>修改数据类型的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TYPE</span> <span class="n">name</span>
+   <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">new_owner</span> <span class="o">|</span> <span class="n">SET</span> <span class="n">SCHEMA</span> <span class="n">new_schema</span>
+</pre></div>
+</div>
+<p>See ALTER TYPE for more information.</p>
+</div>
+<div class="section" id="alter-user">
+<h2>13.21. ALTER USER<a class="headerlink" href="#alter-user" title="永久链接至标题">¶</a></h2>
+<p>修改数据库角色（用户）的定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">USER</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+
+<span class="n">ALTER</span> <span class="n">USER</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">config_parameter</span> <span class="p">{</span><span class="n">TO</span> <span class="o">|</span> <span class="o">=</span><span class="p">}</span> <span class="p">{</span><span class="n">value</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span>
+
+<span class="n">ALTER</span> <span class="n">USER</span> <span class="n">name</span> <span class="n">RESET</span> <span class="n">config_parameter</span>
+
+<span class="n">ALTER</span> <span class="n">USER</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See ALTER USER for more information.</p>
+</div>
+<div class="section" id="analyze">
+<h2>13.22. ANALYZE<a class="headerlink" href="#analyze" title="永久链接至标题">¶</a></h2>
+<p>收集数据库的统计信息。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ANALYZE</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="n">ROOTPARTITION</span> <span class="p">[</span><span class="n">ALL</span><span class="p">]</span> <span class="p">]</span>
+   <span class="p">[</span><span class="n">table</span> <span class="p">[</span> <span class="p">(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]]</span>
+</pre></div>
+</div>
+<p>See ANALYZE for more information.</p>
+</div>
+<div class="section" id="begin">
+<h2>13.23. BEGIN<a class="headerlink" href="#begin" title="永久链接至标题">¶</a></h2>
+<p>启动一个事务块。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">BEGIN</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span> <span class="p">[</span><span class="n">transaction_mode</span><span class="p">]</span>
+      <span class="p">[</span><span class="n">READ</span> <span class="n">ONLY</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">WRITE</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>查看 <a class="reference internal" href="sql-ref-begin.html#sql-ref-begin"><span class="std std-ref">BEGIN</span></a> 了解更多。</p>
+</div>
+<div class="section" id="checkpoint">
+<h2>13.24. CHECKPOINT<a class="headerlink" href="#checkpoint" title="永久链接至标题">¶</a></h2>
+<p>强制系统进行一次事务日志的检查点。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CHECKPOINT</span>
+</pre></div>
+</div>
+<p>See CHECKPOINT for more information.</p>
+</div>
+<div class="section" id="close">
+<h2>13.25. CLOSE<a class="headerlink" href="#close" title="永久链接至标题">¶</a></h2>
+<p>关闭一个游标。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CLOSE</span> <span class="n">cursor_name</span>
+</pre></div>
+</div>
+<p>See CLOSE for more information.</p>
+</div>
+<div class="section" id="cluster">
+<h2>13.26. CLUSTER<a class="headerlink" href="#cluster" title="永久链接至标题">¶</a></h2>
+<p>根据索引的顺序，对 heap 表的记录进行物理上重新排序。
+HashData 数据仓库 不推荐使用此操作。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CLUSTER</span> <span class="n">indexname</span> <span class="n">ON</span> <span class="n">tablename</span>
+
+<span class="n">CLUSTER</span> <span class="n">tablename</span>
+
+<span class="n">CLUSTER</span>
+</pre></div>
+</div>
+<p>See CLUSTER for more information.</p>
+</div>
+<div class="section" id="comment">
+<h2>13.27. COMMENT<a class="headerlink" href="#comment" title="永久链接至标题">¶</a></h2>
+<p>定义或修改对象的注释。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COMMENT</span> <span class="n">ON</span>
+<span class="p">{</span> <span class="n">TABLE</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">COLUMN</span> <span class="n">table_name</span><span class="o">.</span><span class="n">column_name</span> <span class="o">|</span>
+  <span class="n">AGGREGATE</span> <span class="n">agg_name</span> <span class="p">(</span><span class="n">agg_type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])</span> <span class="o">|</span>
+  <span class="n">CAST</span> <span class="p">(</span><span class="n">sourcetype</span> <span class="n">AS</span> <span class="n">targettype</span><span class="p">)</span> <span class="o">|</span>
+  <span class="n">CONSTRAINT</span> <span class="n">constraint_name</span> <span class="n">ON</span> <span class="n">table_name</span> <span class="o">|</span>
+  <span class="n">CONVERSION</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">DATABASE</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">DOMAIN</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">FILESPACE</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">FUNCTION</span> <span class="n">func_name</span> <span class="p">([[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]])</span> <span class="o">|</span>
+  <span class="n">INDEX</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">LARGE</span> <span class="n">OBJECT</span> <span class="n">large_object_oid</span> <span class="o">|</span>
+  <span class="n">OPERATOR</span> <span class="n">op</span> <span class="p">(</span><span class="n">leftoperand_type</span><span class="p">,</span> <span class="n">rightoperand_type</span><span class="p">)</span> <span class="o">|</span>
+  <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="n">object_name</span> <span class="n">USING</span> <span class="n">index_method</span> <span class="o">|</span>
+  <span class="p">[</span><span class="n">PROCEDURAL</span><span class="p">]</span> <span class="n">LANGUAGE</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">ROLE</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">RULE</span> <span class="n">rule_name</span> <span class="n">ON</span> <span class="n">table_name</span> <span class="o">|</span>
+  <span class="n">SCHEMA</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">SEQUENCE</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">TABLESPACE</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">TRIGGER</span> <span class="n">trigger_name</span> <span class="n">ON</span> <span class="n">table_name</span> <span class="o">|</span>
+  <span class="n">TYPE</span> <span class="n">object_name</span> <span class="o">|</span>
+  <span class="n">VIEW</span> <span class="n">object_name</span> <span class="p">}</span>
+<span class="n">IS</span> <span class="s1">&#39;text&#39;</span>
+</pre></div>
+</div>
+<p>See COMMENT for more information.</p>
+</div>
+<div class="section" id="commit">
+<h2>13.28. COMMIT<a class="headerlink" href="#commit" title="永久链接至标题">¶</a></h2>
+<p>提交当前事务。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COMMIT</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See COMMIT for more information.</p>
+</div>
+<div class="section" id="copy">
+<h2>13.29. COPY<a class="headerlink" href="#copy" title="永久链接至标题">¶</a></h2>
+<p>在表或文件之间拷贝数据。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COPY</span> <span class="n">table</span> <span class="p">[(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])]</span> <span class="n">FROM</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span> <span class="o">|</span> <span class="n">STDIN</span><span class="p">}</span>
+     <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">OIDS</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">HEADER</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;escape&#39;</span> <span class="o">|</span> <span class="s1">&#39;OFF&#39;</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">NEWLINE</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;LF&#39;</span> <span class="o">|</span> <span class="s1">&#39;CR&#39;</span> <span class="o">|</span> <span class="s1">&#39;CRLF&#39;</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CSV</span> <span class="p">[</span><span class="n">QUOTE</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;quote&#39;</span><span class="p">]</span>
+            <span class="p">[</span><span class="n">FORCE</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+       <span class="p">[</span><span class="n">FILL</span> <span class="n">MISSING</span> <span class="n">FIELDS</span><span class="p">]</span>
+       <span class="p">[[</span><span class="n">LOG</span> <span class="n">ERRORS</span> <span class="p">[</span><span class="n">INTO</span> <span class="n">error_table</span><span class="p">]</span> <span class="p">[</span><span class="n">KEEP</span><span class="p">]</span>
+       <span class="n">SEGMENT</span> <span class="n">REJECT</span> <span class="n">LIMIT</span> <span class="n">count</span> <span class="p">[</span><span class="n">ROWS</span> <span class="o">|</span> <span class="n">PERCENT</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="n">COPY</span> <span class="p">{</span><span class="n">table</span> <span class="p">[(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])]</span> <span class="o">|</span> <span class="p">(</span><span class="n">query</span><span class="p">)}</span> <span class="n">TO</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span> <span class="o">|</span> <span class="n">STDOUT</span><span class="p">}</span>
+      <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span>
+        <span class="p">[</span><span class="n">OIDS</span><span class="p">]</span>
+        <span class="p">[</span><span class="n">HEADER</span><span class="p">]</span>
+        <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span><span class="p">]</span>
+        <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+        <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;escape&#39;</span> <span class="o">|</span> <span class="s1">&#39;OFF&#39;</span><span class="p">]</span>
+        <span class="p">[</span><span class="n">CSV</span> <span class="p">[</span><span class="n">QUOTE</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;quote&#39;</span><span class="p">]</span>
+             <span class="p">[</span><span class="n">FORCE</span> <span class="n">QUOTE</span> <span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span> <span class="p">]</span>
+      <span class="p">[</span><span class="n">IGNORE</span> <span class="n">EXTERNAL</span> <span class="n">PARTITIONS</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See COPY for more information.</p>
+</div>
+<div class="section" id="create-aggregate">
+<h2>13.30. CREATE AGGREGATE<a class="headerlink" href="#create-aggregate" title="永久链接至标题">¶</a></h2>
+<p>定义聚合函数。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">ORDERED</span><span class="p">]</span> <span class="n">AGGREGATE</span> <span class="n">name</span> <span class="p">(</span><span class="n">input_data_type</span> <span class="p">[</span> <span class="p">,</span> <span class="o">...</span> <span class="p">])</span>
+      <span class="p">(</span> <span class="n">SFUNC</span> <span class="o">=</span> <span class="n">sfunc</span><span class="p">,</span>
+        <span class="n">STYPE</span> <span class="o">=</span> <span class="n">state_data_type</span>
+        <span class="p">[,</span> <span class="n">PREFUNC</span> <span class="o">=</span> <span class="n">prefunc</span><span class="p">]</span>
+        <span class="p">[,</span> <span class="n">FINALFUNC</span> <span class="o">=</span> <span class="n">ffunc</span><span class="p">]</span>
+        <span class="p">[,</span> <span class="n">INITCOND</span> <span class="o">=</span> <span class="n">initial_condition</span><span class="p">]</span>
+        <span class="p">[,</span> <span class="n">SORTOP</span> <span class="o">=</span> <span class="n">sort_operator</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>See CREATE AGGREGATE for more information.</p>
+</div>
+<div class="section" id="create-cast">
+<h2>13.31. CREATE CAST<a class="headerlink" href="#create-cast" title="永久链接至标题">¶</a></h2>
+<p>定义类型转换。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">CAST</span> <span class="p">(</span><span class="n">sourcetype</span> <span class="n">AS</span> <span class="n">targettype</span><span class="p">)</span>
+       <span class="n">WITH</span> <span class="n">FUNCTION</span> <span class="n">funcname</span> <span class="p">(</span><span class="n">argtypes</span><span class="p">)</span>
+       <span class="p">[</span><span class="n">AS</span> <span class="n">ASSIGNMENT</span> <span class="o">|</span> <span class="n">AS</span> <span class="n">IMPLICIT</span><span class="p">]</span>
+
+<span class="n">CREATE</span> <span class="n">CAST</span> <span class="p">(</span><span class="n">sourcetype</span> <span class="n">AS</span> <span class="n">targettype</span><span class="p">)</span> <span class="n">WITHOUT</span> <span class="n">FUNCTION</span>
+       <span class="p">[</span><span class="n">AS</span> <span class="n">ASSIGNMENT</span> <span class="o">|</span> <span class="n">AS</span> <span class="n">IMPLICIT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE CAST for more information.</p>
+</div>
+<div class="section" id="create-conversion">
+<h2>13.32. CREATE CONVERSION<a class="headerlink" href="#create-conversion" title="永久链接至标题">¶</a></h2>
+<p>定义编码转换。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">DEFAULT</span><span class="p">]</span> <span class="n">CONVERSION</span> <span class="n">name</span> <span class="n">FOR</span> <span class="n">source_encoding</span> <span class="n">TO</span>
+     <span class="n">dest_encoding</span> <span class="n">FROM</span> <span class="n">funcname</span>
+</pre></div>
+</div>
+<p>See CREATE CONVERSION for more information.</p>
+</div>
+<div class="section" id="create-database">
+<h2>13.33. CREATE DATABASE<a class="headerlink" href="#create-database" title="永久链接至标题">¶</a></h2>
+<p>创建数据库。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="p">[</span><span class="n">OWNER</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">dbowner</span><span class="p">]</span>
+                     <span class="p">[</span><span class="n">TEMPLATE</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">template</span><span class="p">]</span>
+                     <span class="p">[</span><span class="n">ENCODING</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">encoding</span><span class="p">]</span>
+                     <span class="p">[</span><span class="n">TABLESPACE</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">tablespace</span><span class="p">]</span>
+                     <span class="p">[</span><span class="n">CONNECTION</span> <span class="n">LIMIT</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">connlimit</span> <span class="p">]</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE DATABASE for more information.</p>
+</div>
+<div class="section" id="create-domain">
+<h2>13.34. CREATE DOMAIN<a class="headerlink" href="#create-domain" title="永久链接至标题">¶</a></h2>
+<p>定义域。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="n">data_type</span> <span class="p">[</span><span class="n">DEFAULT</span> <span class="n">expression</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CONSTRAINT</span> <span class="n">constraint_name</span>
+       <span class="o">|</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="o">|</span> <span class="n">NULL</span>
+       <span class="o">|</span> <span class="n">CHECK</span> <span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="p">[</span><span class="o">...</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>See CREATE DOMAIN for more information.</p>
+</div>
+<div class="section" id="create-external-table">
+<h2>13.35. CREATE EXTERNAL TABLE<a class="headerlink" href="#create-external-table" title="永久链接至标题">¶</a></h2>
+<p>定义外部表。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">READABLE</span><span class="p">]</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">table_name</span>
+    <span class="p">(</span> <span class="n">column_name</span> <span class="n">data_type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">LIKE</span> <span class="n">other_table</span> <span class="p">)</span>
+      <span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;file://seghost[:port]/path/file&#39;</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])</span>
+        <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;gpfdist://filehost[:port]/file_pattern[#transform]&#39;</span>
+        <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;gpfdists://filehost[:port]/file_pattern[#transform]&#39;</span>
+            <span class="p">[,</span> <span class="o">...</span><span class="p">])</span>
+        <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;gphdfs://hdfs_host[:port]/path/file&#39;</span><span class="p">)</span>
+      <span class="n">FORMAT</span> <span class="s1">&#39;TEXT&#39;</span>
+            <span class="p">[(</span> <span class="p">[</span><span class="n">HEADER</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span> <span class="o">|</span> <span class="s1">&#39;OFF&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;escape&#39;</span> <span class="o">|</span> <span class="s1">&#39;OFF&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NEWLINE</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;LF&#39;</span> <span class="o">|</span> <span class="s1">&#39;CR&#39;</span> <span class="o">|</span> <span class="s1">&#39;CRLF&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">FILL</span> <span class="n">MISSING</span> <span class="n">FIELDS</span><span class="p">]</span> <span class="p">)]</span>
+           <span class="o">|</span> <span class="s1">&#39;CSV&#39;</span>
+            <span class="p">[(</span> <span class="p">[</span><span class="n">HEADER</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">QUOTE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;quote&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">FORCE</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+               <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;escape&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NEWLINE</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;LF&#39;</span> <span class="o">|</span> <span class="s1">&#39;CR&#39;</span> <span class="o">|</span> <span class="s1">&#39;CRLF&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">FILL</span> <span class="n">MISSING</span> <span class="n">FIELDS</span><span class="p">]</span> <span class="p">)]</span>
+           <span class="o">|</span> <span class="s1">&#39;AVRO&#39;</span>
+           <span class="o">|</span> <span class="s1">&#39;PARQUET&#39;</span>
+
+           <span class="o">|</span> <span class="s1">&#39;CUSTOM&#39;</span> <span class="p">(</span><span class="n">Formatter</span><span class="o">=&lt;</span><span class="n">formatter</span> <span class="n">specifications</span><span class="o">&gt;</span><span class="p">)</span>
+     <span class="p">[</span> <span class="n">ENCODING</span> <span class="s1">&#39;encoding&#39;</span> <span class="p">]</span>
+     <span class="p">[</span> <span class="p">[</span><span class="n">LOG</span> <span class="n">ERRORS</span> <span class="p">[</span><span class="n">INTO</span> <span class="n">error_table</span><span class="p">]]</span> <span class="n">SEGMENT</span> <span class="n">REJECT</span> <span class="n">LIMIT</span> <span class="n">count</span>
+       <span class="p">[</span><span class="n">ROWS</span> <span class="o">|</span> <span class="n">PERCENT</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="n">CREATE</span> <span class="p">[</span><span class="n">READABLE</span><span class="p">]</span> <span class="n">EXTERNAL</span> <span class="n">WEB</span> <span class="n">TABLE</span> <span class="n">table_name</span>
+   <span class="p">(</span> <span class="n">column_name</span> <span class="n">data_type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">LIKE</span> <span class="n">other_table</span> <span class="p">)</span>
+      <span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;http://webhost[:port]/path/file&#39;</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])</span>
+    <span class="o">|</span> <span class="n">EXECUTE</span> <span class="s1">&#39;command&#39;</span> <span class="p">[</span><span class="n">ON</span> <span class="n">ALL</span>
+                          <span class="o">|</span> <span class="n">MASTER</span>
+                          <span class="o">|</span> <span class="n">number_of_segments</span>
+                          <span class="o">|</span> <span class="n">HOST</span> <span class="p">[</span><span class="s1">&#39;segment_hostname&#39;</span><span class="p">]</span>
+                          <span class="o">|</span> <span class="n">SEGMENT</span> <span class="n">segment_id</span> <span class="p">]</span>
+      <span class="n">FORMAT</span> <span class="s1">&#39;TEXT&#39;</span>
+            <span class="p">[(</span> <span class="p">[</span><span class="n">HEADER</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span> <span class="o">|</span> <span class="s1">&#39;OFF&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;escape&#39;</span> <span class="o">|</span> <span class="s1">&#39;OFF&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NEWLINE</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;LF&#39;</span> <span class="o">|</span> <span class="s1">&#39;CR&#39;</span> <span class="o">|</span> <span class="s1">&#39;CRLF&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">FILL</span> <span class="n">MISSING</span> <span class="n">FIELDS</span><span class="p">]</span> <span class="p">)]</span>
+           <span class="o">|</span> <span class="s1">&#39;CSV&#39;</span>
+            <span class="p">[(</span> <span class="p">[</span><span class="n">HEADER</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">QUOTE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;quote&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">FORCE</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+               <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;escape&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NEWLINE</span> <span class="p">[</span> <span class="n">AS</span> <span class="p">]</span> <span class="s1">&#39;LF&#39;</span> <span class="o">|</span> <span class="s1">&#39;CR&#39;</span> <span class="o">|</span> <span class="s1">&#39;CRLF&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">FILL</span> <span class="n">MISSING</span> <span class="n">FIELDS</span><span class="p">]</span> <span class="p">)]</span>
+           <span class="o">|</span> <span class="s1">&#39;CUSTOM&#39;</span> <span class="p">(</span><span class="n">Formatter</span><span class="o">=&lt;</span><span class="n">formatter</span> <span class="n">specifications</span><span class="o">&gt;</span><span class="p">)</span>
+     <span class="p">[</span> <span class="n">ENCODING</span> <span class="s1">&#39;encoding&#39;</span> <span class="p">]</span>
+     <span class="p">[</span> <span class="p">[</span><span class="n">LOG</span> <span class="n">ERRORS</span> <span class="p">[</span><span class="n">INTO</span> <span class="n">error_table</span><span class="p">]]</span> <span class="n">SEGMENT</span> <span class="n">REJECT</span> <span class="n">LIMIT</span> <span class="n">count</span>
+       <span class="p">[</span><span class="n">ROWS</span> <span class="o">|</span> <span class="n">PERCENT</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="n">CREATE</span> <span class="n">WRITABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">table_name</span>
+    <span class="p">(</span> <span class="n">column_name</span> <span class="n">data_type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">LIKE</span> <span class="n">other_table</span> <span class="p">)</span>
+     <span class="n">LOCATION</span><span class="p">(</span><span class="s1">&#39;gpfdist://outputhost[:port]/filename[#transform]&#39;</span>
+      <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;gpfdists://outputhost[:port]/file_pattern[#transform]&#39;</span>
+          <span class="p">[,</span> <span class="o">...</span><span class="p">])</span>
+      <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;gphdfs://hdfs_host[:port]/path&#39;</span><span class="p">)</span>
+      <span class="n">FORMAT</span> <span class="s1">&#39;TEXT&#39;</span>
+               <span class="p">[(</span> <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;escape&#39;</span> <span class="o">|</span> <span class="s1">&#39;OFF&#39;</span><span class="p">]</span> <span class="p">)]</span>
+          <span class="o">|</span> <span class="s1">&#39;CSV&#39;</span>
+               <span class="p">[([</span><span class="n">QUOTE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;quote&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">FORCE</span> <span class="n">QUOTE</span> <span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span> <span class="p">]</span>
+               <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;escape&#39;</span><span class="p">]</span> <span class="p">)]</span>
+           <span class="o">|</span> <span class="s1">&#39;AVRO&#39;</span>
+           <span class="o">|</span> <span class="s1">&#39;PARQUET&#39;</span>
+
+           <span class="o">|</span> <span class="s1">&#39;CUSTOM&#39;</span> <span class="p">(</span><span class="n">Formatter</span><span class="o">=&lt;</span><span class="n">formatter</span> <span class="n">specifications</span><span class="o">&gt;</span><span class="p">)</span>
+    <span class="p">[</span> <span class="n">ENCODING</span> <span class="s1">&#39;write_encoding&#39;</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">DISTRIBUTED</span> <span class="n">BY</span> <span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="o">|</span> <span class="n">DISTRIBUTED</span> <span class="n">RANDOMLY</span> <span class="p">]</span>
+
+<span class="n">CREATE</span> <span class="n">WRITABLE</span> <span class="n">EXTERNAL</span> <span class="n">WEB</span> <span class="n">TABLE</span> <span class="n">table_name</span>
+    <span class="p">(</span> <span class="n">column_name</span> <span class="n">data_type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">LIKE</span> <span class="n">other_table</span> <span class="p">)</span>
+    <span class="n">EXECUTE</span> <span class="s1">&#39;command&#39;</span> <span class="p">[</span><span class="n">ON</span> <span class="n">ALL</span><span class="p">]</span>
+    <span class="n">FORMAT</span> <span class="s1">&#39;TEXT&#39;</span>
+               <span class="p">[(</span> <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;escape&#39;</span> <span class="o">|</span> <span class="s1">&#39;OFF&#39;</span><span class="p">]</span> <span class="p">)]</span>
+          <span class="o">|</span> <span class="s1">&#39;CSV&#39;</span>
+               <span class="p">[([</span><span class="n">QUOTE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;quote&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">DELIMITER</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;delimiter&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">NULL</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;null string&#39;</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">FORCE</span> <span class="n">QUOTE</span> <span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span> <span class="p">]</span>
+               <span class="p">[</span><span class="n">ESCAPE</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="s1">&#39;escape&#39;</span><span class="p">]</span> <span class="p">)]</span>
+           <span class="o">|</span> <span class="s1">&#39;CUSTOM&#39;</span> <span class="p">(</span><span class="n">Formatter</span><span class="o">=&lt;</span><span class="n">formatter</span> <span class="n">specifications</span><span class="o">&gt;</span><span class="p">)</span>
+    <span class="p">[</span> <span class="n">ENCODING</span> <span class="s1">&#39;write_encoding&#39;</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">DISTRIBUTED</span> <span class="n">BY</span> <span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="o">|</span> <span class="n">DISTRIBUTED</span> <span class="n">RANDOMLY</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE EXTERNAL TABLE for more information.</p>
+</div>
+<div class="section" id="create-function">
+<h2>13.36. CREATE FUNCTION<a class="headerlink" href="#create-function" title="永久链接至标题">¶</a></h2>
+<p>定义函数。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">OR</span> <span class="n">REPLACE</span><span class="p">]</span> <span class="n">FUNCTION</span> <span class="n">name</span>
+    <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+      <span class="p">[</span> <span class="n">RETURNS</span> <span class="p">{</span> <span class="p">[</span> <span class="n">SETOF</span> <span class="p">]</span> <span class="n">rettype</span>
+        <span class="o">|</span> <span class="n">TABLE</span> <span class="p">([{</span> <span class="n">argname</span> <span class="n">argtype</span> <span class="o">|</span> <span class="n">LIKE</span> <span class="n">other</span> <span class="n">table</span> <span class="p">}</span>
+          <span class="p">[,</span> <span class="o">...</span><span class="p">]])</span>
+        <span class="p">}</span> <span class="p">]</span>
+    <span class="p">{</span> <span class="n">LANGUAGE</span> <span class="n">langname</span>
+    <span class="o">|</span> <span class="n">IMMUTABLE</span> <span class="o">|</span> <span class="n">STABLE</span> <span class="o">|</span> <span class="n">VOLATILE</span>
+    <span class="o">|</span> <span class="n">CALLED</span> <span class="n">ON</span> <span class="n">NULL</span> <span class="n">INPUT</span> <span class="o">|</span> <span class="n">RETURNS</span> <span class="n">NULL</span> <span class="n">ON</span> <span class="n">NULL</span> <span class="n">INPUT</span> <span class="o">|</span> <span class="n">STRICT</span>
+    <span class="o">|</span> <span class="p">[</span><span class="n">EXTERNAL</span><span class="p">]</span> <span class="n">SECURITY</span> <span class="n">INVOKER</span> <span class="o">|</span> <span class="p">[</span><span class="n">EXTERNAL</span><span class="p">]</span> <span class="n">SECURITY</span> <span class="n">DEFINER</span>
+    <span class="o">|</span> <span class="n">AS</span> <span class="s1">&#39;definition&#39;</span>
+    <span class="o">|</span> <span class="n">AS</span> <span class="s1">&#39;obj_file&#39;</span><span class="p">,</span> <span class="s1">&#39;link_symbol&#39;</span> <span class="p">}</span> <span class="o">...</span>
+    <span class="p">[</span> <span class="n">WITH</span> <span class="p">({</span> <span class="n">DESCRIBE</span> <span class="o">=</span> <span class="n">describe_function</span>
+           <span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE FUNCTION for more information.</p>
+</div>
+<div class="section" id="create-group">
+<h2>13.37. CREATE GROUP<a class="headerlink" href="#create-group" title="永久链接至标题">¶</a></h2>
+<p>定义数据库角色。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">GROUP</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE GROUP for more information.</p>
+</div>
+<div class="section" id="create-index">
+<h2>13.38. CREATE INDEX<a class="headerlink" href="#create-index" title="永久链接至标题">¶</a></h2>
+<p>定义索引。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">UNIQUE</span><span class="p">]</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">ON</span> <span class="n">table</span>
+       <span class="p">[</span><span class="n">USING</span> <span class="n">btree</span><span class="o">|</span><span class="n">bitmap</span><span class="o">|</span><span class="n">gist</span><span class="p">]</span>
+       <span class="p">(</span> <span class="p">{</span><span class="n">column</span> <span class="o">|</span> <span class="p">(</span><span class="n">expression</span><span class="p">)}</span> <span class="p">[</span><span class="n">opclass</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span>
+       <span class="p">[</span> <span class="n">WITH</span> <span class="p">(</span> <span class="n">FILLFACTOR</span> <span class="o">=</span> <span class="n">value</span> <span class="p">)</span> <span class="p">]</span>
+       <span class="p">[</span><span class="n">TABLESPACE</span> <span class="n">tablespace</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">WHERE</span> <span class="n">predicate</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE INDEX for more information.</p>
+</div>
+<div class="section" id="create-language">
+<h2>13.39. CREATE LANGUAGE<a class="headerlink" href="#create-language" title="永久链接至标题">¶</a></h2>
+<p>定义过程语言。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">PROCEDURAL</span><span class="p">]</span> <span class="n">LANGUAGE</span> <span class="n">name</span>
+
+<span class="n">CREATE</span> <span class="p">[</span><span class="n">TRUSTED</span><span class="p">]</span> <span class="p">[</span><span class="n">PROCEDURAL</span><span class="p">]</span> <span class="n">LANGUAGE</span> <span class="n">name</span>
+       <span class="n">HANDLER</span> <span class="n">call_handler</span> <span class="p">[</span><span class="n">VALIDATOR</span> <span class="n">valfunction</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE LANGUAGE for more information.</p>
+</div>
+<div class="section" id="create-operator">
+<h2>13.40. CREATE OPERATOR<a class="headerlink" href="#create-operator" title="永久链接至标题">¶</a></h2>
+<p>定义运算符。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">OPERATOR</span> <span class="n">name</span> <span class="p">(</span>
+       <span class="n">PROCEDURE</span> <span class="o">=</span> <span class="n">funcname</span>
+       <span class="p">[,</span> <span class="n">LEFTARG</span> <span class="o">=</span> <span class="n">lefttype</span><span class="p">]</span> <span class="p">[,</span> <span class="n">RIGHTARG</span> <span class="o">=</span> <span class="n">righttype</span><span class="p">]</span>
+       <span class="p">[,</span> <span class="n">COMMUTATOR</span> <span class="o">=</span> <span class="n">com_op</span><span class="p">]</span> <span class="p">[,</span> <span class="n">NEGATOR</span> <span class="o">=</span> <span class="n">neg_op</span><span class="p">]</span>
+       <span class="p">[,</span> <span class="n">RESTRICT</span> <span class="o">=</span> <span class="n">res_proc</span><span class="p">]</span> <span class="p">[,</span> <span class="n">JOIN</span> <span class="o">=</span> <span class="n">join_proc</span><span class="p">]</span>
+       <span class="p">[,</span> <span class="n">HASHES</span><span class="p">]</span> <span class="p">[,</span> <span class="n">MERGES</span><span class="p">]</span>
+       <span class="p">[,</span> <span class="n">SORT1</span> <span class="o">=</span> <span class="n">left_sort_op</span><span class="p">]</span> <span class="p">[,</span> <span class="n">SORT2</span> <span class="o">=</span> <span class="n">right_sort_op</span><span class="p">]</span>
+       <span class="p">[,</span> <span class="n">LTCMP</span> <span class="o">=</span> <span class="n">less_than_op</span><span class="p">]</span> <span class="p">[,</span> <span class="n">GTCMP</span> <span class="o">=</span> <span class="n">greater_than_op</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>See CREATE OPERATOR for more information.</p>
+</div>
+<div class="section" id="create-operator-class">
+<h2>13.41. CREATE OPERATOR CLASS<a class="headerlink" href="#create-operator-class" title="永久链接至标题">¶</a></h2>
+<p>定义运算符类。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="n">name</span> <span class="p">[</span><span class="n">DEFAULT</span><span class="p">]</span> <span class="n">FOR</span> <span class="n">TYPE</span> <span class="n">data_type</span>
+  <span class="n">USING</span> <span class="n">index_method</span> <span class="n">AS</span>
+  <span class="p">{</span>
+  <span class="n">OPERATOR</span> <span class="n">strategy_number</span> <span class="n">op_name</span> <span class="p">[(</span><span class="n">op_type</span><span class="p">,</span> <span class="n">op_type</span><span class="p">)]</span> <span class="p">[</span><span class="n">RECHECK</span><span class="p">]</span>
+  <span class="o">|</span> <span class="n">FUNCTION</span> <span class="n">support_number</span> <span class="n">funcname</span> <span class="p">(</span><span class="n">argument_type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span>
+  <span class="o">|</span> <span class="n">STORAGE</span> <span class="n">storage_type</span>
+  <span class="p">}</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE OPERATOR CLASS for more information.</p>
+</div>
+<div class="section" id="create-resource-queue">
+<h2>13.42. CREATE RESOURCE QUEUE<a class="headerlink" href="#create-resource-queue" title="永久链接至标题">¶</a></h2>
+<p>定义资源队列。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">name</span> <span class="n">WITH</span> <span class="p">(</span><span class="n">queue_attribute</span><span class="o">=</span><span class="n">value</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">])</span>
+</pre></div>
+</div>
+<p>See CREATE RESOURCE QUEUE for more information.</p>
+</div>
+<div class="section" id="create-role">
+<h2>13.43. CREATE ROLE<a class="headerlink" href="#create-role" title="永久链接至标题">¶</a></h2>
+<p>定义数据库角色（用户或组）</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="p">[[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]]</span>
+</pre></div>
+</div>
+<p>See CREATE ROLE for more information.</p>
+</div>
+<div class="section" id="create-rule">
+<h2>13.44. CREATE RULE<a class="headerlink" href="#create-rule" title="永久链接至标题">¶</a></h2>
+<p>定义重写规则。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">OR</span> <span class="n">REPLACE</span><span class="p">]</span> <span class="n">RULE</span> <span class="n">name</span> <span class="n">AS</span> <span class="n">ON</span> <span class="n">event</span>
+  <span class="n">TO</span> <span class="n">table</span> <span class="p">[</span><span class="n">WHERE</span> <span class="n">condition</span><span class="p">]</span>
+  <span class="n">DO</span> <span class="p">[</span><span class="n">ALSO</span> <span class="o">|</span> <span class="n">INSTEAD</span><span class="p">]</span> <span class="p">{</span> <span class="n">NOTHING</span> <span class="o">|</span> <span class="n">command</span> <span class="o">|</span> <span class="p">(</span><span class="n">command</span><span class="p">;</span> <span class="n">command</span>
+  <span class="o">...</span><span class="p">)</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>See CREATE RULE for more information.</p>
+</div>
+<div class="section" id="create-schema">
+<h2>13.45. CREATE SCHEMA<a class="headerlink" href="#create-schema" title="永久链接至标题">¶</a></h2>
+<p>定义模式。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SCHEMA</span> <span class="n">schema_name</span> <span class="p">[</span><span class="n">AUTHORIZATION</span> <span class="n">username</span><span class="p">]</span>
+   <span class="p">[</span><span class="n">schema_element</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]]</span>
+
+<span class="n">CREATE</span> <span class="n">SCHEMA</span> <span class="n">AUTHORIZATION</span> <span class="n">rolename</span> <span class="p">[</span><span class="n">schema_element</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]]</span>
+</pre></div>
+</div>
+<p>See CREATE SCHEMA for more information.</p>
+</div>
+<div class="section" id="create-sequence">
+<h2>13.46. CREATE SEQUENCE<a class="headerlink" href="#create-sequence" title="永久链接至标题">¶</a></h2>
+<p>定义序列生成器。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">]</span> <span class="n">SEQUENCE</span> <span class="n">name</span>
+       <span class="p">[</span><span class="n">INCREMENT</span> <span class="p">[</span><span class="n">BY</span><span class="p">]</span> <span class="n">value</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">MINVALUE</span> <span class="n">minvalue</span> <span class="o">|</span> <span class="n">NO</span> <span class="n">MINVALUE</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">MAXVALUE</span> <span class="n">maxvalue</span> <span class="o">|</span> <span class="n">NO</span> <span class="n">MAXVALUE</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">START</span> <span class="p">[</span> <span class="n">WITH</span> <span class="p">]</span> <span class="n">start</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CACHE</span> <span class="n">cache</span><span class="p">]</span>
+       <span class="p">[[</span><span class="n">NO</span><span class="p">]</span> <span class="n">CYCLE</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">OWNED</span> <span class="n">BY</span> <span class="p">{</span> <span class="n">table</span><span class="o">.</span><span class="n">column</span> <span class="o">|</span> <span class="n">NONE</span> <span class="p">}]</span>
+</pre></div>
+</div>
+<p>See CREATE SEQUENCE for more information.</p>
+</div>
+<div class="section" id="create-table">
+<h2>13.47. CREATE TABLE<a class="headerlink" href="#create-table" title="永久链接至标题">¶</a></h2>
+<p>定义表。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[[</span><span class="n">GLOBAL</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="p">{</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">}]</span> <span class="n">TABLE</span> <span class="n">table_name</span> <span class="p">(</span>
+<span class="p">[</span> <span class="p">{</span> <span class="n">column_name</span> <span class="n">data_type</span> <span class="p">[</span> <span class="n">DEFAULT</span> <span class="n">default_expr</span> <span class="p">]</span>
+   <span class="p">[</span><span class="n">column_constraint</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span>
+<span class="p">[</span> <span class="n">ENCODING</span> <span class="p">(</span> <span class="n">storage_directive</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
+<span class="p">]</span>
+   <span class="o">|</span> <span class="n">table_constraint</span>
+   <span class="o">|</span> <span class="n">LIKE</span> <span class="n">other_table</span> <span class="p">[{</span><span class="n">INCLUDING</span> <span class="o">|</span> <span class="n">EXCLUDING</span><span class="p">}</span>
+                      <span class="p">{</span><span class="n">DEFAULTS</span> <span class="o">|</span> <span class="n">CONSTRAINTS</span><span class="p">}]</span> <span class="o">...</span><span class="p">}</span>
+   <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">]</span>
+   <span class="p">)</span>
+   <span class="p">[</span> <span class="n">INHERITS</span> <span class="p">(</span> <span class="n">parent_table</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
+   <span class="p">[</span> <span class="n">WITH</span> <span class="p">(</span> <span class="n">storage_parameter</span><span class="o">=</span><span class="n">value</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
+   <span class="p">[</span> <span class="n">ON</span> <span class="n">COMMIT</span> <span class="p">{</span><span class="n">PRESERVE</span> <span class="n">ROWS</span> <span class="o">|</span> <span class="n">DELETE</span> <span class="n">ROWS</span> <span class="o">|</span> <span class="n">DROP</span><span class="p">}</span> <span class="p">]</span>
+   <span class="p">[</span> <span class="n">TABLESPACE</span> <span class="n">tablespace</span> <span class="p">]</span>
+   <span class="p">[</span> <span class="n">DISTRIBUTED</span> <span class="n">BY</span> <span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="o">|</span> <span class="n">DISTRIBUTED</span> <span class="n">RANDOMLY</span> <span class="p">]</span>
+   <span class="p">[</span> <span class="n">PARTITION</span> <span class="n">BY</span> <span class="n">partition_type</span> <span class="p">(</span><span class="n">column</span><span class="p">)</span>
+       <span class="p">[</span> <span class="n">SUBPARTITION</span> <span class="n">BY</span> <span class="n">partition_type</span> <span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="p">]</span>
+          <span class="p">[</span> <span class="n">SUBPARTITION</span> <span class="n">TEMPLATE</span> <span class="p">(</span> <span class="n">template_spec</span> <span class="p">)</span> <span class="p">]</span>
+       <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="p">(</span> <span class="n">partition_spec</span> <span class="p">)</span>
+        <span class="o">|</span> <span class="p">[</span> <span class="n">SUBPARTITION</span> <span class="n">BY</span> <span class="n">partition_type</span> <span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="p">]</span>
+          <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="p">(</span> <span class="n">partition_spec</span>
+      <span class="p">[</span> <span class="p">(</span> <span class="n">subpartition_spec</span>
+           <span class="p">[(</span><span class="o">...</span><span class="p">)]</span>
+         <span class="p">)</span> <span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>See CREATE TABLE for more information.</p>
+</div>
+<div class="section" id="create-table-as">
+<h2>13.48. CREATE TABLE AS<a class="headerlink" href="#create-table-as" title="永久链接至标题">¶</a></h2>
+<p>根据查询结果定义一张表。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span> <span class="p">[</span><span class="n">GLOBAL</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="p">{</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">}</span> <span class="p">]</span> <span class="n">TABLE</span> <span class="n">table_name</span>
+   <span class="p">[(</span><span class="n">column_name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]</span>
+   <span class="p">[</span> <span class="n">WITH</span> <span class="p">(</span> <span class="n">storage_parameter</span><span class="o">=</span><span class="n">value</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
+   <span class="p">[</span><span class="n">ON</span> <span class="n">COMMIT</span> <span class="p">{</span><span class="n">PRESERVE</span> <span class="n">ROWS</span> <span class="o">|</span> <span class="n">DELETE</span> <span class="n">ROWS</span> <span class="o">|</span> <span class="n">DROP</span><span class="p">}]</span>
+   <span class="p">[</span><span class="n">TABLESPACE</span> <span class="n">tablespace</span><span class="p">]</span>
+   <span class="n">AS</span> <span class="n">query</span>
+   <span class="p">[</span><span class="n">DISTRIBUTED</span> <span class="n">BY</span> <span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="o">|</span> <span class="n">DISTRIBUTED</span> <span class="n">RANDOMLY</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE TABLE AS for more information.</p>
+</div>
+<div class="section" id="create-tablespace">
+<h2>13.49. CREATE TABLESPACE<a class="headerlink" href="#create-tablespace" title="永久链接至标题">¶</a></h2>
+<p>定义表空间。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLESPACE</span> <span class="n">tablespace_name</span> <span class="p">[</span><span class="n">OWNER</span> <span class="n">username</span><span class="p">]</span>
+       <span class="n">FILESPACE</span> <span class="n">filespace_name</span>
+</pre></div>
+</div>
+<p>See CREATE TABLESPACE for more information.</p>
+</div>
+<div class="section" id="create-type">
+<h2>13.50. CREATE TYPE<a class="headerlink" href="#create-type" title="永久链接至标题">¶</a></h2>
+<p>定义数据类型。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TYPE</span> <span class="n">name</span> <span class="n">AS</span> <span class="p">(</span> <span class="n">attribute_name</span> <span class="n">data_type</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="n">CREATE</span> <span class="n">TYPE</span> <span class="n">name</span> <span class="p">(</span>
+    <span class="n">INPUT</span> <span class="o">=</span> <span class="n">input_function</span><span class="p">,</span>
+    <span class="n">OUTPUT</span> <span class="o">=</span> <span class="n">output_function</span>
+    <span class="p">[,</span> <span class="n">RECEIVE</span> <span class="o">=</span> <span class="n">receive_function</span><span class="p">]</span>
+    <span class="p">[,</span> <span class="n">SEND</span> <span class="o">=</span> <span class="n">send_function</span><span class="p">]</span>
+    <span class="p">[,</span> <span class="n">INTERNALLENGTH</span> <span class="o">=</span> <span class="p">{</span><span class="n">internallength</span> <span class="o">|</span> <span class="n">VARIABLE</span><span class="p">}]</span>
+    <span class="p">[,</span> <span class="n">PASSEDBYVALUE</span><span class="p">]</span>
+    <span class="p">[,</span> <span class="n">ALIGNMENT</span> <span class="o">=</span> <span class="n">alignment</span><span class="p">]</span>
+    <span class="p">[,</span> <span class="n">STORAGE</span> <span class="o">=</span> <span class="n">storage</span><span class="p">]</span>
+    <span class="p">[,</span> <span class="n">DEFAULT</span> <span class="o">=</span> <span class="n">default</span><span class="p">]</span>
+    <span class="p">[,</span> <span class="n">ELEMENT</span> <span class="o">=</span> <span class="n">element</span><span class="p">]</span>
+    <span class="p">[,</span> <span class="n">DELIMITER</span> <span class="o">=</span> <span class="n">delimiter</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="n">CREATE</span> <span class="n">TYPE</span> <span class="n">name</span>
+</pre></div>
+</div>
+<p>See CREATE TYPE for more information.</p>
+</div>
+<div class="section" id="create-user">
+<h2>13.51. CREATE USER<a class="headerlink" href="#create-user" title="永久链接至标题">¶</a></h2>
+<p>定义一个数据库角色，并且默认具有登陆权限。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">USER</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See CREATE USER for more information.</p>
+</div>
+<div class="section" id="create-view">
+<h2>13.52. CREATE VIEW<a class="headerlink" href="#create-view" title="永久链接至标题">¶</a></h2>
+<p>定义视图。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">OR</span> <span class="n">REPLACE</span><span class="p">]</span> <span class="p">[</span><span class="n">TEMP</span> <span class="o">|</span> <span class="n">TEMPORARY</span><span class="p">]</span> <span class="n">VIEW</span> <span class="n">name</span>
+       <span class="p">[</span> <span class="p">(</span> <span class="n">column_name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
+       <span class="n">AS</span> <span class="n">query</span>
+</pre></div>
+</div>
+<p>See CREATE VIEW for more information.</p>
+</div>
+<div class="section" id="deallocate">
+<h2>13.53. DEALLOCATE<a class="headerlink" href="#deallocate" title="永久链接至标题">¶</a></h2>
+<p>回收并删除预优化的语句。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DEALLOCATE</span> <span class="p">[</span><span class="n">PREPARE</span><span class="p">]</span> <span class="n">name</span>
+</pre></div>
+</div>
+<p>See DEALLOCATE for more information.</p>
+</div>
+<div class="section" id="declare">
+<h2>13.54. DECLARE<a class="headerlink" href="#declare" title="永久链接至标题">¶</a></h2>
+<p>定义一个游标。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DECLARE</span> <span class="n">name</span> <span class="p">[</span><span class="n">BINARY</span><span class="p">]</span> <span class="p">[</span><span class="n">INSENSITIVE</span><span class="p">]</span> <span class="p">[</span><span class="n">NO</span> <span class="n">SCROLL</span><span class="p">]</span> <span class="n">CURSOR</span>
+     <span class="p">[{</span><span class="n">WITH</span> <span class="o">|</span> <span class="n">WITHOUT</span><span class="p">}</span> <span class="n">HOLD</span><span class="p">]</span>
+     <span class="n">FOR</span> <span class="n">query</span> <span class="p">[</span><span class="n">FOR</span> <span class="n">READ</span> <span class="n">ONLY</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DECLARE for more information.</p>
+</div>
+<div class="section" id="delete">
+<h2>13.55. DELETE<a class="headerlink" href="#delete" title="永久链接至标题">¶</a></h2>
+<p>从一张表中删除记录。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DELETE</span> <span class="n">FROM</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">table</span> <span class="p">[[</span><span class="n">AS</span><span class="p">]</span> <span class="n">alias</span><span class="p">]</span>
+      <span class="p">[</span><span class="n">USING</span> <span class="n">usinglist</span><span class="p">]</span>
+      <span class="p">[</span><span class="n">WHERE</span> <span class="n">condition</span> <span class="o">|</span> <span class="n">WHERE</span> <span class="n">CURRENT</span> <span class="n">OF</span> <span class="n">cursor_name</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See DELETE for more information.</p>
+</div>
+<div class="section" id="drop-aggregate">
+<h2>13.56. DROP AGGREGATE<a class="headerlink" href="#drop-aggregate" title="永久链接至标题">¶</a></h2>
+<p>删除聚合函数。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">AGGREGATE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">(</span> <span class="nb">type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP AGGREGATE for more information.</p>
+</div>
+<div class="section" id="drop-cast">
+<h2>13.57. DROP CAST<a class="headerlink" href="#drop-cast" title="永久链接至标题">¶</a></h2>
+<p>删除类型转换。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">CAST</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="p">(</span><span class="n">sourcetype</span> <span class="n">AS</span> <span class="n">targettype</span><span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP CAST for more information.</p>
+</div>
+<div class="section" id="drop-conversion">
+<h2>13.58. DROP CONVERSION<a class="headerlink" href="#drop-conversion" title="永久链接至标题">¶</a></h2>
+<p>删除编码转换。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">CONVERSION</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP CONVERSION for more information.</p>
+</div>
+<div class="section" id="drop-database">
+<h2>13.59. DROP DATABASE<a class="headerlink" href="#drop-database" title="永久链接至标题">¶</a></h2>
+<p>删除数据库。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">DATABASE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span>
+</pre></div>
+</div>
+<p>See DROP DATABASE for more information.</p>
+</div>
+<div class="section" id="drop-domain">
+<h2>13.60. DROP DOMAIN<a class="headerlink" href="#drop-domain" title="永久链接至标题">¶</a></h2>
+<p>删除域。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">DOMAIN</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>  <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP DOMAIN for more information.</p>
+</div>
+<div class="section" id="drop-external-table">
+<h2>13.61. DROP EXTERNAL TABLE<a class="headerlink" href="#drop-external-table" title="永久链接至标题">¶</a></h2>
+<p>删除外部表定义。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">EXTERNAL</span> <span class="p">[</span><span class="n">WEB</span><span class="p">]</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP EXTERNAL TABLE for more information.</p>
+</div>
+<div class="section" id="drop-function">
+<h2>13.62. DROP FUNCTION<a class="headerlink" href="#drop-function" title="永久链接至标题">¶</a></h2>
+<p>删除函数。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">FUNCTION</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span>
+    <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP FUNCTION for more information.</p>
+</div>
+<div class="section" id="drop-group">
+<h2>13.63. DROP GROUP<a class="headerlink" href="#drop-group" title="永久链接至标题">¶</a></h2>
+<p>删除数据库角色。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">GROUP</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP GROUP for more information.</p>
+</div>
+<div class="section" id="drop-index">
+<h2>13.64. DROP INDEX<a class="headerlink" href="#drop-index" title="永久链接至标题">¶</a></h2>
+<p>删除索引。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">INDEX</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP INDEX for more information.</p>
+</div>
+<div class="section" id="drop-language">
+<h2>13.65. DROP LANGUAGE<a class="headerlink" href="#drop-language" title="永久链接至标题">¶</a></h2>
+<p>删除过程语言。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="p">[</span><span class="n">PROCEDURAL</span><span class="p">]</span> <span class="n">LANGUAGE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP LANGUAGE for more information.</p>
+</div>
+<div class="section" id="drop-operator">
+<h2>13.66. DROP OPERATOR<a class="headerlink" href="#drop-operator" title="永久链接至标题">¶</a></h2>
+<p>删除运算符。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">OPERATOR</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">(</span> <span class="p">{</span><span class="n">lefttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">,</span>
+    <span class="p">{</span><span class="n">righttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP OPERATOR for more information.</p>
+</div>
+<div class="section" id="drop-operator-class">
+<h2>13.67. DROP OPERATOR CLASS<a class="headerlink" href="#drop-operator-class" title="永久链接至标题">¶</a></h2>
+<p>删除运算符类。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="n">USING</span> <span class="n">index_method</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP OPERATOR CLASS for more information.</p>
+</div>
+<div class="section" id="drop-owned">
+<h2>13.68. DROP OWNED<a class="headerlink" href="#drop-owned" title="永久链接至标题">¶</a></h2>
+<p>删除一个数据库角色拥有的所有数据库对象。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">OWNED</span> <span class="n">BY</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP OWNED for more information.</p>
+</div>
+<div class="section" id="drop-resource-queue">
+<h2>13.69. DROP RESOURCE QUEUE<a class="headerlink" href="#drop-resource-queue" title="永久链接至标题">¶</a></h2>
+<p>删除资源队列。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">queue_name</span>
+</pre></div>
+</div>
+<p>See DROP RESOURCE QUEUE for more information.</p>
+</div>
+<div class="section" id="drop-role">
+<h2>13.70. DROP ROLE<a class="headerlink" href="#drop-role" title="永久链接至标题">¶</a></h2>
+<p>删除数据库角色。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">ROLE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP ROLE for more information.</p>
+</div>
+<div class="section" id="drop-rule">
+<h2>13.71. DROP RULE<a class="headerlink" href="#drop-rule" title="永久链接至标题">¶</a></h2>
+<p>删除重写规则。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">RULE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="n">ON</span> <span class="n">relation</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP RULE for more information.</p>
+</div>
+<div class="section" id="drop-schema">
+<h2>13.72. DROP SCHEMA<a class="headerlink" href="#drop-schema" title="永久链接至标题">¶</a></h2>
+<p>删除模式。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">SCHEMA</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP SCHEMA for more information.</p>
+</div>
+<div class="section" id="drop-sequence">
+<h2>13.73. DROP SEQUENCE<a class="headerlink" href="#drop-sequence" title="永久链接至标题">¶</a></h2>
+<p>删除序列。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">SEQUENCE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP SEQUENCE for more information.</p>
+</div>
+<div class="section" id="drop-table">
+<h2>13.74. DROP TABLE<a class="headerlink" href="#drop-table" title="永久链接至标题">¶</a></h2>
+<p>删除表。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP TABLE for more information.</p>
+</div>
+<div class="section" id="drop-tablespace">
+<h2>13.75. DROP TABLESPACE<a class="headerlink" href="#drop-tablespace" title="永久链接至标题">¶</a></h2>
+<p>删除表空间。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">TABLESPACE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">tablespacename</span>
+</pre></div>
+</div>
+<p>See DROP TABLESPACE for more information.</p>
+</div>
+<div class="section" id="drop-type">
+<h2>13.76. DROP TYPE<a class="headerlink" href="#drop-type" title="永久链接至标题">¶</a></h2>
+<p>删除数据类型。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">TYPE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP TYPE for more information.</p>
+</div>
+<div class="section" id="drop-user">
+<h2>13.77. DROP USER<a class="headerlink" href="#drop-user" title="永久链接至标题">¶</a></h2>
+<p>删除数据库角色。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">USER</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP USER for more information.</p>
+</div>
+<div class="section" id="drop-view">
+<h2>13.78. DROP VIEW<a class="headerlink" href="#drop-view" title="永久链接至标题">¶</a></h2>
+<p>删除视图。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">VIEW</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See DROP VIEW for more information.</p>
+</div>
+<div class="section" id="end">
+<h2>13.79. END<a class="headerlink" href="#end" title="永久链接至标题">¶</a></h2>
+<p>提交当前事务。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">END</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See END for more information.</p>
+</div>
+<div class="section" id="execute">
+<h2>13.80. EXECUTE<a class="headerlink" href="#execute" title="永久链接至标题">¶</a></h2>
+<p>执行一个预优化的 SQL 语句。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">EXECUTE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">(</span><span class="n">parameter</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See EXECUTE for more information.</p>
+</div>
+<div class="section" id="explain">
+<h2>13.81. EXPLAIN<a class="headerlink" href="#explain" title="永久链接至标题">¶</a></h2>
+<p>显示一个语句的查询计划。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">EXPLAIN</span> <span class="p">[</span><span class="n">ANALYZE</span><span class="p">]</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="n">statement</span>
+</pre></div>
+</div>
+<p>See EXPLAIN for more information.</p>
+</div>
+<div class="section" id="fetch">
+<h2>13.82. FETCH<a class="headerlink" href="#fetch" title="永久链接至标题">¶</a></h2>
+<p>从游标对应的查询中，取得记录。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">FETCH</span> <span class="p">[</span> <span class="n">forward_direction</span> <span class="p">{</span> <span class="n">FROM</span> <span class="o">|</span> <span class="n">IN</span> <span class="p">}</span> <span class="p">]</span> <span class="n">cursorname</span>
+</pre></div>
+</div>
+<p>See FETCH for more information.</p>
+</div>
+<div class="section" id="grant">
+<h2>13.83. GRANT<a class="headerlink" href="#grant" title="永久链接至标题">¶</a></h2>
+<p>授予访问权限。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GRANT</span> <span class="p">{</span> <span class="p">{</span><span class="n">SELECT</span> <span class="o">|</span> <span class="n">INSERT</span> <span class="o">|</span> <span class="n">UPDATE</span> <span class="o">|</span> <span class="n">DELETE</span> <span class="o">|</span> <span class="n">REFERENCES</span> <span class="o">|</span>
+<span class="n">TRIGGER</span> <span class="o">|</span> <span class="n">TRUNCATE</span> <span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+    <span class="n">ON</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">tablename</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">TO</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">WITH</span> <span class="n">GRANT</span> <span class="n">OPTION</span><span class="p">]</span>
+
+<span class="n">GRANT</span> <span class="p">{</span> <span class="p">{</span><span class="n">USAGE</span> <span class="o">|</span> <span class="n">SELECT</span> <span class="o">|</span> <span class="n">UPDATE</span><span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+    <span class="n">ON</span> <span class="n">SEQUENCE</span> <span class="n">sequencename</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">TO</span> <span class="p">{</span> <span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span> <span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">WITH</span> <span class="n">GRANT</span> <span class="n">OPTION</span><span class="p">]</span>
+
+<span class="n">GRANT</span> <span class="p">{</span> <span class="p">{</span><span class="n">CREATE</span> <span class="o">|</span> <span class="n">CONNECT</span> <span class="o">|</span> <span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">ALL</span>
+<span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+    <span class="n">ON</span> <span class="n">DATABASE</span> <span class="n">dbname</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">TO</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">WITH</span> <span class="n">GRANT</span> <span class="n">OPTION</span><span class="p">]</span>
+
+<span class="n">GRANT</span> <span class="p">{</span> <span class="n">EXECUTE</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+    <span class="n">ON</span> <span class="n">FUNCTION</span> <span class="n">funcname</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">]</span> <span class="p">)</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">TO</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">WITH</span> <span class="n">GRANT</span> <span class="n">OPTION</span><span class="p">]</span>
+
+<span class="n">GRANT</span> <span class="p">{</span> <span class="n">USAGE</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+    <span class="n">ON</span> <span class="n">LANGUAGE</span> <span class="n">langname</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">TO</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">WITH</span> <span class="n">GRANT</span> <span class="n">OPTION</span><span class="p">]</span>
+
+<span class="n">GRANT</span> <span class="p">{</span> <span class="p">{</span><span class="n">CREATE</span> <span class="o">|</span> <span class="n">USAGE</span><span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+    <span class="n">ON</span> <span class="n">SCHEMA</span> <span class="n">schemaname</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">TO</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">WITH</span> <span class="n">GRANT</span> <span class="n">OPTION</span><span class="p">]</span>
+
+<span class="n">GRANT</span> <span class="p">{</span> <span class="n">CREATE</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+    <span class="n">ON</span> <span class="n">TABLESPACE</span> <span class="n">tablespacename</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">TO</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">WITH</span> <span class="n">GRANT</span> <span class="n">OPTION</span><span class="p">]</span>
+
+<span class="n">GRANT</span> <span class="n">parent_role</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">TO</span> <span class="n">member_role</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">WITH</span> <span class="n">ADMIN</span> <span class="n">OPTION</span><span class="p">]</span>
+
+<span class="n">GRANT</span> <span class="p">{</span> <span class="n">SELECT</span> <span class="o">|</span> <span class="n">INSERT</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+    <span class="n">ON</span> <span class="n">PROTOCOL</span> <span class="n">protocolname</span>
+    <span class="n">TO</span> <span class="n">username</span>
+</pre></div>
+</div>
+<p>See GRANT for more information.</p>
+</div>
+<div class="section" id="insert">
+<h2>13.84. INSERT<a class="headerlink" href="#insert" title="永久链接至标题">¶</a></h2>
+<p>在一张表中创建新的记录。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">table</span> <span class="p">[(</span> <span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]</span>
+   <span class="p">{</span><span class="n">DEFAULT</span> <span class="n">VALUES</span> <span class="o">|</span> <span class="n">VALUES</span> <span class="p">(</span> <span class="p">{</span><span class="n">expression</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span>
+   <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">query</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>See INSERT for more information.</p>
+</div>
+<div class="section" id="lock">
+<h2>13.85. LOCK<a class="headerlink" href="#lock" title="永久链接至标题">¶</a></h2>
+<p>为一张表显示地设置一把锁。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LOCK</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">IN</span> <span class="n">lockmode</span> <span class="n">MODE</span><span class="p">]</span> <span class="p">[</span><span class="n">NOWAIT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See LOCK for more information.</p>
+</div>
+<div class="section" id="move">
+<h2>13.86. MOVE<a class="headerlink" href="#move" title="永久链接至标题">¶</a></h2>
+<p>游标定位。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MOVE</span> <span class="p">[</span> <span class="n">forward_direction</span> <span class="p">{</span><span class="n">FROM</span> <span class="o">|</span> <span class="n">IN</span><span class="p">}</span> <span class="p">]</span> <span class="n">cursorname</span>
+</pre></div>
+</div>
+<p>See MOVE for more information.</p>
+</div>
+<div class="section" id="prepare">
+<h2>13.87. PREPARE<a class="headerlink" href="#prepare" title="永久链接至标题">¶</a></h2>
+<p>预优化一个查询语句。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PREPARE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">(</span><span class="n">datatype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span> <span class="n">AS</span> <span class="n">statement</span>
+</pre></div>
+</div>
+<p>See PREPARE for more information.</p>
+</div>
+<div class="section" id="reassign-owned">
+<h2>13.88. REASSIGN OWNED<a class="headerlink" href="#reassign-owned" title="永久链接至标题">¶</a></h2>
+<p>将一个角色拥有的所有数据库对象变更给另一个角色。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">REASSIGN</span> <span class="n">OWNED</span> <span class="n">BY</span> <span class="n">old_role</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="n">TO</span> <span class="n">new_role</span>
+</pre></div>
+</div>
+<p>See REASSIGN OWNED for more information.</p>
+</div>
+<div class="section" id="reindex">
+<h2>13.89. REINDEX<a class="headerlink" href="#reindex" title="永久链接至标题">¶</a></h2>
+<p>重建索引。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">REINDEX</span> <span class="p">{</span><span class="n">INDEX</span> <span class="o">|</span> <span class="n">TABLE</span> <span class="o">|</span> <span class="n">DATABASE</span> <span class="o">|</span> <span class="n">SYSTEM</span><span class="p">}</span> <span class="n">name</span>
+</pre></div>
+</div>
+<p>See REINDEX for more information.</p>
+</div>
+<div class="section" id="release-savepoint">
+<h2>13.90. RELEASE SAVEPOINT<a class="headerlink" href="#release-savepoint" title="永久链接至标题">¶</a></h2>
+<p>清理一个之前定义的保存点。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">RELEASE</span> <span class="p">[</span><span class="n">SAVEPOINT</span><span class="p">]</span> <span class="n">savepoint_name</span>
+</pre></div>
+</div>
+<p>See RELEASE SAVEPOINT for more information.</p>
+</div>
+<div class="section" id="reset">
+<h2>13.91. RESET<a class="headerlink" href="#reset" title="永久链接至标题">¶</a></h2>
+<p>将系统配置参数的值恢复成默认值。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">RESET</span> <span class="n">configuration_parameter</span>
+
+<span class="n">RESET</span> <span class="n">ALL</span>
+</pre></div>
+</div>
+<p>See RESET for more information.</p>
+</div>
+<div class="section" id="revoke">
+<h2>13.92. REVOKE<a class="headerlink" href="#revoke" title="永久链接至标题">¶</a></h2>
+<p>删除访问权限。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">REVOKE</span> <span class="p">[</span><span class="n">GRANT</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="p">{</span> <span class="p">{</span><span class="n">SELECT</span> <span class="o">|</span> <span class="n">INSERT</span> <span class="o">|</span> <span class="n">UPDATE</span> <span class="o">|</span> <span class="n">DELETE</span>
+       <span class="o">|</span> <span class="n">REFERENCES</span> <span class="o">|</span> <span class="n">TRIGGER</span> <span class="o">|</span> <span class="n">TRUNCATE</span> <span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+       <span class="n">ON</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">tablename</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="n">FROM</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+
+<span class="n">REVOKE</span> <span class="p">[</span><span class="n">GRANT</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="p">{</span> <span class="p">{</span><span class="n">USAGE</span> <span class="o">|</span> <span class="n">SELECT</span> <span class="o">|</span> <span class="n">UPDATE</span><span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span>
+       <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+       <span class="n">ON</span> <span class="n">SEQUENCE</span> <span class="n">sequencename</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="n">FROM</span> <span class="p">{</span> <span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span> <span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+
+<span class="n">REVOKE</span> <span class="p">[</span><span class="n">GRANT</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="p">{</span> <span class="p">{</span><span class="n">CREATE</span> <span class="o">|</span> <span class="n">CONNECT</span>
+       <span class="o">|</span> <span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+       <span class="n">ON</span> <span class="n">DATABASE</span> <span class="n">dbname</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="n">FROM</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+
+<span class="n">REVOKE</span> <span class="p">[</span><span class="n">GRANT</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="p">{</span><span class="n">EXECUTE</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]}</span>
+       <span class="n">ON</span> <span class="n">FUNCTION</span> <span class="n">funcname</span> <span class="p">(</span> <span class="p">[[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span>
+                              <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span> <span class="p">)</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="n">FROM</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+
+<span class="n">REVOKE</span> <span class="p">[</span><span class="n">GRANT</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="p">{</span><span class="n">USAGE</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]}</span>
+       <span class="n">ON</span> <span class="n">LANGUAGE</span> <span class="n">langname</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="n">FROM</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="p">[</span> <span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span> <span class="p">]</span>
+
+<span class="n">REVOKE</span> <span class="p">[</span><span class="n">GRANT</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="p">{</span> <span class="p">{</span><span class="n">CREATE</span> <span class="o">|</span> <span class="n">USAGE</span><span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span>
+       <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+       <span class="n">ON</span> <span class="n">SCHEMA</span> <span class="n">schemaname</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="n">FROM</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+
+<span class="n">REVOKE</span> <span class="p">[</span><span class="n">GRANT</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="p">{</span> <span class="n">CREATE</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
+       <span class="n">ON</span> <span class="n">TABLESPACE</span> <span class="n">tablespacename</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="n">FROM</span> <span class="p">{</span> <span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span> <span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+
+<span class="n">REVOKE</span> <span class="p">[</span><span class="n">ADMIN</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="n">parent_role</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="n">FROM</span> <span class="n">member_role</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+       <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See REVOKE for more information.</p>
+</div>
+<div class="section" id="rollback">
+<h2>13.93. ROLLBACK<a class="headerlink" href="#rollback" title="永久链接至标题">¶</a></h2>
+<p>终止当前事务。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ROLLBACK</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See ROLLBACK for more information.</p>
+</div>
+<div class="section" id="rollback-to-savepoint">
+<h2>13.94. ROLLBACK TO SAVEPOINT<a class="headerlink" href="#rollback-to-savepoint" title="永久链接至标题">¶</a></h2>
+<p>将当前事务回滚到一个指定的保存点。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ROLLBACK</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span> <span class="n">TO</span> <span class="p">[</span><span class="n">SAVEPOINT</span><span class="p">]</span> <span class="n">savepoint_name</span>
+</pre></div>
+</div>
+<p>See ROLLBACK TO SAVEPOINT for more information.</p>
+</div>
+<div class="section" id="savepoint">
+<h2>13.95. SAVEPOINT<a class="headerlink" href="#savepoint" title="永久链接至标题">¶</a></h2>
+<p>在当前事务中，定义一个新的保存点。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SAVEPOINT</span> <span class="n">savepoint_name</span>
+</pre></div>
+</div>
+<p>See SAVEPOINT for more information.</p>
+</div>
+<div class="section" id="select">
+<h2>13.96. SELECT<a class="headerlink" href="#select" title="永久链接至标题">¶</a></h2>
+<p>从表或视图中获取数据。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="p">[</span><span class="n">ALL</span> <span class="o">|</span> <span class="n">DISTINCT</span> <span class="p">[</span><span class="n">ON</span> <span class="p">(</span><span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])]]</span>
+  <span class="o">*</span> <span class="o">|</span> <span class="n">expression</span> <span class="p">[[</span><span class="n">AS</span><span class="p">]</span> <span class="n">output_name</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+  <span class="p">[</span><span class="n">FROM</span> <span class="n">from_item</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+  <span class="p">[</span><span class="n">WHERE</span> <span class="n">condition</span><span class="p">]</span>
+  <span class="p">[</span><span class="n">GROUP</span> <span class="n">BY</span> <span class="n">grouping_element</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+  <span class="p">[</span><span class="n">HAVING</span> <span class="n">condition</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+  <span class="p">[</span><span class="n">WINDOW</span> <span class="n">window_name</span> <span class="n">AS</span> <span class="p">(</span><span class="n">window_specification</span><span class="p">)]</span>
+  <span class="p">[{</span><span class="n">UNION</span> <span class="o">|</span> <span class="n">INTERSECT</span> <span class="o">|</span> <span class="n">EXCEPT</span><span class="p">}</span> <span class="p">[</span><span class="n">ALL</span><span class="p">]</span> <span class="n">select</span><span class="p">]</span>
+  <span class="p">[</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">expression</span> <span class="p">[</span><span class="n">ASC</span> <span class="o">|</span> <span class="n">DESC</span> <span class="o">|</span> <span class="n">USING</span> <span class="n">operator</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+  <span class="p">[</span><span class="n">LIMIT</span> <span class="p">{</span><span class="n">count</span> <span class="o">|</span> <span class="n">ALL</span><span class="p">}]</span>
+  <span class="p">[</span><span class="n">OFFSET</span> <span class="n">start</span><span class="p">]</span>
+  <span class="p">[</span><span class="n">FOR</span> <span class="p">{</span><span class="n">UPDATE</span> <span class="o">|</span> <span class="n">SHARE</span><span class="p">}</span> <span class="p">[</span><span class="n">OF</span> <span class="n">table_name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span> <span class="p">[</span><span class="n">NOWAIT</span><span class="p">]</span> <span class="p">[</span><span class="o">...</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>See SELECT for more information.</p>
+</div>
+<div class="section" id="select-into">
+<h2>13.97. SELECT INTO<a class="headerlink" href="#select-into" title="永久链接至标题">¶</a></h2>
+<p>使用查询的结果定义一张数据表。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="p">[</span><span class="n">ALL</span> <span class="o">|</span> <span class="n">DISTINCT</span> <span class="p">[</span><span class="n">ON</span> <span class="p">(</span> <span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]]</span>
+    <span class="o">*</span> <span class="o">|</span> <span class="n">expression</span> <span class="p">[</span><span class="n">AS</span> <span class="n">output_name</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">INTO</span> <span class="p">[</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">]</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">new_table</span>
+    <span class="p">[</span><span class="n">FROM</span> <span class="n">from_item</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+    <span class="p">[</span><span class="n">WHERE</span> <span class="n">condition</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">GROUP</span> <span class="n">BY</span> <span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+    <span class="p">[</span><span class="n">HAVING</span> <span class="n">condition</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+    <span class="p">[{</span><span class="n">UNION</span> <span class="o">|</span> <span class="n">INTERSECT</span> <span class="o">|</span> <span class="n">EXCEPT</span><span class="p">}</span> <span class="p">[</span><span class="n">ALL</span><span class="p">]</span> <span class="n">select</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">expression</span> <span class="p">[</span><span class="n">ASC</span> <span class="o">|</span> <span class="n">DESC</span> <span class="o">|</span> <span class="n">USING</span> <span class="n">operator</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+    <span class="p">[</span><span class="n">LIMIT</span> <span class="p">{</span><span class="n">count</span> <span class="o">|</span> <span class="n">ALL</span><span class="p">}]</span>
+    <span class="p">[</span><span class="n">OFFSET</span> <span class="n">start</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">FOR</span> <span class="p">{</span><span class="n">UPDATE</span> <span class="o">|</span> <span class="n">SHARE</span><span class="p">}</span> <span class="p">[</span><span class="n">OF</span> <span class="n">table_name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span> <span class="p">[</span><span class="n">NOWAIT</span><span class="p">]</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>See SELECT INTO for more information.</p>
+</div>
+<div class="section" id="set">
+<h2>13.98. SET<a class="headerlink" href="#set" title="永久链接至标题">¶</a></h2>
+<p>修改 HashData 数据仓库 配置参数的值。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">configuration_parameter</span> <span class="p">{</span><span class="n">TO</span> <span class="o">|</span> <span class="o">=</span><span class="p">}</span> <span class="n">value</span> <span class="o">|</span>
+    <span class="s1">&#39;value&#39;</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span>
+
+<span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">TIME</span> <span class="n">ZONE</span> <span class="p">{</span><span class="n">timezone</span> <span class="o">|</span> <span class="n">LOCAL</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>See SET for more information.</p>
+</div>
+<div class="section" id="set-role">
+<h2>13.99. SET ROLE<a class="headerlink" href="#set-role" title="永久链接至标题">¶</a></h2>
+<p>设置当前会话使用的角色。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">ROLE</span> <span class="n">rolename</span>
+
+<span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">ROLE</span> <span class="n">NONE</span>
+
+<span class="n">RESET</span> <span class="n">ROLE</span>
+</pre></div>
+</div>
+<p>See SET ROLE for more information.</p>
+</div>
+<div class="section" id="set-session-authorization">
+<h2>13.100. SET SESSION AUTHORIZATION<a class="headerlink" href="#set-session-authorization" title="永久链接至标题">¶</a></h2>
+<p>设置会话授权使用角色。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">SESSION</span> <span class="n">AUTHORIZATION</span> <span class="n">rolename</span>
+
+<span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">SESSION</span> <span class="n">AUTHORIZATION</span> <span class="n">DEFAULT</span>
+
+<span class="n">RESET</span> <span class="n">SESSION</span> <span class="n">AUTHORIZATION</span>
+</pre></div>
+</div>
+<p>See SET SESSION AUTHORIZATION for more information.</p>
+</div>
+<div class="section" id="set-transaction">
+<h2>13.101. SET TRANSACTION<a class="headerlink" href="#set-transaction" title="永久链接至标题">¶</a></h2>
+<p>设置当前事务的事务特性。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">TRANSACTION</span> <span class="p">[</span><span class="n">transaction_mode</span><span class="p">]</span> <span class="p">[</span><span class="n">READ</span> <span class="n">ONLY</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">WRITE</span><span class="p">]</span>
+
+<span class="n">SET</span> <span class="n">SESSION</span> <span class="n">CHARACTERISTICS</span> <span class="n">AS</span> <span class="n">TRANSACTION</span> <span class="n">transaction_mode</span>
+     <span class="p">[</span><span class="n">READ</span> <span class="n">ONLY</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">WRITE</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See SET TRANSACTION for more information.</p>
+</div>
+<div class="section" id="show">
+<h2>13.102. SHOW<a class="headerlink" href="#show" title="永久链接至标题">¶</a></h2>
+<p>显示系统配置参数的值。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SHOW</span> <span class="n">configuration_parameter</span>
+
+<span class="n">SHOW</span> <span class="n">ALL</span>
+</pre></div>
+</div>
+<p>See SHOW for more information.</p>
+</div>
+<div class="section" id="start-transaction">
+<h2>13.103. START TRANSACTION<a class="headerlink" href="#start-transaction" title="永久链接至标题">¶</a></h2>
+<p>启动一个事务块。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">START</span> <span class="n">TRANSACTION</span> <span class="p">[</span><span class="n">SERIALIZABLE</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">COMMITTED</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">UNCOMMITTED</span><span class="p">]</span>
+                  <span class="p">[</span><span class="n">READ</span> <span class="n">WRITE</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">ONLY</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See START TRANSACTION for more information.</p>
+</div>
+<div class="section" id="truncate">
+<h2>13.104. TRUNCATE<a class="headerlink" href="#truncate" title="永久链接至标题">¶</a></h2>
+<p>清空一张表中的所有记录。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">TRUNCATE</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See TRUNCATE for more information.</p>
+</div>
+<div class="section" id="update">
+<h2>13.105. UPDATE<a class="headerlink" href="#update" title="永久链接至标题">¶</a></h2>
+<p>更新表中的记录。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UPDATE</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">table</span> <span class="p">[[</span><span class="n">AS</span><span class="p">]</span> <span class="n">alias</span><span class="p">]</span>
+   <span class="n">SET</span> <span class="p">{</span><span class="n">column</span> <span class="o">=</span> <span class="p">{</span><span class="n">expression</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span> <span class="o">|</span>
+   <span class="p">(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])</span> <span class="o">=</span> <span class="p">({</span><span class="n">expression</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+   <span class="p">[</span><span class="n">FROM</span> <span class="n">fromlist</span><span class="p">]</span>
+   <span class="p">[</span><span class="n">WHERE</span> <span class="n">condition</span> <span class="o">|</span> <span class="n">WHERE</span> <span class="n">CURRENT</span> <span class="n">OF</span> <span class="n">cursor_name</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>See UPDATE for more information.</p>
+</div>
+<div class="section" id="vacuum">
+<h2>13.106. VACUUM<a class="headerlink" href="#vacuum" title="永久链接至标题">¶</a></h2>
+<p>数据库磁盘垃圾回收并收集统计信息。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">VACUUM</span> <span class="p">[</span><span class="n">FULL</span><span class="p">]</span> <span class="p">[</span><span class="n">FREEZE</span><span class="p">]</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="n">table</span><span class="p">]</span>
+
+<span class="n">VACUUM</span> <span class="p">[</span><span class="n">FULL</span><span class="p">]</span> <span class="p">[</span><span class="n">FREEZE</span><span class="p">]</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="n">ANALYZE</span>
+              <span class="p">[</span><span class="n">table</span> <span class="p">[(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]]</span>
+</pre></div>
+</div>
+<p>See VACUUM for more information.</p>
+</div>
+<div class="section" id="values">
+<h2>13.107. VALUES<a class="headerlink" href="#values" title="永久链接至标题">¶</a></h2>
+<p>根据表达式计算出一个集合的记录。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">VALUES</span> <span class="p">(</span> <span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+   <span class="p">[</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">sort_expression</span> <span class="p">[</span><span class="n">ASC</span> <span class="o">|</span> <span class="n">DESC</span> <span class="o">|</span> <span class="n">USING</span> <span class="n">operator</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
+   <span class="p">[</span><span class="n">LIMIT</span> <span class="p">{</span><span class="n">count</span> <span class="o">|</span> <span class="n">ALL</span><span class="p">}]</span> <span class="p">[</span><span class="n">OFFSET</span> <span class="n">start</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See VALUES for more information.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">13. SQL 语法摘要</a><ul>
+<li><a class="reference internal" href="#abort">13.1. ABORT</a></li>
+<li><a class="reference internal" href="#alter-aggregate">13.2. ALTER AGGREGATE</a></li>
+<li><a class="reference internal" href="#alter-conversion">13.3. ALTER CONVERSION</a></li>
+<li><a class="reference internal" href="#alter-database">13.4. ALTER DATABASE</a></li>
+<li><a class="reference internal" href="#alter-domain">13.5. ALTER DOMAIN</a></li>
+<li><a class="reference internal" href="#alter-external-table">13.6. ALTER EXTERNAL TABLE</a></li>
+<li><a class="reference internal" href="#alter-function">13.7. ALTER FUNCTION</a></li>
+<li><a class="reference internal" href="#alter-group">13.8. ALTER GROUP</a></li>
+<li><a class="reference internal" href="#alter-index">13.9. ALTER INDEX</a></li>
+<li><a class="reference internal" href="#alter-language">13.10. ALTER LANGUAGE</a></li>
+<li><a class="reference internal" href="#alter-operator">13.11. ALTER OPERATOR</a></li>
+<li><a class="reference internal" href="#alter-operator-class">13.12. ALTER OPERATOR CLASS</a></li>
+<li><a class="reference internal" href="#alter-protocol">13.13. ALTER PROTOCOL</a></li>
+<li><a class="reference internal" href="#alter-resource-queue">13.14. ALTER RESOURCE QUEUE</a></li>
+<li><a class="reference internal" href="#alter-role">13.15. ALTER ROLE</a></li>
+<li><a class="reference internal" href="#alter-schema">13.16. ALTER SCHEMA</a></li>
+<li><a class="reference internal" href="#alter-sequence">13.17. ALTER SEQUENCE</a></li>
+<li><a class="reference internal" href="#alter-table">13.18. ALTER TABLE</a></li>
+<li><a class="reference internal" href="#alter-tablespace">13.19. ALTER TABLESPACE</a></li>
+<li><a class="reference internal" href="#alter-type">13.20. ALTER TYPE</a></li>
+<li><a class="reference internal" href="#alter-user">13.21. ALTER USER</a></li>
+<li><a class="reference internal" href="#analyze">13.22. ANALYZE</a></li>
+<li><a class="reference internal" href="#begin">13.23. BEGIN</a></li>
+<li><a class="reference internal" href="#checkpoint">13.24. CHECKPOINT</a></li>
+<li><a class="reference internal" href="#close">13.25. CLOSE</a></li>
+<li><a class="reference internal" href="#cluster">13.26. CLUSTER</a></li>
+<li><a class="reference internal" href="#comment">13.27. COMMENT</a></li>
+<li><a class="reference internal" href="#commit">13.28. COMMIT</a></li>
+<li><a class="reference internal" href="#copy">13.29. COPY</a></li>
+<li><a class="reference internal" href="#create-aggregate">13.30. CREATE AGGREGATE</a></li>
+<li><a class="reference internal" href="#create-cast">13.31. CREATE CAST</a></li>
+<li><a class="reference internal" href="#create-conversion">13.32. CREATE CONVERSION</a></li>
+<li><a class="reference internal" href="#create-database">13.33. CREATE DATABASE</a></li>
+<li><a class="reference internal" href="#create-domain">13.34. CREATE DOMAIN</a></li>
+<li><a class="reference internal" href="#create-external-table">13.35. CREATE EXTERNAL TABLE</a></li>
+<li><a class="reference internal" href="#create-function">13.36. CREATE FUNCTION</a></li>
+<li><a class="reference internal" href="#create-group">13.37. CREATE GROUP</a></li>
+<li><a class="reference internal" href="#create-index">13.38. CREATE INDEX</a></li>
+<li><a class="reference internal" href="#create-language">13.39. CREATE LANGUAGE</a></li>
+<li><a class="reference internal" href="#create-operator">13.40. CREATE OPERATOR</a></li>
+<li><a class="reference internal" href="#create-operator-class">13.41. CREATE OPERATOR CLASS</a></li>
+<li><a class="reference internal" href="#create-resource-queue">13.42. CREATE RESOURCE QUEUE</a></li>
+<li><a class="reference internal" href="#create-role">13.43. CREATE ROLE</a></li>
+<li><a class="reference internal" href="#create-rule">13.44. CREATE RULE</a></li>
+<li><a class="reference internal" href="#create-schema">13.45. CREATE SCHEMA</a></li>
+<li><a class="reference internal" href="#create-sequence">13.46. CREATE SEQUENCE</a></li>
+<li><a class="reference internal" href="#create-table">13.47. CREATE TABLE</a></li>
+<li><a class="reference internal" href="#create-table-as">13.48. CREATE TABLE AS</a></li>
+<li><a class="reference internal" href="#create-tablespace">13.49. CREATE TABLESPACE</a></li>
+<li><a class="reference internal" href="#create-type">13.50. CREATE TYPE</a></li>
+<li><a class="reference internal" href="#create-user">13.51. CREATE USER</a></li>
+<li><a class="reference internal" href="#create-view">13.52. CREATE VIEW</a></li>
+<li><a class="reference internal" href="#deallocate">13.53. DEALLOCATE</a></li>
+<li><a class="reference internal" href="#declare">13.54. DECLARE</a></li>
+<li><a class="reference internal" href="#delete">13.55. DELETE</a></li>
+<li><a class="reference internal" href="#drop-aggregate">13.56. DROP AGGREGATE</a></li>
+<li><a class="reference internal" href="#drop-cast">13.57. DROP CAST</a></li>
+<li><a class="reference internal" href="#drop-conversion">13.58. DROP CONVERSION</a></li>
+<li><a class="reference internal" href="#drop-database">13.59. DROP DATABASE</a></li>
+<li><a class="reference internal" href="#drop-domain">13.60. DROP DOMAIN</a></li>
+<li><a class="reference internal" href="#drop-external-table">13.61. DROP EXTERNAL TABLE</a></li>
+<li><a class="reference internal" href="#drop-function">13.62. DROP FUNCTION</a></li>
+<li><a class="reference internal" href="#drop-group">13.63. DROP GROUP</a></li>
+<li><a class="reference internal" href="#drop-index">13.64. DROP INDEX</a></li>
+<li><a class="reference internal" href="#drop-language">13.65. DROP LANGUAGE</a></li>
+<li><a class="reference internal" href="#drop-operator">13.66. DROP OPERATOR</a></li>
+<li><a class="reference internal" href="#drop-operator-class">13.67. DROP OPERATOR CLASS</a></li>
+<li><a class="reference internal" href="#drop-owned">13.68. DROP OWNED</a></li>
+<li><a class="reference internal" href="#drop-resource-queue">13.69. DROP RESOURCE QUEUE</a></li>
+<li><a class="reference internal" href="#drop-role">13.70. DROP ROLE</a></li>
+<li><a class="reference internal" href="#drop-rule">13.71. DROP RULE</a></li>
+<li><a class="reference internal" href="#drop-schema">13.72. DROP SCHEMA</a></li>
+<li><a class="reference internal" href="#drop-sequence">13.73. DROP SEQUENCE</a></li>
+<li><a class="reference internal" href="#drop-table">13.74. DROP TABLE</a></li>
+<li><a class="reference internal" href="#drop-tablespace">13.75. DROP TABLESPACE</a></li>
+<li><a class="reference internal" href="#drop-type">13.76. DROP TYPE</a></li>
+<li><a class="reference internal" href="#drop-user">13.77. DROP USER</a></li>
+<li><a class="reference internal" href="#drop-view">13.78. DROP VIEW</a></li>
+<li><a class="reference internal" href="#end">13.79. END</a></li>
+<li><a class="reference internal" href="#execute">13.80. EXECUTE</a></li>
+<li><a class="reference internal" href="#explain">13.81. EXPLAIN</a></li>
+<li><a class="reference internal" href="#fetch">13.82. FETCH</a></li>
+<li><a class="reference internal" href="#grant">13.83. GRANT</a></li>
+<li><a class="reference internal" href="#insert">13.84. INSERT</a></li>
+<li><a class="reference internal" href="#lock">13.85. LOCK</a></li>
+<li><a class="reference internal" href="#move">13.86. MOVE</a></li>
+<li><a class="reference internal" href="#prepare">13.87. PREPARE</a></li>
+<li><a class="reference internal" href="#reassign-owned">13.88. REASSIGN OWNED</a></li>
+<li><a class="reference internal" href="#reindex">13.89. REINDEX</a></li>
+<li><a class="reference internal" href="#release-savepoint">13.90. RELEASE SAVEPOINT</a></li>
+<li><a class="reference internal" href="#reset">13.91. RESET</a></li>
+<li><a class="reference internal" href="#revoke">13.92. REVOKE</a></li>
+<li><a class="reference internal" href="#rollback">13.93. ROLLBACK</a></li>
+<li><a class="reference internal" href="#rollback-to-savepoint">13.94. ROLLBACK TO SAVEPOINT</a></li>
+<li><a class="reference internal" href="#savepoint">13.95. SAVEPOINT</a></li>
+<li><a class="reference internal" href="#select">13.96. SELECT</a></li>
+<li><a class="reference internal" href="#select-into">13.97. SELECT INTO</a></li>
+<li><a class="reference internal" href="#set">13.98. SET</a></li>
+<li><a class="reference internal" href="#set-role">13.99. SET ROLE</a></li>
+<li><a class="reference internal" href="#set-session-authorization">13.100. SET SESSION AUTHORIZATION</a></li>
+<li><a class="reference internal" href="#set-transaction">13.101. SET TRANSACTION</a></li>
+<li><a class="reference internal" href="#show">13.102. SHOW</a></li>
+<li><a class="reference internal" href="#start-transaction">13.103. START TRANSACTION</a></li>
+<li><a class="reference internal" href="#truncate">13.104. TRUNCATE</a></li>
+<li><a class="reference internal" href="#update">13.105. UPDATE</a></li>
+<li><a class="reference internal" href="#vacuum">13.106. VACUUM</a></li>
+<li><a class="reference internal" href="#values">13.107. VALUES</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../sql-ref.html" title="14. SQL 命令参考"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="../management/management-quering-data.html" title="12. 查询数据"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; 版权所有 2016, HashData Warehouse Team.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.3 创建。
+    </div>
+  </body>
+</html>

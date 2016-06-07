@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. HashData 数据仓库 系统概述 &mdash; HashData Warehouse Document 1.0 文档</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="HashData Warehouse Document 1.0 文档" href="../index.html" />
+    <link rel="next" title="3. 访问 HashData 数据仓库" href="management/management-accessing-database.html" />
+    <link rel="prev" title="1. HashData 数据仓库 开发者指南" href="welcome.html" /> 
+    <script src="https://www.hashdata.cn/static/js/baidu.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="management/management-accessing-database.html" title="3. 访问 HashData 数据仓库"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="welcome.html" title="1. HashData 数据仓库 开发者指南"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="product-name">
+<span id="system-overview"></span><h1>2. HashData 数据仓库 系统概述<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h1>
+<p>本章节将会介绍 HashData 数据仓库 的模块及一些关键特性，让您对本产品拥有更加深刻的认识和理解。</p>
+<p>本章节涵盖以下内容:</p>
+<ul class="simple">
+<li>HashData 数据仓库 架构</li>
+</ul>
+<div class="section" id="dev-architecture">
+<span id="id1"></span><h2>2.1. HashData 数据仓库 架构<a class="headerlink" href="#dev-architecture" title="永久链接至标题">¶</a></h2>
+<p>HashData 数据仓库 是为了管理大容量分析型数据仓库和商业智能分析业务而设计的大规模并行处理（MPP）数据库服务系统。</p>
+<p>MPP（也被称作 shared nothing 架构）是指一个系统拥有两个或者两个以上的处理器，相互合作来执行任务。每个处理器都配有独立的内存，操作系统和磁盘。HashData 数据仓库 采用高性能的系统架构可以将请求均匀分散到存储 TB 级别的数据仓库上，同时充分利用系统中所有的资源，并行的处理请求。</p>
+<p>HashData 数据仓库 是基于 Greenplum Database 和 PostgreSQL 开源数据库技术，通过对
+PostgreSQL 的修改，得到的并行架构数据库。从系统信息表，优化器，查询执行器，事务管理等各个方面都进行了修改和增强，来满足真正将查询从内部并行运行在多个计算节点上。通过快速的内部软件数据交互模块，满足系统在多个节点间数据的传输和处理要求，使得整个系统在外面看就像是一个计算能力等于上百台机器的单一数据库系统。</p>
+<p>HashData 数据仓库 的 主节点 是整个数据库系统的入口节点，用户通过客户端连接 主节点 来提交 SQL 查询语句。主节点 将会协调其它 计算节点 来存储和处理用户的数据。</p>
+<p>图1 系统架构</p>
+<a class="reference internal image-reference" href="../_images/figure-1-architecture.jpg"><img alt="../_images/figure-1-architecture.jpg" src="../_images/figure-1-architecture.jpg" style="width: 100%;" /></a>
+<div class="section" id="master-node">
+<h3>2.1.1. 主节点<a class="headerlink" href="#master-node" title="永久链接至标题">¶</a></h3>
+<p>HashData 数据仓库 的 主节点 是整个数据库系统的入口，用来接受客户端连接，接收 SQL 查询，并将作业分发到 计算节点 上执行。</p>
+<p>HashData 数据仓库 的用户可以像使用 PostgreSQL 一样，通过 主节点 来访问 HashData 数据仓库 系统。目前支持客户端程序 psql 或应用编程接口 ODBC 或 JDBC。</p>
+<p>主节点 存储了描述系统全局结构的系统信息表（global system catalog），这些信息表中存储了 HashData 数据仓库 自己的元信息（metadata）。主节点 没有存储用户数据的信息，所有的用户数据都存储在 计算节点 节点，主节点 认证客户端连接，处理客户提交的 SQL 命令，将查询分发到存储数据的 计算节点 节点，协调各个 计算节点 节点执行，并汇总执行结果，最后返回给客户端程序。</p>
+</div>
+<div class="section" id="segment-node">
+<h3>2.1.2. 计算节点<a class="headerlink" href="#segment-node" title="永久链接至标题">¶</a></h3>
+<p>HashData 数据仓库 的 计算节点 实际上同样是一个经过修改的 PostgreSQL 数据库，每个 计算节点 都存储了一部分用户数据，并主要负责执行用户的查询。</p>
+<p>每当用户连接到 主节点，并且发送一个查询时，每个 计算节点 节点都会创建一些进程来共同处理改查询。要了解更多关于查询的处理过程，请参考 <a class="reference internal" href="management/management-quering-data.html#query-data"><span class="std std-ref">查询数据</span></a> 。</p>
+<p>用户定义的数据表和相应的索引将会自动被分散到 HashData 数据仓库 的节点上，每个 计算节点 上都存储了一部分用户数据，并且这些数据是不相交的。</p>
+</div>
+<div class="section" id="id2">
+<h3>2.1.3. 软件数据交换模块<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>软件数据交换模块是 HashData 数据仓库 架构中的网络层。此模块负责处理 计算节点 之间和网络之间的进程间通信。此模块默认使用经过深度调优的带流量控制的 UDP 协议来传输数据。这种算法除了提供 TCP 协议支持的可靠性外，在性能和水平扩展能力都优于 TCP 协议。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2. HashData 数据仓库 系统概述</a><ul>
+<li><a class="reference internal" href="#dev-architecture">2.1. HashData 数据仓库 架构</a><ul>
+<li><a class="reference internal" href="#master-node">2.1.1. 主节点</a></li>
+<li><a class="reference internal" href="#segment-node">2.1.2. 计算节点</a></li>
+<li><a class="reference internal" href="#id2">2.1.3. 软件数据交换模块</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="management/management-accessing-database.html" title="3. 访问 HashData 数据仓库"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="welcome.html" title="1. HashData 数据仓库 开发者指南"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; 版权所有 2016, HashData Warehouse Team.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.3 创建。
+    </div>
+  </body>
+</html>

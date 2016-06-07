@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>System Catalog Reference &mdash; HashData Warehouse Document 1.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="HashData Warehouse Document 1.0 文档" href="../../index.html" /> 
+    <script src="https://www.hashdata.cn/static/js/baidu.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="system-catalog-reference">
+<h1>System Catalog Reference<a class="headerlink" href="#system-catalog-reference" title="永久链接至标题">¶</a></h1>
+<p>This reference describes the Greenplum Database system catalog tables
+and views. System tables prefixed with gp_ relate to the parallel
+features of Greenplum Database. Tables prefixed with pg_ are either
+standard PostgreSQL system catalog tables supported in Greenplum
+Database, or are related to features Greenplum that provides to enhance
+PostgreSQL for data warehousing workloads. Note that the global system
+catalog for Greenplum Database resides on the master instance.</p>
+<div class="section" id="system-tables">
+<h2>System Tables<a class="headerlink" href="#system-tables" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>gp_configuration (Deprecated. See gp_segment_configuration.)</li>
+<li>gp_configuration_history</li>
+<li>gp_db_interfaces</li>
+<li>gp_distribution_policy</li>
+<li>gp_fastsequence</li>
+<li>gp_fault_strategy</li>
+<li>gp_global_sequence</li>
+<li>gp_id</li>
+<li>gp_interfaces</li>
+<li>gp_master_mirroring (Deprecated. See pg_stat_replication.)</li>
+<li>gp_persistent_database_node</li>
+<li>gp_persistent_filespace_node</li>
+<li>gp_persistent_relation_node</li>
+<li>gp_persistent_tablespace_node</li>
+<li>gp_relation_node</li>
+<li>gp_san_configuration</li>
+<li>gp_segment_configuration</li>
+<li>gp_version_at_initdb</li>
+<li>gpexpand.status</li>
+<li>gpexpand.status_detail</li>
+<li>pg_aggregate</li>
+<li>pg_am</li>
+<li>pg_amop</li>
+<li>pg_amproc</li>
+<li>pg_appendonly</li>
+<li>pg_appendonly_alter_column (not supported in 4.3)</li>
+<li>pg_attrdef</li>
+<li>pg_attribute</li>
+<li>pg_auth_members</li>
+<li>pg_authid</li>
+<li>pg_autovacuum (not supported in 4.2.5 and later)</li>
+<li>pg_cast</li>
+<li>pg_class</li>
+<li>pg_constraint</li>
+<li>pg_conversion</li>
+<li>pg_database</li>
+<li>pg_depend</li>
+<li>pg_description</li>
+<li>pg_exttable</li>
+<li>pg_filespace</li>
+<li>pg_filespace_entry</li>
+<li>pg_foreign_data_wrapper (not supported in 4.3)</li>
+<li>pg_foreign_server (not supported in 4.3)</li>
+<li>pg_foreign_table (not supported in 4.3)</li>
+<li>pg_index</li>
+<li>pg_inherits</li>
+<li>pg_language</li>
+<li>pg_largeobject</li>
+<li>pg_listener</li>
+<li>pg_namespace</li>
+<li>pg_opclass</li>
+<li>pg_operator</li>
+<li>pg_partition</li>
+<li>pg_partition_rule</li>
+<li>pg_pltemplate</li>
+<li>pg_proc</li>
+<li>pg_resourcetype</li>
+<li>pg_resqueue</li>
+<li>pg_resqueuecapability</li>
+<li>pg_rewrite</li>
+<li>pg_shdepend</li>
+<li>pg_shdescription</li>
+<li>pg_stat_last_operation</li>
+<li>pg_stat_last_shoperation</li>
+<li>pg_statistic</li>
+<li>pg_tablespace</li>
+<li>pg_trigger</li>
+<li>pg_type</li>
+<li>pg_user_mapping (not supported in 4.3)</li>
+<li>pg_window</li>
+</ul>
+</div>
+<div class="section" id="system-views">
+<h2>System Views<a class="headerlink" href="#system-views" title="永久链接至标题">¶</a></h2>
+<p>Greenplum Database provides the following system views not available in
+PostgreSQL.</p>
+<ul class="simple">
+<li>gp_distributed_log</li>
+<li>gp_distributed_xacts</li>
+<li>gp_pgdatabase</li>
+<li>gp_resqueue_status</li>
+<li>gp_transaction_log</li>
+<li>gpexpand.expansion_progress</li>
+<li>pg_max_external_files (shows number of external table files
+allowed per segment host when using the file protocol)</li>
+<li>pg_partition_columns</li>
+<li>pg_partition_templates</li>
+<li>pg_partitions</li>
+<li>pg_stat_activity</li>
+<li>pg_stat_replication</li>
+<li>pg_resqueue_attributes</li>
+<li>pg_resqueue_status (Deprecated. Use
+gp_toolkit.gp_resqueue_status.)</li>
+<li>pg_stat_resqueues</li>
+<li>pg_user_mappings (not supported)</li>
+<li>session_level_memory_consumption 4.3.4.0</li>
+</ul>
+<p>For more information about the standard system views supported in
+PostgreSQL and Greenplum Database, see the following sections of the
+PostgreSQL documentation:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.postgresql.org/docs/8.2/static/views-overview.html">System
+Views</a></li>
+<li><a class="reference external" href="http://www.postgresql.org/docs/8.2/static/monitoring-stats.html#MONITORING-STATS-VIEWS-TABLE">Statistics Collector
+Views</a></li>
+<li><a class="reference external" href="http://www.postgresql.org/docs/8.2/static/information-schema.html">The Information
+Schema</a></li>
+</ul>
+</div>
+<div class="section" id="system-catalogs-definitions">
+<h2>System Catalogs Definitions<a class="headerlink" href="#system-catalogs-definitions" title="永久链接至标题">¶</a></h2>
+<p>System catalog table and view definitions in alphabetical order.</p>
+<div class="section" id="gp-configuration-history">
+<h3>gp_configuration_history<a class="headerlink" href="#gp-configuration-history" title="永久链接至标题">¶</a></h3>
+<p>The <em>gp</em>configuration_history_ table contains information about
+system changes related to fault detection and recovery operations. The
+fts_probe process logs data to this table, as do certain related
+management utilities such as gpcheck, gprecoverseg, and gpinitsystem.
+For example, when you add a new segment and mirror segment to the
+system, records for these events are logged to
+gp_configuration_history.
+The event descriptions stored in this table may be helpful for
+troubleshooting serious system issues in collaboration with Greenplum
+support technicians.</p>
+<p>This table is populated only on the master. This table is defined in the
+pg_global tablespace, meaning it is globally shared across all
+databases in the system.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="6%" />
+<col width="18%" />
+<col width="24%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">column</th>
+<th class="head">type</th>
+<th class="head">references</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>timestamp with time zone</td>
+<td>&nbsp;</td>
+<td>Timestamp for the event recorded.</td>
+</tr>
+<tr class="row-odd"><td>dbid</td>
+<td>smallint</td>
+<td>gp_segment _ configuration.dbid</td>
+<td>System-assigned ID. The unique identifier of a segment (or master) instance.</td>
+</tr>
+<tr class="row-even"><td>desc</td>
+<td>text</td>
+<td>&nbsp;</td>
+<td>Text description of the event.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pg-partition-columns">
+<h3>pg_partition_columns<a class="headerlink" href="#pg-partition-columns" title="永久链接至标题">¶</a></h3>
+<p>The pg_partition_columns system view is used to show the partition key
+columns of a partitioned table.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="6%" />
+<col width="7%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">column</th>
+<th class="head">type</th>
+<th class="head">references</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>schemaname</td>
+<td>name</td>
+<td>&nbsp;</td>
+<td>The name of the schema the partitioned table is in.</td>
+</tr>
+<tr class="row-odd"><td>tablename</td>
+<td>name</td>
+<td>&nbsp;</td>
+<td>The table name of the top-level parent table.</td>
+</tr>
+<tr class="row-even"><td>columnname</td>
+<td>name</td>
+<td>&nbsp;</td>
+<td>The name of the partition key column.</td>
+</tr>
+<tr class="row-odd"><td>partitionleve</td>
+<td>smallint</td>
+<td>&nbsp;</td>
+<td>The level of this subpartition in the hierarchy.</td>
+</tr>
+<tr class="row-even"><td>position_in_partition_key</td>
+<td>integer</td>
+<td>&nbsp;</td>
+<td>For list partitions you can have a composite (multi-column) partition key. This shows the position of the column in a composite key.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">System Catalog Reference</a><ul>
+<li><a class="reference internal" href="#system-tables">System Tables</a></li>
+<li><a class="reference internal" href="#system-views">System Views</a></li>
+<li><a class="reference internal" href="#system-catalogs-definitions">System Catalogs Definitions</a><ul>
+<li><a class="reference internal" href="#gp-configuration-history">gp_configuration_history</a></li>
+<li><a class="reference internal" href="#pg-partition-columns">pg_partition_columns</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; 版权所有 2016, HashData Warehouse Team.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.3 创建。
+    </div>
+  </body>
+</html>

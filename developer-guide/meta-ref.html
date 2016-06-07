@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>System Catalog Reference &mdash; HashData Warehouse Document 1.0 文档</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="HashData Warehouse Document 1.0 文档" href="../index.html" /> 
+    <script src="https://www.hashdata.cn/static/js/baidu.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="system-catalog-reference">
+<h1>System Catalog Reference<a class="headerlink" href="#system-catalog-reference" title="永久链接至标题">¶</a></h1>
+<p>This reference describes the Greenplum Database system catalog tables
+and views. System tables prefixed with <em>gp_</em> relate to the parallel
+features of Greenplum Database. Tables prefixed with <em>pg_</em> are either
+standard PostgreSQL system catalog tables supported in Greenplum
+Database, or are related to features Greenplum that provides to enhance
+PostgreSQL for data warehousing workloads. Note that the global system
+catalog for Greenplum Database resides on the master instance.</p>
+<div class="section" id="system-tables">
+<h2>System Tables<a class="headerlink" href="#system-tables" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="system-views">
+<h2>System Views<a class="headerlink" href="#system-views" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="system-catalogs-definitions">
+<h2>System Catalogs Definitions<a class="headerlink" href="#system-catalogs-definitions" title="永久链接至标题">¶</a></h2>
+<div class="section" id="gp-configuration-history">
+<h3>gp_configuration_history<a class="headerlink" href="#gp-configuration-history" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-db-interfaces">
+<h3>gp_db_interfaces<a class="headerlink" href="#gp-db-interfaces" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-distributed-log">
+<h3>gp_distributed_log<a class="headerlink" href="#gp-distributed-log" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-distributed-xacts">
+<h3>gp_distributed_xacts<a class="headerlink" href="#gp-distributed-xacts" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-distribution-policy">
+<h3>gp_distribution_policy<a class="headerlink" href="#gp-distribution-policy" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gpexpand-expansion-progress">
+<h3>gpexpand.expansion_progress<a class="headerlink" href="#gpexpand-expansion-progress" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gpexpand-status">
+<h3>gpexpand.status<a class="headerlink" href="#gpexpand-status" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gpexpand-status-detail">
+<h3>gpexpand.status_detail<a class="headerlink" href="#gpexpand-status-detail" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-fastsequence">
+<h3>gp_fastsequence<a class="headerlink" href="#gp-fastsequence" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-fault-strategy">
+<h3>gp_fault_strategy<a class="headerlink" href="#gp-fault-strategy" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-global-sequence">
+<h3>gp_global_sequence<a class="headerlink" href="#gp-global-sequence" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-id">
+<h3>gp_id<a class="headerlink" href="#gp-id" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-interfaces">
+<h3>gp_interfaces<a class="headerlink" href="#gp-interfaces" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-persistent-database-node">
+<h3>gp_persistent_database_node<a class="headerlink" href="#gp-persistent-database-node" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-persistent-filespace-node">
+<h3>gp_persistent_filespace_node<a class="headerlink" href="#gp-persistent-filespace-node" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-persistent-relation-node">
+<h3>gp_persistent_relation_node<a class="headerlink" href="#gp-persistent-relation-node" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-persistent-tablespace-node">
+<h3>gp_persistent_tablespace_node<a class="headerlink" href="#gp-persistent-tablespace-node" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-pgdatabase">
+<h3>gp_pgdatabase<a class="headerlink" href="#gp-pgdatabase" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-relation-node">
+<h3>gp_relation_node<a class="headerlink" href="#gp-relation-node" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-resqueue-status">
+<h3>gp_resqueue_status<a class="headerlink" href="#gp-resqueue-status" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-san-configuration">
+<h3>gp_san_configuration<a class="headerlink" href="#gp-san-configuration" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-segment-configuration">
+<h3>gp_segment_configuration<a class="headerlink" href="#gp-segment-configuration" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-transaction-log">
+<h3>gp_transaction_log<a class="headerlink" href="#gp-transaction-log" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="gp-version-at-initdb">
+<h3>gp_version_at_initdb<a class="headerlink" href="#gp-version-at-initdb" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-aggregate">
+<h3>pg_aggregate<a class="headerlink" href="#pg-aggregate" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-am">
+<h3>pg_am<a class="headerlink" href="#pg-am" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-amop">
+<h3>pg_amop<a class="headerlink" href="#pg-amop" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-amproc">
+<h3>pg_amproc<a class="headerlink" href="#pg-amproc" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-appendonly">
+<h3>pg_appendonly<a class="headerlink" href="#pg-appendonly" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-attrdef">
+<h3>pg_attrdef<a class="headerlink" href="#pg-attrdef" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-attribute">
+<h3>pg_attribute<a class="headerlink" href="#pg-attribute" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-attribute-encoding">
+<h3>pg_attribute_encoding<a class="headerlink" href="#pg-attribute-encoding" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-auth-members">
+<h3>pg_auth_members<a class="headerlink" href="#pg-auth-members" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-authid">
+<h3>pg_authid<a class="headerlink" href="#pg-authid" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-cast">
+<h3>pg_cast<a class="headerlink" href="#pg-cast" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-class">
+<h3>pg_class<a class="headerlink" href="#pg-class" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-compression">
+<h3>pg_compression<a class="headerlink" href="#pg-compression" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-constraint">
+<h3>pg_constraint<a class="headerlink" href="#pg-constraint" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-conversion">
+<h3>pg_conversion<a class="headerlink" href="#pg-conversion" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-database">
+<h3>pg_database<a class="headerlink" href="#pg-database" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-depend">
+<h3>pg_depend<a class="headerlink" href="#pg-depend" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-description">
+<h3>pg_description<a class="headerlink" href="#pg-description" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-exttable">
+<h3>pg_exttable<a class="headerlink" href="#pg-exttable" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-filespace">
+<h3>pg_filespace<a class="headerlink" href="#pg-filespace" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-filespace-entry">
+<h3>pg_filespace_entry<a class="headerlink" href="#pg-filespace-entry" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-index">
+<h3>pg_index<a class="headerlink" href="#pg-index" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-inherits">
+<h3>pg_inherits<a class="headerlink" href="#pg-inherits" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-language">
+<h3>pg_language<a class="headerlink" href="#pg-language" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-largeobject">
+<h3>pg_largeobject<a class="headerlink" href="#pg-largeobject" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-listener">
+<h3>pg_listener<a class="headerlink" href="#pg-listener" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-locks">
+<h3>pg_locks<a class="headerlink" href="#pg-locks" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-namespace">
+<h3>pg_namespace<a class="headerlink" href="#pg-namespace" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-opclass">
+<h3>pg_opclass<a class="headerlink" href="#pg-opclass" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-operator">
+<h3>pg_operator<a class="headerlink" href="#pg-operator" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-partition">
+<h3>pg_partition<a class="headerlink" href="#pg-partition" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-partition-columns">
+<h3>pg_partition_columns<a class="headerlink" href="#pg-partition-columns" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-partition-encoding">
+<h3>pg_partition_encoding<a class="headerlink" href="#pg-partition-encoding" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-partition-rule">
+<h3>pg_partition_rule<a class="headerlink" href="#pg-partition-rule" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-partition-templates">
+<h3>pg_partition_templates<a class="headerlink" href="#pg-partition-templates" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-partitions">
+<h3>pg_partitions<a class="headerlink" href="#pg-partitions" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-pltemplate">
+<h3>pg_pltemplate<a class="headerlink" href="#pg-pltemplate" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-proc">
+<h3>pg_proc<a class="headerlink" href="#pg-proc" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-resourcetype">
+<h3>pg_resourcetype<a class="headerlink" href="#pg-resourcetype" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-resqueue">
+<h3>pg_resqueue<a class="headerlink" href="#pg-resqueue" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-resqueue-attributes">
+<h3>pg_resqueue_attributes<a class="headerlink" href="#pg-resqueue-attributes" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-resqueuecapability">
+<h3>pg_resqueuecapability<a class="headerlink" href="#pg-resqueuecapability" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-rewrite">
+<h3>pg_rewrite<a class="headerlink" href="#pg-rewrite" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-roles">
+<h3>pg_roles<a class="headerlink" href="#pg-roles" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-shdepend">
+<h3>pg_shdepend<a class="headerlink" href="#pg-shdepend" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-shdescription">
+<h3>pg_shdescription<a class="headerlink" href="#pg-shdescription" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-stat-activity">
+<h3>pg_stat_activity<a class="headerlink" href="#pg-stat-activity" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-stat-last-operation">
+<h3>pg_stat_last_operation<a class="headerlink" href="#pg-stat-last-operation" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-stat-last-shoperation">
+<h3>pg_stat_last_shoperation<a class="headerlink" href="#pg-stat-last-shoperation" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-stat-operations">
+<h3>pg_stat_operations<a class="headerlink" href="#pg-stat-operations" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-stat-partition-operations">
+<h3>pg_stat_partition_operations<a class="headerlink" href="#pg-stat-partition-operations" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-stat-replication">
+<h3>pg_stat_replication<a class="headerlink" href="#pg-stat-replication" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-statistic">
+<h3>pg_statistic<a class="headerlink" href="#pg-statistic" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-stat-resqueues">
+<h3>pg_stat_resqueues<a class="headerlink" href="#pg-stat-resqueues" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-tablespace">
+<h3>pg_tablespace<a class="headerlink" href="#pg-tablespace" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-trigger">
+<h3>pg_trigger<a class="headerlink" href="#pg-trigger" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-type">
+<h3>pg_type<a class="headerlink" href="#pg-type" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-type-encoding">
+<h3>pg_type_encoding<a class="headerlink" href="#pg-type-encoding" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-user-mapping">
+<h3>pg_user_mapping<a class="headerlink" href="#pg-user-mapping" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="pg-window">
+<h3>pg_window<a class="headerlink" href="#pg-window" title="永久链接至标题">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">System Catalog Reference</a><ul>
+<li><a class="reference internal" href="#system-tables">System Tables</a></li>
+<li><a class="reference internal" href="#system-views">System Views</a></li>
+<li><a class="reference internal" href="#system-catalogs-definitions">System Catalogs Definitions</a><ul>
+<li><a class="reference internal" href="#gp-configuration-history">gp_configuration_history</a></li>
+<li><a class="reference internal" href="#gp-db-interfaces">gp_db_interfaces</a></li>
+<li><a class="reference internal" href="#gp-distributed-log">gp_distributed_log</a></li>
+<li><a class="reference internal" href="#gp-distributed-xacts">gp_distributed_xacts</a></li>
+<li><a class="reference internal" href="#gp-distribution-policy">gp_distribution_policy</a></li>
+<li><a class="reference internal" href="#gpexpand-expansion-progress">gpexpand.expansion_progress</a></li>
+<li><a class="reference internal" href="#gpexpand-status">gpexpand.status</a></li>
+<li><a class="reference internal" href="#gpexpand-status-detail">gpexpand.status_detail</a></li>
+<li><a class="reference internal" href="#gp-fastsequence">gp_fastsequence</a></li>
+<li><a class="reference internal" href="#gp-fault-strategy">gp_fault_strategy</a></li>
+<li><a class="reference internal" href="#gp-global-sequence">gp_global_sequence</a></li>
+<li><a class="reference internal" href="#gp-id">gp_id</a></li>
+<li><a class="reference internal" href="#gp-interfaces">gp_interfaces</a></li>
+<li><a class="reference internal" href="#gp-persistent-database-node">gp_persistent_database_node</a></li>
+<li><a class="reference internal" href="#gp-persistent-filespace-node">gp_persistent_filespace_node</a></li>
+<li><a class="reference internal" href="#gp-persistent-relation-node">gp_persistent_relation_node</a></li>
+<li><a class="reference internal" href="#gp-persistent-tablespace-node">gp_persistent_tablespace_node</a></li>
+<li><a class="reference internal" href="#gp-pgdatabase">gp_pgdatabase</a></li>
+<li><a class="reference internal" href="#gp-relation-node">gp_relation_node</a></li>
+<li><a class="reference internal" href="#gp-resqueue-status">gp_resqueue_status</a></li>
+<li><a class="reference internal" href="#gp-san-configuration">gp_san_configuration</a></li>
+<li><a class="reference internal" href="#gp-segment-configuration">gp_segment_configuration</a></li>
+<li><a class="reference internal" href="#gp-transaction-log">gp_transaction_log</a></li>
+<li><a class="reference internal" href="#gp-version-at-initdb">gp_version_at_initdb</a></li>
+<li><a class="reference internal" href="#pg-aggregate">pg_aggregate</a></li>
+<li><a class="reference internal" href="#pg-am">pg_am</a></li>
+<li><a class="reference internal" href="#pg-amop">pg_amop</a></li>
+<li><a class="reference internal" href="#pg-amproc">pg_amproc</a></li>
+<li><a class="reference internal" href="#pg-appendonly">pg_appendonly</a></li>
+<li><a class="reference internal" href="#pg-attrdef">pg_attrdef</a></li>
+<li><a class="reference internal" href="#pg-attribute">pg_attribute</a></li>
+<li><a class="reference internal" href="#pg-attribute-encoding">pg_attribute_encoding</a></li>
+<li><a class="reference internal" href="#pg-auth-members">pg_auth_members</a></li>
+<li><a class="reference internal" href="#pg-authid">pg_authid</a></li>
+<li><a class="reference internal" href="#pg-cast">pg_cast</a></li>
+<li><a class="reference internal" href="#pg-class">pg_class</a></li>
+<li><a class="reference internal" href="#pg-compression">pg_compression</a></li>
+<li><a class="reference internal" href="#pg-constraint">pg_constraint</a></li>
+<li><a class="reference internal" href="#pg-conversion">pg_conversion</a></li>
+<li><a class="reference internal" href="#pg-database">pg_database</a></li>
+<li><a class="reference internal" href="#pg-depend">pg_depend</a></li>
+<li><a class="reference internal" href="#pg-description">pg_description</a></li>
+<li><a class="reference internal" href="#pg-exttable">pg_exttable</a></li>
+<li><a class="reference internal" href="#pg-filespace">pg_filespace</a></li>
+<li><a class="reference internal" href="#pg-filespace-entry">pg_filespace_entry</a></li>
+<li><a class="reference internal" href="#pg-index">pg_index</a></li>
+<li><a class="reference internal" href="#pg-inherits">pg_inherits</a></li>
+<li><a class="reference internal" href="#pg-language">pg_language</a></li>
+<li><a class="reference internal" href="#pg-largeobject">pg_largeobject</a></li>
+<li><a class="reference internal" href="#pg-listener">pg_listener</a></li>
+<li><a class="reference internal" href="#pg-locks">pg_locks</a></li>
+<li><a class="reference internal" href="#pg-namespace">pg_namespace</a></li>
+<li><a class="reference internal" href="#pg-opclass">pg_opclass</a></li>
+<li><a class="reference internal" href="#pg-operator">pg_operator</a></li>
+<li><a class="reference internal" href="#pg-partition">pg_partition</a></li>
+<li><a class="reference internal" href="#pg-partition-columns">pg_partition_columns</a></li>
+<li><a class="reference internal" href="#pg-partition-encoding">pg_partition_encoding</a></li>
+<li><a class="reference internal" href="#pg-partition-rule">pg_partition_rule</a></li>
+<li><a class="reference internal" href="#pg-partition-templates">pg_partition_templates</a></li>
+<li><a class="reference internal" href="#pg-partitions">pg_partitions</a></li>
+<li><a class="reference internal" href="#pg-pltemplate">pg_pltemplate</a></li>
+<li><a class="reference internal" href="#pg-proc">pg_proc</a></li>
+<li><a class="reference internal" href="#pg-resourcetype">pg_resourcetype</a></li>
+<li><a class="reference internal" href="#pg-resqueue">pg_resqueue</a></li>
+<li><a class="reference internal" href="#pg-resqueue-attributes">pg_resqueue_attributes</a></li>
+<li><a class="reference internal" href="#pg-resqueuecapability">pg_resqueuecapability</a></li>
+<li><a class="reference internal" href="#pg-rewrite">pg_rewrite</a></li>
+<li><a class="reference internal" href="#pg-roles">pg_roles</a></li>
+<li><a class="reference internal" href="#pg-shdepend">pg_shdepend</a></li>
+<li><a class="reference internal" href="#pg-shdescription">pg_shdescription</a></li>
+<li><a class="reference internal" href="#pg-stat-activity">pg_stat_activity</a></li>
+<li><a class="reference internal" href="#pg-stat-last-operation">pg_stat_last_operation</a></li>
+<li><a class="reference internal" href="#pg-stat-last-shoperation">pg_stat_last_shoperation</a></li>
+<li><a class="reference internal" href="#pg-stat-operations">pg_stat_operations</a></li>
+<li><a class="reference internal" href="#pg-stat-partition-operations">pg_stat_partition_operations</a></li>
+<li><a class="reference internal" href="#pg-stat-replication">pg_stat_replication</a></li>
+<li><a class="reference internal" href="#pg-statistic">pg_statistic</a></li>
+<li><a class="reference internal" href="#pg-stat-resqueues">pg_stat_resqueues</a></li>
+<li><a class="reference internal" href="#pg-tablespace">pg_tablespace</a></li>
+<li><a class="reference internal" href="#pg-trigger">pg_trigger</a></li>
+<li><a class="reference internal" href="#pg-type">pg_type</a></li>
+<li><a class="reference internal" href="#pg-type-encoding">pg_type_encoding</a></li>
+<li><a class="reference internal" href="#pg-user-mapping">pg_user_mapping</a></li>
+<li><a class="reference internal" href="#pg-window">pg_window</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; 版权所有 2016, HashData Warehouse Team.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.3 创建。
+    </div>
+  </body>
+</html>

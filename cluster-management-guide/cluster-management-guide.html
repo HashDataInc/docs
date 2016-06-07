@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. HashData 数据仓库 集群管理指南 &mdash; HashData Warehouse Document 1.0 文档</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="HashData Warehouse Document 1.0 文档" href="../index.html" />
+    <link rel="next" title="1. HashData 数据仓库 开发者指南" href="../developer-guide/welcome.html" />
+    <link rel="prev" title="1. HashData 数据仓库 入门指南" href="../getting-started-guide/hashdata_warehouse_guide.html" /> 
+    <script src="https://www.hashdata.cn/static/js/baidu.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../developer-guide/welcome.html" title="1. HashData 数据仓库 开发者指南"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="../getting-started-guide/hashdata_warehouse_guide.html" title="1. HashData 数据仓库 入门指南"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="product-name">
+<span id="cluster-management-guide"></span><h1>1. HashData 数据仓库 集群管理指南<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h1>
+<p>欢迎来到 HashData 数据仓库 集群管理指南。HashData 数据仓库 是一个高性能，完全托管的PB级数据仓库服务。你能够从几百 GB 数据开始，然后根据需要逐步扩容到 1PB 甚至更多，从而在数据中获取对商业和客户的洞悉。</p>
+<p>创建数据仓库的第一步是启动一个由一组节点组成的 HashData 数据仓库 集群。当你创建的 HashData 数据仓库 集群启动后，你可以加载数据，然后执行数据分析查询。无论数据量的大小，HashData 数据仓库 让你能够通过基于 SQL 的工具和商业智能应用获得极速的查询性能。</p>
+<div class="section" id="id1">
+<h2>1.1. 第一次使用 HashData 数据仓库 ？<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>如果你是 HashData 数据仓库 的初次使用者，我们建议你可以阅读从下面章节开始：</p>
+<ul class="simple">
+<li><a class="reference internal" href="#product-overview"><span class="std std-ref">HashData 数据仓库 管理概述</span></a>：这个主题提供了 HashData 数据仓库 概述。</li>
+<li><a class="reference internal" href="../getting-started-guide/hashdata_warehouse_guide.html#getting-started-guide"><span class="std std-ref">HashData 数据仓库 入门指南</span></a>：遵循这个指南，你将学习如何创建一个数据仓库集群，创建数据库用户表，上传数据和执行测试查询。</li>
+<li><a class="reference internal" href="#cluster-management-guide"><span class="std std-ref">HashData 数据仓库 集群管理指南</span></a> （此文档）：这个指南将教导如何创建和管理 HashData 数据仓库 集群。</li>
+<li><a class="reference internal" href="../developer-guide/welcome.html#developer-guide"><span class="std std-ref">HashData 数据仓库 开发者指南</span></a>：如果你是一个数据库开发者，这个指南将解释如何去设计、创建、查询、和维护组成数据仓库的各个数据库。</li>
+</ul>
+<p>你可以通过多种方式来管理你的数据仓库集群。</p>
+</div>
+<div class="section" id="product-overview">
+<span id="id2"></span><h2>1.2. HashData 数据仓库 管理概述<a class="headerlink" href="#product-overview" title="永久链接至标题">¶</a></h2>
+<p>HashData 数据仓库 服务将管理所有与数据仓库创建、运维和扩容相关的工作。这些任务包括了准备计算和存储资源，监控和备份集群，以及对引擎打补丁和升级。</p>
+<div class="section" id="id3">
+<h3>1.2.1. 集群管理<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>一个 HashData 数据仓库 数据仓库集群由一组节点组成。这些节点中包括一个 主节点 和一个或者多个 计算节点。你应该根据你的数据大小和查询的复杂度和数量来选择需要的计算节点类型和数量。</p>
+<p>HashData 数据仓库 服务有几个与集群访问和安全相关的功能。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h1>2. 集群<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id5">
+<h2>2.1. 概述<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>一个数据仓库是一个集群，由一组称为 计算节点 的计算资源组成。每个数据仓库集群包含一个 HashData 数据仓库 引擎和一个或多个数据库。</p>
+</div>
+<div class="section" id="id6">
+<h2>2.2. 集群和节点<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>一个 HashData 数据仓库 集群由一组节点组成。每个集群包含一个 主节点 和一个或多个 计算节点。主节点 接受来自客户应用的查询，解析查询，以及生成执行计划。然后，主节点 调度和协调 计算节点 并行执行查询计划，汇总中间结果，然后将最终结果返回给客户应用。计算节点 执行查询计算并且相互间传递数据来完成查询。中间结果将发送到 主节点 进行汇总聚合，然后由 主节点 返回给客户应用。更多关于 主节点 和 计算节点 的细节，请参考《HashData 数据仓库开发者指南》的 <a class="reference internal" href="../developer-guide/overview.html#dev-architecture"><span class="std std-ref">HashData 数据仓库 架构</span></a> 章节。</p>
+</div>
+<div class="section" id="id7">
+<h2>2.3. 扩容和缩容<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>当你创建初始集群后，如果你需要对它的存储和性能进行改变的话，你可以对集群进行扩容和缩容。你可以以增删节点的方式对集群进行横向扩容和缩容。另外，你也可以以改变每个节点的计算资源（CPU数量和内存大小）和存储资源（硬盘空间大小）的方式对集群进行纵向扩容和缩容。</p>
+</div>
+<div class="section" id="id8">
+<h2>2.4. 选择数据中心<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>HashData 数据仓库 已经在多个数据中心上线。当你选择了某个数据中心去创建一个 HashData 数据仓库 集群，组成该集群的所有节点都将在同一个数据中心里。</p>
+</div>
+<div class="section" id="id9">
+<h2>2.5. 关闭和删除集群<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>当你希望暂停集群运行和产生新费用的时候，你可以选择将集群关闭。对于关闭的集群，下次你需要使用的时候，可以将它重新启动。如果你的集群和存在数据仓库里面的数据都不需要了，你可以选择删除整个集群。</p>
+</div>
+<div class="section" id="id10">
+<h2>2.6. 集群状态<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>集群状态反应了集群的当前状态。下面的表格详细描述了每种集群状态。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">状态</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>活跃</td>
+<td>服务正在运行，并且可用</td>
+</tr>
+<tr class="row-odd"><td>等待中</td>
+<td>创建 HashData 数据仓库 请求已经提交了，排队等待创建。</td>
+</tr>
+<tr class="row-even"><td>创建中</td>
+<td>正在创建 HashData 数据仓库 服务。</td>
+</tr>
+<tr class="row-odd"><td>关闭中</td>
+<td>关闭服务时的状态，服务正在关闭。</td>
+</tr>
+<tr class="row-even"><td>已关闭</td>
+<td>服务已经关闭。</td>
+</tr>
+<tr class="row-odd"><td>删除中</td>
+<td>删除服务时的状态，服务正在被删除。</td>
+</tr>
+<tr class="row-even"><td>已删除</td>
+<td>集群删除后，在回收站的状态。</td>
+</tr>
+<tr class="row-odd"><td>更新中</td>
+<td>集群删除后，在回收站的状态。</td>
+</tr>
+<tr class="row-even"><td>已废弃</td>
+<td>扩容或缩容后，旧集群将进入废弃状态。如果您验证新集群没有
+问题后，可以将“已废弃”集群直接删除。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h2>2.7. 通过控制台管理集群<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>你可以通过控制台来创建、修改、删除数据仓库集群，以及对集群进行扩容和缩容。</p>
+<div class="section" id="id12">
+<h3>2.7.1. 创建集群<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<p>目前 HashData 数据仓库 已经在 青云 的第三方应用商店上线。您可以根据您的使用需求选择不同配置类型和节点数量。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="15%" />
+<col width="9%" />
+<col width="15%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">节点类型</th>
+<th class="head">CPU 数量</th>
+<th class="head">内存</th>
+<th class="head">磁盘数量</th>
+<th class="head">适合场景</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>体验版</td>
+<td>1 个</td>
+<td>2GB</td>
+<td>1 块</td>
+<td>学习和了解 HashData 数据仓库
+功能和特性，复杂查询可能由
+于内存不足而无法正常运行</td>
+</tr>
+<tr class="row-odd"><td>标准版</td>
+<td>4 个</td>
+<td>8GB</td>
+<td>1 块</td>
+<td>数据规模较小，POC 原型，开
+发。数据量较大时，可能存储
+成为瓶颈。</td>
+</tr>
+<tr class="row-even"><td>企业版</td>
+<td>12 个</td>
+<td>24GB</td>
+<td>3 块</td>
+<td>大规模数据处理，对处理速度
+和时间有较高要求。</td>
+</tr>
+</tbody>
+</table>
+<p>存储说明：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">存储类型</th>
+<th class="head">详细说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>性能型</td>
+<td>普通 SATA 存储</td>
+</tr>
+<tr class="row-odd"><td>超高性能版</td>
+<td>SSD 磁盘</td>
+</tr>
+</tbody>
+</table>
+<p>价格参考：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">节点类型</th>
+<th class="head">2 计算节点</th>
+<th class="head">4 计算节点</th>
+<th class="head">8 计算节点</th>
+<th class="head">16 计算节点</th>
+<th class="head">32 计算节点</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>体验版</td>
+<td>¥  505.87每月</td>
+<td>¥  843.12每月</td>
+<td>¥ 1517.62每月</td>
+<td>¥ 2866.61每月</td>
+<td>¥ 5564.59每月</td>
+</tr>
+<tr class="row-odd"><td>标准版</td>
+<td>¥ 1954.80每月</td>
+<td>¥ 3258.00每月</td>
+<td>¥ 5864.40每月</td>
+<td>¥11077.20每月</td>
+<td>¥21502.80每月</td>
+</tr>
+<tr class="row-even"><td>企业版</td>
+<td>¥ 5848.34每月</td>
+<td>¥ 9757.22每月</td>
+<td>¥17574.98每月</td>
+<td>¥33210.50每月</td>
+<td>¥64481.54每月</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意1</strong>：最终价格以 青云 控制台显示费用为准。</p>
+<p><strong>注意2</strong>：价格参考中，每块磁盘存储 10GB。体验版和标准版，每个节点配备1块性能型磁盘。企业版每个节点配置3块性能型磁盘。</p>
+<p><strong>注意3</strong>：价格参考是 HashData 数据仓库 一个月都在运行计算的，如果您停止 HashData 数据仓库，费用将会大幅降低。</p>
+<p><strong>你可以通过如下步骤创建一个集群</strong>：</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>登录 青云 控制台 <a class="reference external" href="https://console.qingcloud.com/">https://console.qingcloud.com/</a>，选择 <strong>数据仓库</strong> 服务：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/qingcloud-nav.png"><img alt="../_images/qingcloud-nav.png" src="../_images/qingcloud-nav.png" style="width: 200px;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>在数据仓库汇总页面上，点击 <strong>创建</strong> 按钮：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/main-panel.png"><img alt="../_images/main-panel.png" src="../_images/main-panel.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>提供集群配置信息：</dt>
+<dd><a class="first reference internal image-reference" href="../_images/create_10_step1.png"><img alt="../_images/create_10_step1.png" src="../_images/create_10_step1.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><strong>名称</strong>：HashData 数据仓库 集群的名称，方便您管理集群。</li>
+<li><strong>节点数量</strong>：计算节点 虚拟机的数量，既是计算能力和存储能力的代表，也是计费的代表。</li>
+<li><strong>类型</strong>：磁盘 IO 的类型。</li>
+<li><strong>节点配置</strong>：计算节点 节点虚拟机的计算能力，CPU 和内存。</li>
+<li><strong>存储大小</strong>：计算节点 虚拟机的每块磁盘容量。</li>
+</ul>
+<p class="last"><strong>注意</strong>：HashData 数据仓库 提供了计算节点计算能力升降级和节点数量的增加和减少，因此您可以按需的逐渐扩大集群的规模，避免在需求较少时，仍然付出较高的价格。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>私有网络配置</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/create_12_step2.png"><img alt="../_images/create_12_step2.png" src="../_images/create_12_step2.png" style="width: 600px;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>数据仓库用户配置信息</dt>
+<dd><a class="first reference internal image-reference" href="../_images/create_13_step3.png"><img alt="../_images/create_13_step3.png" src="../_images/create_13_step3.png" style="width: 600px;" /></a>
+<ul class="last simple">
+<li><strong>数据库名</strong>：初始数据库名称。</li>
+<li><strong>用户名</strong>：数据库超级用户用户名。</li>
+<li><strong>密码</strong>：数据库超级用户密码。</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="id13">
+<h3>2.7.2. 关闭或删除集群<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>如果你不在需要你的集群了，你可以选择关闭或者删除这个集群。</p>
+<p><strong>删除或停止集群：</strong></p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>登录 青云 控制台 <a class="reference external" href="https://console.qingcloud.com/">https://console.qingcloud.com/</a>，选择 <strong>数据仓库</strong> 服务：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/qingcloud-nav.png"><img alt="../_images/qingcloud-nav.png" src="../_images/qingcloud-nav.png" style="width: 200px;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>在数据库仓库汇总页面，查看要关闭或删除的集群：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/node_5_summary.png"><img alt="../_images/node_5_summary.png" src="../_images/node_5_summary.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>可以在要关闭或删除的集群名称上，点击右键，将会看到下面的菜单：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/cluster_summary_menu.png"><img alt="../_images/cluster_summary_menu.png" src="../_images/cluster_summary_menu.png" style="width: 160px;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>要一次关闭或停止多个集群，可以通过复选框来勾选需要关闭或停止的集群，然后点击 <strong>更多操作</strong> 按钮，来进行操作：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/cluster_summary_menu_more.png"><img alt="../_images/cluster_summary_menu_more.png" src="../_images/cluster_summary_menu_more.png" style="width: 142px;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>点击停止操作后，将会弹出提示框：</dt>
+<dd><a class="first reference internal image-reference" href="../_images/stop.png"><img alt="../_images/stop.png" src="../_images/stop.png" style="width: 401px;" /></a>
+<ul class="last simple">
+<li>非强制停止：当没有勾选强制停止时，停止操作会将正在运行的查询回滚，并通知所有连接的客户端服务器关闭。</li>
+<li>强制停止：勾选强制停止后，集群的所有进行都会被杀死，再下一次启动时，数据库需要进行恢复操作（启动速度将会变慢）。除非您非常迫切的需要停止服务，否则我们不建议您使用此操作。</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>点击删除操作后，将会弹出确认框：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/delete.png"><img alt="../_images/delete.png" src="../_images/delete.png" style="width: 401px;" /></a>
+</dd>
+</dl>
+</li>
+<li><p class="first">集群停止后，状态将会变成 <strong>TODO</strong>。</p>
+</li>
+<li><p class="first">集群删除后，将会从汇总页面移除。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id14">
+<h3>2.7.3. 集群扩容和缩容<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p>如果在您首次创建集群后，存储或性能需求发生了改变，您可以通过增加或减少节点，对集群进行扩容或缩容。除此之外，您还能够通过指定不同的 计算节点 类型来提升或降低 计算节点 的计算能力。</p>
+<p>例如：您可以增加更多节点，改变节点的类型。当然，您必须注意选择的最终的集群需要能够容纳当前集群的的所有数据，否则在您尝试调整集群规模时，将会得到错误提示。</p>
+<p>下面为您简单介绍扩容或缩容的流程：</p>
+<ol class="arabic simple">
+<li>当您开始扩容或缩容操作时，HashData 数据仓库 会重新启动源集群。重启操作将会导致所有连接到集群的连接断开。所有正在执行的事务将会回滚。</li>
+<li>源集群在只读模式下重新启动。当集群处于只读模式时，您只能执行读操作。</li>
+<li>HashData 数据仓库 会根据您的需求创建一个新的集群（目标集群），并将数据从源集群拷贝到目标集群。</li>
+<li>当扩容或缩容操作将要完成时，源集群将会停止并进入废弃状态。而目标集群的 主节点 将会得到旧集群的 IP 并开始正常工作。此时，所有连接到旧集群的连接将会断开。</li>
+<li>在扩容或缩容操作完成后，您就可以正常的访问新集群，并执行读写操作。</li>
+</ol>
+<p>当您扩容或缩容时，集群将一直处于只读模式直到操作结束。扩容或缩容的时间主要取决于每个节点上的数据存储量。通常情况下，扩容或缩容的过程一般需要持续几小时到一天。当然如果集群数据量非常大，可能需要花费更长的时间。这是因为数据需要从源集群的节点并行的拷贝到目标集群的节点上。要了解更多关于缩容和扩容的信息，请参考：<a class="reference internal" href="#id22">横向扩容缩容教程</a>。</p>
+<p>扩容或缩容后的 主节点 节点 IP 在 VPC 网络中不会改变。如果您绑定了公网的 IP，那么弹性 IP 地址会自动帮到新的集群 主节点 上。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h1>3. 集群性能监控<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id16">
+<h2>3.1. 概述<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="id17">
+<h2>3.2. 性能数据概要<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id18">
+<h3>3.2.1. 节点物理资源监控数据<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="id19">
+<h1>4. 扩容和缩容<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id20">
+<h2>4.1. 概述<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
+<p>随着您的数据仓库容量和性能需求的变化或增长，您可以通过调整集群的规模，以最优的方式利用 HashData 数据仓库 提供的计算和存储资源。您可以通过改变集群的节点数量来扩展或收缩。或者，您还可以选择不同的节点来行来加强或减弱节点的能力。</p>
+<p>您可以在集群的详细信息中，添加或删除节点。增加节点和删除节点时，数据将会导入到新的集群中。</p>
+</div>
+<div class="section" id="id21">
+<h2>4.2. 横向扩容缩容<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h2>
+<p>在您需要调整节点数量时，扩容和缩容操作是最便捷的方案。在调整集群节点数量时，您的数据将会从源集群的 计算节点 直接拷贝到目标集群的 计算节点。扩容或缩容的时间开销取决于数据总量以及两个集群的最小节点数量。根据数据量的不同，时间可能是从几小时到几天。</p>
+<p>当您启动扩容或缩容操作时，HashData 数据仓库 会将源集群置入只读模式，直到节点调整完毕。在这个过程中，您只能运行读取数据库的查询；您不能运行任何向数据库写入的查询。</p>
+<p>在 HashData 数据仓库 将源集群置入只读模式后，会根据您的集群节点类型和新的节点数量，立即创建一个新的集群，也就是目标集群。然后 HashData 数据仓库 从源集群开始将数据拷贝到目标集群。当前面的操作完成后，所有的新客户连接将会转到目标集群。如果您的查询正在运行，您的连接将会中断，您必须重新在目标集群上运行该查询。</p>
+<p>要了解 HashData 数据仓库 集群的扩容或缩容教程，请参考：<a class="reference internal" href="#id22">横向扩容缩容教程</a>。</p>
+</div>
+<div class="section" id="id22">
+<h2>4.3. 横向扩容缩容教程<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h2>
+<p><strong>扩容</strong>：</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>在数据仓库汇总页面，点击要进行扩容的集群进入集群详细信息页面：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/create_16_creating_done.png"><img alt="../_images/create_16_creating_done.png" src="../_images/create_16_creating_done.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>点击 <strong>增加节点</strong> 按钮，填写要增加的节点数量，并点击继续：</dt>
+<dd><a class="first reference internal image-reference" href="../_images/resize_add_node.png"><img alt="../_images/resize_add_node.png" src="../_images/resize_add_node.png" style="width: 601px;" /></a>
+<p class="last"><strong>节点数量</strong>：填写要增加的节点数量。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>数据仓库在进行扩容时，将会创建一个新的集群，并将数据拷贝到新的集群。您可以在集群详细信息中，看到集群的状态：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/resize_2_to_5.png"><img alt="../_images/resize_2_to_5.png" src="../_images/resize_2_to_5.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>扩容结束后，新集群将会替代旧集群。旧集群将会进入废弃状态：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/node_5_summary.png"><img alt="../_images/node_5_summary.png" src="../_images/node_5_summary.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+</ol>
+<p><strong>缩容</strong>：</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>在数据仓库汇总页面，点击要进行缩容的集群进入集群详细信息页面：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/create_16_creating_done.png"><img alt="../_images/create_16_creating_done.png" src="../_images/create_16_creating_done.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>在集群详细信息页面，勾选需要删除的节点，然后点击 <strong>删除</strong> 按钮：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/resize_decrease_selection.png"><img alt="../_images/resize_decrease_selection.png" src="../_images/resize_decrease_selection.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>数据仓库在进行缩容时，将会创建一个新的集群，并将数据拷贝到新的集群。您可以在集群详细信息中，看到集群的状态：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/resize_decreasing.png"><img alt="../_images/resize_decreasing.png" src="../_images/resize_decreasing.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>缩容结束后，新集群将会替代旧集群。旧集群将会进入废弃状态：</dt>
+<dd><a class="first last reference internal image-reference" href="../_images/resize_decrease_done.png"><img alt="../_images/resize_decrease_done.png" src="../_images/resize_decrease_done.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id23">
+<h1>5. 已知问题<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h1>
+<p>无</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1. HashData 数据仓库 集群管理指南</a><ul>
+<li><a class="reference internal" href="#id1">1.1. 第一次使用 HashData 数据仓库 ？</a></li>
+<li><a class="reference internal" href="#product-overview">1.2. HashData 数据仓库 管理概述</a><ul>
+<li><a class="reference internal" href="#id3">1.2.1. 集群管理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">2. 集群</a><ul>
+<li><a class="reference internal" href="#id5">2.1. 概述</a></li>
+<li><a class="reference internal" href="#id6">2.2. 集群和节点</a></li>
+<li><a class="reference internal" href="#id7">2.3. 扩容和缩容</a></li>
+<li><a class="reference internal" href="#id8">2.4. 选择数据中心</a></li>
+<li><a class="reference internal" href="#id9">2.5. 关闭和删除集群</a></li>
+<li><a class="reference internal" href="#id10">2.6. 集群状态</a></li>
+<li><a class="reference internal" href="#id11">2.7. 通过控制台管理集群</a><ul>
+<li><a class="reference internal" href="#id12">2.7.1. 创建集群</a></li>
+<li><a class="reference internal" href="#id13">2.7.2. 关闭或删除集群</a></li>
+<li><a class="reference internal" href="#id14">2.7.3. 集群扩容和缩容</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">3. 集群性能监控</a><ul>
+<li><a class="reference internal" href="#id16">3.1. 概述</a></li>
+<li><a class="reference internal" href="#id17">3.2. 性能数据概要</a><ul>
+<li><a class="reference internal" href="#id18">3.2.1. 节点物理资源监控数据</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19">4. 扩容和缩容</a><ul>
+<li><a class="reference internal" href="#id20">4.1. 概述</a></li>
+<li><a class="reference internal" href="#id21">4.2. 横向扩容缩容</a></li>
+<li><a class="reference internal" href="#id22">4.3. 横向扩容缩容教程</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id23">5. 已知问题</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../developer-guide/welcome.html" title="1. HashData 数据仓库 开发者指南"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="../getting-started-guide/hashdata_warehouse_guide.html" title="1. HashData 数据仓库 入门指南"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; 版权所有 2016, HashData Warehouse Team.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.3 创建。
+    </div>
+  </body>
+</html>

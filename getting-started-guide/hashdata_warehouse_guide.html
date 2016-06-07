@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. HashData 数据仓库 入门指南 &mdash; HashData Warehouse Document 1.0 文档</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="HashData Warehouse Document 1.0 文档" href="../index.html" />
+    <link rel="next" title="1. HashData 数据仓库 集群管理指南" href="../cluster-management-guide/cluster-management-guide.html" />
+    <link rel="prev" title="HashData Warehouse 帮助文档" href="../index.html" /> 
+    <script src="https://www.hashdata.cn/static/js/baidu.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../cluster-management-guide/cluster-management-guide.html" title="1. HashData 数据仓库 集群管理指南"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="HashData Warehouse 帮助文档"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="product-name">
+<span id="getting-started-guide"></span><h1>1. HashData 数据仓库 入门指南<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h1>
+<p>欢迎来到 HashData 数据仓库 指南。HashData 数据仓库 是一个高性能，完全托管的PB级数据仓库服务。一个 HashData 数据仓库 是由一组称之为节点的计算资源组成的集群。每个集群作为一个 HashData 数据仓库 引擎，包含一个或多个数据库。</p>
+<p>这个指南的目的是指导你如何创建一个 HashData 数据仓库 样例集群。你可以通过这个样例集群来测试 HashData 数据仓库 的功能。在这个教程中，你将执行如下步骤：</p>
+<ul class="simple">
+<li>步骤1：准备工作</li>
+<li>步骤2：启动 HashData 数据仓库 样例集群</li>
+<li>步骤3：授权连接样例集群</li>
+<li>步骤4：连接样例集群</li>
+<li>步骤5：将样例数据从对象存储加载到 HashData 数据仓库 中</li>
+<li>步骤6：寻找额外的资料和重设你的环境</li>
+</ul>
+<p>这个教程的目的不是为了配置生产环境的，所以不会深入地讨论操作中的各种选项。当你完成了这个教程的所有步骤后，你能通过“额外的资料”章节找到关于集群计划、部署和维护，以及如何操作数据仓库中数据更深入的信息。</p>
+</div>
+<div class="section" id="id1">
+<h1>2. 步骤1: 准备工作<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>在你创建第一个 HashData 数据仓库 集群前，确保在这个章节中完成如下准备工作：</p>
+<ul class="simple">
+<li>注册青云账号</li>
+<li>安装 SQL 客户端工具</li>
+<li>确认防火墙规则</li>
+</ul>
+<div class="section" id="id2">
+<h2>2.1. 注册青云账号<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>你首先需要注册一个青云账号，如果还没有的话。如果你已经拥有了一个青云账号，那么你可以使用这个账号进行接下来的操作，跳过这个步骤。</p>
+<ol class="arabic simple">
+<li>打开链接<a class="reference external" href="http://qingcloud.com">http://qingcloud.com</a>，点击注册。</li>
+<li>按照页面提示完成注册流程。</li>
+</ol>
+</div>
+<div class="section" id="sql">
+<h2>2.2. 安装 SQL 客户端工具<a class="headerlink" href="#sql" title="永久链接至标题">¶</a></h2>
+<p>你可以使用任何 PostgreSQL 兼容的客户端程序连接到 HashData 数据仓库，比如 psql 。此外，你还可以通过绝大部分使用标准数据库应用接口，如 JDBC，ODBC 的客户端程序连接到 HashData 数据仓库。最后，你还可以使用标准数据库应用接口开发自己的客户端程序来访问 HashData 数据仓库。由于 HashData 数据仓库 基于 Greenplum Database，而后者又是基于 PostgreSQL 而来，所以你可以直接使用 PostgreSQL 驱动访问 HashData 数据仓库。在这个教程中，我们将通过 psql 这个 PostgreSQL 的客户端程序演示如何连接到 HashData 数据仓库。</p>
+<div class="section" id="psql">
+<h3>2.2.1. 安装 psql<a class="headerlink" href="#psql" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>如果你正在使用 Linux 操作系统，你可以使用以下命令安装 psql 。</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Redhat</span><span class="o">/</span><span class="n">Centos</span><span class="p">:</span>
+<span class="c1"># yum install postgresql</span>
+
+<span class="n">Ubuntu</span><span class="p">:</span>
+<span class="c1"># apt-get install postgresql-client</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>或者访问 <a class="reference external" href="http://postgresql.org">PostgreSQL 官方网站</a>，根据你的操作系统下载安装包。</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>2.3. 确认网络配置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>HashData 数据仓库 使用5432作为服务的端口地址。
+当你希望从云的外部访问 HashData 数据仓库 服务时，
+你不仅需要拥有一个公网IP地址，
+还需要指定一个绑定在公网IP地址上的端口，
+并将此端口转发到 HashData 数据仓库 的服务端口5432上。
+我们在随后的章节中帮助你完成端口转发的工作，
+现在你只需要明确这个端口的地址即可。
+你可以随意指定这个端口，
+为了便于记忆，我们推荐你仍然使用5432作为公网端口地址。</p>
+<p>此外，你需要在青云防火墙中添加一个下行规则从而允许外来连接通过这个端口访问你的数据仓库集群。</p>
+<p>如果你的客户端程序运行在云的内部，那么你既不需要进行端口转发，也不需要配置任何防火墙规则。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h1>3. 步骤2: 启动 HashData 数据仓库 样例集群<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h1>
+<p>完成上面的前提步骤后，现在你能够开始启动一个 HashData 数据仓库 集群。</p>
+<div class="section" id="id5">
+<h2>3.1. 启动 HashData 数据仓库 集群<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">登陆青云控制台并打开数据仓库控制页面<a class="reference external" href="https://console.qingcloud.com/pek3a/#">数据仓库</a>。</p>
+</li>
+<li><p class="first">在主菜单中，你可以选择在哪个数据中心创建你的数据仓库集群。在这个教程中，我们选择了北京3区。</p>
+</li>
+<li><p class="first">在主菜单中，展开大数据平台，选择数据仓库，进入 HashData 数据仓库 控制台，点击创建。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/hdw_main.png"><img alt="../_images/hdw_main.png" src="../_images/hdw_main.png" style="width: 100%;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">创建依赖资源：你需要有一个已连接到 VPC 的私有网络。如果您没有创建好依赖资源，点击创建后，可以按照提示完成下面的步骤：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_01_dependency.png"><img alt="../_images/create_01_dependency.png" src="../_images/create_01_dependency.png" style="width: 100%;" /></a>
+<ul>
+<li><p class="first">创建私有网络：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_02_private_create.png"><img alt="../_images/create_02_private_create.png" src="../_images/create_02_private_create.png" style="width: 100%;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">创建 VPC 网络：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_04_vpc_create.png"><img alt="../_images/create_04_vpc_create.png" src="../_images/create_04_vpc_create.png" style="width: 100%;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">连接私有网络到 VPC 网络：</p>
+<blockquote>
+<div><p>选择 VPC 网络：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_06_choose_vpc.png"><img alt="../_images/create_06_choose_vpc.png" src="../_images/create_06_choose_vpc.png" style="width: 100%;" /></a>
+</div></blockquote>
+<p>选择 私有网络：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_07_choose_private.png"><img alt="../_images/create_07_choose_private.png" src="../_images/create_07_choose_private.png" style="width: 100%;" /></a>
+</div></blockquote>
+<p>配置加入 VPC 网络的私有网络：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_08_join_vpc_ip.png"><img alt="../_images/create_08_join_vpc_ip.png" src="../_images/create_08_join_vpc_ip.png" style="width: 100%;" /></a>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">创建好私有网络后，就可以创建 HashData 数据仓库 集群了：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_11_step1_node4.png"><img alt="../_images/create_11_step1_node4.png" src="../_images/create_11_step1_node4.png" style="width: 100%;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li>集群名字：输入 hdw-demo。</li>
+<li>节点数量选择：4。</li>
+<li>节点配置选择：体验版。</li>
+</ul>
+</li>
+<li><p class="first">点击下一步，选择集群所属的虚拟网络：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_12_step21.png"><img alt="../_images/create_12_step21.png" src="../_images/create_12_step21.png" style="width: 100%;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">点击进入最后一步，提供一些基础的配置参数：</p>
+<a class="reference internal image-reference" href="../_images/create_13_step31.png"><img alt="../_images/create_13_step31.png" src="../_images/create_13_step31.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li>数据库名字：输入 hdw_demo。</li>
+<li>用户名：输入 admin。一旦数据仓库集群可用，你将通过这个用户名和密码连接到新创建的集群。</li>
+<li>密码：输入用户的连接密码。</li>
+</ul>
+</li>
+<li><p class="first">点击创建后，新的集群将会在几分钟之内创建完毕。下图是系统创建时的状态：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_14_creating_main.png"><img alt="../_images/create_14_creating_main.png" src="../_images/create_14_creating_main.png" style="width: 100%;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">在数据仓库主控制面板中，选择新创建的集群并且查看集群状态信息。在你连接数据仓库之前，一定要确认集群的状态是可用的，并且数据库的健康状态是正常。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_16_creating_done1.png"><img alt="../_images/create_16_creating_done1.png" src="../_images/create_16_creating_done1.png" style="width: 100%;" /></a>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id6">
+<h1>4. 步骤3: 授权连接样例集群<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h1>
+<p>在前面的步骤中，你已经创建启动了你的 HashData 数据仓库 集群。在你连接到数据仓库集群之前，你需要对上一步骤中创建的路由器进行相应的配置。</p>
+<div class="section" id="id7">
+<h2>4.1. 防火墙配置<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>在路由器的详情页面，点击选用的防火墙进入其详情页面，添加一条打开 5432 端口的下行规则，如下所示：</p>
+<a class="reference internal image-reference" href="../_images/firewall.png"><img alt="../_images/firewall.png" src="../_images/firewall.png" style="width: 100%;" /></a>
+<p>这条下行规则允许你的SQL客户端工具能够访问路由器的 5432 端口。</p>
+</div>
+<div class="section" id="id8">
+<h2>4.2. 路由器端口转发规则<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>回到路由器的详情页面，点击端口转发标签，添加一条 5432 端口的转发规则，如下所示：</p>
+<a class="reference internal image-reference" href="../_images/vpc_port_forward.png"><img alt="../_images/vpc_port_forward.png" src="../_images/vpc_port_forward.png" style="width: 100%;" /></a>
+<p>这条转发规则确保在你访问路由器 5432 端口时，请求转发到 HashData 数据仓库 集群的主节点 5432 端口。</p>
+</div>
+<div class="section" id="ip">
+<h2>4.3. 配置公网IP<a class="headerlink" href="#ip" title="永久链接至标题">¶</a></h2>
+<p>如果你的 SQL 客户端不在青云的网络里，你还需要申请一个公网IP地址，并绑定到前面步骤中创建的路由器。</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h1>5. 步骤4: 连接样例集群<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h1>
+<p>现在你可以通过 SQL 客户端工具连接到你的数据仓库集群，并且跑一条简单的查询语句来测试连接。你能够使用几乎所有与 PostgreSQL 兼容的 SQL 客户端工具。在这个教程中，你将使用在准备工作中安装的 PostgreSQL 自带的 psql 客户端。</p>
+<div class="section" id="id10">
+<h2>5.1. 确定连接IP地址和端口<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>数据仓库集群的IP地址可由配置公网 IP 步骤中确定。在剩下的教程中，我们用 121.201.25.29 作为例子。在集群主控制台，选择 examplecluster 进入详情页面。从详情页面中，你能看到端口：5432。</p>
+</div>
+<div class="section" id="id11">
+<h2>5.2. 使用 psql 连接到集群<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>你可以通过下面命令连接到集群：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">d</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">h</span> <span class="mf">121.201</span><span class="o">.</span><span class="mf">25.29</span> <span class="o">-</span><span class="n">p</span> <span class="mi">5432</span> <span class="o">-</span><span class="n">U</span> <span class="n">admin</span>
+</pre></div>
+</div>
+<p>然后根据提示输入登陆密码。</p>
+</div>
+<div class="section" id="id12">
+<h2>5.3. 简单测试查询<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<p>登陆数据仓库后，你可以运行如下命令做一些简单的测试查询：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># CREATE TABLE foo (a INT, b INT);</span>
+<span class="n">NOTICE</span><span class="p">:</span>  <span class="n">Table</span> <span class="n">doesn</span><span class="s1">&#39;t have &#39;</span><span class="n">DISTRIBUTED</span> <span class="n">BY</span><span class="s1">&#39; clause -- Using column named &#39;</span><span class="n">a</span><span class="s1">&#39; as the Greenplum Database data distribution key for this table.</span>
+<span class="n">HINT</span><span class="p">:</span>  <span class="n">The</span> <span class="s1">&#39;DISTRIBUTED BY&#39;</span> <span class="n">clause</span> <span class="n">determines</span> <span class="n">the</span> <span class="n">distribution</span> <span class="n">of</span> <span class="n">data</span><span class="o">.</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">column</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">chosen</span> <span class="n">are</span> <span class="n">the</span> <span class="n">optimal</span> <span class="n">data</span> <span class="n">distribution</span> <span class="n">key</span> <span class="n">to</span> <span class="n">minimize</span> <span class="n">skew</span><span class="o">.</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span>
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># INSERT INTO foo (SELECT i, i + 1 FROM generate_series(1, 10000) AS i);</span>
+<span class="n">INSERT</span> <span class="mi">0</span> <span class="mi">10000</span>
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># SELECT COUNT(*) FROM foo;</span>
+ <span class="n">count</span>
+<span class="o">-------</span>
+ <span class="mi">10000</span>
+<span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
+
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># SELECT SUM(a) FROM foo;</span>
+  <span class="nb">sum</span>
+<span class="o">----------</span>
+ <span class="mi">50005000</span>
+<span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id13">
+<h1>6. 步骤5: 将样例数据从对象存储加载到 HashData 数据仓库 中<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h1>
+<p>现在你已经有了一个名为 postgres 的数据库，并且你已经成功地连接上它了。接下来你可以在数据库中创建一些新表，然后加载数据到这些表中，并尝试一些查询语句。为了方便你的测试，我们准备了一些TPC-H的样例数据存储在青云对象存储中。</p>
+<ol class="arabic">
+<li><p class="first">创建表</p>
+<p>拷贝并执行下面的建表语句在 postgres 数据库中创建相应的表对象。你可以通过 HashData 数据仓库 <a class="reference external" href="http://www.hashdata.cn/docs/developer-guide/welcome.html">开发者指南</a>查看更详细的建表语法。</p>
+<p>其中定义的外部表（READABLE EXTERNAL TABLE）用来访问青云对象存储上面的数据。我们提供了TPC-H 1GB、10GB、100GB的公共测试数据集，在此示例中我们使用1GB的TPCH数据集。</p>
+</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">NATION</span>  <span class="p">(</span>
+    <span class="n">N_NATIONKEY</span>  <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">N_NAME</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">N_REGIONKEY</span>  <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">N_COMMENT</span>    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">152</span><span class="p">));</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">REGION</span>  <span class="p">(</span>
+    <span class="n">R_REGIONKEY</span>  <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">R_NAME</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">R_COMMENT</span>    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">152</span><span class="p">));</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">PART</span>  <span class="p">(</span>
+    <span class="n">P_PARTKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">P_NAME</span>        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">P_MFGR</span>        <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">P_BRAND</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">P_TYPE</span>        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">P_SIZE</span>        <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">P_CONTAINER</span>   <span class="n">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">P_RETAILPRICE</span> <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">P_COMMENT</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">SUPPLIER</span> <span class="p">(</span>
+    <span class="n">S_SUPPKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">S_NAME</span>        <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">S_ADDRESS</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">S_NATIONKEY</span>   <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">S_PHONE</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">S_ACCTBAL</span>     <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">S_COMMENT</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">PARTSUPP</span> <span class="p">(</span>
+    <span class="n">PS_PARTKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">PS_SUPPKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">PS_AVAILQTY</span>    <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">PS_SUPPLYCOST</span>  <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">PS_COMMENT</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">199</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">CUSTOMER</span> <span class="p">(</span>
+    <span class="n">C_CUSTKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">C_NAME</span>        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">C_ADDRESS</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">C_NATIONKEY</span>   <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">C_PHONE</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">C_ACCTBAL</span>     <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>   <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">C_MKTSEGMENT</span>  <span class="n">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">C_COMMENT</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">117</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">ORDERS</span> <span class="p">(</span>
+    <span class="n">O_ORDERKEY</span>       <span class="n">INT8</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">O_CUSTKEY</span>        <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">O_ORDERSTATUS</span>    <span class="n">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">O_TOTALPRICE</span>     <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">O_ORDERDATE</span>      <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">O_ORDERPRIORITY</span>  <span class="n">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">O_CLERK</span>          <span class="n">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">O_SHIPPRIORITY</span>   <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">O_COMMENT</span>        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">79</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">LINEITEM</span> <span class="p">(</span>
+    <span class="n">L_ORDERKEY</span>    <span class="n">INT8</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_PARTKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_SUPPKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_LINENUMBER</span>  <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_QUANTITY</span>    <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_EXTENDEDPRICE</span>  <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_DISCOUNT</span>    <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_TAX</span>         <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_RETURNFLAG</span>  <span class="n">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_LINESTATUS</span>  <span class="n">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_SHIPDATE</span>    <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_COMMITDATE</span>  <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_RECEIPTDATE</span> <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_SHIPINSTRUCT</span> <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_SHIPMODE</span>     <span class="n">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">L_COMMENT</span>      <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_NATION</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">NATION</span><span class="p">)</span>
+<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/nation/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_REGION</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">REGION</span><span class="p">)</span>
+<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/region/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_PART</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">PART</span><span class="p">)</span>
+<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/part/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_SUPPLIER</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">SUPPLIER</span><span class="p">)</span>
+<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/supplier/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_PARTSUPP</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">PARTSUPP</span><span class="p">)</span>
+<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/partsupp/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_CUSTOMER</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">CUSTOMER</span><span class="p">)</span>
+<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/customer/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_ORDERS</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">ORDERS</span><span class="p">)</span>
+<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/orders/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_LINEITEM</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">LINEITEM</span><span class="p">)</span>
+<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/lineitem/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>执行如下命令将保存在对象存储上面的TPC-H数据拷贝插入到数据仓库表中。</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">NATION</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_NATION</span><span class="p">;</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">REGION</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_REGION</span><span class="p">;</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">PART</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_PART</span><span class="p">;</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">SUPPLIER</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_SUPPLIER</span><span class="p">;</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">PARTSUPP</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_PARTSUPP</span><span class="p">;</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">CUSTOMER</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_CUSTOMER</span><span class="p">;</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">ORDERS</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_ORDERS</span><span class="p">;</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">LINEITEM</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_LINEITEM</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>现在可以开始运行样例查询了。</li>
+</ol>
+<p>这里所采用的数据集和查询是商业智能计算测试 TPC-H。TPC-H 是美国交易处理效益委员会组织制定的用来模拟决策支持类应用的一个测试集。TPC-H 实现了一个数据仓库，共包含8个基本表，其数据量可以设定从1G到3T不等。在这个样例中，我们选择了1G的数据集。TPC-H 基准测试包括 22 个查询，其主要评价指标是各个查询的响应时间，即从提交查询到结果返回所需时间。这里只提供了前三条查询语句。关于 TPC-H 完整 22 条查询语句以及详细介绍可参考<a class="reference external" href="http://www.tpc.org/tpch/">TPC-H 主页</a>。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">This</span> <span class="n">query</span> <span class="n">reports</span> <span class="n">the</span> <span class="n">amount</span> <span class="n">of</span> <span class="n">business</span> <span class="n">that</span> <span class="n">was</span> <span class="n">billed</span><span class="p">,</span> <span class="n">shipped</span><span class="p">,</span> <span class="ow">and</span> <span class="n">returned</span><span class="o">.</span>
+
+<span class="n">select</span>
+        <span class="n">l_returnflag</span><span class="p">,</span>
+        <span class="n">l_linestatus</span><span class="p">,</span>
+        <span class="nb">sum</span><span class="p">(</span><span class="n">l_quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_qty</span><span class="p">,</span>
+        <span class="nb">sum</span><span class="p">(</span><span class="n">l_extendedprice</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_base_price</span><span class="p">,</span>
+        <span class="nb">sum</span><span class="p">(</span><span class="n">l_extendedprice</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">l_discount</span><span class="p">))</span> <span class="k">as</span> <span class="n">sum_disc_price</span><span class="p">,</span>
+        <span class="nb">sum</span><span class="p">(</span><span class="n">l_extendedprice</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">l_discount</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">l_tax</span><span class="p">))</span> <span class="k">as</span> <span class="n">sum_charge</span><span class="p">,</span>
+        <span class="n">avg</span><span class="p">(</span><span class="n">l_quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_qty</span><span class="p">,</span>
+        <span class="n">avg</span><span class="p">(</span><span class="n">l_extendedprice</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_price</span><span class="p">,</span>
+        <span class="n">avg</span><span class="p">(</span><span class="n">l_discount</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_disc</span><span class="p">,</span>
+        <span class="n">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">count_order</span>
+<span class="kn">from</span>
+        <span class="nn">lineitem</span>
+
+<span class="n">where</span>
+        <span class="n">l_shipdate</span> <span class="o">&lt;=</span>  <span class="s1">&#39;1998-12-01&#39;</span>
+<span class="n">group</span> <span class="n">by</span>
+        <span class="n">l_returnflag</span><span class="p">,</span>
+        <span class="n">l_linestatus</span>
+<span class="n">order</span> <span class="n">by</span>
+        <span class="n">l_returnflag</span><span class="p">,</span>
+        <span class="n">l_linestatus</span><span class="p">;</span>
+
+<span class="o">--</span> <span class="n">This</span> <span class="n">query</span> <span class="n">finds</span> <span class="n">which</span> <span class="n">supplier</span> <span class="n">should</span> <span class="n">be</span> <span class="n">selected</span> <span class="n">to</span> <span class="n">place</span> <span class="n">an</span> <span class="n">order</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">given</span> <span class="n">region</span><span class="o">.</span>
+
+<span class="n">select</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">s_acctbal</span><span class="p">,</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">s_name</span><span class="p">,</span>
+        <span class="n">n</span><span class="o">.</span><span class="n">n_name</span><span class="p">,</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">p_partkey</span><span class="p">,</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">p_mfgr</span><span class="p">,</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">s_address</span><span class="p">,</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">s_phone</span><span class="p">,</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">s_comment</span>
+<span class="kn">from</span>
+        <span class="nn">supplier</span> <span class="n">s</span><span class="p">,</span>
+        <span class="n">partsupp</span> <span class="n">ps</span><span class="p">,</span>
+        <span class="n">nation</span> <span class="n">n</span><span class="p">,</span>
+        <span class="n">region</span> <span class="n">r</span><span class="p">,</span>
+        <span class="n">part</span> <span class="n">p</span><span class="p">,</span>
+        <span class="p">(</span><span class="n">select</span> <span class="n">p_partkey</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">ps_supplycost</span><span class="p">)</span> <span class="k">as</span> <span class="n">min_ps_cost</span>
+                <span class="kn">from</span>
+                        <span class="nn">part</span><span class="p">,</span>
+                        <span class="n">partsupp</span> <span class="p">,</span>
+                        <span class="n">supplier</span><span class="p">,</span>
+                        <span class="n">nation</span><span class="p">,</span>
+                        <span class="n">region</span>
+                <span class="n">where</span>
+                        <span class="n">p_partkey</span><span class="o">=</span><span class="n">ps_partkey</span>
+                        <span class="ow">and</span> <span class="n">s_suppkey</span> <span class="o">=</span> <span class="n">ps_suppkey</span>
+                        <span class="ow">and</span> <span class="n">s_nationkey</span> <span class="o">=</span> <span class="n">n_nationkey</span>
+                        <span class="ow">and</span> <span class="n">n_regionkey</span> <span class="o">=</span> <span class="n">r_regionkey</span>
+                        <span class="ow">and</span> <span class="n">r_name</span> <span class="o">=</span> <span class="s1">&#39;EUROPE&#39;</span>
+                <span class="n">group</span> <span class="n">by</span> <span class="n">p_partkey</span> <span class="p">)</span> <span class="n">g</span>
+<span class="n">where</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">p_partkey</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">ps_partkey</span>
+        <span class="ow">and</span> <span class="n">g</span><span class="o">.</span><span class="n">p_partkey</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">p_partkey</span>
+        <span class="ow">and</span> <span class="n">g</span><span class="o">.</span> <span class="n">min_ps_cost</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">ps_supplycost</span>
+        <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">s_suppkey</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">ps_suppkey</span>
+        <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">p_size</span> <span class="o">=</span> <span class="mi">45</span>
+        <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">p_type</span> <span class="n">like</span> <span class="s1">&#39;%NICKEL&#39;</span>
+        <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">s_nationkey</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">n_nationkey</span>
+        <span class="ow">and</span> <span class="n">n</span><span class="o">.</span><span class="n">n_regionkey</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">r_regionkey</span>
+        <span class="ow">and</span> <span class="n">r</span><span class="o">.</span><span class="n">r_name</span> <span class="o">=</span> <span class="s1">&#39;EUROPE&#39;</span>
+<span class="n">order</span> <span class="n">by</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">s_acctbal</span> <span class="n">desc</span><span class="p">,</span>
+        <span class="n">n</span><span class="o">.</span><span class="n">n_name</span><span class="p">,</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">s_name</span><span class="p">,</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">p_partkey</span>
+<span class="n">LIMIT</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="o">--</span> <span class="n">This</span> <span class="n">query</span> <span class="n">retrieves</span> <span class="n">the</span> <span class="mi">10</span> <span class="n">unshipped</span> <span class="n">orders</span> <span class="k">with</span> <span class="n">the</span> <span class="n">highest</span> <span class="n">value</span><span class="o">.</span>
+
+<span class="n">select</span>
+        <span class="n">l_orderkey</span><span class="p">,</span>
+        <span class="nb">sum</span><span class="p">(</span><span class="n">l_extendedprice</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">l_discount</span><span class="p">))</span> <span class="k">as</span> <span class="n">revenue</span><span class="p">,</span>
+        <span class="n">o_orderdate</span><span class="p">,</span>
+        <span class="n">o_shippriority</span>
+<span class="kn">from</span>
+        <span class="nn">customer</span><span class="p">,</span>
+        <span class="n">orders</span><span class="p">,</span>
+        <span class="n">lineitem</span>
+<span class="n">where</span>
+        <span class="n">c_mktsegment</span> <span class="o">=</span> <span class="s1">&#39;MACHINERY&#39;</span>
+        <span class="ow">and</span> <span class="n">c_custkey</span> <span class="o">=</span> <span class="n">o_custkey</span>
+        <span class="ow">and</span> <span class="n">l_orderkey</span> <span class="o">=</span> <span class="n">o_orderkey</span>
+        <span class="ow">and</span> <span class="n">o_orderdate</span> <span class="o">&lt;</span> <span class="s1">&#39;1995-03-15&#39;</span>
+        <span class="ow">and</span> <span class="n">l_shipdate</span> <span class="o">&gt;</span>  <span class="s1">&#39;1995-03-15&#39;</span>
+<span class="n">group</span> <span class="n">by</span>
+        <span class="n">l_orderkey</span><span class="p">,</span>
+        <span class="n">o_orderdate</span><span class="p">,</span>
+        <span class="n">o_shippriority</span>
+<span class="n">order</span> <span class="n">by</span>
+        <span class="n">revenue</span> <span class="n">desc</span><span class="p">,</span>
+        <span class="n">o_orderdate</span>
+<span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h1>7. 步骤6: 寻找额外的资料和重设你的环境<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h1>
+<p>完成这个入门教程后，你可以寻找更多额外的资料来学习和理解这个教程中介绍的概念，或者你可以将你的环境重置回原来的状态。如果你想尝试其他学习资料中提到的任务，你可以让集群一直运行着。不过，需要注意的是，只要集群还运行着，你将一直被收取费用。</p>
+<div class="section" id="id15">
+<h2>7.1. 额外学习资料<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<p>我们建议您可以通过如下资料来学习和理解这个教程中介绍的概念：</p>
+<ul class="simple">
+<li>HashData 数据仓库 <a class="reference external" href="http://www.hashdata.cn/docs/cluster-management-guide/cluster-management-guide.html">集群管理指南</a></li>
+<li>HashData 数据仓库 <a class="reference external" href="http://www.hashdata.cn/docs/developer-guide/welcome.html">数据库开发者指南</a></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h2>7.2. 重置你的环境<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+<p>当你完成了这个入门指南，你可以通过如下步骤重置你的环境：</p>
+<ul class="simple">
+<li>删除步骤3中添加的防火墙规则和路由器转发规则。</li>
+<li>删除样例集群。</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1. HashData 数据仓库 入门指南</a></li>
+<li><a class="reference internal" href="#id1">2. 步骤1: 准备工作</a><ul>
+<li><a class="reference internal" href="#id2">2.1. 注册青云账号</a></li>
+<li><a class="reference internal" href="#sql">2.2. 安装 SQL 客户端工具</a><ul>
+<li><a class="reference internal" href="#psql">2.2.1. 安装 psql</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">2.3. 确认网络配置</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">3. 步骤2: 启动 HashData 数据仓库 样例集群</a><ul>
+<li><a class="reference internal" href="#id5">3.1. 启动 HashData 数据仓库 集群</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">4. 步骤3: 授权连接样例集群</a><ul>
+<li><a class="reference internal" href="#id7">4.1. 防火墙配置</a></li>
+<li><a class="reference internal" href="#id8">4.2. 路由器端口转发规则</a></li>
+<li><a class="reference internal" href="#ip">4.3. 配置公网IP</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">5. 步骤4: 连接样例集群</a><ul>
+<li><a class="reference internal" href="#id10">5.1. 确定连接IP地址和端口</a></li>
+<li><a class="reference internal" href="#id11">5.2. 使用 psql 连接到集群</a></li>
+<li><a class="reference internal" href="#id12">5.3. 简单测试查询</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id13">6. 步骤5: 将样例数据从对象存储加载到 HashData 数据仓库 中</a></li>
+<li><a class="reference internal" href="#id14">7. 步骤6: 寻找额外的资料和重设你的环境</a><ul>
+<li><a class="reference internal" href="#id15">7.1. 额外学习资料</a></li>
+<li><a class="reference internal" href="#id16">7.2. 重置你的环境</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../cluster-management-guide/cluster-management-guide.html" title="1. HashData 数据仓库 集群管理指南"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="HashData Warehouse 帮助文档"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; 版权所有 2016, HashData Warehouse Team.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.3 创建。
+    </div>
+  </body>
+</html>
