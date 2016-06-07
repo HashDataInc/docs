@@ -16,7 +16,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     #go into directory and copy data we're interested in to that directory
     cd built_website
     rm -rf *
-    cp -r ../site/* .
+    cp -r ../_build/html/* .
     #add, commit and push files
     git add -f --all .
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
