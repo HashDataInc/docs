@@ -54,23 +54,20 @@
             
   <div class="section" id="id1">
 <h1>4. 定义数据库对象<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>本节介绍 HashData 数据仓库 支持的数据定义语言 (DDL)
-以及如何创建和管理数据库对象。</p>
-<p>在 HashData 数据仓库 中创建对象包括前期选择数据分布、 存储选项、
-数据加载和其他会影响您的数据库系统运行性能的功能。了解可用的选项和数据库内部如何支持这些选项将帮助您做出正确的决定。
-大部分 HashData 数据仓库 高级特性是通过使用经过扩展的 SQL CREATE DDL 语句完成的。</p>
+<p>在这个章节中，我们将介绍 HashData 数据仓库 支持的数据定义语言 (DDL) 以及如何创建和管理数据库对象。</p>
+<p>创建 HashData 数据仓库 对象的时候，我们需要考虑很多因素，包括数据分布、 存储选项、
+数据加载以及其它影响数据库系统运行性能的功能。了解可用的选项和数据库内部如何支持这些选项将帮助您做出正确的选择。</p>
+<p>通过扩展标准SQL的 CREATE DDL 语句，HashData 数据仓库 实现了很多高级的功能。</p>
 <div class="section" id="id2">
 <h2>4.1. 创建和管理数据库<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>HashData 数据仓库
-支持创建多个独立的数据库对数据进行隔离。这个特性与某些数据库并不相同，例如：Oracle数据库。虽然
-HashData 数据仓库
-支持多个数据库，但是客户端程序一次只能连接并使用一个数据库。</p>
+<p>与一些商业数据库（如Oracle数据库）不同，HashData 数据仓库 支持创建多个数据隔离的独立数据库，但是客户端程序每次只能连接并使用其中一个。</p>
 <div class="section" id="id3">
 <h3>4.1.1. 关于数据库模版<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<p>您创建的每一个数据库都是基于一个模版得到的。系统中的默认模版数据库叫做：template1。我们建议您不要在 template1 中创建任何数据对象，否则您后续创建的数据库都会包含这些数据。</p>
+<p>您创建的每一个数据库都是基于一个模版得到的。系统中的默认模版数据库叫做：template1。我们建议您不要在 template1 中创建任何数据对象，
+否则您后续创建的数据库都会包含这些数据。</p>
 <p>HashData 数据仓库 内部还使用另外两个内置模版：template0 和
 postgres。因此请勿删除或修改 template0 和 postgres 数据库。您也可以使用
-template0 作为模版，创建一个只含有标准预定义对象的空白数据库。</p>
+template0 作为模版，创建一个只含有标准预定义对象的空白数据库，特别是在您已经修改了默认模版数据库 template1 的情况下。</p>
 </div>
 <div class="section" id="id4">
 <h3>4.1.2. 创建数据库<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
@@ -91,7 +88,7 @@ template0 作为模版，创建一个只含有标准预定义对象的空白数�
 </div>
 <div class="section" id="id6">
 <h3>4.1.4. 列出所有数据库<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
-<p>如果您使用 psql 客户端程序，您可以使用
+<p>如果您使用 psql 客户端程序，您可以使用 \l
 命令列出系统中的模版数据库和数据库。如果您使用其他客户端程序并且拥有超级用户权限，您可以通过查询
 pg_database 系统表列出所有数据库。例如：</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="k">SELECT</span> <span class="n">datname</span> <span class="k">from</span> <span class="n">pg_database</span><span class="p">;</span>
@@ -215,8 +212,8 @@ gp_toolkit 来查看日志文件和其它系统参数。</li>
 <li>用于限制表或列存储数据的表约束或列约束。请参考 <a class="reference internal" href="#id17">设置表约束和列约束</a>。</li>
 <li>数据分布策略，系统根据策略将数据存储到不同节点。请参考
 <a class="reference internal" href="#id22">选择数据分布策略</a>。</li>
-<li>磁盘存储格式。请参考 表存储模型。</li>
-<li>大表的数据分区策略。请参考 <a class="reference internal" href="#id24">对大表进行分区处理</a>。</li>
+<li>磁盘存储格式。请参考 <a class="reference internal" href="#id24">表存储模型</a>。</li>
+<li>大表的数据分区策略。请参考 <a class="reference internal" href="#id30">对大表进行分区处理</a>。</li>
 </ul>
 </div>
 <div class="section" id="id16">
@@ -266,9 +263,7 @@ BIGINT 类型存储 INT 或者 SMALLINT 数值
 <div class="section" id="id19">
 <h3>5.3.3. 唯一约束<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
 <p>唯一约束确保存储在一张表中的一列或多列数据数据一定唯一。要使用唯一约束，表必须使用Hash分布策略，并且约束列必须和表的分布键对应的列一致（或者是超集）。例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">source</span>
-
-<span class="o">=&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">products</span>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">products</span>
            <span class="p">(</span> <span class="n">product_no</span> <span class="nb">integer</span> <span class="k">UNIQUE</span><span class="p">,</span>
              <span class="n">name</span> <span class="nb">text</span><span class="p">,</span>
              <span class="n">price</span> <span class="nb">numeric</span><span class="p">)</span>
@@ -328,9 +323,220 @@ RANDOMLY(随机分布)来为表指定数据分布规则。</p>
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="id24">
-<h1>6. 对大表进行分区处理<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h1>
+<h2>5.5. 表存储模型<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h2>
+<p>HashData 数据仓库 支持多种表存储模型，以及这些模型的混合。当您创建一张表的时候，您可以选择如何存储数据。这个小节中，我们将
+解释各种表存储模型，以及如何根据您的工作负载选择性能最优的存储模型。</p>
+<ul class="simple">
+<li>堆存储（Heap Storage）</li>
+<li>追加优化存储（Append-Optimized Storage）</li>
+<li>如何选择行存储和列存储</li>
+<li>数据压缩（只适用于追加优化存储）</li>
+<li>查看追加优化表的数据压缩和数据分布</li>
+<li>更改一张表</li>
+<li>删除一张表</li>
+</ul>
+<p>提醒：为了简化创建表操作，您可以通过设置配置参数 gp_default_storage_options 来指定默认的表存储模型。</p>
+<div class="section" id="heap-storage">
+<h3>5.5.1. 堆存储（Heap Storage）<a class="headerlink" href="#heap-storage" title="永久链接至标题">¶</a></h3>
+<p>默认的情况下，HashData 数据仓库 会选用和PostgreSQL一样的堆存储模型。堆存储的表非常适合这种场景下的OLTP（在线事务处理）工作负载：数据初次加载
+后频繁更新。为了确保可靠的数据库事务处理，更新和删除操作需要保存行级别的版本信息。堆存储表最适合小的维度表，尤其是在数据初次加载后频繁
+更新的场景下。</p>
+<p>由于堆存储是默认的存储模型，所以您可以通过如下语句创建堆存储表：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">foo</span> <span class="p">(</span><span class="n">a</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span> <span class="nb">int</span><span class="p">)</span> <span class="n">DISTRIBUTED</span> <span class="n">BY</span> <span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="append-optimized-storage">
+<h3>5.5.2. 追加优化存储（Append-Optimized Storage）<a class="headerlink" href="#append-optimized-storage" title="永久链接至标题">¶</a></h3>
+<p>追加优化存储模型适合数据仓库中非规范化的事实表，后者通常是系统中最大的表。事实表通常是批量加载进入数据仓库，并且用于只读的查询中。相对于
+堆存储模型，追加优化存储省去了行级别版本信息存储开销（每行大约20个字节），并使得存储页结构更加地精简和易于优化。追加优化存储是为
+数据批量加载而优化的，所以我们并不推荐单行的插入操作。</p>
+<p>您可以通过使用 CREATE TABLE 命令的 WITH 子句来指定表存储模型。下面的例子是创建一个没有数据压缩的追加优化存储表：</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">bar</span> <span class="p">(</span><span class="n">a</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span> <span class="nb">text</span><span class="p">)</span>
+          <span class="k">WITH</span> <span class="p">(</span><span class="n">appendonly</span><span class="o">=</span><span class="k">true</span><span class="p">)</span>
+          <span class="n">DISTRIBUTED</span> <span class="n">RANDOMLY</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>在一个可串行化的事务里面，对追加优化表进行更新和删除操作是不允许的，并且会导致事务中断。另外，追加优化表不支持 CLUSTER，
+DECLARE...FOR UPDATE，和触发器。</p>
+</div>
+<div class="section" id="id25">
+<h3>5.5.3. 行存储还是列存储<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h3>
+<p>HashData 数据仓库 提供了行存储、列存储以及两者组合的存储选项。在这个小节里，我们将讨论如何根据您的数据和工作负载决定存选项，
+从而取得最优的查询性能。基本原则如下：</p>
+<ul class="simple">
+<li>行存储：适合包含很多迭代事务查询以及需要访问记录中大部分列查询的在线事务处理（OLTP）工作负载。对于这种场景，由于行存储将一条记录所有列的数据放在一起了，读取访问会非常高效。</li>
+<li>列存储：适合只需要对表中少数列进行聚合操作的数据仓库工作负载，或者定期对表中某一列进行更新（保持其它列不变）的工作负载。</li>
+</ul>
+<p>对于大部分通用的或者混合的工作负载，行存储在灵活性和性能方面做了最好的平衡。然而，在某些应用场景中，列存储模型提供了更加高效的I/O和存储使用。
+在选择行存储还是列存储的时候，可以考虑以下几个需求：</p>
+<ul class="simple">
+<li>表数据的更新。如果需要频繁地加载和更新表数据的话，那么您应该选择行导向的堆存储。只有追加优化表支持列存储。</li>
+<li>频繁的插入操作。如果插入操作很多的话，行导向的存储模型会比较合适。由于每列数据需要写到磁盘上的不同文件，列存储表对写操作不友好。</li>
+<li>查询中需要访问的列数。如果查询中的 SELECT 列表或者 WHERE 子句包含了表的大多数列，那么您应该考虑使用行存储。列存储表非常适合对表中某一列进行聚合计算并且 WHERE or HAVING 谓词也是针对聚合列。例如：</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">SELECT</span> <span class="n">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">SELECT</span> <span class="n">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="o">...</span> <span class="n">WHERE</span> <span class="n">salary</span> <span class="o">&gt;</span> <span class="mi">10000</span>
+</pre></div>
+</div>
+<p>另外一种适合列存储的查询是，WHERE 谓词只正针对某一列并且查询结果返回少数几列表数据。例如：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">SELECT</span> <span class="n">salary</span><span class="p">,</span> <span class="n">dept</span><span class="p">,</span> <span class="o">...</span> <span class="n">WHERE</span> <span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CA&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>表中列的数量。如果表中的每行数据量比较少，或者表中的大部分列在查询中都会被访问到，这种场景中，相对于列存储，行存储会更高效。对于那些包含很多列的表，如果查询只访问到其中少数一部分列，那么列存储能够提供高好的性能。</li>
+<li>压缩。由于同一列的数据类型是相同的，所以相对于行式存储，列示存储存在更多数据压缩空间。例如，很多种压缩算法都利用了相邻数据的相似度进行压缩。另一方面，越高的压缩比意味着数据的随机访问越困难，因为数据首先得解压了才能被读取。</li>
+</ul>
+<p><strong>创建一个列存储表</strong></p>
+<p>您可以通过 CREATE TABLE 语句中的 WITH 子句来指定表的存储选项。 默认的情况下，创建的新表都是行式的堆存储表。只有追加优化的表才支持列示存储。下面
+的例子中，我们创建一个列示存储表：</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">bar</span> <span class="p">(</span><span class="n">a</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span> <span class="nb">text</span><span class="p">)</span>
+          <span class="k">WITH</span> <span class="p">(</span><span class="n">appendonly</span><span class="o">=</span><span class="k">true</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="k">column</span><span class="p">)</span>
+          <span class="n">DISTRIBUTED</span> <span class="k">BY</span> <span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id26">
+<h3>5.5.4. 数据压缩（只适用于追加优化存储）<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h3>
+<p>在 HashData 数据仓库 中，对于追加优化表，存在两种不同级别的数据压缩：</p>
+<ul class="simple">
+<li>表级别的压缩作用于整张表。</li>
+<li>列级别的压缩作用于表中的某一列。您可以针对表中的不同列使用不同的压缩算法。</li>
+</ul>
+<p>下面的表格总结了现在支持的压缩算法</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="34%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">表导向</th>
+<th class="head">支持的压缩类型</th>
+<th class="head">支持的压缩算法</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>行式存储</td>
+<td>表压缩</td>
+<td>ZLIB</td>
+</tr>
+<tr class="row-odd"><td>列式存储</td>
+<td>列压缩和表压缩</td>
+<td>ZLIB</td>
+</tr>
+</tbody>
+</table>
+<p>在选择压缩算法和压缩级别的时候，您需要考虑下列因素：</p>
+<ul class="simple">
+<li>CPU的使用。您必须确保您的计算节点有足够的CPU计算能力去压缩和解压数据。</li>
+<li>压缩比和磁盘大小。尽可能减少磁盘占用空间是一方面，另一方面我们也需要考虑压缩和扫描数据时所消耗的时间和CPU计算能力。在这者之间找到一个合适的平衡点非常关键。</li>
+<li>压缩速度。zlib提供了1-9的压缩级别。一般来说，级别越高，压缩比越高，但是压缩速度越慢。</li>
+<li>解压和扫描的速度。压缩数据的查询性能由很多因素决定，包括硬件、查询参数配置和其它因素。为了做出最合适的选择，我们建议您在实际环境中进行性能测试比较。</li>
+</ul>
+<p><strong>创建一张压缩表</strong></p>
+<p>您可以通过 CREATE TABLE 语句中的 WITH 子句来指定表的存储选项。只有追加优化的表支持压缩。下面的例子演示了如何创建一张使用zlib算法、压缩级别为5的追加优化表：</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">bar</span> <span class="p">(</span><span class="n">a</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span> <span class="nb">text</span><span class="p">)</span>
+          <span class="k">WITH</span> <span class="p">(</span><span class="n">appendonly</span><span class="o">=</span><span class="k">true</span><span class="p">,</span> <span class="n">compresstype</span><span class="o">=</span><span class="n">zlib</span><span class="p">,</span> <span class="n">compresslevel</span><span class="o">=</span><span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id27">
+<h3>5.5.5. 查看追加优化表的数据压缩和分布<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h3>
+<p>HashData 数据仓库 提供了查看追加优化表数据压缩和分布的内置函数。这些函数接受表的对象ID或者名字作为查询参数。您可以给表名加上限定的模式名字。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="24%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">函数</th>
+<th class="head">返回类型</th>
+<th class="head">描述</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>get_ao_distribution(name|oid)</td>
+<td>(dbid, tuplecount)集合</td>
+<td>返回每个Segment数据库的元组个数</td>
+</tr>
+<tr class="row-odd"><td>get_ao_compression_ratio(name|oid)</td>
+<td>float8</td>
+<td>返回压缩追加优化表的压缩比；或者-1</td>
+</tr>
+</tbody>
+</table>
+<p>数据压缩比是作为整张表的值返回的。例如，如果返回值是3.19，或者3.19:1，那么意味这压缩前的数据大小是压缩后数据大小的3倍多一点。</p>
+<p>表分布函数返回的是元组的集合，表明每个Segment数据库中表元组的数量。例如，在一个包含4个Segment数据库、数据库ID从0到3的系统中，函数返回如下类似的结果：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">SELECT</span> <span class="n">get_ao_distribution</span><span class="p">(</span><span class="s1">&#39;lineitem_comp&#39;</span><span class="p">);</span>
+ <span class="n">get_ao_distribution</span>
+<span class="o">---------------------</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7500721</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7501365</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7499978</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7497731</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">4</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id28">
+<h3>5.5.6. 更改一张表<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h3>
+<p>您可以通过使用 ALTER TABLE 语句来更改一张表的定义，包括列的定义、数据分布策略、存储模型和分区结构。例如，给表中的某一列增加非空约束：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">address</span> <span class="n">ALTER</span> <span class="n">COLUMN</span> <span class="n">street</span> <span class="n">SET</span> <span class="n">NOT</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>改变表的数据分布策略</strong></p>
+<p>对于一张分区表，表数据分布策略的改变会影响到其所有的子分区表。这个操作将保留包括表的属主在内的其它表属性。例如，下面的命令将表 sales 分布在所有
+Segment数据库中的数据以 customer_id 列为分布键重新分布：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">sales</span> <span class="n">SET</span> <span class="n">DISTRIBUTED</span> <span class="n">BY</span> <span class="p">(</span><span class="n">customer_id</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>当您修改了一个张表的 hash 分布策略后，这张表的数据会自动地重分布。但是，将表的分布策略改成随机分布不会导致数据的重分布。例如，下面这个例子不会有
+立即的效果：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">sales</span> <span class="n">SET</span> <span class="n">DISTRIBUTED</span> <span class="n">RANDOMLY</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>重分布表数据</strong></p>
+<p>我们可以在 ALTER TABLE 的 WITH 子句中指定 REORGANIZE=TRUE 来对表数据进行重分布。当出现数据倾斜问题或者有新的计算资源加入到系统中，重组织
+数据是一个可性的解决方案。例如，下面这个例子中，表数据将基于现有的数据分布策略（包括随机分布）对数据进行重分布：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">sales</span> <span class="n">SET</span> <span class="n">WITH</span> <span class="p">(</span><span class="n">REORGANIZE</span><span class="o">=</span><span class="n">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>修改表的存储模型</strong></p>
+<p>表的存储模型、压缩和存储导向（行式存储还是列式存储）只能在创建的时候指定。如果需要修改表的存储模型，您需要使用正确的存储选项创建一张新的表，将
+数据从旧表中加载到新表中，然后删除旧表，将新表重命名为旧表的名字。您当然也需要重新设置所有的表权限。例如：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">sales2</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">sales</span><span class="p">)</span>
+<span class="n">WITH</span> <span class="p">(</span><span class="n">appendonly</span><span class="o">=</span><span class="n">true</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
+      <span class="n">compresstype</span><span class="o">=</span><span class="n">zlib</span><span class="p">,</span> <span class="n">compresslevel</span><span class="o">=</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">sales2</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">sales</span><span class="p">;</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">sales</span><span class="p">;</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">sales2</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">sales</span><span class="p">;</span>
+<span class="n">GRANT</span> <span class="n">ALL</span> <span class="n">PRIVILEGES</span> <span class="n">ON</span> <span class="n">sales</span> <span class="n">TO</span> <span class="n">admin</span><span class="p">;</span>
+<span class="n">GRANT</span> <span class="n">SELECT</span> <span class="n">ON</span> <span class="n">sales</span> <span class="n">TO</span> <span class="n">guest</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id29">
+<h3>5.5.7. 删除一张表<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+<p>您可以通过 DROP TABLE 语句将一张表从数据库中删除。例如：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">mytable</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>如果只是清空表数据而不删除表定义的话，您可以使用 DELETE 或者 TRUNCATE 语句。例如：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DELETE</span> <span class="n">FROM</span> <span class="n">mytable</span><span class="p">;</span>
+<span class="n">TRUNCATE</span> <span class="n">mytable</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>DROP TABLE 语句同时会删除目标表上的所有索引、规则、触发器和约束。通过指定 CASCADE，您还可以一并删除依赖于这张表的视图。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id30">
+<h1>6. 对大表进行分区处理<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h1>
 <p>表分区通过将数据逻辑上划分到多个较小，更容易管理的小表，来支持超大表，例如：事实表
 （fact table）。HashData 数据仓库 查询优化器通过利用分表信息，只检索满足查询要求的
 数据，从而避免检索大表的所有内容，最终提高查询性能。</p>
@@ -343,8 +549,8 @@ RANDOMLY(随机分布)来为表指定数据分布规则。</p>
 <li>查看分区表设计</li>
 <li>分区表的维护</li>
 </ul>
-<div class="section" id="id25">
-<h2>6.1. 表分区概述<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id31">
+<h2>6.1. 表分区概述<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h2>
 <p>表分区不改变计算节点之间数据的分布规则。表分布存储是 HashData 数据仓库 是在物理
 上将分区表和普通表数据存储在多个 计算节点 上，从而允许并行查询处理。
 表分区是 HashData 数据仓库 在逻辑上将大表数据分开存放，来提升查询性能并且简化数据
@@ -376,8 +582,8 @@ DELETE）时，不支持指定任何子分区。要执行前面的命令，必�
 CREATE TABLE 命令时指定的表）。</p>
 </div>
 </div>
-<div class="section" id="id26">
-<h2>6.2. 选择分区表方案<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id32">
+<h2>6.2. 选择分区表方案<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h2>
 <p>并不是所有表都是适合使用表分区。如果下面问题的答案大部分或者全部是肯定的，
 那么表分区将会是一种重要的提升查询性能的数据库设计方案。如果大部分问题回答是否定的，那么
 采用分区表策略就不大合适了。最后，还需要对设计方案进行测试，以确保查询性能与期望
@@ -413,8 +619,8 @@ CREATE TABLE 命令时指定的表）。</p>
 <p>在使用多层表分区时，您可以考虑使用单层表分区和位图索引（Bitmap索引）。由于索引将会
 降低数据加载速度，因此推荐您使用性能测试来针对您的数据和模式进行评测，选取最优策略。</p>
 </div>
-<div class="section" id="id27">
-<h2>6.3. 创建分区表<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id33">
+<h2>6.3. 创建分区表<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h2>
 <p>在使用 CREATE TABLE 命令创建表时，您可以对表进行分区操作。本主题向您展示用于创建不
 同类型分区表的 SQL 语法。</p>
 <p>要将一只表进行分区：</p>
@@ -431,8 +637,8 @@ CREATE TABLE 命令时指定的表）。</p>
 <li>定义多层分区</li>
 <li>对已经存在的进行分区</li>
 </ul>
-<div class="section" id="id28">
-<h3>6.3.1. 定义按日期划分的分区表<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id34">
+<h3>6.3.1. 定义按日期划分的分区表<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h3>
 <p>日期划分的分区表使用一个日期或时间戳列做为分区键值列。如果需要，子分区可以使用与父分
 区相同的分区键值列。例如：父分区按照月份进行划分，子分区使用日期进行划分。在分区时，
 应该考虑按照最细的粒度来进行。例如：对于按照日期划分的分区表来说，您应该直接按照天数
@@ -472,8 +678,8 @@ CREATE TABLE 命令时指定的表）。</p>
 <p>除了最后一个分区外，其他分区的终止值可以省略。在上例中，Jan08 的终止值就是 Feb08
 的起始值。</p>
 </div>
-<div class="section" id="id29">
-<h3>6.3.2. 定义数值划分的分区表<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id35">
+<h3>6.3.2. 定义数值划分的分区表<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h3>
 <p>使用数值范围的分区表，利用单独的数值类型列做为分区键值列。例如：</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">rank</span> <span class="p">(</span><span class="n">id</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rank</span> <span class="nb">int</span><span class="p">,</span> <span class="k">year</span> <span class="nb">int</span><span class="p">,</span> <span class="n">gender</span>
 <span class="nb">char</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="k">count</span> <span class="nb">int</span><span class="p">)</span>
@@ -483,10 +689,10 @@ CREATE TABLE 命令时指定的表）。</p>
   <span class="k">DEFAULT</span> <span class="n">PARTITION</span> <span class="n">extra</span> <span class="p">);</span>
 </pre></div>
 </div>
-<p>要了解更多关于默认分区的信息，请参考 <a class="reference internal" href="#id41">增加默认分区</a>。</p>
+<p>要了解更多关于默认分区的信息，请参考 <a class="reference internal" href="#id47">增加默认分区</a>。</p>
 </div>
-<div class="section" id="id30">
-<h3>6.3.3. 定义列表值分区<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id36">
+<h3>6.3.3. 定义列表值分区<a class="headerlink" href="#id36" title="永久链接至标题">¶</a></h3>
 <p>使用列表值进行分区的表可以选用任何支持等值比较的数据类型列做为分区键值列。并且使用
 列表值进行分区还可以支持多列（复合）分区键值列，与之对应的范围分区只支持单列做为分
 区键值列。对于列表值分区来说，您必须为每一个要创建的分区指定对应的列表值。例如：</p>
@@ -499,10 +705,10 @@ CREATE TABLE 命令时指定的表）。</p>
   <span class="k">DEFAULT</span> <span class="n">PARTITION</span> <span class="n">other</span> <span class="p">);</span>
 </pre></div>
 </div>
-<p>要了解更多关于默认分区的信息，请参考 <a class="reference internal" href="#id41">增加默认分区</a>。</p>
+<p>要了解更多关于默认分区的信息，请参考 <a class="reference internal" href="#id47">增加默认分区</a>。</p>
 </div>
-<div class="section" id="id31">
-<h3>6.3.4. 定义多层分区<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id37">
+<h3>6.3.4. 定义多层分区<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h3>
 <p>您可以通过在分区下创建子分区来实现多层分区的设计。使用子分区定义模版能够保证每个分
 区拥有一致的子分区结构，即使在未来添加新分区时，该模版仍然能够保证新的子分区结构。
 例如，下面的 SQL 语句可以创建与图1一致的两层分区表：</p>
@@ -548,8 +754,8 @@ SUBPARTITION TEMPLATE 子句保证了每一个按年度的分区表拥有完全�
 这种情况下，将导致系统信息表中包含大量子分区信息，最终增加优化和执行查询需要的时间和内存。
 可以通过增加范围间隔或不同的分区策略来减少创建的子分区数量。</p>
 </div>
-<div class="section" id="id32">
-<h3>6.3.5. 对已经存在的进行分区<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id38">
+<h3>6.3.5. 对已经存在的进行分区<a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h3>
 <p>您只能在创建表时对表进行分区操作。如果您想要对一张进行分区操作，您需要先创建一张分区表，
 从旧表加载数据到新表，删除旧表，并将新的分区表名称改为旧表。您还需要对表的权限进行重新
 授予的操作，例如：</p>
@@ -566,13 +772,13 @@ SUBPARTITION TEMPLATE 子句保证了每一个按年度的分区表拥有完全�
 </pre></div>
 </div>
 </div>
-<div class="section" id="id33">
-<h3>6.3.6. 分区表的限制<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id39">
+<h3>6.3.6. 分区表的限制<a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h3>
 <p>在每层的分区上，分区表都能创建最多 32,767 个子分区。</p>
 <p>分区表的主键或者唯一约束并序包含所有分区的键值列。唯一索引可以不包含分区键值列，
 但是该唯一索引只对分区表部分数据有效，不能对整个分区表生效。</p>
 <p>将叶子分区交换为外部表不支持下面情况：被交换的分区是通过 SUBPARTITION 子句创建或者
-被交换的分区包含子分区。 要了解将叶子分区交换为外部表，请参考 <a class="reference internal" href="#id47">将叶子分区交换为外部表</a>。</p>
+被交换的分区包含子分区。 要了解将叶子分区交换为外部表，请参考 <a class="reference internal" href="#id53">将叶子分区交换为外部表</a>。</p>
 <p>下面是分区表的子叶分区是外部表时的一些限制：</p>
 <ul>
 <li><p class="first">外部表分区必须是一个可读外部表。任何试图反问和修改外部表数据的命令都会返回
@@ -616,22 +822,22 @@ IGNORE EXTERNAL PARTITIONS 子句来避免该错误。如果您使用了上面�
 </li>
 </ul>
 </div>
-<div class="section" id="id34">
-<h3>6.3.7. 向分区表加载数据<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id40">
+<h3>6.3.7. 向分区表加载数据<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h3>
 <p>在创建了分区表结构后，顶层的父表是没有数据的。数据自动地存储到最底层的子分区中。在多
 层分区结构中，只有在结构最底层的子分区表才会包含数据。</p>
 <p>如果记录不满足任何子分区表的要求，插入将会被拒绝，数据加载都会失败。要避免不合要求的
 记录在加载时被拒绝导致的失败，可以在定义分区结构时，创建一个默认分区（DEFAULT）。
-任何不满足分区 CHECK 约束记录都会被加载到默认分区。请查看 <a class="reference internal" href="#id41">增加默认分区</a>。</p>
+任何不满足分区 CHECK 约束记录都会被加载到默认分区。请查看 <a class="reference internal" href="#id47">增加默认分区</a>。</p>
 <p>在查询运行时，查询优化器将会扫描整个表的继承结构，使用 CHECK 约束来判断需要扫描哪些
 子分区来满足查询条件。默认分区每次都会被扫描。包含数据的默认分区将会拖慢整体的扫描时
 间。</p>
 <p>当使用 COPY 或 INSERT 命令向父表加载数据时，数据将会自动的存储到正确的分区中。</p>
 <p>向分区表加载数据的最佳实践就是创建一个中间的临时表，向该表加载数据，然后通过交换分区
-的方式加入到分区表中。请查看 <a class="reference internal" href="#id44">交换分区</a>。</p>
+的方式加入到分区表中。请查看 <a class="reference internal" href="#id50">交换分区</a>。</p>
 </div>
-<div class="section" id="id35">
-<h3>6.3.8. 验证分区表策略<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id41">
+<h3>6.3.8. 验证分区表策略<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h3>
 <p>当您根据查询条件对表进行分区后，可以通过使用 EXPLAIN 命令检查查询计划的方式，来验证
 查询优化器只决定扫描和请求相关的分区数据。</p>
 <p>例如，假设图1中的 sales 表是按照日期范围每个月创建一个分区，并且根据地区创建子分区。
@@ -654,8 +860,8 @@ IGNORE EXTERNAL PARTITIONS 子句来避免该错误。如果您使用了上面�
 <p>您需要确保优化器没有扫描不必要的分区或子分区（例如：扫描了查询中没有指定的时间或地区），
 并且顶层表返回 0-1 行结果。</p>
 </div>
-<div class="section" id="id36">
-<h3>6.3.9. 排查选择性分区扫描<a class="headerlink" href="#id36" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id42">
+<h3>6.3.9. 排查选择性分区扫描<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h3>
 <p>下面的限制可能导致查询计划显示出没有选择部分分区表结构的情况。</p>
 <ul class="simple">
 <li>查询优化器只能在查询使用直接和简单的限制条件和不变运算符（immutable operator），
@@ -666,8 +872,8 @@ IGNORE EXTERNAL PARTITIONS 子句来避免该错误。如果您使用了上面�
 </ul>
 </div>
 </div>
-<div class="section" id="id37">
-<h2>6.4. 查看分区表设计<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id43">
+<h2>6.4. 查看分区表设计<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h2>
 <p>通过 pg_partitions 视图，您可以查看分区表设计信息。下面示例可以查看 sales 表
 的分区设计信息：</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">partitionboundary</span><span class="p">,</span> <span class="n">partitiontablename</span><span class="p">,</span> <span class="n">partitionname</span><span class="p">,</span>
@@ -683,8 +889,8 @@ IGNORE EXTERNAL PARTITIONS 子句来避免该错误。如果您使用了上面�
 <li>pg_partition_columns - 分区表分区键值信息。</li>
 </ul>
 </div>
-<div class="section" id="id38">
-<h2>6.5. 分区表的维护<a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id44">
+<h2>6.5. 分区表的维护<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h2>
 <p>要维护分区表，可以对顶层的分区表（根表）使用 ALTER TABLE 命令。最常见的维护场景就
 是对于范围分区的设计，通过删除旧分区，创建新分区，来维护一个特定数据窗口。您还可以将
 旧分区转换（exchange）成追加表格式，并使用压缩方式来节省磁盘的存储空间。如果您的分区
@@ -709,8 +915,8 @@ IGNORE EXTERNAL PARTITIONS 子句来避免该错误。如果您使用了上面�
 <span class="n">PARTITION</span> <span class="n">FOR</span><span class="p">(</span><span class="n">RANK</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="section" id="id39">
-<h3>6.5.1. 增加分区<a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id45">
+<h3>6.5.1. 增加分区<a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h3>
 <p>您可以通过 ALTER TABLE 命令向已有的分区表中添加新的分区。如果原始的分区表包含了用来
 定义子分区的子分区模版，新增加的分区会根据模版信息创建子分区。例如：</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales</span> <span class="k">ADD</span> <span class="n">PARTITION</span>
@@ -733,10 +939,10 @@ IGNORE EXTERNAL PARTITIONS 子句来避免该错误。如果您使用了上面�
 </pre></div>
 </div>
 <p>注意：您不能向包含默认分区的分区表中增加新分区。您需要通过将默认分区分裂来增加分区。
-参考 <a class="reference internal" href="#id45">分裂分区</a></p>
+参考 <a class="reference internal" href="#id51">分裂分区</a></p>
 </div>
-<div class="section" id="id40">
-<h3>6.5.2. 重命名分区<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id46">
+<h3>6.5.2. 重命名分区<a class="headerlink" href="#id46" title="永久链接至标题">¶</a></h3>
 <p>下面列出分区表命名规则。分区表的字表名称需要保证唯一性且遵守名称长度限制。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">parentname</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">level</span><span class="o">&gt;</span><span class="n">_prt_</span><span class="o">&lt;</span><span class="n">partition_name</span><span class="o">&gt;</span>
 </pre></div>
@@ -770,8 +976,8 @@ IGNORE EXTERNAL PARTITIONS 子句来避免该错误。如果您使用了上面�
 <p>注意：在 ALTER TABLE 语句时，你不能提供分区名称。例如：ALTER TABLE sales... 是正确的，ALTER TABLE
 sales_1_part_jan08... 是不允许的。</p>
 </div>
-<div class="section" id="id41">
-<h3>6.5.3. 增加默认分区<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id47">
+<h3>6.5.3. 增加默认分区<a class="headerlink" href="#id47" title="永久链接至标题">¶</a></h3>
 <p>您可以使用 ALTER TABLE 来向分区表中增加默认分区。</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales</span> <span class="k">ADD</span> <span class="k">DEFAULT</span> <span class="n">PARTITION</span> <span class="n">other</span><span class="p">;</span>
 </pre></div>
@@ -787,8 +993,8 @@ sales_1_part_jan08... 是不允许的。</p>
 <p>如果输入的数据不满足分区的 CHECK 约束条件，并且没有创建默认分区，数据将被拒绝插入。
 默认分区能够保证在输入数据不满足分区时，能够将数据插入到默认分区。</p>
 </div>
-<div class="section" id="id42">
-<h3>6.5.4. 删除分区<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id48">
+<h3>6.5.4. 删除分区<a class="headerlink" href="#id48" title="永久链接至标题">¶</a></h3>
 <p>您可以通过 ALTER TABLE 命令从分区表中删除分区。如果您要删除的分区包含子分区，删除操
 作将会自动地将子分区（及其数据）删除。对于范围分区来说，通常是将较老的分区对应范围删除，
 这样来将数据仓库的旧删除删除掉。例如：</p>
@@ -796,16 +1002,16 @@ sales_1_part_jan08... 是不允许的。</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id43">
-<h3>6.5.5. 清空分区<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id49">
+<h3>6.5.5. 清空分区<a class="headerlink" href="#id49" title="永久链接至标题">¶</a></h3>
 <p>您可以通过 ALTER TABLE 命令来清空分区。如果您要清空的分区包含子分区，清空操
 作将会自动地将子分区清空。</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales</span> <span class="k">TRUNCATE</span> <span class="n">PARTITION</span> <span class="k">FOR</span> <span class="p">(</span><span class="n">RANK</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id44">
-<h3>6.5.6. 交换分区<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id50">
+<h3>6.5.6. 交换分区<a class="headerlink" href="#id50" title="永久链接至标题">¶</a></h3>
 <p>您可以通过 ALTER TABLE 命令来交换分区。交换分区是将一张数据表与已经存在的分区进行数
 据文件交换。你只能交换分区结构中最底层的分区（只有包含数据的分区才能被交换）。</p>
 <p>分区交换对于数据加载非常有帮助。例如：将数据加载到临时表，再食用交换命令将临时表加载到
@@ -827,8 +1033,8 @@ sales_1_part_jan08... 是不允许的。</p>
 分区定义的。例如，新默认分区中的已经存在的数据不能是满足分区表中其他分区条件的数据。
 否则，当查询涉及到使用交换后默认分区的时，查询结果可能不正确。</p>
 </div>
-<div class="section" id="id45">
-<h3>6.5.7. 分裂分区<a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id51">
+<h3>6.5.7. 分裂分区<a class="headerlink" href="#id51" title="永久链接至标题">¶</a></h3>
 <p>分裂分区能够将一个分区，分成两个分区。您可以使用 ALTER TABLe 命令来分裂分区。您只能
 在分区结构的最底层进行分裂操作（只能分裂包含数据的分区）。满足您提供用于分裂值的数据，
 将会存放到您提供的第二个分区中。</p>
@@ -849,8 +1055,8 @@ sales_1_part_jan08... 是不允许的。</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id46">
-<h3>6.5.8. 修改子分区模版<a class="headerlink" href="#id46" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id52">
+<h3>6.5.8. 修改子分区模版<a class="headerlink" href="#id52" title="永久链接至标题">¶</a></h3>
 <p>您可以使用 ALTER TABLE SET SUBPARTITION TEMPLATE 来修改分区表的子分区模版定义。
 在您修改子分区表模版定义后添加的分区将按照新的分区定义创建。但是对于已经存在分区，
 新的定义将不会生效。</p>
@@ -894,8 +1100,8 @@ regions 的默认分区：</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id47">
-<h3>6.5.9. 将叶子分区交换为外部表<a class="headerlink" href="#id47" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id53">
+<h3>6.5.9. 将叶子分区交换为外部表<a class="headerlink" href="#id53" title="永久链接至标题">¶</a></h3>
 <p>您可以将分区表的叶子分区交换为可读外部表（readable external table）。外部表数据可
 以外部数据源上，例如：青云对象存储。</p>
 <p>例如，您有一张按月份分区的分区表，在该表上的查询主要访问较新的数据，您可以将旧数据和访
@@ -906,7 +1112,7 @@ regions 的默认分区：</p>
 <li>被交换的分区是通过 SUBPARTITION 子句创建或者被交换的分区包含子分区。</li>
 <li>分区表中某个列上带有 CHECK 约束或非空约束。</li>
 </ul>
-<p>要了解包含外部表的分区表限制，可以参考 <a class="reference internal" href="#id33">分区表的限制</a>。</p>
+<p>要了解包含外部表的分区表限制，可以参考 <a class="reference internal" href="#id39">分区表的限制</a>。</p>
 <p>示例：将分区交换为外部表</p>
 <p>这里给出一个简单的例子，该例子将分区表中的叶子分区交换为一张外部表。分区表包含的数据
 从 2000 年到 2003 年。</p>
@@ -976,20 +1182,20 @@ sales_2000_ext。</p>
 </div>
 </div>
 </div>
-<div class="section" id="id48">
-<h1>7. 创建和使用序列<a class="headerlink" href="#id48" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id54">
+<h1>7. 创建和使用序列<a class="headerlink" href="#id54" title="永久链接至标题">¶</a></h1>
 <p>通过使用序列，系统可以在新的纪录插入表中时，自动地按照自增方式分配一个唯一ID。使用序列一般就是为插入表中的纪录自动分配一个唯一标识符。您可以通过声明一个
 SERIAL 类型的标识符列，该类型将会自动创建一个序列来分配ID。</p>
-<div class="section" id="id49">
-<h2>7.1. 创建序列<a class="headerlink" href="#id49" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id55">
+<h2>7.1. 创建序列<a class="headerlink" href="#id55" title="永久链接至标题">¶</a></h2>
 <p>CREATE SEQUENCE
 命令用来创建和初始化一张特殊的单行序列生成器表，该表名称就是指定序列的名称。序列的名称在同一个模式下，不能与其它序列，表，索引或者视图重名。示例：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SEQUENCE</span> <span class="n">myserial</span> <span class="n">START</span> <span class="mi">101</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id50">
-<h2>7.2. 使用序列<a class="headerlink" href="#id50" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id56">
+<h2>7.2. 使用序列<a class="headerlink" href="#id56" title="永久链接至标题">¶</a></h2>
 <p>在使用 CREATE SEQUENCE 创建系列生成器表后，可以通过 nextval
 函数来使用序列。例如下面例子，向表中插入新数据时，自动获得下一个序列值：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">vendors</span> <span class="n">VALUES</span> <span class="p">(</span><span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;myserial&#39;</span><span class="p">),</span> <span class="s1">&#39;acme&#39;</span><span class="p">);</span>
@@ -1006,23 +1212,23 @@ SERIAL 类型的标识符列，该类型将会自动创建一个序列来分配I
 </pre></div>
 </div>
 </div>
-<div class="section" id="id51">
-<h2>7.3. 修改序列<a class="headerlink" href="#id51" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id57">
+<h2>7.3. 修改序列<a class="headerlink" href="#id57" title="永久链接至标题">¶</a></h2>
 <p>ALTER SEQUENCE 命令可以修改已经存在的序列生成器参数。例如：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">SEQUENCE</span> <span class="n">myserial</span> <span class="n">RESTART</span> <span class="n">WITH</span> <span class="mi">105</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id52">
-<h2>7.4. 删除序列<a class="headerlink" href="#id52" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id58">
+<h2>7.4. 删除序列<a class="headerlink" href="#id58" title="永久链接至标题">¶</a></h2>
 <p>DROP SEQUENCE 命令删除序列生成表。例如：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">SEQUENCE</span> <span class="n">myserial</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="id53">
-<h1>8. 使用索引<a class="headerlink" href="#id53" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id59">
+<h1>8. 使用索引<a class="headerlink" href="#id59" title="永久链接至标题">¶</a></h1>
 <p>在绝大部分传统数据中，索引都能够极大地提高数据访问速速。然而，在像
 HashData 数据仓库 这样的分布式数据库系统中，索引的使用需要更加谨慎。</p>
 <p>HashData 数据仓库
@@ -1056,8 +1262,8 @@ B-树索引。索引选择率是列的唯一值除以记录数的比值。例如
 <li>在大量数据加载时，删除索引。如果要向表中加载大量数据，考虑加载数据前删除索引，加载后重新建立索引的方法。这样的操作通常比带着索引加载要快。</li>
 <li>考虑聚簇索引。聚簇索引是指数据在物理上，按照索引顺序存储。如果您访问的数据在磁盘是随机存储，那么数据库就需要在磁盘上不断变更位置读取您需要的数据。如果数据更佳紧密的存储起来，读取数据的操作效率就会更高。例如：在日期列上创建聚簇索引，数据也是按照日期列顺序存储。一个查询如果读取一个日期范围的数据，那么就可以利用磁盘顺序扫描的快速特性。</li>
 </ul>
-<div class="section" id="id54">
-<h2>8.1. 聚簇索引<a class="headerlink" href="#id54" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id60">
+<h2>8.1. 聚簇索引<a class="headerlink" href="#id60" title="永久链接至标题">¶</a></h2>
 <p>对一张非常大的表，使用 CLUSTER
 命令来根据索引对表的物理存储进行重新排序可能花费非常长的时间。您可以通过手工将排序的表数据导入一张中间表，来加上面的操作，例如：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">new_table</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">old_table</span><span class="p">)</span>
@@ -1069,8 +1275,8 @@ B-树索引。索引选择率是列的唯一值除以记录数的比值。例如
 </pre></div>
 </div>
 </div>
-<div class="section" id="id55">
-<h2>8.2. 索引类型<a class="headerlink" href="#id55" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id61">
+<h2>8.2. 索引类型<a class="headerlink" href="#id61" title="永久链接至标题">¶</a></h2>
 <p>HashData 数据仓库 支持 Postgres 中索引类型 B树 和 GiST。索引类型 Hash 和
 GIN
 索引不支持。每一种索引都使用不同算法，因此适用的查询也不同。B树索引适用于大部分常见情况，因此也是默认类型。您可以参考
@@ -1091,8 +1297,8 @@ bitmap 索引的大小可以近似通过记录总数乘以索引列去重后的�
 <p>对于在 WHERE 子句中包含多个条件的查询来说，bitmap
 索引一般都非常有效。如果在访问数据表之前，就能过滤掉只满足部分条件的记录，那么查询响应时间就会得到巨大的提升。</p>
 </div>
-<div class="section" id="id56">
-<h3>8.2.2. 何时使用 Bitmap 索引<a class="headerlink" href="#id56" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id62">
+<h3>8.2.2. 何时使用 Bitmap 索引<a class="headerlink" href="#id62" title="永久链接至标题">¶</a></h3>
 <p>Bitmap索引特别适用数据仓库类型的应用程序，因为数据的更新相对非常少。Bitmap索引对于去重后列值在
 100 到 10,0000
 个，并且查询时经常是类似这样的多列参一起使用的查询性能提升非常明显。但是像性别这种只有两个值的类型，实际上索引并不能提供比较好的性能提升。如果去重后的值多余
@@ -1101,15 +1307,15 @@ bitmap 索引的大小可以近似通过记录总数乘以索引列去重后的�
 条件来说，可以利用 bitmap
 索引信息快速得到满足条件的结果，而不用首先读取记录信息。如果结果集数据很少，查询就不需要使用全表扫描，并且能非常快的返回结果。</p>
 </div>
-<div class="section" id="id57">
-<h3>8.2.3. 不适合使用Bitmap索引的情况<a class="headerlink" href="#id57" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id63">
+<h3>8.2.3. 不适合使用Bitmap索引的情况<a class="headerlink" href="#id63" title="永久链接至标题">¶</a></h3>
 <p>如果列的数据唯一或者重复非常少，就应该避免使用bitmap索引。bitmap索引的性能优势和存储优势在列的唯一值超过10,0000后就会开始下降。与表中的总纪录数没有任何关系。
 Bitmap索引也不适合并发修改数据事务特别多的OLTP类型应用。
 使用bitmap索引应该谨慎，仔细对比建立索引前后的查询性能。只添加那些对查询性能有帮助的索引。</p>
 </div>
 </div>
-<div class="section" id="id58">
-<h2>8.3. 创建索引<a class="headerlink" href="#id58" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id64">
+<h2>8.3. 创建索引<a class="headerlink" href="#id64" title="永久链接至标题">¶</a></h2>
 <p>CREATE INDEX
 命令可以给指定的表定义索引。索引的默认类型是：B树索引。下面例子给表
 employee 的 gender 列，添加了一个B树索引：</p>
@@ -1121,8 +1327,8 @@ employee 的 gender 列，添加了一个B树索引：</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id59">
-<h2>8.4. 检查索引的使用情况<a class="headerlink" href="#id59" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id65">
+<h2>8.4. 检查索引的使用情况<a class="headerlink" href="#id65" title="永久链接至标题">¶</a></h2>
 <p>HashData 数据仓库
 索引不需要维护和调优。你可以通过真实的查询来检查索引的使用情况。EXPLAIN
 命令可以用来检查一个查询使用索引的情况。
@@ -1148,8 +1354,8 @@ EXPLAIN 中包含的查询计划节点来进行输出中下面查询：</p>
 EXPLAIN ANALYZE 命令来对比使用和不使用索引的查询结果。</li>
 </ul>
 </div>
-<div class="section" id="id60">
-<h2>8.5. 索引管理<a class="headerlink" href="#id60" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id66">
+<h2>8.5. 索引管理<a class="headerlink" href="#id66" title="永久链接至标题">¶</a></h2>
 <p>使用 REINDEX 命令可以对性能不好的索引进行重新创建。REINDEX
 重建是对表中数据重建并替换旧索引实现的。</p>
 <p>在指定表上重新生成所有索引：</p>
@@ -1161,8 +1367,8 @@ EXPLAIN ANALYZE 命令来对比使用和不使用索引的查询结果。</li>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id61">
-<h2>8.6. 删除索引<a class="headerlink" href="#id61" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id67">
+<h2>8.6. 删除索引<a class="headerlink" href="#id67" title="永久链接至标题">¶</a></h2>
 <p>DROP INDEX 命令删除一个索引，例如：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">INDEX</span> <span class="n">title_idx</span><span class="p">;</span>
 </pre></div>
@@ -1170,22 +1376,22 @@ EXPLAIN ANALYZE 命令来对比使用和不使用索引的查询结果。</li>
 <p>加载数据时，可以通过首先删除索引，加载数据，再重新建立索引的方式加快数据加载速度。</p>
 </div>
 </div>
-<div class="section" id="id62">
-<h1>9. 创建和管理视图<a class="headerlink" href="#id62" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id68">
+<h1>9. 创建和管理视图<a class="headerlink" href="#id68" title="永久链接至标题">¶</a></h1>
 <p>视图能够将您常用或复杂的查询保存起来，并允许您在 SELECT
 语句中像访问表一样访问保存的查询。视图并不会导致在磁盘上存储数据，而是在访问视图时，视图定义的查询以自查询的方式被饮用。</p>
 <p>如果某个自查询只被某个特定查询使用，考虑使用 SELECT 语句的 WITH
 子句来避免创建一张不能被公用的视图。</p>
-<div class="section" id="id63">
-<h2>9.1. 创建视图<a class="headerlink" href="#id63" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id69">
+<h2>9.1. 创建视图<a class="headerlink" href="#id69" title="永久链接至标题">¶</a></h2>
 <p>CREATE VIEW 命令根据一个查询定义一个视图，例如：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">VIEW</span> <span class="n">comedies</span> <span class="n">AS</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">films</span> <span class="n">WHERE</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;comedy&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>视图会忽略视图定义查询中的 ORDER BY 和 SORT 的功能。</p>
 </div>
-<div class="section" id="id64">
-<h2>9.2. 删除视图<a class="headerlink" href="#id64" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id70">
+<h2>9.2. 删除视图<a class="headerlink" href="#id70" title="永久链接至标题">¶</a></h2>
 <p>DROP VIEW 删除一张视图，例如:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">VIEW</span> <span class="n">topten</span><span class="p">;</span>
 </pre></div>
@@ -1236,65 +1442,75 @@ EXPLAIN ANALYZE 命令来对比使用和不使用索引的查询结果。</li>
 <li><a class="reference internal" href="#id23">5.4.1. 声明数据分布</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id24">5.5. 表存储模型</a><ul>
+<li><a class="reference internal" href="#heap-storage">5.5.1. 堆存储（Heap Storage）</a></li>
+<li><a class="reference internal" href="#append-optimized-storage">5.5.2. 追加优化存储（Append-Optimized Storage）</a></li>
+<li><a class="reference internal" href="#id25">5.5.3. 行存储还是列存储</a></li>
+<li><a class="reference internal" href="#id26">5.5.4. 数据压缩（只适用于追加优化存储）</a></li>
+<li><a class="reference internal" href="#id27">5.5.5. 查看追加优化表的数据压缩和分布</a></li>
+<li><a class="reference internal" href="#id28">5.5.6. 更改一张表</a></li>
+<li><a class="reference internal" href="#id29">5.5.7. 删除一张表</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id24">6. 对大表进行分区处理</a><ul>
-<li><a class="reference internal" href="#id25">6.1. 表分区概述</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#id30">6. 对大表进行分区处理</a><ul>
+<li><a class="reference internal" href="#id31">6.1. 表分区概述</a><ul>
 <li><a class="reference internal" href="#product-name">6.1.1. HashData 数据仓库 的表分区介绍</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id26">6.2. 选择分区表方案</a></li>
-<li><a class="reference internal" href="#id27">6.3. 创建分区表</a><ul>
-<li><a class="reference internal" href="#id28">6.3.1. 定义按日期划分的分区表</a></li>
-<li><a class="reference internal" href="#id29">6.3.2. 定义数值划分的分区表</a></li>
-<li><a class="reference internal" href="#id30">6.3.3. 定义列表值分区</a></li>
-<li><a class="reference internal" href="#id31">6.3.4. 定义多层分区</a></li>
-<li><a class="reference internal" href="#id32">6.3.5. 对已经存在的进行分区</a></li>
-<li><a class="reference internal" href="#id33">6.3.6. 分区表的限制</a></li>
-<li><a class="reference internal" href="#id34">6.3.7. 向分区表加载数据</a></li>
-<li><a class="reference internal" href="#id35">6.3.8. 验证分区表策略</a></li>
-<li><a class="reference internal" href="#id36">6.3.9. 排查选择性分区扫描</a></li>
+<li><a class="reference internal" href="#id32">6.2. 选择分区表方案</a></li>
+<li><a class="reference internal" href="#id33">6.3. 创建分区表</a><ul>
+<li><a class="reference internal" href="#id34">6.3.1. 定义按日期划分的分区表</a></li>
+<li><a class="reference internal" href="#id35">6.3.2. 定义数值划分的分区表</a></li>
+<li><a class="reference internal" href="#id36">6.3.3. 定义列表值分区</a></li>
+<li><a class="reference internal" href="#id37">6.3.4. 定义多层分区</a></li>
+<li><a class="reference internal" href="#id38">6.3.5. 对已经存在的进行分区</a></li>
+<li><a class="reference internal" href="#id39">6.3.6. 分区表的限制</a></li>
+<li><a class="reference internal" href="#id40">6.3.7. 向分区表加载数据</a></li>
+<li><a class="reference internal" href="#id41">6.3.8. 验证分区表策略</a></li>
+<li><a class="reference internal" href="#id42">6.3.9. 排查选择性分区扫描</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id37">6.4. 查看分区表设计</a></li>
-<li><a class="reference internal" href="#id38">6.5. 分区表的维护</a><ul>
-<li><a class="reference internal" href="#id39">6.5.1. 增加分区</a></li>
-<li><a class="reference internal" href="#id40">6.5.2. 重命名分区</a></li>
-<li><a class="reference internal" href="#id41">6.5.3. 增加默认分区</a></li>
-<li><a class="reference internal" href="#id42">6.5.4. 删除分区</a></li>
-<li><a class="reference internal" href="#id43">6.5.5. 清空分区</a></li>
-<li><a class="reference internal" href="#id44">6.5.6. 交换分区</a></li>
-<li><a class="reference internal" href="#id45">6.5.7. 分裂分区</a></li>
-<li><a class="reference internal" href="#id46">6.5.8. 修改子分区模版</a></li>
-<li><a class="reference internal" href="#id47">6.5.9. 将叶子分区交换为外部表</a></li>
+<li><a class="reference internal" href="#id43">6.4. 查看分区表设计</a></li>
+<li><a class="reference internal" href="#id44">6.5. 分区表的维护</a><ul>
+<li><a class="reference internal" href="#id45">6.5.1. 增加分区</a></li>
+<li><a class="reference internal" href="#id46">6.5.2. 重命名分区</a></li>
+<li><a class="reference internal" href="#id47">6.5.3. 增加默认分区</a></li>
+<li><a class="reference internal" href="#id48">6.5.4. 删除分区</a></li>
+<li><a class="reference internal" href="#id49">6.5.5. 清空分区</a></li>
+<li><a class="reference internal" href="#id50">6.5.6. 交换分区</a></li>
+<li><a class="reference internal" href="#id51">6.5.7. 分裂分区</a></li>
+<li><a class="reference internal" href="#id52">6.5.8. 修改子分区模版</a></li>
+<li><a class="reference internal" href="#id53">6.5.9. 将叶子分区交换为外部表</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id48">7. 创建和使用序列</a><ul>
-<li><a class="reference internal" href="#id49">7.1. 创建序列</a></li>
-<li><a class="reference internal" href="#id50">7.2. 使用序列</a></li>
-<li><a class="reference internal" href="#id51">7.3. 修改序列</a></li>
-<li><a class="reference internal" href="#id52">7.4. 删除序列</a></li>
+<li><a class="reference internal" href="#id54">7. 创建和使用序列</a><ul>
+<li><a class="reference internal" href="#id55">7.1. 创建序列</a></li>
+<li><a class="reference internal" href="#id56">7.2. 使用序列</a></li>
+<li><a class="reference internal" href="#id57">7.3. 修改序列</a></li>
+<li><a class="reference internal" href="#id58">7.4. 删除序列</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id53">8. 使用索引</a><ul>
-<li><a class="reference internal" href="#id54">8.1. 聚簇索引</a></li>
-<li><a class="reference internal" href="#id55">8.2. 索引类型</a><ul>
+<li><a class="reference internal" href="#id59">8. 使用索引</a><ul>
+<li><a class="reference internal" href="#id60">8.1. 聚簇索引</a></li>
+<li><a class="reference internal" href="#id61">8.2. 索引类型</a><ul>
 <li><a class="reference internal" href="#bitmap">8.2.1. 关于 Bitmap 索引</a></li>
-<li><a class="reference internal" href="#id56">8.2.2. 何时使用 Bitmap 索引</a></li>
-<li><a class="reference internal" href="#id57">8.2.3. 不适合使用Bitmap索引的情况</a></li>
+<li><a class="reference internal" href="#id62">8.2.2. 何时使用 Bitmap 索引</a></li>
+<li><a class="reference internal" href="#id63">8.2.3. 不适合使用Bitmap索引的情况</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id58">8.3. 创建索引</a></li>
-<li><a class="reference internal" href="#id59">8.4. 检查索引的使用情况</a></li>
-<li><a class="reference internal" href="#id60">8.5. 索引管理</a></li>
-<li><a class="reference internal" href="#id61">8.6. 删除索引</a></li>
+<li><a class="reference internal" href="#id64">8.3. 创建索引</a></li>
+<li><a class="reference internal" href="#id65">8.4. 检查索引的使用情况</a></li>
+<li><a class="reference internal" href="#id66">8.5. 索引管理</a></li>
+<li><a class="reference internal" href="#id67">8.6. 删除索引</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id62">9. 创建和管理视图</a><ul>
-<li><a class="reference internal" href="#id63">9.1. 创建视图</a></li>
-<li><a class="reference internal" href="#id64">9.2. 删除视图</a></li>
+<li><a class="reference internal" href="#id68">9. 创建和管理视图</a><ul>
+<li><a class="reference internal" href="#id69">9.1. 创建视图</a></li>
+<li><a class="reference internal" href="#id70">9.2. 删除视图</a></li>
 </ul>
 </li>
 </ul>
@@ -1330,7 +1546,7 @@ EXPLAIN ANALYZE 命令来对比使用和不使用索引的查询结果。</li>
     </div>
     <div class="footer" role="contentinfo">
         &copy; 版权所有 2016, HashData Warehouse Team.
-      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.3 创建。
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4 创建。
     </div>
   </body>
 </html>
