@@ -426,7 +426,7 @@ DECLARE...FOR UPDATE，和触发器。</p>
 </tr>
 <tr class="row-odd"><td>列式存储</td>
 <td>列压缩和表压缩</td>
-<td>ZLIB</td>
+<td>ZLIB和RLE_TYPE</td>
 </tr>
 </tbody>
 </table>
@@ -483,8 +483,16 @@ DECLARE...FOR UPDATE，和触发器。</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="rle-type">
+<h3>5.5.6. RLE_TYPE 压缩算法<a class="headerlink" href="#rle-type" title="永久链接至标题">¶</a></h3>
+<p>对于列级别的压缩类型，HashData 数据仓库 支持 Run-length Encoding（RLE）压缩算法。RLE算法的原理是将重复出现的值存成一个值和出现的次数。
+举个例子，一张表包含两列，一列是日期 date，另一列是描述 description。假设这张表中有200000行数据中date的值是date1，400000行数据中date的值
+是date2，那么使用RLE压缩后的数据内容类似 date1 200000，date2 400000。RLE算法不合适数据中只有很少重复值的表。这种情况下，
+RLE反而让需要存储的数据量变大。</p>
+<p>RLE压缩算法分成四中级别。级别越高，压缩比越高，但是压缩速度越慢。</p>
+</div>
 <div class="section" id="id28">
-<h3>5.5.6. 更改一张表<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h3>
+<h3>5.5.7. 更改一张表<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h3>
 <p>您可以通过使用 ALTER TABLE 语句来更改一张表的定义，包括列的定义、数据分布策略、存储模型和分区结构。例如，给表中的某一列增加非空约束：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">address</span> <span class="n">ALTER</span> <span class="n">COLUMN</span> <span class="n">street</span> <span class="n">SET</span> <span class="n">NOT</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">;</span>
 </pre></div>
@@ -521,7 +529,7 @@ Segment数据库中的数据以 customer_id 列为分布键重新分布：</p>
 </div>
 </div>
 <div class="section" id="id29">
-<h3>5.5.7. 删除一张表<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+<h3>5.5.8. 删除一张表<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
 <p>您可以通过 DROP TABLE 语句将一张表从数据库中删除。例如：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">mytable</span><span class="p">;</span>
 </pre></div>
@@ -1448,8 +1456,9 @@ EXPLAIN ANALYZE 命令来对比使用和不使用索引的查询结果。</li>
 <li><a class="reference internal" href="#id25">5.5.3. 行存储还是列存储</a></li>
 <li><a class="reference internal" href="#id26">5.5.4. 数据压缩（只适用于追加优化存储）</a></li>
 <li><a class="reference internal" href="#id27">5.5.5. 查看追加优化表的数据压缩和分布</a></li>
-<li><a class="reference internal" href="#id28">5.5.6. 更改一张表</a></li>
-<li><a class="reference internal" href="#id29">5.5.7. 删除一张表</a></li>
+<li><a class="reference internal" href="#rle-type">5.5.6. RLE_TYPE 压缩算法</a></li>
+<li><a class="reference internal" href="#id28">5.5.7. 更改一张表</a></li>
+<li><a class="reference internal" href="#id29">5.5.8. 删除一张表</a></li>
 </ul>
 </li>
 </ul>
