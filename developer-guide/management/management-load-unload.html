@@ -1,68 +1,285 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
     
-    <title>11. 导入和导出数据 &mdash; HashData Warehouse Document 1.0 文档</title>
+    <meta name="viewport" content="width=375,user-scalable=no">
     
-    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>3.1.10. 导入和导出数据 &mdash; HashData Warehouse Document 1.0.0 文档</title>
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '1.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/translations.js"></script>
-    <link rel="top" title="HashData Warehouse Document 1.0 文档" href="../../index.html" />
-    <link rel="next" title="12. 查询数据" href="management-quering-data.html" />
-    <link rel="prev" title="10. 数据的管理" href="management-managing-data.html" /> 
-    <script src="https://www.hashdata.cn/static/js/baidu.js"></script>
 
-  </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>导航</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="总目录"
-             accesskey="I">索引</a></li>
-        <li class="right" >
-          <a href="management-quering-data.html" title="12. 查询数据"
-             accesskey="N">下一页</a> |</li>
-        <li class="right" >
-          <a href="management-managing-data.html" title="10. 数据的管理"
-             accesskey="P">上一页</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
-      </ul>
-    </div>  
+    
+    
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    
+
+    
+
+    
+    <link rel="index" title="索引"
+          href="../../genindex.html"/>
+    <link rel="search" title="搜索" href="../../search.html"/>
+    <link rel="top" title="HashData Warehouse Document 1.0.0 文档" href="../../index.html"/>
+    <link rel="up" title="3. 开发指南" href="../index.html"/>
+    <link rel="next" title="3.1.11. 数据的管理" href="management-managing-data.html"/>
+    <link rel="prev" title="3.1.4. 定义数据库对象" href="management-defining-database-objects.html"/> 
+
+    
+    <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+    <div id="header">
+        <header class="navbar navbar-static-top navbar-fixed-top" id="top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.hashdata.cn">
+                        <img alt="Brand" src="../../_static/img/logo.png">
+                    </a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="nav-index">
+                            <a href="http://www.hashdata.cn">首页</a>
+                        </li>
+                        <li id="nav-product">
+                            <a href="http://www.hashdata.cn/product">产品</a>
+                        </li>
+                        <li id="nav-case">
+                            <a href="http://www.hashdata.cn/case">案例</a>
+                        </li>
+                        <li id="nav-blog">
+                            <a href="http://www.hashdata.cn/blog">博客</a>
+                        </li>
+                        <li id="nav-doc" class="active">
+                            <a href="http://www.hashdata.cn/docs">文档</a>
+                        </li>
+                        <li class="dropdown" id="nav-aboutus">
+                            <a href="aboutus" class="dropdown-toggle" data-toggle="dropdown">酷克数据<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="http://www.hashdata.cn/#block-aboutus-img">关于我们</a></li>
+                                <li><a href="http://www.hashdata.cn/aboutus">加入我们</a></li>
+                                <li> <a href="http://www.greenplum.net.cn/" target=_blank>社区</a></li>
+                            </ul>
+                        </li>
+                        <li class="try">
+                            <a href="http://www.hashdata.cn/trial">点击试用</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+        <div id="m-header">
+	    <nav id="m-nav">
+		<button id="m-nav-btn">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		</button>
+            <div class="wy-nav-top-search">
+                
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <img src="../../_static/img/search-icon.png" alt="search" />
+    <input type="text" name="q" placeholder="搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+            </div>
+	    </nav>
+	    <div id="m-index">
+		<ul>
+		    <li class=""><a href="http://www.hashdata.cn/">首页</a></li>
+		    <li class=""><a href="http://www.hashdata.cn/product">产品</a></li>
+		    <li class=""><a href="http://www.hashdata.cn/case">案例</a></li>
+		    <li class=""><a href="http://www.hashdata.cn/blog">博客</a></li>
+		    <li class="active"><a href="http://www.hashdata.cn/docs">文档</a></li>
+		    <li class=""><a href="http://www.hashdata.cn/#block-aboutus-img">关于我们</a></li>
+		    <li class=""><a href="http://www.hashdata.cn/aboutus">加入我们</a></li>
+		</ul>
+	    </div>
+	</div>
+
+
+    <div id="content">
+
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+            <div class="topLevel">
+                
+                
+                
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">3. 开发指南</a></li>
+</ul>
+
+                
+                
+            </div>
+
+            <div class="wy-side-nav-search">
+                
+
+                <!---->
+                <!--<a href="../../index.html" class="icon icon-home"> HashData Warehouse Document-->
+                <!---->
+
+                <!---->
+                <!--</a>-->
+
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!--<div class="version">-->
+                <!--1.0.0-->
+                <!--</div>-->
+                <!---->
+                <!---->
+
+                
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <img src="../../_static/img/search-icon.png" alt="search" />
+    <input type="text" name="q" placeholder="搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+                
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                
+                
+                
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">3. 开发指南</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#product-name">3.1. HashData 数据仓库 开发者指南</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../welcome.html">3.1.1. HashData 数据仓库 开发者指南</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html">3.1.2. HashData 数据仓库 系统概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-accessing-database.html">3.1.3. 访问 HashData 数据仓库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-defining-database-objects.html">3.1.4. 定义数据库对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-defining-database-objects.html#id14">3.1.5. 创建和管理表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-defining-database-objects.html#id30">3.1.6. 对大表进行分区处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-defining-database-objects.html#id54">3.1.7. 创建和使用序列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-defining-database-objects.html#id59">3.1.8. 使用索引</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-defining-database-objects.html#id68">3.1.9. 创建和管理视图</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.10. 导入和导出数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-managing-data.html">3.1.11. 数据的管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="management-quering-data.html">3.1.12. 查询数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../meta-ref.html">3.1.13. System Catalog Reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sql-ref.html">3.1.14. SQL 命令参考</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../history.html">3.1.15. 文档历史</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                
+                
+            </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        <div class="topLevel m-topLevel">
             
+            
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">3. 开发指南</a></li>
+</ul>
+
+            
+        </div>
+
+        
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                
+
+<!-- -->
+<!---->
+<!---->
+
+<!--<div role="navigation" aria-label="breadcrumbs navigation">-->
+  <!--<ul class="wy-breadcrumbs">-->
+    <!--<li><a href="../../index.html">Docs</a> &raquo;</li>-->
+      <!---->
+          <!--<li><a href="../index.html">3. 开发指南</a> &raquo;</li>-->
+      <!---->
+    <!--<li>3.1.10. 导入和导出数据</li>-->
+      <!--<li class="wy-breadcrumbs-aside">-->
+        <!---->
+          <!---->
+            <!--<a href="../../_sources/developer-guide/management/management-load-unload.rst.txt" rel="nofollow"> View page source</a>-->
+          <!---->
+        <!---->
+      <!--</li>-->
+  <!--</ul>-->
+  <!--<hr/>-->
+<!--</div>-->
+                <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                    <div itemprop="articleBody">
+                        
   <div class="section" id="id1">
-<h1>11. 导入和导出数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>3.1.10. 导入和导出数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>本结的主题是描述如何高效地往 HashData 数据仓库 导入数据和从 HashData 数据仓库 往外导出数据，以及如何格式化导入的文件格式。</p>
 <p>HashData 数据仓库 支持高效地并发导入和导出数据功能，利用 青云 的对象存储，可以与不同系统更加简单地进行数据交换操作。</p>
 <p>通过使用外表，HashData 数据仓库 让您能够通过 SQL 命令在数据库内直接利用并行机制访问外部数据资源，例如：SELECT，JOIN，ORDER BY 或者在外部表上创建视图。
 外部表一般用来将外部数据导入到数据库内部普通表，例如：CREATE TABLE table AS SELECT * FROM ext_table。</p>
 <div class="section" id="id2">
-<h2>11.1. 通过外部表访问对象存储<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>3.1.10.1. 通过外部表访问对象存储<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>CREATE EXTERNAL TABLE 可以创建可读外部表。外部表允许 HashData 数据仓库 将外部数据源当作数据库普通表来进行处理。</p>
 <div class="section" id="id3">
-<h3>11.1.1. 使用青云对象存储<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.1.1. 使用青云对象存储<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>通过在外部表的 LOCATION 子句，您可以指定青云对象存储的位置和访问键值。这样，在每次使用 SQL 命令读取外部表时，HashData 数据仓库 会将青云对象存储中该目录下的所有数据文件读取到数据中进行处理。
 如果您需要多次处理该数据，建议您通过 CREATE TABE table AS SELECT * FROM ext_table 的方式，将对象存储的数据导入到 HashData 数据仓库 内部。这样可以更好的利用优化过的存储结构来优化您的数据分析流程。</p>
 <p>您可以通过如下的语法来定义访问青云对象存储上面数据的外部表：</p>
@@ -101,7 +318,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2>11.2. 处理错误<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>3.1.10.2. 处理错误<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>可读外部表最常用用作将数据导入到数据普通表中。您可以通过使用 CREATE TABLE AS SELECT 或 INSERT INTO 命令从外部表读取数据。默认情况下，如果数据中包含格式错误的行，整个命令都会失败，数据不会被成功地加载到目标的数据表中。</p>
 <p>SEGMENT REJECT LIMIT 子句允许您将外部表中格式错误的数据进行隔离，继续导入格式正确的数据。使用 SEGMENT REJECT LIMIT 命令设定一个阈值，用 ROWS 指定拒绝的错误记录行数（默认），或者 PERCENT 指定拒绝的错误记录百分比（1-100）。</p>
 <p>如果错误的行数到达 SEGMENT REJECT LIMIT 指定的值，整个外部表操作将会终止。错误行数的限制是根据每个加载节点单独计算的。加载操作将会正常处理格式正确的记录，如果错误的记录数没有超过 SEGMENT REJECT LIMIT，提过格式错误的记录
@@ -114,7 +331,7 @@
 </div>
 <p><em>注意</em>：当使用外部表加载数据时，服务器配置参数 gp_initial_bad_row_limit 用来限制在最开始处理时，最多多少行不能遇到错误记录。默认设置为如果在前 1000 行中遇到错误记录，就会停止后续处理。</p>
 <div class="section" id="id5">
-<h3>11.2.1. 定义使用单行错误隔离的外部表<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.2.1. 定义使用单行错误隔离的外部表<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>下面的例子将会将错误记录保存在 HashData 数据仓库 内部，并且设置错误阈值为 10 条记录：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=</span><span class="c1"># CREATE EXTERNAL TABLE ext_expenses ( name text,</span>
    <span class="n">date</span> <span class="n">date</span><span class="p">,</span>  <span class="n">amount</span> <span class="n">float4</span><span class="p">,</span> <span class="n">category</span> <span class="n">text</span><span class="p">,</span> <span class="n">desc1</span> <span class="n">text</span> <span class="p">)</span>
@@ -135,7 +352,7 @@
 </div>
 </div>
 <div class="section" id="id6">
-<h3>11.2.2. 捕获记录格式错误和声明拒绝错误记录限制<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.2.2. 捕获记录格式错误和声明拒绝错误记录限制<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>下面的 SQL 语句片段用来在 HashData 数据仓库 中捕获格式错误，并声明最多拒绝 10 条错误记录的限制。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LOG</span> <span class="n">ERRORS</span> <span class="n">SEGMENT</span> <span class="n">REJECT</span> <span class="n">LIMIT</span> <span class="mi">10</span> <span class="n">ROWS</span>
 </pre></div>
@@ -143,7 +360,7 @@
 <p>使用内置 SQL 函数 gp_read_error_log() 可以读取错误记录数据。要了解更多关于错误记录信息，请参考 <a class="reference internal" href="#id7">在错误日志中查看错误记录</a>。</p>
 </div>
 <div class="section" id="id7">
-<h3>11.2.3. 在错误日志中查看错误记录<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.2.3. 在错误日志中查看错误记录<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>如果您使用单行错误隔离模式（参考 <a class="reference internal" href="#id5">定义使用单行错误隔离的外部表</a>），格式错误的记录信息将会被记录在数据库内部。</p>
 <p>通过使用内置 SQL 函数 gp_read_error_log(&#8216;external_table&#8217;) 可以读取错误记录数据。下面的示例命令可以显示 ext_expenses 的错误记录：</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_read_error_log</span><span class="p">(</span><span class="s1">&#39;ext_expenses&#39;</span><span class="p">);</span>
@@ -152,7 +369,7 @@
 </div>
 </div>
 <div class="section" id="id8">
-<h2>11.3. 优化数据加载和查询性能<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>3.1.10.3. 优化数据加载和查询性能<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>下面的小建议可以帮助您优化数据加载和加载后的查询性能。</p>
 <ul class="simple">
 <li>如果您向已经存在的数据表加载数据，可以考虑先删除索引。在数据上重新创建索引的速度远远快于在已经存在索引上逐行插入的性能。您还可以临时地增加 maintenance_work_mem 服务器参数来优化 CREATE INDEX 命令的创建参数（该参数可能影响数据库加载性能）。建议您在系统没有活跃操作时删除和重新创建索引。</li>
@@ -163,11 +380,11 @@
 </ul>
 </div>
 <div class="section" id="product-name">
-<h2>11.4. 从 HashData 数据仓库 导出数据<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h2>
+<h2>3.1.10.4. 从 HashData 数据仓库 导出数据<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h2>
 <p>通过使用可写外部表，您可以将 HashData 数据仓库 中的数据表导出成外部通用文件格式。通过可写外部数据表，您可以简单的实现多系统互联。未来，HashData 数据仓库 还会支持更多导出功能，让您能够轻松的利用不同数据处理平台，来优化您的数据处理体验。</p>
 <p>本章节想您介绍如何利用可写外部表将数据库内部数据导出到外部存储。</p>
 <div class="section" id="id9">
-<h3>11.4.1. 使用青云对象存储<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.4.1. 使用青云对象存储<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>HashData 数据仓库 充分考虑云平台优势，因此提供利用高效的青云对象存储来作为数据导出源。HashData 数据仓库 将会利用并行架构，并行的架构并行的将数据写入到青云对象存储。</p>
 <p>下面的例子向您介绍如何利用青云对象存储作为可写外部表的输出目标。</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">WRITABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">test_writable_table</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INT</span><span class="p">,</span> <span class="nb">date</span> <span class="nb">DATE</span><span class="p">,</span> <span class="k">desc</span> <span class="nb">TEXT</span><span class="p">)</span>
@@ -180,14 +397,14 @@
 </div>
 </div>
 <div class="section" id="id10">
-<h2>11.5. 格式化数据文件<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<h2>3.1.10.5. 格式化数据文件<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <p>在使用 青云 对象存储来进行数据的导入导出时，需要您指定数据的格式信息。CREATE EXTERNAL TABLE 允许您描述数据的存储格式。数据可以是使用特定分隔符的文本文件或者逗号分隔值的 CSV 格式。只有格式正确的数据才能被 HashData 数据仓库 正确读取。本小结向您介绍 HashData 数据仓库 期望的数据文件格式。</p>
 <div class="section" id="id11">
-<h3>11.5.1. 数据行的格式<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.5.1. 数据行的格式<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p>HashData 数据仓库 期望数据行使用 LF 字符（Line feed，0x0A），CR（Carriage return，0x0D），或者 CR 和 LF（CR+LF，0x0D 0x0A）。LF 是 UNIX 或类 UNIX 操作系统上标准的换行符。像 Windows 或者 Mac OS X 使用 CR 或 CR+LF。HashData 数据仓库 能够支持前面提到的三种换行的表示形式。For more information, see Importing and Exporting Fixed Width Data.</p>
 </div>
 <div class="section" id="id12">
-<h3>11.5.2. 数据列的格式<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.5.2. 数据列的格式<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <p>对于文本文件和 CSV 文件来说，默认的列分隔符分别是 TAB 字符（0x09）和逗号（0x2C）。您也可以通过 CREATE EXTERNAL TABLE 语句的  DELIMITER 子句为数据文件指定一个字符作为分隔符。分隔符字符需要在两个数据字段之间使用。每行的开头和结尾不需要指定分隔符。下面的示例是一个使用（|）字符的示例输入：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="n">value</span> <span class="mi">1</span><span class="o">|</span><span class="n">data</span> <span class="n">value</span> <span class="mi">2</span><span class="o">|</span><span class="n">data</span> <span class="n">value</span> <span class="mi">3</span>
 </pre></div>
@@ -200,11 +417,11 @@
 </div>
 </div>
 <div class="section" id="id13">
-<h3>11.5.3. 在数据中表示空值<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.5.3. 在数据中表示空值<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p>数据库中的空值（NULL）表示列值未知。在您提供的数据文件中，可以指定一个字符串来表示空值。对于文本文件来说，默认的字符串是 N，对于 CSV 文件来说，使用没有双引号保护的空值。您还可以在 CREATE EXTERNAL TABLE 的 NULL 子句中指定其他的字符串来表示空值。例如，如果您不需要区分空值和空字符串的话，可以使用空字符串来表示空值。在数据加载时，任何数据值和指定的空值字符串相同时，就会被解释为空值。</p>
 </div>
 <div class="section" id="id14">
-<h3>11.5.4. 转义<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.5.4. 转义<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <p>在 HashData 数据仓库 中有两个保留字符具有特殊含义：</p>
 <ul class="simple">
 <li>被用来在数据文件中作为列的分隔符的字符。</li>
@@ -212,7 +429,7 @@
 </ul>
 <p>如果您提供的数据中包含上面的字符，需要将该字符进行转义，这样 HashData 数据仓库 就会将其解释为数据，而不会解释为列分隔符或换行。默认情况下，文本文件的转义字符是 （反斜线），CSV 文件是 &#8220;（双引号）。</p>
 <div class="section" id="id15">
-<h4>11.5.4.1. 文本文件中的转义操作<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h4>
+<h4>3.1.10.5.4.1. 文本文件中的转义操作<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h4>
 <p>默认情况下，文本格式文件的转义字符是 （反斜线）。您可以在 CREATE EXTERNAL TABLE 的 ESCAPE 语句中指定其他的转义字符。如果您的数据中包含了转义字符本身，可以使用转义字符来转义它自己。</p>
 <p>让我们来看一下例子，假设您有一张包含三个列的表，您希望将下面三列作为列值加载到表中：</p>
 <ul class="simple">
@@ -233,7 +450,7 @@
 <p>如果您要加载包含大量反斜线的数据时（例如，互联网类日志），禁用转义功能将会非常方便。</p>
 </div>
 <div class="section" id="csv">
-<h4>11.5.4.2. CSV 文件中的转义操作<a class="headerlink" href="#csv" title="永久链接至标题">¶</a></h4>
+<h4>3.1.10.5.4.2. CSV 文件中的转义操作<a class="headerlink" href="#csv" title="永久链接至标题">¶</a></h4>
 <p>默认情况下，CSV 格式文件的转义字符是 &#8220;（双引号）。您可以在 CREATE EXTERNAL TABLE 的 ESCAPE 语句中指定其他的转义字符。如果您的数据中包含了转义字符本身，可以使用转义字符来转义它自己。</p>
 <p>让我们来看一下例子，假设您有一张包含三个列的表，您希望将下面三列作为列值加载到表中：</p>
 <ul class="simple">
@@ -252,7 +469,7 @@
 </div>
 </div>
 <div class="section" id="id16">
-<h3>11.5.5. 字符编码的处理<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<h3>3.1.10.5.5. 字符编码的处理<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <p>字符编码系统是通过一种编码方法，将字符集中的字符和特定数值组成一个固定映射关系，来允许对数据传输和存储。HashData 数据仓库 支持多种不同的字符集，例如：单字节的字符集 ISO 8859 及其衍生字符集，多字节字符集 EUC（扩展 UNIX 编码），UTF-8 等。虽然有一小部分字符集不支持作为服务器端存储编码，但是客户端可以使用所有的字符集。</p>
 <p>数据文件使用的编码必须是 HashData 数据仓库 能够识别的。See the Greenplum Database Reference Guide for the supported character sets.
 在数据加载时，如果数据文件包含无效或不支持的编码序列时，将会导致错误。</p>
@@ -262,77 +479,149 @@
 </div>
 
 
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">內容目录</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">11. 导入和导出数据</a><ul>
-<li><a class="reference internal" href="#id2">11.1. 通过外部表访问对象存储</a><ul>
-<li><a class="reference internal" href="#id3">11.1.1. 使用青云对象存储</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id4">11.2. 处理错误</a><ul>
-<li><a class="reference internal" href="#id5">11.2.1. 定义使用单行错误隔离的外部表</a></li>
-<li><a class="reference internal" href="#id6">11.2.2. 捕获记录格式错误和声明拒绝错误记录限制</a></li>
-<li><a class="reference internal" href="#id7">11.2.3. 在错误日志中查看错误记录</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id8">11.3. 优化数据加载和查询性能</a></li>
-<li><a class="reference internal" href="#product-name">11.4. 从 HashData 数据仓库 导出数据</a><ul>
-<li><a class="reference internal" href="#id9">11.4.1. 使用青云对象存储</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id10">11.5. 格式化数据文件</a><ul>
-<li><a class="reference internal" href="#id11">11.5.1. 数据行的格式</a></li>
-<li><a class="reference internal" href="#id12">11.5.2. 数据列的格式</a></li>
-<li><a class="reference internal" href="#id13">11.5.3. 在数据中表示空值</a></li>
-<li><a class="reference internal" href="#id14">11.5.4. 转义</a><ul>
-<li><a class="reference internal" href="#id15">11.5.4.1. 文本文件中的转义操作</a></li>
-<li><a class="reference internal" href="#csv">11.5.4.2. CSV 文件中的转义操作</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id16">11.5.5. 字符编码的处理</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+                    </div>
+                </div>
+                <footer> 
 
-<div id="searchbox" style="display: none" role="search">
-  <h3>快速搜索</h3>
-    <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="转向" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+</footer>
+
+            </div>
         </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>导航</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="总目录"
-             >索引</a></li>
-        <li class="right" >
-          <a href="management-quering-data.html" title="12. 查询数据"
-             >下一页</a> |</li>
-        <li class="right" >
-          <a href="management-managing-data.html" title="10. 数据的管理"
-             >上一页</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">HashData Warehouse Document 1.0 文档</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &copy; 版权所有 2016, HashData Warehouse Team.
-      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4 创建。
-    </div>
-  </body>
+
+    </section>
+
+</div>
+
+
+</div>
+
+
+
+<script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../',
+        VERSION:'1.0.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+    };
+</script>
+<script type="text/javascript" src="../../_static/jquery.js"></script>
+<script type="text/javascript" src="../../_static/underscore.js"></script>
+<script type="text/javascript" src="../../_static/doctools.js"></script>
+<script type="text/javascript" src="../../_static/translations.js"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+<script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+<script src="../../_static/js/bootstrap/bootstrap.min.js"></script>
+<script>
+
+$(function() {
+    var triIcon = "../../_static/img/tri-icon.png";
+    $('.document .section h2').append( '<img src=' + triIcon + ' />' );
+    $('.document .section h2').click(function() {
+        $(this).parent().toggleClass('closed');
+    });
+});
+
+$(function(){
+    $('#m-nav-btn, #m-index li').click(function(e){
+            $('#m-index').slideToggle(300, function(){
+                $('#m-index').css('display') == "block" ?
+                $('#m-header').css('background-color','#fff') :
+                $('#m-header').css('background-color','rgba(255,255,255,0.9)');
+            });
+        });
+        $('#content, #m-footer').click(function(){
+            $('#m-index').slideUp();
+            $('#m-header').css('background-color','rgba(255,255,255,0.9)')
+        });
+
+    /*
+    $('.topLevel .toctree-l1 a.reference').each(function(index, ele) {
+        var contentStr = ele. innerHTML;
+        var aSet = new Set(['1.', '2.', '3.']);
+        if (aSet.has(contentStr.substr(0,2)))
+            ele.innerHTML = contentStr.substr(2);
+    });
+    */
+
+});
+
+</script>
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        SphinxRtdTheme.StickyNav.enable();
+    });
+</script>
+
+
+
+<div id="footer">
+    <footer id="footer-1">
+	<div class="container">
+	    <div class="footer-block col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-1 col-sm-5 col-xs-5">
+		<div class="logo">
+		    <img src="../../_static/img/footer-logo.png"/>
+		</div>
+		<p>北京酷克数据科技有限公司</p>
+		<p>地址：北京市朝阳区望京博泰国际B座612</p>
+	    </div>
+	    <div class="footer-block col-lg-3 col-md-4 col-sm-5 col-xs-5">
+		<p class="title">联系地址</p>
+		<p>电话：010-64710206</p>
+		<p>微博：@HashData</p>
+		<p>邮件：business@hashdata.cn</p>
+	    </div>
+	    <div class="footer-block qrcode col-lg-3 col-md-3">
+		<p class="title">微信公众号</p>
+		<img src="../../_static/img/qrcode.png"/>
+	    </div>
+	</div>
+    </footer>
+    <footer id="footer-2">
+	<p>Copyright © 2016 HashData Ltd. 京ICP备16019672号-1</p>
+	<p><span class="emblem"></span>京公安网备11010502031309号</p>
+    </footer>
+</div>
+
+<div id="m-footer">
+    <div id="m-footer-bg"></div>
+    <footer id="footer-1">
+	<div class="logo"><img src="../../_static/img/footer-logo.png" /></div>
+	<div class="address">
+	    <p>北京酷克数据科技有限公司</p>
+	    <p>地址：北京市朝阳区望京博泰国际B座612</p>
+	</div>
+	<div class="connect">
+	    <p class="title">联系地址</p>
+	    <p>电话：010-64710206</p>
+	    <p>微博：@HashData</p>
+	    <p>邮件：business@hashdata.cn</p>
+	    <p>扫描二维码关注公众号：</p>
+	    <div class="qrcode">
+		<img src="../../_static/img/qrcode.png"/>
+	    </div>
+	</div>
+    </footer>
+    <footer id="footer-2">
+	<div class="copyright">
+	    <p>Copyright © 2016 HashData Ltd. 京ICP备16019672号-1</p>
+	    <p><span></span>京公安网备11010502031309号</p>
+	</div>
+    </footer>
+</div>
+
+
+
+
+</body>
 </html>
