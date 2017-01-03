@@ -1,6 +1,5 @@
 .. include:: ../defines.hrst
 
-.. _developer_guide:
 
 |product-name| 开发者指南
 =========================

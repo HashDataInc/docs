@@ -10,4 +10,6 @@ SQL 命令参考
 
    ./sql-ref/sql-ref-abort.rst
    ./sql-ref/sql-ref-begin.rst
+   ./sql-ref/sql-ref-summary.rst
+
 

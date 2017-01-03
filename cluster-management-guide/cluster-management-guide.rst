@@ -2,6 +2,9 @@
 
 .. _cluster_management_guide:
 
+管理指南
+@@@@@@@@@@@@@
+
 |product-name| 集群管理指南
 ===========================
 
