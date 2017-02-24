@@ -711,7 +711,7 @@ RLE反而让需要存储的数据量变大。</p>
 <div class="section" id="id28">
 <h3>3.1.5.5.7. 更改一张表<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h3>
 <p>您可以通过使用 ALTER TABLE 语句来更改一张表的定义，包括列的定义、数据分布策略、存储模型和分区结构。例如，给表中的某一列增加非空约束：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">address</span> <span class="n">ALTER</span> <span class="n">COLUMN</span> <span class="n">street</span> <span class="n">SET</span> <span class="n">NOT</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">address</span> <span class="n">ALTER</span> <span class="n">COLUMN</span> <span class="n">street</span> <span class="n">SET</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><strong>改变表的数据分布策略</strong></p>
