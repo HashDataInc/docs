@@ -512,7 +512,7 @@ RLE压缩算法分成四中级别。级别越高，压缩比越高，但是压�
 
 ::
 
-    => ALTER TABLE address ALTER COLUMN street SET NOT NOT NULL;
+    => ALTER TABLE address ALTER COLUMN street SET NOT NULL;
 
 **改变表的数据分布策略**
 
