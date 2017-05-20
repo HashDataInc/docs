@@ -465,8 +465,10 @@
 </div>
 <p>如果逗号是数据的一部分，需要使用双引号来保护。如果双引号是数据的一部分，即使整个数据是用双引号来保护的，还是需要用双引号来转义双引号的。</p>
 <p>使用双引号保护整个数据字段可以保证数据开头和结尾的空白字符被正确解释。</p>
-<p>&quot;Free trip to A,B &quot;,&quot;5.89 &quot;,&quot;Special rate &quot;&quot;1.79&quot;&quot; &quot;</p>
-<p><em>注意</em>：在 CSV 格式中，字符解释的处理非常严格。例如：被引号保护的空白字符或者其他非分隔字符。由于上面的原因，如果向系统导入的数据在末尾补充了保持每行相同长度的空白字符，将会引起错误。因此，在使用 HashData 数据仓库 读取数据时，需要先将 CSV 文件进行预处理，移除不必要的末尾空白字符。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;Free trip to A,B &quot;</span><span class="p">,</span><span class="s2">&quot;5.89 &quot;</span><span class="p">,</span><span class="s2">&quot;Special rate &quot;&quot;1.79&quot;&quot; &quot;</span>
+</pre></div>
+</div>
+<p><strong>注意</strong>：在 CSV 格式中，字符解释的处理非常严格。例如：被引号保护的空白字符或者其他非分隔字符。由于上面的原因，如果向系统导入的数据在末尾补充了保持每行相同长度的空白字符，将会引起错误。因此，在使用 HashData 数据仓库 读取数据时，需要先将 CSV 文件进行预处理，移除不必要的末尾空白字符。</p>
 </div>
 </div>
 <div class="section" id="id16">
@@ -474,7 +476,7 @@
 <p>字符编码系统是通过一种编码方法，将字符集中的字符和特定数值组成一个固定映射关系，来允许对数据传输和存储。HashData 数据仓库 支持多种不同的字符集，例如：单字节的字符集 ISO 8859 及其衍生字符集，多字节字符集 EUC（扩展 UNIX 编码），UTF-8 等。虽然有一小部分字符集不支持作为服务器端存储编码，但是客户端可以使用所有的字符集。</p>
 <p>数据文件使用的编码必须是 HashData 数据仓库 能够识别的。
 在数据加载时，如果数据文件包含无效或不支持的编码序列时，将会导致错误。</p>
-<p><em>注意</em>：如果数据文件是在微软的 Windows 操作系统上生成的，请在进行数据加载前，运行 dos2unix 命令来删除原始文件中 Windows 平台的特殊字符。</p>
+<p><strong>注意</strong>：如果数据文件是在微软的 Windows 操作系统上生成的，请在进行数据加载前，运行 dos2unix 命令来删除原始文件中 Windows 平台的特殊字符。</p>
 </div>
 </div>
 </div>
