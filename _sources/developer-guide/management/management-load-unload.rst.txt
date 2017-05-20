@@ -89,7 +89,7 @@ LOG ERRORS 子句允许您保留错误记录信息，在命令执行后进一步
 
 下面的例子将会将错误记录保存在 |product-name| 内部，并且设置错误阈值为 10 条记录：
 
-:: code-block:: sql
+.. code-block:: sql
 
 	=# CREATE EXTERNAL TABLE ext_expenses ( name text, 
 	   date date,  amount float4, category text, desc1 text ) 
@@ -189,7 +189,7 @@ LOG ERRORS 子句允许您保留错误记录信息，在命令执行后进一步
 
 下面的示例语句介绍如何在语句中指定（|）作为分隔符：
 
-:: code-block:: sql
+.. code-block:: sql
 
 	=# CREATE EXTERNAL TABLE ext_table (name text, date date)
 	LOCATION ('qs://<your-bucket-name>.pek3a.qingstor.com/filename.txt')

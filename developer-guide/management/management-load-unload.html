@@ -335,17 +335,14 @@
 <div class="section" id="id5">
 <h3>3.1.10.2.1. 定义使用单行错误隔离的外部表<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>下面的例子将会将错误记录保存在 HashData 数据仓库 内部，并且设置错误阈值为 10 条记录：</p>
-<p>:: code-block:: sql</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>=# CREATE EXTERNAL TABLE ext_expenses ( name text,</dt>
-<dd>date date,  amount float4, category text, desc1 text )
-LOCATION ('qs://hashdata-public.pek3a.qingstor.com/ext_expenses/')
-FORMAT 'TEXT' (DELIMITER '|')
-LOG ERRORS SEGMENT REJECT LIMIT 10
-ROWS;</dd>
-</dl>
-</div></blockquote>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">ext_expenses</span> <span class="p">(</span> <span class="n">name</span> <span class="nb">text</span><span class="p">,</span>
+   <span class="nb">date</span> <span class="nb">date</span><span class="p">,</span>  <span class="n">amount</span> <span class="n">float4</span><span class="p">,</span> <span class="n">category</span> <span class="nb">text</span><span class="p">,</span> <span class="n">desc1</span> <span class="nb">text</span> <span class="p">)</span>
+   <span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/ext_expenses/&#39;</span><span class="p">)</span>
+   <span class="n">FORMAT</span> <span class="s1">&#39;TEXT&#39;</span> <span class="p">(</span><span class="k">DELIMITER</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span>
+   <span class="n">LOG</span> <span class="n">ERRORS</span> <span class="n">SEGMENT</span> <span class="n">REJECT</span> <span class="k">LIMIT</span> <span class="mi">10</span>
+   <span class="k">ROWS</span><span class="p">;</span>
+</pre></div>
+</div>
 <p>通过使用内置 SQL 函数 gp_read_error_log('external_table') 可以读取错误记录数据。下面的示例命令可以显示 ext_expenses 的错误记录：</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_read_error_log</span><span class="p">(</span><span class="s1">&#39;ext_expenses&#39;</span><span class="p">);</span>
 </pre></div>
@@ -414,11 +411,11 @@ ROWS;</dd>
 </pre></div>
 </div>
 <p>下面的示例语句介绍如何在语句中指定（|）作为分隔符：</p>
-<p>:: code-block:: sql</p>
-<blockquote>
-<div>=# CREATE EXTERNAL TABLE ext_table (name text, date date)
-LOCATION ('qs://&lt;your-bucket-name&gt;.pek3a.qingstor.com/filename.txt')
-FORMAT 'TEXT' (DELIMITER '|');</div></blockquote>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">ext_table</span> <span class="p">(</span><span class="n">name</span> <span class="nb">text</span><span class="p">,</span> <span class="nb">date</span> <span class="nb">date</span><span class="p">)</span>
+<span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://&lt;your-bucket-name&gt;.pek3a.qingstor.com/filename.txt&#39;</span><span class="p">)</span>
+<span class="n">FORMAT</span> <span class="s1">&#39;TEXT&#39;</span> <span class="p">(</span><span class="k">DELIMITER</span> <span class="s1">&#39;|&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id13">
 <h3>3.1.10.5.3. 在数据中表示空值<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
