@@ -84,79 +84,58 @@
 启动 |product-name| 集群
 ------------------------
 
-#. 登陆青云控制台并打开数据仓库控制页面\ `数据仓库 <https://console.qingcloud.com/pek3a/#>`__\ 。
+#. 登陆青云并在应用中心找到对应的产品 \ `数据仓库(HashData高性能MPP数据仓库) <https://appcenter.qingcloud.com/apps/app-iwacxg9z>`__\ 。
 
-#. 在主菜单中，你可以选择在哪个数据中心创建你的数据仓库集群。在这个教程中，我们选择了北京3区。
-
-#. 在主菜单中，展开大数据平台，选择数据仓库，进入 |product-name| 控制台，点击创建。
+#. 点击部署到控制台，你可以选择在哪个数据中心创建你的数据仓库集群。在这个教程中，我们选择了北京3区。
 
     .. image:: ../_static/qingcloud/hdw_main.png
         :width: 100%
 
 #. 创建依赖资源：你需要有一个已连接到 VPC 的私有网络。如果您没有创建好依赖资源，点击创建后，可以按照提示完成下面的步骤：
 
-    .. image:: ../_static/qingcloud/create_01_dependency.png
-        :width: 100%
-
-    * 创建私有网络：
+    * 创建私有网络：计算机与网络 -> 私有网络，点击创建
 
         .. image:: ../_static/qingcloud/create_02_private_create.png
             :width: 100%
 
-    * 创建 VPC 网络：
+    * 创建 VPC 网络：计算机与网络 -> VPC网络，点击创建
 
         .. image:: ../_static/qingcloud/create_04_vpc_create.png
             :width: 100%
 
-    * 连接私有网络到 VPC 网络：
+    * 连接私有网络到 VPC 网络：计算机与网络 -> VPC网络，点击创建完成的VPC网络，将上面创建完成的私有网络添加到VPC中
       
-        选择 VPC 网络：
-
-            .. image:: ../_static/qingcloud/create_06_choose_vpc.png
-                :width: 100%
-
-        选择 私有网络：
-
-            .. image:: ../_static/qingcloud/create_07_choose_private.png
-                :width: 100%
-
-        配置加入 VPC 网络的私有网络：
-
-            .. image:: ../_static/qingcloud/create_08_join_vpc_ip.png
-                :width: 100%
-
+        .. image:: ../_static/qingcloud/link_priv_vpc.png
+            :width: 100%
 
 #. 创建好私有网络后，就可以创建 |product-name| 集群了：
 
-    .. image:: ../_static/qingcloud/create_11_step1_node4.png
-        :width: 100%
+    * 填写基本配置，选择软件版本
+    * 选择主节点的配置
 
-   -  集群名字：输入 hdw-demo。
-   -  节点数量选择：4。
-   -  节点配置选择：体验版。
+        .. image:: ../_static/qingcloud/create_hdw_step1.png
+            :width: 100%
 
-#. 点击下一步，选择集群所属的虚拟网络：
+    * 选择计算节点的配置和数量
 
-    .. image:: ../_static/qingcloud/create_12_step2.png
-        :width: 100%
+        .. image:: ../_static/qingcloud/create_hdw_step2.png
+            :width: 100%
 
-#. 点击进入最后一步，提供一些基础的配置参数：
+    * 选择之前创建的私有网络
+    * 设置数据库用户名，数据库密码以及初始数据库名字
+    * 阅读用户协议
    
-   .. image::  ../_static/qingcloud/create_13_step3.png        
+        .. image::  ../_static/qingcloud/create_hdw_step3.png        
+            :width: 100%
+
+#. 配置完以上参数，阅读并勾取用户协议，点击创建后，新的集群将会在几分钟之内创建完毕。下图是系统创建时的状态：
+
+    .. image:: ../_static/qingcloud/create_hdw_step4.png
         :width: 100%
 
-   -  数据库名字：输入 hdw_demo。
-   -  用户名：输入 admin。一旦数据仓库集群可用，你将通过这个用户名和密码连接到新创建的集群。
-   -  密码：输入用户的连接密码。
+#. 在 AppCenter 控制面板中，选择新创建的集群并且查看集群状态信息。在你连接数据仓库之前，一定要确认集群的状态是可用的，并且数据库的健康状态是正常。
 
-#. 点击创建后，新的集群将会在几分钟之内创建完毕。下图是系统创建时的状态：
-
-    .. image:: ../_static/qingcloud/create_14_creating_main.png
-        :width: 100%
-
-#. 在数据仓库主控制面板中，选择新创建的集群并且查看集群状态信息。在你连接数据仓库之前，一定要确认集群的状态是可用的，并且数据库的健康状态是正常。
-
-    .. image:: ../_static/qingcloud/create_16_creating_done.png
+    .. image:: ../_static/qingcloud/database_status.png
         :width: 100%
 
 步骤3: 授权连接样例集群
@@ -189,6 +168,14 @@
 
 如果你的 SQL 客户端不在青云的网络里，你还需要申请一个公网IP地址，并绑定到前面步骤中创建的路由器。
 
+.. image:: ../_static/qingcloud/create_elastic_ip.png
+   :width: 100%
+
+将工网IP绑定到路由器：
+
+.. image:: ../_static/qingcloud/bind_ip_vpc.png
+   :width: 100%
+
 步骤4: 连接样例集群
 ===================
 
@@ -215,7 +202,7 @@
 
 登陆数据仓库后，你可以运行如下命令做一些简单的测试查询：
 
-::
+.. code-block:: sql
 
     postgres=# CREATE TABLE foo (a INT, b INT);
     NOTICE:  Table doesn't have 'DISTRIBUTED BY' clause -- Using column named 'a' as the Greenplum Database data distribution key for this table.
@@ -247,7 +234,7 @@
    
    其中定义的外部表（READABLE EXTERNAL TABLE）用来访问青云对象存储上面的数据。我们提供了TPC-H 1GB、10GB、100GB的公共测试数据集，在此示例中我们使用1GB的TPCH数据集。
 
-::
+.. code-block:: sql
 
     CREATE TABLE NATION  ( 
         N_NATIONKEY  INTEGER NOT NULL,
@@ -352,7 +339,7 @@
 
 2. 执行如下命令将保存在对象存储上面的TPC-H数据拷贝插入到数据仓库表中。
 
-::
+.. code-block:: sql
 
     INSERT INTO NATION SELECT * FROM e_NATION;
     INSERT INTO REGION SELECT * FROM e_REGION;
@@ -367,7 +354,7 @@
 
 这里所采用的数据集和查询是商业智能计算测试 TPC-H。TPC-H 是美国交易处理效益委员会组织制定的用来模拟决策支持类应用的一个测试集。TPC-H 实现了一个数据仓库，共包含8个基本表，其数据量可以设定从1G到3T不等。在这个样例中，我们选择了1G的数据集。TPC-H 基准测试包括 22 个查询，其主要评价指标是各个查询的响应时间，即从提交查询到结果返回所需时间。这里只提供了前三条查询语句。关于 TPC-H 完整 22 条查询语句以及详细介绍可参考\ `TPC-H 主页 <http://www.tpc.org/tpch/>`__\ 。
 
-::
+.. code-block:: sql
 
     -- This query reports the amount of business that was billed, shipped, and returned.
 

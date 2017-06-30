@@ -350,43 +350,29 @@
 <div class="section" id="id6">
 <h3>1.3.1. 启动 HashData 数据仓库 集群<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">登陆青云控制台并打开数据仓库控制页面<a class="reference external" href="https://console.qingcloud.com/pek3a/#">数据仓库</a>。</p>
+<li><p class="first">登陆青云并在应用中心找到对应的产品 <a class="reference external" href="https://appcenter.qingcloud.com/apps/app-iwacxg9z">数据仓库(HashData高性能MPP数据仓库)</a>。</p>
 </li>
-<li><p class="first">在主菜单中，你可以选择在哪个数据中心创建你的数据仓库集群。在这个教程中，我们选择了北京3区。</p>
-</li>
-<li><p class="first">在主菜单中，展开大数据平台，选择数据仓库，进入 HashData 数据仓库 控制台，点击创建。</p>
+<li><p class="first">点击部署到控制台，你可以选择在哪个数据中心创建你的数据仓库集群。在这个教程中，我们选择了北京3区。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/hdw_main.png"><img alt="../_images/hdw_main.png" src="../_images/hdw_main.png" style="width: 100%;" /></a>
 </div></blockquote>
 </li>
 <li><p class="first">创建依赖资源：你需要有一个已连接到 VPC 的私有网络。如果您没有创建好依赖资源，点击创建后，可以按照提示完成下面的步骤：</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/create_01_dependency.png"><img alt="../_images/create_01_dependency.png" src="../_images/create_01_dependency.png" style="width: 100%;" /></a>
-<ul>
-<li><p class="first">创建私有网络：</p>
+<div><ul>
+<li><p class="first">创建私有网络：计算机与网络 -&gt; 私有网络，点击创建</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/create_02_private_create.png"><img alt="../_images/create_02_private_create.png" src="../_images/create_02_private_create.png" style="width: 100%;" /></a>
 </div></blockquote>
 </li>
-<li><p class="first">创建 VPC 网络：</p>
+<li><p class="first">创建 VPC 网络：计算机与网络 -&gt; VPC网络，点击创建</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/create_04_vpc_create.png"><img alt="../_images/create_04_vpc_create.png" src="../_images/create_04_vpc_create.png" style="width: 100%;" /></a>
 </div></blockquote>
 </li>
-<li><p class="first">连接私有网络到 VPC 网络：</p>
+<li><p class="first">连接私有网络到 VPC 网络：计算机与网络 -&gt; VPC网络，点击创建完成的VPC网络，将上面创建完成的私有网络添加到VPC中</p>
 <blockquote>
-<div><p>选择 VPC 网络：</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../_images/create_06_choose_vpc.png"><img alt="../_images/create_06_choose_vpc.png" src="../_images/create_06_choose_vpc.png" style="width: 100%;" /></a>
-</div></blockquote>
-<p>选择 私有网络：</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../_images/create_07_choose_private.png"><img alt="../_images/create_07_choose_private.png" src="../_images/create_07_choose_private.png" style="width: 100%;" /></a>
-</div></blockquote>
-<p>配置加入 VPC 网络的私有网络：</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../_images/create_08_join_vpc_ip.png"><img alt="../_images/create_08_join_vpc_ip.png" src="../_images/create_08_join_vpc_ip.png" style="width: 100%;" /></a>
-</div></blockquote>
+<div><a class="reference internal image-reference" href="../_images/link_priv_vpc.png"><img alt="../_images/link_priv_vpc.png" src="../_images/link_priv_vpc.png" style="width: 100%;" /></a>
 </div></blockquote>
 </li>
 </ul>
@@ -394,35 +380,39 @@
 </li>
 <li><p class="first">创建好私有网络后，就可以创建 HashData 数据仓库 集群了：</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/create_11_step1_node4.png"><img alt="../_images/create_11_step1_node4.png" src="../_images/create_11_step1_node4.png" style="width: 100%;" /></a>
+<div><ul>
+<li><p class="first">填写基本配置，选择软件版本</p>
+</li>
+<li><p class="first">选择主节点的配置</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_hdw_step1.png"><img alt="../_images/create_hdw_step1.png" src="../_images/create_hdw_step1.png" style="width: 100%;" /></a>
 </div></blockquote>
-<ul class="simple">
-<li>集群名字：输入 hdw-demo。</li>
-<li>节点数量选择：4。</li>
-<li>节点配置选择：体验版。</li>
+</li>
+<li><p class="first">选择计算节点的配置和数量</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create_hdw_step2.png"><img alt="../_images/create_hdw_step2.png" src="../_images/create_hdw_step2.png" style="width: 100%;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">选择之前创建的私有网络</p>
+</li>
+<li><p class="first">设置数据库用户名，数据库密码以及初始数据库名字</p>
+</li>
+<li><p class="first">阅读用户协议</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="getting-started-guide/../_static/qingcloud/create_hdw_step3.png"><img alt="getting-started-guide/../_static/qingcloud/create_hdw_step3.png" src="getting-started-guide/../_static/qingcloud/create_hdw_step3.png" style="width: 100%;" /></a>
+</div></blockquote>
+</li>
 </ul>
-</li>
-<li><p class="first">点击下一步，选择集群所属的虚拟网络：</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../_images/create_12_step21.png"><img alt="../_images/create_12_step21.png" src="../_images/create_12_step21.png" style="width: 100%;" /></a>
 </div></blockquote>
 </li>
-<li><p class="first">点击进入最后一步，提供一些基础的配置参数：</p>
-<a class="reference internal image-reference" href="../_images/create_13_step31.png"><img alt="../_images/create_13_step31.png" src="../_images/create_13_step31.png" style="width: 100%;" /></a>
-<ul class="simple">
-<li>数据库名字：输入 hdw_demo。</li>
-<li>用户名：输入 admin。一旦数据仓库集群可用，你将通过这个用户名和密码连接到新创建的集群。</li>
-<li>密码：输入用户的连接密码。</li>
-</ul>
-</li>
-<li><p class="first">点击创建后，新的集群将会在几分钟之内创建完毕。下图是系统创建时的状态：</p>
+<li><p class="first">配置完以上参数，阅读并勾取用户协议，点击创建后，新的集群将会在几分钟之内创建完毕。下图是系统创建时的状态：</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/create_14_creating_main.png"><img alt="../_images/create_14_creating_main.png" src="../_images/create_14_creating_main.png" style="width: 100%;" /></a>
+<div><a class="reference internal image-reference" href="getting-started-guide/../_static/qingcloud/create_hdw_step4.png"><img alt="getting-started-guide/../_static/qingcloud/create_hdw_step4.png" src="getting-started-guide/../_static/qingcloud/create_hdw_step4.png" style="width: 100%;" /></a>
 </div></blockquote>
 </li>
-<li><p class="first">在数据仓库主控制面板中，选择新创建的集群并且查看集群状态信息。在你连接数据仓库之前，一定要确认集群的状态是可用的，并且数据库的健康状态是正常。</p>
+<li><p class="first">在 AppCenter 控制面板中，选择新创建的集群并且查看集群状态信息。在你连接数据仓库之前，一定要确认集群的状态是可用的，并且数据库的健康状态是正常。</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/create_16_creating_done1.png"><img alt="../_images/create_16_creating_done1.png" src="../_images/create_16_creating_done1.png" style="width: 100%;" /></a>
+<div><a class="reference internal image-reference" href="../_images/database_status.png"><img alt="../_images/database_status.png" src="../_images/database_status.png" style="width: 100%;" /></a>
 </div></blockquote>
 </li>
 </ol>
@@ -446,6 +436,9 @@
 <div class="section" id="ip">
 <h3>1.4.3. 配置公网IP<a class="headerlink" href="#ip" title="永久链接至标题">¶</a></h3>
 <p>如果你的 SQL 客户端不在青云的网络里，你还需要申请一个公网IP地址，并绑定到前面步骤中创建的路由器。</p>
+<a class="reference internal image-reference" href="../_images/create_elastic_ip.png"><img alt="../_images/create_elastic_ip.png" src="../_images/create_elastic_ip.png" style="width: 100%;" /></a>
+<p>将工网IP绑定到路由器：</p>
+<a class="reference internal image-reference" href="../_images/bind_ip_vpc.png"><img alt="../_images/bind_ip_vpc.png" src="../_images/bind_ip_vpc.png" style="width: 100%;" /></a>
 </div>
 </div>
 <div class="section" id="id10">
@@ -466,23 +459,23 @@
 <div class="section" id="id13">
 <h3>1.5.3. 简单测试查询<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p>登陆数据仓库后，你可以运行如下命令做一些简单的测试查询：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># CREATE TABLE foo (a INT, b INT);</span>
-<span class="n">NOTICE</span><span class="p">:</span>  <span class="n">Table</span> <span class="n">doesn</span><span class="s1">&#39;t have &#39;</span><span class="n">DISTRIBUTED</span> <span class="n">BY</span><span class="s1">&#39; clause -- Using column named &#39;</span><span class="n">a</span><span class="s1">&#39; as the Greenplum Database data distribution key for this table.</span>
-<span class="n">HINT</span><span class="p">:</span>  <span class="n">The</span> <span class="s1">&#39;DISTRIBUTED BY&#39;</span> <span class="n">clause</span> <span class="n">determines</span> <span class="n">the</span> <span class="n">distribution</span> <span class="n">of</span> <span class="n">data</span><span class="o">.</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">column</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">chosen</span> <span class="n">are</span> <span class="n">the</span> <span class="n">optimal</span> <span class="n">data</span> <span class="n">distribution</span> <span class="n">key</span> <span class="n">to</span> <span class="n">minimize</span> <span class="n">skew</span><span class="o">.</span>
-<span class="n">CREATE</span> <span class="n">TABLE</span>
-<span class="n">postgres</span><span class="o">=</span><span class="c1"># INSERT INTO foo (SELECT i, i + 1 FROM generate_series(1, 10000) AS i);</span>
-<span class="n">INSERT</span> <span class="mi">0</span> <span class="mi">10000</span>
-<span class="n">postgres</span><span class="o">=</span><span class="c1"># SELECT COUNT(*) FROM foo;</span>
- <span class="n">count</span>
-<span class="o">-------</span>
- <span class="mi">10000</span>
-<span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
+<div class="highlight-sql"><div class="highlight"><pre><span></span>postgres=# CREATE TABLE foo (a INT, b INT);
+NOTICE:  Table doesn&#39;t have &#39;DISTRIBUTED BY&#39; clause -- Using column named &#39;a&#39; as the Greenplum Database data distribution key for this table.
+HINT:  The &#39;DISTRIBUTED BY&#39; clause determines the distribution of data. Make sure column(s) chosen are the optimal data distribution key to minimize skew.
+CREATE TABLE
+postgres=# INSERT INTO foo (SELECT i, i + 1 FROM generate_series(1, 10000) AS i);
+INSERT 0 10000
+postgres=# SELECT COUNT(*) FROM foo;
+ count
+-------
+ 10000
+(1 row)
 
-<span class="n">postgres</span><span class="o">=</span><span class="c1"># SELECT SUM(a) FROM foo;</span>
-  <span class="nb">sum</span>
-<span class="o">----------</span>
- <span class="mi">50005000</span>
-<span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
+postgres=# SELECT SUM(a) FROM foo;
+  sum
+----------
+ 50005000
+(1 row)
 </pre></div>
 </div>
 </div>
@@ -496,223 +489,223 @@
 <p>其中定义的外部表（READABLE EXTERNAL TABLE）用来访问青云对象存储上面的数据。我们提供了TPC-H 1GB、10GB、100GB的公共测试数据集，在此示例中我们使用1GB的TPCH数据集。</p>
 </li>
 </ol>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">NATION</span>  <span class="p">(</span>
-    <span class="n">N_NATIONKEY</span>  <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">N_NAME</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">N_REGIONKEY</span>  <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">N_COMMENT</span>    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">152</span><span class="p">));</span>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">NATION</span>  <span class="p">(</span>
+    <span class="n">N_NATIONKEY</span>  <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">N_NAME</span>       <span class="nb">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">N_REGIONKEY</span>  <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">N_COMMENT</span>    <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">152</span><span class="p">));</span>
 
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">REGION</span>  <span class="p">(</span>
-    <span class="n">R_REGIONKEY</span>  <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">R_NAME</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">R_COMMENT</span>    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">152</span><span class="p">));</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">REGION</span>  <span class="p">(</span>
+    <span class="n">R_REGIONKEY</span>  <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">R_NAME</span>       <span class="nb">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">R_COMMENT</span>    <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">152</span><span class="p">));</span>
 
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">PART</span>  <span class="p">(</span>
-    <span class="n">P_PARTKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">P_NAME</span>        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">P_MFGR</span>        <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">P_BRAND</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">P_TYPE</span>        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">P_SIZE</span>        <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">P_CONTAINER</span>   <span class="n">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">P_RETAILPRICE</span> <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">P_COMMENT</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">PART</span>  <span class="p">(</span>
+    <span class="n">P_PARTKEY</span>     <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">P_NAME</span>        <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">P_MFGR</span>        <span class="nb">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">P_BRAND</span>       <span class="nb">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">P_TYPE</span>        <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">P_SIZE</span>        <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">P_CONTAINER</span>   <span class="nb">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">P_RETAILPRICE</span> <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">P_COMMENT</span>     <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="p">);</span>
 
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">SUPPLIER</span> <span class="p">(</span>
-    <span class="n">S_SUPPKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">S_NAME</span>        <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">S_ADDRESS</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">S_NATIONKEY</span>   <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">S_PHONE</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">S_ACCTBAL</span>     <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">S_COMMENT</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">SUPPLIER</span> <span class="p">(</span>
+    <span class="n">S_SUPPKEY</span>     <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">S_NAME</span>        <span class="nb">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">S_ADDRESS</span>     <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">S_NATIONKEY</span>   <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">S_PHONE</span>       <span class="nb">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">S_ACCTBAL</span>     <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">S_COMMENT</span>     <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">);</span>
 
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">PARTSUPP</span> <span class="p">(</span>
-    <span class="n">PS_PARTKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">PS_SUPPKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">PS_AVAILQTY</span>    <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">PS_SUPPLYCOST</span>  <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">PS_COMMENT</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">199</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">PARTSUPP</span> <span class="p">(</span>
+    <span class="n">PS_PARTKEY</span>     <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">PS_SUPPKEY</span>     <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">PS_AVAILQTY</span>    <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">PS_SUPPLYCOST</span>  <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">PS_COMMENT</span>     <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">199</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="p">);</span>
 
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">CUSTOMER</span> <span class="p">(</span>
-    <span class="n">C_CUSTKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">C_NAME</span>        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">C_ADDRESS</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">C_NATIONKEY</span>   <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">C_PHONE</span>       <span class="n">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">C_ACCTBAL</span>     <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>   <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">C_MKTSEGMENT</span>  <span class="n">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">C_COMMENT</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">117</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">CUSTOMER</span> <span class="p">(</span>
+    <span class="n">C_CUSTKEY</span>     <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">C_NAME</span>        <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">C_ADDRESS</span>     <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">C_NATIONKEY</span>   <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">C_PHONE</span>       <span class="nb">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">C_ACCTBAL</span>     <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>   <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">C_MKTSEGMENT</span>  <span class="nb">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">C_COMMENT</span>     <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">117</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">);</span>
 
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">ORDERS</span> <span class="p">(</span>
-    <span class="n">O_ORDERKEY</span>       <span class="n">INT8</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">O_CUSTKEY</span>        <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">O_ORDERSTATUS</span>    <span class="n">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">O_TOTALPRICE</span>     <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">O_ORDERDATE</span>      <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">O_ORDERPRIORITY</span>  <span class="n">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">O_CLERK</span>          <span class="n">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">O_SHIPPRIORITY</span>   <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">O_COMMENT</span>        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">79</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ORDERS</span> <span class="p">(</span>
+    <span class="n">O_ORDERKEY</span>       <span class="nb">INT8</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">O_CUSTKEY</span>        <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">O_ORDERSTATUS</span>    <span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">O_TOTALPRICE</span>     <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">O_ORDERDATE</span>      <span class="nb">DATE</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">O_ORDERPRIORITY</span>  <span class="nb">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">O_CLERK</span>          <span class="nb">CHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">O_SHIPPRIORITY</span>   <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">O_COMMENT</span>        <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">79</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">);</span>
 
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">LINEITEM</span> <span class="p">(</span>
-    <span class="n">L_ORDERKEY</span>    <span class="n">INT8</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_PARTKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_SUPPKEY</span>     <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_LINENUMBER</span>  <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_QUANTITY</span>    <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_EXTENDEDPRICE</span>  <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_DISCOUNT</span>    <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_TAX</span>         <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_RETURNFLAG</span>  <span class="n">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_LINESTATUS</span>  <span class="n">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_SHIPDATE</span>    <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_COMMITDATE</span>  <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_RECEIPTDATE</span> <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_SHIPINSTRUCT</span> <span class="n">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_SHIPMODE</span>     <span class="n">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">L_COMMENT</span>      <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">LINEITEM</span> <span class="p">(</span>
+    <span class="n">L_ORDERKEY</span>    <span class="nb">INT8</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_PARTKEY</span>     <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_SUPPKEY</span>     <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_LINENUMBER</span>  <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_QUANTITY</span>    <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_EXTENDEDPRICE</span>  <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_DISCOUNT</span>    <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_TAX</span>         <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_RETURNFLAG</span>  <span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_LINESTATUS</span>  <span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_SHIPDATE</span>    <span class="nb">DATE</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_COMMITDATE</span>  <span class="nb">DATE</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_RECEIPTDATE</span> <span class="nb">DATE</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_SHIPINSTRUCT</span> <span class="nb">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_SHIPMODE</span>     <span class="nb">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">L_COMMENT</span>      <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">);</span>
 
-<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_NATION</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">NATION</span><span class="p">)</span>
-<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/nation/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_NATION</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">NATION</span><span class="p">)</span>
+<span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/nation/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 
-<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_REGION</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">REGION</span><span class="p">)</span>
-<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/region/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_REGION</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">REGION</span><span class="p">)</span>
+<span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/region/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 
-<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_PART</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">PART</span><span class="p">)</span>
-<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/part/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_PART</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">PART</span><span class="p">)</span>
+<span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/part/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 
-<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_SUPPLIER</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">SUPPLIER</span><span class="p">)</span>
-<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/supplier/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_SUPPLIER</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">SUPPLIER</span><span class="p">)</span>
+<span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/supplier/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 
-<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_PARTSUPP</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">PARTSUPP</span><span class="p">)</span>
-<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/partsupp/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_PARTSUPP</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">PARTSUPP</span><span class="p">)</span>
+<span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/partsupp/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 
-<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_CUSTOMER</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">CUSTOMER</span><span class="p">)</span>
-<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/customer/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_CUSTOMER</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">CUSTOMER</span><span class="p">)</span>
+<span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/customer/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 
-<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_ORDERS</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">ORDERS</span><span class="p">)</span>
-<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/orders/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_ORDERS</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">ORDERS</span><span class="p">)</span>
+<span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/orders/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 
-<span class="n">CREATE</span> <span class="n">READABLE</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">e_LINEITEM</span> <span class="p">(</span><span class="n">LIKE</span> <span class="n">LINEITEM</span><span class="p">)</span>
-<span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/lineitem/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_LINEITEM</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">LINEITEM</span><span class="p">)</span>
+<span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/lineitem/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li>执行如下命令将保存在对象存储上面的TPC-H数据拷贝插入到数据仓库表中。</li>
 </ol>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">NATION</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_NATION</span><span class="p">;</span>
-<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">REGION</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_REGION</span><span class="p">;</span>
-<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">PART</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_PART</span><span class="p">;</span>
-<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">SUPPLIER</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_SUPPLIER</span><span class="p">;</span>
-<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">PARTSUPP</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_PARTSUPP</span><span class="p">;</span>
-<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">CUSTOMER</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_CUSTOMER</span><span class="p">;</span>
-<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">ORDERS</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_ORDERS</span><span class="p">;</span>
-<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">LINEITEM</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">e_LINEITEM</span><span class="p">;</span>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">NATION</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_NATION</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">REGION</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_REGION</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">PART</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_PART</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SUPPLIER</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_SUPPLIER</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">PARTSUPP</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_PARTSUPP</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">CUSTOMER</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_CUSTOMER</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">ORDERS</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_ORDERS</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">LINEITEM</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_LINEITEM</span><span class="p">;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>现在可以开始运行样例查询了。</li>
 </ol>
 <p>这里所采用的数据集和查询是商业智能计算测试 TPC-H。TPC-H 是美国交易处理效益委员会组织制定的用来模拟决策支持类应用的一个测试集。TPC-H 实现了一个数据仓库，共包含8个基本表，其数据量可以设定从1G到3T不等。在这个样例中，我们选择了1G的数据集。TPC-H 基准测试包括 22 个查询，其主要评价指标是各个查询的响应时间，即从提交查询到结果返回所需时间。这里只提供了前三条查询语句。关于 TPC-H 完整 22 条查询语句以及详细介绍可参考<a class="reference external" href="http://www.tpc.org/tpch/">TPC-H 主页</a>。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">This</span> <span class="n">query</span> <span class="n">reports</span> <span class="n">the</span> <span class="n">amount</span> <span class="n">of</span> <span class="n">business</span> <span class="n">that</span> <span class="n">was</span> <span class="n">billed</span><span class="p">,</span> <span class="n">shipped</span><span class="p">,</span> <span class="ow">and</span> <span class="n">returned</span><span class="o">.</span>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="c1">-- This query reports the amount of business that was billed, shipped, and returned.</span>
 
-<span class="n">select</span>
+<span class="k">select</span>
         <span class="n">l_returnflag</span><span class="p">,</span>
         <span class="n">l_linestatus</span><span class="p">,</span>
-        <span class="nb">sum</span><span class="p">(</span><span class="n">l_quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_qty</span><span class="p">,</span>
-        <span class="nb">sum</span><span class="p">(</span><span class="n">l_extendedprice</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_base_price</span><span class="p">,</span>
-        <span class="nb">sum</span><span class="p">(</span><span class="n">l_extendedprice</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">l_discount</span><span class="p">))</span> <span class="k">as</span> <span class="n">sum_disc_price</span><span class="p">,</span>
-        <span class="nb">sum</span><span class="p">(</span><span class="n">l_extendedprice</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">l_discount</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">l_tax</span><span class="p">))</span> <span class="k">as</span> <span class="n">sum_charge</span><span class="p">,</span>
-        <span class="n">avg</span><span class="p">(</span><span class="n">l_quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_qty</span><span class="p">,</span>
-        <span class="n">avg</span><span class="p">(</span><span class="n">l_extendedprice</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_price</span><span class="p">,</span>
-        <span class="n">avg</span><span class="p">(</span><span class="n">l_discount</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_disc</span><span class="p">,</span>
-        <span class="n">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">count_order</span>
-<span class="kn">from</span>
-        <span class="nn">lineitem</span>
+        <span class="k">sum</span><span class="p">(</span><span class="n">l_quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_qty</span><span class="p">,</span>
+        <span class="k">sum</span><span class="p">(</span><span class="n">l_extendedprice</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_base_price</span><span class="p">,</span>
+        <span class="k">sum</span><span class="p">(</span><span class="n">l_extendedprice</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">l_discount</span><span class="p">))</span> <span class="k">as</span> <span class="n">sum_disc_price</span><span class="p">,</span>
+        <span class="k">sum</span><span class="p">(</span><span class="n">l_extendedprice</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">l_discount</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">l_tax</span><span class="p">))</span> <span class="k">as</span> <span class="n">sum_charge</span><span class="p">,</span>
+        <span class="k">avg</span><span class="p">(</span><span class="n">l_quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_qty</span><span class="p">,</span>
+        <span class="k">avg</span><span class="p">(</span><span class="n">l_extendedprice</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_price</span><span class="p">,</span>
+        <span class="k">avg</span><span class="p">(</span><span class="n">l_discount</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_disc</span><span class="p">,</span>
+        <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">count_order</span>
+<span class="k">from</span>
+        <span class="n">lineitem</span>
 
-<span class="n">where</span>
+<span class="k">where</span>
         <span class="n">l_shipdate</span> <span class="o">&lt;=</span>  <span class="s1">&#39;1998-12-01&#39;</span>
-<span class="n">group</span> <span class="n">by</span>
+<span class="k">group</span> <span class="k">by</span>
         <span class="n">l_returnflag</span><span class="p">,</span>
         <span class="n">l_linestatus</span>
-<span class="n">order</span> <span class="n">by</span>
+<span class="k">order</span> <span class="k">by</span>
         <span class="n">l_returnflag</span><span class="p">,</span>
         <span class="n">l_linestatus</span><span class="p">;</span>
 
-<span class="o">--</span> <span class="n">This</span> <span class="n">query</span> <span class="n">finds</span> <span class="n">which</span> <span class="n">supplier</span> <span class="n">should</span> <span class="n">be</span> <span class="n">selected</span> <span class="n">to</span> <span class="n">place</span> <span class="n">an</span> <span class="n">order</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">given</span> <span class="n">region</span><span class="o">.</span>
+<span class="c1">-- This query finds which supplier should be selected to place an order for a given part in a given region.</span>
 
-<span class="n">select</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">s_acctbal</span><span class="p">,</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">s_name</span><span class="p">,</span>
-        <span class="n">n</span><span class="o">.</span><span class="n">n_name</span><span class="p">,</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">p_partkey</span><span class="p">,</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">p_mfgr</span><span class="p">,</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">s_address</span><span class="p">,</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">s_phone</span><span class="p">,</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">s_comment</span>
-<span class="kn">from</span>
-        <span class="nn">supplier</span> <span class="n">s</span><span class="p">,</span>
+<span class="k">select</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">s_acctbal</span><span class="p">,</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">s_name</span><span class="p">,</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">n_name</span><span class="p">,</span>
+        <span class="n">p</span><span class="p">.</span><span class="n">p_partkey</span><span class="p">,</span>
+        <span class="n">p</span><span class="p">.</span><span class="n">p_mfgr</span><span class="p">,</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">s_address</span><span class="p">,</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">s_phone</span><span class="p">,</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">s_comment</span>
+<span class="k">from</span>
+        <span class="n">supplier</span> <span class="n">s</span><span class="p">,</span>
         <span class="n">partsupp</span> <span class="n">ps</span><span class="p">,</span>
         <span class="n">nation</span> <span class="n">n</span><span class="p">,</span>
         <span class="n">region</span> <span class="n">r</span><span class="p">,</span>
         <span class="n">part</span> <span class="n">p</span><span class="p">,</span>
-        <span class="p">(</span><span class="n">select</span> <span class="n">p_partkey</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">ps_supplycost</span><span class="p">)</span> <span class="k">as</span> <span class="n">min_ps_cost</span>
-                <span class="kn">from</span>
-                        <span class="nn">part</span><span class="p">,</span>
+        <span class="p">(</span><span class="k">select</span> <span class="n">p_partkey</span><span class="p">,</span> <span class="k">min</span><span class="p">(</span><span class="n">ps_supplycost</span><span class="p">)</span> <span class="k">as</span> <span class="n">min_ps_cost</span>
+                <span class="k">from</span>
+                        <span class="n">part</span><span class="p">,</span>
                         <span class="n">partsupp</span> <span class="p">,</span>
                         <span class="n">supplier</span><span class="p">,</span>
                         <span class="n">nation</span><span class="p">,</span>
                         <span class="n">region</span>
-                <span class="n">where</span>
+                <span class="k">where</span>
                         <span class="n">p_partkey</span><span class="o">=</span><span class="n">ps_partkey</span>
-                        <span class="ow">and</span> <span class="n">s_suppkey</span> <span class="o">=</span> <span class="n">ps_suppkey</span>
-                        <span class="ow">and</span> <span class="n">s_nationkey</span> <span class="o">=</span> <span class="n">n_nationkey</span>
-                        <span class="ow">and</span> <span class="n">n_regionkey</span> <span class="o">=</span> <span class="n">r_regionkey</span>
-                        <span class="ow">and</span> <span class="n">r_name</span> <span class="o">=</span> <span class="s1">&#39;EUROPE&#39;</span>
-                <span class="n">group</span> <span class="n">by</span> <span class="n">p_partkey</span> <span class="p">)</span> <span class="n">g</span>
-<span class="n">where</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">p_partkey</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">ps_partkey</span>
-        <span class="ow">and</span> <span class="n">g</span><span class="o">.</span><span class="n">p_partkey</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">p_partkey</span>
-        <span class="ow">and</span> <span class="n">g</span><span class="o">.</span> <span class="n">min_ps_cost</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">ps_supplycost</span>
-        <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">s_suppkey</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">ps_suppkey</span>
-        <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">p_size</span> <span class="o">=</span> <span class="mi">45</span>
-        <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">p_type</span> <span class="n">like</span> <span class="s1">&#39;%NICKEL&#39;</span>
-        <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">s_nationkey</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">n_nationkey</span>
-        <span class="ow">and</span> <span class="n">n</span><span class="o">.</span><span class="n">n_regionkey</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">r_regionkey</span>
-        <span class="ow">and</span> <span class="n">r</span><span class="o">.</span><span class="n">r_name</span> <span class="o">=</span> <span class="s1">&#39;EUROPE&#39;</span>
-<span class="n">order</span> <span class="n">by</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">s_acctbal</span> <span class="n">desc</span><span class="p">,</span>
-        <span class="n">n</span><span class="o">.</span><span class="n">n_name</span><span class="p">,</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">s_name</span><span class="p">,</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">p_partkey</span>
-<span class="n">LIMIT</span> <span class="mi">100</span><span class="p">;</span>
+                        <span class="k">and</span> <span class="n">s_suppkey</span> <span class="o">=</span> <span class="n">ps_suppkey</span>
+                        <span class="k">and</span> <span class="n">s_nationkey</span> <span class="o">=</span> <span class="n">n_nationkey</span>
+                        <span class="k">and</span> <span class="n">n_regionkey</span> <span class="o">=</span> <span class="n">r_regionkey</span>
+                        <span class="k">and</span> <span class="n">r_name</span> <span class="o">=</span> <span class="s1">&#39;EUROPE&#39;</span>
+                <span class="k">group</span> <span class="k">by</span> <span class="n">p_partkey</span> <span class="p">)</span> <span class="k">g</span>
+<span class="k">where</span>
+        <span class="n">p</span><span class="p">.</span><span class="n">p_partkey</span> <span class="o">=</span> <span class="n">ps</span><span class="p">.</span><span class="n">ps_partkey</span>
+        <span class="k">and</span> <span class="k">g</span><span class="p">.</span><span class="n">p_partkey</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">p_partkey</span>
+        <span class="k">and</span> <span class="k">g</span><span class="p">.</span> <span class="n">min_ps_cost</span> <span class="o">=</span> <span class="n">ps</span><span class="p">.</span><span class="n">ps_supplycost</span>
+        <span class="k">and</span> <span class="n">s</span><span class="p">.</span><span class="n">s_suppkey</span> <span class="o">=</span> <span class="n">ps</span><span class="p">.</span><span class="n">ps_suppkey</span>
+        <span class="k">and</span> <span class="n">p</span><span class="p">.</span><span class="n">p_size</span> <span class="o">=</span> <span class="mi">45</span>
+        <span class="k">and</span> <span class="n">p</span><span class="p">.</span><span class="n">p_type</span> <span class="k">like</span> <span class="s1">&#39;%NICKEL&#39;</span>
+        <span class="k">and</span> <span class="n">s</span><span class="p">.</span><span class="n">s_nationkey</span> <span class="o">=</span> <span class="n">n</span><span class="p">.</span><span class="n">n_nationkey</span>
+        <span class="k">and</span> <span class="n">n</span><span class="p">.</span><span class="n">n_regionkey</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">r_regionkey</span>
+        <span class="k">and</span> <span class="n">r</span><span class="p">.</span><span class="n">r_name</span> <span class="o">=</span> <span class="s1">&#39;EUROPE&#39;</span>
+<span class="k">order</span> <span class="k">by</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">s_acctbal</span> <span class="k">desc</span><span class="p">,</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">n_name</span><span class="p">,</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">s_name</span><span class="p">,</span>
+        <span class="n">p</span><span class="p">.</span><span class="n">p_partkey</span>
+<span class="k">LIMIT</span> <span class="mi">100</span><span class="p">;</span>
 
-<span class="o">--</span> <span class="n">This</span> <span class="n">query</span> <span class="n">retrieves</span> <span class="n">the</span> <span class="mi">10</span> <span class="n">unshipped</span> <span class="n">orders</span> <span class="k">with</span> <span class="n">the</span> <span class="n">highest</span> <span class="n">value</span><span class="o">.</span>
+<span class="c1">-- This query retrieves the 10 unshipped orders with the highest value.</span>
 
-<span class="n">select</span>
+<span class="k">select</span>
         <span class="n">l_orderkey</span><span class="p">,</span>
-        <span class="nb">sum</span><span class="p">(</span><span class="n">l_extendedprice</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">l_discount</span><span class="p">))</span> <span class="k">as</span> <span class="n">revenue</span><span class="p">,</span>
+        <span class="k">sum</span><span class="p">(</span><span class="n">l_extendedprice</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">l_discount</span><span class="p">))</span> <span class="k">as</span> <span class="n">revenue</span><span class="p">,</span>
         <span class="n">o_orderdate</span><span class="p">,</span>
         <span class="n">o_shippriority</span>
-<span class="kn">from</span>
-        <span class="nn">customer</span><span class="p">,</span>
+<span class="k">from</span>
+        <span class="n">customer</span><span class="p">,</span>
         <span class="n">orders</span><span class="p">,</span>
         <span class="n">lineitem</span>
-<span class="n">where</span>
+<span class="k">where</span>
         <span class="n">c_mktsegment</span> <span class="o">=</span> <span class="s1">&#39;MACHINERY&#39;</span>
-        <span class="ow">and</span> <span class="n">c_custkey</span> <span class="o">=</span> <span class="n">o_custkey</span>
-        <span class="ow">and</span> <span class="n">l_orderkey</span> <span class="o">=</span> <span class="n">o_orderkey</span>
-        <span class="ow">and</span> <span class="n">o_orderdate</span> <span class="o">&lt;</span> <span class="s1">&#39;1995-03-15&#39;</span>
-        <span class="ow">and</span> <span class="n">l_shipdate</span> <span class="o">&gt;</span>  <span class="s1">&#39;1995-03-15&#39;</span>
-<span class="n">group</span> <span class="n">by</span>
+        <span class="k">and</span> <span class="n">c_custkey</span> <span class="o">=</span> <span class="n">o_custkey</span>
+        <span class="k">and</span> <span class="n">l_orderkey</span> <span class="o">=</span> <span class="n">o_orderkey</span>
+        <span class="k">and</span> <span class="n">o_orderdate</span> <span class="o">&lt;</span> <span class="s1">&#39;1995-03-15&#39;</span>
+        <span class="k">and</span> <span class="n">l_shipdate</span> <span class="o">&gt;</span>  <span class="s1">&#39;1995-03-15&#39;</span>
+<span class="k">group</span> <span class="k">by</span>
         <span class="n">l_orderkey</span><span class="p">,</span>
         <span class="n">o_orderdate</span><span class="p">,</span>
         <span class="n">o_shippriority</span>
-<span class="n">order</span> <span class="n">by</span>
-        <span class="n">revenue</span> <span class="n">desc</span><span class="p">,</span>
+<span class="k">order</span> <span class="k">by</span>
+        <span class="n">revenue</span> <span class="k">desc</span><span class="p">,</span>
         <span class="n">o_orderdate</span>
-<span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>

@@ -504,11 +504,11 @@ $1.somecolumn
 <p>聚合表达式是指对于查询选择的所有数据记录上应用一个聚合函数。聚合函数在一组值上进行运算，并返回一个结果。
 例如：对一组值进行求和运算或者计算平均值。下面列出聚合表达式的语法结构：</p>
 <ul class="simple">
-<li>aggregate_name(expression [ , … ] ) —
+<li>aggregate_name(expression [ , ... ] ) —
 处理所有值为非空的输入记录值。</li>
-<li>aggregate_name(ALL expression [ , … ] ) —
+<li>aggregate_name(ALL expression [ , ... ] ) —
 和上一个表达式行为一致，因为 ALL 是默认参数。</li>
-<li>aggregate_name(DISTINCT expression [ , … ] ) —
+<li>aggregate_name(DISTINCT expression [ , ... ] ) —
 处理所有去除重复后的非空输入记录值。</li>
 <li>aggregate_name(*) —
 处理所有输入记录值，非空值和空值都会被处理。通常这个表达式都是为count(*)服务的。</li>
