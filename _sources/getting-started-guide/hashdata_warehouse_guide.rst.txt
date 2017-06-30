@@ -171,7 +171,7 @@
 .. image:: ../_static/qingcloud/create_elastic_ip.png
    :width: 100%
 
-将工网IP绑定到路由器：
+将公网IP绑定到路由器：
 
 .. image:: ../_static/qingcloud/bind_ip_vpc.png
    :width: 100%
