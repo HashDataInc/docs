@@ -680,9 +680,13 @@ root 29622 29566 0 12:50 pts/16 00:00:00 grep 15673
 </ol>
 <p>从大到小布局数据类型，BIGINT和TIMESTAMP 在 INT 和 DATE 类型之前，TEXT，VARCHAR和NUMERIC(x,y)位于后面。例如首先定义8字节的类型（BIGINT，TIMESTAMP）字段，然后是4字节类型（INT，DATE），随后是2字节类型（SMALLINT），最后是可变长度数据类型（VARCHAR）。
 如果你的字段定义如下：</p>
-<p>Int, Bigint, Timestamp, Bigint, Timestamp, Int (分布键), Date (分区键), Bigint,Smallint</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Int</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Int</span> <span class="p">(</span><span class="n">分布键</span><span class="p">),</span> <span class="n">Date</span> <span class="p">(</span><span class="n">分区键</span><span class="p">),</span> <span class="n">Bigint</span><span class="p">,</span><span class="n">Smallint</span>
+</pre></div>
+</div>
 <p>则建议调整为：</p>
-<p>Int (分布键), Date (分区键), Bigint, Bigint, Bigint, Timestamp, Timestamp, Int, Smallint</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Int</span> <span class="p">(</span><span class="n">分布键</span><span class="p">),</span> <span class="n">Date</span> <span class="p">(</span><span class="n">分区键</span><span class="p">),</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Smallint</span>
+</pre></div>
+</div>
 </div>
 </div>
 

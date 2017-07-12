@@ -160,9 +160,12 @@ img{
 #footer-1 .qrcode img{
     max-height: 72px;
 }
-ui.current{
-	margin-left: 60px;
+div.topLevel {
+    height: auto !important;
 }
+.topLevel ul{
+	margin-left: 60px !important;
+}  
 .topLevel .toctree-l1:nth-child(1){
 	float: none !important;
 }
@@ -171,9 +174,10 @@ ui.current{
     margin-right: 0px;
 }
 .topLevel .toctree-l1:nth-child(2) {
-    text-align: none !important;
-    position: none !important;
-    /* left: 0%; */
-    /* top: 0px; */
-    /* transform: translateX(-34%); */
+    text-align: inherit;
+    position: inherit;
+    left: 50%;
+    top: 0px;
+    transform: inherit;
 }
+
