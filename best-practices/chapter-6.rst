@@ -6,7 +6,7 @@
 加载数据
 -----------
 
-|product-name| 数据仓库支持多种数据加载方式，每种都有其适用的场景。
+|product-name| 支持多种数据加载方式，每种都有其适用的场景。
 
 INSERT 语句直接插入字段数据
 ------------------------------
@@ -35,13 +35,13 @@ COPY是单个命令，所以不需要禁用自动提交（autocommit）。
 外部表
 ---------
 
-|product-name| 数据仓库外部表可以访问数据库之外的数据。可以使用 SELECT 访问外部数据，常用于抽取、加载、转换（ELT）模式中。ELT 是 ETL 模式的一个变种，可以充分利用 |product-name| 数据仓库的快速并行数据加载能力。
+|product-name| 外部表可以访问数据库之外的数据。可以使用 SELECT 访问外部数据，常用于抽取、加载、转换（ELT）模式中。ELT 是 ETL 模式的一个变种，可以充分利用 |product-name| 的快速并行数据加载能力。
 
 使用ETL时，数据从数据源抽取，在数据库之外使用诸如 Informatica 或者 Datastage 的外部工具进行转换，然后加载到数据库中。
 
 使用ELT时，|product-name| 外部表提供对外部数据的直接访问，包括文件（例如文本文件、CSV或者XML文件）、Web服务器、Hadoop文件系统、可执行操作系统程序或者下节介绍的gpfdist文件服务器。外部表支持选择、排序和关联等SQL操作，所以数据可以同时进行加载和转换；或者加载到某个表后在执行转换操作，并最终插入到目标表中。
 
-外部表定义使用CREATE EXTERNAL TABLE语句，该语句的LOCATION子句定义了数据源，FORMAT子句定义了数据的格式以便系统可以解析该数据。外部文件数据使用file://协议，且必须位于Segment主机上可以被 HashData 超级用户访问的位置。可以有多个数据文件，LOCATION子句中文件的个数就是并发读取外部数据的Segments的个数。
+外部表定义使用CREATE EXTERNAL TABLE语句，该语句的LOCATION子句定义了数据源，FORMAT子句定义了数据的格式以便系统可以解析该数据。外部文件数据使用file://协议，且必须位于Segment主机上可以被 |product-name| 超级用户访问的位置。可以有多个数据文件，LOCATION子句中文件的个数就是并发读取外部数据的Segments的个数。
 
 外部表和gpfdist
 ------------------
@@ -117,7 +117,7 @@ gpload 使用YAML格式的控制文件来定义数据加载规范，执行下面
 
 * 使用 gpfdist 时，为ETL服务器上的每个NIC运行一个 gpfdist 实例以最大化利用网络带宽。均匀分布数据到多个 gpfdist 实例上。
 
-* 使用 gpload 时，运行尽可能多的 gpload。充分利用CPU、内存和网络资源以提高从ETL服务器加载数据到|product-name| 数据仓库的速度。
+* 使用 gpload 时，运行尽可能多的 gpload。充分利用CPU、内存和网络资源以提高从ETL服务器加载数据到|product-name| 的速度。
 
 * 使用 LOG ERRORS INTO 子句保存错误行。错误行 -- 例如，缺少字段值或者多了额外值，或者不正确的数据类型 -- 保存到错误表中，加载继续执行。Segment REJECT LIMIT 子句设置命令中止前允许的错误行的数目或者百分比。
 
@@ -136,4 +136,4 @@ gpload 使用YAML格式的控制文件来定义数据加载规范，执行下面
 
 额外信息
 ^^^^^^^^^^
-关于 gpfdist 和 gpload 的更多信息，请参考《|product-name|数据仓库参考指南》。
+关于 gpfdist 和 gpload 的更多信息，请参考《|product-name| 参考指南》。

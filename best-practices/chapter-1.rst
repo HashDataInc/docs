@@ -1,13 +1,13 @@
 .. include:: ../defines.hrst
 
-|product-name| 数据仓库最佳实践概述
+|product-name| 最佳实践概述
 =====================================
 
 最佳实践是指能持续产生比其它方法更好结果的方法或者技术，它来自于实战经验，并被证实了遵循这些方法可以获得可靠的预期结果。
 
 本最佳实践旨在通过利用所有可能的知识和技术为正确使用 |product-name| 提供有效参考。
 
-本文不是在教您如何使用 |product-name| 数据仓库的功能，而是帮助您在设计、实现和使用 |product-name| 数据仓库时了解需要遵循哪些最佳实践。
+本文不是在教您如何使用 |product-name| 的功能，而是帮助您在设计、实现和使用 |product-name| 时了解需要遵循哪些最佳实践。
 
 本文目的不是要涵盖整个产品或者产品特性，而是概述 |product-name| 实践中最重要的因素。
 
@@ -15,17 +15,17 @@
 
 通过掌握这些最佳实践知识，会增加 |product-name| 集群在维护、支持、性能和可扩展性等方面的成功率。
 
-无论是技术还是产品角度，|product-name| 数据仓库从企业级数据库PostgreSQL和开源MPP数据库Greenplum Database继承了很多功能特性，
+无论是技术还是产品角度，|product-name| 从企业级数据库 PostgreSQL 和开源MPP数据库 Greenplum Database 继承了很多功能特性，
 尤其是数据分析接口和使用习惯方面，|product-name| 一直保持跟Greenplum Database 100%的兼容。
 
-这个最佳实践文档也是在《Greenplum Database最佳实践》基础上，根据 |product-name| 数据仓库自身的特点做了相应调整而成稿的。
+这个最佳实践文档也是在《Greenplum Database最佳实践》基础上，根据 |product-name| 自身的特点做了相应调整而成稿的。
 
 所以，这个文档里面提到的很多方法或者技术，可以直接应用到Greenplum Database上面。
 
 最佳实践提纲
 -------------
 
-本部分概述 |product-name| 数据仓库最佳实践所涉及的概念与要点。
+本部分概述 |product-name| 最佳实践所涉及的概念与要点。
 
 数据模型
 ^^^^^^^^^^^^^

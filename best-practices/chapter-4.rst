@@ -21,7 +21,7 @@
 
 * vm.overcommit_memory
 
-    这是 /etc/sysctl.conf 中设置的一个Linux内核参数。总是设置其值为2。它控制操作系统使用什么方法确定分配给进程的内存总数。对于 |product-name| 数据仓库，唯一建议值是2。
+    这是 /etc/sysctl.conf 中设置的一个Linux内核参数。总是设置其值为2。它控制操作系统使用什么方法确定分配给进程的内存总数。对于 |product-name|，唯一建议值是2。
 
 * vm.overcommit_ratio
 
@@ -39,7 +39,7 @@
 
 * runaway_detector_activation_percent
 
-    |product-name| 数据仓库提供了失控查询终止（Runaway Query Termination）机制避免内存溢出。系统参数 *runaway_detector_activation_percent* 控制内存使用达到 *gp_vmem_protect_limit* 的多少百分比时会终止查询，默认值是 90%。如果某个Segment使用的内存超过了 *gp_vmem_protect_limit* 的90%（或者其他设置的值），|product-name| 数据仓库会根据内存使用情况终止那些消耗内存最多的 SQL 查询，直到低于期望的阈值。
+    |product-name| 提供了失控查询终止（Runaway Query Termination）机制避免内存溢出。系统参数 *runaway_detector_activation_percent* 控制内存使用达到 *gp_vmem_protect_limit* 的多少百分比时会终止查询，默认值是 90%。如果某个Segment使用的内存超过了 *gp_vmem_protect_limit* 的90%（或者其他设置的值），|product-name| 会根据内存使用情况终止那些消耗内存最多的 SQL 查询，直到低于期望的阈值。
 
 * statement_mem
 
@@ -62,7 +62,7 @@
 配置资源队列
 ^^^^^^^^^^^^^^^
 
-|product-name| 数据仓库的资源队列提供了强大的机制来管理集群的负载。队列可以限制同时运行的查询的数量和内存使用量。当 |product-name| 数据仓库收到查询时，将其加入到对应的资源队列，队列确定是否接受该查询以及何时执行它。
+|product-name| 的资源队列提供了强大的机制来管理集群的负载。队列可以限制同时运行的查询的数量和内存使用量。当 |product-name| 收到查询时，将其加入到对应的资源队列，队列确定是否接受该查询以及何时执行它。
 
 * 不要使用默认的资源队列，为所有用户都分配资源队列。 每个登录用户（角色）都关联到一个资源队列；用户提交的所有查询都由相关的资源队列处理。如果没有明确关联到某个队列，则使用默认的队列 *pg_default*。
 
