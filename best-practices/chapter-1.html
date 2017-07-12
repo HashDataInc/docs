@@ -8,7 +8,7 @@
     
     <meta name="viewport" content="width=375,user-scalable=no">
     
-    <title>4.1.1. HashData 数据仓库 数据仓库最佳实践概述 &mdash; HashData Warehouse Document 1.0.0 文档</title>
+    <title>4.1.1. HashData 数据仓库 最佳实践概述 &mdash; HashData Warehouse Document 1.0.0 文档</title>
     
 
     
@@ -191,7 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">3. 开发指南</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 最佳实践</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#product-name">4.1. HashData 数据仓库 最佳实践</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.1. HashData 数据仓库 数据仓库最佳实践概述</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.1. HashData 数据仓库 最佳实践概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-2.html">4.1.2. 第二章</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-3.html">4.1.3. 第三章</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-4.html">4.1.4. 第四章</a></li>
@@ -250,7 +250,7 @@
       <!---->
           <!--<li><a href="index.html">4. 最佳实践</a> &raquo;</li>-->
       <!---->
-    <!--<li>4.1.1. HashData 数据仓库 数据仓库最佳实践概述</li>-->
+    <!--<li>4.1.1. HashData 数据仓库 最佳实践概述</li>-->
       <!--<li class="wy-breadcrumbs-aside">-->
         <!---->
           <!---->
@@ -265,20 +265,20 @@
                     <div itemprop="articleBody">
                         
   <div class="section" id="product-name">
-<h1>4.1.1. HashData 数据仓库 数据仓库最佳实践概述<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h1>
+<h1>4.1.1. HashData 数据仓库 最佳实践概述<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h1>
 <p>最佳实践是指能持续产生比其它方法更好结果的方法或者技术，它来自于实战经验，并被证实了遵循这些方法可以获得可靠的预期结果。</p>
 <p>本最佳实践旨在通过利用所有可能的知识和技术为正确使用 HashData 数据仓库 提供有效参考。</p>
-<p>本文不是在教您如何使用 HashData 数据仓库 数据仓库的功能，而是帮助您在设计、实现和使用 HashData 数据仓库 数据仓库时了解需要遵循哪些最佳实践。</p>
+<p>本文不是在教您如何使用 HashData 数据仓库 的功能，而是帮助您在设计、实现和使用 HashData 数据仓库 时了解需要遵循哪些最佳实践。</p>
 <p>本文目的不是要涵盖整个产品或者产品特性，而是概述 HashData 数据仓库 实践中最重要的因素。</p>
 <p>本文不涉及依赖于 HashData 数据仓库 具体特性的边缘用例，后者需要精通数据库特性和您的环境，包括SQL访问、查询执行、并发、负载和其它因素。</p>
 <p>通过掌握这些最佳实践知识，会增加 HashData 数据仓库 集群在维护、支持、性能和可扩展性等方面的成功率。</p>
-<p>无论是技术还是产品角度，HashData 数据仓库 数据仓库从企业级数据库PostgreSQL和开源MPP数据库Greenplum Database继承了很多功能特性，
+<p>无论是技术还是产品角度，HashData 数据仓库 从企业级数据库 PostgreSQL 和开源MPP数据库 Greenplum Database 继承了很多功能特性，
 尤其是数据分析接口和使用习惯方面，HashData 数据仓库 一直保持跟Greenplum Database 100%的兼容。</p>
-<p>这个最佳实践文档也是在《Greenplum Database最佳实践》基础上，根据 HashData 数据仓库 数据仓库自身的特点做了相应调整而成稿的。</p>
+<p>这个最佳实践文档也是在《Greenplum Database最佳实践》基础上，根据 HashData 数据仓库 自身的特点做了相应调整而成稿的。</p>
 <p>所以，这个文档里面提到的很多方法或者技术，可以直接应用到Greenplum Database上面。</p>
 <div class="section" id="id1">
 <h2>4.1.1.1. 最佳实践提纲<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>本部分概述 HashData 数据仓库 数据仓库最佳实践所涉及的概念与要点。</p>
+<p>本部分概述 HashData 数据仓库 最佳实践所涉及的概念与要点。</p>
 <div class="section" id="id2">
 <h3>4.1.1.1.1. 数据模型<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <ul class="simple">

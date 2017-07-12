@@ -191,7 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">3. 开发指南</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 最佳实践</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#product-name">4.1. HashData 数据仓库 最佳实践</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="chapter-1.html">4.1.1. HashData 数据仓库 数据仓库最佳实践概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-1.html">4.1.1. HashData 数据仓库 最佳实践概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-2.html">4.1.2. 第二章</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-3.html">4.1.3. 第三章</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-4.html">4.1.4. 第四章</a></li>
@@ -268,7 +268,7 @@
 <h1>4.1.6. 第六章<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>4.1.6.1. 加载数据<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>HashData 数据仓库 数据仓库支持多种数据加载方式，每种都有其适用的场景。</p>
+<p>HashData 数据仓库 支持多种数据加载方式，每种都有其适用的场景。</p>
 </div>
 <div class="section" id="insert">
 <h2>4.1.6.2. INSERT 语句直接插入字段数据<a class="headerlink" href="#insert" title="永久链接至标题">¶</a></h2>
@@ -288,10 +288,10 @@
 </div>
 <div class="section" id="id3">
 <h2>4.1.6.4. 外部表<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>HashData 数据仓库 数据仓库外部表可以访问数据库之外的数据。可以使用 SELECT 访问外部数据，常用于抽取、加载、转换（ELT）模式中。ELT 是 ETL 模式的一个变种，可以充分利用 HashData 数据仓库 数据仓库的快速并行数据加载能力。</p>
+<p>HashData 数据仓库 外部表可以访问数据库之外的数据。可以使用 SELECT 访问外部数据，常用于抽取、加载、转换（ELT）模式中。ELT 是 ETL 模式的一个变种，可以充分利用 HashData 数据仓库 的快速并行数据加载能力。</p>
 <p>使用ETL时，数据从数据源抽取，在数据库之外使用诸如 Informatica 或者 Datastage 的外部工具进行转换，然后加载到数据库中。</p>
 <p>使用ELT时，HashData 数据仓库 外部表提供对外部数据的直接访问，包括文件（例如文本文件、CSV或者XML文件）、Web服务器、Hadoop文件系统、可执行操作系统程序或者下节介绍的gpfdist文件服务器。外部表支持选择、排序和关联等SQL操作，所以数据可以同时进行加载和转换；或者加载到某个表后在执行转换操作，并最终插入到目标表中。</p>
-<p>外部表定义使用CREATE EXTERNAL TABLE语句，该语句的LOCATION子句定义了数据源，FORMAT子句定义了数据的格式以便系统可以解析该数据。外部文件数据使用file://协议，且必须位于Segment主机上可以被 HashData 超级用户访问的位置。可以有多个数据文件，LOCATION子句中文件的个数就是并发读取外部数据的Segments的个数。</p>
+<p>外部表定义使用CREATE EXTERNAL TABLE语句，该语句的LOCATION子句定义了数据源，FORMAT子句定义了数据的格式以便系统可以解析该数据。外部文件数据使用file://协议，且必须位于Segment主机上可以被 HashData 数据仓库 超级用户访问的位置。可以有多个数据文件，LOCATION子句中文件的个数就是并发读取外部数据的Segments的个数。</p>
 </div>
 <div class="section" id="gpfdist">
 <h2>4.1.6.5. 外部表和gpfdist<a class="headerlink" href="#gpfdist" title="永久链接至标题">¶</a></h2>
@@ -349,7 +349,7 @@
 </div>
 <ul class="simple">
 <li>使用 gpfdist 时，为ETL服务器上的每个NIC运行一个 gpfdist 实例以最大化利用网络带宽。均匀分布数据到多个 gpfdist 实例上。</li>
-<li>使用 gpload 时，运行尽可能多的 gpload。充分利用CPU、内存和网络资源以提高从ETL服务器加载数据到|product-name| 数据仓库的速度。</li>
+<li>使用 gpload 时，运行尽可能多的 gpload。充分利用CPU、内存和网络资源以提高从ETL服务器加载数据到|product-name| 的速度。</li>
 <li>使用 LOG ERRORS INTO 子句保存错误行。错误行 – 例如，缺少字段值或者多了额外值，或者不正确的数据类型 – 保存到错误表中，加载继续执行。Segment REJECT LIMIT 子句设置命令中止前允许的错误行的数目或者百分比。</li>
 <li>如果加载报错，对目标表运行 VACUUM 释放空间。</li>
 <li>数据加载完成后，对堆表包括系统表运行 VACUUM，对所有表运行 ANALYZE。对AO表不必运行 VACUUM。如果表是分区表，则可以仅对数据加载影响的分区执行 VACUUM 和 ANALYZE。这样可以清除失败的加载占用的空间、删除或者更新的行占用的空间，并更新统计数据。</li>
@@ -364,7 +364,7 @@
 </ul>
 <div class="section" id="id5">
 <h3>4.1.6.7.1. 额外信息<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<p>关于 gpfdist 和 gpload 的更多信息，请参考《<a href="#id6"><span class="problematic" id="id7">|</span></a>product-name|数据仓库参考指南》。</p>
+<p>关于 gpfdist 和 gpload 的更多信息，请参考《HashData 数据仓库 参考指南》。</p>
 </div>
 </div>
 </div>

@@ -6,23 +6,23 @@
 系统监控和维护
 ----------------
 
-本章介绍日常维护最佳实践以确保 |product-name| 数据仓库的高可用性和最佳性能。
+本章介绍日常维护最佳实践以确保 |product-name| 的高可用性和最佳性能。
 
 监控
 -------
 
-|product-name| 数据仓库带有一套系统监控工具。
+|product-name| 带有一套系统监控工具。
 
 *gp_toolkit* 模式包含可以查询系统表、日志和操作环境状态的视图，使用 SQL 命令可以访问这些视图。
 
 *gp_stats_missing* 视图可以显示没有统计信息、需要运行 ANALYZE 的表。
 
-关于 *gpstate* 和 *gpcheckperf* 的更多信息，请参考 《|product-name| 数据仓库工具指南》。关于 *gp_toolkit* 模式的更多信息，请参考《|product-name| 数据仓库参考指南》。
+关于 *gpstate* 和 *gpcheckperf* 的更多信息，请参考 《|product-name| 工具指南》。关于 *gp_toolkit* 模式的更多信息，请参考《|product-name| 参考指南》。
 
 gpstate
 ^^^^^^^^^^
 
-gpstate工具显示了 |product-name| 数据仓库的系统状态，包括哪些段数据库(Segments)宕机，主服务器(Master)和Segment的配置信息（主机、数据目录等），系统使用的端口和Segments的镜像信息。
+gpstate工具显示了 |product-name| 的系统状态，包括哪些段数据库(Segments)宕机，主服务器(Master)和Segment的配置信息（主机、数据目录等），系统使用的端口和Segments的镜像信息。
 
 运行 gpstate -Q 列出Master系统表中标记为“宕机”的Segments。
 
@@ -48,7 +48,7 @@ gpcheckperf
 
     $ gpcheckperf -f subnet_1_hosts -d /data1 -d /data2 -r ds
 
--r选项指定要运行的测试：磁盘IO（d），内存带宽（s），网络并行成对测试（N），网络串行成对测试（n），网络全矩阵测试（M）。只能选择一种网络测试模式。更多信息，请参考《|product-name| 数据仓库参考指南》。
+-r选项指定要运行的测试：磁盘IO（d），内存带宽（s），网络并行成对测试（N），网络串行成对测试（n），网络全矩阵测试（M）。只能选择一种网络测试模式。更多信息，请参考《|product-name| 参考指南》。
 
 使用操作系统工具监控
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,7 +66,7 @@ gpcheckperf
 最佳实践
 ^^^^^^^^^^^
 
-* 实现《|product-name| 数据仓库管理员指南》中推荐的监控和维护任务。
+* 实现《|product-name| 管理员指南》中推荐的监控和维护任务。
 
 * 安装前运行 *gpcheckperf*，此后周期性运行 *gpcheckperf*，并保存每次的结果，以用于比较系统随着时间推移的性能变化。
 
@@ -81,9 +81,9 @@ gpcheckperf
 额外信息
 ^^^^^^^^^^^
 
-* 《|product-name|数据仓库工具指南》中 *gpcheckperf*
+* 《|product-name| 工具指南》中 *gpcheckperf*
 
-* 《|product-name|数据仓库管理员指南》中“监控和维护任务建议”
+* 《|product-name| 管理员指南》中“监控和维护任务建议”
 
 * Sustainable Memory Bandwidth in Current High Performance Computers. John D. McCalpin. Oct 12, 1995.
 
@@ -145,7 +145,7 @@ ANALYZE 只需对表加读锁，所以可以与其他数据库操作并行执行
 管理数据库臃肿（Bloat）
 ------------------------
 
-|product-name| 数据仓库的堆表使用PostgreSQL的多版本并发控制（MVCC）的存储实现方式。删除和更新的行仅仅是逻辑删除，其实际数据仍然存储在表中，只是不可见。这些删除的行，也称为过期行，由空闲空间映射表（FSM, Free Space Map）记录。VACUUM标记这些过期的行为空闲空间，并可以被后续插入操作重用。
+|product-name| 的堆表使用PostgreSQL的多版本并发控制（MVCC）的存储实现方式。删除和更新的行仅仅是逻辑删除，其实际数据仍然存储在表中，只是不可见。这些删除的行，也称为过期行，由空闲空间映射表（FSM, Free Space Map）记录。VACUUM标记这些过期的行为空闲空间，并可以被后续插入操作重用。
 
 如果某个表的FSM不足以容纳所有过期的行，VACUUM命令无法回收溢出FSM的过期行空间。这些空间只能由VACUUM FULL回收，VACUUM FULL会锁住整个表，逐行拷贝到文件头部，并截断（TRUNCATE）文件。对于大表，这一操作非常耗时。仅仅建议对小表执行这种操作。如果试图杀死VACUUM FULL进程，系统可能会被破坏。
 
@@ -172,7 +172,7 @@ FSM大小
 
 配置参数 *max_fsm_relations* 设置在共享空间映射表中被FSM跟踪的表的最大数目。该值需要大于数据库中堆表、索引和系统表的总数。每个段数据库的每个表占用60个字节的共享内存。默认值是1000。
 
-更详细的信息，请参考《|product-name|数据仓库参考指南》。
+更详细的信息，请参考《|product-name| 参考指南》。
 
 检测臃肿
 ^^^^^^^^^^
@@ -250,7 +250,7 @@ VACUUM命令将过期行加入到空闲空间映射表中以便以后重用。�
 消除系统表臃肿
 ^^^^^^^^^^^^^^^^^
 
-|product-name| 数据仓库系统表也是堆表，因而也会随着时间推移而变得臃肿。随着数据库对象的创建、修改和删除，系统表中会留下过期行。
+|product-name| 系统表也是堆表，因而也会随着时间推移而变得臃肿。随着数据库对象的创建、修改和删除，系统表中会留下过期行。
 
 使用gpload加载数据会造成臃肿，因为它会创建并删除外部表。（建议使用gpfdist加载数据）。
 
@@ -286,11 +286,11 @@ AO 表的处理方式和堆表完全不同。尽管AO表可以更新和删除，
 
 如果确实需要对AO表执行UPDATE或者DELETE，则过期行会记录在辅助的位图表中，而不是像堆表那样使用空闲空间映射表。使用VACUUM回收空间。对含有过期行的AO表运行VACUUM会通过重写来精简整张表。如果过期行的百分比低于配置参数*gp_appendonly_compaction_threshold*, 则不会执行任何操作，默认值是10（10%）。每个段数据库(Segment)上都会检查该值，所以有可能某些Segment上执行空间回收操作，而另一些Segment不执行任何操作。可以通过设置*gp_appendonly_compaction* 参数为no禁止AO表空间回收。
 
-监控|product-name|数据仓库日志文件
+监控|product-name| 日志文件
 
 了解系统日志文件的位置和内容，并定期的监控这些文件。
 
-下标列出了|product-name|数据仓库各种日志文件的位置。文件路径中，date是格式为 YYYYMMDD 的日期，instance是当前实例的名字，n是Segment号。
+下标列出了|product-name| 各种日志文件的位置。文件路径中，date是格式为 YYYYMMDD 的日期，instance是当前实例的名字，n是Segment号。
 
 +------------------------------------------------------------------+------------------------+
 |路径                                                              |描述                    |

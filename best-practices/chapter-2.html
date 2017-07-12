@@ -36,7 +36,7 @@
     <link rel="top" title="HashData Warehouse Document 1.0.0 文档" href="../index.html"/>
     <link rel="up" title="4. 最佳实践" href="index.html"/>
     <link rel="next" title="4.1.3. 第三章" href="chapter-3.html"/>
-    <link rel="prev" title="4.1.1. HashData 数据仓库 数据仓库最佳实践概述" href="chapter-1.html"/> 
+    <link rel="prev" title="4.1.1. HashData 数据仓库 最佳实践概述" href="chapter-1.html"/> 
 
     
     <script src="../_static/js/modernizr.min.js"></script>
@@ -191,7 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">3. 开发指南</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 最佳实践</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#product-name">4.1. HashData 数据仓库 最佳实践</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="chapter-1.html">4.1.1. HashData 数据仓库 数据仓库最佳实践概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-1.html">4.1.1. HashData 数据仓库 最佳实践概述</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.2. 第二章</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-3.html">4.1.3. 第三章</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-4.html">4.1.4. 第四章</a></li>
@@ -268,86 +268,77 @@
 <h1>4.1.2. 第二章<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>4.1.2.1. 系统配置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>本节描述了 HashData 数据仓库 数据库集群关于主机配置的需求和最佳实践。</p>
+<p>本节描述了 HashData 数据仓库 集群关于主机配置的需求和最佳实践。</p>
 <div class="section" id="id3">
 <h3>4.1.2.1.1. 首选操作系统<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>CentOS是首选操作系统。应使用最新支持的主版本，目前是 CentOS 7。</p>
 </div>
 <div class="section" id="id4">
 <h3>4.1.2.1.2. 文件系统<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<p>HashData 数据仓库 数据库的数据目录推荐使用 XFS 文件系统。使用以下选项挂载 XFS：</p>
+<p>HashData 数据仓库 的数据目录推荐使用 XFS 文件系统。使用以下选项挂载 XFS：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rw</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="n">inode64</span><span class="p">,</span><span class="n">allocsize</span><span class="o">=</span><span class="mi">16</span><span class="n">m</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
 <h3>4.1.2.1.3. 端口配置<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<p>操作系统配置参数 <em>ip_local_port_range</em> 的设置不要和 HashData 数据仓库 数据库的端口范围有冲突，例如：</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>net.ipv4.ip_local_port_range=3000 65535
-PORT_BASE=2000
-MIRROR_PORT_BASE=2100
-REPLICATION_PORT_BASE=2200
-MIRROR_REPLICATION_PORT_BASE=2300</dd>
-</dl>
+<p>操作系统配置参数 <em>ip_local_port_range</em> 的设置不要和 HashData 数据仓库 的端口范围有冲突，例如：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">ipv4</span><span class="o">.</span><span class="n">ip_local_port_range</span><span class="o">=</span><span class="mi">3000</span> <span class="mi">65535</span>
+<span class="n">PORT_BASE</span><span class="o">=</span><span class="mi">2000</span>
+<span class="n">MIRROR_PORT_BASE</span><span class="o">=</span><span class="mi">2100</span>
+<span class="n">REPLICATION_PORT_BASE</span><span class="o">=</span><span class="mi">2200</span>
+<span class="n">MIRROR_REPLICATION_PORT_BASE</span><span class="o">=</span><span class="mi">2300</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="i-o">
 <h3>4.1.2.1.4. I/O配置<a class="headerlink" href="#i-o" title="永久链接至标题">¶</a></h3>
 <p>包含数据目录的设备的预读大小应设为16384。</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>/sbin/blockdev –getra /dev/sdb
-16384</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">blockdev</span> <span class="o">--</span><span class="n">getra</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span>
+<span class="mi">16384</span>
+</pre></div>
+</div>
 <p>包含数据目录的设备的 I/O 调度算法设置为deadline。</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd># cat /sys/block/sdb/queue/scheduler
-noop anticipatory [deadline] cfq</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># cat /sys/block/sdb/queue/scheduler</span>
+<span class="n">noop</span> <span class="n">anticipatory</span> <span class="p">[</span><span class="n">deadline</span><span class="p">]</span> <span class="n">cfq</span>
+</pre></div>
+</div>
 <p>通过 /etc/security/limits.conf 增大操作系统文件数和进程数。</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd><ul class="first last simple">
-<li>soft nofile 65536</li>
-<li>hard nofile 65536</li>
-<li>soft nproc 131072</li>
-<li>hard nproc 131072</li>
-</ul>
-</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">soft</span> <span class="n">nofile</span> <span class="mi">65536</span>
+<span class="o">*</span> <span class="n">hard</span> <span class="n">nofile</span> <span class="mi">65536</span>
+<span class="o">*</span> <span class="n">soft</span> <span class="n">nproc</span> <span class="mi">131072</span>
+<span class="o">*</span> <span class="n">hard</span> <span class="n">nproc</span> <span class="mi">131072</span>
+</pre></div>
+</div>
 <p>启用core文件转储，并保存到已知位置。确保limits.conf中允许的core转储文件。</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>kernel.core_pattern = /var/core/core.%h.%t
-# grep core /etc/security/limits.conf
-* soft core unlimited</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">kernel</span><span class="o">.</span><span class="n">core_pattern</span> <span class="o">=</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">core</span><span class="o">.%</span><span class="n">h</span><span class="o">.%</span><span class="n">t</span>
+<span class="c1"># grep core /etc/security/limits.conf</span>
+<span class="o">*</span> <span class="n">soft</span> <span class="n">core</span> <span class="n">unlimited</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id6">
 <h3>4.1.2.1.5. 操作系统内存配置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>Linux sysctl 的 <em>vm.overcommit_memory</em> 和 <em>vm.overcommit_ratio</em> 变量会影响操作系统对内存分配的管理。这些变量应该设置如下：</p>
 <p><strong>vm.overcommit_memory</strong></p>
-<p>控制操作系统使用什么方法确定分配给进程的内存总数。对于 HashData 数据仓库 数据库，唯一建议值是2.</p>
+<p>控制操作系统使用什么方法确定分配给进程的内存总数。对于 HashData 数据仓库，唯一建议值是2。</p>
 <p><strong>vm.overcommit_ratio</strong></p>
-<p>控制分配给应用程序进程的内存百分比。建议使用缺省值50.</p>
+<p>控制分配给应用程序进程的内存百分比。建议使用缺省值50。</p>
 <p>不要启用操作系统的大内存页。</p>
 <p>详见：<em>内存和负载管理</em>。（后续章节)</p>
 </div>
 <div class="section" id="id7">
 <h3>4.1.2.1.6. 共享内存设置<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
-<p>HashData 数据仓库 数据库中同一数据库实例的不同postgres进程间通讯使用共享内存。使用sysctl配置如下共享内存参数，且不建议修改：</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>kernel.shmmax = 500000000
-kernel.shmmni = 4096
-kernel.shmall = 4000000000</dd>
-</dl>
+<p>HashData 数据仓库 中同一数据库实例的不同postgres进程间通讯使用共享内存。使用sysctl配置如下共享内存参数，且不建议修改：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">kernel</span><span class="o">.</span><span class="n">shmmax</span> <span class="o">=</span> <span class="mi">500000000</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">shmmni</span> <span class="o">=</span> <span class="mi">4096</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">shmall</span> <span class="o">=</span> <span class="mi">4000000000</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id8">
 <h3>4.1.2.1.7. 验证操作系统<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
-<p>使用gpcheck验证操作系统配置。参考 《HashData 数据仓库 数据库工具指南》中的gpcheck。</p>
+<p>使用gpcheck验证操作系统配置。参考 《HashData 数据仓库 工具指南》中的gpcheck。</p>
 </div>
 <div class="section" id="id9">
 <h3>4.1.2.1.8. 设置一个主机上段数据库个数<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
@@ -366,10 +357,9 @@ kernel.shmall = 4000000000</dd>
 <div class="section" id="id10">
 <h3>4.1.2.1.9. 段服务器内存配置<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <p>服务器配置参数 <em>gp_vmem_protect_limit</em> 控制了每个段数据库为所有运行的查询分配的内存总量。如果查询需要的内存超过此值，则会失败。使用下面公式确定合适的值：</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>(swap + (RAM * vm.overcommit_ratio)) * .9 / number_of_Segments_per_server</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">swap</span> <span class="o">+</span> <span class="p">(</span><span class="n">RAM</span> <span class="o">*</span> <span class="n">vm</span><span class="o">.</span><span class="n">overcommit_ratio</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="n">number_of_Segments_per_server</span>
+</pre></div>
+</div>
 <p>例如，具有下面配置的段服务器：</p>
 <ul class="simple">
 <li>8GB 交换空间</li>
@@ -378,26 +368,23 @@ kernel.shmall = 4000000000</dd>
 <li>8 个段数据库</li>
 </ul>
 <p>则设置 <em>gp_vmem_protect_limit</em> 为 8GB：</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>(8 + (128 * .5)) * .9 / 8 = 8 GB</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">8</span> <span class="o">+</span> <span class="p">(</span><span class="mi">128</span> <span class="o">*</span> <span class="o">.</span><span class="mi">5</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">8</span> <span class="n">GB</span>
+</pre></div>
+</div>
 <p>参见：<em>内存和负载管理</em>。（后续章节)</p>
 </div>
 <div class="section" id="sql">
 <h3>4.1.2.1.10. SQL语句内存配置<a class="headerlink" href="#sql" title="永久链接至标题">¶</a></h3>
 <p>服务器配置参数 <em>gp_statement_mem</em> 控制段数据库上单个查询可以使用的内存总量。如果语句需要更多内存，则会溢出数据到磁盘。用下面公式确定合适的值：</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>(gp_vmem_protect_limit*.9)/max_expected_concurrent_queries</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">gp_vmem_protect_limit</span><span class="o">*.</span><span class="mi">9</span><span class="p">)</span><span class="o">/</span><span class="n">max_expected_concurrent_queries</span>
+</pre></div>
+</div>
 <p>例如，如果并发度为40，
 <em>gp_vmeme_protect_limit</em> 为8GB，则
 <em>gp_statement_mem</em> 为：</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>(8192MB * .9) / 40 = 184MB</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">8192</span><span class="n">MB</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span><span class="p">)</span> <span class="o">/</span> <span class="mi">40</span> <span class="o">=</span> <span class="mi">184</span><span class="n">MB</span>
+</pre></div>
+</div>
 <p>每个查询最多可以使用 184MB 内存，之后将溢出到磁盘。</p>
 <p>若想安全的增大 <em>gp_statement_mem</em>，要么增大 <em>gp_vmem_protect_limit</em>，要么降低并发。要增大*gp_vmem_protect_limit*，必须增加物理内存和/或交换空间，或者降低单个主机上运行的段数据库个数。</p>
 <p>请注意，为集群添加更多的段数据库实例并不能解决内存不足的问题，除非引入更多新主机来降低了单个主机上运行的段数据库的个数。</p>
@@ -406,13 +393,12 @@ kernel.shmall = 4000000000</dd>
 </div>
 <div class="section" id="id11">
 <h3>4.1.2.1.11. 溢出文件配置<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
-<p>如果为SQL查询分配的内存不足，HashData 数据仓库 数据库会创建溢出文件（也叫工作文件）。在默认情况下，一个SQL查询最多可以创建 100000 个溢出文件，这足以满足大多数查询。</p>
+<p>如果为SQL查询分配的内存不足，HashData 数据仓库 会创建溢出文件（也叫工作文件）。在默认情况下，一个SQL查询最多可以创建 100000 个溢出文件，这足以满足大多数查询。</p>
 <p>参数 <em>gp_workfile_limit_files_per_query</em> 决定了一个查询最多可以创建多少个溢出文件。0 意味着没有限制。限制溢出文件数据可以防止失控查询破坏整个系统。</p>
-<p>如果分配内存不足或者出现数据倾斜，则一个SQL查询可能产生大量溢出文件。如果超过溢出文件上限，HashData数据库报告如下错误：</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>ERROR: number of workfiles per query limit exceeded</dd>
-</dl>
+<p>如果分配内存不足或者出现数据倾斜，则一个SQL查询可能产生大量溢出文件。如果超过溢出文件上限，HashData 数据仓库 报告如下错误：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">workfiles</span> <span class="n">per</span> <span class="n">query</span> <span class="n">limit</span> <span class="n">exceeded</span>
+</pre></div>
+</div>
 <p>在尝试增大 <em>gp_workfile_limit_files_per_query</em> 前，先尝试通过修改 SQL、数据分布策略或者内存配置以降低溢出文件个数。</p>
 <p>gp_toolkit模式包括一些视图，通过这些视图可以看到所有使用溢出文件的查询的信息。这些信息有助于故障排除和调优查询：</p>
 <ul class="simple">
@@ -420,7 +406,7 @@ kernel.shmall = 4000000000</dd>
 <li><em>gp_workfile_usage_per_query</em> 视图的每一行表示一个正在使用溢出文件的 SQL 查询的信息。</li>
 <li><em>gp_workfile_usage_per_Segment</em> 视图的每一行对应一个段数据库，包含了该段上使用的溢出文件占用的磁盘空间总量。</li>
 </ul>
-<p>关于这些视图的字段涵义，请参考《HashData 数据仓库 数据库参考指南》。</p>
+<p>关于这些视图的字段涵义，请参考《HashData 数据仓库 参考指南》。</p>
 <p>参数 <em>gp_workfile_compress_algorithm</em> 指定溢出文件的压缩算法：none 或者 zlib。</p>
 </div>
 </div>
