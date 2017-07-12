@@ -174,10 +174,10 @@ div.topLevel {
     margin-right: 0px;
 }
 .topLevel .toctree-l1:nth-child(2) {
-    text-align: inherit;
-    position: inherit;
+    text-align: inherit !important;
+    position: inherit !important;
     left: 50%;
     top: 0px;
-    transform: inherit;
+    transform: inherit !important;
 }
 
