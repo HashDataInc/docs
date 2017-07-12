@@ -141,6 +141,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">3. 开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/index.html">4. 最佳实践</a></li>
 </ul>
 
                 
@@ -208,6 +209,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/index.html">4. 最佳实践</a></li>
 </ul>
 
                 
@@ -235,6 +237,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">3. 开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/index.html">4. 最佳实践</a></li>
 </ul>
 
             
@@ -336,7 +339,7 @@ pg_database 系统表列出所有数据库。例如：</p>
 <h2>3.1.4.2. 创建和管理模式<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p>模式（Schema）的作用类似于名字空间，实现了数据库对象逻辑上的分类组织。通过使用模式对象，您可以在同一个数据库中，创建同名的对象（例如：表，函数）。</p>
 <div class="section" id="public">
-<h3>3.1.4.2.1. 默认模式 &quot;public&quot;<a class="headerlink" href="#public" title="永久链接至标题">¶</a></h3>
+<h3>3.1.4.2.1. 默认模式 “public”<a class="headerlink" href="#public" title="永久链接至标题">¶</a></h3>
 <p>数据库包含一个默认模式：public。如果您没有创建任何模式，新创建的对象会默认使用
 public 模式。数据库所有的用户都拥有 public 模式上的 CREATE （创建）和
 USAGE（使用）权限。当您创建额外的模式时，您可以对用户授予权限，从而实现访问控制。</p>
@@ -576,7 +579,7 @@ RANDOMLY(随机分布)来为表指定数据分布规则。</p>
 </pre></div>
 </div>
 <p>在一个可串行化的事务里面，对追加优化表进行更新和删除操作是不允许的，并且会导致事务中断。另外，追加优化表不支持 CLUSTER，
-DECLARE...FOR UPDATE，和触发器。</p>
+DECLARE…FOR UPDATE，和触发器。</p>
 </div>
 <div class="section" id="id25">
 <h3>3.1.5.5.3. 行存储还是列存储<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h3>
@@ -1132,7 +1135,7 @@ IGNORE EXTERNAL PARTITIONS 子句来避免该错误。如果您使用了上面�
 <li>将叶子分区交换为外部表</li>
 </ul>
 <p>重要：在定义或修改分区表时，请指定分区名称（不是表名称）。尽管您可以直接通过 SQL 命令
-直接对表（或分区表）进行查询或数据加载操作。但是您只能通过 ALTER TABLE ... PARTITION
+直接对表（或分区表）进行查询或数据加载操作。但是您只能通过 ALTER TABLE … PARTITION
 子句来修改分区表的结构。</p>
 <p>分区的名称可以省略。如果一个分区没有名字，使用下面的表达式可以指定分区：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PARTITION</span> <span class="n">FOR</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span>
@@ -1198,8 +1201,8 @@ IGNORE EXTERNAL PARTITIONS 子句来避免该错误。如果您使用了上面�
 </pre></div>
 </div>
 <p>当使用 ALTER TABLE 命令修改分区表时，需要使用分区名称（jan08），不要使用完整的表名（sales_1_prt_jan08）。</p>
-<p>注意：在 ALTER TABLE 语句时，你不能提供分区名称。例如：ALTER TABLE sales... 是正确的，ALTER TABLE
-sales_1_part_jan08... 是不允许的。</p>
+<p>注意：在 ALTER TABLE 语句时，你不能提供分区名称。例如：ALTER TABLE sales… 是正确的，ALTER TABLE
+sales_1_part_jan08… 是不允许的。</p>
 </div>
 <div class="section" id="id47">
 <h3>3.1.6.5.3. 增加默认分区<a class="headerlink" href="#id47" title="永久链接至标题">¶</a></h3>
@@ -1656,7 +1659,7 @@ EXPLAIN ANALYZE 命令来对比使用和不使用索引的查询结果。</li>
 <script type="text/javascript" src="../../_static/underscore.js"></script>
 <script type="text/javascript" src="../../_static/doctools.js"></script>
 <script type="text/javascript" src="../../_static/translations.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
 

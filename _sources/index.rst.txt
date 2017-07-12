@@ -15,3 +15,4 @@ HashData Warehouse 帮助文档
    getting-started-guide/hashdata_warehouse_guide
    cluster-management-guide/cluster-management-guide
    developer-guide/index
+   best-practices/index

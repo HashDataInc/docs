@@ -141,6 +141,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">3. 开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/index.html">4. 最佳实践</a></li>
 </ul>
 
                 
@@ -208,6 +209,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/index.html">4. 最佳实践</a></li>
 </ul>
 
                 
@@ -235,6 +237,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">3. 开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/index.html">4. 最佳实践</a></li>
 </ul>
 
             
@@ -418,7 +421,7 @@ PostgreSQL 中的 SQL 语法规则和概念，您可以参考
 </div>
 <p>上面的示例中，correlation
 是表的名称（也可以使用限定名格式：在表名前面添加模式名）或者定义在 FROM
-子句中的表的别名。如果列名在查询访问的表中是唯一的，那么 &quot;correlation.&quot;
+子句中的表的别名。如果列名在查询访问的表中是唯一的，那么 “correlation.”
 部分是可以被省略的。</p>
 </div>
 <div class="section" id="id13">
@@ -504,11 +507,11 @@ $1.somecolumn
 <p>聚合表达式是指对于查询选择的所有数据记录上应用一个聚合函数。聚合函数在一组值上进行运算，并返回一个结果。
 例如：对一组值进行求和运算或者计算平均值。下面列出聚合表达式的语法结构：</p>
 <ul class="simple">
-<li>aggregate_name(expression [ , ... ] ) —
+<li>aggregate_name(expression [ , … ] ) —
 处理所有值为非空的输入记录值。</li>
-<li>aggregate_name(ALL expression [ , ... ] ) —
+<li>aggregate_name(ALL expression [ , … ] ) —
 和上一个表达式行为一致，因为 ALL 是默认参数。</li>
-<li>aggregate_name(DISTINCT expression [ , ... ] ) —
+<li>aggregate_name(DISTINCT expression [ , … ] ) —
 处理所有去除重复后的非空输入记录值。</li>
 <li>aggregate_name(*) —
 处理所有输入记录值，非空值和空值都会被处理。通常这个表达式都是为count(*)服务的。</li>
@@ -1252,8 +1255,8 @@ pseudoinverse 。</td>
 </tr>
 <tr class="row-odd"><td>unnest(array[])</td>
 <td>set of anyelement</td>
-<td>unnest(array['one', 'row',
-'per', 'item'])</td>
+<td>unnest(array[‘one’, ‘row’,
+‘per’, ‘item’])</td>
 <td>将一维数组转化为多行。返回
 anyelement 的集合。该类型是
 PostgreSQL 中的多态伪类型。</td>
@@ -1369,7 +1372,7 @@ expr)</td>
 <td>int[],
 bigint[],
 float[]</td>
-<td>pivot_sum( array['A1','A2'], attr, value)</td>
+<td>pivot_sum( array[‘A1’,’A2’], attr, value)</td>
 <td>透视聚合函数，通过聚合求来消除重复项。</td>
 </tr>
 <tr class="row-odd"><td>mregr_coef
@@ -1917,7 +1920,7 @@ C2
 <script type="text/javascript" src="../../_static/underscore.js"></script>
 <script type="text/javascript" src="../../_static/doctools.js"></script>
 <script type="text/javascript" src="../../_static/translations.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
 
