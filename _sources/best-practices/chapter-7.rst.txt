@@ -1,3 +1,5 @@
+.. include:: ../defines.hrst
+
 第七章 
 =========
 

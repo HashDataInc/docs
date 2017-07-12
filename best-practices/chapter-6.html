@@ -268,7 +268,7 @@
 <h1>4.1.6. 第六章<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>4.1.6.1. 加载数据<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p><a href="#id8"><span class="problematic" id="id9">|product-name|</span></a> 数据仓库支持多种数据加载方式，每种都有其适用的场景。</p>
+<p>HashData 数据仓库 数据仓库支持多种数据加载方式，每种都有其适用的场景。</p>
 </div>
 <div class="section" id="insert">
 <h2>4.1.6.2. INSERT 语句直接插入字段数据<a class="headerlink" href="#insert" title="永久链接至标题">¶</a></h2>
@@ -288,9 +288,9 @@
 </div>
 <div class="section" id="id3">
 <h2>4.1.6.4. 外部表<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p><a href="#id10"><span class="problematic" id="id11">|product-name|</span></a> 数据仓库外部表可以访问数据库之外的数据。可以使用 SELECT 访问外部数据，常用于抽取、加载、转换（ELT）模式中。ELT 是 ETL 模式的一个变种，可以充分利用 <a href="#id12"><span class="problematic" id="id13">|product-name|</span></a> 数据仓库的快速并行数据加载能力。</p>
+<p>HashData 数据仓库 数据仓库外部表可以访问数据库之外的数据。可以使用 SELECT 访问外部数据，常用于抽取、加载、转换（ELT）模式中。ELT 是 ETL 模式的一个变种，可以充分利用 HashData 数据仓库 数据仓库的快速并行数据加载能力。</p>
 <p>使用ETL时，数据从数据源抽取，在数据库之外使用诸如 Informatica 或者 Datastage 的外部工具进行转换，然后加载到数据库中。</p>
-<p>使用ELT时，<a href="#id14"><span class="problematic" id="id15">|product-name|</span></a> 外部表提供对外部数据的直接访问，包括文件（例如文本文件、CSV或者XML文件）、Web服务器、Hadoop文件系统、可执行操作系统程序或者下节介绍的gpfdist文件服务器。外部表支持选择、排序和关联等SQL操作，所以数据可以同时进行加载和转换；或者加载到某个表后在执行转换操作，并最终插入到目标表中。</p>
+<p>使用ELT时，HashData 数据仓库 外部表提供对外部数据的直接访问，包括文件（例如文本文件、CSV或者XML文件）、Web服务器、Hadoop文件系统、可执行操作系统程序或者下节介绍的gpfdist文件服务器。外部表支持选择、排序和关联等SQL操作，所以数据可以同时进行加载和转换；或者加载到某个表后在执行转换操作，并最终插入到目标表中。</p>
 <p>外部表定义使用CREATE EXTERNAL TABLE语句，该语句的LOCATION子句定义了数据源，FORMAT子句定义了数据的格式以便系统可以解析该数据。外部文件数据使用file://协议，且必须位于Segment主机上可以被 HashData 超级用户访问的位置。可以有多个数据文件，LOCATION子句中文件的个数就是并发读取外部数据的Segments的个数。</p>
 </div>
 <div class="section" id="gpfdist">
@@ -324,7 +324,7 @@
 </div>
 <div class="section" id="gpload">
 <h2>4.1.6.6. gpload<a class="headerlink" href="#gpload" title="永久链接至标题">¶</a></h2>
-<p>gpload 是一个数据加载工具，是 <a href="#id16"><span class="problematic" id="id17">|product-name|</span></a> 外部表并行数据加载特性的一个接口。</p>
+<p>gpload 是一个数据加载工具，是 HashData 数据仓库 外部表并行数据加载特性的一个接口。</p>
 <p>小心使用 gpload，因为它会创建和删除外部表而造成系统表膨胀。建议使用性能最好的 gpfdist。</p>
 <p>gpload 使用YAML格式的控制文件来定义数据加载规范，执行下面操作：</p>
 <ul class="simple">

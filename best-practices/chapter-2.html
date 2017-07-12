@@ -268,21 +268,21 @@
 <h1>4.1.2. 第二章<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>4.1.2.1. 系统配置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>本节描述了 <a href="#id12"><span class="problematic" id="id13">|product-name|</span></a> 数据库集群关于主机配置的需求和最佳实践。</p>
+<p>本节描述了 HashData 数据仓库 数据库集群关于主机配置的需求和最佳实践。</p>
 <div class="section" id="id3">
 <h3>4.1.2.1.1. 首选操作系统<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>CentOS是首选操作系统。应使用最新支持的主版本，目前是 CentOS 7。</p>
 </div>
 <div class="section" id="id4">
 <h3>4.1.2.1.2. 文件系统<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<p><a href="#id14"><span class="problematic" id="id15">|product-name|</span></a> 数据库的数据目录推荐使用 XFS 文件系统。使用以下选项挂载 XFS：</p>
+<p>HashData 数据仓库 数据库的数据目录推荐使用 XFS 文件系统。使用以下选项挂载 XFS：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rw</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="n">inode64</span><span class="p">,</span><span class="n">allocsize</span><span class="o">=</span><span class="mi">16</span><span class="n">m</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
 <h3>4.1.2.1.3. 端口配置<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<p>操作系统配置参数 <em>ip_local_port_range</em> 的设置不要和 <a href="#id16"><span class="problematic" id="id17">|product-name|</span></a> 数据库的端口范围有冲突，例如：</p>
+<p>操作系统配置参数 <em>ip_local_port_range</em> 的设置不要和 HashData 数据仓库 数据库的端口范围有冲突，例如：</p>
 <dl class="docutils">
 <dt>::</dt>
 <dd>net.ipv4.ip_local_port_range=3000 65535
@@ -329,7 +329,7 @@ noop anticipatory [deadline] cfq</dd>
 <h3>4.1.2.1.5. 操作系统内存配置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>Linux sysctl 的 <em>vm.overcommit_memory</em> 和 <em>vm.overcommit_ratio</em> 变量会影响操作系统对内存分配的管理。这些变量应该设置如下：</p>
 <p><strong>vm.overcommit_memory</strong></p>
-<p>控制操作系统使用什么方法确定分配给进程的内存总数。对于 <a href="#id18"><span class="problematic" id="id19">|product-name|</span></a> 数据库，唯一建议值是2.</p>
+<p>控制操作系统使用什么方法确定分配给进程的内存总数。对于 HashData 数据仓库 数据库，唯一建议值是2.</p>
 <p><strong>vm.overcommit_ratio</strong></p>
 <p>控制分配给应用程序进程的内存百分比。建议使用缺省值50.</p>
 <p>不要启用操作系统的大内存页。</p>
@@ -337,7 +337,7 @@ noop anticipatory [deadline] cfq</dd>
 </div>
 <div class="section" id="id7">
 <h3>4.1.2.1.6. 共享内存设置<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
-<p><a href="#id20"><span class="problematic" id="id21">|product-name|</span></a> 数据库中同一数据库实例的不同postgres进程间通讯使用共享内存。使用sysctl配置如下共享内存参数，且不建议修改：</p>
+<p>HashData 数据仓库 数据库中同一数据库实例的不同postgres进程间通讯使用共享内存。使用sysctl配置如下共享内存参数，且不建议修改：</p>
 <dl class="docutils">
 <dt>::</dt>
 <dd>kernel.shmmax = 500000000
@@ -347,7 +347,7 @@ kernel.shmall = 4000000000</dd>
 </div>
 <div class="section" id="id8">
 <h3>4.1.2.1.7. 验证操作系统<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
-<p>使用gpcheck验证操作系统配置。参考 《<a href="#id22"><span class="problematic" id="id23">|product-name|</span></a> 数据库工具指南》中的gpcheck。</p>
+<p>使用gpcheck验证操作系统配置。参考 《HashData 数据仓库 数据库工具指南》中的gpcheck。</p>
 </div>
 <div class="section" id="id9">
 <h3>4.1.2.1.8. 设置一个主机上段数据库个数<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
@@ -360,7 +360,7 @@ kernel.shmall = 4000000000</dd>
 <li>存储空间</li>
 <li>主段数据库和镜像共存</li>
 <li>主机是否运行 ETL 进程</li>
-<li>主机上运行的非 <a href="#id24"><span class="problematic" id="id25">|product-name|</span></a> 进程</li>
+<li>主机上运行的非 HashData 数据仓库 进程</li>
 </ul>
 </div>
 <div class="section" id="id10">
@@ -406,7 +406,7 @@ kernel.shmall = 4000000000</dd>
 </div>
 <div class="section" id="id11">
 <h3>4.1.2.1.11. 溢出文件配置<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
-<p>如果为SQL查询分配的内存不足，<a href="#id26"><span class="problematic" id="id27">|product-name|</span></a> 数据库会创建溢出文件（也叫工作文件）。在默认情况下，一个SQL查询最多可以创建 100000 个溢出文件，这足以满足大多数查询。</p>
+<p>如果为SQL查询分配的内存不足，HashData 数据仓库 数据库会创建溢出文件（也叫工作文件）。在默认情况下，一个SQL查询最多可以创建 100000 个溢出文件，这足以满足大多数查询。</p>
 <p>参数 <em>gp_workfile_limit_files_per_query</em> 决定了一个查询最多可以创建多少个溢出文件。0 意味着没有限制。限制溢出文件数据可以防止失控查询破坏整个系统。</p>
 <p>如果分配内存不足或者出现数据倾斜，则一个SQL查询可能产生大量溢出文件。如果超过溢出文件上限，HashData数据库报告如下错误：</p>
 <dl class="docutils">
@@ -420,7 +420,7 @@ kernel.shmall = 4000000000</dd>
 <li><em>gp_workfile_usage_per_query</em> 视图的每一行表示一个正在使用溢出文件的 SQL 查询的信息。</li>
 <li><em>gp_workfile_usage_per_Segment</em> 视图的每一行对应一个段数据库，包含了该段上使用的溢出文件占用的磁盘空间总量。</li>
 </ul>
-<p>关于这些视图的字段涵义，请参考《<a href="#id28"><span class="problematic" id="id29">|product-name|</span></a> 数据库参考指南》。</p>
+<p>关于这些视图的字段涵义，请参考《HashData 数据仓库 数据库参考指南》。</p>
 <p>参数 <em>gp_workfile_compress_algorithm</em> 指定溢出文件的压缩算法：none 或者 zlib。</p>
 </div>
 </div>
