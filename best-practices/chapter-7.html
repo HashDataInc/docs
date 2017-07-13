@@ -355,8 +355,8 @@
 <li>限制（Limit）- 限制返回的行数。</li>
 </ul>
 </div>
-<div class="section" id="product-name">
-<h2>4.1.7.3. 优化|product-name| 查询<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>4.1.7.3. 优化查询<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>本节介绍某些情况下可以改善系统性能的数据库特性和编程实践。</p>
 <p>分析查询计划时首先需找估计代价很高的操作。对比估算的行数及代价与操作实际需要处理的行数，以判断是否合理。</p>
 <p>如果有分区表，判断分区裁剪是否有效。分区裁剪需要查询条件（WHERE 子句）必须和分区条件一样。此外，WHERE子句不能含有显式值，也不能包含子查询。</p>
@@ -365,8 +365,8 @@
 <p>注意执行排序或者聚合操作的查询节点。聚合操作隐含排序操作。如果排序和聚合操作需要处理大量数据，则存在优化查询性能的机会。当需要对大量数据行进行排序和聚合时，优先使用 HashAggregate 操作符。通常情况下，不良SQL会造成优化器选择使用排序操作符。如果重写查询，大多数的排序操作可以被 HashAggregate 替代。设置 <em>enable_groupagg</em> 参数以优先使用 HashAggregate 而非排序聚合操作。</p>
 <p>若查询计划显示对大量数据集使用了广播移动操作符，需要尝试避免使用广播操作符。一种方法是使用*gp_segments_for_planner* 配置参数增加移动数据的估计代价。该变量告诉优化器在计算移动代价时使用多少个segments。默认值是0，意味着使用实际Segment个数。增大这个数字，移动的代价会跟着增大，优化器会优先使用重分发移动操作符。例如设置 gp_segments_for_planner=100000 告诉优化器有100000个Segments。相反为了优先使用广播移动操作符，为该值设置一个小数字，例如2。</p>
 </div>
-<div class="section" id="product-name-grouping">
-<h2>4.1.7.4. HashData 数据仓库 分组（Grouping）扩展<a class="headerlink" href="#product-name-grouping" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>4.1.7.4. 分组扩展<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>HashData 数据仓库 的GROUP BY扩展可以执行某些常用的计算，且比应用程序或者存储过程效率高。</p>
 <ul class="simple">
 <li>GROUP BY ROLLUP(col1, col2, col3)</li>
@@ -394,8 +394,8 @@
 <p>GROUPING SETS 指定对那些字段计算聚合，它可以比 ROLLUP 和 CUBE 更精确地控制分区条件。</p>
 <p>更多细节请参见《HashData 数据仓库 参考指南》。</p>
 </div>
-<div class="section" id="window">
-<h2>4.1.7.5. 窗口（Window）函数<a class="headerlink" href="#window" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h2>4.1.7.5. 窗口函数<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>窗口函数可以实现在结果集的分组子集上的聚合或者排名函数，例如 sum(population) over (partition by city)。窗口函数功能强大，性能优异。因为它在数据库内部进行计算，避免了数据传输。</p>
 <ul class="simple">
 <li>窗口函数 row_number() 计算一行在分组子集中的行号，例如 row_number() over (order by id)。</li>

@@ -465,8 +465,8 @@ $DBNAME | psql -a $DBNAME
 <p>如果确实需要对AO表执行UPDATE或者DELETE，则过期行会记录在辅助的位图表中，而不是像堆表那样使用空闲空间映射表。使用VACUUM回收空间。对含有过期行的AO表运行VACUUM会通过重写来精简整张表。如果过期行的百分比低于配置参数*gp_appendonly_compaction_threshold*, 则不会执行任何操作，默认值是10（10%）。每个段数据库(Segment)上都会检查该值，所以有可能某些Segment上执行空间回收操作，而另一些Segment不执行任何操作。可以通过设置*gp_appendonly_compaction* 参数为no禁止AO表空间回收。</p>
 </div>
 </div>
-<div class="section" id="product-name">
-<h2>4.1.5.4. 监控|product-name| 日志文件<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id15">
+<h2>4.1.5.4. 监控日志文件<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
 <p>了解系统日志文件的位置和内容，并定期的监控这些文件。</p>
 <p>下标列出了|product-name| 各种日志文件的位置。文件路径中，date是格式为 YYYYMMDD 的日期，instance是当前实例的名字，n是Segment号。</p>
 <table border="1" class="docutils">
