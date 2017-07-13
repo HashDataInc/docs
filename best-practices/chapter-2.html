@@ -339,7 +339,7 @@
 <p>使用gpcheck验证操作系统配置。参考 《HashData 数据仓库 工具指南》中的gpcheck。</p>
 </div>
 <div class="section" id="id8">
-<h2>4.1.2.8. 设置一个主机上段数据库个数<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>4.1.2.8. 设置段数据库个数<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>确定每个段主机上段数据库的个数对整体性能有着巨大影响。这些段数据库之间共享主机的 CPU 核、内存、网卡等，且和主机上的所有进程共享这些资源。过高地估计每个服务器上运行的段数据库个数，通常是达不到最优性能的常见原因之一。</p>
 <p>以下因素确定了一个主机上可以运行多少个段数据库：</p>
 <ul class="simple">
@@ -355,7 +355,7 @@
 <div class="section" id="id9">
 <h2>4.1.2.9. 段服务器内存配置<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p>服务器配置参数 <em>gp_vmem_protect_limit</em> 控制了每个段数据库为所有运行的查询分配的内存总量。如果查询需要的内存超过此值，则会失败。使用下面公式确定合适的值：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">swap</span> <span class="o">+</span> <span class="p">(</span><span class="n">RAM</span> <span class="o">*</span> <span class="n">vm</span><span class="o">.</span><span class="n">overcommit_ratio</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="n">number_of_Segments_per_server</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">swap</span> <span class="o">+</span> <span class="p">(</span><span class="n">RAM</span> <span class="o">*</span> <span class="n">vm</span><span class="o">.</span><span class="n">overcommit_ratio</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="n">number_of_segments_per_server</span>
 </pre></div>
 </div>
 <p>例如，具有下面配置的段服务器：</p>

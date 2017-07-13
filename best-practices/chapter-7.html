@@ -269,7 +269,7 @@
 <p>在一个查询运行速度比预期慢时，可以查看优选器生成的查询计划以及执行每一步的代价。这有助于确定哪一步最耗资源，进而可以修改查询或者模式，以便生成更好的计划。查看查询计划使用EXPLAIN语句。</p>
 <p>优化器基于每个表的统计信息生成计划，所以准确的统计信息对生成最有计划至关重要。关于更新统计信息，请参看本文档的”使用ANALYZE更新统计信息”一节。</p>
 <div class="section" id="id1">
-<h2>4.1.7.1. 生成查询计划解释<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>4.1.7.1. 生成查询计划<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>EXPLAIN和EXPLAIN ANALYZE语句有助于改进查询性能。EXPLAIN显示一个查询的执行计划以及估算的代价，但是不执行该查询。EXPLAIN ANALYZE除了显示执行计划外还会执行查询。EXPLAIN ANALYZE会丢弃SELECT语句的输出，其他操作会被执行（例如INSERT，UPDATE和DELETE）。若需对DML语句使用EXPLAIN ANALYZE而不影响数据，可置EXPLAIN ANALYZE于事务中（BEGIN; EXPLAIN ANALYZE …; ROLLBACK;）。</p>
 <p>EXPLAIN ANALYZE除了执行查询、显示查询计划外，还显示如下信息：</p>
 <ul class="simple">
@@ -281,7 +281,7 @@
 </ul>
 </div>
 <div class="section" id="id2">
-<h2>4.1.7.2. 理解查询计划解释<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>4.1.7.2. 理解查询计划<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>解释计划详细描述了|product-name| 执行查询的步骤。查询计划是颗节点树，从下向上读数据，每个节点将它的执行结果数据传递给其上的节点。每个节点表示查询计划的一个步骤，每个节点都有一行信息描述了该步骤执行的操作 – 例如扫描、关联、聚合或者排序操作等，此外还有显示执行该操作的具体方法。例如，扫描操作可能是顺序扫描或者索引扫描，关联操作可能是哈希关联或者嵌套循环关联。</p>
 <p>下面是一个简单查询的解释计划，这个查询的结果应为每个Segment上contributions表的行数。</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">gpacmin</span><span class="o">=#</span> <span class="k">EXPLAIN</span> <span class="k">SELECT</span> <span class="n">gp_Segment_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
