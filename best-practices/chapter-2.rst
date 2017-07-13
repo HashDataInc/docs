@@ -99,8 +99,8 @@ Linux sysctl 的 *vm.overcommit_memory* 和 *vm.overcommit_ratio* 变量会影�
 
 使用gpcheck验证操作系统配置。参考 《|product-name| 工具指南》中的gpcheck。
 
-设置一个主机上段数据库个数
-----------------------------
+设置段数据库个数
+-------------------
 
 确定每个段主机上段数据库的个数对整体性能有着巨大影响。这些段数据库之间共享主机的 CPU 核、内存、网卡等，且和主机上的所有进程共享这些资源。过高地估计每个服务器上运行的段数据库个数，通常是达不到最优性能的常见原因之一。
 
@@ -121,7 +121,7 @@ Linux sysctl 的 *vm.overcommit_memory* 和 *vm.overcommit_ratio* 变量会影�
 
 ::
 
-    (swap + (RAM * vm.overcommit_ratio)) * .9 / number_of_Segments_per_server
+    (swap + (RAM * vm.overcommit_ratio)) * .9 / number_of_segments_per_server
 
 例如，具有下面配置的段服务器：
 
