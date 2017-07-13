@@ -1,10 +1,10 @@
 .. include:: ../defines.hrst
 
-第四章 
-=========
-
 内存和负载管理
------------------
+=================
+
+内存管理
+-----------
 
 内存管理对 |product-name| 集群性能有显著影响。默认设置可以满足大多数环境需求。不要修改默认设置，除非你理解系统的内存特性和使用情况。如果精心设计内存管理，大多数内存溢出问题可以避免。
 
@@ -35,7 +35,7 @@
 
 ::
 
-        (SWAP + (RAM * vm.overcommit_ratio)) * .9 / number_Segments_per_server
+        (SWAP + (RAM * vm.overcommit_ratio)) * .9 / number_segments_per_server
 
 * runaway_detector_activation_percent
 
@@ -60,7 +60,7 @@
     如果有大量溢出文件，则设置 *gp_workfile_compress_algorithm* 对溢出文件压缩。压缩溢出文件也有助于避免磁盘子系统I/O操作超载。
 
 配置资源队列
-^^^^^^^^^^^^^^^
+---------------
 
 |product-name| 的资源队列提供了强大的机制来管理集群的负载。队列可以限制同时运行的查询的数量和内存使用量。当 |product-name| 收到查询时，将其加入到对应的资源队列，队列确定是否接受该查询以及何时执行它。
 

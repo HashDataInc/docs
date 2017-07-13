@@ -191,12 +191,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. 最佳实践</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#product-name">4.1. HashData 数据仓库 最佳实践</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="chapter-1.html">4.1.1. 最佳实践提纲</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-2.html">4.1.2. 第二章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-3.html">4.1.3. 第三章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-4.html">4.1.4. 第四章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-5.html">4.1.5. 第五章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-6.html">4.1.6. 第六章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-7.html">4.1.7. 第七章</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-2.html">4.1.2. 系统配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-3.html">4.1.3. 数据库模式设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-4.html">4.1.4. 内存和负载管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-5.html">4.1.5. 系统监控和维护</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-6.html">4.1.6. 加载数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-7.html">4.1.7. SQL查询调优</a></li>
 </ul>
 </li>
 </ul>
@@ -286,44 +286,55 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter-1.html#id13">4.1.1.16. 高可用</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapter-2.html">4.1.2. 第二章</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id2">4.1.2.1. 系统配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter-2.html">4.1.2. 系统配置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id2">4.1.2.1. 首选操作系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id3">4.1.2.2. 文件系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id4">4.1.2.3. 端口配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#i-o">4.1.2.4. I/O配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id5">4.1.2.5. 操作系统内存配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id6">4.1.2.6. 共享内存设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id7">4.1.2.7. 验证操作系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id8">4.1.2.8. 设置一个主机上段数据库个数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id9">4.1.2.9. 段服务器内存配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#sql">4.1.2.10. SQL语句内存配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-2.html#id10">4.1.2.11. 溢出文件配置</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapter-3.html">4.1.3. 第三章</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id2">4.1.3.1. 数据库模式设计</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id3">4.1.3.2. 数据类型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id6">4.1.3.3. 存储模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id8">4.1.3.4. 压缩</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#distributions">4.1.3.5. 分布(DISTRIBUTIONS)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#partitioning">4.1.3.6. 分区（PARTITIONING)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id11">4.1.3.7. 索引</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id12">4.1.3.8. 字段顺序和字节对齐</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter-3.html">4.1.3. 数据库模式设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id2">4.1.3.1. 数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id5">4.1.3.2. 存储模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id7">4.1.3.3. 压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#distribution">4.1.3.4. 分布(DISTRIBUTION)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#partitioning">4.1.3.5. 分区（PARTITIONING)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id10">4.1.3.6. 索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-3.html#id11">4.1.3.7. 字段顺序和字节对齐</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapter-4.html">4.1.4. 第四章</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapter-4.html#id2">4.1.4.1. 内存和负载管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter-4.html">4.1.4. 内存和负载管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter-4.html#id2">4.1.4.1. 内存管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-4.html#id3">4.1.4.2. 配置资源队列</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapter-5.html">4.1.5. 第五章</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapter-5.html#id2">4.1.5.1. 系统监控和维护</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-5.html#id3">4.1.5.2. 监控</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-5.html#analyze">4.1.5.3. 使用ANALYZE更新统计信息</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-5.html#bloat">4.1.5.4. 管理数据库臃肿（Bloat）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter-5.html">4.1.5. 系统监控和维护</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter-5.html#id2">4.1.5.1. 监控</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-5.html#analyze">4.1.5.2. 使用ANALYZE更新统计信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-5.html#bloat">4.1.5.3. 管理数据库臃肿（Bloat）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-5.html#product-name">4.1.5.4. 监控|product-name| 日志文件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapter-6.html">4.1.6. 第六章</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#id2">4.1.6.1. 加载数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#insert">4.1.6.2. INSERT 语句直接插入字段数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#copy">4.1.6.3. COPY语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#id3">4.1.6.4. 外部表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#gpfdist">4.1.6.5. 外部表和gpfdist</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#gpload">4.1.6.6. gpload</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#id4">4.1.6.7. 最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter-6.html">4.1.6. 加载数据</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#insert">4.1.6.1. INSERT 语句直接插入字段数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#copy">4.1.6.2. COPY语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#id2">4.1.6.3. 外部表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-6.html#id3">4.1.6.4. 最佳实践</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapter-7.html">4.1.7. 第七章</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapter-7.html#sql">4.1.7.1. SQL查询调优</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter-7.html">4.1.7. SQL查询调优</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter-7.html#id1">4.1.7.1. 生成查询计划解释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-7.html#id2">4.1.7.2. 理解查询计划解释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-7.html#product-name">4.1.7.3. 优化|product-name| 查询</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-7.html#product-name-grouping">4.1.7.4. HashData 数据仓库 分组（Grouping）扩展</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter-7.html#window">4.1.7.5. 窗口（Window）函数</a></li>
 </ul>
 </li>
 </ul>

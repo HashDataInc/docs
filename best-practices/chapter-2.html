@@ -8,7 +8,7 @@
     
     <meta name="viewport" content="width=375,user-scalable=no">
     
-    <title>4.1.2. 第二章 &mdash; HashData Warehouse Document 1.0.0 文档</title>
+    <title>4.1.2. 系统配置 &mdash; HashData Warehouse Document 1.0.0 文档</title>
     
 
     
@@ -35,7 +35,7 @@
     <link rel="search" title="搜索" href="../search.html"/>
     <link rel="top" title="HashData Warehouse Document 1.0.0 文档" href="../index.html"/>
     <link rel="up" title="4. 最佳实践" href="index.html"/>
-    <link rel="next" title="4.1.3. 第三章" href="chapter-3.html"/>
+    <link rel="next" title="4.1.3. 数据库模式设计" href="chapter-3.html"/>
     <link rel="prev" title="4.1.1. 最佳实践提纲" href="chapter-1.html"/> 
 
     
@@ -192,12 +192,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 最佳实践</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#product-name">4.1. HashData 数据仓库 最佳实践</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="chapter-1.html">4.1.1. 最佳实践提纲</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.2. 第二章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-3.html">4.1.3. 第三章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-4.html">4.1.4. 第四章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-5.html">4.1.5. 第五章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-6.html">4.1.6. 第六章</a></li>
-<li class="toctree-l3"><a class="reference internal" href="chapter-7.html">4.1.7. 第七章</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.2. 系统配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-3.html">4.1.3. 数据库模式设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-4.html">4.1.4. 内存和负载管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-5.html">4.1.5. 系统监控和维护</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-6.html">4.1.6. 加载数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-7.html">4.1.7. SQL查询调优</a></li>
 </ul>
 </li>
 </ul>
@@ -250,7 +250,7 @@
       <!---->
           <!--<li><a href="index.html">4. 最佳实践</a> &raquo;</li>-->
       <!---->
-    <!--<li>4.1.2. 第二章</li>-->
+    <!--<li>4.1.2. 系统配置</li>-->
       <!--<li class="wy-breadcrumbs-aside">-->
         <!---->
           <!---->
@@ -265,23 +265,21 @@
                     <div itemprop="articleBody">
                         
   <div class="section" id="id1">
-<h1>4.1.2. 第二章<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>4.1.2.1. 系统配置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h1>4.1.2. 系统配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>本节描述了 HashData 数据仓库 集群关于主机配置的需求和最佳实践。</p>
-<div class="section" id="id3">
-<h3>4.1.2.1.1. 首选操作系统<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id2">
+<h2>4.1.2.1. 首选操作系统<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>CentOS是首选操作系统。应使用最新支持的主版本，目前是 CentOS 7。</p>
 </div>
-<div class="section" id="id4">
-<h3>4.1.2.1.2. 文件系统<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h2>4.1.2.2. 文件系统<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>HashData 数据仓库 的数据目录推荐使用 XFS 文件系统。使用以下选项挂载 XFS：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rw</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="n">inode64</span><span class="p">,</span><span class="n">allocsize</span><span class="o">=</span><span class="mi">16</span><span class="n">m</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>4.1.2.1.3. 端口配置<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id4">
+<h2>4.1.2.3. 端口配置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>操作系统配置参数 <em>ip_local_port_range</em> 的设置不要和 HashData 数据仓库 的端口范围有冲突，例如：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">ipv4</span><span class="o">.</span><span class="n">ip_local_port_range</span><span class="o">=</span><span class="mi">3000</span> <span class="mi">65535</span>
 <span class="n">PORT_BASE</span><span class="o">=</span><span class="mi">2000</span>
@@ -292,7 +290,7 @@
 </div>
 </div>
 <div class="section" id="i-o">
-<h3>4.1.2.1.4. I/O配置<a class="headerlink" href="#i-o" title="永久链接至标题">¶</a></h3>
+<h2>4.1.2.4. I/O配置<a class="headerlink" href="#i-o" title="永久链接至标题">¶</a></h2>
 <p>包含数据目录的设备的预读大小应设为16384。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">blockdev</span> <span class="o">--</span><span class="n">getra</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span>
 <span class="mi">16384</span>
@@ -317,8 +315,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h3>4.1.2.1.5. 操作系统内存配置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h2>4.1.2.5. 操作系统内存配置<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>Linux sysctl 的 <em>vm.overcommit_memory</em> 和 <em>vm.overcommit_ratio</em> 变量会影响操作系统对内存分配的管理。这些变量应该设置如下：</p>
 <p><strong>vm.overcommit_memory</strong></p>
 <p>控制操作系统使用什么方法确定分配给进程的内存总数。对于 HashData 数据仓库，唯一建议值是2。</p>
@@ -327,8 +325,8 @@
 <p>不要启用操作系统的大内存页。</p>
 <p>详见：<em>内存和负载管理</em>。（后续章节)</p>
 </div>
-<div class="section" id="id7">
-<h3>4.1.2.1.6. 共享内存设置<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id6">
+<h2>4.1.2.6. 共享内存设置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>HashData 数据仓库 中同一数据库实例的不同postgres进程间通讯使用共享内存。使用sysctl配置如下共享内存参数，且不建议修改：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">kernel</span><span class="o">.</span><span class="n">shmmax</span> <span class="o">=</span> <span class="mi">500000000</span>
 <span class="n">kernel</span><span class="o">.</span><span class="n">shmmni</span> <span class="o">=</span> <span class="mi">4096</span>
@@ -336,12 +334,12 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h3>4.1.2.1.7. 验证操作系统<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id7">
+<h2>4.1.2.7. 验证操作系统<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>使用gpcheck验证操作系统配置。参考 《HashData 数据仓库 工具指南》中的gpcheck。</p>
 </div>
-<div class="section" id="id9">
-<h3>4.1.2.1.8. 设置一个主机上段数据库个数<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id8">
+<h2>4.1.2.8. 设置一个主机上段数据库个数<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>确定每个段主机上段数据库的个数对整体性能有着巨大影响。这些段数据库之间共享主机的 CPU 核、内存、网卡等，且和主机上的所有进程共享这些资源。过高地估计每个服务器上运行的段数据库个数，通常是达不到最优性能的常见原因之一。</p>
 <p>以下因素确定了一个主机上可以运行多少个段数据库：</p>
 <ul class="simple">
@@ -354,8 +352,8 @@
 <li>主机上运行的非 HashData 数据仓库 进程</li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h3>4.1.2.1.9. 段服务器内存配置<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id9">
+<h2>4.1.2.9. 段服务器内存配置<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p>服务器配置参数 <em>gp_vmem_protect_limit</em> 控制了每个段数据库为所有运行的查询分配的内存总量。如果查询需要的内存超过此值，则会失败。使用下面公式确定合适的值：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">swap</span> <span class="o">+</span> <span class="p">(</span><span class="n">RAM</span> <span class="o">*</span> <span class="n">vm</span><span class="o">.</span><span class="n">overcommit_ratio</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="n">number_of_Segments_per_server</span>
 </pre></div>
@@ -374,7 +372,7 @@
 <p>参见：<em>内存和负载管理</em>。（后续章节)</p>
 </div>
 <div class="section" id="sql">
-<h3>4.1.2.1.10. SQL语句内存配置<a class="headerlink" href="#sql" title="永久链接至标题">¶</a></h3>
+<h2>4.1.2.10. SQL语句内存配置<a class="headerlink" href="#sql" title="永久链接至标题">¶</a></h2>
 <p>服务器配置参数 <em>gp_statement_mem</em> 控制段数据库上单个查询可以使用的内存总量。如果语句需要更多内存，则会溢出数据到磁盘。用下面公式确定合适的值：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">gp_vmem_protect_limit</span><span class="o">*.</span><span class="mi">9</span><span class="p">)</span><span class="o">/</span><span class="n">max_expected_concurrent_queries</span>
 </pre></div>
@@ -391,8 +389,8 @@
 <p>了解什么是溢出文件。了解 <em>gp_workfile_limit_files_per_query</em> 参数，其控制了单个查询最多可以创建多少个溢出文件。了解 <em>gp_workfile_limit_per_Segment</em>。</p>
 <p>有关使用资源队列管理内存的更多信息，请参考：<em>内存和负载管理</em>。（后续章节)</p>
 </div>
-<div class="section" id="id11">
-<h3>4.1.2.1.11. 溢出文件配置<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id10">
+<h2>4.1.2.11. 溢出文件配置<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <p>如果为SQL查询分配的内存不足，HashData 数据仓库 会创建溢出文件（也叫工作文件）。在默认情况下，一个SQL查询最多可以创建 100000 个溢出文件，这足以满足大多数查询。</p>
 <p>参数 <em>gp_workfile_limit_files_per_query</em> 决定了一个查询最多可以创建多少个溢出文件。0 意味着没有限制。限制溢出文件数据可以防止失控查询破坏整个系统。</p>
 <p>如果分配内存不足或者出现数据倾斜，则一个SQL查询可能产生大量溢出文件。如果超过溢出文件上限，HashData 数据仓库 报告如下错误：</p>
@@ -408,7 +406,6 @@
 </ul>
 <p>关于这些视图的字段涵义，请参考《HashData 数据仓库 参考指南》。</p>
 <p>参数 <em>gp_workfile_compress_algorithm</em> 指定溢出文件的压缩算法：none 或者 zlib。</p>
-</div>
 </div>
 </div>
 
