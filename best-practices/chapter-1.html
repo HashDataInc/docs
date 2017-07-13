@@ -8,7 +8,7 @@
     
     <meta name="viewport" content="width=375,user-scalable=no">
     
-    <title>4.1.1. HashData 数据仓库 最佳实践概述 &mdash; HashData Warehouse Document 1.0.0 文档</title>
+    <title>4.1.1. 第一章 &mdash; HashData Warehouse Document 1.0.0 文档</title>
     
 
     
@@ -191,7 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">3. 开发指南</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 最佳实践</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#product-name">4.1. HashData 数据仓库 最佳实践</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.1. HashData 数据仓库 最佳实践概述</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.1. 第一章</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-2.html">4.1.2. 第二章</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-3.html">4.1.3. 第三章</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chapter-4.html">4.1.4. 第四章</a></li>
@@ -250,7 +250,7 @@
       <!---->
           <!--<li><a href="index.html">4. 最佳实践</a> &raquo;</li>-->
       <!---->
-    <!--<li>4.1.1. HashData 数据仓库 最佳实践概述</li>-->
+    <!--<li>4.1.1. 第一章</li>-->
       <!--<li class="wy-breadcrumbs-aside">-->
         <!---->
           <!---->
@@ -264,8 +264,8 @@
                 <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
                     <div itemprop="articleBody">
                         
-  <div class="section" id="product-name">
-<h1>4.1.1. HashData 数据仓库 最佳实践概述<a class="headerlink" href="#product-name" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="id1">
+<h1>4.1.1. 第一章<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>最佳实践是指能持续产生比其它方法更好结果的方法或者技术，它来自于实战经验，并被证实了遵循这些方法可以获得可靠的预期结果。</p>
 <p>本最佳实践旨在通过利用所有可能的知识和技术为正确使用 HashData 数据仓库 提供有效参考。</p>
 <p>本文不是在教您如何使用 HashData 数据仓库 的功能，而是帮助您在设计、实现和使用 HashData 数据仓库 时了解需要遵循哪些最佳实践。</p>
@@ -276,11 +276,11 @@
 尤其是数据分析接口和使用习惯方面，HashData 数据仓库 一直保持跟Greenplum Database 100%的兼容。</p>
 <p>这个最佳实践文档也是在《Greenplum Database最佳实践》基础上，根据 HashData 数据仓库 自身的特点做了相应调整而成稿的。</p>
 <p>所以，这个文档里面提到的很多方法或者技术，可以直接应用到Greenplum Database上面。</p>
-<div class="section" id="id1">
-<h2>4.1.1.1. 最佳实践提纲<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>本部分概述 HashData 数据仓库 最佳实践所涉及的概念与要点。</p>
 <div class="section" id="id2">
-<h3>4.1.1.1.1. 数据模型<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h2>4.1.1.1. 最佳实践提纲<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>本部分概述 HashData 数据仓库 最佳实践所涉及的概念与要点。</p>
+<div class="section" id="id3">
+<h3>4.1.1.1.1. 数据模型<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>HashData 数据仓库 是一个基于大规模并行处理（MPP）和无共享架构（shared nothing）的分布式分析型数据库。这种数据库的数据模式与高度规范化的事务性（OLTP）数据库显著不同。通过使用非规范化数据库模式，例如具有大事实表和小维度表的星型或者雪花模式，HashData 数据仓库 在处理分析型业务（OLAP）时表现优异。</li>
 <li>跨表关联（JOIN）时字段使用相同的数据类型。</li>
@@ -298,8 +298,8 @@
 </ul>
 <p><em>详见</em>：堆存储和AO存储（后续章节)</p>
 </div>
-<div class="section" id="id3">
-<h3>4.1.1.1.3. 行式存储和列式存储<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id4">
+<h3>4.1.1.1.3. 行式存储和列式存储<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>若数据需要经常更新或者插入，则使用行存储。</li>
 <li>若需要同时访问一个表的很多字段，则使用行存储。</li>
@@ -309,8 +309,8 @@
 </ul>
 <p><em>详见</em>: 行存储和列存储（后续章节)</p>
 </div>
-<div class="section" id="id4">
-<h3>4.1.1.1.4. 压缩<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h3>4.1.1.1.4. 压缩<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>对于大AO表和分区表使用压缩，以提高系统I/O。</li>
 <li>在字段级别配置压缩。</li>
@@ -318,8 +318,8 @@
 </ul>
 <p><em>详见</em>: 压缩（后续章节)</p>
 </div>
-<div class="section" id="id5">
-<h3>4.1.1.1.5. 分布<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id6">
+<h3>4.1.1.1.5. 分布<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>为所有表定义分布策略：要么定义分布键，要么使用随机分布，不要使用缺省分布方式。</li>
 <li>优先选择可均匀分布数据的单个字段做分布键。</li>
@@ -332,8 +332,8 @@
 </ul>
 <p><em>详见</em>：分布（后续章节)</p>
 </div>
-<div class="section" id="id6">
-<h3>4.1.1.1.6. 内存管理<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id7">
+<h3>4.1.1.1.6. 内存管理<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>使用 statement_mem 控制节点数据库为单个查询分配的内存量。</li>
 <li>使用资源队列设置队列允许的当前最大查询数（ACTIVE_STATEMENTS）和允许使用的内存大小（MEMORY_LIMIT）。</li>
@@ -344,8 +344,8 @@
 </ul>
 <p><em>详见</em>: 内存和负载管理（后续章节)</p>
 </div>
-<div class="section" id="id7">
-<h3>4.1.1.1.7. 分区<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id8">
+<h3>4.1.1.1.7. 分区<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>只为大表设置分区，不要为小表设置分区。</li>
 <li>仅在根据查询条件可以实现分区裁剪时使用分区表。</li>
@@ -359,8 +359,8 @@
 </ul>
 <p><em>详见</em>: 分区（后续章节)</p>
 </div>
-<div class="section" id="id8">
-<h3>4.1.1.1.8. 索引<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id9">
+<h3>4.1.1.1.8. 索引<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>一般来说 HashData 数据仓库 中索引不是必需的。</li>
 <li>对于高基数的列式存储表，如果需要遍历且查询选择性较高，则创建单列索引。</li>
@@ -374,8 +374,8 @@
 </ul>
 <p><em>详见</em>: 索引（后续章节)</p>
 </div>
-<div class="section" id="id9">
-<h3>4.1.1.1.9. 资源队列<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id10">
+<h3>4.1.1.1.9. 资源队列<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>使用资源队列管理集群的负载。</li>
 <li>为所有角色定义适当的资源队列。</li>
@@ -408,8 +408,8 @@
 </ul>
 <p><em>详见</em>: 消除系统表臃肿（后续章节)</p>
 </div>
-<div class="section" id="id10">
-<h3>4.1.1.1.12. 加载<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id11">
+<h3>4.1.1.1.12. 加载<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>使用 gpfdist 进行数据的加载和导出。</li>
 <li>随着Segment数据库个数的增加，并行性增加。</li>
@@ -442,8 +442,8 @@
 </ul>
 <p><em>详见</em>: 使用 gptransfer 迁移数据（后续章节)</p>
 </div>
-<div class="section" id="id11">
-<h3>4.1.1.1.14. 安全<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id12">
+<h3>4.1.1.1.14. 安全<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>妥善保护 gpadmin 账号，只有在必要的时候才能允许系统管理员访问它。</li>
 <li>仅当执行系统维护任务（例如升级或扩容），管理员才能以 gpadmin 登录 HashData 数据仓库 集群。</li>
@@ -458,8 +458,8 @@
 </ul>
 <p><em>详见</em>：安全（后续章节)</p>
 </div>
-<div class="section" id="id12">
-<h3>4.1.1.1.15. 加密<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id13">
+<h3>4.1.1.1.15. 加密<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>加密和解密数据会影响性能，仅加密需要加密的数据。</li>
 <li>在生产系统中实现任何加密解决方案之前都要做性能测试。</li>
@@ -471,8 +471,8 @@
 </ul>
 <p><em>详见</em>：加密数据和数据库连接（后续章节)</p>
 </div>
-<div class="section" id="id13">
-<h3>4.1.1.1.16. 高可用<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id14">
+<h3>4.1.1.1.16. 高可用<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>使用8到24个磁盘的硬件RAID存储解决方案。</li>
 <li>使用RAID1、5或6，以使磁盘阵列可以容忍磁盘故障。</li>
