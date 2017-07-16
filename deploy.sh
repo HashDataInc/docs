@@ -21,5 +21,14 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     git add -f --all .
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
     git push -fq origin $BRANCH > /dev/null
+
+    if [ -n "${access_key_id}" -a -n "${access_key_secret}" ]; then
+        echo "access_key_id: '${access_key_id}'" >~/qsconfig
+        echo "secret_access_key: '${access_key_secret}'" >>~/qsconfig
+        qsctl rm -r -c ~/qsconfig qs://hashdata-docs/docs
+        qsctl cp -r -c ~/qsconfig --exclude .git `pwd` qs://hashdata-docs/docs
+        rm -f ~/qsconfig
+    fi
+
     echo -e "Deploy completed\n"
 fi
