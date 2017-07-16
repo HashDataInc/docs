@@ -23,10 +23,11 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     git push -fq origin $BRANCH > /dev/null
 
     if [ -n "${access_key_id}" -a -n "${access_key_secret}" ]; then
+        rm -rf .git
         echo "access_key_id: '${access_key_id}'" >~/qsconfig
         echo "secret_access_key: '${access_key_secret}'" >>~/qsconfig
         qsctl rm -r -c ~/qsconfig qs://hashdata-docs/docs
-        qsctl cp -r -c ~/qsconfig --exclude .git `pwd` qs://hashdata-docs/docs
+        qsctl cp -r -c ~/qsconfig `pwd` qs://hashdata-docs/docs
         rm -f ~/qsconfig
     fi
 
