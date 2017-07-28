@@ -663,6 +663,14 @@ DECLARE…FOR UPDATE，和触发器。</p>
           <span class="k">WITH</span> <span class="p">(</span><span class="n">appendonly</span><span class="o">=</span><span class="k">true</span><span class="p">,</span> <span class="n">compresstype</span><span class="o">=</span><span class="n">zlib</span><span class="p">,</span> <span class="n">compresslevel</span><span class="o">=</span><span class="mi">5</span><span class="p">);</span>
 </pre></div>
 </div>
+<p><strong>每一列单独的压缩算法</strong></p>
+<p>下面的例子演示了，对于一张列式存储的表，如何为每一列指定单独的压缩算法：</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">bar</span> <span class="p">(</span>
+          <span class="n">a</span> <span class="nb">int</span> <span class="k">ENCODING</span> <span class="p">(</span><span class="n">compresstype</span><span class="o">=</span><span class="n">zlib</span><span class="p">,</span> <span class="n">compresslevel</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">blocksize</span><span class="o">=</span><span class="mi">524288</span><span class="p">),</span>
+          <span class="n">b</span> <span class="nb">text</span> <span class="k">ENCODING</span> <span class="p">(</span><span class="n">compresstype</span><span class="o">=</span><span class="n">rle_type</span><span class="p">,</span> <span class="n">compresslevel</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">blocksize</span><span class="o">=</span><span class="mi">2097152</span><span class="p">))</span>
+          <span class="k">WITH</span> <span class="p">(</span><span class="n">appendonly</span><span class="o">=</span><span class="k">true</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="k">column</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id27">
 <h3>3.1.5.5.5. 查看追加优化表的数据压缩和分布<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h3>
