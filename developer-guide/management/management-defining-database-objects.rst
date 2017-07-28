@@ -468,6 +468,17 @@ DECLARE...FOR UPDATE，和触发器。
     => CREATE TABLE bar (a int, b text)
               WITH (appendonly=true, compresstype=zlib, compresslevel=5);
 
+**每一列单独的压缩算法**
+
+下面的例子演示了，对于一张列式存储的表，如何为每一列指定单独的压缩算法：
+
+.. code-block:: sql
+    
+    => CREATE TABLE bar (
+              a int ENCODING (compresstype=zlib, compresslevel=5, blocksize=524288),
+	      b text ENCODING (compresstype=rle_type, compresslevel=3, blocksize=2097152))
+	      WITH (appendonly=true, orientation=column);
+
 查看追加优化表的数据压缩和分布
 ''''''''''''''''''''''''''''''''''
 
