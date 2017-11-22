@@ -16,3 +16,4 @@ HashData Warehouse 帮助文档
    cluster-management-guide/cluster-management-guide
    developer-guide/index
    best-practices/index
+   data-subscription-guide/index
