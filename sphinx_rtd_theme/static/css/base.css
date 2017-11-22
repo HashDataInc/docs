@@ -180,4 +180,6 @@ div.topLevel {
     top: 0px;
     transform: inherit !important;
 }
-
+.wy-nav-content-wrap{
+	min-height: 440px !important;
+}
