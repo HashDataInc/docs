@@ -47,11 +47,11 @@
 
 - 填写基本信息，选择服务版本
 
-  .. image:: image/start_step_1.png
+  .. image:: ../_static/data_image/start_step_1.png
 
 - 配置节点参数
 
-  .. image:: image/start_step_2.png
+  .. image:: ../_static/data_image/start_step_2.png
 
 - 选择之前创建的私有网络
 - 选择依赖的 Kafka 服务
@@ -61,14 +61,14 @@
   - 要同步的 MySQL 数据库的名字：即数据库的白名单，填写在这里的数据库会被监控。数据库的名字用逗号分隔，例如：demo1,demo2。错误的输入格式可能会导致服务错误。不指定数据库名等价于所有数据库都要被同步。
   - 要同步的 MySQL 表的名字：即数据库表的白名单，填写在这里的表会被监控。表名用逗号分隔，例如：part1,part2。错误的输入格式可能会导致服务错误。不指定表名等价于所有表都要被同步。
 
-  .. image:: image/start_step_3.png
+  .. image:: ../_static/data_image/start_step_3.png
 
 5. 配置完以上参数，点击提交后，新的服务将会在几分钟之内启动完毕。下图是服务启动时的状态：
 
-  .. image:: image/start_step_4.png
+  .. image:: ../_static/data_image/start_step_4.png
 
 6. 在 AppCenter 控制面板中，选择新启动的服务并且查看服务状态信息。正确启动的服务，服务状态为正常，下方显示四个监控项。
 
-  .. image:: image/start_step_5.png
+  .. image:: ../_static/data_image/start_step_5.png
 
 完成以上步骤后，你已经成功启动了你的 数据订阅服务。
