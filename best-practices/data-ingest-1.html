@@ -8,7 +8,7 @@
     
     <meta name="viewport" content="width=375,user-scalable=no">
     
-    <title>导入数据到HashData &mdash; HashData Warehouse Document 1.0.0 文档</title>
+    <title>4.1.8. 导入数据到HashData &mdash; HashData Warehouse Document 1.0.0 文档</title>
     
 
     
@@ -33,7 +33,10 @@
     <link rel="index" title="索引"
           href="../genindex.html"/>
     <link rel="search" title="搜索" href="../search.html"/>
-    <link rel="top" title="HashData Warehouse Document 1.0.0 文档" href="../index.html"/> 
+    <link rel="top" title="HashData Warehouse Document 1.0.0 文档" href="../index.html"/>
+    <link rel="up" title="4. 最佳实践" href="index.html"/>
+    <link rel="next" title="5. 数据订阅服务" href="../data-subscription-guide/index.html"/>
+    <link rel="prev" title="4.1.7. SQL查询调优" href="chapter-7.html"/> 
 
     
     <script src="../_static/js/modernizr.min.js"></script>
@@ -134,11 +137,11 @@
                 
                 
                 
-                <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">3. 开发指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">4. 最佳实践</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 最佳实践</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-subscription-guide/index.html">5. 数据订阅服务</a></li>
 </ul>
 
@@ -183,11 +186,24 @@
                 
                 
                 
-                <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">3. 开发指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">4. 最佳实践</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 最佳实践</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#product-name">4.1. HashData 数据仓库 最佳实践</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="chapter-1.html">4.1.1. 最佳实践提纲</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-2.html">4.1.2. 系统配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-3.html">4.1.3. 数据库模式设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-4.html">4.1.4. 内存和负载管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-5.html">4.1.5. 系统监控和维护</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-6.html">4.1.6. 加载数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chapter-7.html">4.1.7. SQL查询调优</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.8. 导入数据到HashData</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../data-subscription-guide/index.html">5. 数据订阅服务</a></li>
 </ul>
 
@@ -212,11 +228,11 @@
         <div class="topLevel m-topLevel">
             
             
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/hashdata_warehouse_guide.html">1. 入门指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cluster-management-guide/cluster-management-guide.html">2. 管理指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">3. 开发指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">4. 最佳实践</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 最佳实践</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-subscription-guide/index.html">5. 数据订阅服务</a></li>
 </ul>
 
@@ -236,7 +252,9 @@
   <!--<ul class="wy-breadcrumbs">-->
     <!--<li><a href="../index.html">Docs</a> &raquo;</li>-->
       <!---->
-    <!--<li>导入数据到HashData</li>-->
+          <!--<li><a href="index.html">4. 最佳实践</a> &raquo;</li>-->
+      <!---->
+    <!--<li>4.1.8. 导入数据到HashData</li>-->
       <!--<li class="wy-breadcrumbs-aside">-->
         <!---->
           <!---->
@@ -251,9 +269,9 @@
                     <div itemprop="articleBody">
                         
   <div class="section" id="hashdata">
-<h1>导入数据到HashData<a class="headerlink" href="#hashdata" title="永久链接至标题">¶</a></h1>
+<h1>4.1.8. 导入数据到HashData<a class="headerlink" href="#hashdata" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>数据库导入<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>4.1.8.1. 数据库导入<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>HashData支持各种工具从其它数据库导入数据。</p>
 <ul class="simple">
 <li>IBM DataStage：商业解决方案。 <a class="reference external" href="https://www.informatica.com/">https://www.informatica.com/</a></li>
@@ -262,7 +280,7 @@
 <li>DataX (HashData Release)：开源解决方案。<a class="reference external" href="https://github.com/HashDataInc/DataX">https://github.com/HashDataInc/DataX</a></li>
 </ul>
 <div class="section" id="datax-hashdata-release">
-<h3>DataX(HashData Release)<a class="headerlink" href="#datax-hashdata-release" title="永久链接至标题">¶</a></h3>
+<h3>4.1.8.1.1. DataX(HashData Release)<a class="headerlink" href="#datax-hashdata-release" title="永久链接至标题">¶</a></h3>
 <ul>
 <li><p class="first">DataX(HashData Release)和Alibaba DataX有何不同？</p>
 <p>DataX 是阿里巴巴集团内被广泛使用的离线数据同步工具/平台，实现包括 MySQL、Oracle、HDFS、Hive、OceanBase、HBase、OTS、ODPS 等各种异构数据源之间高效的数据同步功能。DataX(HashData Release)在开源的DataX基础上，针对GPDB Writer专门做了性能优化，可以达到10X写入速度。</p>
@@ -275,12 +293,12 @@
 </div>
 </div>
 <div class="section" id="kafka">
-<h2>Kafka导入<a class="headerlink" href="#kafka" title="永久链接至标题">¶</a></h2>
+<h2>4.1.8.2. Kafka导入<a class="headerlink" href="#kafka" title="永久链接至标题">¶</a></h2>
 <p>通过Kafka Comsumer组件读取数据，然后以Copy模式批量写入HashData.</p>
 <p>关于Kafka Comsumer如何读取数据，参考Kafka官方文档：
 <a class="reference external" href="http://kafka.apache.org/10/documentation/">http://kafka.apache.org/10/documentation/</a></p>
 <div class="section" id="java">
-<h3>Java<a class="headerlink" href="#java" title="永久链接至标题">¶</a></h3>
+<h3>4.1.8.2.1. Java<a class="headerlink" href="#java" title="永久链接至标题">¶</a></h3>
 <p>Copy模式写入示例如下</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="p">;</span>
@@ -321,7 +339,7 @@
 <a class="reference external" href="https://jdbc.postgresql.org/documentation/publicapi/org/postgresql/copy/CopyManager.html">https://jdbc.postgresql.org/documentation/publicapi/org/postgresql/copy/CopyManager.html</a></p>
 </div>
 <div class="section" id="golang">
-<h3>GoLang<a class="headerlink" href="#golang" title="永久链接至标题">¶</a></h3>
+<h3>4.1.8.2.2. GoLang<a class="headerlink" href="#golang" title="永久链接至标题">¶</a></h3>
 <p>Copy模式写入示例如下:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">txn</span><span class="p">,</span> <span class="n">err</span> <span class="p">:</span><span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Begin</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
