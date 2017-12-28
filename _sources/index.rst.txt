@@ -17,4 +17,3 @@ HashData Warehouse 帮助文档
    developer-guide/index
    best-practices/index
    data-subscription-guide/index
-   data-ingest/index
