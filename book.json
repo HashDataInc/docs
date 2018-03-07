@@ -1,6 +1,4 @@
 {
-  "title": "HashData 中文文档",
-  "description": "HashData 中文文档",
   "language": "zh-hans",
   "plugins": [
     "-highlight",
@@ -10,6 +8,8 @@
     "editlink",
     "prism",
     "baidu",
+    "-toc2",
+    "summary2",
     "sitemap",
     "collapsible-menu",
     "theme-hashdata-document"
@@ -27,6 +27,10 @@
     },
     "theme-default": {
       "showLevel": true
+    },
+    "toc2": {
+      "addClass": true,
+      "className": "toc"
     }
   },
   "styles": {}

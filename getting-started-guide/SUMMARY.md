@@ -1,4 +1,3 @@
-# Summary
 
-* [入门指南](README.md)
 
+- [入门指南](README.md)

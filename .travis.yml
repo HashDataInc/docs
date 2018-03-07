@@ -1,11 +1,11 @@
-language: python
-python:
-- '2.7'
-install: pip install Sphinx qsctl
+language: node_js
+node_js:
+- '8'
+install: npm install -g gitbook-cli
 script:
-- ls 
-- make
-- ls _build/html/
+- bash build.sh
+- find . -name "*.pdf"
+- ls _book/
 after_success:
 - bash deploy.sh
 env:

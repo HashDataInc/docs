@@ -1,12 +1,11 @@
-# Summary
 
-* [最佳实践](README.md)
-  * [1. 最佳实践提纲](1zui-jia-shi-jian-ti-gang.md)
-  * [2. 系统配置](2xi-tong-pei-zhi.md)
-  * [3. 数据库模式设计](3shu-ju-ku-mo-shi-she-ji.md)
-  * [4. 内存和负载管理](4nei-cun-he-fu-zai-guan-li.md)
-  * [5. 系统监控和维护](5xi-tong-jian-kong-he-wei-hu.md)
-  * [6. 加载数据](6jia-zai-shu-ju.md)
-  * [7. SQL查询调优](7sqlcha-xun-diao-you.md)
-  * [8. 导入数据到HashData](8dao-ru-shu-ju-dao-hashdata.md)
 
+- [HashData 数据仓库最佳实践](README.md)
+- [最佳实践提纲](1zui-jia-shi-jian-ti-gang.md)
+- [系统配置](2xi-tong-pei-zhi.md)
+- [4.1.3.1. 数据类型](3shu-ju-ku-mo-shi-she-ji.md)
+- [4.1.4.1. 内存管理](4nei-cun-he-fu-zai-guan-li.md)
+- [监控](5xi-tong-jian-kong-he-wei-hu.md)
+- [4.1.6.1. INSERT 语句直接插入字段数据](6jia-zai-shu-ju.md)
+- [4.1.7.1. 生成查询计划](7sqlcha-xun-diao-you.md)
+- [4.1.8.1. 数据库导入](8dao-ru-shu-ju-dao-hashdata.md)
