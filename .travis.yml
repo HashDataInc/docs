@@ -5,9 +5,9 @@ before_script:
   - npm install -g gitbook-cli
   - sudo apt-get update -qq
   - sudo apt-get install -qq calibre xvfb
-  - echo '#!/usr/bin/env bash' >/usr/local/bin/ebook-convert
-  - echo 'xvfb-run /usr/bin/ebook-convert "$@"' >>/usr/local/bin/ebook-convert
-  - chmod a+x /usr/local/bin/ebook-convert
+  - echo '#!/usr/bin/env bash' | sudo tee /usr/local/bin/ebook-convert > /dev/null
+  - echo 'xvfb-run /usr/bin/ebook-convert "$@"' | sudo tee --append /usr/local/bin/ebook-convert > /dev/null
+  - sudo chmod a+x /usr/local/bin/ebook-convert
 script:
   - echo $PATH
   - bash build.sh
