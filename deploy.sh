@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+set -eo pipefail
+
 BRANCH=gh-pages
 TARGET_REPO=HashDataInc/docs.git
 

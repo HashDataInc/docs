@@ -12,9 +12,13 @@ for d in */; do
     continue
   fi
 
-  gitbook install ${d}
-  gitbook pdf ${d} "${d}$(basename ${d}).pdf"
+  echo "Generate PDF for book ${d}"
+
+  gitbook install --log error ${d}
+  gitbook pdf --log warn ${d} "${d}$(basename ${d}).pdf"
 done
 
-gitbook install
-gitbook build
+echo "Generate website"
+
+gitbook install --log error
+gitbook build --log warn
