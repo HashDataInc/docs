@@ -5,7 +5,7 @@ before_script:
   - sudo pip install -U qsctl
   - npm install -g gitbook-cli
   - sudo apt-get update -qq
-  - sudo apt-get install -qq calibre xvfb
+  - sudo apt-get install -qq calibre xvfb ttf-wqy-zenhei
   - echo '#!/usr/bin/env bash' | sudo tee /usr/local/bin/ebook-convert > /dev/null
   - echo 'xvfb-run /usr/bin/ebook-convert "$@"' | sudo tee --append /usr/local/bin/ebook-convert > /dev/null
   - sudo chmod a+x /usr/local/bin/ebook-convert
