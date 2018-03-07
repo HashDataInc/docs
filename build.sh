@@ -22,3 +22,7 @@ echo "Generate website"
 
 gitbook install --log error
 gitbook build --log warn
+
+find _book -name "SUMMARY.md" | xargs rm -f
+find _book -name "book.json" | xargs rm -f
+cp book.json _book/

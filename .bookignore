@@ -1,2 +1,4 @@
+deploy.sh
+build.sh
 .travis.yml
 !*.pdf
