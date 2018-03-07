@@ -505,7 +505,7 @@ HashData 数据仓库支持：
 * 列表分区：按照列表包含的数值进行分区，例如：销售地区或产品线。
 * 范围分区和列表分区的组合使用。
 
-![](/assets/management-partition-pic-1.jpg)
+![](assets/management-partition-pic-1.jpg)
 
 图1. 多层分区表结构
 

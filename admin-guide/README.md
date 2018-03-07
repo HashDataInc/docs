@@ -105,18 +105,18 @@ HashData 数据仓库已经在多个数据中心上线。当你选择了某个�
 
 另外，除了利用上述表格提供的数据计算数据仓库的费用外，当数据仓库被创建后，像青云其它的云资源一样，您可以通过总览页面查看数据仓库的费用：
 
-![](/assets/hdw-charging.png)
+![](assets/hdw-charging.png)
 
 **你可以通过如下步骤创建一个集群**：
 
 1. 登录 cloud-provider 控制台 cloud-mgmt-url ,选择 **数据仓库** 服务：  
-   ![](/assets/qingcloud-nav.png)
+   ![](assets/qingcloud-nav.png)
 
 2. 在数据仓库汇总页面上，点击 **创建** 按钮：  
-   ![](/assets/main-panel.png)
+   ![](assets/main-panel.png)
 
 3. 提供集群配置信息：  
-   ![](/assets/create_10_step1.png)
+   ![](assets/create_10_step1.png)
 
    * **名称**： HashData 数据仓库 集群的名称，方便您管理集群。
    * **节点数量**：segment-node 虚拟机的数量，既是计算能力和存储能力的代表，也是计费的代表。
@@ -127,10 +127,10 @@ HashData 数据仓库已经在多个数据中心上线。当你选择了某个�
    **注意**： HashData 数据仓库提供了计算节点计算能力升降级和节点数量的增加和减少，因此您可以按需的逐渐扩大集群的规模，避免在需求较少时，仍然付出较高的价格。
 
 4. 私有网络配置  
-   ![](/assets/create_12_step2.png)
+   ![](assets/create_12_step2.png)
 
 5. 数据仓库用户配置信息  
-   ![](/assets/create_13_step3.png)
+   ![](assets/create_13_step3.png)
 
    * **数据库名**：初始数据库名称。
    * **用户名**：数据库超级用户用户名。
@@ -143,25 +143,25 @@ HashData 数据仓库已经在多个数据中心上线。当你选择了某个�
 **删除或停止集群：**
 
 1. 登录 cloud-provider 控制台 cloud-mgmt-url ,选择 **数据仓库** 服务：  
-   ![](/assets/qingcloud-nav.png)
+   ![](assets/qingcloud-nav.png)
 
 2. 在数据库仓库汇总页面，查看要关闭或删除的集群：  
-   ![](/assets/node_5_summary.png)
+   ![](assets/node_5_summary.png)
 
 3. 可以在要关闭或删除的集群名称上，点击右键，将会看到下面的菜单：  
-   ![](/assets/cluster_summary_menu.png)
+   ![](assets/cluster_summary_menu.png)
 
 4. 要一次关闭或停止多个集群，可以通过复选框来勾选需要关闭或停止的集群，然后点击 **更多操作** 按钮，来进行操作：  
-   ![](/assets/cluster_summary_menu_more.png)
+   ![](assets/cluster_summary_menu_more.png)
 
 5. 点击停止操作后，将会弹出提示框：  
-   ![](/assets/stop.png)
+   ![](assets/stop.png)
 
    * 非强制停止：当没有勾选强制停止时，停止操作会将正在运行的查询回滚，并通知所有连接的客户端服务器关闭。
    * 强制停止：勾选强制停止后，集群的所有进行都会被杀死，再下一次启动时，数据库需要进行恢复操作（启动速度将会变慢）。除非您非常迫切的需要停止服务，否则我们不建议您使用此操作。
 
 6. 点击删除操作后，将会弹出确认框：  
-   ![](/assets/delete.png)
+   ![](assets/delete.png)
 
 7. 集群停止后，状态将会变成 **TODO**。
 
@@ -208,11 +208,11 @@ HashData 数据仓库提供了两大类与集群运行状态相关的信息：�
 
 在数据仓库主控制页面，选择您需要感兴趣的数据仓库集群；进入集群详情页面后，选择需要监控的节点：
 
-![](/assets/select_node.png)
+![](assets/select_node.png)
 
 打开“主机监控”开关，您就能看到节点的物理资源监控数据：
 
-![](/assets/monitor_info.png)
+![](assets/monitor_info.png)
 
 ## 扩容和缩容
 
@@ -237,37 +237,37 @@ HashData 数据仓库提供了两大类与集群运行状态相关的信息：�
 **扩容**：
 
 1. 在数据仓库汇总页面，点击要进行扩容的集群进入集群详细信息页面：  
-   ![](/assets/create_16_creating_done.png)
+   ![](assets/create_16_creating_done.png)
 
 2. 点击 **增加节点** 按钮，填写要增加的节点数量，并点击继续：  
-   ![](/assets/resize_add_node.png)
+   ![](assets/resize_add_node.png)
 
    **节点数量**：填写要增加的节点数量。
 
 3. 数据仓库在进行扩容时，将会创建一个新的集群，并将数据拷贝到新的集群。您可以在集群详细信息中，看到集群的状态：  
-   ![](/assets/resize_2_to_5.png)
+   ![](assets/resize_2_to_5.png)
 
 4. 扩容结束后，新集群将会替代旧集群。旧集群将会进入废弃状态：  
-   ![](/assets/node_5_summary.png)
+   ![](assets/node_5_summary.png)
 
 **缩容**：
 
 1. 在数据仓库汇总页面，点击要进行缩容的集群进入集群详细信息页面：  
-   ![](/assets/create_16_creating_done.png)
+   ![](assets/create_16_creating_done.png)
 
 2. 在集群详细信息页面，勾选需要删除的节点，然后点击 **删除** 按钮：  
-   ![](/assets/resize_decrease_selection.png)
+   ![](assets/resize_decrease_selection.png)
 
 3. 数据仓库在进行缩容时，将会创建一个新的集群，并将数据拷贝到新的集群。您可以在集群详细信息中，看到集群的状态：  
-   ![](/assets/resize_decreasing.png)
+   ![](assets/resize_decreasing.png)
 
 4. 缩容结束后，新集群将会替代旧集群。旧集群将会进入废弃状态：  
-   ![](/assets/resize_decrease_done.png)
+   ![](assets/resize_decrease_done.png)
 
 ## 排查系统问题
 
 如果您在使用  HashData 数据仓库 过程中遇到任何问题，欢迎通过应用页中（下图所示）的“创建工单”联系我们。  
-![](/assets/open_ticket.png)
+![](assets/open_ticket.png)
 
 同时， HashData 数据仓库 作为一个自服务的 PaaS 产品，提供多种系统信息，让您能够自己排查系统问题，加快问题解决速度。
 

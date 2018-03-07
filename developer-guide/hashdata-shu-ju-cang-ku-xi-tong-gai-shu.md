@@ -18,7 +18,7 @@ HashData 数据仓库的 master 节点是整个数据库系统的入口节点，
 
 图1. 系统架构
 
-![](/assets/figure-1-architecture.jpg)
+![](assets/figure-1-architecture.jpg)
 
 ### master 节点
 

@@ -21,13 +21,13 @@
 大多数的数据库操作是在所有计算节点并行进行的，例如：扫描数据表，连接运算，聚合运算和排序操作。 每个计算节点的操作都不依赖存储在其它计算节点上的数据。
 
 
-![](/assets/figure-1-dispatching-parallel-query-plan.jpg)
+![](assets/figure-1-dispatching-parallel-query-plan.jpg)
 
 ##### 图1：分发并行查询计划
 
 一些查询可能只访问特定计算节点的数据，例如：单行插入，更新，删除或者是查询操作只涉及表中特定数据 （过滤条件正好是表的数据分布键值）。对于上述的查询，查询计划不会发送给所有的计算节点， 而是将查询计划发送给该查询影响的节点。
 
-![](/assets/figure-2-dispatching-targeted-query-plan.jpg)
+![](assets/figure-2-dispatching-targeted-query-plan.jpg)
 ##### 图2：分发特定节点查询计划
 
 ### 7.1.2. 理解查询计划
@@ -57,7 +57,7 @@ SELECT ...
 ```
 语句不需要使用数据聚合移动节点，这是因为数据将会移动到新创建的数据表中，而非主节点。
 
-![](/assets/figure-3-query-slice-plan.jpg)
+![](assets/figure-3-query-slice-plan.jpg)
 ##### 图3：查询计划切片
 
 ### 7.1.3. 理解并行查询计划的执行
@@ -69,7 +69,7 @@ HashData 数据仓库将会创建多个数据库进程来处理查询的相关�
 
 [图4]() 向您展示对于 [图3]() 中查询计划在主节点和两个计算节点上的进程分布情况。
 
-![](/assets/figure-4-query-worker-processes.jpg)
+![](assets/figure-4-query-worker-processes.jpg)
 ##### 图4：查询执行器处理请求
 
 ## 7.2. 查询的定义

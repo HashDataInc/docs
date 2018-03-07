@@ -116,7 +116,7 @@ HashData 数据仓库使用 5432 作为服务的端口地址。 当你希望从�
 
 在路由器的详情页面，点击选用的防火墙进入其详情页面，添加一条打开 5432 端口的下行规则，如下所示：
 
-![](/assets/firewall.png)
+![](assets/firewall.png)
 
 这条下行规则允许你的 SQL 客户端工具能够访问路由器的 5432 端口。
 
@@ -124,7 +124,7 @@ HashData 数据仓库使用 5432 作为服务的端口地址。 当你希望从�
 
 回到路由器的详情页面，点击端口转发标签，添加一条 5432 端口的转发规则，如下所示：
 
-![](/assets/vpc_port_forward.png)
+![](assets/vpc_port_forward.png)
 
 这条转发规则确保在你访问路由器 5432 端口时，请求转发到 HashData 数据仓库集群的主节点 5432 端口。
 
@@ -132,11 +132,11 @@ HashData 数据仓库使用 5432 作为服务的端口地址。 当你希望从�
 
 如果你的 SQL 客户端不在青云的网络里，你还需要申请一个公网 IP 地址，并绑定到前面步骤中创建的路由器。
 
-![](/assets/create_elastic_ip.png)
+![](assets/create_elastic_ip.png)
 
 将公网 IP 绑定到路由器：
 
-![](/assets/bind_ip_vpc.png)
+![](assets/bind_ip_vpc.png)
 
 ## 步骤4: 连接样例集群
 
