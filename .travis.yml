@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - '8'
 before_script:
-  - pip install -U qsctl
+  - sudo pip install -U qsctl
   - npm install -g gitbook-cli
   - sudo apt-get update -qq
   - sudo apt-get install -qq calibre xvfb
