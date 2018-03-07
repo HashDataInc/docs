@@ -26,8 +26,8 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
         rm -rf .git
         echo "access_key_id: '${access_key_id}'" >~/qsconfig
         echo "secret_access_key: '${access_key_secret}'" >>~/qsconfig
-        qsctl rm -r -c ~/qsconfig qs://hashdata-docs/
-        qsctl cp -r -c ~/qsconfig `pwd` qs://hashdata-docs/
+        qsctl rm -r -c ~/qsconfig qs://hashdata-docs-gitbook/
+        qsctl cp -r -c ~/qsconfig `pwd` qs://hashdata-docs-gitbook/
         rm -f ~/qsconfig
     fi
 

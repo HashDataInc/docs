@@ -1,13 +1,17 @@
 language: node_js
 node_js:
-- '8'
-install: npm install -g gitbook-cli
+  - '8'
+before_script:
+  - npm install -g gitbook-cli
+  - sudo add-apt-repository ppa:n-muench/programs-ppa
+  - sudo apt-get update
+  - sudo apt-get install calibre
 script:
-- bash build.sh
-- find . -name "*.pdf"
-- ls _book/
+  - bash build.sh
+  - find . -name "*.pdf"
+  - ls _book/
 after_success:
-- bash deploy.sh
+  - bash deploy.sh
 env:
   global:
     secure: nPB1zDBuDzJSS0T+LyGNvJdbL6fhmh5gH2I1+pBZxBx1i2yTuHC4NuzuUZ+s7vp54hgDKc0Q3UknICSDOw3UNFMUHkcx6i2taHO9nbRmc97cVDyJRUvO5csyIWUgJ+1fZ1KRmWS2JfaNv7aDJDWPXJqc4JKj2UuVnDE2WTkwLRHGHWws4+NY1+4MHBdnYNVtkzyqR/xXwgzPgGvtQixAHEFPX1AQ9OABqbfpoyOsotiH+1W8zYeK26Ix4n7c/ouFJkUaXZG3QpCWVkofrZBDt5CU78FlLX5Zhj3Lyn36gZLiRwh8juMMKi3DwKfcSGWjz9d0vaQsUKP8Lk/OfS3w3qiaMwoXRRqT01zRfZEEaW38WjebmBU5NiX8xtRROBXPQTlgqITNdwj4CoYx4fU3GPl4gJdjzY/aXmif3V8GtvMZR336m9KF7dghZYhNiDz+OMOa1L+TIWg1DfzwosOMH7cgA/wzq6ryPfWpdA/lpmj210GSV1njWGjTLiDanY7cLdg/hzCINiGfnkEichXk5qnv3yiGX1RZF/EG4tpciw0WxIGsRrmZk4hbjtPaFoKymjfR5b9Nf47vWblf8x2K72TadLQW2qNk8MU62st4rDTaaNSswJa6bucGLBaZTtVVaygxT6T34DoU726+j5jUtHb8nOfpM0hz/CldMVpk+fM=
