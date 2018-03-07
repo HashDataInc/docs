@@ -3,7 +3,7 @@ node_js:
   - '8'
 before_script:
   - npm install -g gitbook-cli
-  - sudo add-apt-repository -qq ppa:n-muench/programs-ppa
+  - sudo add-apt-repository ppa:n-muench/programs-ppa -y
   - sudo apt-get update -qq
   - sudo apt-get install -qq calibre
 script:
