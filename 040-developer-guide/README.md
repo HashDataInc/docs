@@ -1,4 +1,4 @@
-# HashData 数据仓库开发者指南
+# 开发指南
 
 * [HashData 数据仓库开发者指南](/hashdata-shu-ju-cang-ku-kai-fa-zhe-zhi-nan.md)
   * 1.1. 您是第一次使用 HashData 数据仓库么？

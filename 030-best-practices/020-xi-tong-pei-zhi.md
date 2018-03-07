@@ -2,11 +2,11 @@
 
 本节描述了 HashData 数据仓库 集群关于主机配置的需求和最佳实践。
 
-## 4.1.2.1. 首选操作系统
+## 首选操作系统
 
 CentOS是首选操作系统。应使用最新支持的主版本，目前是 CentOS 7。
 
-## 4.1.2.2. 文件系统
+## 文件系统
 
 HashData 数据仓库 的数据目录推荐使用 XFS 文件系统。使用以下选项挂载 XFS：
 
@@ -14,7 +14,7 @@ HashData 数据仓库 的数据目录推荐使用 XFS 文件系统。使用以�
 rw,noatime,inode64,allocsize=16m
 ```
 
-## 4.1.2.3. 端口配置
+## 端口配置
 
 操作系统配置参数_ip\_local\_port\_range_的设置不要和 HashData 数据仓库 的端口范围有冲突，例如：
 
@@ -26,7 +26,7 @@ REPLICATION_PORT_BASE=2200
 MIRROR_REPLICATION_PORT_BASE=2300
 ```
 
-## 4.1.2.4. I/O配置
+## I/O 配置
 
 包含数据目录的设备的预读大小应设为16384。
 
@@ -59,7 +59,7 @@ kernel.core_pattern = /var/core/core.%h.%t
 * soft core unlimited
 ```
 
-## 4.1.2.5. 操作系统内存配置
+## 操作系统内存配置
 
 Linux sysctl 的_vm.overcommit\_memory_和_vm.overcommit\_ratio_变量会影响操作系统对内存分配的管理。这些变量应该设置如下：
 
@@ -75,7 +75,7 @@ Linux sysctl 的_vm.overcommit\_memory_和_vm.overcommit\_ratio_变量会影响�
 
 详见：_内存和负载管理_。（后续章节\)
 
-## 4.1.2.6. 共享内存设置
+## 共享内存设置
 
 HashData 数据仓库 中同一数据库实例的不同postgres进程间通讯使用共享内存。使用sysctl配置如下共享内存参数，且不建议修改：
 
@@ -85,11 +85,11 @@ kernel.shmmni = 4096
 kernel.shmall = 4000000000
 ```
 
-## 4.1.2.7. 验证操作系统
+## 验证操作系统
 
 使用gpcheck验证操作系统配置。参考 《HashData 数据仓库 工具指南》中的gpcheck。
 
-## 4.1.2.8. 设置段数据库个数
+## 设置段数据库个数
 
 确定每个段主机上段数据库的个数对整体性能有着巨大影响。这些段数据库之间共享主机的 CPU 核、内存、网卡等，且和主机上的所有进程共享这些资源。过高地估计每个服务器上运行的段数据库个数，通常是达不到最优性能的常见原因之一。
 

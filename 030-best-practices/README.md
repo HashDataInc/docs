@@ -1,4 +1,4 @@
-## HashData 数据仓库最佳实践
+## 最佳实践
 
 * [1. 最佳实践提纲](/1zui-jia-shi-jian-ti-gang.md)
   * 1.1. 数据模型
