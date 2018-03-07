@@ -5,7 +5,7 @@ before_script:
   - npm install -g gitbook-cli
   - sudo add-apt-repository ppa:n-muench/programs-ppa -y
   - sudo apt-get update -qq
-  - sudo apt-get install -qq calibre
+  - sudo apt-get install -qq calibre xvfb
 script:
   - bash build.sh
   - find . -name "*.pdf"
