@@ -34,10 +34,10 @@
       "className": "toc"
     },
     "versions": {
-      "gitbookConfigURL": "https://raw.githubusercontent.com/HashDataInc/docs/gitbook/book.json",
+      "gitbookConfigURL": "http://gitbook.hashdata.cn/latest/book.json",
       "options": [
         {
-          "value": "http://gitbook.hashdata.cn/",
+          "value": "http://gitbook.hashdata.cn/latest",
           "text": "Latest"
         },
         {
