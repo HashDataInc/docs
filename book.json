@@ -12,6 +12,7 @@
     "summary2",
     "versions",
     "sitemap",
+    "-autocover",
     "collapsible-menu",
     "theme-hashdata-document"
   ],
