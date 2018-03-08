@@ -6,6 +6,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd ${DIR}
 
+rm -rf _book
+
 for d in */; do
 
   if [ ! -f ${d}/book.json ]; then
@@ -14,7 +16,7 @@ for d in */; do
 
   echo "Generate PDF for book ${d}"
 
-  gitbook install --log error ${d}
+  gitbook install --log error ${d} >/dev/null
   gitbook pdf --log warn ${d} "${d}$(basename ${d}).pdf"
 done
 

@@ -1,5 +1,8 @@
 
 
+- [文档目录](README.md)
+
+
 - [入门指南](010-getting-started-guide/README.md)
     - [步骤1: 准备工作](010-getting-started-guide/020-zhun-bei-gong-zuo.md)
     - [步骤2: 启动 HashData 数据仓库样例集群](010-getting-started-guide/030-qi-dong-ji-qun.md)
@@ -45,6 +48,3 @@
         - [HashData 数据仓库系统概述](040-developer-guide/_book/hashdata-shu-ju-cang-ku-xi-tong-gai-shu.md)
         - [数据的管理](040-developer-guide/_book/shu-ju-de-guan-li.md)
         - [System Catalog Reference](040-developer-guide/_book/system-catalog-reference.md)
-
-
-- [文档说明](README.md)
