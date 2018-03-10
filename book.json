@@ -30,7 +30,7 @@
       "hostname": "http://docs.hashdata.cn"
     },
     "theme-default": {
-      "showLevel": true
+      "showLevel": false
     },
     "toc2": {
       "addClass": true,
