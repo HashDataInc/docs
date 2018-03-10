@@ -1,8 +1,8 @@
-## 步骤2: 启动 HashData 数据仓库样例集群
+# 步骤2: 启动 HashData 数据仓库样例集群
 
 完成上面的前提步骤后，现在你能够开始启动一个 HashData 数据仓库集群。
 
-### 启动 HashData 数据仓库集群
+## 启动 HashData 数据仓库集群
 
 1. 登陆青云并在应用中心找到对应的产品 [数据仓库(HashData高性能MPP数据仓库)](https://appcenter.qingcloud.com/apps/app-iwacxg9z)。
 2. 点击部署到控制台，你可以选择在哪个数据中心创建你的数据仓库集群。在这个教程中，我们选择了北京 3 区。

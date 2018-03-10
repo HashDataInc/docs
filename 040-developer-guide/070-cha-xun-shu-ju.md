@@ -8,13 +8,13 @@
 * 查询的定义
 * 使用函数和运算符
 
-## 7.1. 数据处理简介
+## 数据处理简介
 
 本主题为您介绍 HashData 数据仓库是如何处理查询请求的。理解查询处理的过程，对您编写和优化查询有非常巨大的帮助。
 
 用户向 HashData 数据仓库发送查询命令和使用其它数据库管理系统完全一样。 通过使用客户端应用程序（例如：psql）连接 HashData 数据仓库主节点，您可以提供 SQL 语句命令。
 
-### 7.1.1. 理解查询优化和查询分发
+### 理解查询优化和查询分发
 
 主节点负责接收，分析和优化用户查询。最终的执行计划可以是完全并行的，也可以是运行在特定节点的。 如 [图1]() 对于并行查询计划，主节点将其发送到所有的计算节点上。如 [图2]() 所示， 对于运行在特定节点的执行计划，主节点将会发送查询计划到一个单独的节点运行。 每个计算节点只负责在自己对应的数据上进行相应的数据操作。
 
@@ -30,7 +30,7 @@
 ![](assets/figure-2-dispatching-targeted-query-plan.jpg)
 ##### 图2：分发特定节点查询计划
 
-### 7.1.2. 理解查询计划
+### 理解查询计划
 
 查询计划就是 HashData 数据仓库为了计算查询结果的一系列操作的步骤。查询计划中的每个步骤（节点）代表了一种数据库操作，例如：表扫描，连接运算，聚合运算或者排序操作。查询计划的读取和执行都是自底向上的。
 
@@ -60,7 +60,7 @@ SELECT ...
 ![](assets/figure-3-query-slice-plan.jpg)
 ##### 图3：查询计划切片
 
-### 7.1.3. 理解并行查询计划的执行
+### 理解并行查询计划的执行
 HashData 数据仓库将会创建多个数据库进程来处理查询的相关工作。在主节点上，查询工作进程被称为查询分派器（QD）。 QD 负责创建和分派查询计划。它同时负责收集和展示最终查询结果。 在计算节点上，查询工作进程被称作查询执行器（QE）。QE 负责执行分配给该进程的查询计划并通过通信模块将中间结果发送给其它工作进程。
 
 每个查询计划的切片都至少会有一个工作进程与之对应负责执行。 工作进程会被赋予不会互相依赖的查询计划片段。查询执行的过程中， 每个计算节点都会有多个进程并行地参与查询的处理工作。
@@ -72,7 +72,7 @@ HashData 数据仓库将会创建多个数据库进程来处理查询的相关�
 ![](assets/figure-4-query-worker-processes.jpg)
 ##### 图4：查询执行器处理请求
 
-## 7.2. 查询的定义
+## 查询的定义
 HashData 数据仓库查询命令是基于 PostgreSQL 开发，而 PostgreSQL 是实现了 SQL 标准。
 
 本小结介绍如何在 HashData 数据仓库中编写 SQL 查询。
@@ -80,13 +80,13 @@ HashData 数据仓库查询命令是基于 PostgreSQL 开发，而 PostgreSQL �
 * SQL 词法元素
 * SQL 值表达式
 
-### 7.2.1. SQL 词法元素
+### SQL 词法元素
 
 SQL 是一种标准化的数据库访问语言。不同元素组构成的语言允许控制数据存储，数据获取，数据分析， 数据变换和数据修改等。你需要通过使用 SQL 命令来编写 HashData 数据仓库理解的查询和命令。SQL 查询由一条或多条命令顺序组成。每一条命令是由多个词法元素组成正确的语法结构构成的， 每条命令使用分号（;）分隔。
 
 HashData 数据仓库在 PostgreSQL 的语法结构上进行了一些扩展，并根据分布式环境增加了部分的限制。如果您希望了解更多关于 PostgreSQL 中的 SQL 语法规则和概念，您可以参考 PostgreSQL8.2英文手册中SQL语法章节 或者 PostgreSQL9.3中文手册中SQL语法章节 。 由于中文网站没有 8.2 手册，请您注意相关资料中的语法变动。
 
-### 7.2.2. SQL 值表达式
+### SQL 值表达式
 
 SQL 值表达式由一个或多个值，符号，运算符，SQL 函数和数据组成。表达式通过比较数据，执行计算病返回一个结果。 表达式计算包括：逻辑运算，算数运算和集合运算。
 
@@ -113,7 +113,7 @@ SQL 值表达式由一个或多个值，符号，运算符，SQL 函数和数据
 
 像函数和运算符这样的 SQL 结构虽然属于表达式，但是与普通的语法规则不相同。请参考使用函数和运算符了解更多信息。
 
-#### 7.2.2.1. 列引用
+#### 列引用
 列引用的格式如下：
 
 ```
@@ -121,7 +121,7 @@ correlation.columnname
 ```
 上面的示例中，correlation 是表的名称（也可以使用限定名格式：在表名前面添加模式名）或者定义在 FROM 子句中的表的别名。如果列名在查询访问的表中是唯一的，那么 “correlation.” 部分是可以被省略的。
 
-#### 7.2.2.2. 位置参数
+#### 位置参数
 
 位置参数是指通过指定传递给 SQL 语句或函数参数的位置信息来引用的参数。例如：`$1` 引用第一个参数，`$2` 引用第二个参数，依此类推。位置参数的值是通过在 SQL 语句的外部参数传递或者通过函数调用方式传递。 一些客户端接口库函数支持在 SQL 命令之外指定数值，在这种情况下参数引用的是 SQL 之外的实际值。
 
@@ -139,7 +139,7 @@ CREATE FUNCTION dept(text) RETURNS dept
 ```
 这里, `$1` 引用的是在函数调用时，传递给函数的第一个参数值。
 
-#### 7.2.2.3. 下标表达式
+#### 下标表达式
 
 如果一个表达式产生了一个数组类型值，那么你可以通过下面的方法获取数组中一个指定的元素值：
 
@@ -161,7 +161,7 @@ mytable.two_d_column[17][34]
 $1[10:42]
 (arrayfunction(a,b))[42]
 ```
-#### 7.2.2.4. 成员选择表达式
+#### 成员选择表达式
 如果表达式的值是一个复合类型（例如：记录类型），你可以通过下面的表达式来选择该复合类型中的特定成员值：
 
 ```
@@ -176,7 +176,7 @@ $1.somecolumn
 ```
 一个限定的列引用是成员选择表达式的特例。
 
-#### 7.2.2.5. 运算符调用
+#### 运算符调用
 运算符调用支持下面的几种语法：
 
 ```
@@ -191,7 +191,7 @@ OPERATOR(schema.operatorname)
 ```
 可以使用的运算符以及他们究竟是一元运算符还是二元运算符，取决于系统和用户的定义。可以参考内建函数和运算符，了解更多信息。
 
-#### 7.2.2.6. 函数调用
+#### 函数调用
 函数调用的语法是函数名（限定名格式：在函数名开头添加模式名）跟随着使用括号保护的参数列表：
 
 ```
@@ -204,7 +204,7 @@ sqrt(2)
 ```
 参考 内置函数和运算符，了解更多信息。
 
-#### 7.2.2.7. 聚集表达式
+#### 聚集表达式
 聚合表达式是指对于查询选择的所有数据记录上应用一个聚合函数。聚合函数在一组值上进行运算，并返回一个结果。 例如：对一组值进行求和运算或者计算平均值。下面列出聚合表达式的语法结构：
 
 * aggregate\_name(expression [ , … ] ) — 处理所有值为非空的输入记录值。
@@ -226,7 +226,7 @@ PERCENTILE_DISC(percentage) WITHIN GROUP (ORDER BY expression)
 ```
 目前只有上面两个表达式可以使用关键字 WITHIN GROUP。
 
-#### 7.2.2.8. 聚合表达式的限制
+#### 聚合表达式的限制
 下面列出了目前聚合表达式的限制：
 
 HashData 数据仓库不支持下面关键字：ALL，DISTINCT，FILTER 和 OVER。请参考 [表5]() 了解更多信息。
@@ -236,7 +236,7 @@ HashData 数据仓库不支持下面关键字：ALL，DISTINCT，FILTER 和 OVER
 当一个聚合表达式出现在子查询中，聚合操作相当于作用在子查询的返回结果上。如果聚合 函数的参数只包含外层变量，该聚合表达式属于最近一层的外部表查询，并且也在该查询结 果上进行聚合运算。该聚合表达式对于出现的子查询来说，将会当成一个外部引用，并以常 量值处理。请参考 [表2]() 了解标量子查询。
 HashData 数据仓库不支持在多个输入表达式上使用 DISTINCT。
 
-#### 7.2.2.9. 窗口表达式
+#### 窗口表达式
 
 窗口表达式允许应用开发人员更加简单地通过标准SQL语言，来构建复杂的在线分析处理（OLAP）。 例如，通过使用窗口表达式，用户可以计算移动平均值，某个范围内的总和， 根据某些列值的变化重置聚合表达式或排名，还可以用简单的表达式表述复杂的比例关系。
 
@@ -279,7 +279,7 @@ PARTITION BY 子句定义应用于窗口函数上的窗口分区。如果省略�
 
 ORDER BY 子句定义在窗口分区中用于排序的表达式。窗口说明中的 ORDER BY 子句和主查询中的 ORDER BY 子句是相互独立的。ORDER BY 子句对于计算排名的窗口函数来说是必需的，这是因为排序后才能获得排名值。 对于在线分析处理聚合操作，窗口帧（ROWS 或 RANGE 子句）需要 ORDER BY 子句才能使用。
 ROWS/RANGE 子句为聚合窗口函数（非排名操作）定义一个窗口帧。窗口帧是在一个分区内的一组记录。 定义了窗口帧之后，窗口函数将会在移动窗口帧上进行计算，而不是固定的在整个窗口分区上进行。 窗口帧可以是基于记录分隔的也可以是基于值分隔的。
-#### 7.2.2.10. 类型转换
+#### 类型转换
 类型转换表达式可以将一个数据类型的数据转换为另一个数据类型。HashData 数据仓库支持下面两种等价的类型转换语法：
 
 ```
@@ -292,10 +292,10 @@ CAST 的语法是符合 SQL 标准的的；而语法 :: 是 PostgreSQL 历史遗
 
 在一些位置上，表达式的值类型如果不会产生歧义时，显示类型转换是可以被省略的。 例如，当为一张表的某个列赋值时，系统能够自动应用正确的类型转换。 系统要应用自动类型转换规则的前提是，当且仅当系统表中定义隐式地类型转换是合法的。 其他的类型转换，必需通过类型转换语法显示地进行调用。这样做可以阻止一部分用户意料之外的非期望类型转换的发生。
 
-#### 7.2.2.11. 标量子查询
+#### 标量子查询
 标量子查询是指一个括号中的 SELECT 查询语句，并且该语句返回值是一行一列（一个值）。标量子查询不支持使用返回多行或多列的 SELECT 查询语句。外部查询运行并使用相关自查询的返回结果。相关标量子查询是指标量子查询中引用了外部查询变量的查询。
 
-#### 7.2.2.12. 相关子查询
+#### 相关子查询
 相关子查询是指一个 SELECT 查询位于 返回列表或 WHERE 条件语句中，并引用了外部查询参数的查询语句。相关子查询允许更高效的表示出引用其他查询的返回结果。HashData 数据仓库能够支持相关子查询特性，此特性能够允许兼容很多已经存在的应用程序。 相关子查询可以根据返回记录是一条还是多条，返回结果可以是标量或者表表达式， 这取决于它返回的记录是一条还是多条。HashData 数据仓库目前不支持引用跨层的变量（不支持间接相关子查询）。
 
 相关子查询示例 示例 1 – 标量相关子查询
@@ -358,12 +358,12 @@ WHERE x < (SELECT count(*) FROM t3 WHERE t1.y = t3.y)
 ```
 要查看查询计划，可以使用 EXPLAIN SELECT 或者 EXPLAIN ANALYZE SELECT。查询计划中的 Subplan 节点代表查询将会对外部查询的每一条记录都处理一次，因此暗示着查询可能可以被重写和优化。
 
-#### 7.2.2.13. 高级“表”表达式
+#### 高级“表”表达式
 HashData 数据仓库支持能够将“表”表达式作为参数的函数。您可以对输入高级“表”函数的记录 使用 ORDER BY 进行排序。您可以使用 SCATTER BY 子句并指定一列或多列（或表达式）对 输入记录进行重新分布。这种使用方式与创建表的时候，DISTRIBUTED BY 子句十分类似，但 是此处重新分布的操作是在查询运行时发生的。
 
 >注意：根据数据的分布，HashData 数据仓库能够自动地在 计算节点 并行的运行 “表”表达式。
 
-#### 7.2.2.14. 数组构造表达式
+#### 数组构造表达式
 数据构造表达式是通过提供成员值的方式构造数组值的表达式。一个简单的数组构造表达式由：关键字 ARRAY，左方括号（[），用来组成数组元素值的通过逗号分隔的一个多个表达式，和一个右方括号（]）。例如：
 
 ```
@@ -406,7 +406,7 @@ SELECT ARRAY(SELECT oid FROM pg_proc WHERE proname LIKE 'bytea%');
 ```
 这里的子查询只能返回单列。生成的一维数组中的每个元素对应着子查询每一条记录，数组元素的类型是子查询输出列的类型。 通过数组构造表达式得到的数组，下标总是从1开始编号。
 
-#### 7.2.2.15. 记录构造表达式
+#### 记录构造表达式
 记录构造器是一种用来从成员值构建记录值的表达式（记录表达式也被称为复合类型）。例如：
 
 ```
@@ -453,7 +453,7 @@ myrowtype));
 ```
 你可以使用记录构造器来构建复合值，将其存储在复合类型的列中或者将其传给接受复合类型参数的函数。
 
-#### 7.2.2.16. 表达式求值规则
+#### 表达式求值规则
 自表达式的求值顺序是未定义的。运算符或者函数的求值不一定遵守从左到右的规则，也不保证按照任何特定顺序进行。
 
 如果表达式的值能够由表达式中的一部分子表达式确定，那么其他部分的子表达式可能不会被求值。例如，下面的表达式：
@@ -482,10 +482,10 @@ SELECT ... WHERE CASE WHEN x <> 0 THEN y/x > 1.5 ELSE false END;
 ```
 这种 CASE 结构将会阻止查询优化，因此请小心使用。
 
-## 7.3. 使用函数和运算符
+## 使用函数和运算符
 HashData 数据仓库在 SQL 表达式中对函数和运算符进行求值。一些函数和运算符只能运行在主节点上，如果在计算节点运行，会导致结果出现不一致状态。
 
-### 7.3.1. 如何使用函数
+### 如何使用函数
 
 ##### 表1 HashData 数据仓库中的函数
 
@@ -497,10 +497,10 @@ HashData 数据仓库在 SQL 表达式中对函数和运算符进行求值。一
 
 HashData 数据仓库不支持函数返回表引用（rangeFuncs）或者函数使用 refCursor 数据类型。
 
-### 7.3.2. 用户自定义函数
+### 用户自定义函数
 此功能正在开发中，未来版本将会开放。
 
-### 7.3.3. 内置函数和运算符
+### 内置函数和运算符
 The following table lists the categories of built-in functions and operators supported by PostgreSQL. All functions and operators are supported in Greenplum Database as in PostgreSQL with the exception of STABLE and VOLATILE functions, which are subject to the restrictions noted in Using Functions in Greenplum Database. See the Functions and Operators section of the PostgreSQL documentation for more information about these built-in functions and operators.
 
 ##### 表2 内置函数和运算符
@@ -529,7 +529,7 @@ The following table lists the categories of built-in functions and operators sup
 |System Administration Functions|set\_config、pg\_cancel\_backend、pg\_reload\_conf、pg\_rotate\_logfile、pg\_start\_backup、pg\_stop\_backup、pg\_size\_pretty、pg\_ls\_dir、pg\_read\_file、pg\_stat\_file|current\_setting、All database object size functions|Note: The function pg\_column\_size the value, perhaps with TOAST compression.
 |XML Functions||xmlagg(xml)、xmlexists(text, xml)、xml\_is\_well\_formed(text)、xml\_is\_well\_formed\_document(text)、xml\_is\_well\_formed\_content(text)、xpath(text, xml)、xpath(text, xml, text[])、xpath\_exists(text, xml)、xpath\_exists(text, xml, text[])、xml(text)、text(xml)、xmlcomment(xml)、xmlconcat2(xml, xml)||
  
-### 7.3.4. 窗口函数
+### 窗口函数
 下面列出的内置窗口函数是 HashData Database 对 PostgreSQL 的扩展。 所有的窗口函数都是 immutable 的。要了解更多关于窗口函数的信息，请参考 窗口表达式 。
 
 |函数|返回类型|语法	|说明|
@@ -545,7 +545,7 @@ The following table lists the categories of built-in functions and operators sup
 |rank()	|bigint	|RANK () OVER ( [PARTITION BY expr] ORDER BY expr )|计算一个有序组中，记录的排名。记录值相同的情况下， 分配相同的排名。分配到相同排名的每组记录的数量将会 被用来计算下个分配的排名。这种情况下，排名的分配可 能不是连续。|
 |row\_number()	|bigint	|ROW\_NUMBER () OVER ( [PARTITION BY expr] ORDER BY expr )	为每一个记录分配一个唯一的编号。（可以是整个查询的 结果记录也可以是窗口分区中的记录）。
 
-### 7.3.5. 高级分析函数
+### 高级分析函数
 下面列出的内置窗口函数是 HashData Database 对 PostgreSQL 的扩展。 分析函数是 immutable 。
 
 ##### 表4 高级分析函数
@@ -575,11 +575,11 @@ The following table lists the categories of built-in functions and operators sup
 |nb\_classify (text[], bigint, bigint[], biggint[])|text|nb\_classify(classes, attr\_count, class\_count, class\_total)|使用朴素贝叶斯分类器对记录进行分类。此聚合函数使 用训练数据作为基线，对输入记录进行分类预测，返回 该记录最有可能出线的分类名称。
 |nb\_probabilities (text[], bigint, bigint[], biggint[])|text|nb\_probabilities(classes, attr\_count, class\_count, class\_total)|使用朴素贝叶斯分类器计算每个分类的概率。此聚合函数使训练数据作为基线，对输入记录进行分类预测，返回该记录出现在各个分类中的概率。
 
-### 7.3.6. 高级分析函数示例
+### 高级分析函数示例
 
 本章节向您展示在简化的示例数据上应用上面部分高级分析函数的操作过程。 示例包括：多元线性回归聚合函数和使用 nb\_classify 的朴素贝叶斯分类。
 
-#### 7.3.6.1. 线性回归聚合函数示例
+#### 线性回归聚合函数示例
 下面示例使用四个线性回归聚合函数：mregr\_coef，mregr\_r2，mregr\_pvalues 和 mregr\_tstats 在示例表 regr\_example 进行计算。 在下面的示例中，所有聚合函数第一个参数是因变量（dependent variable），第二个参数是自变量数组（independent variable）。
 
 ```
@@ -619,10 +619,10 @@ mregr_tstats:
 
 > 注意: 如上面的示例所示，变量参数估计值（intercept）是通过将一个自变量设置为 1 计算得到的。
 
-#### 7.3.6.2. 朴素贝叶斯分类示例
+#### 朴素贝叶斯分类示例
 使用 nb\_classify 和 nb\_probabilities 聚合函数涉及到四步的分类过程，包含了为训练数据创建的表和视图。 下面的两个示例展示了这四个步骤。第一个例子是在一个小的随意构造的数据集上展示。第二个例子是 HashData Database 根据天气条件使用非常受欢迎的贝叶斯分类的示例。
 
-#### 7.3.6.3. 总览
+#### 总览
 
 下面向你介绍朴素贝叶斯分类的过程。在下面的示例中，值的名称（列名）将会做为属性值（field attr）使用：
 
@@ -638,7 +638,7 @@ mregr_tstats:
 
 使用 nb\_classify，nb\_probabilities 或将 nb\_classify 和 nb\_probabilities 结合起来处理数据。
 
-#### 7.3.6.4. 朴素贝叶斯分类示例1 - 小规模数据
+#### 朴素贝叶斯分类示例1 - 小规模数据
 
 例子将从包含范式化数据的示例表 class\_example 开始，通过四个独立的步骤完成：
 
@@ -801,7 +801,7 @@ WHERE (attr = 'A1' AND value = 0)
 ```
 在生产环境中的真实数据相比示例数据更加全面，因此预测效果更好。 当训练数据集较大时，使用 nb\_classify 和 nb\_probabilities 的归类准确度将会显著提高。
 
-#### 7.3.6.5. 朴素贝叶斯分类示例2 – 天气和户外运动
+#### 朴素贝叶斯分类示例2 – 天气和户外运动
 
 在这个示例中，将会根据天情况来计算是否适宜用户进行户外运动，例如：高尔夫球或者网球。 表 weather\_example 包含了一些示例数据。表的标示字段是 day。 用于分类的字段 play 包含两个值：Yes 或 No。天气包含四种属性：状况，温度，湿度，风力。 数据按照范式化存储。
 

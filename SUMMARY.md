@@ -14,9 +14,10 @@
 
 - [管理指南](020-admin-guide/README.md)
     - [集群管理指南](020-admin-guide/010-jie-shao.md)
-    - [集群](020-admin-guide/020-ji-qun-cao-zuo.md)
+    - [管理概述](020-admin-guide/020-ji-qun-cao-zuo.md)
     - [集群性能监控](020-admin-guide/030-ji-qun-jian-kong.md)
     - [扩容和缩容](020-admin-guide/040-ji-qun-kuo-rong.md)
+    - [排查系统问题](020-admin-guide/050-pai-cha-xi-tong-wen-ti.md)
 
 
 - [最佳实践](030-best-practices/README.md)

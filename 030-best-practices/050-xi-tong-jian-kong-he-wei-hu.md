@@ -77,7 +77,7 @@ $ gpcheckperf -f subnet_1_hosts -d /data1 -d /data2 -r ds
 
 良好查询性能的最重要前提是精确的表数据统计信息。使用 ANALYZE 语句更新统计信息后，优化器可以选取最优的查询计划。分析完表数据后，相关统计信息保存在系统表中。如果系统表存储的信息过时了，优化器可能生成低效的计划。
 
-### 4.1.5.2.1. 选择性统计
+### 选择性统计
 
 不带参数运行 ANALYZE 会更新数据库中所有表的统计信息。这可能非常耗时，不推荐这样做。当数据发生变化时，建议对变化的表进行 ANALYZE。
 
@@ -89,7 +89,7 @@ $ gpcheckperf -f subnet_1_hosts -d /data1 -d /data2 -r ds
 SELECT partitiontablename from pg_partitions WHERE tablename='parent_table;
 ```
 
-### 4.1.5.2.2. 提高统计数据质量
+### 提高统计数据质量
 
 需要权衡生成统计信息所需时间和统计信息的质量（或者精度）。
 
@@ -97,7 +97,7 @@ SELECT partitiontablename from pg_partitions WHERE tablename='parent_table;
 
 配置参数_gp\_analyze\_relative\_error_会影响为确定字段基数而收集的统计信息的采样率。例如 0.5 表示可以接受 50% 的误差。默认值是 0.25。使用_gp\_analyze\_relative\_error_设置表基数估计的可接受的相对误差。如果统计数据不能产生较好的基数估计，则降低相对误差率（接受更少的错误）以采样更多的行。然而不建议该值低于0.1，否则会大大延长ANALYZE的时间。
 
-### 4.1.5.2.3. 运行ANALYZE
+### 运行ANALYZE
 
 运行 ANALYZE 的时机包括：
 
@@ -107,7 +107,7 @@ SELECT partitiontablename from pg_partitions WHERE tablename='parent_table;
 
 ANALYZE 只需对表加读锁，所以可以与其他数据库操作并行执行，但是在数据加载和执行 INSERT/UPDATE/DELETE/CREATE INDEX 操作时不要运行 ANALYZE。
 
-### 4.1.5.2.4. 自动统计
+### 自动统计
 
 配置参数_gp\_autostats\_mode_和_gp\_autostats\_on\_change\_threshold_确定何时触发自动分析操作。当自动统计数据收集被触发后，planner 会自动加入一个 ANALYZE 步骤。
 
@@ -119,7 +119,7 @@ _gp\_autostats\_mode_默认设置是on\_no\_stats，如果表没有统计数据�
 
 对分区表，如果从最顶层的父表插入数据不会触发统计信息收集。如果数据直接插入到叶子表（实际存储数据的表），则会触发统计信息收集。
 
-## 4.1.5.3. 管理数据库臃肿
+## 管理数据库臃肿
 
 HashData 数据仓库 的堆表使用PostgreSQL的多版本并发控制（MVCC）的存储实现方式。删除和更新的行仅仅是逻辑删除，其实际数据仍然存储在表中，只是不可见。这些删除的行，也称为过期行，由空闲空间映射表（FSM, Free Space Map）记录。VACUUM标记这些过期的行为空闲空间，并可以被后续插入操作重用。
 
@@ -147,7 +147,7 @@ HashData 数据仓库 的堆表使用PostgreSQL的多版本并发控制（MVCC�
 
 更详细的信息，请参考《HashData 数据仓库 参考指南》。
 
-### 4.1.5.3.1. 检测臃肿
+### 检测臃肿
 
 ANALYZE收集的统计信息可用于计算存储一个表所期望的磁盘页数。期望的页数和实际页数之间的差别是膨胀程度的一个度量。gp\_toolkit模式的gp\_bloat\_diag视图通过比较期望页数和实际页数的比例识别膨胀的表。使用这个视图前，确保数据库的统计信息是最新的，然后运行下面的SQL：
 
@@ -180,7 +180,7 @@ gpadmin=# SELECT * FROM gp_toolkit.gp_bloat_expected_pages LIMIT 5;
 
 btdrelid是表的对象ID。btdrelpages字段表示表适用的实际页数；bdtexppages字段表示期望的页数。注意，这些数据基于统计信息，确保表发生变化后运行ANALYZE。
 
-### 4.1.5.3.2. 消除数据臃肿表
+### 消除数据臃肿表
 
 VACUUM命令将过期行加入到空闲空间映射表中以便以后重用。如果对频繁更新的表定期运行VACUUM，过期行占用的空间可以被及时的回收并重用，避免表变得非常大。同样重要的是在 FSM 溢出前运行VACUUM。对更新异常频繁的表，建议至少每天运行一次VACUUM以防止表变得臃肿。
 
@@ -218,13 +218,13 @@ DISTRIBUTED BY (<original distribution columns>);
 
 此命令会重新分布数据。因为和原来的分布策略相同，所以仅会在同一个段数据库上重写数据，并去掉过期行。
 
-### 4.1.5.3.3. 消除系统表臃肿
+### 消除系统表臃肿
 
 HashData 数据仓库 系统表也是堆表，因而也会随着时间推移而变得臃肿。随着数据库对象的创建、修改和删除，系统表中会留下过期行。
 
 使用gpload加载数据会造成臃肿，因为它会创建并删除外部表。（建议使用gpfdist加载数据）。
 
-### 4.1.5.3.4. 系统表膨胀
+### 系统表膨胀
 
 会拉长表扫描所需的时间，例如生成解释计划时。系统表需要频繁扫描，如果它们变得臃肿，那么系统整体性能会下降。
 
@@ -242,17 +242,17 @@ $DBNAME | psql -a $DBNAME
 
 如果系统表变得异常臃肿，则必须执行一次集中地系统表维护操作。对系统表不能使用CREATE TABLE AS SELECT和上面介绍的重分布方法消除臃肿，而只能在计划的停机期间，运行VACUUM FULL。在这个期间，停止系统上的所有系统表操作，VACUUM FULL会对系统表使用排它锁。定期运行VACUUM可以防止这一代价高昂的操作。
 
-### 4.1.5.3.5. 消除索引表臃肿
+### 消除索引表臃肿
 
 VACUUM命令仅恢复数据表的空间，要恢复索引表的空间，使用REINDEX重建索引。 使用REINDEX table\_name重建一个表的所有索引；使用REINDEX index\_name重建某个索引。
 
-### 4.1.5.3.6. 消除AO表臃肿
+### 消除AO表臃肿
 
 AO 表的处理方式和堆表完全不同。尽管AO表可以更新和删除，然而AO表不是为此而优化的，建议对AO表避免使用更新和删除。如果AO表用于一次加载/多次读取的业务，那么AO表的VACUUM操作几乎会立即返回。
 
 如果确实需要对AO表执行UPDATE或者DELETE，则过期行会记录在辅助的位图表中，而不是像堆表那样使用空闲空间映射表。使用VACUUM回收空间。对含有过期行的AO表运行VACUUM会通过重写来精简整张表。如果过期行的百分比低于配置参数\*gp\_appendonly\_compaction\_threshold\*, 则不会执行任何操作，默认值是10（10%）。每个段数据库\(Segment\)上都会检查该值，所以有可能某些Segment上执行空间回收操作，而另一些Segment不执行任何操作。可以通过设置\*gp\_appendonly\_compaction\* 参数为no禁止AO表空间回收。
 
-## 4.1.5.4. 监控日志文件
+## 监控日志文件
 
 了解系统日志文件的位置和内容，并定期的监控这些文件。
 

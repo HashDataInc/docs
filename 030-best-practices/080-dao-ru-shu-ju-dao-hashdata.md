@@ -11,7 +11,7 @@ HashData支持各种工具从其它数据库导入数据。
 * DataX \(HashData Release\)：开源解决方案。
   [https://github.com/HashDataInc/DataX](https://github.com/HashDataInc/DataX)
 
-### 4.1.8.1.1. DataX\(HashData Release\)
+### DataX\(HashData Release\)
 
 * DataX\(HashData Release\)和Alibaba DataX有何不同？
 
@@ -23,13 +23,13 @@ HashData支持各种工具从其它数据库导入数据。
 
 [https://github.com/HashDataInc/DataX/blob/master/gpdbwriter/doc/gpdbwriter.md](https://github.com/HashDataInc/DataX/blob/master/gpdbwriter/doc/gpdbwriter.md)
 
-## 4.1.8.2. Kafka导入
+## Kafka导入
 
 通过Kafka Comsumer组件读取数据，然后以Copy模式批量写入HashData.
 
 关于Kafka Comsumer如何读取数据，参考Kafka官方文档：[http://kafka.apache.org/10/documentation/](http://kafka.apache.org/10/documentation/)
 
-### 4.1.8.2.1. Java
+### Java
 
 Copy模式写入示例如下
 
@@ -71,7 +71,7 @@ public class PgSqlJdbcCopyStreamsExample {
 
 关于CopyManager详细参考：[https://jdbc.postgresql.org/documentation/publicapi/org/postgresql/copy/CopyManager.html](https://jdbc.postgresql.org/documentation/publicapi/org/postgresql/copy/CopyManager.html)
 
-### 4.1.8.2.2. GoLang
+### GoLang
 
 Copy模式写入示例如下:
 

@@ -28,21 +28,7 @@
   > 使用_gp\_vmem\_protect\_limit_设置段数据库\(Segment\)能为所有任务分配的最大内存。切勿设置此值超过系统物理内存。如果_gp\_vmem\_protect\_limit_太大，可能造成系统内存不足，引起正常操作失败，进而造成段数据库故障。如果\*gp\_vmem\_protect\_limit\* 设置为较低的安全值，可以防止系统内存真正耗尽；打到内存上限的查询可能失败，但是避免了系统中断和Segment故障，这是所期望的行为。_gp\_vmem\_protect\_limit_的计算公式为:
 
 ```
-(
-SWAP
-+
-(
-RAM
-*
-vm
-.
-overcommit_ratio
-))
-*
-.
-9
-/
-number_segments_per_server
+( SWAP + ( RAM * vm.overcommit_ratio )) * .9 /number_segments_per_server
 ```
 
 * runaway\_detector\_activation\_percent
@@ -67,7 +53,7 @@ number_segments_per_server
 
   > 如果有大量溢出文件，则设置_gp\_workfile\_compress\_algorithm_对溢出文件压缩。压缩溢出文件也有助于避免磁盘子系统I/O操作超载。
 
-## 4.1.4.2. 配置资源队列
+## 配置资源队列
 
 HashData 数据仓库 的资源队列提供了强大的机制来管理集群的负载。队列可以限制同时运行的查询的数量和内存使用量。当 HashData 数据仓库 收到查询时，将其加入到对应的资源队列，队列确定是否接受该查询以及何时执行它。
 
