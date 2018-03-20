@@ -25,7 +25,7 @@ LOCATION ('qs://<your-bucket-name>.pek3a.qingstor.com/<your-data-path> access_ke
 ```
 您需要将其中的 `<your-bucket-name>`、`<your-data-path>`、`<access-key-id>` 和 `<secret-access-key>` 替换成您自己相应的值。
 
-下面的示例，向您展示如何从青云对象存储中直接读取 1GB 规模 TPCH 测试数据的例子。由于示例中的bucket hashdata-public 是公开只读的，因此您不指定 `access_key_id` 和 `secret_access_key` 也能够访问。
+下面的示例，向您展示如何从青云对象存储中直接读取 1GB 规模 TPCH 测试数据的例子。由于示例中的 bucket hashdata-public 是公开只读的，因此您不指定 `access_key_id` 和 `secret_access_key` 也能够访问。
 
 ```
 CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION)
@@ -89,7 +89,7 @@ LOG ERRORS 子句允许您保留错误记录信息，在命令执行后进一步
 ```
 SELECT gp_read_error_log('ext_expenses');
 ```
-要了解更多关于错误记录信息，请参考 在错误日志中查看错误记录。
+要了解更多关于错误记录信息，请参考在错误日志中查看错误记录。
 
 内置 SQL 函数 `gp_truncate_error_log(‘external_table’)` 可以删除错误记录。下面的例子用来删除之前访问外部表时记录的错误数据：
 
@@ -116,11 +116,12 @@ SELECT gp_read_error_log('ext_expenses');
 
 下面的小建议可以帮助您优化数据加载和加载后的查询性能。
 
-如果您向已经存在的数据表加载数据，可以考虑先删除索引（如果该表已经建了索引的话）。在数据上重新创建索引的速度远远快于在已有索引上逐行插入的性能。您还可以临时地增加 maintenance_work_mem 服务器参数来优化 CREATE INDEX 命令的创建参数（该参数可能影响数据库加载性能）。建议您在系统没有活跃操作时删除和重新创建索引。
+如果您向已经存在的数据表加载数据，可以考虑先删除索引（如果该表已经建了索引的话）。在数据上重新创建索引的速度远远快于在已有索引上逐行插入的性能。您还可以临时地增加 maintenance\_work\_mem 服务器参数来优化 CREATE INDEX 命令的创建参数（该参数可能影响数据库加载性能）。建议您在系统没有活跃操作时删除和重新创建索引。
 
 如果您向新的数据表加载数据，请在数据加载完毕后再创建索引。推荐的步骤是：创建表，加载数据，创建必要的索引。
 
 数据加载完毕后，运行 ANALYZE 命令。如果您操作影响的数据非常多，建议运行 ANALYZE 或者 VACUUM ANALYZE 命令来更新系统的统计信息，这样优化器可以利用最新的信息，更好的优化查询。最新的统计信息能够对查询进行更加精确的优化，从而避免由于统计信息不准确或者不可用时，导致查询性能非常差。
+
 在数据加载出错后，运行 VACUUM 命令。如果数据加载操作没有使用错误记录隔离模式，加载操作将在遇到的第一个错误处停止。这时已经加载的数据虽然不会被访问到，但是他们已经占用了磁盘上的存储空间。请运行 VACUUM 命令来回收这些浪费的空间。
 
 合理使用表分区技术可以简化数据的维护工作。
@@ -143,7 +144,7 @@ CREATE WRITABLE EXTERNAL TABLE test_writable_table (id INT, date DATE, desc TEXT
 
 INSERT INTO test_writable_table VALUES(1, '2016-01-01', 'qingstor test');
 ```
-在实际使用的时候，您需要将`<your-bucket-name>`、`<your-data-path>`、`<access-key-id>`和`<secret-access-key>`换成您自己相应的值。
+在实际使用的时候，您需要将 `<your-bucket-name>`、`<your-data-path>`、`<access-key-id>` 和 `<secret-access-key>` 换成您自己相应的值。
 
 ## 格式化数据文件
 

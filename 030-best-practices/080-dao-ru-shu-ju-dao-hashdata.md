@@ -13,25 +13,23 @@ HashData支持各种工具从其它数据库导入数据。
 
 ### DataX\(HashData Release\)
 
-* DataX\(HashData Release\)和Alibaba DataX有何不同？
+* DataX\(HashData Release\) 和Alibaba DataX 有何不同？
 
-  DataX 是阿里巴巴集团内被广泛使用的离线数据同步工具/平台，实现包括 MySQL、Oracle、HDFS、Hive、OceanBase、HBase、OTS、ODPS 等各种异构数据源之间高效的数据同步功能。DataX\(HashData Release\)在开源的DataX基础上，针对GPDB Writer专门做了性能优化，可以达到10X写入速度。
+  DataX 是阿里巴巴集团内被广泛使用的离线数据同步工具/平台，实现包括 MySQL、Oracle、HDFS、Hive、OceanBase、HBase、OTS、ODPS 等各种异构数据源之间高效的数据同步功能。DataX\(HashData Release\)在开源的 DataX 基础上，针对 GPDB Writer 专门做了性能优化，可以达到 10X 写入速度。
 
-* 导入HashData该选择哪种Writer？
+* 导入 HashData 该选择哪种 Writer？
 
-  GPDB Writer，详细参考：
-
-[https://github.com/HashDataInc/DataX/blob/master/gpdbwriter/doc/gpdbwriter.md](https://github.com/HashDataInc/DataX/blob/master/gpdbwriter/doc/gpdbwriter.md)
+  GPDB Writer，详细参考：[https://github.com/HashDataInc/DataX/blob/master/gpdbwriter/doc/gpdbwriter.md](https://github.com/HashDataInc/DataX/blob/master/gpdbwriter/doc/gpdbwriter.md)
 
 ## Kafka导入
 
-通过Kafka Comsumer组件读取数据，然后以Copy模式批量写入HashData.
+通过 Kafka Comsumer 组件读取数据，然后以 Copy 模式批量写入 HashData.
 
-关于Kafka Comsumer如何读取数据，参考Kafka官方文档：[http://kafka.apache.org/10/documentation/](http://kafka.apache.org/10/documentation/)
+关于 Kafka Comsumer 如何读取数据，参考 Kafka 官方文档：[http://kafka.apache.org/10/documentation/](http://kafka.apache.org/10/documentation/)
 
 ### Java
 
-Copy模式写入示例如下
+Copy 模式写入示例如下
 
 ```
 import java.io.FileReader;
@@ -69,11 +67,11 @@ public class PgSqlJdbcCopyStreamsExample {
 }
 ```
 
-关于CopyManager详细参考：[https://jdbc.postgresql.org/documentation/publicapi/org/postgresql/copy/CopyManager.html](https://jdbc.postgresql.org/documentation/publicapi/org/postgresql/copy/CopyManager.html)
+关于 CopyManager 详细参考：[https://jdbc.postgresql.org/documentation/publicapi/org/postgresql/copy/CopyManager.html](https://jdbc.postgresql.org/documentation/publicapi/org/postgresql/copy/CopyManager.html)
 
 ### GoLang
 
-Copy模式写入示例如下:
+Copy 模式写入示例如下:
 
 ```
 txn, err := db.Begin()
@@ -109,5 +107,5 @@ if err != nil {
 }
 ```
 
-关于pq包的使用，详细参考：[https://godoc.org/github.com/lib/pq\#hdr-Bulk\_imports](https://godoc.org/github.com/lib/pq#hdr-Bulk_imports)
+关于 pq 包的使用，详细参考：[https://godoc.org/github.com/lib/pq\#hdr-Bulk\_imports](https://godoc.org/github.com/lib/pq#hdr-Bulk_imports)
 

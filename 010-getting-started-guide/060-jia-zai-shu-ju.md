@@ -1,15 +1,15 @@
 # 步骤5: 将样例数据从对象存储加载到 HashData 数据仓库中
 
 
-现在你已经有了一个名为 postgres 的数据库，并且你已经成功地连接上它了。接下来你可以在数据库中创建一些新表，然后加载数据到这些表中，并尝试一些查询语句。为了方便你的测试，我们准备了一些TPC-H的样例数据存储在青云对象存储中。
+现在你已经有了一个名为 postgres 的数据库，并且你已经成功地连接上它了。接下来你可以在数据库中创建一些新表，然后加载数据到这些表中，并尝试一些查询语句。为了方便你的测试，我们准备了一些 TPC-H 的样例数据存储在青云对象存储中。
 
 1.  创建表
 
     拷贝并执行下面的建表语句在 postgres 数据库中创建相应的表对象。你可以通过 HashData 数据仓库 [开发者指南](http://www.hashdata.cn/docs/developer-guide/welcome.html) 查看更详细的建表语法。
 
-    其中定义的外部表（READABLE EXTERNAL TABLE）用来访问青云对象存储上面的数据。我们提供了 TPC-H 1GB、10GB、100GB 的公共测试数据集，在此示例中我们使用 1GB 的 TPCH 数据集。
+    其中定义的外部表（READABLE EXTERNAL TABLE）用来访问青云对象存储上面的数据。我们提供了   1GB、10GB、100GB 的 TPC-H 公共测试数据集，在此示例中我们使用 1GB 的 TPC-H 数据集。
 
-```
+	```
     CREATE TABLE NATION  ( 
         N_NATIONKEY  INTEGER NOT NULL,
         N_NAME       CHAR(25) NOT NULL,
@@ -110,29 +110,29 @@
 
     CREATE READABLE EXTERNAL TABLE e_LINEITEM (LIKE LINEITEM)
     LOCATION ('qs://hashdata-public.pek3a.qingstor.com/tpch/1g/lineitem/') FORMAT 'csv';
-```
+	```
 
-1. 执行如下命令将保存在对象存储上面的 TPC-H 数据拷贝插入到数据仓库表中。
+2. 执行如下命令将保存在对象存储上面的 TPC-H 数据拷贝插入到数据仓库表中。
 
-```
-INSERT INTO NATION SELECT * FROM e_NATION;  
-INSERT INTO REGION SELECT * FROM e_REGION;  
-INSERT INTO PART SELECT * FROM e_PART;  
-INSERT INTO SUPPLIER SELECT * FROM e_SUPPLIER;  
-INSERT INTO PARTSUPP SELECT * FROM e_PARTSUPP;  
-INSERT INTO CUSTOMER SELECT * FROM e_CUSTOMER;  
-INSERT INTO ORDERS SELECT * FROM e_ORDERS;  
-INSERT INTO LINEITEM SELECT * FROM e_LINEITEM;
-```
+	```
+	INSERT INTO NATION SELECT * FROM e_NATION;  
+	INSERT INTO REGION SELECT * FROM e_REGION;  
+	INSERT INTO PART SELECT * FROM e_PART;  
+	INSERT INTO SUPPLIER SELECT * FROM e_SUPPLIER;  
+	INSERT INTO PARTSUPP SELECT * FROM e_PARTSUPP;  
+	INSERT INTO CUSTOMER SELECT * FROM e_CUSTOMER;  
+	INSERT INTO ORDERS SELECT * FROM e_ORDERS;  
+	INSERT INTO LINEITEM SELECT * FROM e_LINEITEM;
+	```
 
-1. 现在可以开始运行样例查询了。
+3. 现在可以开始运行样例查询了。
 
-   这里所采用的数据集和查询是商业智能计算测试 TPC-H。TPC-H 是美国交易处理效益委员会组织制定的用来模拟决策支持类应用的一个测试集。TPC-H 实现了一个数据仓库，共包含8个基本表，其数据量可以设定从 1G 到 3T 不等。在这个样例中，我们选择了 1G 的数据集。TPC-H 基准测试包括 22 个查询，其主要评价指标是各个查询的响应时间，即从提交查询到结果返回所需时间。这里只提供了前三条查询语句。关于 TPC-H 完整 22 条查询语句以及详细介绍可参考 [TPC-H 主页](http://www.tpc.org/tpch/)。
+   这里所采用的数据集和查询是商业智能计算测试 TPC-H。TPC-H 是美国交易处理效益委员会组织制定的用来模拟决策支持类应用的一个测试集。TPC-H 实现了一个数据仓库，共包含 8 个基本表，其数据量可以设定从 1G 到 3T 不等。在这个样例中，我们选择了 1G 的数据集。TPC-H 基准测试包括 22 个查询，其主要评价指标是各个查询的响应时间，即从提交查询到结果返回所需时间。这里只提供了前三条查询语句。关于 TPC-H 完整 22 条查询语句以及详细介绍可参考 [TPC-H 主页](http://www.tpc.org/tpch/)。
 
-```
--- This query reports the amount of business that was billed, shipped, and returned.
+	```
+	-- This query reports the amount of business that was billed, shipped, and returned.
 
-select  
+	select  
        l_returnflag,  
        l_linestatus,  
        sum(l_quantity) as sum_qty,  
@@ -145,8 +145,7 @@ select
        count(*) as count_order  
    from  
        lineitem
-
-where  
+	where  
        l_shipdate <=  '1998-12-01'  
    group by  
        l_returnflag,  
@@ -154,10 +153,10 @@ where
    order by  
        l_returnflag,  
        l_linestatus;
+       
+	-- This query finds which supplier should be selected to place an order for a given part in a given region.
 
--- This query finds which supplier should be selected to place an order for a given part in a given region.
-
-select  
+	select  
        s.s_acctbal,  
        s.s_name,  
        n.n_name,  
@@ -203,9 +202,9 @@ select
        p.p_partkey  
    LIMIT 100;
 
--- This query retrieves the 10 unshipped orders with the highest value.
+	-- This query retrieves the 10 unshipped orders with the highest value.
 
-select  
+	select  
        l_orderkey,  
        sum(l_extendedprice * (1 - l_discount)) as revenue,  
        o_orderdate,  
@@ -228,4 +227,4 @@ select
        revenue desc,  
        o_orderdate  
    LIMIT 10;  
-```
+	```

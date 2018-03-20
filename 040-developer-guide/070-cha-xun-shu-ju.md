@@ -1,6 +1,6 @@
 # 查询数据
 
-本章节想您介绍使用 SQL 的相关信息。
+本章节向您介绍使用 SQL 的相关信息。
 
 您可以通过交互式 SQL 客户端（例如：psql）或者其他客户端工具向指定数据库输入 SQL 语言，来查阅，修改和进行数据分析。
 
@@ -34,9 +34,9 @@
 
 查询计划就是 HashData 数据仓库为了计算查询结果的一系列操作的步骤。查询计划中的每个步骤（节点）代表了一种数据库操作，例如：表扫描，连接运算，聚合运算或者排序操作。查询计划的读取和执行都是自底向上的。
 
-除了常见的操作外，HashData 数据仓库还支持一些特殊的操作：motion 节点（移动）。移动节点就是查询处理过程中，在不同计算节点直接移动数据。需要注意的是， 不是所有的查询都需要数据移动的。例如：运行在特定节点的查询是不需要任何数据移动的。
+除了常见的操作外，HashData 数据仓库还支持一些特殊的操作：motion 节点（移动）。移动节点就是查询处理过程中，在不同计算节点直接移动数据。需要注意的是，不是所有的查询都需要数据移动的。例如：运行在特定节点的查询是不需要任何数据移动的。
 
-为了能让查询执行获得最大的并行粒度，HashData 数据仓库通过将查询计划进行切片来进一步分解任务。每个切片都是可以被一个计算节点独立执行的查询计划子集。 当查询计划中包含了数据移动节点时，查询计划就是被分片的。 数据移动节点的上下两部分各自是一个独立的分片。
+为了能让查询执行获得最大的并行粒度，HashData 数据仓库通过将查询计划进行切片来进一步分解任务。每个切片都是可以被一个计算节点独立执行的查询计划子集。当查询计划中包含了数据移动节点时，查询计划就是被分片的。数据移动节点的上下两部分各自是一个独立的分片。
 
 让我们来看下面这个例子：这是一个简单的两张表连接的运算：
 
@@ -47,9 +47,9 @@ WHERE dateCol = '04-30-2008';
 ```
 [图3]() 展示了上面查询的查询计划。每个计算节点都会收到一份查询计划的拷贝，并且并行进行处理。
 
-这个示例的查询计划包含了一个数据重分布的数据移动节点， 该节点用来在不同计算节点直接移动记录使得连接运算得意完成。 这里之所有需要数据重分布的节点，是因为 customer 表（用户表）的数据分布是通过 cust_id 来进行的，而 sales 表（销售表）是根据 sale_id 进行的。为了进行连接操作，sales 表的数据需要重新根据 cust_id 来分布。因此查询计划在数据重分布节点两侧被切片，分别是 slice 1 和 slice 2。
+这个示例的查询计划包含了一个数据重分布的数据移动节点，该节点用来在不同计算节点直接移动记录使得连接运算得意完成。这里之所有需要数据重分布的节点，是因为 customer 表（用户表）的数据分布是通过 cust_id 来进行的，而 sales 表（销售表）是根据 sale_id 进行的。为了进行连接操作，sales 表的数据需要重新根据 cust_id 来分布。因此查询计划在数据重分布节点两侧被切片，分别是 slice 1 和 slice 2。
 
-这个查询计划还包括了另一种数据移动节点：数据聚合节点。 数据聚合节点是为了让所有的计算节点将结果发送给主节点，最后从主节点发送给用户引入的。 由于查询计划总是在数据移动节点出现时被切片，这个查询计划还包括了一个隐藏的切片， 该切片位于查询的最顶层（slice3）。并不是所有的查询都包含数据聚合移动节点，例如：
+这个查询计划还包括了另一种数据移动节点：数据聚合节点。数据聚合节点是为了让所有的计算节点将结果发送给主节点，最后从主节点发送给用户引入的。由于查询计划总是在数据移动节点出现时被切片，这个查询计划还包括了一个隐藏的切片，该切片位于查询的最顶层（slice3）。并不是所有的查询都包含数据聚合移动节点，例如：
 
 ```
 CREATE TABLE x AS
@@ -61,11 +61,11 @@ SELECT ...
 ##### 图3：查询计划切片
 
 ### 理解并行查询计划的执行
-HashData 数据仓库将会创建多个数据库进程来处理查询的相关工作。在主节点上，查询工作进程被称为查询分派器（QD）。 QD 负责创建和分派查询计划。它同时负责收集和展示最终查询结果。 在计算节点上，查询工作进程被称作查询执行器（QE）。QE 负责执行分配给该进程的查询计划并通过通信模块将中间结果发送给其它工作进程。
+HashData 数据仓库将会创建多个数据库进程来处理查询的相关工作。在主节点上，查询工作进程被称为查询分派器（QD）。QD 负责创建和分派查询计划。它同时负责收集和展示最终查询结果。 在计算节点上，查询工作进程被称作查询执行器（QE）。QE 负责执行分配给该进程的查询计划并通过通信模块将中间结果发送给其它工作进程。
 
-每个查询计划的切片都至少会有一个工作进程与之对应负责执行。 工作进程会被赋予不会互相依赖的查询计划片段。查询执行的过程中， 每个计算节点都会有多个进程并行地参与查询的处理工作。
+每个查询计划的切片都至少会有一个工作进程与之对应负责执行。工作进程会被赋予不会互相依赖的查询计划片段。查询执行的过程中，每个计算节点都会有多个进程并行地参与查询的处理工作。
 
-在不同计算节点上执行相同切片查询计划的工作进程被称为进程组。随着一部分工作的完成， 数据记录将会从一个进程组流向其它进程组。 这种在数据节点之间的进程间通信被称为互联组件。
+在不同计算节点上执行相同切片查询计划的工作进程被称为进程组。随着一部分工作的完成，数据记录将会从一个进程组流向其它进程组。这种在数据节点之间的进程间通信被称为互联组件。
 
 [图4]() 向您展示对于 [图3]() 中查询计划在主节点和两个计算节点上的进程分布情况。
 
@@ -84,11 +84,11 @@ HashData 数据仓库查询命令是基于 PostgreSQL 开发，而 PostgreSQL �
 
 SQL 是一种标准化的数据库访问语言。不同元素组构成的语言允许控制数据存储，数据获取，数据分析， 数据变换和数据修改等。你需要通过使用 SQL 命令来编写 HashData 数据仓库理解的查询和命令。SQL 查询由一条或多条命令顺序组成。每一条命令是由多个词法元素组成正确的语法结构构成的， 每条命令使用分号（;）分隔。
 
-HashData 数据仓库在 PostgreSQL 的语法结构上进行了一些扩展，并根据分布式环境增加了部分的限制。如果您希望了解更多关于 PostgreSQL 中的 SQL 语法规则和概念，您可以参考 PostgreSQL8.2英文手册中SQL语法章节 或者 PostgreSQL9.3中文手册中SQL语法章节 。 由于中文网站没有 8.2 手册，请您注意相关资料中的语法变动。
+HashData 数据仓库在 PostgreSQL 的语法结构上进行了一些扩展，并根据分布式环境增加了部分的限制。如果您希望了解更多关于 PostgreSQL 中的 SQL 语法规则和概念，您可以参考 PostgreSQL8.2英文手册中SQL语法章节 或者 PostgreSQL9.3中文手册中 SQL 语法章节。由于中文网站没有 8.2 手册，请您注意相关资料中的语法变动。
 
 ### SQL 值表达式
 
-SQL 值表达式由一个或多个值，符号，运算符，SQL 函数和数据组成。表达式通过比较数据，执行计算病返回一个结果。 表达式计算包括：逻辑运算，算数运算和集合运算。
+SQL 值表达式由一个或多个值，符号，运算符，SQL 函数和数据组成。表达式通过比较数据，执行计算病返回一个结果。表达式计算包括：逻辑运算，算数运算和集合运算。
 
 下面列出值表达式的类别：
 
@@ -184,7 +184,7 @@ expression operator expression(binary infix operator)
 operator expression(unary prefix operator)
 expression operator(unary postfix operator)
 ```
-示例中的 operator 实际是运算符符号，例如：AND，OR，+等。运算符也有限定名格式，例如：
+示例中的 operator 实际是运算符符号，例如：AND，OR，+ 等。运算符也有限定名格式，例如：
 
 ```
 OPERATOR(schema.operatorname)
@@ -202,10 +202,10 @@ function ([expression [, expression ... ]])
 ```
 sqrt(2)
 ```
-参考 内置函数和运算符，了解更多信息。
+参考内置函数和运算符，了解更多信息。
 
 #### 聚集表达式
-聚合表达式是指对于查询选择的所有数据记录上应用一个聚合函数。聚合函数在一组值上进行运算，并返回一个结果。 例如：对一组值进行求和运算或者计算平均值。下面列出聚合表达式的语法结构：
+聚合表达式是指对于查询选择的所有数据记录上应用一个聚合函数。聚合函数在一组值上进行运算，并返回一个结果。例如：对一组值进行求和运算或者计算平均值。下面列出聚合表达式的语法结构：
 
 * aggregate\_name(expression [ , … ] ) — 处理所有值为非空的输入记录值。
 * aggregate\_name(ALL expression [ , … ] ) — 和上一个表达式行为一致，因为 ALL 是默认参数。
@@ -216,7 +216,7 @@ sqrt(2)
 
 例如，count(\*) 返回输入记录的总数量，count(f1) 返回 f1 值中非空的总数量，count(distinct f1) 返回的是 f1 值中非空并去除重复值后的总数量。
 
-要了解预定义的聚合函数，请参考 内置函数和运算符。除了预定义聚合函数外，您还可以创建自定义的聚合函数。
+要了解预定义的聚合函数，请参考内置函数和运算符。除了预定义聚合函数外，您还可以创建自定义的聚合函数。
 
 HashData 数据仓库提供 MEDIAN 聚合函数，该函数返回 PERCENTILE\_CONT 的 50 分位数结果。 下面是逆分布函数支持的特殊聚合表达式：
 
@@ -231,23 +231,24 @@ PERCENTILE_DISC(percentage) WITHIN GROUP (ORDER BY expression)
 
 HashData 数据仓库不支持下面关键字：ALL，DISTINCT，FILTER 和 OVER。请参考 [表5]() 了解更多信息。
 
-聚合表达式只能出现在 SELECT 命令的结果列表或者 HAVING 子句中。在其它位置紧致 访问聚合表达式，例如：WHERE。这是因为在其它其它位置的计算早于聚合数据的操作。 此限制特指聚合表达式所属的查询层次。
+聚合表达式只能出现在 SELECT 命令的结果列表或者 HAVING 子句中。在其它位置紧致访问聚合表达式，例如：WHERE。这是因为在其它其它位置的计算早于聚合数据的操作。此限制特指聚合表达式所属的查询层次。
 
-当一个聚合表达式出现在子查询中，聚合操作相当于作用在子查询的返回结果上。如果聚合 函数的参数只包含外层变量，该聚合表达式属于最近一层的外部表查询，并且也在该查询结 果上进行聚合运算。该聚合表达式对于出现的子查询来说，将会当成一个外部引用，并以常 量值处理。请参考 [表2]() 了解标量子查询。
+当一个聚合表达式出现在子查询中，聚合操作相当于作用在子查询的返回结果上。如果聚合函数的参数只包含外层变量，该聚合表达式属于最近一层的外部表查询，并且也在该查询结 果上进行聚合运算。该聚合表达式对于出现的子查询来说，将会当成一个外部引用，并以常量值处理。请参考 [表2]() 了解标量子查询。
+
 HashData 数据仓库不支持在多个输入表达式上使用 DISTINCT。
 
 #### 窗口表达式
 
-窗口表达式允许应用开发人员更加简单地通过标准SQL语言，来构建复杂的在线分析处理（OLAP）。 例如，通过使用窗口表达式，用户可以计算移动平均值，某个范围内的总和， 根据某些列值的变化重置聚合表达式或排名，还可以用简单的表达式表述复杂的比例关系。
+窗口表达式允许应用开发人员更加简单地通过标准SQL语言，来构建复杂的在线分析处理（OLAP）。 例如，通过使用窗口表达式，用户可以计算移动平均值，某个范围内的总和，根据某些列值的变化重置聚合表达式或排名，还可以用简单的表达式表述复杂的比例关系。
 
-窗口表达式表示在窗口帧上应用窗口函数，窗口帧是通过非常特别的OVER()子句定义的。 窗口分区是分组后的应用于窗口函数的记录集合。与聚合函数针对每个分组的记录返回一个结果不同， 窗口函数真对每行都返回结果，但是该值的计算是完全真对根据记录对应的窗口分区进行的。 如果不指定分区，窗口函数就会在整个结果集赏进行计算。
+窗口表达式表示在窗口帧上应用窗口函数，窗口帧是通过非常特别的 OVER() 子句定义的。窗口分区是分组后的应用于窗口函数的记录集合。与聚合函数针对每个分组的记录返回一个结果不同，窗口函数真对每行都返回结果，但是该值的计算是完全真对根据记录对应的窗口分区进行的。如果不指定分区，窗口函数就会在整个结果集赏进行计算。
 
 窗口表达式的语法如下：
 
 ```
 window_function ( [expression [, ...]] ) OVER ( window_specification )
 ```
-这里的 window\_function 是表3列出的函数之一，表达式是任何不包含窗口表达式的合法值。window\_specification 定义如下：
+这里的 window\_function 是表 3 列出的函数之一，表达式是任何不包含窗口表达式的合法值。window\_specification 定义如下：
 
 ```
 [window_name]
@@ -298,13 +299,15 @@ CAST 的语法是符合 SQL 标准的的；而语法 :: 是 PostgreSQL 历史遗
 #### 相关子查询
 相关子查询是指一个 SELECT 查询位于 返回列表或 WHERE 条件语句中，并引用了外部查询参数的查询语句。相关子查询允许更高效的表示出引用其他查询的返回结果。HashData 数据仓库能够支持相关子查询特性，此特性能够允许兼容很多已经存在的应用程序。 相关子查询可以根据返回记录是一条还是多条，返回结果可以是标量或者表表达式， 这取决于它返回的记录是一条还是多条。HashData 数据仓库目前不支持引用跨层的变量（不支持间接相关子查询）。
 
-相关子查询示例 示例 1 – 标量相关子查询
+相关子查询示例 
+
+***示例 1 – 标量相关子查询***
 
 ```
 SELECT * FROM t1 WHERE t1.x
             > (SELECT MAX(t2.x) FROM t2 WHERE t2.y = t1.y);
 ```
-示例 2 – 相关 EXISTS 子查询
+***示例 2 – 相关 EXISTS 子查询***
 
 ```
 SELECT * FROM t1 WHERE
@@ -314,9 +317,10 @@ HashData 数据仓库利用下面两个算法来运行相关子查询：
 
 将相关子查询展开成为连接运算：这种算是是最高效的方法，这也是 HashData 数据仓库对于大部分相关子查询使用的方法。一些 TPC-H 测试集中的查询都可以通过此方法进行优化。
 对于引用的查询的每一条记录，都执行一次相关子查询：这是一种相对来说低效的算法。HashData 数据仓库对于位于 SELECT 返回列表中的相关子查和 WHERE 条件中 OR 连接表达式中的相关子查询使用这种算法。
+
 下面的例子，向您展示对于不同类型的查询，如何通过查询重写来改进性能。
 
-示例 3 - Select 返回列表中的相关子查询
+***示例 3 - Select 返回列表中的相关子查询***
 
 原始查询
 
@@ -337,7 +341,7 @@ SELECT t1.a, dt2 FROM t1
               GROUP BY t1.x)
        ON (t1.x = csq_y);
 ```
-示例 4 - OR 子句中的相关子查询 原始查询
+***示例 4 - OR 子句中的相关子查询 原始查询***
 
 ```
 SELECT * FROM t1
@@ -359,9 +363,9 @@ WHERE x < (SELECT count(*) FROM t3 WHERE t1.y = t3.y)
 要查看查询计划，可以使用 EXPLAIN SELECT 或者 EXPLAIN ANALYZE SELECT。查询计划中的 Subplan 节点代表查询将会对外部查询的每一条记录都处理一次，因此暗示着查询可能可以被重写和优化。
 
 #### 高级“表”表达式
-HashData 数据仓库支持能够将“表”表达式作为参数的函数。您可以对输入高级“表”函数的记录 使用 ORDER BY 进行排序。您可以使用 SCATTER BY 子句并指定一列或多列（或表达式）对 输入记录进行重新分布。这种使用方式与创建表的时候，DISTRIBUTED BY 子句十分类似，但 是此处重新分布的操作是在查询运行时发生的。
+HashData 数据仓库支持能够将“表”表达式作为参数的函数。您可以对输入高级“表”函数的记录使用 ORDER BY 进行排序。您可以使用 SCATTER BY 子句并指定一列或多列（或表达式）对输入记录进行重新分布。这种使用方式与创建表的时候，DISTRIBUTED BY 子句十分类似，但是此处重新分布的操作是在查询运行时发生的。
 
->注意：根据数据的分布，HashData 数据仓库能够自动地在 计算节点 并行的运行 “表”表达式。
+>注意：根据数据的分布，HashData 数据仓库能够自动地在计算节点并行的运行 “表” 表达式。
 
 #### 数组构造表达式
 数据构造表达式是通过提供成员值的方式构造数组值的表达式。一个简单的数组构造表达式由：关键字 ARRAY，左方括号（[），用来组成数组元素值的通过逗号分隔的一个多个表达式，和一个右方括号（]）。例如：
@@ -404,7 +408,7 @@ SELECT ARRAY(SELECT oid FROM pg_proc WHERE proname LIKE 'bytea%');
 -----------------------------------------------------------
  {2011,1954,1948,1952,1951,1244,1950,2005,1949,1953,2006,31}
 ```
-这里的子查询只能返回单列。生成的一维数组中的每个元素对应着子查询每一条记录，数组元素的类型是子查询输出列的类型。 通过数组构造表达式得到的数组，下标总是从1开始编号。
+这里的子查询只能返回单列。生成的一维数组中的每个元素对应着子查询每一条记录，数组元素的类型是子查询输出列的类型。通过数组构造表达式得到的数组，下标总是从 1 开始编号。
 
 #### 记录构造表达式
 记录构造器是一种用来从成员值构建记录值的表达式（记录表达式也被称为复合类型）。例如：
@@ -418,7 +422,7 @@ SELECT ROW(1,2.5,'this is a test');
 SELECT ROW(t.*, 42) FROM t;
 SELECT ROW(t.f1, t.f2, 42) FROM t;
 ```
-记录构造表达式默认创建的记录值具有匿名记录类型。 根据需要，您可以将该值通过类型转换表达式，转换成一个命名复合类型：数据表的记录类型或者是通过 CREATE TYPE AS 命令创建的复合类型。您可以显示地提供类型转来避免出现歧义。例如：
+记录构造表达式默认创建的记录值具有匿名记录类型。根据需要，您可以将该值通过类型转换表达式，转换成一个命名复合类型：数据表的记录类型或者是通过 CREATE TYPE AS 命令创建的复合类型。您可以显示地提供类型转来避免出现歧义。例如：
 
 ```
 CREATE TABLE mytable(f1 int, f2 float, f3 text);
@@ -501,7 +505,8 @@ HashData 数据仓库不支持函数返回表引用（rangeFuncs）或者函数�
 此功能正在开发中，未来版本将会开放。
 
 ### 内置函数和运算符
-The following table lists the categories of built-in functions and operators supported by PostgreSQL. All functions and operators are supported in Greenplum Database as in PostgreSQL with the exception of STABLE and VOLATILE functions, which are subject to the restrictions noted in Using Functions in Greenplum Database. See the Functions and Operators section of the PostgreSQL documentation for more information about these built-in functions and operators.
+
+下表列出了 PostgreSQL 支持的内置函数和运算符的种类。
 
 ##### 表2 内置函数和运算符
 
@@ -525,9 +530,9 @@ The following table lists the categories of built-in functions and operators sup
 |Subquery Expressions||||	 	 	 
 |Row and Array Comparisons||||	 	 	 
 |Set Returning Functions	|generate\_series|||
-|System Information Functions||All session information functions、All access privilege inquiry functions、All schema visibility inquiry functions、All system catalog information functions、All comment information functions
+|System Information Functions||All session information functions、All access privilege inquiry functions、All schema visibility inquiry functions、All system catalog information functions、All comment information functions|\\|
 |System Administration Functions|set\_config、pg\_cancel\_backend、pg\_reload\_conf、pg\_rotate\_logfile、pg\_start\_backup、pg\_stop\_backup、pg\_size\_pretty、pg\_ls\_dir、pg\_read\_file、pg\_stat\_file|current\_setting、All database object size functions|Note: The function pg\_column\_size the value, perhaps with TOAST compression.
-|XML Functions||xmlagg(xml)、xmlexists(text, xml)、xml\_is\_well\_formed(text)、xml\_is\_well\_formed\_document(text)、xml\_is\_well\_formed\_content(text)、xpath(text, xml)、xpath(text, xml, text[])、xpath\_exists(text, xml)、xpath\_exists(text, xml, text[])、xml(text)、text(xml)、xmlcomment(xml)、xmlconcat2(xml, xml)||
+|XML Functions||xmlagg(xml)、xmlexists(text, xml)、xml\_is\_well\_formed(text)、xml\_is\_well\_formed\_document(text)、xml\_is\_well\_formed\_content(text)、xpath(text, xml)、xpath(text, xml, text[])、xpath\_exists(text, xml)、xpath\_exists(text, xml, text[])、xml(text)、text(xml)、xmlcomment(xml)、xmlconcat2(xml, xml)|\\|
  
 ### 窗口函数
 下面列出的内置窗口函数是 HashData Database 对 PostgreSQL 的扩展。 所有的窗口函数都是 immutable 的。要了解更多关于窗口函数的信息，请参考 窗口表达式 。
@@ -543,7 +548,7 @@ The following table lists the categories of built-in functions and operators sup
 |ntile(expr)	|bigint	|NTILE(expr) OVER ( [PARTITION BY expr] ORDER BY expr )|将一个有序数据集划分到多个桶（buckets）中，桶的数量 由参数决定，并为每条记录分配一个桶编号。|
 |percent\_rank()	|double precision	|PERCENT\_RANK () OVER ( [PARTITION BY expr] ORDER BY expr )	|通过如下公式计算排名：记录排名 - 1 除以总排名记录 数 - 1 。|
 |rank()	|bigint	|RANK () OVER ( [PARTITION BY expr] ORDER BY expr )|计算一个有序组中，记录的排名。记录值相同的情况下， 分配相同的排名。分配到相同排名的每组记录的数量将会 被用来计算下个分配的排名。这种情况下，排名的分配可 能不是连续。|
-|row\_number()	|bigint	|ROW\_NUMBER () OVER ( [PARTITION BY expr] ORDER BY expr )	为每一个记录分配一个唯一的编号。（可以是整个查询的 结果记录也可以是窗口分区中的记录）。
+|row\_number()	|bigint	|ROW\_NUMBER () OVER ( [PARTITION BY expr] ORDER BY expr )	为每一个记录分配一个唯一的编号。（可以是整个查询的 结果记录也可以是窗口分区中的记录）。|\\|
 
 ### 高级分析函数
 下面列出的内置窗口函数是 HashData Database 对 PostgreSQL 的扩展。 分析函数是 immutable 。

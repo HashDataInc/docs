@@ -25,7 +25,6 @@
 
 ## 使用 psql
 
----
 
 根据您配置的环境变量值，下面的例子展示了如何使用 psql 连接数据库：
 
@@ -37,8 +36,7 @@ $ psql gpdatabase
 $ psql
 ```
 
-当您连接到数据库后，psql  
-将会提示您正在使用的数据库名称，每个数据库名称后面跟随着输入提示字符串 =&gt; （如果您使用了超级用户登录，那么提示字符串是 =\#）。如下所示：
+当您连接到数据库后，psql 将会提示您正在使用的数据库名称，每个数据库名称后面跟随着输入提示字符串 => （如果您使用了超级用户登录，那么提示字符串是 =\#）。如下所示：
 
 ```
 gpdatabase=>
@@ -52,7 +50,6 @@ gpdatabase=>
 
 ## pgAdmin III
 
----
 
 如果您喜欢使用图形化接口，可以使用 pgAdmin III 工具。该图形工具能够支持 postgres 数据库所有标准特性，也添加了对 HashData 数据仓库特性的支持。pgAdmin III 支持 HashData 数据仓库的特性包括:
 
@@ -64,13 +61,9 @@ gpdatabase=>
 
 ## 数据库应用接口
 
----
+您也许需要开发专有的客户端程序来连接 HashData 数据仓库系统。 postgres 为常用的数据库应用接口提供了驱动程序，这些驱动程序可以直接操作 HashData 数据仓库。具体驱动程序及下载链接如下：
 
-您也许需要开发专有的客户端程序来连接 HashData 数据仓库系统。 postgres  
-为常用的数据库应用接口提供了驱动程序，这些驱动程序可以直接操作  
-HashData 数据仓库。具体驱动程序及下载链接如下：
-
-| API | PostgreSQL驱动程序名称 | 下载链接 |
+| API | PostgreSQL 驱动程序名称 | 下载链接 |
 | :--- | :--- | :--- |
 | ODBC | pgodbc | [源代码](https://pek3a.qingstor.com/hashdata-public/tools/clients/odbc/psqlodbc-09.05.0210.tar.gz)、[Win64](https://pek3a.qingstor.com/hashdata-public/tools/clients/odbc/psqlodbc_09_05_0210-x64.zip)、[Win32](https://pek3a.qingstor.com/hashdata-public/tools/clients/odbc/psqlodbc_09_05_0210-x86.zip) |
 | JDBC | pgjdbc | [JRE6](https://pek3a.qingstor.com/hashdata-public/tools/clients/jdbc/postgresql-9.4-1208.jdbc4.jar)、[JRE7](https://pek3a.qingstor.com/hashdata-public/tools/clients/jdbc/postgresql-9.4-1208.jdbc41.jar)、[JRE8](https://pek3a.qingstor.com/hashdata-public/tools/clients/jdbc/postgresql-9.4-1208.jdbc42.jar) |
@@ -81,15 +74,11 @@ HashData 数据仓库。具体驱动程序及下载链接如下：
 
 1. 根据使用语言和接口，下载相关程序。例如：从 Oracle 官方下载。
 2. 根据接口说明，编写您的客户端程序。在编写程序时，请注意 HashData 数据仓库的相关语法，这样可以避免您使用不支持的特性。
-3. 下载对应的 postgres 驱动程序，并配置连接 HashData 数据仓库
-   主节点的信息。
+3. 下载对应的 postgres 驱动程序，并配置连接 HashData 数据仓库主节点的信息。
 
 ## 第三方客户工具
 
----
-
-大部分第三方 ETL 和商业智能（BI）工具使用标准数据库接口连接  
-HashData 数据仓库，例如：ODBC 和 JDBC。目前经过测试支持的应用包括
+大部分第三方 ETL 和商业智能（BI）工具使用标准数据库接口连接 HashData 数据仓库，例如：ODBC 和 JDBC。目前经过测试支持的应用包括
 
 * Apache Zeppelin
 * Tableau Desktop

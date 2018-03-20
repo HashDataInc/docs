@@ -4,9 +4,9 @@
 
 本章节涵盖以下内容:
 
-* [*HashData 数据仓库架构**](#21-hashdata-数据仓库架构)
+* [*HashData 数据仓库架构*](#2)
 
-## HashData 数据仓库架构
+## <h2 id='2'> HashData 数据仓库架构
 
 HashData 数据仓库是为了管理大容量分析型数据仓库和商业智能分析业务而设计的大规模并行处理（MPP）数据库服务系统。
 
@@ -16,7 +16,7 @@ HashData 数据仓库是基于 greenplum 和 postgres 开源数据库技术，�
 
 HashData 数据仓库的 master 节点是整个数据库系统的入口节点，用户通过客户端连接 master 节点来提交 SQL 查询语句。master 节点将会协调其它 segment 节点来存储和处理用户的数据。
 
-图1. 系统架构
+##### 图1. 系统架构
 
 ![](assets/figure-1-architecture.jpg)
 
