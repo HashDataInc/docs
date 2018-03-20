@@ -5,7 +5,7 @@
 
 1.  创建表
 
-    拷贝并执行下面的建表语句在 postgres 数据库中创建相应的表对象。你可以通过 HashData 数据仓库 [开发者指南](http://www.hashdata.cn/docs/developer-guide/welcome.html) 查看更详细的建表语法。
+    拷贝并执行下面的建表语句在 postgres 数据库中创建相应的表对象。你可以通过 HashData 数据仓库 [开发指南](http://www.hashdata.cn/docs/developer-guide/welcome.html) 查看更详细的建表语法。
 
     其中定义的外部表（READABLE EXTERNAL TABLE）用来访问青云对象存储上面的数据。我们提供了   1GB、10GB、100GB 的 TPC-H 公共测试数据集，在此示例中我们使用 1GB 的 TPC-H 数据集。
 
