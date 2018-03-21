@@ -20,7 +20,7 @@
   ],
   "pluginsConfig": {
     "editlink": {
-      "base": "https://github.com/HashDataInc/docs/blob/gitbook/",
+      "base": "https://github.com/HashDataInc/docs/blob/master/",
       "label": "编辑本页"
     },
     "baidu": {
@@ -37,15 +37,15 @@
       "className": "toc"
     },
     "versions": {
-      "gitbookConfigURL": "http://gitbook.hashdata.cn/latest/book.json",
+      "gitbookConfigURL": "http://docs.hashdata.cn/latest/book.json",
       "options": [
         {
-          "value": "http://gitbook.hashdata.cn/latest",
+          "value": "http://docs.hashdata.cn/latest",
           "text": "Latest"
         },
         {
-          "value": "http://gitbook.hashdata.cn/v1.4.0/",
-          "text": "v1.4.0"
+          "value": "http://docs.hashdata.cn/v1.3.0/",
+          "text": "v1.3.0"
         }
       ]
     }
