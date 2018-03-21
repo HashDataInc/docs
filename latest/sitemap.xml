@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url> <loc>http://docs.hashdata.cn/./</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/010-getting-started-guide/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/010-getting-started-guide/020-zhun-bei-gong-zuo.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/010-getting-started-guide/030-qi-dong-ji-qun.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/010-getting-started-guide/040-shou-quan-lian-jie.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/010-getting-started-guide/050-lian-jie-ji-qun.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/010-getting-started-guide/060-jia-zai-shu-ju.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/010-getting-started-guide/070-shan-chu-ji-qun.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/020-admin-guide/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/020-admin-guide/020-ji-qun-cao-zuo.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/020-admin-guide/030-ji-qun-jian-kong.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/020-admin-guide/040-ji-qun-kuo-rong.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/020-admin-guide/050-pai-cha-xi-tong-wen-ti.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/010-zui-jia-shi-jian-ti-gang.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/030-shu-ju-ku-mo-shi-she-ji.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/031-cun-chu-mo-xing.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/032-ya-suo.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/033-fen-bu.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/034-fen-qu.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/035-suo-yin.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/036-zi-duan-shun-xu.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/040-nei-cun-he-fu-zai-guan-li.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/050-xi-tong-jian-kong-he-wei-hu.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/060-jia-zai-shu-ju.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/070-sqlcha-xun-diao-you.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/030-best-practices/080-dao-ru-shu-ju-dao-hashdata.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/030-fang-wen-hashdata-shu-ju-cang-ku.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/040-ding-yi-shu-ju-ku-dui-xiang.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/050-shu-ju-de-guan-li.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/060-dao-ru-he-dao-chu-shu-ju.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/070-cha-xun-shu-ju.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+</urlset>
