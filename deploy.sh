@@ -33,7 +33,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     #add, commit and push files
     git add -f --all .
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
-    #git push -fq origin $BRANCH > /dev/null
+    git push -fq origin $BRANCH > /dev/null
 
     if [ -n "${access_key_id}" -a -n "${access_key_secret}" ]; then
         rm -rf .git
