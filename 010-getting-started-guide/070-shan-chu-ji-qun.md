@@ -6,8 +6,8 @@
 
 我们建议您可以通过如下资料来学习和理解这个教程中介绍的概念：
 
-* HashData 数据仓库 [管理指南](http://www.hashdata.cn/docs/cluster-management-guide/cluster-management-guide.html)
-* HashData 数据仓库 [开发指南](http://www.hashdata.cn/docs/developer-guide/welcome.html)
+* HashData 数据仓库 [管理指南](../020-admin-guide/README.md)
+* HashData 数据仓库 [开发指南](../040-developer-guide/README.md)
 
 ## 重置你的环境
 

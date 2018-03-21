@@ -24,11 +24,13 @@
     - [4.4 压缩](030-best-practices/032-ya-suo.md)
     - [4.5 分布](030-best-practices/033-fen-bu.md)
     - [4.6 分区](030-best-practices/034-fen-qu.md)
-    - [4.7 内存管理](030-best-practices/040-nei-cun-he-fu-zai-guan-li.md)
-    - [4.8 监控](030-best-practices/050-xi-tong-jian-kong-he-wei-hu.md)
-    - [4.9 数据加载](030-best-practices/060-jia-zai-shu-ju.md)
-    - [4.10 查询计划](030-best-practices/070-sqlcha-xun-diao-you.md)
-    - [4.11 数据库导入](030-best-practices/080-dao-ru-shu-ju-dao-hashdata.md)
+    - [4.7 索引](030-best-practices/035-suo-yin.md)
+    - [4.8 字段顺序和字节对齐](030-best-practices/036-zi-duan-shun-xu.md)
+    - [4.9 内存管理](030-best-practices/040-nei-cun-he-fu-zai-guan-li.md)
+    - [4.10 监控](030-best-practices/050-xi-tong-jian-kong-he-wei-hu.md)
+    - [4.11 数据加载](030-best-practices/060-jia-zai-shu-ju.md)
+    - [4.12 查询计划](030-best-practices/070-sqlcha-xun-diao-you.md)
+    - [4.13 数据库导入](030-best-practices/080-dao-ru-shu-ju-dao-hashdata.md)
 
 
 - [5 开发指南](040-developer-guide/README.md)
