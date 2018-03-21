@@ -355,19 +355,19 @@
 <p>使用 INSERT 命令可以在表中创建数据。使用此命令需要提供表名和该表中每列的值，你可以通过显示地指定列名来改变提供列值的顺序。
 如果您没有指定列名，列值需要按照表中的列顺序指定，并使用逗号进行分隔。</p>
 <p>下面是指定按照列名顺序提供列值的示例：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">products</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">product_no</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Cheese&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">.</span><span class="mi">99</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">products</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">product_no</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Cheese&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">.</span><span class="mi">99</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>下面是指提供列值的示例：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">products</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">.</span><span class="mi">99</span><span class="p">);</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">products</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">.</span><span class="mi">99</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>通常情况下，提供的列值是字面值（常量），但是您也可以使用标量表达式。例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">films</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">tmp_films</span> <span class="k">WHERE</span> <span class="n">date_prod</span> <span class="o">&lt;</span> <span class="s1">&#39;2004-05-07&#39;</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">films</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">tmp_films</span> <span class="k">WHERE</span> <span class="n">date_prod</span> <span class="o">&lt;</span> <span class="s1">&#39;2004-05-07&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>您还可以在一条命令中插入多行值：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">products</span> <span class="p">(</span><span class="n">product_no</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span> <span class="k">VALUES</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">products</span> <span class="p">(</span><span class="n">product_no</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span> <span class="k">VALUES</span>
     <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">.</span><span class="mi">99</span><span class="p">),</span>
     <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Bread&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">99</span><span class="p">),</span>
     <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Milk&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">.</span><span class="mi">99</span><span class="p">);</span>
@@ -393,7 +393,7 @@
 <li>用来指定需要更新记录的一个或多个选择条件</li>
 </ul>
 <p>下面示例展示将所有价格为 5 的产品价格改为 10 的命令：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">products</span> <span class="k">SET</span> <span class="n">price</span> <span class="o">=</span> <span class="mi">10</span> <span class="k">WHERE</span> <span class="n">price</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">products</span> <span class="k">SET</span> <span class="n">price</span> <span class="o">=</span> <span class="mi">10</span> <span class="k">WHERE</span> <span class="n">price</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>在 HashData 数据仓库 中使用 Update 命令有如下限制：</p>
@@ -408,11 +408,11 @@
 <p>DELETE 命令可以从表中删除记录。使用 WHERE 子句可以删除符合特定条件的记录。如果没有
 指定 WHERE 条件，表中所有记录都会被删除。执行的结果就是一张没有记录的空表。</p>
 <p>下面示例展示删除所有价格为 10 的产品：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">products</span> <span class="k">WHERE</span> <span class="n">price</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">products</span> <span class="k">WHERE</span> <span class="n">price</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>删除表中所有数据：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">products</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">products</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>在 HashData 数据仓库 中使用 DELETE 命令有如下限制：</p>
@@ -423,7 +423,7 @@
 <h3>3.1.11.4.1. 清空表<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>TRUNCATE 命令可以快速地删除表中所有记录。</p>
 <p>例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">TRUNCATE</span> <span class="n">mytable</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">TRUNCATE</span> <span class="n">mytable</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>此命令可以将表中所有记录一次清空。由于 TRUNCATE 不对表进行扫描，因此该操作不操作继承表或者
@@ -495,7 +495,7 @@ HashData 数据仓库 中，SERIALIZABLE 隔离级别能够在不使用代价较
 <h2>3.1.11.6. 数据库的清理<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>虽然被删除或者被更新的记录对于新事务是不可见的，但是它们仍然会占用磁盘的物理空间。
 需要定期运行 VACUUM 命令来清理这些过期的记录。例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">VACUUM</span> <span class="n">mytable</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">VACUUM</span> <span class="n">mytable</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>VACUUM 命令将会收集表相关的统计数据，例如：记录数和页面数。在数据加载后，请使用 Vacuum 对所有的

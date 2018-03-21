@@ -281,7 +281,7 @@
 <p>HashData 数据仓库 支持高效地并发导入和导出数据功能，利用 青云 的对象存储，可以与不同系统更加简单地进行数据交换操作。</p>
 <p>通过使用外部表，HashData 数据仓库 让您能够通过 SQL 命令在数据库内直接利用并行机制访问外部数据资源，例如：SELECT，JOIN，ORDER BY 或者在外部表上创建视图。
 外部表一般用来将外部数据导入到数据库内部普通表，例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table</span> <span class="k">AS</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">ext_table</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table</span> <span class="k">AS</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">ext_table</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="section" id="id2">
@@ -292,14 +292,14 @@
 <p>通过在外部表的 LOCATION 子句，您可以指定青云对象存储的位置和访问键值。这样，在每次使用 SQL 命令读取外部表时，HashData 数据仓库 会将青云对象存储中该目录下的所有数据文件读取到数据库中进行处理。
 如果您需要多次处理该数据，建议您通过 CREATE TABE table AS SELECT * FROM ext_table 的方式，将对象存储的数据导入到 HashData 数据仓库 的内置表。这样可以更好的利用优化过的存储结构来优化您的数据分析流程。</p>
 <p>您可以通过如下的语法来定义访问青云对象存储上面数据的外部表：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">foo</span> <span class="p">(</span><span class="n">name</span> <span class="nb">TEXT</span><span class="p">,</span> <span class="n">id</span> <span class="nb">INT</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">foo</span> <span class="p">(</span><span class="n">name</span> <span class="nb">TEXT</span><span class="p">,</span> <span class="n">id</span> <span class="nb">INT</span><span class="p">)</span>
 <span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://&lt;your-bucket-name&gt;.pek3a.qingstor.com/&lt;your-data-path&gt; access_key_id=&lt;access-key-id&gt; secret_access_key=&lt;secret-access-key&gt;&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>您需要将其中的&lt;your-bucket-name&gt;、&lt;your-data-path&gt;、&lt;access-key-id&gt;和&lt;secret-access-key&gt;替换成您自己相应的值。</p>
 <p>下面的示例，向您展示如何从青云对象存储中直接读取 1GB 规模 TPCH 测试数据的例子。由于示例中的bucket hashdata-public是公开只读的，因此您不指定access_key_id
 和secret_access_key也能够访问。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_NATION</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">NATION</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_NATION</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">NATION</span><span class="p">)</span>
 <span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/tpch/1g/nation/&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 
 <span class="k">CREATE</span> <span class="n">READABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">e_REGION</span> <span class="p">(</span><span class="k">LIKE</span> <span class="n">REGION</span><span class="p">)</span>
@@ -333,7 +333,7 @@
 <p>如果错误的行数到达 SEGMENT REJECT LIMIT 指定的值，整个外部表操作将会终止。错误行数的限制是根据每个加载节点单独计算的。加载操作将会正常处理格式正确的记录，如果错误的记录数没有超过 SEGMENT REJECT LIMIT，跳过格式错误的记录，并将其保存在错误记录中。</p>
 <p>LOG ERRORS 子句允许您保留错误记录信息，在命令执行后进一步排查问题。要了解 LOG ERRORS 子句的使用方法，请参考 CREATE EXTERNAL TABLE 命令。</p>
 <p>当你使用了 SEGMENT REJECT LIMIT 子句，HashData 数据仓库 将会在单行错误隔离模式下扫描外部数据。单行错误隔离模式将会为外部数据记录附加额外的格式错误信息，例如：不一致的列值，错误的列数据类型，非法的客户端编码序列。HashData 数据仓库 不会进行约束错误检查，但是您可以通过在使用 SELECT 命令处理外部表时，增加必要的过滤限制条件。例如，下面的例子可以消除重复键值的错误：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=#</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">table_with_pkeys</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">=#</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">table_with_pkeys</span>
    <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">external_table</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -341,7 +341,7 @@
 <div class="section" id="id5">
 <h3>3.1.10.2.1. 定义使用单行错误隔离的外部表<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>下面的例子将会将错误记录保存在 HashData 数据仓库 内部，并且设置错误阈值为 10 条记录：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">ext_expenses</span> <span class="p">(</span> <span class="n">name</span> <span class="nb">text</span><span class="p">,</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">ext_expenses</span> <span class="p">(</span> <span class="n">name</span> <span class="nb">text</span><span class="p">,</span>
    <span class="nb">date</span> <span class="nb">date</span><span class="p">,</span>  <span class="n">amount</span> <span class="n">float4</span><span class="p">,</span> <span class="n">category</span> <span class="nb">text</span><span class="p">,</span> <span class="n">desc1</span> <span class="nb">text</span> <span class="p">)</span>
    <span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://hashdata-public.pek3a.qingstor.com/ext_expenses/&#39;</span><span class="p">)</span>
    <span class="n">FORMAT</span> <span class="s1">&#39;TEXT&#39;</span> <span class="p">(</span><span class="k">DELIMITER</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span>
@@ -350,19 +350,19 @@
 </pre></div>
 </div>
 <p>通过使用内置 SQL 函数 gp_read_error_log(‘external_table’) 可以读取错误记录数据。下面的示例命令可以显示 ext_expenses 的错误记录：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_read_error_log</span><span class="p">(</span><span class="s1">&#39;ext_expenses&#39;</span><span class="p">);</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_read_error_log</span><span class="p">(</span><span class="s1">&#39;ext_expenses&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>要了解更多关于错误记录信息，请参考 <a class="reference internal" href="#id7">在错误日志中查看错误记录</a>。</p>
 <p>内置 SQL 函数 gp_truncate_error_log(‘external_table’) 可以删除错误记录。下面的例子用来删除之前访问外部表时记录的错误数据：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_truncate_error_log</span><span class="p">(</span><span class="s1">&#39;ext_expenses&#39;</span><span class="p">);</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_truncate_error_log</span><span class="p">(</span><span class="s1">&#39;ext_expenses&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id6">
 <h3>3.1.10.2.2. 捕获记录格式错误和声明拒绝错误记录限制<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>下面的 SQL 语句片段用来在 HashData 数据仓库 中捕获格式错误，并声明最多拒绝 10 条错误记录的限制。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LOG</span> <span class="n">ERRORS</span> <span class="n">SEGMENT</span> <span class="n">REJECT</span> <span class="n">LIMIT</span> <span class="mi">10</span> <span class="n">ROWS</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LOG</span> <span class="n">ERRORS</span> <span class="n">SEGMENT</span> <span class="n">REJECT</span> <span class="n">LIMIT</span> <span class="mi">10</span> <span class="n">ROWS</span>
 </pre></div>
 </div>
 </div>
@@ -370,7 +370,7 @@
 <h3>3.1.10.2.3. 在错误日志中查看错误记录<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>如果您使用单行错误隔离模式（参考 <a class="reference internal" href="#id5">定义使用单行错误隔离的外部表</a>），格式错误的记录信息将会被记录在数据库内部。</p>
 <p>通过使用内置 SQL 函数 gp_read_error_log(‘external_table’) 可以读取错误记录数据。下面的示例命令可以显示 ext_expenses 的错误记录：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_read_error_log</span><span class="p">(</span><span class="s1">&#39;ext_expenses&#39;</span><span class="p">);</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_read_error_log</span><span class="p">(</span><span class="s1">&#39;ext_expenses&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -394,7 +394,7 @@
 <h3>3.1.10.4.1. 使用青云对象存储<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>HashData 数据仓库 充分考虑云平台优势，因此提供利用高效的青云对象存储来作为数据导出目的地。HashData 数据仓库 将会利用其自身并行的架构将数据并行写入到青云对象存储。</p>
 <p>下面的例子向您介绍如何利用青云对象存储作为可写外部表的输出目标。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">WRITABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">test_writable_table</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INT</span><span class="p">,</span> <span class="nb">date</span> <span class="nb">DATE</span><span class="p">,</span> <span class="k">desc</span> <span class="nb">TEXT</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">WRITABLE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">test_writable_table</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INT</span><span class="p">,</span> <span class="nb">date</span> <span class="nb">DATE</span><span class="p">,</span> <span class="k">desc</span> <span class="nb">TEXT</span><span class="p">)</span>
     <span class="k">location</span><span class="p">(</span><span class="s1">&#39;qs://&lt;your-bucket-name&gt;.pek3a.qingstor.com/&lt;your-data-path&gt; access_key_id=&lt;access-key-id&gt; secret_access_key=&lt;secret-access-key&gt;&#39;</span><span class="p">)</span> <span class="n">FORMAT</span> <span class="s1">&#39;csv&#39;</span><span class="p">;</span>
 
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">test_writable_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;2016-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;qingstor test&#39;</span><span class="p">);</span>
@@ -413,11 +413,11 @@
 <div class="section" id="id12">
 <h3>3.1.10.5.2. 数据列的格式<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <p>对于文本文件和 CSV 文件来说，默认的列分隔符分别是 TAB 字符（0x09）和逗号（0x2C）。您也可以通过 CREATE EXTERNAL TABLE 语句的  DELIMITER 子句为数据文件指定一个字符作为分隔符。分隔符字符需要在两个数据字段之间使用。每行的开头和结尾不需要指定分隔符。下面的示例是一个使用（|）字符的示例输入：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="n">value</span> <span class="mi">1</span><span class="o">|</span><span class="n">data</span> <span class="n">value</span> <span class="mi">2</span><span class="o">|</span><span class="n">data</span> <span class="n">value</span> <span class="mi">3</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="n">value</span> <span class="mi">1</span><span class="o">|</span><span class="n">data</span> <span class="n">value</span> <span class="mi">2</span><span class="o">|</span><span class="n">data</span> <span class="n">value</span> <span class="mi">3</span>
 </pre></div>
 </div>
 <p>下面的示例语句介绍如何在语句中指定（|）作为分隔符：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">ext_table</span> <span class="p">(</span><span class="n">name</span> <span class="nb">text</span><span class="p">,</span> <span class="nb">date</span> <span class="nb">date</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">EXTERNAL</span> <span class="k">TABLE</span> <span class="n">ext_table</span> <span class="p">(</span><span class="n">name</span> <span class="nb">text</span><span class="p">,</span> <span class="nb">date</span> <span class="nb">date</span><span class="p">)</span>
 <span class="k">LOCATION</span> <span class="p">(</span><span class="s1">&#39;qs://&lt;your-bucket-name&gt;.pek3a.qingstor.com/filename.txt&#39;</span><span class="p">)</span>
 <span class="n">FORMAT</span> <span class="s1">&#39;TEXT&#39;</span> <span class="p">(</span><span class="k">DELIMITER</span> <span class="s1">&#39;|&#39;</span><span class="p">);</span>
 </pre></div>
@@ -445,13 +445,13 @@
 <li>exclamation point = !</li>
 </ul>
 <p>您指定 | 作为列分隔符，作为转义字符。您数据文件中，格式化后的数据行应该类似下面的样子：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>backslash = \\ | vertical bar = \| | exclamation point = !
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>backslash = \\ | vertical bar = \| | exclamation point = !
 </pre></div>
 </div>
 <p>这里请您注意反斜线是一部分数据，因此需要使用另一个反斜线进行转义。另外 | 字符也是数据的一部分，因此需要使用反斜线将其转义。</p>
 <p>您还可以使用转义字符来转义八进制和十六进制序列。在 HashData 数据仓库 加载数据时，转义的值将会被转换为对应的字符。例如，要加载 &amp; 字符，可以用转义字符来转义该字符的十六进制（0x26）或者八进制（046）表示。</p>
 <p>您也可以在文件格式文件中，利用 ESCAPE 语句来禁用转义功能，例如：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ESCAPE</span> <span class="s1">&#39;OFF&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ESCAPE</span> <span class="s1">&#39;OFF&#39;</span>
 </pre></div>
 </div>
 <p>如果您要加载包含大量反斜线的数据时（例如，互联网类日志），禁用转义功能将会非常方便。</p>
@@ -466,12 +466,12 @@
 <li>Special rate “1.79”</li>
 </ul>
 <p>您指定 , （逗号）作为列分隔符，”（双引号） 作为转义字符。您数据文件中，格式化后的数据行应该类似下面的样子：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;Free trip to A,B&quot;</span><span class="p">,</span><span class="s2">&quot;5.89&quot;</span><span class="p">,</span><span class="s2">&quot;Special rate &quot;&quot;1.79&quot;&quot;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Free trip to A,B&quot;</span><span class="p">,</span><span class="s2">&quot;5.89&quot;</span><span class="p">,</span><span class="s2">&quot;Special rate &quot;&quot;1.79&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 <p>如果逗号是数据的一部分，需要使用双引号来保护。如果双引号是数据的一部分，即使整个数据是用双引号来保护的，还是需要用双引号来转义双引号的。</p>
 <p>使用双引号保护整个数据字段可以保证数据开头和结尾的空白字符被正确解释。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;Free trip to A,B &quot;</span><span class="p">,</span><span class="s2">&quot;5.89 &quot;</span><span class="p">,</span><span class="s2">&quot;Special rate &quot;&quot;1.79&quot;&quot; &quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Free trip to A,B &quot;</span><span class="p">,</span><span class="s2">&quot;5.89 &quot;</span><span class="p">,</span><span class="s2">&quot;Special rate &quot;&quot;1.79&quot;&quot; &quot;</span>
 </pre></div>
 </div>
 <p><strong>注意</strong>：在 CSV 格式中，字符解释的处理非常严格。例如：被引号保护的空白字符或者其他非分隔字符。由于上面的原因，如果向系统导入的数据在末尾补充了保持每行相同长度的空白字符，将会引起错误。因此，在使用 HashData 数据仓库 读取数据时，需要先将 CSV 文件进行预处理，移除不必要的末尾空白字符。</p>

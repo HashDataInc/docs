@@ -294,7 +294,7 @@
 <p>运行 <em>gpcheckperf</em> 时数据库必须停止。如果系统不停止，即使没有查询，<em>gpcheckperf</em> 的结果也可能不精确。</p>
 <p><em>gpcheckperf</em> 需要在待测试性能的主机间建立可信无密码SSH连接。它会调用 <em>gpssh</em> 和 <em>gpscp</em>，所以这两个命令必须在系统路径PATH中。可以逐个指定待测试的主机（-h host1 -h host2 …）或者使用 -f hosts_file，其中 hosts_file 是包含待测试主机信息的文件。如果主机有多个子网，则为每个子网创建一个主机文件，以便可以测试每个子网。</p>
 <p>默认情况下，<em>gpcheckperf</em> 运行磁盘I/O测试、内存测试和串行成对网络性能测试。对于磁盘测试，必须使用-d选项指定要测试的文件系统路径。下面的命令测试文件subnet_1_hosts中主机的磁盘和内存性能：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ gpcheckperf -f subnet_1_hosts -d /data1 -d /data2 -r ds
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gpcheckperf -f subnet_1_hosts -d /data1 -d /data2 -r ds
 </pre></div>
 </div>
 <p>-r选项指定要运行的测试：磁盘IO（d），内存带宽（s），网络并行成对测试（N），网络串行成对测试（n），网络全矩阵测试（M）。只能选择一种网络测试模式。更多信息，请参考《HashData 数据仓库 参考指南》。</p>
@@ -338,7 +338,7 @@
 <p>不带参数运行 ANALYZE 会更新数据库中所有表的统计信息。这可能非常耗时，不推荐这样做。当数据发生变化时，建议对变化的表进行 ANALYZE。</p>
 <p>对大表执行ANALYZE可能较为耗时。如果对大表的所有列运行 ANALYZE 不可行，则使用 ANALYZE table(column, …) 仅为某些字段生成统计信息。确保包括关联、WHERE子句、SORT子句、GROUP BY子句、HAVING子句中使用的字段。</p>
 <p>对于分区表，可以只ANALYZE发生变化的分区，譬如只分析新加入的分区。注意可以ANALYZE分区表的父表或者最深子表。统计数据和用户数据一样，存储在最深子表中。中间层子表既不保存数据，也不保存统计信息，因而ANALYZE 它们没有效果。可以从系统表pg_partitions中找到分区表的名字。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">partitiontablename</span> <span class="kn">from</span> <span class="nn">pg_partitions</span> <span class="n">WHERE</span> <span class="n">tablename</span><span class="o">=</span><span class="s1">&#39;parent_table;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">partitiontablename</span> <span class="kn">from</span> <span class="nn">pg_partitions</span> <span class="n">WHERE</span> <span class="n">tablename</span><span class="o">=</span><span class="s1">&#39;parent_table;</span>
 </pre></div>
 </div>
 </div>
@@ -388,7 +388,7 @@ FSM大小
 <div class="section" id="id11">
 <h3>4.1.5.3.1. 检测臃肿<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p>ANALYZE收集的统计信息可用于计算存储一个表所期望的磁盘页数。期望的页数和实际页数之间的差别是膨胀程度的一个度量。gp_toolkit模式的gp_bloat_diag视图通过比较期望页数和实际页数的比例识别膨胀的表。使用这个视图前，确保数据库的统计信息是最新的，然后运行下面的SQL：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">gpadmin</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">gp_toolkit</span><span class="p">.</span><span class="n">gp_bloat_diag</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">gpadmin</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">gp_toolkit</span><span class="p">.</span><span class="n">gp_bloat_diag</span><span class="p">;</span>
  <span class="n">bdirelid</span> <span class="o">|</span> <span class="n">bdinspname</span> <span class="o">|</span> <span class="n">bdirelname</span> <span class="o">|</span> <span class="n">bdirelpages</span> <span class="o">|</span> <span class="n">bdiexppages</span> <span class="o">|</span>
  <span class="n">bdidiag</span>
 <span class="c1">---------+------------+------------+-------------+-------------</span>
@@ -400,7 +400,7 @@ FSM大小
 </div>
 <p>结果中包括中度或者严重膨胀的表。实际页数与期望页数之比位于4和10之间是中度膨胀，大于10为严重膨胀。</p>
 <p>视图gp_toolkit.gp_bloat_expected_pages列出每个数据库对象实际使用的页数和期望使用的磁盘页数。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">gpadmin</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">gp_toolkit</span><span class="p">.</span><span class="n">gp_bloat_expected_pages</span> <span class="k">LIMIT</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">gpadmin</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">gp_toolkit</span><span class="p">.</span><span class="n">gp_bloat_expected_pages</span> <span class="k">LIMIT</span> <span class="mi">5</span><span class="p">;</span>
  <span class="n">btdrelid</span> <span class="o">|</span> <span class="n">btdrelpages</span> <span class="o">|</span> <span class="n">btdexppages</span>
 <span class="c1">---------+-------------+-------------</span>
     <span class="mi">10789</span> <span class="o">|</span>           <span class="mi">1</span> <span class="o">|</span>           <span class="mi">1</span>
@@ -419,7 +419,7 @@ FSM大小
 <p>警告：如果表严重臃肿，建议运行 VACUUM 前运行 ANALYZE。因为 ANALYZE使用块级别抽样，如果一个表中无效/有效行的块的比例很高，则ANALYZE会设置系统表 pg_class 的reltuples 字段为不精确的值或者0，这会导致查询优化器不能生成最优查询。VACUUM命令设置的数值更精确，如果在 ANALYZE 之后运行可以修正不精确的行数估计。</p>
 <p>如果一个表膨胀严重，运行VACUUM命令是不够的。对于小表，可以通过VACUUM FULL 回收溢出 FSM 的空间，降低表的大小。然而VACUUM FULL操作需要ACCESS EXCLUSIVE锁，可能需要非常久或者不可预测的时间才能完成。注意，消除大表膨胀的每种方法都是资源密集型操作，只有在极端情况下才使用。</p>
 <p>第一种方法是创建大表拷贝，删掉原表，然后重命名拷贝。这种方法使用CREATE TABLE AS SELECT创建新表，例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">gpadmin</span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">mytable_tmp</span> <span class="k">AS</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mytable</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">gpadmin</span><span class="o">=#</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">mytable_tmp</span> <span class="k">AS</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mytable</span><span class="p">;</span>
 <span class="n">gpadmin</span><span class="o">=#</span> <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">mytable</span><span class="p">;</span>
 <span class="n">gpadmin</span><span class="o">=#</span> <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">mytabe_tmp</span> <span class="k">RENAME</span> <span class="k">TO</span> <span class="n">mytable</span><span class="p">;</span>
 </pre></div>
@@ -427,13 +427,13 @@ FSM大小
 <p>第二种消除臃肿的方法是重分布。步骤为：</p>
 <p>1.记录表的分布键</p>
 <p>2.修改表的分布策略为随机分布</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">mytable</span> <span class="k">SET</span> <span class="k">WITH</span> <span class="p">(</span><span class="n">REORGANIZE</span><span class="o">=</span><span class="k">false</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">mytable</span> <span class="k">SET</span> <span class="k">WITH</span> <span class="p">(</span><span class="n">REORGANIZE</span><span class="o">=</span><span class="k">false</span><span class="p">)</span>
 <span class="n">DISTRIBUTED</span> <span class="n">randomly</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>此命令修改表的分布策略，但是不会移动数据。这个命令会瞬间完成。</p>
 <p>3.改回原来的分布策略</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">mytable</span> <span class="k">SET</span> <span class="k">WITH</span> <span class="p">(</span><span class="n">REORGANIZE</span><span class="o">=</span><span class="k">true</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">mytable</span> <span class="k">SET</span> <span class="k">WITH</span> <span class="p">(</span><span class="n">REORGANIZE</span><span class="o">=</span><span class="k">true</span><span class="p">)</span>
 <span class="n">DISTRIBUTED</span> <span class="k">BY</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">original</span> <span class="n">distribution</span> <span class="n">columns</span><span class="o">&gt;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -449,7 +449,7 @@ FSM大小
 <p>会拉长表扫描所需的时间，例如生成解释计划时。系统表需要频繁扫描，如果它们变得臃肿，那么系统整体性能会下降。</p>
 <p>建议每晚(至少每周)对系统表运行VACUUM。</p>
 <p>下面的脚本对系统表运行VACUUM ANALYZE。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 DBNAME=&quot;&lt;database_name&gt;&quot;
 VCOMMAND=&quot;VACUUM ANALYZE&quot;psql -tc &quot;select &#39;$VCOMMAND&#39; || &#39; pg_catalog.&#39; || relname || &#39;;&#39;FROM pg_class a, pg_namespace b \
 where a.relnamespace=b.oid andb.nspname=&#39;pg_catalog&#39; and a.relkind=&#39;r&#39;&quot;

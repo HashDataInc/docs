@@ -321,7 +321,7 @@
 当查询计划中包含了数据移动节点时，查询计划就是被分片的。
 数据移动节点的上下两部分各自是一个独立的分片。</p>
 <p>让我们来看下面这个例子：这是一个简单的两张表连接的运算：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">customer</span><span class="p">,</span> <span class="n">amount</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">customer</span><span class="p">,</span> <span class="n">amount</span>
 <span class="k">FROM</span> <span class="n">sales</span> <span class="k">JOIN</span> <span class="n">customer</span> <span class="k">USING</span> <span class="p">(</span><span class="n">cust_id</span><span class="p">)</span>
 <span class="k">WHERE</span> <span class="n">dateCol</span> <span class="o">=</span> <span class="s1">&#39;04-30-2008&#39;</span><span class="p">;</span>
 </pre></div>
@@ -338,7 +338,7 @@ customer 表（用户表）的数据分布是通过 cust_id 来进行的，而 s
 数据聚合节点是为了让所有的计算节点将结果发送给主节点，最后从主节点发送给用户引入的。
 由于查询计划总是在数据移动节点出现时被切片，这个查询计划还包括了一个隐藏的切片，
 该切片位于查询的最顶层（slice3）。并不是所有的查询都包含数据聚合移动节点，例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">x</span> <span class="k">AS</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">x</span> <span class="k">AS</span>
 <span class="k">SELECT</span> <span class="p">...</span>
 </pre></div>
 </div>
@@ -419,7 +419,7 @@ PostgreSQL 中的 SQL 语法规则和概念，您可以参考
 <div class="section" id="id12">
 <h4>3.1.12.2.2.1. 列引用<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
 <p>列引用的格式如下：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">correlation</span><span class="p">.</span><span class="n">columnname</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">correlation</span><span class="p">.</span><span class="n">columnname</span>
 </pre></div>
 </div>
 <p>上面的示例中，correlation
@@ -433,11 +433,11 @@ PostgreSQL 中的 SQL 语法规则和概念，您可以参考
 引用第二个参数，依此类推。位置参数的值是通过在 SQL 语句的外部参数传递或者通过函数调用方式传递。
 一些客户端接口库函数支持在 SQL 命令之外指定数值，在这种情况下参数引用的是 SQL 之外的实际值。</p>
 <p>引用位置参数的格式如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$number
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$number
 </pre></div>
 </div>
 <p>示例:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>CREATE FUNCTION dept(text) RETURNS dept
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CREATE FUNCTION dept(text) RETURNS dept
     AS $$ SELECT * FROM dept WHERE name = $1 $$
     LANGUAGE SQL;
 </pre></div>
@@ -447,17 +447,17 @@ PostgreSQL 中的 SQL 语法规则和概念，您可以参考
 <div class="section" id="id14">
 <h4>3.1.12.2.2.3. 下标表达式<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h4>
 <p>如果一个表达式产生了一个数组类型值，那么你可以通过下面的方法获取数组中一个指定的元素值：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">expression</span><span class="p">[</span><span class="n">subscript</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">expression</span><span class="p">[</span><span class="n">subscript</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>您还可以获取多个相连的元素值，称为数组分片，示例如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">expression</span><span class="p">[</span><span class="n">lower_subscript</span><span class="p">:</span><span class="n">upper_subscript</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">expression</span><span class="p">[</span><span class="n">lower_subscript</span><span class="p">:</span><span class="n">upper_subscript</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>下标可以是一个表达式，该表达式必须返回整数值类型。</p>
 <p>大部分时候，数组表达式必须在括号中使用。如果下标表达式访问列引用或者位置参数，括号是可以省略的。
 对于多维数组，可以直接连接多个下标表达式来进行访问，示例如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>mytable.arraycolumn[4]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mytable.arraycolumn[4]
 mytable.two_d_column[17][34]
 $1[10:42]
 (arrayfunction(a,b))[42]
@@ -467,11 +467,11 @@ $1[10:42]
 <div class="section" id="id15">
 <h4>3.1.12.2.2.4. 成员选择表达式<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h4>
 <p>如果表达式的值是一个复合类型（例如：记录类型），你可以通过下面的表达式来选择该复合类型中的特定成员值：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">expression</span><span class="p">.</span><span class="n">fieldname</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">expression</span><span class="p">.</span><span class="n">fieldname</span>
 </pre></div>
 </div>
 <p>记录表达式通常需要在括号中使用，如果被访问的表达式是表引用或者位置参数，括号是可以省略的。示例：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>mytable.mycolumn
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mytable.mycolumn
 $1.somecolumn
 (rowfunction(a,b)).col3
 </pre></div>
@@ -481,14 +481,14 @@ $1.somecolumn
 <div class="section" id="id16">
 <h4>3.1.12.2.2.5. 运算符调用<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h4>
 <p>运算符调用支持下面的几种语法：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">expression</span> <span class="k">operator</span> <span class="n">expression</span><span class="p">(</span><span class="nb">binary</span> <span class="k">infix</span> <span class="k">operator</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">expression</span> <span class="k">operator</span> <span class="n">expression</span><span class="p">(</span><span class="nb">binary</span> <span class="k">infix</span> <span class="k">operator</span><span class="p">)</span>
 <span class="k">operator</span> <span class="n">expression</span><span class="p">(</span><span class="n">unary</span> <span class="k">prefix</span> <span class="k">operator</span><span class="p">)</span>
 <span class="n">expression</span> <span class="k">operator</span><span class="p">(</span><span class="n">unary</span> <span class="k">postfix</span> <span class="k">operator</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>示例中的 operator
 实际是运算符符号，例如：AND，OR，+等。运算符也有限定名格式，例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">OPERATOR</span><span class="p">(</span><span class="k">schema</span><span class="p">.</span><span class="n">operatorname</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">OPERATOR</span><span class="p">(</span><span class="k">schema</span><span class="p">.</span><span class="n">operatorname</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>可以使用的运算符以及他们究竟是一元运算符还是二元运算符，取决于系统和用户的定义。可以参考内建函数和运算符，了解更多信息。</p>
@@ -496,11 +496,11 @@ $1.somecolumn
 <div class="section" id="id17">
 <h4>3.1.12.2.2.6. 函数调用<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h4>
 <p>函数调用的语法是函数名（限定名格式：在函数名开头添加模式名）跟随着使用括号保护的参数列表：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="p">([</span><span class="n">expression</span> <span class="p">[,</span> <span class="n">expression</span> <span class="p">...</span> <span class="p">]])</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="p">([</span><span class="n">expression</span> <span class="p">[,</span> <span class="n">expression</span> <span class="p">...</span> <span class="p">]])</span>
 </pre></div>
 </div>
 <p>下面示例是通过函数调用计算2的平方根：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>参考 <a class="reference internal" href="#id32">内置函数和运算符</a>，了解更多信息。</p>
@@ -528,7 +528,7 @@ expression 可以是除聚合表达式自身外的任何值合法表达式。</p
 <p>要了解预定义的聚合函数，请参考 <a class="reference internal" href="#id32">内置函数和运算符</a>。除了预定义聚合函数外，您还可以创建自定义的聚合函数。</p>
 <p>HashData 数据仓库 提供 MEDIAN 聚合函数，该函数返回 PERCENTILE_CONT 的 50 分位数结果。
 下面是逆分布函数支持的特殊聚合表达式：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">PERCENTILE_CONT</span><span class="p">(</span><span class="n">_percentage_</span><span class="p">)</span> <span class="n">WITHIN</span> <span class="k">GROUP</span> <span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">_expression_</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">PERCENTILE_CONT</span><span class="p">(</span><span class="n">_percentage_</span><span class="p">)</span> <span class="n">WITHIN</span> <span class="k">GROUP</span> <span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">_expression_</span><span class="p">)</span>
 <span class="n">PERCENTILE_DISC</span><span class="p">(</span><span class="n">_percentage_</span><span class="p">)</span> <span class="n">WITHIN</span> <span class="k">GROUP</span> <span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">_expression_</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -560,13 +560,13 @@ expression 可以是除聚合表达式自身外的任何值合法表达式。</p
 窗口函数真对每行都返回结果，但是该值的计算是完全真对根据记录对应的窗口分区进行的。
 如果不指定分区，窗口函数就会在整个结果集赏进行计算。</p>
 <p>窗口表达式的语法如下：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">window_function</span> <span class="p">(</span> <span class="p">[</span><span class="n">expression</span> <span class="p">[,</span> <span class="p">...]]</span> <span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span> <span class="n">window_specification</span> <span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">window_function</span> <span class="p">(</span> <span class="p">[</span><span class="n">expression</span> <span class="p">[,</span> <span class="p">...]]</span> <span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span> <span class="n">window_specification</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>这里的 window_function
 是表3列出的函数之一，表达式是任何不包含窗口表达式的合法值。window_specification
 定义如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">window_name</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">window_name</span><span class="p">]</span>
 <span class="p">[</span><span class="n">PARTITION</span> <span class="n">BY</span> <span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
 <span class="p">[[</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">expression</span> <span class="p">[</span><span class="n">ASC</span> <span class="o">|</span> <span class="n">DESC</span> <span class="o">|</span> <span class="n">USING</span> <span class="n">operator</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
     <span class="p">[{</span><span class="n">RANGE</span> <span class="o">|</span> <span class="n">ROWS</span><span class="p">}</span>
@@ -577,7 +577,7 @@ expression 可以是除聚合表达式自身外的任何值合法表达式。</p
 </pre></div>
 </div>
 <p>上面的 window_frame_bound 定义如下:</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">UNBOUNDED</span> <span class="n">PRECEDING</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">UNBOUNDED</span> <span class="n">PRECEDING</span>
 <span class="n">expression</span> <span class="n">PRECEDING</span>
 <span class="k">CURRENT</span> <span class="k">ROW</span>
 <span class="n">expression</span> <span class="n">FOLLOWING</span>
@@ -585,7 +585,7 @@ expression 可以是除聚合表达式自身外的任何值合法表达式。</p
 </pre></div>
 </div>
 <p>窗口表达式只能在 SELECT 的返回里表中出现。例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span> <span class="k">BY</span> <span class="n">customer_id</span><span class="p">),</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">sales</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span> <span class="k">BY</span> <span class="n">customer_id</span><span class="p">),</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">sales</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>OVER 子句是窗口函数与其他聚合函数或报表函数最大的区别。OVER 子句定义的 window_specification
@@ -608,7 +608,7 @@ expression 可以是除聚合表达式自身外的任何值合法表达式。</p
 <h4>3.1.12.2.2.10. 类型转换<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h4>
 <p>类型转换表达式可以将一个数据类型的数据转换为另一个数据类型。HashData 数据仓库
 支持下面两种等价的类型转换语法：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CAST</span> <span class="p">(</span> <span class="n">expression</span> <span class="k">AS</span> <span class="k">type</span> <span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CAST</span> <span class="p">(</span> <span class="n">expression</span> <span class="k">AS</span> <span class="k">type</span> <span class="p">)</span>
 <span class="n">expression</span><span class="p">::</span><span class="k">type</span>
 </pre></div>
 </div>
@@ -638,12 +638,12 @@ SELECT
 目前不支持引用跨层的变量（不支持间接相关子查询）。</p>
 <p>相关子查询示例
 示例 1 – 标量相关子查询</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">x</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">x</span>
             <span class="o">&gt;</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t2</span> <span class="k">WHERE</span> <span class="n">t2</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">t1</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>示例 2 – 相关 EXISTS 子查询</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span> <span class="k">WHERE</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span> <span class="k">WHERE</span>
 <span class="k">EXISTS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="mi">1</span> <span class="k">FROM</span> <span class="n">t2</span> <span class="k">WHERE</span> <span class="n">t2</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">t1</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -659,7 +659,7 @@ HashData 数据仓库 对于大部分相关子查询使用的方法。一些 TPC
 <p>下面的例子，向您展示对于不同类型的查询，如何通过查询重写来改进性能。</p>
 <p>示例 3 - Select 返回列表中的相关子查询</p>
 <p>原始查询</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">T1</span><span class="p">.</span><span class="n">a</span><span class="p">,</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">T1</span><span class="p">.</span><span class="n">a</span><span class="p">,</span>
       <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">T2</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t2</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="n">dt2</span>
 <span class="k">FROM</span> <span class="n">t1</span><span class="p">;</span>
 </pre></div>
@@ -667,7 +667,7 @@ HashData 数据仓库 对于大部分相关子查询使用的方法。一些 TPC
 <p>重写后的查询首先与表 t1
 执行内连接，再执行左外连接。查询重写只能对等值连接中的相关条件进行处理。</p>
 <p>重写后的查询</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">t1</span><span class="p">.</span><span class="n">a</span><span class="p">,</span> <span class="n">dt2</span> <span class="k">FROM</span> <span class="n">t1</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">t1</span><span class="p">.</span><span class="n">a</span><span class="p">,</span> <span class="n">dt2</span> <span class="k">FROM</span> <span class="n">t1</span>
        <span class="k">LEFT</span> <span class="k">JOIN</span>
         <span class="p">(</span><span class="k">SELECT</span> <span class="n">t2</span><span class="p">.</span><span class="n">y</span> <span class="k">AS</span> <span class="n">csq_y</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">t2</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="k">AS</span> <span class="n">dt2</span>
               <span class="k">FROM</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">y</span>
@@ -677,7 +677,7 @@ HashData 数据仓库 对于大部分相关子查询使用的方法。一些 TPC
 </div>
 <p>示例 4 - OR 子句中的相关子查询
 原始查询</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span>
 <span class="k">WHERE</span>
 <span class="n">x</span> <span class="o">&gt;</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t2</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">x</span><span class="p">)</span>
 <span class="k">OR</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t3</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">t3</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
@@ -686,7 +686,7 @@ HashData 数据仓库 对于大部分相关子查询使用的方法。一些 TPC
 <p>重写后的查询是根据 OR 条件，将原来查询分成两个部分，并使用 UNION
 进行连接。</p>
 <p>重写后的查询</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span>
 <span class="k">WHERE</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t2</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">x</span><span class="p">)</span>
 <span class="k">UNION</span>
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span>
@@ -710,7 +710,7 @@ SELECT。查询计划中的 Subplan
 <h4>3.1.12.2.2.14. 数组构造表达式<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h4>
 <p>数据构造表达式是通过提供成员值的方式构造数组值的表达式。一个简单的数组构造表达式由：关键字
 ARRAY，左方括号（[），用来组成数组元素值的通过逗号分隔的一个多个表达式，和一个右方括号（]）。例如：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">];</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">];</span>
   <span class="n">array</span>
 <span class="o">---------</span>
  <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">}</span>
@@ -720,7 +720,7 @@ ARRAY，左方括号（[），用来组成数组元素值的通过逗号分隔�
 构造器规则相同。</p>
 <p>通过嵌套数组构造表达式，您还可以创建多维数组值。内部的数组构造器，可以省略关键字
 ARRAY。例如，下面两个 SELECT 语句返回的结果完全相同：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">ARRAY</span><span class="p">[</span><span class="n">ARRAY</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]];</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">ARRAY</span><span class="p">[</span><span class="n">ARRAY</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]];</span>
 <span class="n">SELECT</span> <span class="n">ARRAY</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]];</span>
      <span class="n">array</span>
 <span class="o">---------------</span>
@@ -729,7 +729,7 @@ ARRAY。例如，下面两个 SELECT 语句返回的结果完全相同：</p>
 </div>
 <p>由于多维数组一定是矩形（长方形），在同一层的内部构造表达式产生的子数组必须拥有相同的维度。</p>
 <p>多维数组构造表达器中的元素不一定是子数组构造表达式，它们可以是任何一个产生适当类型数组的表达式。例如：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">arr</span><span class="p">(</span><span class="n">f1</span> <span class="nb">int</span><span class="p">[],</span> <span class="n">f2</span> <span class="nb">int</span><span class="p">[]);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">arr</span><span class="p">(</span><span class="n">f1</span> <span class="nb">int</span><span class="p">[],</span> <span class="n">f2</span> <span class="nb">int</span><span class="p">[]);</span>
 <span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">arr</span> <span class="n">VALUES</span> <span class="p">(</span><span class="n">ARRAY</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]],</span>
 <span class="n">ARRAY</span><span class="p">[[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]]);</span>
 <span class="n">SELECT</span> <span class="n">ARRAY</span><span class="p">[</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="s1">&#39;{{9,10},{11,12}}&#39;</span><span class="p">::</span><span class="nb">int</span><span class="p">[]]</span> <span class="n">FROM</span> <span class="n">arr</span><span class="p">;</span>
@@ -740,7 +740,7 @@ ARRAY。例如，下面两个 SELECT 语句返回的结果完全相同：</p>
 </div>
 <p>你可以使用子查询的结果来构造数组。这里的数组构造表达式是关键字 ARRAY
 开头，后面跟着在圆括号中的子查询。例如：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>SELECT ARRAY(SELECT oid FROM pg_proc WHERE proname LIKE &#39;bytea%&#39;);
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT ARRAY(SELECT oid FROM pg_proc WHERE proname LIKE &#39;bytea%&#39;);
                           ?column?
 -----------------------------------------------------------
  {2011,1954,1948,1952,1951,1244,1950,2005,1949,1953,2006,31}
@@ -752,14 +752,14 @@ ARRAY。例如，下面两个 SELECT 语句返回的结果完全相同：</p>
 <div class="section" id="id26">
 <h4>3.1.12.2.2.15. 记录构造表达式<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h4>
 <p>记录构造器是一种用来从成员值构建记录值的表达式（记录表达式也被称为复合类型）。例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">ROW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;this is a test&#39;</span><span class="p">);</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">ROW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;this is a test&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>记录构造表达式还支持语法 rowvalue.*
 ，该表达式能够将记录值的成员展开成列表，这个操作类似于当你在 SELECT
 目标列表时使用的 .* 语法。例如，如果表 t 有两列 f1 和
 f2，下面的查询是等价的：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">ROW</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="o">*</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">ROW</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="o">*</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t</span><span class="p">;</span>
 <span class="k">SELECT</span> <span class="k">ROW</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">f1</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="n">f2</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -767,14 +767,14 @@ f2，下面的查询是等价的：</p>
 根据需要，您可以将该值通过类型转换表达式，转换成一个命名复合类型：数据表的记录类型或者是通过
 CREATE TYPE AS
 命令创建的复合类型。您可以显示地提供类型转来避免出现歧义。例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">mytable</span><span class="p">(</span><span class="n">f1</span> <span class="nb">int</span><span class="p">,</span> <span class="n">f2</span> <span class="nb">float</span><span class="p">,</span> <span class="n">f3</span> <span class="nb">text</span><span class="p">);</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">mytable</span><span class="p">(</span><span class="n">f1</span> <span class="nb">int</span><span class="p">,</span> <span class="n">f2</span> <span class="nb">float</span><span class="p">,</span> <span class="n">f3</span> <span class="nb">text</span><span class="p">);</span>
 <span class="k">CREATE</span> <span class="k">FUNCTION</span> <span class="n">getf1</span><span class="p">(</span><span class="n">mytable</span><span class="p">)</span> <span class="k">RETURNS</span> <span class="nb">int</span> <span class="k">AS</span> <span class="s1">&#39;SELECT $1.f1&#39;</span>
 <span class="k">LANGUAGE</span> <span class="k">SQL</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>下面的查询语句中，因为全局只有一个 getf1()
 函数，所以这里不产生任何的歧义，您也就不需要进行类型转换的处理：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">getf1</span><span class="p">(</span><span class="k">ROW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;this is a test&#39;</span><span class="p">));</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">getf1</span><span class="p">(</span><span class="k">ROW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;this is a test&#39;</span><span class="p">));</span>
  <span class="n">getf1</span>
 <span class="c1">-------</span>
      <span class="mi">1</span>
@@ -784,7 +784,7 @@ CREATE TYPE AS
 </pre></div>
 </div>
 <p>下面的例子需要通过类型转换来指定具体调用的函数：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">getf1</span><span class="p">(</span><span class="k">ROW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;this is a test&#39;</span><span class="p">));</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">getf1</span><span class="p">(</span><span class="k">ROW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;this is a test&#39;</span><span class="p">));</span>
 <span class="n">ERROR</span><span class="p">:</span>  <span class="k">function</span> <span class="n">getf1</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">is</span> <span class="k">not</span> <span class="k">unique</span>
 <span class="k">SELECT</span> <span class="n">getf1</span><span class="p">(</span><span class="k">ROW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;this is a test&#39;</span><span class="p">)::</span><span class="n">mytable</span><span class="p">);</span>
  <span class="n">getf1</span>
@@ -803,11 +803,11 @@ CREATE TYPE AS
 <h4>3.1.12.2.2.16. 表达式求值规则<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h4>
 <p>自表达式的求值顺序是未定义的。运算符或者函数的求值不一定遵守从左到右的规则，也不保证按照任何特定顺序进行。</p>
 <p>如果表达式的值能够由表达式中的一部分子表达式确定，那么其他部分的子表达式可能不会被求值。例如，下面的表达式：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">true</span> <span class="k">OR</span> <span class="n">somefunc</span><span class="p">();</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">true</span> <span class="k">OR</span> <span class="n">somefunc</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>somefunc() 函数可能不会被调用。类似的情况对下面例子也适用：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">somefunc</span><span class="p">()</span> <span class="k">OR</span> <span class="k">true</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">somefunc</span><span class="p">()</span> <span class="k">OR</span> <span class="k">true</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>这个特点和大多数编程语言中，布尔运算符求值顺序总是从左到右不太一样。</p>
@@ -816,11 +816,11 @@ CREATE TYPE AS
 组合）将会根据布尔代数规则重新排列成为任何最优合法结构。</p>
 <p>您可以使用 CASE
 结构来保证求值顺序。下面的示例就是一个不能保证避免除0错误的情况：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="p">...</span> <span class="k">WHERE</span> <span class="n">x</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span> <span class="k">AND</span> <span class="n">y</span><span class="o">/</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="p">...</span> <span class="k">WHERE</span> <span class="n">x</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span> <span class="k">AND</span> <span class="n">y</span><span class="o">/</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>下面的示例能够保证避免除0错误：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="p">...</span> <span class="k">WHERE</span> <span class="k">CASE</span> <span class="k">WHEN</span> <span class="n">x</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span> <span class="k">THEN</span> <span class="n">y</span><span class="o">/</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="k">ELSE</span> <span class="k">false</span> <span class="k">END</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="p">...</span> <span class="k">WHERE</span> <span class="k">CASE</span> <span class="k">WHEN</span> <span class="n">x</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span> <span class="k">THEN</span> <span class="n">y</span><span class="o">/</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="k">ELSE</span> <span class="k">false</span> <span class="k">END</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>这种 CASE 结构将会阻止查询优化，因此请小心使用。</p>
@@ -1289,7 +1289,7 @@ interval,
 float</td>
 <td><p class="first">MEDIAN (expression)</p>
 <p>Example:</p>
-<div class="last highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">department_id</span>
+<div class="last highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">department_id</span>
   <span class="n">MEDIAN</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="n">employees</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">department_id</span><span class="p">;</span>
@@ -1310,7 +1310,7 @@ float</td>
 <td><p class="first">PERCENTILE_CONT(percentage) WITHIN GROUP
 (ORDER BY expression)</p>
 <p>Example:</p>
-<div class="last highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">department_id</span><span class="p">,</span>
+<div class="last highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">department_id</span><span class="p">,</span>
   <span class="n">PERCENTILE_CONT</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span> <span class="n">WITHIN</span>
   <span class="k">GROUP</span> <span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">salary</span> <span class="k">DESC</span><span class="p">)</span>
   <span class="ss">&quot;Median_cont&quot;</span>
@@ -1336,7 +1336,7 @@ float</td>
 <td><p class="first">PERCENTILE_DISC(percentage) WITHIN GROUP
 (ORDER BY expression)</p>
 <p>Example:</p>
-<div class="last highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">department_id</span><span class="p">,</span>
+<div class="last highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">department_id</span><span class="p">,</span>
   <span class="n">PERCENTILE_DISC</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span> <span class="n">WITHIN</span>
   <span class="k">GROUP</span> <span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">salary</span> <span class="k">DESC</span><span class="p">)</span>
 <span class="ss">&quot;Median_cont&quot;</span>
@@ -1356,7 +1356,7 @@ bigint[],
 float[]</td>
 <td><p class="first">sum(array[[1,2],[3,4]])</p>
 <p>Example:</p>
-<div class="last highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">mymatrix</span>
+<div class="last highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">mymatrix</span>
   <span class="p">(</span><span class="n">myvalue</span> <span class="nb">int</span><span class="p">[]);</span>
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mymatrix</span> <span class="k">VALUES</span> <span class="p">(</span>
   <span class="nb">array</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]);</span>
@@ -1441,7 +1441,7 @@ class_count, class_total)</td>
 <h4>3.1.12.3.6.1. 线性回归聚合函数示例<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h4>
 <p>下面示例使用四个线性回归聚合函数：mregr_coef，mregr_r2，mregr_pvalues 和 mregr_tstats 在示例表 regr_example 进行计算。
 在下面的示例中，所有聚合函数第一个参数是因变量（dependent variable），第二个参数是自变量数组（independent variable）。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">mregr_coef</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">]),</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">mregr_coef</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">]),</span>
        <span class="n">mregr_r2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">]),</span>
        <span class="n">mregr_pvalues</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">]),</span>
        <span class="n">mregr_tstats</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">])</span>
@@ -1449,7 +1449,7 @@ class_count, class_total)</td>
 </pre></div>
 </div>
 <p>表 regr_example 中的数据:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="nb">id</span> <span class="o">|</span> <span class="n">y</span>  <span class="o">|</span> <span class="n">x1</span> <span class="o">|</span> <span class="n">x2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="nb">id</span> <span class="o">|</span> <span class="n">y</span>  <span class="o">|</span> <span class="n">x1</span> <span class="o">|</span> <span class="n">x2</span>
 <span class="o">----+----+----+----</span>
   <span class="mi">1</span> <span class="o">|</span>  <span class="mi">5</span> <span class="o">|</span>  <span class="mi">2</span> <span class="o">|</span>  <span class="mi">1</span>
   <span class="mi">2</span> <span class="o">|</span> <span class="mi">10</span> <span class="o">|</span>  <span class="mi">4</span> <span class="o">|</span>  <span class="mi">2</span>
@@ -1459,19 +1459,19 @@ class_count, class_total)</td>
 </div>
 <p>在表上运行前面的示例查询，返回一行数据，包含下面列出的值：</p>
 <p>mregr_coef:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">-</span><span class="mf">7.105427357601e-15</span><span class="p">,</span><span class="mf">2.00000000000003</span><span class="p">,</span><span class="mf">0.999999999999943</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">-</span><span class="mf">7.105427357601e-15</span><span class="p">,</span><span class="mf">2.00000000000003</span><span class="p">,</span><span class="mf">0.999999999999943</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>mregr_r2:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">0.86440677966103</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.86440677966103</span>
 </pre></div>
 </div>
 <p>mregr_pvalues:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="mf">0.999999999999999</span><span class="p">,</span><span class="mf">0.454371051656992</span><span class="p">,</span><span class="mf">0.783653104061216</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="mf">0.999999999999999</span><span class="p">,</span><span class="mf">0.454371051656992</span><span class="p">,</span><span class="mf">0.783653104061216</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>mregr_tstats:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">-</span><span class="mf">2.24693341988919e-15</span><span class="p">,</span><span class="mf">1.15470053837932</span><span class="p">,</span><span class="mf">0.35355339059327</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">-</span><span class="mf">2.24693341988919e-15</span><span class="p">,</span><span class="mf">1.15470053837932</span><span class="p">,</span><span class="mf">0.35355339059327</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>如果上面的聚合函数返回值未定义，HashData 数据仓库 将会返回 NaN（不是一个数值）。当数据量太少时，可能遇到这种情况。</p>
@@ -1505,7 +1505,7 @@ class_count, class_total)</td>
 <h4>3.1.12.3.6.4. 朴素贝叶斯分类示例1 - 小规模数据<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h4>
 <p>例子将从包含范式化数据的示例表 class_example 开始，通过四个独立的步骤完成：</p>
 <p>表 class_example 中的数据:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> id | class | a1 | a2 | a3
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> id | class | a1 | a2 | a3
 ----+-------+----+----+----
   1 | C1    |  1 |  2 |  3
   2 | C1    |  1 |  4 |  3
@@ -1521,7 +1521,7 @@ class_count, class_total)</td>
 <div><p>为了能够用于训练数据，需要对 class_example 中范式化的数据进行逆透视操作。</p>
 <p>在下面语句中，单引号引起的项将会作为新增的属性值（field attr）的值使用。习惯上，这些值与范式化的表列名相同。
 在这个例子中，为了更容易的从命令中找到这些值，这些值以大写方式书写。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">view</span> <span class="n">class_example_unpivot</span> <span class="k">AS</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">view</span> <span class="n">class_example_unpivot</span> <span class="k">AS</span>
 <span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="k">class</span><span class="p">,</span>
   <span class="k">unnest</span><span class="p">(</span><span class="nb">array</span><span class="p">[</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="s1">&#39;A2&#39;</span><span class="p">,</span> <span class="s1">&#39;A3&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="n">attr</span><span class="p">,</span>
   <span class="k">unnest</span><span class="p">(</span><span class="nb">array</span><span class="p">[</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">a3</span><span class="p">])</span> <span class="k">as</span> <span class="n">value</span>
@@ -1529,7 +1529,7 @@ class_count, class_total)</td>
 </pre></div>
 </div>
 <p>使用后面的 SQL 语句可以查看非范式化的数据 SELECT * from class_example_unpivot：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> id | class | attr | value
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> id | class | attr | value
 ----+-------+------+-------
   2 | C1    | A1   |     1
   2 | C1    | A2   |     2
@@ -1558,7 +1558,7 @@ class_count, class_total)</td>
 <blockquote>
 <div><p>下面查询中，单引号引起的项用来定义聚合的项。通过数组形式传递给 pivto_sum 函数的项必须和原始数据的分类名称和数量相符。
 本例中，分类为 C1 和 C2：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">table</span> <span class="n">class_example_nb_training</span> <span class="k">AS</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">table</span> <span class="n">class_example_nb_training</span> <span class="k">AS</span>
 <span class="k">SELECT</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span>
   <span class="n">pivot_sum</span><span class="p">(</span><span class="nb">array</span><span class="p">[</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">],</span> <span class="k">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">class_count</span>
 <span class="k">FROM</span>   <span class="n">class_example_unpivot</span>
@@ -1567,7 +1567,7 @@ class_count, class_total)</td>
 </pre></div>
 </div>
 <p>下面是训练表的结果：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">attr</span> <span class="o">|</span> <span class="n">value</span> <span class="o">|</span> <span class="n">class_count</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">attr</span> <span class="o">|</span> <span class="n">value</span> <span class="o">|</span> <span class="n">class_count</span>
 <span class="o">------+-------+-------------</span>
  <span class="n">A3</span>   <span class="o">|</span>     <span class="mi">1</span> <span class="o">|</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span>
  <span class="n">A3</span>   <span class="o">|</span>     <span class="mi">3</span> <span class="o">|</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
@@ -1584,7 +1584,7 @@ class_count, class_total)</td>
 </li>
 <li><p class="first">基于训练数据创建摘要视图</p>
 <blockquote>
-<div><div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">class_example_nb_classify_functions</span> <span class="k">AS</span>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">class_example_nb_classify_functions</span> <span class="k">AS</span>
 <span class="k">SELECT</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span>
   <span class="nb">array</span><span class="p">[</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">]</span> <span class="k">AS</span> <span class="n">classes</span><span class="p">,</span>
   <span class="k">SUM</span><span class="p">(</span><span class="n">class_count</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="n">wa</span><span class="p">)::</span><span class="nb">integer</span><span class="p">[]</span> <span class="k">AS</span> <span class="n">class_total</span><span class="p">,</span>
@@ -1594,7 +1594,7 @@ class_count, class_total)</td>
 </pre></div>
 </div>
 <p>下面是训练数据的最终结果：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">attr</span><span class="o">|</span> <span class="n">value</span> <span class="o">|</span> <span class="n">class_count</span><span class="o">|</span> <span class="n">classes</span> <span class="o">|</span> <span class="n">class_total</span> <span class="o">|</span><span class="n">attr_count</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">attr</span><span class="o">|</span> <span class="n">value</span> <span class="o">|</span> <span class="n">class_count</span><span class="o">|</span> <span class="n">classes</span> <span class="o">|</span> <span class="n">class_total</span> <span class="o">|</span><span class="n">attr_count</span>
 <span class="o">-----+-------+------------+---------+-------------+---------</span>
  <span class="n">A2</span>  <span class="o">|</span>     <span class="mi">2</span> <span class="o">|</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>      <span class="o">|</span> <span class="p">{</span><span class="n">C1</span><span class="p">,</span><span class="n">C2</span><span class="p">}</span> <span class="o">|</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>       <span class="o">|</span>         <span class="mi">3</span>
  <span class="n">A2</span>  <span class="o">|</span>     <span class="mi">4</span> <span class="o">|</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span>      <span class="o">|</span> <span class="p">{</span><span class="n">C1</span><span class="p">,</span><span class="n">C2</span><span class="p">}</span> <span class="o">|</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>       <span class="o">|</span>         <span class="mi">3</span>
@@ -1613,7 +1613,7 @@ class_count, class_total)</td>
 <blockquote>
 <div><p>在准备好摘要视图后，训练的数据已经可以做为对新记录分类的基线了。
 下面的查询将会通过 nb_classify 聚合函数来预测新的记录是属于 C1 还是 C2。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">nb_classify</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="k">class</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">nb_classify</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="k">class</span>
 <span class="k">FROM</span> <span class="n">class_example_nb_classify_functions</span>
 <span class="k">WHERE</span> <span class="p">(</span><span class="n">attr</span> <span class="o">=</span> <span class="s1">&#39;A1&#39;</span> <span class="k">AND</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
   <span class="k">OR</span> <span class="p">(</span><span class="n">attr</span> <span class="o">=</span> <span class="s1">&#39;A2&#39;</span> <span class="k">AND</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
@@ -1621,7 +1621,7 @@ class_count, class_total)</td>
 </pre></div>
 </div>
 <p>使用前面的训练数据后，运行示例查询，返回下面符合期望的单行结果：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>class
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class
 -------
 C2
 (1 row)
@@ -1629,7 +1629,7 @@ C2
 </div>
 <p>可以使用 nb_probabilities 显示各个列别的概率。在准备好视图后，训练的数据已经可以做为对新记录分类的基线了。
 下面的查询将会通过 nb_probabilities 聚合函数来预测新的记录是属于 C1 还是 C2。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">nb_probabilities</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="n">probability</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">nb_probabilities</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="n">probability</span>
 <span class="k">FROM</span> <span class="n">class_example_nb_classify_functions</span>
 <span class="k">WHERE</span> <span class="p">(</span><span class="n">attr</span> <span class="o">=</span> <span class="s1">&#39;A1&#39;</span> <span class="k">AND</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
   <span class="k">OR</span> <span class="p">(</span><span class="n">attr</span> <span class="o">=</span> <span class="s1">&#39;A2&#39;</span> <span class="k">AND</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
@@ -1637,14 +1637,14 @@ C2
 </pre></div>
 </div>
 <p>使用前面的训练数据后，运行示例查询，返回每个分类的概率情况，第一值是 C1 的概率，第二个值是 C2 的概率：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">probability</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">probability</span>
 <span class="o">-------------</span>
  <span class="p">{</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.6</span><span class="p">}</span>
 <span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>您可以通过下面的查询同时显示分类结果和概率分布。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">nb_classify</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="k">class</span><span class="p">,</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">nb_classify</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="k">class</span><span class="p">,</span>
        <span class="n">nb_probabilities</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="n">probability</span>
 <span class="k">FROM</span> <span class="n">class_example_nb_classify</span>
 <span class="k">WHERE</span> <span class="p">(</span><span class="n">attr</span> <span class="o">=</span> <span class="s1">&#39;A1&#39;</span> <span class="k">AND</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
@@ -1653,7 +1653,7 @@ C2
 </pre></div>
 </div>
 <p>查询返回如下结果：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> class | probability
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> class | probability
 -------+-------------
     C2 | {0.4,0.6}
  (1 row)
@@ -1671,7 +1671,7 @@ C2
 表 weather_example 包含了一些示例数据。表的标示字段是 day。
 用于分类的字段 play 包含两个值：Yes 或 No。天气包含四种属性：状况，温度，湿度，风力。
 数据按照范式化存储。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">day</span> <span class="o">|</span> <span class="n">play</span> <span class="o">|</span> <span class="n">outlook</span>  <span class="o">|</span> <span class="n">temperature</span> <span class="o">|</span> <span class="n">humidity</span> <span class="o">|</span> <span class="n">wind</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">day</span> <span class="o">|</span> <span class="n">play</span> <span class="o">|</span> <span class="n">outlook</span>  <span class="o">|</span> <span class="n">temperature</span> <span class="o">|</span> <span class="n">humidity</span> <span class="o">|</span> <span class="n">wind</span>
 <span class="o">-----+------+----------+-------------+----------+--------</span>
  <span class="mi">2</span>   <span class="o">|</span> <span class="n">No</span>   <span class="o">|</span> <span class="n">Sunny</span>    <span class="o">|</span> <span class="n">Hot</span>         <span class="o">|</span> <span class="n">High</span>     <span class="o">|</span> <span class="n">Strong</span>
  <span class="mi">4</span>   <span class="o">|</span> <span class="n">Yes</span>  <span class="o">|</span> <span class="n">Rain</span>     <span class="o">|</span> <span class="n">Mild</span>        <span class="o">|</span> <span class="n">High</span>     <span class="o">|</span> <span class="n">Weak</span>
@@ -1694,7 +1694,7 @@ C2
 <ol class="arabic">
 <li><p class="first">逆透视化数据</p>
 <blockquote>
-<div><div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">view</span> <span class="n">weather_example_unpivot</span> <span class="k">AS</span>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">view</span> <span class="n">weather_example_unpivot</span> <span class="k">AS</span>
 <span class="k">SELECT</span> <span class="k">day</span><span class="p">,</span> <span class="n">play</span><span class="p">,</span>
   <span class="k">unnest</span><span class="p">(</span><span class="nb">array</span><span class="p">[</span><span class="s1">&#39;outlook&#39;</span><span class="p">,</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;humidity&#39;</span><span class="p">,</span><span class="s1">&#39;wind&#39;</span><span class="p">])</span> <span class="k">AS</span> <span class="n">attr</span><span class="p">,</span>
   <span class="k">unnest</span><span class="p">(</span><span class="nb">array</span><span class="p">[</span><span class="n">outlook</span><span class="p">,</span><span class="n">temperature</span><span class="p">,</span><span class="n">humidity</span><span class="p">,</span><span class="n">wind</span><span class="p">])</span> <span class="k">AS</span> <span class="n">value</span>
@@ -1703,7 +1703,7 @@ C2
 </div>
 <p>请注意上面单引号的使用。</p>
 <p>语句 SELECT * from weather_example_unpivot 将会显示经过逆透视化后的非范式的数据，数据一共 56 行。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">day</span> <span class="o">|</span> <span class="n">play</span> <span class="o">|</span> <span class="n">attr</span>        <span class="o">|</span> <span class="n">value</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">day</span> <span class="o">|</span> <span class="n">play</span> <span class="o">|</span> <span class="n">attr</span>        <span class="o">|</span> <span class="n">value</span>
 <span class="o">-----+------+-------------+----------</span>
    <span class="mi">2</span> <span class="o">|</span> <span class="n">No</span>   <span class="o">|</span> <span class="n">outlook</span>     <span class="o">|</span> <span class="n">Sunny</span>
    <span class="mi">2</span> <span class="o">|</span> <span class="n">No</span>   <span class="o">|</span> <span class="n">temperature</span> <span class="o">|</span> <span class="n">Hot</span>
@@ -1768,7 +1768,7 @@ C2
 </li>
 <li><p class="first">创建训练表</p>
 <blockquote>
-<div><div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">table</span> <span class="n">weather_example_nb_training</span> <span class="k">AS</span>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">table</span> <span class="n">weather_example_nb_training</span> <span class="k">AS</span>
 <span class="k">SELECT</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">pivot_sum</span><span class="p">(</span><span class="nb">array</span><span class="p">[</span><span class="s1">&#39;Yes&#39;</span><span class="p">,</span><span class="s1">&#39;No&#39;</span><span class="p">],</span> <span class="n">play</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">AS</span> <span class="n">class_count</span>
 <span class="k">FROM</span> <span class="n">weather_example_unpivot</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span>
@@ -1776,7 +1776,7 @@ C2
 </pre></div>
 </div>
 <p>语句 SELECT * from weather_example_nb_training 显示训练数据，一共 10 行：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">attr</span>        <span class="o">|</span> <span class="n">value</span>    <span class="o">|</span> <span class="n">class_count</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">attr</span>        <span class="o">|</span> <span class="n">value</span>    <span class="o">|</span> <span class="n">class_count</span>
 <span class="o">-------------+----------+-------------</span>
 <span class="n">outlook</span>      <span class="o">|</span> <span class="n">Rain</span>     <span class="o">|</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
 <span class="n">humidity</span>     <span class="o">|</span> <span class="n">High</span>     <span class="o">|</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span>
@@ -1795,7 +1795,7 @@ C2
 </li>
 <li><p class="first">基于训练数据创建摘要视图</p>
 <blockquote>
-<div><div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">weather_example_nb_classify_functions</span> <span class="k">AS</span>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">weather_example_nb_classify_functions</span> <span class="k">AS</span>
 <span class="k">SELECT</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span>
   <span class="nb">array</span><span class="p">[</span><span class="s1">&#39;Yes&#39;</span><span class="p">,</span><span class="s1">&#39;No&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="n">classes</span><span class="p">,</span>
   <span class="k">sum</span><span class="p">(</span><span class="n">class_count</span><span class="p">)</span> <span class="n">over</span> <span class="p">(</span><span class="n">wa</span><span class="p">)::</span><span class="nb">integer</span><span class="p">[]</span> <span class="k">as</span> <span class="n">class_total</span><span class="p">,</span>
@@ -1805,7 +1805,7 @@ C2
 </pre></div>
 </div>
 <p>语句 SELECT * from weather_example_nb_classify_function 将会返回 10 行训练数据。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">attr</span>        <span class="o">|</span>  <span class="n">value</span>  <span class="o">|</span> <span class="n">class_count</span><span class="o">|</span> <span class="n">classes</span> <span class="o">|</span> <span class="n">class_total</span><span class="o">|</span> <span class="n">attr_count</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">attr</span>        <span class="o">|</span>  <span class="n">value</span>  <span class="o">|</span> <span class="n">class_count</span><span class="o">|</span> <span class="n">classes</span> <span class="o">|</span> <span class="n">class_total</span><span class="o">|</span> <span class="n">attr_count</span>
 <span class="o">------------+--------</span> <span class="o">+------------+---------+------------+-----------</span>
 <span class="n">temperature</span> <span class="o">|</span> <span class="n">Mild</span>    <span class="o">|</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>      <span class="o">|</span> <span class="p">{</span><span class="n">Yes</span><span class="p">,</span><span class="n">No</span><span class="p">}</span><span class="o">|</span> <span class="p">{</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>      <span class="o">|</span>         <span class="mi">3</span>
 <span class="n">temperature</span> <span class="o">|</span> <span class="n">Cool</span>    <span class="o">|</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>      <span class="o">|</span> <span class="p">{</span><span class="n">Yes</span><span class="p">,</span><span class="n">No</span><span class="p">}</span><span class="o">|</span> <span class="p">{</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>      <span class="o">|</span>         <span class="mi">3</span>
@@ -1825,13 +1825,13 @@ C2
 <li><p class="first">使用 nb_classify，nb_probabilities 或将 nb_classify 和 nb_probabilities 结合起来处理数据。</p>
 <blockquote>
 <div><p>首先要决定对什么样的信息进行归类。例如对下面一条记录进行归类。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">|</span> <span class="n">wind</span> <span class="o">|</span> <span class="n">humidity</span> <span class="o">|</span> <span class="n">outlook</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">|</span> <span class="n">wind</span> <span class="o">|</span> <span class="n">humidity</span> <span class="o">|</span> <span class="n">outlook</span>
 <span class="o">------------+------+----------+---------</span>
 <span class="n">Cool</span>        <span class="o">|</span> <span class="n">Weak</span> <span class="o">|</span> <span class="n">High</span>     <span class="o">|</span> <span class="n">Overcast</span>
 </pre></div>
 </div>
 <p>下面的查询用来计算分类结果。结果将会给出判断是否适宜户外运动，并给出 Yes 和 No 的概率。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">nb_classify</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="k">class</span><span class="p">,</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">nb_classify</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="k">class</span><span class="p">,</span>
        <span class="n">nb_probabilities</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="n">probability</span>
 <span class="k">FROM</span> <span class="n">weather_example_nb_classify_functions</span>
 <span class="k">WHERE</span>
@@ -1842,14 +1842,14 @@ C2
 </pre></div>
 </div>
 <p>结果是一条记录：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>class  |              probability
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class  |              probability
 -------+---------------------------------------
  Yes   | {0.858103353920726,0.141896646079274}
 (1 row)
 </pre></div>
 </div>
 <p>要对一组记录进行分类，可以将他们存储到表中，再进行归类。例如下面的表 t1 包含了要分类的记录：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">day</span> <span class="o">|</span> <span class="n">outlook</span>  <span class="o">|</span> <span class="n">temperature</span> <span class="o">|</span> <span class="n">humidity</span> <span class="o">|</span>  <span class="n">wind</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">day</span> <span class="o">|</span> <span class="n">outlook</span>  <span class="o">|</span> <span class="n">temperature</span> <span class="o">|</span> <span class="n">humidity</span> <span class="o">|</span>  <span class="n">wind</span>
 <span class="o">-----+----------+-------------+----------+--------</span>
   <span class="mi">15</span> <span class="o">|</span> <span class="n">Sunny</span>    <span class="o">|</span> <span class="n">Mild</span>        <span class="o">|</span> <span class="n">High</span>     <span class="o">|</span> <span class="n">Strong</span>
   <span class="mi">16</span> <span class="o">|</span> <span class="n">Rain</span>     <span class="o">|</span> <span class="n">Cool</span>        <span class="o">|</span> <span class="n">Normal</span>   <span class="o">|</span> <span class="n">Strong</span>
@@ -1860,7 +1860,7 @@ C2
 </div>
 <p>下面的查询用来对整张表计算分类结果。计算结果是对表中每条记录判断是否适宜户外运动，并给出 Yes 和 No 的概率。
 这个例子中 nb_classify 和 nb_probabilities 两个聚合函数都参与了运算。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">t1</span><span class="p">.</span><span class="k">day</span><span class="p">,</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">t1</span><span class="p">.</span><span class="k">day</span><span class="p">,</span>
        <span class="n">t1</span><span class="p">.</span><span class="n">temperature</span><span class="p">,</span> <span class="n">t1</span><span class="p">.</span><span class="n">wind</span><span class="p">,</span> <span class="n">t1</span><span class="p">.</span><span class="n">humidity</span><span class="p">,</span> <span class="n">t1</span><span class="p">.</span><span class="n">outlook</span><span class="p">,</span>
        <span class="n">nb_classify</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="k">class</span><span class="p">,</span>
        <span class="n">nb_probabilities</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">attr_count</span><span class="p">,</span> <span class="n">class_count</span><span class="p">,</span> <span class="n">class_total</span><span class="p">)</span> <span class="k">AS</span> <span class="n">probability</span>
@@ -1874,7 +1874,7 @@ C2
 </pre></div>
 </div>
 <p>结果返回四条记录，分别对应 t1 中的记录。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>day| temp| wind   | humidity | outlook  | class | probability
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>day| temp| wind   | humidity | outlook  | class | probability
 ---+-----+--------+----------+----------+-------+--------------
 15 | Mild| Strong | High     | Sunny    | No    | {0.244694132334582,0.755305867665418}
 16 | Cool| Strong | Normal   | Rain     | Yes   | {0.751471997809119,0.248528002190881}

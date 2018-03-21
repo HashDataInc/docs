@@ -731,7 +731,7 @@
 <p>系统视图 <em>pg_stat_activity</em> 提供活跃会话的信息，每行记录对应一个活跃的会话。这些信息包括数据库的OID，数据库名字，服务器进程的PID，
 用户的OID，用户名字，当前的查询语句，当前查询开始时间，当前服务器进程启动时间，客户端地址，和端口号。为了获取关于当前工作负载最
 详细的信息，建议您以超级用户的角色去查询这个系统视图。例如：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">=&gt;</span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">pg_stat_activity</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=&gt;</span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">pg_stat_activity</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>注意：这些信息不是实时更新的。</p>
@@ -743,7 +743,7 @@
 <p>通过检查那些还没被授予的锁，我们能够对不同数据库客户端会话之间的竞争情况有所了解。<em>pg_locks</em> 提供了这个数据库系统全局的锁信息，而不仅仅局限于当前
 数据库。您可以将锁信息与表（仅限于当前数据库中的表）进行关联，从而了解哪些表正处于竞争状态；您也可以锁信息与 <em>pg_stat_activity</em> 进行关联，从而
 了解哪些客户端会话拿着锁或者正在等待锁。例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="k">SELECT</span> <span class="n">locktype</span><span class="p">,</span> <span class="k">database</span><span class="p">,</span> <span class="k">c</span><span class="p">.</span><span class="n">relname</span><span class="p">,</span> <span class="n">l</span><span class="p">.</span><span class="n">relation</span><span class="p">,</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="k">SELECT</span> <span class="n">locktype</span><span class="p">,</span> <span class="k">database</span><span class="p">,</span> <span class="k">c</span><span class="p">.</span><span class="n">relname</span><span class="p">,</span> <span class="n">l</span><span class="p">.</span><span class="n">relation</span><span class="p">,</span>
    <span class="n">l</span><span class="p">.</span><span class="n">transactionid</span><span class="p">,</span> <span class="n">l</span><span class="p">.</span><span class="n">transaction</span><span class="p">,</span> <span class="n">l</span><span class="p">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">l</span><span class="p">.</span><span class="k">mode</span><span class="p">,</span> <span class="n">l</span><span class="p">.</span><span class="k">granted</span><span class="p">,</span>
    <span class="n">a</span><span class="p">.</span><span class="n">current_query</span>
    <span class="k">FROM</span> <span class="n">pg_locks</span> <span class="n">l</span><span class="p">,</span> <span class="n">pg_class</span> <span class="k">c</span><span class="p">,</span> <span class="n">pg_stat_activity</span> <span class="n">a</span>

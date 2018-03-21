@@ -289,7 +289,7 @@
 <h2>4.1.7.2. 理解查询计划<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>解释计划详细描述了|product-name| 执行查询的步骤。查询计划是颗节点树，从下向上读数据，每个节点将它的执行结果数据传递给其上的节点。每个节点表示查询计划的一个步骤，每个节点都有一行信息描述了该步骤执行的操作 – 例如扫描、关联、聚合或者排序操作等，此外还有显示执行该操作的具体方法。例如，扫描操作可能是顺序扫描或者索引扫描，关联操作可能是哈希关联或者嵌套循环关联。</p>
 <p>下面是一个简单查询的解释计划，这个查询的结果应为每个Segment上contributions表的行数。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="n">gpacmin</span><span class="o">=#</span> <span class="k">EXPLAIN</span> <span class="k">SELECT</span> <span class="n">gp_Segment_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">gpacmin</span><span class="o">=#</span> <span class="k">EXPLAIN</span> <span class="k">SELECT</span> <span class="n">gp_Segment_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
                   <span class="k">FROM</span> <span class="n">contributions</span>
                   <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">gp_Segment_id</span><span class="p">;</span>
                                                                     <span class="n">QUERY</span> <span class="n">PLAN</span>

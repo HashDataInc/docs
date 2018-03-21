@@ -279,7 +279,7 @@
 <h2>4.1.6.2. COPY语句<a class="headerlink" href="#copy" title="永久链接至标题">¶</a></h2>
 <p>PostgreSQL 的 COPY 语句从外部文件拷贝数据到数据库表中。它可以插入多行数据，比INSERT语句效率高，但是所有行数据仍然会通过Master。所有数据由一个命令完成拷贝，不能并行化。</p>
 <p>COPY命令的数据输入可以是文件或者标准输入。例如：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">COPY</span> <span class="k">table</span> <span class="k">FROM</span> <span class="s1">&#39;/data/mydata.csv&#39;</span> <span class="k">WITH</span> <span class="n">CSV</span> <span class="n">HEADER</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">COPY</span> <span class="k">table</span> <span class="k">FROM</span> <span class="s1">&#39;/data/mydata.csv&#39;</span> <span class="k">WITH</span> <span class="n">CSV</span> <span class="n">HEADER</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>COPY适合加载少量数据，例如数千行的维度表数据或者一次性数据加载。</p>
@@ -296,7 +296,7 @@
 <div class="section" id="gpfdist">
 <h3>4.1.6.3.1. 外部表和gpfdist<a class="headerlink" href="#gpfdist" title="永久链接至标题">¶</a></h3>
 <p>加载大量事实表的最快方法是使用外部表与gpfdist。gpfdist是一个基于HTTP协议的、可以为HashData数据仓库的段数据库（Segments）并行提供数据的文件服务器。单个 gpfdist 实例速率可达 200MB/秒，多个 gpfdist 进程可以并行运行，每个提供部分加载数据。当使用</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span><span class="k">FROM</span> <span class="o">&lt;</span><span class="n">external_table</span><span class="o">&gt;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span><span class="k">FROM</span> <span class="o">&lt;</span><span class="n">external_table</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>语句加载数据时，这个INSERT语句由Master解析，并分发到各个主Segments上。每个Segment连接到gpfdist服务器，并行获取数据、解析数据、验证数据、计算分布键的哈希值，并基于哈希值分布到存储该数据的目标Segment上。默认情况下，每个 gpfdist 实例可以接受至多来自64个Segment的连接。通过使用多个 gpfdist 服务器和大量Segments，可以实现非常高的加载速度。</p>
@@ -304,7 +304,7 @@
 <p>每个文件系统运行两个 gpfdist 实例。加载数据时，在Segment上 gpfdist 往往是CPU密集型任务。但是譬如有八个机架的Segment节点，那么Segments上会有大量CPU资源，可以驱动更多的 gpfdist 进程。在尽可能多的网卡上运行 gpfdist。清楚了解绑定的NICs个数，并启动足够多的 gpfdist 进程充分使用网络资源。</p>
 <p>均匀地为加载任务分配资源很重要。加载速度取决于最慢的节点，加载文件布局的倾斜会造成该资源成为瓶颈。</p>
 <p>配置参数 <em>gp_external_max_segs</em> 控制连接单个 gpfdist 的Segments的个数。默认值是64。确保*gp_external_max_segs* 和 gpfdist 进程个数是偶数因子，也就是说 <em>gp_external_max_segs</em> 值是 gpfdist 进程个数的倍数。例如如果有12个Segments、4 个进程，优化器轮询Segment连接如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Segment</span> <span class="mi">1</span>  <span class="o">-</span> <span class="n">gpfdist</span> <span class="mi">1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Segment</span> <span class="mi">1</span>  <span class="o">-</span> <span class="n">gpfdist</span> <span class="mi">1</span>
 <span class="n">Segment</span> <span class="mi">2</span>  <span class="o">-</span> <span class="n">gpfdist</span> <span class="mi">2</span>
 <span class="n">Segment</span> <span class="mi">3</span>  <span class="o">-</span> <span class="n">gpfdist</span> <span class="mi">3</span>
 <span class="n">Segment</span> <span class="mi">4</span>  <span class="o">-</span> <span class="n">gpfdist</span> <span class="mi">4</span>
@@ -345,7 +345,7 @@
 <li>外部表不适合频繁访问或者 ad-hoc 访问。</li>
 <li>外部表没有统计数据。可以使用下面的语句为外部表设置大概估计的行数和磁盘页数：</li>
 </ul>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">pg_class</span> <span class="k">SET</span> <span class="n">reltuples</span><span class="o">=</span><span class="mi">400000</span><span class="p">,</span> <span class="n">relpages</span><span class="o">=</span><span class="mi">400</span>   <span class="k">WHERE</span> <span class="n">relname</span><span class="o">=</span><span class="s1">&#39;myexttable&#39;</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">pg_class</span> <span class="k">SET</span> <span class="n">reltuples</span><span class="o">=</span><span class="mi">400000</span><span class="p">,</span> <span class="n">relpages</span><span class="o">=</span><span class="mi">400</span>   <span class="k">WHERE</span> <span class="n">relname</span><span class="o">=</span><span class="s1">&#39;myexttable&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -356,7 +356,7 @@
 <li>数据加载完成后，对堆表包括系统表运行 VACUUM，对所有表运行 ANALYZE。对AO表不必运行 VACUUM。如果表是分区表，则可以仅对数据加载影响的分区执行 VACUUM 和 ANALYZE。这样可以清除失败的加载占用的空间、删除或者更新的行占用的空间，并更新统计数据。</li>
 <li>加载大量数据后重新检查数据倾斜。使用下面查询检查倾斜状况：</li>
 </ul>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_segment_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">gp_segment_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="k">schema</span><span class="p">.</span><span class="k">table</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">gp_Segment_id</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>

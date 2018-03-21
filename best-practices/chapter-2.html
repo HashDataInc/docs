@@ -278,14 +278,14 @@
 <div class="section" id="id3">
 <h2>4.1.2.2. 文件系统<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>HashData 数据仓库 的数据目录推荐使用 XFS 文件系统。使用以下选项挂载 XFS：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rw</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="n">inode64</span><span class="p">,</span><span class="n">allocsize</span><span class="o">=</span><span class="mi">16</span><span class="n">m</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rw</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="n">inode64</span><span class="p">,</span><span class="n">allocsize</span><span class="o">=</span><span class="mi">16</span><span class="n">m</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id4">
 <h2>4.1.2.3. 端口配置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>操作系统配置参数 <em>ip_local_port_range</em> 的设置不要和 HashData 数据仓库 的端口范围有冲突，例如：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">ipv4</span><span class="o">.</span><span class="n">ip_local_port_range</span><span class="o">=</span><span class="mi">3000</span> <span class="mi">65535</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">ipv4</span><span class="o">.</span><span class="n">ip_local_port_range</span><span class="o">=</span><span class="mi">3000</span> <span class="mi">65535</span>
 <span class="n">PORT_BASE</span><span class="o">=</span><span class="mi">2000</span>
 <span class="n">MIRROR_PORT_BASE</span><span class="o">=</span><span class="mi">2100</span>
 <span class="n">REPLICATION_PORT_BASE</span><span class="o">=</span><span class="mi">2200</span>
@@ -296,24 +296,24 @@
 <div class="section" id="i-o">
 <h2>4.1.2.4. I/O配置<a class="headerlink" href="#i-o" title="永久链接至标题">¶</a></h2>
 <p>包含数据目录的设备的预读大小应设为16384。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">blockdev</span> <span class="o">--</span><span class="n">getra</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">blockdev</span> <span class="o">--</span><span class="n">getra</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span>
 <span class="mi">16384</span>
 </pre></div>
 </div>
 <p>包含数据目录的设备的 I/O 调度算法设置为deadline。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># cat /sys/block/sdb/queue/scheduler</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># cat /sys/block/sdb/queue/scheduler</span>
 <span class="n">noop</span> <span class="n">anticipatory</span> <span class="p">[</span><span class="n">deadline</span><span class="p">]</span> <span class="n">cfq</span>
 </pre></div>
 </div>
 <p>通过 /etc/security/limits.conf 增大操作系统文件数和进程数。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">soft</span> <span class="n">nofile</span> <span class="mi">65536</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">soft</span> <span class="n">nofile</span> <span class="mi">65536</span>
 <span class="o">*</span> <span class="n">hard</span> <span class="n">nofile</span> <span class="mi">65536</span>
 <span class="o">*</span> <span class="n">soft</span> <span class="n">nproc</span> <span class="mi">131072</span>
 <span class="o">*</span> <span class="n">hard</span> <span class="n">nproc</span> <span class="mi">131072</span>
 </pre></div>
 </div>
 <p>启用core文件转储，并保存到已知位置。确保limits.conf中允许的core转储文件。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">kernel</span><span class="o">.</span><span class="n">core_pattern</span> <span class="o">=</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">core</span><span class="o">.%</span><span class="n">h</span><span class="o">.%</span><span class="n">t</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kernel</span><span class="o">.</span><span class="n">core_pattern</span> <span class="o">=</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">core</span><span class="o">.%</span><span class="n">h</span><span class="o">.%</span><span class="n">t</span>
 <span class="c1"># grep core /etc/security/limits.conf</span>
 <span class="o">*</span> <span class="n">soft</span> <span class="n">core</span> <span class="n">unlimited</span>
 </pre></div>
@@ -332,7 +332,7 @@
 <div class="section" id="id6">
 <h2>4.1.2.6. 共享内存设置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>HashData 数据仓库 中同一数据库实例的不同postgres进程间通讯使用共享内存。使用sysctl配置如下共享内存参数，且不建议修改：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">kernel</span><span class="o">.</span><span class="n">shmmax</span> <span class="o">=</span> <span class="mi">500000000</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kernel</span><span class="o">.</span><span class="n">shmmax</span> <span class="o">=</span> <span class="mi">500000000</span>
 <span class="n">kernel</span><span class="o">.</span><span class="n">shmmni</span> <span class="o">=</span> <span class="mi">4096</span>
 <span class="n">kernel</span><span class="o">.</span><span class="n">shmall</span> <span class="o">=</span> <span class="mi">4000000000</span>
 </pre></div>
@@ -359,7 +359,7 @@
 <div class="section" id="id9">
 <h2>4.1.2.9. 段服务器内存配置<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p>服务器配置参数 <em>gp_vmem_protect_limit</em> 控制了每个段数据库为所有运行的查询分配的内存总量。如果查询需要的内存超过此值，则会失败。使用下面公式确定合适的值：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">swap</span> <span class="o">+</span> <span class="p">(</span><span class="n">RAM</span> <span class="o">*</span> <span class="n">vm</span><span class="o">.</span><span class="n">overcommit_ratio</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="n">number_of_segments_per_server</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">swap</span> <span class="o">+</span> <span class="p">(</span><span class="n">RAM</span> <span class="o">*</span> <span class="n">vm</span><span class="o">.</span><span class="n">overcommit_ratio</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="n">number_of_segments_per_server</span>
 </pre></div>
 </div>
 <p>例如，具有下面配置的段服务器：</p>
@@ -370,7 +370,7 @@
 <li>8 个段数据库</li>
 </ul>
 <p>则设置 <em>gp_vmem_protect_limit</em> 为 8GB：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">8</span> <span class="o">+</span> <span class="p">(</span><span class="mi">128</span> <span class="o">*</span> <span class="o">.</span><span class="mi">5</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">8</span> <span class="n">GB</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">8</span> <span class="o">+</span> <span class="p">(</span><span class="mi">128</span> <span class="o">*</span> <span class="o">.</span><span class="mi">5</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">8</span> <span class="n">GB</span>
 </pre></div>
 </div>
 <p>参见：<em>内存和负载管理</em>。（后续章节)</p>
@@ -378,13 +378,13 @@
 <div class="section" id="sql">
 <h2>4.1.2.10. SQL语句内存配置<a class="headerlink" href="#sql" title="永久链接至标题">¶</a></h2>
 <p>服务器配置参数 <em>gp_statement_mem</em> 控制段数据库上单个查询可以使用的内存总量。如果语句需要更多内存，则会溢出数据到磁盘。用下面公式确定合适的值：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">gp_vmem_protect_limit</span><span class="o">*.</span><span class="mi">9</span><span class="p">)</span><span class="o">/</span><span class="n">max_expected_concurrent_queries</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">gp_vmem_protect_limit</span><span class="o">*.</span><span class="mi">9</span><span class="p">)</span><span class="o">/</span><span class="n">max_expected_concurrent_queries</span>
 </pre></div>
 </div>
 <p>例如，如果并发度为40，
 <em>gp_vmeme_protect_limit</em> 为8GB，则
 <em>gp_statement_mem</em> 为：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">8192</span><span class="n">MB</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span><span class="p">)</span> <span class="o">/</span> <span class="mi">40</span> <span class="o">=</span> <span class="mi">184</span><span class="n">MB</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">8192</span><span class="n">MB</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span><span class="p">)</span> <span class="o">/</span> <span class="mi">40</span> <span class="o">=</span> <span class="mi">184</span><span class="n">MB</span>
 </pre></div>
 </div>
 <p>每个查询最多可以使用 184MB 内存，之后将溢出到磁盘。</p>
@@ -398,7 +398,7 @@
 <p>如果为SQL查询分配的内存不足，HashData 数据仓库 会创建溢出文件（也叫工作文件）。在默认情况下，一个SQL查询最多可以创建 100000 个溢出文件，这足以满足大多数查询。</p>
 <p>参数 <em>gp_workfile_limit_files_per_query</em> 决定了一个查询最多可以创建多少个溢出文件。0 意味着没有限制。限制溢出文件数据可以防止失控查询破坏整个系统。</p>
 <p>如果分配内存不足或者出现数据倾斜，则一个SQL查询可能产生大量溢出文件。如果超过溢出文件上限，HashData 数据仓库 报告如下错误：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">workfiles</span> <span class="n">per</span> <span class="n">query</span> <span class="n">limit</span> <span class="n">exceeded</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">workfiles</span> <span class="n">per</span> <span class="n">query</span> <span class="n">limit</span> <span class="n">exceeded</span>
 </pre></div>
 </div>
 <p>在尝试增大 <em>gp_workfile_limit_files_per_query</em> 前，先尝试通过修改 SQL、数据分布策略或者内存配置以降低溢出文件个数。</p>

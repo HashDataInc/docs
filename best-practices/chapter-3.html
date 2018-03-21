@@ -341,7 +341,7 @@
 <p>数据倾斜是很多性能问题和内存溢出问题的根本原因。数据倾斜不仅影响扫描/读性能，也会影响很多其他查询执行操作符，例如关联操作、分组操作等。</p>
 <p>数据初始加载后，验证并保证数据分布的均匀性非常重要；每次增量加载后，都要验证并保证数据分布的均匀性。</p>
 <p>下面的查询语句统计每个段数据库上的记录的条数，并根据最大和最小行数计算方差：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="s1">&#39;Example Table&#39;</span> <span class="k">AS</span> <span class="ss">&quot;Table Name&quot;</span><span class="p">,</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="s1">&#39;Example Table&#39;</span> <span class="k">AS</span> <span class="ss">&quot;Table Name&quot;</span><span class="p">,</span>
      <span class="k">max</span><span class="p">(</span><span class="k">c</span><span class="p">)</span> <span class="k">AS</span> <span class="ss">&quot;Max Seg Rows&quot;</span><span class="p">,</span> <span class="k">min</span><span class="p">(</span><span class="k">c</span><span class="p">)</span> <span class="k">AS</span> <span class="ss">&quot;Min Seg Rows&quot;</span><span class="p">,</span>
      <span class="p">(</span><span class="k">max</span><span class="p">(</span><span class="k">c</span><span class="p">)</span><span class="o">-</span><span class="k">min</span><span class="p">(</span><span class="k">c</span><span class="p">))</span><span class="o">*</span><span class="mi">100</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="k">max</span><span class="p">(</span><span class="k">c</span><span class="p">)</span> <span class="k">AS</span> <span class="ss">&quot;Percentage Difference Between Max &amp; Min&quot;</span>
 <span class="k">FROM</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">c</span><span class="p">,</span> <span class="n">gp_Segment_id</span> <span class="k">FROM</span> <span class="n">facts</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">a</span><span class="p">;</span>
@@ -360,11 +360,11 @@
 <ol class="arabic simple">
 <li>找到怀疑发生计算倾斜的数据库的 OID：</li>
 </ol>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">oid</span><span class="p">,</span> <span class="n">datname</span> <span class="k">FROM</span> <span class="n">pg_database</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">oid</span><span class="p">,</span> <span class="n">datname</span> <span class="k">FROM</span> <span class="n">pg_database</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>例子输出:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>   <span class="n">oid</span> <span class="o">|</span> <span class="n">datname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">oid</span> <span class="o">|</span> <span class="n">datname</span>
 <span class="o">-------+-----------</span>
  <span class="mi">17088</span> <span class="o">|</span> <span class="n">gpadmin</span>
  <span class="mi">10899</span> <span class="o">|</span> <span class="n">postgres</span>
@@ -378,7 +378,7 @@
 <ol class="arabic simple" start="2">
 <li>使用 gpssh 检查所有 Segments 上的溢出文件大小。使用上面结果中的 OID 替换 :</li>
 </ol>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[gpadmin@mdw?kend]$ gpssh -f ~/hosts -e \
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[gpadmin@mdw?kend]$ gpssh -f ~/hosts -e \
     &quot;du -b /data[1-2]/primary/gpseg*/base/&lt;OID&gt;/pgsql_tmp/*&quot; | \
     grep -v &quot;du -b&quot; | sort | \ awk -F&quot; &quot; &#39;{ arr[$1] = arr[$1] + $2 ; tot = tot +
 $2 }; \ END
@@ -388,7 +388,7 @@ GB)&quot;; \
 </pre></div>
 </div>
 <p>###例子输出:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Segment</span> <span class="n">node</span><span class="p">[</span><span class="n">sdw1</span><span class="p">]</span> <span class="mi">2443370457</span> <span class="nb">bytes</span> <span class="p">(</span><span class="mf">2.27557</span> <span class="n">GB</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Segment</span> <span class="n">node</span><span class="p">[</span><span class="n">sdw1</span><span class="p">]</span> <span class="mi">2443370457</span> <span class="nb">bytes</span> <span class="p">(</span><span class="mf">2.27557</span> <span class="n">GB</span><span class="p">)</span>
 <span class="n">Segment</span> <span class="n">node</span><span class="p">[</span><span class="n">sdw2</span><span class="p">]</span> <span class="mi">1766575328</span> <span class="nb">bytes</span> <span class="p">(</span><span class="mf">1.64525</span> <span class="n">GB</span><span class="p">)</span>
 <span class="n">Segment</span> <span class="n">node</span><span class="p">[</span><span class="n">sdw3</span><span class="p">]</span> <span class="mi">1761686551</span> <span class="nb">bytes</span> <span class="p">(</span><span class="mf">1.6407</span> <span class="n">GB</span><span class="p">)</span>
 <span class="n">Segment</span> <span class="n">node</span><span class="p">[</span><span class="n">sdw4</span><span class="p">]</span> <span class="mi">1780301617</span> <span class="nb">bytes</span> <span class="p">(</span><span class="mf">1.65804</span> <span class="n">GB</span><span class="p">)</span>
@@ -405,13 +405,13 @@ GB)&quot;; \
 </ol>
 <p>上一步命令计算的是整个节点的磁盘使用量。现在我们要找到对应的段数据库(Segment)目录。可以从主节点（Master）上， 也可以登录到上一步识别出的Segment上做本操作。下面例子演示从 Master 执行操作。</p>
 <p>本例找的是排序生成的临时文件。然而并不是所有情况都是由排序引起的，需要具体问题具体分析：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[gpadmin@mdw?kend]$ gpssh -f ~/hosts -e \
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[gpadmin@mdw?kend]$ gpssh -f ~/hosts -e \
    &quot;ls -l /data[1-2]/primary/gpseg*/base/19979/pgsql_tmp/*&quot;
    | grep -i sort | sort
 </pre></div>
 </div>
 <p>下面是例子输出：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">sdw1</span><span class="p">]</span> <span class="o">-</span><span class="n">rw</span><span class="o">-------</span> <span class="mi">1</span> <span class="n">gpadmin</span> <span class="n">gpadmin</span> <span class="mi">1002209280</span> <span class="n">Jul</span> <span class="mi">29</span> <span class="mi">12</span><span class="p">:</span><span class="mi">48</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">sdw1</span><span class="p">]</span> <span class="o">-</span><span class="n">rw</span><span class="o">-------</span> <span class="mi">1</span> <span class="n">gpadmin</span> <span class="n">gpadmin</span> <span class="mi">1002209280</span> <span class="n">Jul</span> <span class="mi">29</span> <span class="mi">12</span><span class="p">:</span><span class="mi">48</span>
        <span class="o">/</span><span class="n">data1</span><span class="o">/</span><span class="n">primary</span><span class="o">/</span><span class="n">gpseg2</span><span class="o">/</span><span class="n">base</span><span class="o">/</span><span class="mi">19979</span><span class="o">/</span><span class="n">pgsql_tmp</span><span class="o">/</span>
 <span class="n">pgsql_tmp_slice10_sort_19791_0001</span><span class="o">.</span><span class="mi">0</span>
 <span class="p">[</span><span class="n">sdw1</span><span class="p">]</span> <span class="o">-</span><span class="n">rw</span><span class="o">-------</span> <span class="mi">1</span> <span class="n">gpadmin</span> <span class="n">gpadmin</span> <span class="mi">1003356160</span> <span class="n">Jul</span> <span class="mi">29</span> <span class="mi">12</span><span class="p">:</span><span class="mi">48</span>
@@ -592,7 +592,7 @@ GB)&quot;; \
 </div>
 <p>从结果可以发现主机 sdw8 上的Segment gpseg45 是罪魁祸首。</p>
 <p>4.使用 SSH 登录到有问题的节点，并切换为 root 用户，使用 <em>lsof</em> 找到拥有排序临时文件的进程 PID。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@sdw8?~]# lsof /data2/primary/gpseg45/base/19979/pgsql_tmp/
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[root@sdw8?~]# lsof /data2/primary/gpseg45/base/19979/pgsql_tmp/
 pgsql_tmp_slice10_sort_15673_0002.1
 COMMAND    PID    USER    FD    TYPE    DEVICE    SIZE    NODE    NAME
 postgres  15673  gpadmin  11u  REG  8,48  1073741824  64424546751/data2/primary/
@@ -603,7 +603,7 @@ gpseg45/base/19979/pgsql_tmp/pgsql_tmp_slice10_sort_15673_0002.1
 <ol class="arabic simple" start="5">
 <li>使用ps命令识别 PID 对应的数据库和连接信息。</li>
 </ol>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@sdw8?~]# ps -eaf | grep 15673
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[root@sdw8?~]# ps -eaf | grep 15673
 gpadmin 15673 27471 28 12:05          00:12:59 postgres: port 40003, sbaskin bdw
        172.28.12.250(21813) con699238 seg45 cmd32 slice10 MPPEXEC SELECT
 root 29622 29566 0 12:50 pts/16 00:00:00 grep 15673
@@ -627,11 +627,11 @@ root 29622 29566 0 12:50 pts/16 00:00:00 grep 15673
 <li>仅当SQL查询包含使用不变操作符（例如=，&lt;, &lt;=, &gt;=, &lt;&gt;）的简单直接的约束时，查询优化器才会执行分区裁剪。</li>
 <li>选择性扫描可以识别查询中的 STABLE 和 IMMUTABLE 函数，但是不能识别 VOLATILE 函数。例如查询优化器对下面的 WHERE 子句</li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">CURRENT_DATE</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">CURRENT_DATE</span>
 </pre></div>
 </div>
 <p>可以启用分区裁剪，但是如果WHERE子句如下则不会启用分区裁剪。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">&gt;</span> <span class="n">TIMEOFDAY</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">&gt;</span> <span class="n">TIMEOFDAY</span>
 </pre></div>
 </div>
 <p>通过检查查询的 EXPLAIN 计划验证是否执行分区裁剪非常重要。</p>
@@ -681,11 +681,11 @@ root 29622 29566 0 12:50 pts/16 00:00:00 grep 15673
 </ol>
 <p>从大到小布局数据类型，BIGINT和TIMESTAMP 在 INT 和 DATE 类型之前，TEXT，VARCHAR和NUMERIC(x,y)位于后面。例如首先定义8字节的类型（BIGINT，TIMESTAMP）字段，然后是4字节类型（INT，DATE），随后是2字节类型（SMALLINT），最后是可变长度数据类型（VARCHAR）。
 如果你的字段定义如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Int</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Int</span> <span class="p">(</span><span class="n">分布键</span><span class="p">),</span> <span class="n">Date</span> <span class="p">(</span><span class="n">分区键</span><span class="p">),</span> <span class="n">Bigint</span><span class="p">,</span><span class="n">Smallint</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Int</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Int</span> <span class="p">(</span><span class="n">分布键</span><span class="p">),</span> <span class="n">Date</span> <span class="p">(</span><span class="n">分区键</span><span class="p">),</span> <span class="n">Bigint</span><span class="p">,</span><span class="n">Smallint</span>
 </pre></div>
 </div>
 <p>则建议调整为：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Int</span> <span class="p">(</span><span class="n">分布键</span><span class="p">),</span> <span class="n">Date</span> <span class="p">(</span><span class="n">分区键</span><span class="p">),</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Smallint</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Int</span> <span class="p">(</span><span class="n">分布键</span><span class="p">),</span> <span class="n">Date</span> <span class="p">(</span><span class="n">分区键</span><span class="p">),</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Bigint</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Smallint</span>
 </pre></div>
 </div>
 </div>

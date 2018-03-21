@@ -323,7 +323,7 @@
 <ol class="arabic simple">
 <li>如果你正在使用 Linux 操作系统，你可以使用以下命令安装 psql 。</li>
 </ol>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Redhat</span><span class="o">/</span><span class="n">Centos</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Redhat</span><span class="o">/</span><span class="n">Centos</span><span class="p">:</span>
 <span class="c1"># yum install postgresql</span>
 
 <span class="n">Ubuntu</span><span class="p">:</span>
@@ -457,7 +457,7 @@
 <div class="section" id="id12">
 <h3>1.5.2. 使用 psql 连接到集群<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <p>你可以通过下面命令连接到集群：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">d</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">h</span> <span class="mf">121.201</span><span class="o">.</span><span class="mf">25.29</span> <span class="o">-</span><span class="n">p</span> <span class="mi">5432</span> <span class="o">-</span><span class="n">U</span> <span class="n">admin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">d</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">h</span> <span class="mf">121.201</span><span class="o">.</span><span class="mf">25.29</span> <span class="o">-</span><span class="n">p</span> <span class="mi">5432</span> <span class="o">-</span><span class="n">U</span> <span class="n">admin</span>
 </pre></div>
 </div>
 <p>然后根据提示输入登陆密码。</p>
@@ -465,7 +465,7 @@
 <div class="section" id="id13">
 <h3>1.5.3. 简单测试查询<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p>登陆数据仓库后，你可以运行如下命令做一些简单的测试查询：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span>postgres=# CREATE TABLE foo (a INT, b INT);
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>postgres=# CREATE TABLE foo (a INT, b INT);
 NOTICE:  Table doesn&#39;t have &#39;DISTRIBUTED BY&#39; clause -- Using column named &#39;a&#39; as the Greenplum Database data distribution key for this table.
 HINT:  The &#39;DISTRIBUTED BY&#39; clause determines the distribution of data. Make sure column(s) chosen are the optimal data distribution key to minimize skew.
 CREATE TABLE
@@ -495,7 +495,7 @@ postgres=# SELECT SUM(a) FROM foo;
 <p>其中定义的外部表（READABLE EXTERNAL TABLE）用来访问青云对象存储上面的数据。我们提供了TPC-H 1GB、10GB、100GB的公共测试数据集，在此示例中我们使用1GB的TPCH数据集。</p>
 </li>
 </ol>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">NATION</span>  <span class="p">(</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">NATION</span>  <span class="p">(</span>
     <span class="n">N_NATIONKEY</span>  <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="n">N_NAME</span>       <span class="nb">CHAR</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="n">N_REGIONKEY</span>  <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
@@ -600,7 +600,7 @@ postgres=# SELECT SUM(a) FROM foo;
 <ol class="arabic simple" start="2">
 <li>执行如下命令将保存在对象存储上面的TPC-H数据拷贝插入到数据仓库表中。</li>
 </ol>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">NATION</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_NATION</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">NATION</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_NATION</span><span class="p">;</span>
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">REGION</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_REGION</span><span class="p">;</span>
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">PART</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_PART</span><span class="p">;</span>
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SUPPLIER</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">e_SUPPLIER</span><span class="p">;</span>
@@ -614,7 +614,7 @@ postgres=# SELECT SUM(a) FROM foo;
 <li>现在可以开始运行样例查询了。</li>
 </ol>
 <p>这里所采用的数据集和查询是商业智能计算测试 TPC-H。TPC-H 是美国交易处理效益委员会组织制定的用来模拟决策支持类应用的一个测试集。TPC-H 实现了一个数据仓库，共包含8个基本表，其数据量可以设定从1G到3T不等。在这个样例中，我们选择了1G的数据集。TPC-H 基准测试包括 22 个查询，其主要评价指标是各个查询的响应时间，即从提交查询到结果返回所需时间。这里只提供了前三条查询语句。关于 TPC-H 完整 22 条查询语句以及详细介绍可参考<a class="reference external" href="http://www.tpc.org/tpch/">TPC-H 主页</a>。</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="c1">-- This query reports the amount of business that was billed, shipped, and returned.</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This query reports the amount of business that was billed, shipped, and returned.</span>
 
 <span class="k">select</span>
         <span class="n">l_returnflag</span><span class="p">,</span>

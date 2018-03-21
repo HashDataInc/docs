@@ -282,12 +282,12 @@
 <p>启动一个事务块。</p>
 <div class="section" id="id1">
 <h2>3.1.14.2.1. 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">BEGIN</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span> <span class="p">[</span><span class="n">transaction_mode</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BEGIN</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span> <span class="p">[</span><span class="n">transaction_mode</span><span class="p">]</span>
       <span class="p">[</span><span class="n">READ</span> <span class="n">ONLY</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">WRITE</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>transaction_mode 可以是下面的一个值：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ISOLATION</span> <span class="n">LEVEL</span> <span class="o">|</span> <span class="p">{</span><span class="n">SERIALIZABLE</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">COMMITTED</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">UNCOMMITTED</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ISOLATION</span> <span class="n">LEVEL</span> <span class="o">|</span> <span class="p">{</span><span class="n">SERIALIZABLE</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">COMMITTED</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">UNCOMMITTED</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -320,11 +320,11 @@ READ ONLY</p>
 <div class="section" id="id5">
 <h2>3.1.14.2.5. 示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>要启动一个事务：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>启动一个可串行化隔离级别的事务：</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">BEGIN</span> <span class="n">TRANSACTION</span> <span class="k">ISOLATION</span> <span class="k">LEVEL</span> <span class="k">SERIALIZABLE</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span> <span class="n">TRANSACTION</span> <span class="k">ISOLATION</span> <span class="k">LEVEL</span> <span class="k">SERIALIZABLE</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>

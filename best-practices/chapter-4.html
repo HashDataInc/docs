@@ -301,7 +301,7 @@
 </div></blockquote>
 </li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">SWAP</span> <span class="o">+</span> <span class="p">(</span><span class="n">RAM</span> <span class="o">*</span> <span class="n">vm</span><span class="o">.</span><span class="n">overcommit_ratio</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="n">number_segments_per_server</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">SWAP</span> <span class="o">+</span> <span class="p">(</span><span class="n">RAM</span> <span class="o">*</span> <span class="n">vm</span><span class="o">.</span><span class="n">overcommit_ratio</span><span class="p">))</span> <span class="o">*</span> <span class="o">.</span><span class="mi">9</span> <span class="o">/</span> <span class="n">number_segments_per_server</span>
 </pre></div>
 </div>
 <ul>
@@ -316,7 +316,7 @@
 </div></blockquote>
 </li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span>    (vmprotect * .9) / max_expected_concurrent_queries
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    (vmprotect * .9) / max_expected_concurrent_queries
 
 *statement_mem* 的默认值是128MB。例如使用这个默认值， 对于每个服务器安装8个Segment的集群来说，一条查询在每个服务器上需要1GB内存（8 Segments * 128MB）。对于需要更多内存才能执行的查询，可以设置回话级别的*statement_mem*。对于并发度比较低的集群，这个设置可以较好的管理查询内存使用量。并发度高的集群也可以使用资源队列对系统运行什么任务和怎么运行提供额外的控制。
 </pre></div>

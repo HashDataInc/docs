@@ -277,7 +277,7 @@
 <div class="section" id="binlog">
 <h3>5.1.2.2.1. 配置 binlog<a class="headerlink" href="#binlog" title="永久链接至标题">¶</a></h3>
 <p>采用行级二进制日志文件模式，更多细节可参考 <a class="reference external" href="http://dev.mysql.com/doc/refman/5.7/en/replication-options.html">MySQL 文档</a>。通常在 MySQL 服务器的配置文件里进行配置，并且和以下配置语句类似:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">server</span><span class="o">-</span><span class="nb">id</span>         <span class="o">=</span> <span class="mi">223344</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">server</span><span class="o">-</span><span class="nb">id</span>         <span class="o">=</span> <span class="mi">223344</span>
 <span class="n">log_bin</span>           <span class="o">=</span> <span class="n">mysql</span><span class="o">-</span><span class="nb">bin</span>
 <span class="n">binlog_format</span>     <span class="o">=</span> <span class="n">row</span>
 <span class="n">binlog_row_image</span>  <span class="o">=</span> <span class="n">full</span>
@@ -304,7 +304,7 @@
 <li><strong>REPLICATION CLIENT</strong>：启用 <em>SHOW MASTER STATUS</em>， <em>SHOW SLAVE STATUS</em>，和 <em>SHOW BINARY LOGS</em>；总是需要。</li>
 </ul>
 <p>以下语句为示例，为用户名为 <em>debezium</em>，密码为 <em>dbz</em> 的用户赋予以上权限:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GRANT</span> <span class="n">SELECT</span><span class="p">,</span> <span class="n">RELOAD</span><span class="p">,</span> <span class="n">SHOW</span> <span class="n">DATABASES</span><span class="p">,</span> <span class="n">REPLICATION</span> <span class="n">SLAVE</span><span class="p">,</span> <span class="n">REPLICATION</span> <span class="n">CLIENT</span> <span class="n">ON</span> <span class="o">*.*</span> <span class="n">TO</span> <span class="s1">&#39;debezium&#39;</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="s1">&#39;dbz&#39;</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRANT</span> <span class="n">SELECT</span><span class="p">,</span> <span class="n">RELOAD</span><span class="p">,</span> <span class="n">SHOW</span> <span class="n">DATABASES</span><span class="p">,</span> <span class="n">REPLICATION</span> <span class="n">SLAVE</span><span class="p">,</span> <span class="n">REPLICATION</span> <span class="n">CLIENT</span> <span class="n">ON</span> <span class="o">*.*</span> <span class="n">TO</span> <span class="s1">&#39;debezium&#39;</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="s1">&#39;dbz&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -354,7 +354,7 @@
 <div class="section" id="key">
 <h4>5.1.2.3.4.1. 事件的 key<a class="headerlink" href="#key" title="永久链接至标题">¶</a></h4>
 <p>对于一个给定的表，事件的 key 包括表的主键。比如 <em>inventory</em> 数据库中的 <em>customers</em> 表定义如下:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">customers</span> <span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">customers</span> <span class="p">(</span>
   <span class="nb">id</span> <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">AUTO_INCREMENT</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
   <span class="n">first_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
   <span class="n">last_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
@@ -363,7 +363,7 @@
 </pre></div>
 </div>
 <p>在这个定义下， <em>customers</em> 表的事件都有相同的 key，JSON 格式如下:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;struct&quot;</span><span class="p">,</span>
     <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mysql-server-1.inventory.customers.Key&quot;</span>
@@ -398,7 +398,7 @@
 </ul>
 <p>同样， value 的 <em>schema</em> 部分也由一个 <em>envelope</em> 结构组成。</p>
 <p>如下是 <em>customer</em> 表中一个事件的 value:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;struct&quot;</span><span class="p">,</span>
     <span class="s2">&quot;optional&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
@@ -548,7 +548,7 @@
 <p>在 value 中的 <em>schema</em> 部分，我们可以看到 <em>envelope</em> 的 schema， <em>source</em> 的 schema（对每一个 MySQL 是特定的），和 <em>before</em> 以及 <em>after</em> 的 schema （对每一张表是特定的）。</p>
 <p>在 value 的 <em>payload</em> 部分，我们可以看到这个事件的具体信息。以上例子描述了在表中创建一行（因为 <em>op = c</em>），并且 <em>after</em> 项中描述了新创建行的 <em>id</em>， <em>first_name</em>， <em>last_name</em> 和 <em>email</em>。</p>
 <p>上面是 create 事件的 value 例子，同一张表的 update 事件的 value 会和以上 create 事件有完全相同 <em>schema</em>，它的 <em>payload</em> 会和 create 事件结构相同但值不同。例如:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
   <span class="s2">&quot;payload&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">&quot;before&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -588,7 +588,7 @@
 <li><em>ts_ms</em> 描述了 Debezium 处理这个事件的时间戳</li>
 </ul>
 <p>比较了 create 事件和 update 事件，接下来是 delete 事件。同样，value 的 <em>schema</em> 部分完全相同:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
   <span class="s2">&quot;payload&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">&quot;before&quot;</span><span class="p">:</span> <span class="p">{</span>

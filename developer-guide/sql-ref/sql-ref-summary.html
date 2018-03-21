@@ -282,7 +282,7 @@
 <div class="section" id="abort">
 <h2>3.1.14.3.1. ABORT<a class="headerlink" href="#abort" title="永久链接至标题">¶</a></h2>
 <p>终止当前事务。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ABORT</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ABORT</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>查看 <a class="reference internal" href="sql-ref-abort.html#sql-ref-abort"><span class="std std-ref">ABORT</span></a> 了解更多。</p>
@@ -290,7 +290,7 @@
 <div class="section" id="alter-aggregate">
 <h2>3.1.14.3.2. ALTER AGGREGATE<a class="headerlink" href="#alter-aggregate" title="永久链接至标题">¶</a></h2>
 <p>修改聚合函数定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">AGGREGATE</span> <span class="n">name</span> <span class="p">(</span> <span class="nb">type</span> <span class="p">[</span> <span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">AGGREGATE</span> <span class="n">name</span> <span class="p">(</span> <span class="nb">type</span> <span class="p">[</span> <span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
 
 <span class="n">ALTER</span> <span class="n">AGGREGATE</span> <span class="n">name</span> <span class="p">(</span> <span class="nb">type</span> <span class="p">[</span> <span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">new_owner</span>
 
@@ -302,7 +302,7 @@
 <div class="section" id="alter-conversion">
 <h2>3.1.14.3.3. ALTER CONVERSION<a class="headerlink" href="#alter-conversion" title="永久链接至标题">¶</a></h2>
 <p>修改编码转换定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">CONVERSION</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">CONVERSION</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
 
 <span class="n">ALTER</span> <span class="n">CONVERSION</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
 </pre></div>
@@ -312,7 +312,7 @@
 <div class="section" id="alter-database">
 <h2>3.1.14.3.4. ALTER DATABASE<a class="headerlink" href="#alter-database" title="永久链接至标题">¶</a></h2>
 <p>修改数据库属性。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="p">[</span> <span class="n">WITH</span> <span class="n">CONNECTION</span> <span class="n">LIMIT</span> <span class="n">connlimit</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="p">[</span> <span class="n">WITH</span> <span class="n">CONNECTION</span> <span class="n">LIMIT</span> <span class="n">connlimit</span> <span class="p">]</span>
 
 <span class="n">ALTER</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">parameter</span> <span class="p">{</span> <span class="n">TO</span> <span class="o">|</span> <span class="o">=</span> <span class="p">}</span> <span class="p">{</span> <span class="n">value</span> <span class="o">|</span> <span class="n">DEFAULT</span> <span class="p">}</span>
 
@@ -328,7 +328,7 @@
 <div class="section" id="alter-domain">
 <h2>3.1.14.3.5. ALTER DOMAIN<a class="headerlink" href="#alter-domain" title="永久链接至标题">¶</a></h2>
 <p>修改域的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="p">{</span> <span class="n">SET</span> <span class="n">DEFAULT</span> <span class="n">expression</span> <span class="o">|</span> <span class="n">DROP</span> <span class="n">DEFAULT</span> <span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="p">{</span> <span class="n">SET</span> <span class="n">DEFAULT</span> <span class="n">expression</span> <span class="o">|</span> <span class="n">DROP</span> <span class="n">DEFAULT</span> <span class="p">}</span>
 
 <span class="n">ALTER</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="p">{</span> <span class="n">SET</span> <span class="o">|</span> <span class="n">DROP</span> <span class="p">}</span> <span class="n">NOT</span> <span class="n">NULL</span>
 
@@ -346,7 +346,7 @@
 <div class="section" id="alter-external-table">
 <h2>3.1.14.3.6. ALTER EXTERNAL TABLE<a class="headerlink" href="#alter-external-table" title="永久链接至标题">¶</a></h2>
 <p>修改外部表的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="p">[</span><span class="n">COLUMN</span><span class="p">]</span> <span class="n">column</span> <span class="n">TO</span> <span class="n">new_column</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="p">[</span><span class="n">COLUMN</span><span class="p">]</span> <span class="n">column</span> <span class="n">TO</span> <span class="n">new_column</span>
 
 <span class="n">ALTER</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
 
@@ -360,7 +360,7 @@
 <div class="section" id="alter-function">
 <h2>3.1.14.3.7. ALTER FUNCTION<a class="headerlink" href="#alter-function" title="永久链接至标题">¶</a></h2>
 <p>修改函数的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">FUNCTION</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">FUNCTION</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
    <span class="n">action</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">[</span><span class="n">RESTRICT</span><span class="p">]</span>
 
 <span class="n">ALTER</span> <span class="n">FUNCTION</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
@@ -378,7 +378,7 @@
 <div class="section" id="alter-group">
 <h2>3.1.14.3.8. ALTER GROUP<a class="headerlink" href="#alter-group" title="永久链接至标题">¶</a></h2>
 <p>修改数据库角色的名称或者成员关系。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">GROUP</span> <span class="n">groupname</span> <span class="n">ADD</span> <span class="n">USER</span> <span class="n">username</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">GROUP</span> <span class="n">groupname</span> <span class="n">ADD</span> <span class="n">USER</span> <span class="n">username</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span>
 
 <span class="n">ALTER</span> <span class="n">GROUP</span> <span class="n">groupname</span> <span class="n">DROP</span> <span class="n">USER</span> <span class="n">username</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span>
 
@@ -390,7 +390,7 @@
 <div class="section" id="alter-index">
 <h2>3.1.14.3.9. ALTER INDEX<a class="headerlink" href="#alter-index" title="永久链接至标题">¶</a></h2>
 <p>修改索引的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
 
 <span class="n">ALTER</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">TABLESPACE</span> <span class="n">tablespace_name</span>
 
@@ -404,7 +404,7 @@
 <div class="section" id="alter-language">
 <h2>3.1.14.3.10. ALTER LANGUAGE<a class="headerlink" href="#alter-language" title="永久链接至标题">¶</a></h2>
 <p>修改过程语言的名称。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">LANGUAGE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">LANGUAGE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
 </pre></div>
 </div>
 <p>See ALTER LANGUAGE for more information.</p>
@@ -412,7 +412,7 @@
 <div class="section" id="alter-operator">
 <h2>3.1.14.3.11. ALTER OPERATOR<a class="headerlink" href="#alter-operator" title="永久链接至标题">¶</a></h2>
 <p>修改运算符的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">OPERATOR</span> <span class="n">name</span> <span class="p">(</span> <span class="p">{</span><span class="n">lefttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">,</span> <span class="p">{</span><span class="n">righttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">OPERATOR</span> <span class="n">name</span> <span class="p">(</span> <span class="p">{</span><span class="n">lefttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">,</span> <span class="p">{</span><span class="n">righttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">)</span>
    <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
 </pre></div>
 </div>
@@ -421,7 +421,7 @@
 <div class="section" id="alter-operator-class">
 <h2>3.1.14.3.12. ALTER OPERATOR CLASS<a class="headerlink" href="#alter-operator-class" title="永久链接至标题">¶</a></h2>
 <p>修改运算符类的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="n">name</span> <span class="n">USING</span> <span class="n">index_method</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="n">name</span> <span class="n">USING</span> <span class="n">index_method</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
 
 <span class="n">ALTER</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="n">name</span> <span class="n">USING</span> <span class="n">index_method</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
 </pre></div>
@@ -431,7 +431,7 @@
 <div class="section" id="alter-protocol">
 <h2>3.1.14.3.13. ALTER PROTOCOL<a class="headerlink" href="#alter-protocol" title="永久链接至标题">¶</a></h2>
 <p>修改外部表协议的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">PROTOCOL</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">PROTOCOL</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
 
 <span class="n">ALTER</span> <span class="n">PROTOCOL</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
 </pre></div>
@@ -441,7 +441,7 @@
 <div class="section" id="alter-resource-queue">
 <h2>3.1.14.3.14. ALTER RESOURCE QUEUE<a class="headerlink" href="#alter-resource-queue" title="永久链接至标题">¶</a></h2>
 <p>修改资源队列的限制。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">name</span> <span class="n">WITH</span> <span class="p">(</span> <span class="n">queue_attribute</span><span class="o">=</span><span class="n">value</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">name</span> <span class="n">WITH</span> <span class="p">(</span> <span class="n">queue_attribute</span><span class="o">=</span><span class="n">value</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>See ALTER RESOURCE QUEUE for more information.</p>
@@ -449,7 +449,7 @@
 <div class="section" id="alter-role">
 <h2>3.1.14.3.15. ALTER ROLE<a class="headerlink" href="#alter-role" title="永久链接至标题">¶</a></h2>
 <p>修改数据库角色（用户或组）。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
 
 <span class="n">ALTER</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">config_parameter</span> <span class="p">{</span><span class="n">TO</span> <span class="o">|</span> <span class="o">=</span><span class="p">}</span> <span class="p">{</span><span class="n">value</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span>
 
@@ -465,7 +465,7 @@
 <div class="section" id="alter-schema">
 <h2>3.1.14.3.16. ALTER SCHEMA<a class="headerlink" href="#alter-schema" title="永久链接至标题">¶</a></h2>
 <p>修改模式的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">SCHEMA</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">SCHEMA</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
 
 <span class="n">ALTER</span> <span class="n">SCHEMA</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
 </pre></div>
@@ -475,7 +475,7 @@
 <div class="section" id="alter-sequence">
 <h2>3.1.14.3.17. ALTER SEQUENCE<a class="headerlink" href="#alter-sequence" title="永久链接至标题">¶</a></h2>
 <p>修改序列生成器的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">SEQUENCE</span> <span class="n">name</span> <span class="p">[</span><span class="n">INCREMENT</span> <span class="p">[</span> <span class="n">BY</span> <span class="p">]</span> <span class="n">increment</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">SEQUENCE</span> <span class="n">name</span> <span class="p">[</span><span class="n">INCREMENT</span> <span class="p">[</span> <span class="n">BY</span> <span class="p">]</span> <span class="n">increment</span><span class="p">]</span>
      <span class="p">[</span><span class="n">MINVALUE</span> <span class="n">minvalue</span> <span class="o">|</span> <span class="n">NO</span> <span class="n">MINVALUE</span><span class="p">]</span>
      <span class="p">[</span><span class="n">MAXVALUE</span> <span class="n">maxvalue</span> <span class="o">|</span> <span class="n">NO</span> <span class="n">MAXVALUE</span><span class="p">]</span>
      <span class="p">[</span><span class="n">RESTART</span> <span class="p">[</span> <span class="n">WITH</span> <span class="p">]</span> <span class="n">start</span><span class="p">]</span>
@@ -490,7 +490,7 @@
 <div class="section" id="alter-table">
 <h2>3.1.14.3.18. ALTER TABLE<a class="headerlink" href="#alter-table" title="永久链接至标题">¶</a></h2>
 <p>修改表的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="p">[</span><span class="n">COLUMN</span><span class="p">]</span> <span class="n">column</span> <span class="n">TO</span> <span class="n">new_column</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="p">[</span><span class="n">COLUMN</span><span class="p">]</span> <span class="n">column</span> <span class="n">TO</span> <span class="n">new_column</span>
 
 <span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">new_name</span>
 
@@ -514,7 +514,7 @@
 <div class="section" id="alter-tablespace">
 <h2>3.1.14.3.19. ALTER TABLESPACE<a class="headerlink" href="#alter-tablespace" title="永久链接至标题">¶</a></h2>
 <p>修改表空间的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLESPACE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLESPACE</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
 
 <span class="n">ALTER</span> <span class="n">TABLESPACE</span> <span class="n">name</span> <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">newowner</span>
 </pre></div>
@@ -524,7 +524,7 @@
 <div class="section" id="alter-type">
 <h2>3.1.14.3.20. ALTER TYPE<a class="headerlink" href="#alter-type" title="永久链接至标题">¶</a></h2>
 <p>修改数据类型的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TYPE</span> <span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TYPE</span> <span class="n">name</span>
    <span class="n">OWNER</span> <span class="n">TO</span> <span class="n">new_owner</span> <span class="o">|</span> <span class="n">SET</span> <span class="n">SCHEMA</span> <span class="n">new_schema</span>
 </pre></div>
 </div>
@@ -533,7 +533,7 @@
 <div class="section" id="alter-user">
 <h2>3.1.14.3.21. ALTER USER<a class="headerlink" href="#alter-user" title="永久链接至标题">¶</a></h2>
 <p>修改数据库角色（用户）的定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">USER</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">USER</span> <span class="n">name</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">newname</span>
 
 <span class="n">ALTER</span> <span class="n">USER</span> <span class="n">name</span> <span class="n">SET</span> <span class="n">config_parameter</span> <span class="p">{</span><span class="n">TO</span> <span class="o">|</span> <span class="o">=</span><span class="p">}</span> <span class="p">{</span><span class="n">value</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span>
 
@@ -547,7 +547,7 @@
 <div class="section" id="analyze">
 <h2>3.1.14.3.22. ANALYZE<a class="headerlink" href="#analyze" title="永久链接至标题">¶</a></h2>
 <p>收集数据库的统计信息。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ANALYZE</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="n">ROOTPARTITION</span> <span class="p">[</span><span class="n">ALL</span><span class="p">]</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ANALYZE</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="n">ROOTPARTITION</span> <span class="p">[</span><span class="n">ALL</span><span class="p">]</span> <span class="p">]</span>
    <span class="p">[</span><span class="n">table</span> <span class="p">[</span> <span class="p">(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]]</span>
 </pre></div>
 </div>
@@ -556,7 +556,7 @@
 <div class="section" id="begin">
 <h2>3.1.14.3.23. BEGIN<a class="headerlink" href="#begin" title="永久链接至标题">¶</a></h2>
 <p>启动一个事务块。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">BEGIN</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span> <span class="p">[</span><span class="n">transaction_mode</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BEGIN</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span> <span class="p">[</span><span class="n">transaction_mode</span><span class="p">]</span>
       <span class="p">[</span><span class="n">READ</span> <span class="n">ONLY</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">WRITE</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -565,7 +565,7 @@
 <div class="section" id="checkpoint">
 <h2>3.1.14.3.24. CHECKPOINT<a class="headerlink" href="#checkpoint" title="永久链接至标题">¶</a></h2>
 <p>强制系统进行一次事务日志的检查点。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CHECKPOINT</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CHECKPOINT</span>
 </pre></div>
 </div>
 <p>See CHECKPOINT for more information.</p>
@@ -573,7 +573,7 @@
 <div class="section" id="close">
 <h2>3.1.14.3.25. CLOSE<a class="headerlink" href="#close" title="永久链接至标题">¶</a></h2>
 <p>关闭一个游标。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CLOSE</span> <span class="n">cursor_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CLOSE</span> <span class="n">cursor_name</span>
 </pre></div>
 </div>
 <p>See CLOSE for more information.</p>
@@ -582,7 +582,7 @@
 <h2>3.1.14.3.26. CLUSTER<a class="headerlink" href="#cluster" title="永久链接至标题">¶</a></h2>
 <p>根据索引的顺序，对 heap 表的记录进行物理上重新排序。
 HashData 数据仓库 不推荐使用此操作。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CLUSTER</span> <span class="n">indexname</span> <span class="n">ON</span> <span class="n">tablename</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CLUSTER</span> <span class="n">indexname</span> <span class="n">ON</span> <span class="n">tablename</span>
 
 <span class="n">CLUSTER</span> <span class="n">tablename</span>
 
@@ -594,7 +594,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="comment">
 <h2>3.1.14.3.27. COMMENT<a class="headerlink" href="#comment" title="永久链接至标题">¶</a></h2>
 <p>定义或修改对象的注释。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COMMENT</span> <span class="n">ON</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COMMENT</span> <span class="n">ON</span>
 <span class="p">{</span> <span class="n">TABLE</span> <span class="n">object_name</span> <span class="o">|</span>
   <span class="n">COLUMN</span> <span class="n">table_name</span><span class="o">.</span><span class="n">column_name</span> <span class="o">|</span>
   <span class="n">AGGREGATE</span> <span class="n">agg_name</span> <span class="p">(</span><span class="n">agg_type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])</span> <span class="o">|</span>
@@ -627,7 +627,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="commit">
 <h2>3.1.14.3.28. COMMIT<a class="headerlink" href="#commit" title="永久链接至标题">¶</a></h2>
 <p>提交当前事务。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COMMIT</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COMMIT</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See COMMIT for more information.</p>
@@ -635,7 +635,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="copy">
 <h2>3.1.14.3.29. COPY<a class="headerlink" href="#copy" title="永久链接至标题">¶</a></h2>
 <p>在表或文件之间拷贝数据。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COPY</span> <span class="n">table</span> <span class="p">[(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])]</span> <span class="n">FROM</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span> <span class="o">|</span> <span class="n">STDIN</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COPY</span> <span class="n">table</span> <span class="p">[(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])]</span> <span class="n">FROM</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span> <span class="o">|</span> <span class="n">STDIN</span><span class="p">}</span>
      <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span>
        <span class="p">[</span><span class="n">OIDS</span><span class="p">]</span>
        <span class="p">[</span><span class="n">HEADER</span><span class="p">]</span>
@@ -666,7 +666,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-aggregate">
 <h2>3.1.14.3.30. CREATE AGGREGATE<a class="headerlink" href="#create-aggregate" title="永久链接至标题">¶</a></h2>
 <p>定义聚合函数。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">ORDERED</span><span class="p">]</span> <span class="n">AGGREGATE</span> <span class="n">name</span> <span class="p">(</span><span class="n">input_data_type</span> <span class="p">[</span> <span class="p">,</span> <span class="o">...</span> <span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">ORDERED</span><span class="p">]</span> <span class="n">AGGREGATE</span> <span class="n">name</span> <span class="p">(</span><span class="n">input_data_type</span> <span class="p">[</span> <span class="p">,</span> <span class="o">...</span> <span class="p">])</span>
       <span class="p">(</span> <span class="n">SFUNC</span> <span class="o">=</span> <span class="n">sfunc</span><span class="p">,</span>
         <span class="n">STYPE</span> <span class="o">=</span> <span class="n">state_data_type</span>
         <span class="p">[,</span> <span class="n">PREFUNC</span> <span class="o">=</span> <span class="n">prefunc</span><span class="p">]</span>
@@ -680,7 +680,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-cast">
 <h2>3.1.14.3.31. CREATE CAST<a class="headerlink" href="#create-cast" title="永久链接至标题">¶</a></h2>
 <p>定义类型转换。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">CAST</span> <span class="p">(</span><span class="n">sourcetype</span> <span class="n">AS</span> <span class="n">targettype</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">CAST</span> <span class="p">(</span><span class="n">sourcetype</span> <span class="n">AS</span> <span class="n">targettype</span><span class="p">)</span>
        <span class="n">WITH</span> <span class="n">FUNCTION</span> <span class="n">funcname</span> <span class="p">(</span><span class="n">argtypes</span><span class="p">)</span>
        <span class="p">[</span><span class="n">AS</span> <span class="n">ASSIGNMENT</span> <span class="o">|</span> <span class="n">AS</span> <span class="n">IMPLICIT</span><span class="p">]</span>
 
@@ -693,7 +693,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-conversion">
 <h2>3.1.14.3.32. CREATE CONVERSION<a class="headerlink" href="#create-conversion" title="永久链接至标题">¶</a></h2>
 <p>定义编码转换。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">DEFAULT</span><span class="p">]</span> <span class="n">CONVERSION</span> <span class="n">name</span> <span class="n">FOR</span> <span class="n">source_encoding</span> <span class="n">TO</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">DEFAULT</span><span class="p">]</span> <span class="n">CONVERSION</span> <span class="n">name</span> <span class="n">FOR</span> <span class="n">source_encoding</span> <span class="n">TO</span>
      <span class="n">dest_encoding</span> <span class="n">FROM</span> <span class="n">funcname</span>
 </pre></div>
 </div>
@@ -702,7 +702,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-database">
 <h2>3.1.14.3.33. CREATE DATABASE<a class="headerlink" href="#create-database" title="永久链接至标题">¶</a></h2>
 <p>创建数据库。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="p">[</span><span class="n">OWNER</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">dbowner</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="p">[</span><span class="n">OWNER</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">dbowner</span><span class="p">]</span>
                      <span class="p">[</span><span class="n">TEMPLATE</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">template</span><span class="p">]</span>
                      <span class="p">[</span><span class="n">ENCODING</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">encoding</span><span class="p">]</span>
                      <span class="p">[</span><span class="n">TABLESPACE</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">tablespace</span><span class="p">]</span>
@@ -714,7 +714,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-domain">
 <h2>3.1.14.3.34. CREATE DOMAIN<a class="headerlink" href="#create-domain" title="永久链接至标题">¶</a></h2>
 <p>定义域。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="n">data_type</span> <span class="p">[</span><span class="n">DEFAULT</span> <span class="n">expression</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DOMAIN</span> <span class="n">name</span> <span class="p">[</span><span class="n">AS</span><span class="p">]</span> <span class="n">data_type</span> <span class="p">[</span><span class="n">DEFAULT</span> <span class="n">expression</span><span class="p">]</span>
        <span class="p">[</span><span class="n">CONSTRAINT</span> <span class="n">constraint_name</span>
        <span class="o">|</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="o">|</span> <span class="n">NULL</span>
        <span class="o">|</span> <span class="n">CHECK</span> <span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="p">[</span><span class="o">...</span><span class="p">]]</span>
@@ -725,7 +725,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-external-table">
 <h2>3.1.14.3.35. CREATE EXTERNAL TABLE<a class="headerlink" href="#create-external-table" title="永久链接至标题">¶</a></h2>
 <p>定义外部表。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">READABLE</span><span class="p">]</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">table_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">READABLE</span><span class="p">]</span> <span class="n">EXTERNAL</span> <span class="n">TABLE</span> <span class="n">table_name</span>
     <span class="p">(</span> <span class="n">column_name</span> <span class="n">data_type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">LIKE</span> <span class="n">other_table</span> <span class="p">)</span>
       <span class="n">LOCATION</span> <span class="p">(</span><span class="s1">&#39;file://seghost[:port]/path/file&#39;</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])</span>
         <span class="o">|</span> <span class="p">(</span><span class="s1">&#39;gpfdist://filehost[:port]/file_pattern[#transform]&#39;</span>
@@ -831,7 +831,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-function">
 <h2>3.1.14.3.36. CREATE FUNCTION<a class="headerlink" href="#create-function" title="永久链接至标题">¶</a></h2>
 <p>定义函数。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">OR</span> <span class="n">REPLACE</span><span class="p">]</span> <span class="n">FUNCTION</span> <span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">OR</span> <span class="n">REPLACE</span><span class="p">]</span> <span class="n">FUNCTION</span> <span class="n">name</span>
     <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
       <span class="p">[</span> <span class="n">RETURNS</span> <span class="p">{</span> <span class="p">[</span> <span class="n">SETOF</span> <span class="p">]</span> <span class="n">rettype</span>
         <span class="o">|</span> <span class="n">TABLE</span> <span class="p">([{</span> <span class="n">argname</span> <span class="n">argtype</span> <span class="o">|</span> <span class="n">LIKE</span> <span class="n">other</span> <span class="n">table</span> <span class="p">}</span>
@@ -852,7 +852,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-group">
 <h2>3.1.14.3.37. CREATE GROUP<a class="headerlink" href="#create-group" title="永久链接至标题">¶</a></h2>
 <p>定义数据库角色。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">GROUP</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">GROUP</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>See CREATE GROUP for more information.</p>
@@ -860,7 +860,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-index">
 <h2>3.1.14.3.38. CREATE INDEX<a class="headerlink" href="#create-index" title="永久链接至标题">¶</a></h2>
 <p>定义索引。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">UNIQUE</span><span class="p">]</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">ON</span> <span class="n">table</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">UNIQUE</span><span class="p">]</span> <span class="n">INDEX</span> <span class="n">name</span> <span class="n">ON</span> <span class="n">table</span>
        <span class="p">[</span><span class="n">USING</span> <span class="n">btree</span><span class="o">|</span><span class="n">bitmap</span><span class="o">|</span><span class="n">gist</span><span class="p">]</span>
        <span class="p">(</span> <span class="p">{</span><span class="n">column</span> <span class="o">|</span> <span class="p">(</span><span class="n">expression</span><span class="p">)}</span> <span class="p">[</span><span class="n">opclass</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span>
        <span class="p">[</span> <span class="n">WITH</span> <span class="p">(</span> <span class="n">FILLFACTOR</span> <span class="o">=</span> <span class="n">value</span> <span class="p">)</span> <span class="p">]</span>
@@ -873,7 +873,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-language">
 <h2>3.1.14.3.39. CREATE LANGUAGE<a class="headerlink" href="#create-language" title="永久链接至标题">¶</a></h2>
 <p>定义过程语言。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">PROCEDURAL</span><span class="p">]</span> <span class="n">LANGUAGE</span> <span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">PROCEDURAL</span><span class="p">]</span> <span class="n">LANGUAGE</span> <span class="n">name</span>
 
 <span class="n">CREATE</span> <span class="p">[</span><span class="n">TRUSTED</span><span class="p">]</span> <span class="p">[</span><span class="n">PROCEDURAL</span><span class="p">]</span> <span class="n">LANGUAGE</span> <span class="n">name</span>
        <span class="n">HANDLER</span> <span class="n">call_handler</span> <span class="p">[</span><span class="n">VALIDATOR</span> <span class="n">valfunction</span><span class="p">]</span>
@@ -884,7 +884,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-operator">
 <h2>3.1.14.3.40. CREATE OPERATOR<a class="headerlink" href="#create-operator" title="永久链接至标题">¶</a></h2>
 <p>定义运算符。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">OPERATOR</span> <span class="n">name</span> <span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">OPERATOR</span> <span class="n">name</span> <span class="p">(</span>
        <span class="n">PROCEDURE</span> <span class="o">=</span> <span class="n">funcname</span>
        <span class="p">[,</span> <span class="n">LEFTARG</span> <span class="o">=</span> <span class="n">lefttype</span><span class="p">]</span> <span class="p">[,</span> <span class="n">RIGHTARG</span> <span class="o">=</span> <span class="n">righttype</span><span class="p">]</span>
        <span class="p">[,</span> <span class="n">COMMUTATOR</span> <span class="o">=</span> <span class="n">com_op</span><span class="p">]</span> <span class="p">[,</span> <span class="n">NEGATOR</span> <span class="o">=</span> <span class="n">neg_op</span><span class="p">]</span>
@@ -899,7 +899,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-operator-class">
 <h2>3.1.14.3.41. CREATE OPERATOR CLASS<a class="headerlink" href="#create-operator-class" title="永久链接至标题">¶</a></h2>
 <p>定义运算符类。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="n">name</span> <span class="p">[</span><span class="n">DEFAULT</span><span class="p">]</span> <span class="n">FOR</span> <span class="n">TYPE</span> <span class="n">data_type</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="n">name</span> <span class="p">[</span><span class="n">DEFAULT</span><span class="p">]</span> <span class="n">FOR</span> <span class="n">TYPE</span> <span class="n">data_type</span>
   <span class="n">USING</span> <span class="n">index_method</span> <span class="n">AS</span>
   <span class="p">{</span>
   <span class="n">OPERATOR</span> <span class="n">strategy_number</span> <span class="n">op_name</span> <span class="p">[(</span><span class="n">op_type</span><span class="p">,</span> <span class="n">op_type</span><span class="p">)]</span> <span class="p">[</span><span class="n">RECHECK</span><span class="p">]</span>
@@ -913,7 +913,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-resource-queue">
 <h2>3.1.14.3.42. CREATE RESOURCE QUEUE<a class="headerlink" href="#create-resource-queue" title="永久链接至标题">¶</a></h2>
 <p>定义资源队列。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">name</span> <span class="n">WITH</span> <span class="p">(</span><span class="n">queue_attribute</span><span class="o">=</span><span class="n">value</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">name</span> <span class="n">WITH</span> <span class="p">(</span><span class="n">queue_attribute</span><span class="o">=</span><span class="n">value</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">])</span>
 </pre></div>
 </div>
 <p>See CREATE RESOURCE QUEUE for more information.</p>
@@ -921,7 +921,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-role">
 <h2>3.1.14.3.43. CREATE ROLE<a class="headerlink" href="#create-role" title="永久链接至标题">¶</a></h2>
 <p>定义数据库角色（用户或组）</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="p">[[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">ROLE</span> <span class="n">name</span> <span class="p">[[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]]</span>
 </pre></div>
 </div>
 <p>See CREATE ROLE for more information.</p>
@@ -929,7 +929,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-rule">
 <h2>3.1.14.3.44. CREATE RULE<a class="headerlink" href="#create-rule" title="永久链接至标题">¶</a></h2>
 <p>定义重写规则。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">OR</span> <span class="n">REPLACE</span><span class="p">]</span> <span class="n">RULE</span> <span class="n">name</span> <span class="n">AS</span> <span class="n">ON</span> <span class="n">event</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">OR</span> <span class="n">REPLACE</span><span class="p">]</span> <span class="n">RULE</span> <span class="n">name</span> <span class="n">AS</span> <span class="n">ON</span> <span class="n">event</span>
   <span class="n">TO</span> <span class="n">table</span> <span class="p">[</span><span class="n">WHERE</span> <span class="n">condition</span><span class="p">]</span>
   <span class="n">DO</span> <span class="p">[</span><span class="n">ALSO</span> <span class="o">|</span> <span class="n">INSTEAD</span><span class="p">]</span> <span class="p">{</span> <span class="n">NOTHING</span> <span class="o">|</span> <span class="n">command</span> <span class="o">|</span> <span class="p">(</span><span class="n">command</span><span class="p">;</span> <span class="n">command</span>
   <span class="o">...</span><span class="p">)</span> <span class="p">}</span>
@@ -940,7 +940,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-schema">
 <h2>3.1.14.3.45. CREATE SCHEMA<a class="headerlink" href="#create-schema" title="永久链接至标题">¶</a></h2>
 <p>定义模式。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SCHEMA</span> <span class="n">schema_name</span> <span class="p">[</span><span class="n">AUTHORIZATION</span> <span class="n">username</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SCHEMA</span> <span class="n">schema_name</span> <span class="p">[</span><span class="n">AUTHORIZATION</span> <span class="n">username</span><span class="p">]</span>
    <span class="p">[</span><span class="n">schema_element</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]]</span>
 
 <span class="n">CREATE</span> <span class="n">SCHEMA</span> <span class="n">AUTHORIZATION</span> <span class="n">rolename</span> <span class="p">[</span><span class="n">schema_element</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]]</span>
@@ -951,7 +951,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-sequence">
 <h2>3.1.14.3.46. CREATE SEQUENCE<a class="headerlink" href="#create-sequence" title="永久链接至标题">¶</a></h2>
 <p>定义序列生成器。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">]</span> <span class="n">SEQUENCE</span> <span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">]</span> <span class="n">SEQUENCE</span> <span class="n">name</span>
        <span class="p">[</span><span class="n">INCREMENT</span> <span class="p">[</span><span class="n">BY</span><span class="p">]</span> <span class="n">value</span><span class="p">]</span>
        <span class="p">[</span><span class="n">MINVALUE</span> <span class="n">minvalue</span> <span class="o">|</span> <span class="n">NO</span> <span class="n">MINVALUE</span><span class="p">]</span>
        <span class="p">[</span><span class="n">MAXVALUE</span> <span class="n">maxvalue</span> <span class="o">|</span> <span class="n">NO</span> <span class="n">MAXVALUE</span><span class="p">]</span>
@@ -966,7 +966,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-table">
 <h2>3.1.14.3.47. CREATE TABLE<a class="headerlink" href="#create-table" title="永久链接至标题">¶</a></h2>
 <p>定义表。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[[</span><span class="n">GLOBAL</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="p">{</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">}]</span> <span class="n">TABLE</span> <span class="n">table_name</span> <span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[[</span><span class="n">GLOBAL</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="p">{</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">}]</span> <span class="n">TABLE</span> <span class="n">table_name</span> <span class="p">(</span>
 <span class="p">[</span> <span class="p">{</span> <span class="n">column_name</span> <span class="n">data_type</span> <span class="p">[</span> <span class="n">DEFAULT</span> <span class="n">default_expr</span> <span class="p">]</span>
    <span class="p">[</span><span class="n">column_constraint</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span>
 <span class="p">[</span> <span class="n">ENCODING</span> <span class="p">(</span> <span class="n">storage_directive</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
@@ -1000,7 +1000,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-table-as">
 <h2>3.1.14.3.48. CREATE TABLE AS<a class="headerlink" href="#create-table-as" title="永久链接至标题">¶</a></h2>
 <p>根据查询结果定义一张表。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span> <span class="p">[</span><span class="n">GLOBAL</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="p">{</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">}</span> <span class="p">]</span> <span class="n">TABLE</span> <span class="n">table_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span> <span class="p">[</span><span class="n">GLOBAL</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="p">{</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">}</span> <span class="p">]</span> <span class="n">TABLE</span> <span class="n">table_name</span>
    <span class="p">[(</span><span class="n">column_name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]</span>
    <span class="p">[</span> <span class="n">WITH</span> <span class="p">(</span> <span class="n">storage_parameter</span><span class="o">=</span><span class="n">value</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
    <span class="p">[</span><span class="n">ON</span> <span class="n">COMMIT</span> <span class="p">{</span><span class="n">PRESERVE</span> <span class="n">ROWS</span> <span class="o">|</span> <span class="n">DELETE</span> <span class="n">ROWS</span> <span class="o">|</span> <span class="n">DROP</span><span class="p">}]</span>
@@ -1014,7 +1014,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-tablespace">
 <h2>3.1.14.3.49. CREATE TABLESPACE<a class="headerlink" href="#create-tablespace" title="永久链接至标题">¶</a></h2>
 <p>定义表空间。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLESPACE</span> <span class="n">tablespace_name</span> <span class="p">[</span><span class="n">OWNER</span> <span class="n">username</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLESPACE</span> <span class="n">tablespace_name</span> <span class="p">[</span><span class="n">OWNER</span> <span class="n">username</span><span class="p">]</span>
        <span class="n">FILESPACE</span> <span class="n">filespace_name</span>
 </pre></div>
 </div>
@@ -1023,7 +1023,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-type">
 <h2>3.1.14.3.50. CREATE TYPE<a class="headerlink" href="#create-type" title="永久链接至标题">¶</a></h2>
 <p>定义数据类型。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TYPE</span> <span class="n">name</span> <span class="n">AS</span> <span class="p">(</span> <span class="n">attribute_name</span> <span class="n">data_type</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TYPE</span> <span class="n">name</span> <span class="n">AS</span> <span class="p">(</span> <span class="n">attribute_name</span> <span class="n">data_type</span> <span class="p">[,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
 
 <span class="n">CREATE</span> <span class="n">TYPE</span> <span class="n">name</span> <span class="p">(</span>
     <span class="n">INPUT</span> <span class="o">=</span> <span class="n">input_function</span><span class="p">,</span>
@@ -1046,7 +1046,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-user">
 <h2>3.1.14.3.51. CREATE USER<a class="headerlink" href="#create-user" title="永久链接至标题">¶</a></h2>
 <p>定义一个数据库角色，并且默认具有登陆权限。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">USER</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">USER</span> <span class="n">name</span> <span class="p">[</span> <span class="p">[</span><span class="n">WITH</span><span class="p">]</span> <span class="n">option</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>See CREATE USER for more information.</p>
@@ -1054,7 +1054,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="create-view">
 <h2>3.1.14.3.52. CREATE VIEW<a class="headerlink" href="#create-view" title="永久链接至标题">¶</a></h2>
 <p>定义视图。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">OR</span> <span class="n">REPLACE</span><span class="p">]</span> <span class="p">[</span><span class="n">TEMP</span> <span class="o">|</span> <span class="n">TEMPORARY</span><span class="p">]</span> <span class="n">VIEW</span> <span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="p">[</span><span class="n">OR</span> <span class="n">REPLACE</span><span class="p">]</span> <span class="p">[</span><span class="n">TEMP</span> <span class="o">|</span> <span class="n">TEMPORARY</span><span class="p">]</span> <span class="n">VIEW</span> <span class="n">name</span>
        <span class="p">[</span> <span class="p">(</span> <span class="n">column_name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
        <span class="n">AS</span> <span class="n">query</span>
 </pre></div>
@@ -1064,7 +1064,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="deallocate">
 <h2>3.1.14.3.53. DEALLOCATE<a class="headerlink" href="#deallocate" title="永久链接至标题">¶</a></h2>
 <p>回收并删除预优化的语句。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DEALLOCATE</span> <span class="p">[</span><span class="n">PREPARE</span><span class="p">]</span> <span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DEALLOCATE</span> <span class="p">[</span><span class="n">PREPARE</span><span class="p">]</span> <span class="n">name</span>
 </pre></div>
 </div>
 <p>See DEALLOCATE for more information.</p>
@@ -1072,7 +1072,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="declare">
 <h2>3.1.14.3.54. DECLARE<a class="headerlink" href="#declare" title="永久链接至标题">¶</a></h2>
 <p>定义一个游标。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DECLARE</span> <span class="n">name</span> <span class="p">[</span><span class="n">BINARY</span><span class="p">]</span> <span class="p">[</span><span class="n">INSENSITIVE</span><span class="p">]</span> <span class="p">[</span><span class="n">NO</span> <span class="n">SCROLL</span><span class="p">]</span> <span class="n">CURSOR</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DECLARE</span> <span class="n">name</span> <span class="p">[</span><span class="n">BINARY</span><span class="p">]</span> <span class="p">[</span><span class="n">INSENSITIVE</span><span class="p">]</span> <span class="p">[</span><span class="n">NO</span> <span class="n">SCROLL</span><span class="p">]</span> <span class="n">CURSOR</span>
      <span class="p">[{</span><span class="n">WITH</span> <span class="o">|</span> <span class="n">WITHOUT</span><span class="p">}</span> <span class="n">HOLD</span><span class="p">]</span>
      <span class="n">FOR</span> <span class="n">query</span> <span class="p">[</span><span class="n">FOR</span> <span class="n">READ</span> <span class="n">ONLY</span><span class="p">]</span>
 </pre></div>
@@ -1082,7 +1082,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="delete">
 <h2>3.1.14.3.55. DELETE<a class="headerlink" href="#delete" title="永久链接至标题">¶</a></h2>
 <p>从一张表中删除记录。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DELETE</span> <span class="n">FROM</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">table</span> <span class="p">[[</span><span class="n">AS</span><span class="p">]</span> <span class="n">alias</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DELETE</span> <span class="n">FROM</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">table</span> <span class="p">[[</span><span class="n">AS</span><span class="p">]</span> <span class="n">alias</span><span class="p">]</span>
       <span class="p">[</span><span class="n">USING</span> <span class="n">usinglist</span><span class="p">]</span>
       <span class="p">[</span><span class="n">WHERE</span> <span class="n">condition</span> <span class="o">|</span> <span class="n">WHERE</span> <span class="n">CURRENT</span> <span class="n">OF</span> <span class="n">cursor_name</span> <span class="p">]</span>
 </pre></div>
@@ -1092,7 +1092,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-aggregate">
 <h2>3.1.14.3.56. DROP AGGREGATE<a class="headerlink" href="#drop-aggregate" title="永久链接至标题">¶</a></h2>
 <p>删除聚合函数。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">AGGREGATE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">(</span> <span class="nb">type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">AGGREGATE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">(</span> <span class="nb">type</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP AGGREGATE for more information.</p>
@@ -1100,7 +1100,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-cast">
 <h2>3.1.14.3.57. DROP CAST<a class="headerlink" href="#drop-cast" title="永久链接至标题">¶</a></h2>
 <p>删除类型转换。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">CAST</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="p">(</span><span class="n">sourcetype</span> <span class="n">AS</span> <span class="n">targettype</span><span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">CAST</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="p">(</span><span class="n">sourcetype</span> <span class="n">AS</span> <span class="n">targettype</span><span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP CAST for more information.</p>
@@ -1108,7 +1108,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-conversion">
 <h2>3.1.14.3.58. DROP CONVERSION<a class="headerlink" href="#drop-conversion" title="永久链接至标题">¶</a></h2>
 <p>删除编码转换。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">CONVERSION</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">CONVERSION</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP CONVERSION for more information.</p>
@@ -1116,7 +1116,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-database">
 <h2>3.1.14.3.59. DROP DATABASE<a class="headerlink" href="#drop-database" title="永久链接至标题">¶</a></h2>
 <p>删除数据库。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">DATABASE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">DATABASE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span>
 </pre></div>
 </div>
 <p>See DROP DATABASE for more information.</p>
@@ -1124,7 +1124,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-domain">
 <h2>3.1.14.3.60. DROP DOMAIN<a class="headerlink" href="#drop-domain" title="永久链接至标题">¶</a></h2>
 <p>删除域。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">DOMAIN</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>  <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">DOMAIN</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>  <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP DOMAIN for more information.</p>
@@ -1132,7 +1132,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-external-table">
 <h2>3.1.14.3.61. DROP EXTERNAL TABLE<a class="headerlink" href="#drop-external-table" title="永久链接至标题">¶</a></h2>
 <p>删除外部表定义。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">EXTERNAL</span> <span class="p">[</span><span class="n">WEB</span><span class="p">]</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">EXTERNAL</span> <span class="p">[</span><span class="n">WEB</span><span class="p">]</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP EXTERNAL TABLE for more information.</p>
@@ -1140,7 +1140,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-function">
 <h2>3.1.14.3.62. DROP FUNCTION<a class="headerlink" href="#drop-function" title="永久链接至标题">¶</a></h2>
 <p>删除函数。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">FUNCTION</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">FUNCTION</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="n">argmode</span><span class="p">]</span> <span class="p">[</span><span class="n">argname</span><span class="p">]</span> <span class="n">argtype</span>
     <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1149,7 +1149,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-group">
 <h2>3.1.14.3.63. DROP GROUP<a class="headerlink" href="#drop-group" title="永久链接至标题">¶</a></h2>
 <p>删除数据库角色。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">GROUP</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">GROUP</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP GROUP for more information.</p>
@@ -1157,7 +1157,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-index">
 <h2>3.1.14.3.64. DROP INDEX<a class="headerlink" href="#drop-index" title="永久链接至标题">¶</a></h2>
 <p>删除索引。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">INDEX</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">INDEX</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP INDEX for more information.</p>
@@ -1165,7 +1165,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-language">
 <h2>3.1.14.3.65. DROP LANGUAGE<a class="headerlink" href="#drop-language" title="永久链接至标题">¶</a></h2>
 <p>删除过程语言。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="p">[</span><span class="n">PROCEDURAL</span><span class="p">]</span> <span class="n">LANGUAGE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="p">[</span><span class="n">PROCEDURAL</span><span class="p">]</span> <span class="n">LANGUAGE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP LANGUAGE for more information.</p>
@@ -1173,7 +1173,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-operator">
 <h2>3.1.14.3.66. DROP OPERATOR<a class="headerlink" href="#drop-operator" title="永久链接至标题">¶</a></h2>
 <p>删除运算符。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">OPERATOR</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">(</span> <span class="p">{</span><span class="n">lefttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">OPERATOR</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">(</span> <span class="p">{</span><span class="n">lefttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">,</span>
     <span class="p">{</span><span class="n">righttype</span> <span class="o">|</span> <span class="n">NONE</span><span class="p">}</span> <span class="p">)</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1182,7 +1182,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-operator-class">
 <h2>3.1.14.3.67. DROP OPERATOR CLASS<a class="headerlink" href="#drop-operator-class" title="永久链接至标题">¶</a></h2>
 <p>删除运算符类。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="n">USING</span> <span class="n">index_method</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">OPERATOR</span> <span class="n">CLASS</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="n">USING</span> <span class="n">index_method</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP OPERATOR CLASS for more information.</p>
@@ -1190,7 +1190,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-owned">
 <h2>3.1.14.3.68. DROP OWNED<a class="headerlink" href="#drop-owned" title="永久链接至标题">¶</a></h2>
 <p>删除一个数据库角色拥有的所有数据库对象。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">OWNED</span> <span class="n">BY</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">OWNED</span> <span class="n">BY</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP OWNED for more information.</p>
@@ -1198,7 +1198,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-resource-queue">
 <h2>3.1.14.3.69. DROP RESOURCE QUEUE<a class="headerlink" href="#drop-resource-queue" title="永久链接至标题">¶</a></h2>
 <p>删除资源队列。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">queue_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">RESOURCE</span> <span class="n">QUEUE</span> <span class="n">queue_name</span>
 </pre></div>
 </div>
 <p>See DROP RESOURCE QUEUE for more information.</p>
@@ -1206,7 +1206,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-role">
 <h2>3.1.14.3.70. DROP ROLE<a class="headerlink" href="#drop-role" title="永久链接至标题">¶</a></h2>
 <p>删除数据库角色。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">ROLE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">ROLE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP ROLE for more information.</p>
@@ -1214,7 +1214,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-rule">
 <h2>3.1.14.3.71. DROP RULE<a class="headerlink" href="#drop-rule" title="永久链接至标题">¶</a></h2>
 <p>删除重写规则。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">RULE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="n">ON</span> <span class="n">relation</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">RULE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="n">ON</span> <span class="n">relation</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP RULE for more information.</p>
@@ -1222,7 +1222,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-schema">
 <h2>3.1.14.3.72. DROP SCHEMA<a class="headerlink" href="#drop-schema" title="永久链接至标题">¶</a></h2>
 <p>删除模式。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">SCHEMA</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">SCHEMA</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP SCHEMA for more information.</p>
@@ -1230,7 +1230,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-sequence">
 <h2>3.1.14.3.73. DROP SEQUENCE<a class="headerlink" href="#drop-sequence" title="永久链接至标题">¶</a></h2>
 <p>删除序列。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">SEQUENCE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">SEQUENCE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP SEQUENCE for more information.</p>
@@ -1238,7 +1238,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-table">
 <h2>3.1.14.3.74. DROP TABLE<a class="headerlink" href="#drop-table" title="永久链接至标题">¶</a></h2>
 <p>删除表。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP TABLE for more information.</p>
@@ -1246,7 +1246,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-tablespace">
 <h2>3.1.14.3.75. DROP TABLESPACE<a class="headerlink" href="#drop-tablespace" title="永久链接至标题">¶</a></h2>
 <p>删除表空间。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">TABLESPACE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">tablespacename</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">TABLESPACE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">tablespacename</span>
 </pre></div>
 </div>
 <p>See DROP TABLESPACE for more information.</p>
@@ -1254,7 +1254,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-type">
 <h2>3.1.14.3.76. DROP TYPE<a class="headerlink" href="#drop-type" title="永久链接至标题">¶</a></h2>
 <p>删除数据类型。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">TYPE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">TYPE</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP TYPE for more information.</p>
@@ -1262,7 +1262,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-user">
 <h2>3.1.14.3.77. DROP USER<a class="headerlink" href="#drop-user" title="永久链接至标题">¶</a></h2>
 <p>删除数据库角色。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">USER</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">USER</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP USER for more information.</p>
@@ -1270,7 +1270,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="drop-view">
 <h2>3.1.14.3.78. DROP VIEW<a class="headerlink" href="#drop-view" title="永久链接至标题">¶</a></h2>
 <p>删除视图。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">VIEW</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">VIEW</span> <span class="p">[</span><span class="n">IF</span> <span class="n">EXISTS</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See DROP VIEW for more information.</p>
@@ -1278,7 +1278,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="end">
 <h2>3.1.14.3.79. END<a class="headerlink" href="#end" title="永久链接至标题">¶</a></h2>
 <p>提交当前事务。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">END</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">END</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See END for more information.</p>
@@ -1286,7 +1286,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="execute">
 <h2>3.1.14.3.80. EXECUTE<a class="headerlink" href="#execute" title="永久链接至标题">¶</a></h2>
 <p>执行一个预优化的 SQL 语句。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">EXECUTE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">(</span><span class="n">parameter</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EXECUTE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">(</span><span class="n">parameter</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>See EXECUTE for more information.</p>
@@ -1294,7 +1294,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="explain">
 <h2>3.1.14.3.81. EXPLAIN<a class="headerlink" href="#explain" title="永久链接至标题">¶</a></h2>
 <p>显示一个语句的查询计划。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">EXPLAIN</span> <span class="p">[</span><span class="n">ANALYZE</span><span class="p">]</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="n">statement</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EXPLAIN</span> <span class="p">[</span><span class="n">ANALYZE</span><span class="p">]</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="n">statement</span>
 </pre></div>
 </div>
 <p>See EXPLAIN for more information.</p>
@@ -1302,7 +1302,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="fetch">
 <h2>3.1.14.3.82. FETCH<a class="headerlink" href="#fetch" title="永久链接至标题">¶</a></h2>
 <p>从游标对应的查询中，取得记录。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">FETCH</span> <span class="p">[</span> <span class="n">forward_direction</span> <span class="p">{</span> <span class="n">FROM</span> <span class="o">|</span> <span class="n">IN</span> <span class="p">}</span> <span class="p">]</span> <span class="n">cursorname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FETCH</span> <span class="p">[</span> <span class="n">forward_direction</span> <span class="p">{</span> <span class="n">FROM</span> <span class="o">|</span> <span class="n">IN</span> <span class="p">}</span> <span class="p">]</span> <span class="n">cursorname</span>
 </pre></div>
 </div>
 <p>See FETCH for more information.</p>
@@ -1310,7 +1310,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="grant">
 <h2>3.1.14.3.83. GRANT<a class="headerlink" href="#grant" title="永久链接至标题">¶</a></h2>
 <p>授予访问权限。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GRANT</span> <span class="p">{</span> <span class="p">{</span><span class="n">SELECT</span> <span class="o">|</span> <span class="n">INSERT</span> <span class="o">|</span> <span class="n">UPDATE</span> <span class="o">|</span> <span class="n">DELETE</span> <span class="o">|</span> <span class="n">REFERENCES</span> <span class="o">|</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRANT</span> <span class="p">{</span> <span class="p">{</span><span class="n">SELECT</span> <span class="o">|</span> <span class="n">INSERT</span> <span class="o">|</span> <span class="n">UPDATE</span> <span class="o">|</span> <span class="n">DELETE</span> <span class="o">|</span> <span class="n">REFERENCES</span> <span class="o">|</span>
 <span class="n">TRIGGER</span> <span class="o">|</span> <span class="n">TRUNCATE</span> <span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
     <span class="n">ON</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">tablename</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
     <span class="n">TO</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">WITH</span> <span class="n">GRANT</span> <span class="n">OPTION</span><span class="p">]</span>
@@ -1354,7 +1354,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="insert">
 <h2>3.1.14.3.84. INSERT<a class="headerlink" href="#insert" title="永久链接至标题">¶</a></h2>
 <p>在一张表中创建新的记录。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">table</span> <span class="p">[(</span> <span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">table</span> <span class="p">[(</span> <span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]</span>
    <span class="p">{</span><span class="n">DEFAULT</span> <span class="n">VALUES</span> <span class="o">|</span> <span class="n">VALUES</span> <span class="p">(</span> <span class="p">{</span><span class="n">expression</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span>
    <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">query</span><span class="p">}</span>
 </pre></div>
@@ -1364,7 +1364,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="lock">
 <h2>3.1.14.3.85. LOCK<a class="headerlink" href="#lock" title="永久链接至标题">¶</a></h2>
 <p>为一张表显示地设置一把锁。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LOCK</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">IN</span> <span class="n">lockmode</span> <span class="n">MODE</span><span class="p">]</span> <span class="p">[</span><span class="n">NOWAIT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LOCK</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">IN</span> <span class="n">lockmode</span> <span class="n">MODE</span><span class="p">]</span> <span class="p">[</span><span class="n">NOWAIT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See LOCK for more information.</p>
@@ -1372,7 +1372,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="move">
 <h2>3.1.14.3.86. MOVE<a class="headerlink" href="#move" title="永久链接至标题">¶</a></h2>
 <p>游标定位。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MOVE</span> <span class="p">[</span> <span class="n">forward_direction</span> <span class="p">{</span><span class="n">FROM</span> <span class="o">|</span> <span class="n">IN</span><span class="p">}</span> <span class="p">]</span> <span class="n">cursorname</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MOVE</span> <span class="p">[</span> <span class="n">forward_direction</span> <span class="p">{</span><span class="n">FROM</span> <span class="o">|</span> <span class="n">IN</span><span class="p">}</span> <span class="p">]</span> <span class="n">cursorname</span>
 </pre></div>
 </div>
 <p>See MOVE for more information.</p>
@@ -1380,7 +1380,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="prepare">
 <h2>3.1.14.3.87. PREPARE<a class="headerlink" href="#prepare" title="永久链接至标题">¶</a></h2>
 <p>预优化一个查询语句。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PREPARE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">(</span><span class="n">datatype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span> <span class="n">AS</span> <span class="n">statement</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PREPARE</span> <span class="n">name</span> <span class="p">[</span> <span class="p">(</span><span class="n">datatype</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span> <span class="n">AS</span> <span class="n">statement</span>
 </pre></div>
 </div>
 <p>See PREPARE for more information.</p>
@@ -1388,7 +1388,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="reassign-owned">
 <h2>3.1.14.3.88. REASSIGN OWNED<a class="headerlink" href="#reassign-owned" title="永久链接至标题">¶</a></h2>
 <p>将一个角色拥有的所有数据库对象变更给另一个角色。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">REASSIGN</span> <span class="n">OWNED</span> <span class="n">BY</span> <span class="n">old_role</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="n">TO</span> <span class="n">new_role</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">REASSIGN</span> <span class="n">OWNED</span> <span class="n">BY</span> <span class="n">old_role</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="n">TO</span> <span class="n">new_role</span>
 </pre></div>
 </div>
 <p>See REASSIGN OWNED for more information.</p>
@@ -1396,7 +1396,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="reindex">
 <h2>3.1.14.3.89. REINDEX<a class="headerlink" href="#reindex" title="永久链接至标题">¶</a></h2>
 <p>重建索引。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">REINDEX</span> <span class="p">{</span><span class="n">INDEX</span> <span class="o">|</span> <span class="n">TABLE</span> <span class="o">|</span> <span class="n">DATABASE</span> <span class="o">|</span> <span class="n">SYSTEM</span><span class="p">}</span> <span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">REINDEX</span> <span class="p">{</span><span class="n">INDEX</span> <span class="o">|</span> <span class="n">TABLE</span> <span class="o">|</span> <span class="n">DATABASE</span> <span class="o">|</span> <span class="n">SYSTEM</span><span class="p">}</span> <span class="n">name</span>
 </pre></div>
 </div>
 <p>See REINDEX for more information.</p>
@@ -1404,7 +1404,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="release-savepoint">
 <h2>3.1.14.3.90. RELEASE SAVEPOINT<a class="headerlink" href="#release-savepoint" title="永久链接至标题">¶</a></h2>
 <p>清理一个之前定义的保存点。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">RELEASE</span> <span class="p">[</span><span class="n">SAVEPOINT</span><span class="p">]</span> <span class="n">savepoint_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RELEASE</span> <span class="p">[</span><span class="n">SAVEPOINT</span><span class="p">]</span> <span class="n">savepoint_name</span>
 </pre></div>
 </div>
 <p>See RELEASE SAVEPOINT for more information.</p>
@@ -1412,7 +1412,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="reset">
 <h2>3.1.14.3.91. RESET<a class="headerlink" href="#reset" title="永久链接至标题">¶</a></h2>
 <p>将系统配置参数的值恢复成默认值。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">RESET</span> <span class="n">configuration_parameter</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RESET</span> <span class="n">configuration_parameter</span>
 
 <span class="n">RESET</span> <span class="n">ALL</span>
 </pre></div>
@@ -1422,7 +1422,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="revoke">
 <h2>3.1.14.3.92. REVOKE<a class="headerlink" href="#revoke" title="永久链接至标题">¶</a></h2>
 <p>删除访问权限。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">REVOKE</span> <span class="p">[</span><span class="n">GRANT</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="p">{</span> <span class="p">{</span><span class="n">SELECT</span> <span class="o">|</span> <span class="n">INSERT</span> <span class="o">|</span> <span class="n">UPDATE</span> <span class="o">|</span> <span class="n">DELETE</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">REVOKE</span> <span class="p">[</span><span class="n">GRANT</span> <span class="n">OPTION</span> <span class="n">FOR</span><span class="p">]</span> <span class="p">{</span> <span class="p">{</span><span class="n">SELECT</span> <span class="o">|</span> <span class="n">INSERT</span> <span class="o">|</span> <span class="n">UPDATE</span> <span class="o">|</span> <span class="n">DELETE</span>
        <span class="o">|</span> <span class="n">REFERENCES</span> <span class="o">|</span> <span class="n">TRIGGER</span> <span class="o">|</span> <span class="n">TRUNCATE</span> <span class="p">}</span> <span class="p">[,</span><span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="n">ALL</span> <span class="p">[</span><span class="n">PRIVILEGES</span><span class="p">]</span> <span class="p">}</span>
        <span class="n">ON</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">tablename</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
        <span class="n">FROM</span> <span class="p">{</span><span class="n">rolename</span> <span class="o">|</span> <span class="n">PUBLIC</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
@@ -1472,7 +1472,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="rollback">
 <h2>3.1.14.3.93. ROLLBACK<a class="headerlink" href="#rollback" title="永久链接至标题">¶</a></h2>
 <p>终止当前事务。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ROLLBACK</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ROLLBACK</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See ROLLBACK for more information.</p>
@@ -1480,7 +1480,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="rollback-to-savepoint">
 <h2>3.1.14.3.94. ROLLBACK TO SAVEPOINT<a class="headerlink" href="#rollback-to-savepoint" title="永久链接至标题">¶</a></h2>
 <p>将当前事务回滚到一个指定的保存点。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ROLLBACK</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span> <span class="n">TO</span> <span class="p">[</span><span class="n">SAVEPOINT</span><span class="p">]</span> <span class="n">savepoint_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ROLLBACK</span> <span class="p">[</span><span class="n">WORK</span> <span class="o">|</span> <span class="n">TRANSACTION</span><span class="p">]</span> <span class="n">TO</span> <span class="p">[</span><span class="n">SAVEPOINT</span><span class="p">]</span> <span class="n">savepoint_name</span>
 </pre></div>
 </div>
 <p>See ROLLBACK TO SAVEPOINT for more information.</p>
@@ -1488,7 +1488,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="savepoint">
 <h2>3.1.14.3.95. SAVEPOINT<a class="headerlink" href="#savepoint" title="永久链接至标题">¶</a></h2>
 <p>在当前事务中，定义一个新的保存点。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SAVEPOINT</span> <span class="n">savepoint_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SAVEPOINT</span> <span class="n">savepoint_name</span>
 </pre></div>
 </div>
 <p>See SAVEPOINT for more information.</p>
@@ -1496,7 +1496,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="select">
 <h2>3.1.14.3.96. SELECT<a class="headerlink" href="#select" title="永久链接至标题">¶</a></h2>
 <p>从表或视图中获取数据。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="p">[</span><span class="n">ALL</span> <span class="o">|</span> <span class="n">DISTINCT</span> <span class="p">[</span><span class="n">ON</span> <span class="p">(</span><span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="p">[</span><span class="n">ALL</span> <span class="o">|</span> <span class="n">DISTINCT</span> <span class="p">[</span><span class="n">ON</span> <span class="p">(</span><span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])]]</span>
   <span class="o">*</span> <span class="o">|</span> <span class="n">expression</span> <span class="p">[[</span><span class="n">AS</span><span class="p">]</span> <span class="n">output_name</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
   <span class="p">[</span><span class="n">FROM</span> <span class="n">from_item</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
   <span class="p">[</span><span class="n">WHERE</span> <span class="n">condition</span><span class="p">]</span>
@@ -1515,7 +1515,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="select-into">
 <h2>3.1.14.3.97. SELECT INTO<a class="headerlink" href="#select-into" title="永久链接至标题">¶</a></h2>
 <p>使用查询的结果定义一张数据表。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="p">[</span><span class="n">ALL</span> <span class="o">|</span> <span class="n">DISTINCT</span> <span class="p">[</span><span class="n">ON</span> <span class="p">(</span> <span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="p">[</span><span class="n">ALL</span> <span class="o">|</span> <span class="n">DISTINCT</span> <span class="p">[</span><span class="n">ON</span> <span class="p">(</span> <span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]]</span>
     <span class="o">*</span> <span class="o">|</span> <span class="n">expression</span> <span class="p">[</span><span class="n">AS</span> <span class="n">output_name</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
     <span class="n">INTO</span> <span class="p">[</span><span class="n">TEMPORARY</span> <span class="o">|</span> <span class="n">TEMP</span><span class="p">]</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">new_table</span>
     <span class="p">[</span><span class="n">FROM</span> <span class="n">from_item</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
@@ -1535,7 +1535,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="set">
 <h2>3.1.14.3.98. SET<a class="headerlink" href="#set" title="永久链接至标题">¶</a></h2>
 <p>修改 HashData 数据仓库 配置参数的值。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">configuration_parameter</span> <span class="p">{</span><span class="n">TO</span> <span class="o">|</span> <span class="o">=</span><span class="p">}</span> <span class="n">value</span> <span class="o">|</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">configuration_parameter</span> <span class="p">{</span><span class="n">TO</span> <span class="o">|</span> <span class="o">=</span><span class="p">}</span> <span class="n">value</span> <span class="o">|</span>
     <span class="s1">&#39;value&#39;</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span>
 
 <span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">TIME</span> <span class="n">ZONE</span> <span class="p">{</span><span class="n">timezone</span> <span class="o">|</span> <span class="n">LOCAL</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span>
@@ -1546,7 +1546,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="set-role">
 <h2>3.1.14.3.99. SET ROLE<a class="headerlink" href="#set-role" title="永久链接至标题">¶</a></h2>
 <p>设置当前会话使用的角色。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">ROLE</span> <span class="n">rolename</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">ROLE</span> <span class="n">rolename</span>
 
 <span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">ROLE</span> <span class="n">NONE</span>
 
@@ -1558,7 +1558,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="set-session-authorization">
 <h2>3.1.14.3.100. SET SESSION AUTHORIZATION<a class="headerlink" href="#set-session-authorization" title="永久链接至标题">¶</a></h2>
 <p>设置会话授权使用角色。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">SESSION</span> <span class="n">AUTHORIZATION</span> <span class="n">rolename</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">SESSION</span> <span class="n">AUTHORIZATION</span> <span class="n">rolename</span>
 
 <span class="n">SET</span> <span class="p">[</span><span class="n">SESSION</span> <span class="o">|</span> <span class="n">LOCAL</span><span class="p">]</span> <span class="n">SESSION</span> <span class="n">AUTHORIZATION</span> <span class="n">DEFAULT</span>
 
@@ -1570,7 +1570,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="set-transaction">
 <h2>3.1.14.3.101. SET TRANSACTION<a class="headerlink" href="#set-transaction" title="永久链接至标题">¶</a></h2>
 <p>设置当前事务的事务特性。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">TRANSACTION</span> <span class="p">[</span><span class="n">transaction_mode</span><span class="p">]</span> <span class="p">[</span><span class="n">READ</span> <span class="n">ONLY</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">WRITE</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">TRANSACTION</span> <span class="p">[</span><span class="n">transaction_mode</span><span class="p">]</span> <span class="p">[</span><span class="n">READ</span> <span class="n">ONLY</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">WRITE</span><span class="p">]</span>
 
 <span class="n">SET</span> <span class="n">SESSION</span> <span class="n">CHARACTERISTICS</span> <span class="n">AS</span> <span class="n">TRANSACTION</span> <span class="n">transaction_mode</span>
      <span class="p">[</span><span class="n">READ</span> <span class="n">ONLY</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">WRITE</span><span class="p">]</span>
@@ -1581,7 +1581,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="show">
 <h2>3.1.14.3.102. SHOW<a class="headerlink" href="#show" title="永久链接至标题">¶</a></h2>
 <p>显示系统配置参数的值。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SHOW</span> <span class="n">configuration_parameter</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SHOW</span> <span class="n">configuration_parameter</span>
 
 <span class="n">SHOW</span> <span class="n">ALL</span>
 </pre></div>
@@ -1591,7 +1591,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="start-transaction">
 <h2>3.1.14.3.103. START TRANSACTION<a class="headerlink" href="#start-transaction" title="永久链接至标题">¶</a></h2>
 <p>启动一个事务块。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">START</span> <span class="n">TRANSACTION</span> <span class="p">[</span><span class="n">SERIALIZABLE</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">COMMITTED</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">UNCOMMITTED</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">START</span> <span class="n">TRANSACTION</span> <span class="p">[</span><span class="n">SERIALIZABLE</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">COMMITTED</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">UNCOMMITTED</span><span class="p">]</span>
                   <span class="p">[</span><span class="n">READ</span> <span class="n">WRITE</span> <span class="o">|</span> <span class="n">READ</span> <span class="n">ONLY</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1600,7 +1600,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="truncate">
 <h2>3.1.14.3.104. TRUNCATE<a class="headerlink" href="#truncate" title="永久链接至标题">¶</a></h2>
 <p>清空一张表中的所有记录。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">TRUNCATE</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TRUNCATE</span> <span class="p">[</span><span class="n">TABLE</span><span class="p">]</span> <span class="n">name</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">CASCADE</span> <span class="o">|</span> <span class="n">RESTRICT</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>See TRUNCATE for more information.</p>
@@ -1608,7 +1608,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="update">
 <h2>3.1.14.3.105. UPDATE<a class="headerlink" href="#update" title="永久链接至标题">¶</a></h2>
 <p>更新表中的记录。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UPDATE</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">table</span> <span class="p">[[</span><span class="n">AS</span><span class="p">]</span> <span class="n">alias</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UPDATE</span> <span class="p">[</span><span class="n">ONLY</span><span class="p">]</span> <span class="n">table</span> <span class="p">[[</span><span class="n">AS</span><span class="p">]</span> <span class="n">alias</span><span class="p">]</span>
    <span class="n">SET</span> <span class="p">{</span><span class="n">column</span> <span class="o">=</span> <span class="p">{</span><span class="n">expression</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span> <span class="o">|</span>
    <span class="p">(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])</span> <span class="o">=</span> <span class="p">({</span><span class="n">expression</span> <span class="o">|</span> <span class="n">DEFAULT</span><span class="p">}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">])}</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
    <span class="p">[</span><span class="n">FROM</span> <span class="n">fromlist</span><span class="p">]</span>
@@ -1620,7 +1620,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="vacuum">
 <h2>3.1.14.3.106. VACUUM<a class="headerlink" href="#vacuum" title="永久链接至标题">¶</a></h2>
 <p>数据库磁盘垃圾回收并收集统计信息。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">VACUUM</span> <span class="p">[</span><span class="n">FULL</span><span class="p">]</span> <span class="p">[</span><span class="n">FREEZE</span><span class="p">]</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="n">table</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VACUUM</span> <span class="p">[</span><span class="n">FULL</span><span class="p">]</span> <span class="p">[</span><span class="n">FREEZE</span><span class="p">]</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="p">[</span><span class="n">table</span><span class="p">]</span>
 
 <span class="n">VACUUM</span> <span class="p">[</span><span class="n">FULL</span><span class="p">]</span> <span class="p">[</span><span class="n">FREEZE</span><span class="p">]</span> <span class="p">[</span><span class="n">VERBOSE</span><span class="p">]</span> <span class="n">ANALYZE</span>
               <span class="p">[</span><span class="n">table</span> <span class="p">[(</span><span class="n">column</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)]]</span>
@@ -1631,7 +1631,7 @@ HashData 数据仓库 不推荐使用此操作。</p>
 <div class="section" id="values">
 <h2>3.1.14.3.107. VALUES<a class="headerlink" href="#values" title="永久链接至标题">¶</a></h2>
 <p>根据表达式计算出一个集合的记录。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">VALUES</span> <span class="p">(</span> <span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VALUES</span> <span class="p">(</span> <span class="n">expression</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span> <span class="p">)</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]</span>
    <span class="p">[</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">sort_expression</span> <span class="p">[</span><span class="n">ASC</span> <span class="o">|</span> <span class="n">DESC</span> <span class="o">|</span> <span class="n">USING</span> <span class="n">operator</span><span class="p">]</span> <span class="p">[,</span> <span class="o">...</span><span class="p">]]</span>
    <span class="p">[</span><span class="n">LIMIT</span> <span class="p">{</span><span class="n">count</span> <span class="o">|</span> <span class="n">ALL</span><span class="p">}]</span> <span class="p">[</span><span class="n">OFFSET</span> <span class="n">start</span><span class="p">]</span>
 </pre></div>
