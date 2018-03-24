@@ -1,10 +1,10 @@
-# 访问 HashData 数据仓库
+# 访问数据仓库
 
 本小节向您介绍使用不同工具连接 HashData 数据仓库建立会话的方法。
 
 ## 建立会话
 
-用户可以通过兼容 postgres 的客户端程序来连接 HashData 数据仓库的 master 节点。你可能需要了解以下连接信息来帮助您配置客户端程序。
+用户可以通过兼容 PostgreSQL 的客户端程序来连接 HashData 数据仓库的主节点。你可能需要了解以下连接信息来帮助您配置客户端程序。
 
 | 链接参数 | 参数描述 | 环境变量 |
 | :--- | :--- | :--- |
@@ -18,9 +18,9 @@
 
 用户可以使用不同的客户端应用程序连接到 HashData 数据仓库:
 
-* 兼容标准 postgres 客户端程序 psql。通过 psql 程序，用户可以使用交互式命令行来访问 HashData 数据仓库。
-* pgAdmin III 是一个非常流行的、支持 postgres 和 HashData 数据仓库扩展特性的图形化管理工具。
-* 通过使用标准的数据库应用接口（例如：JDBC 和 ODBC），用户可以创建独立的客户端应用程序来访问 HashData 数据仓库。由于 HashData 数据仓库是基于 postgres 实现，因此可以直接使用 postgres 的数据库驱动程序。
+* 兼容标准 PostgreSQL 客户端程序 psql。通过 psql 程序，用户可以使用交互式命令行来访问 HashData 数据仓库。
+* pgAdmin III 是一个非常流行的、支持 PostgreSQL 和 HashData 数据仓库扩展特性的图形化管理工具。
+* 通过使用标准的数据库应用接口（例如：JDBC 和 ODBC），用户可以创建独立的客户端应用程序来访问 HashData 数据仓库。由于 HashData 数据仓库是基于 PostgreSQL 实现，因此可以直接使用 PostgreSQL 的数据库驱动程序。
 * 大部分使用标准数据库访问接口（例如：JDBC 和 ODBC）的第三方客户端程序，通过适当配置就可以连接 HashData 数据仓库。
 
 ## 使用 psql
@@ -51,7 +51,7 @@ gpdatabase=>
 ## pgAdmin III
 
 
-如果您喜欢使用图形化接口，可以使用 pgAdmin III 工具。该图形工具能够支持 postgres 数据库所有标准特性，也添加了对 HashData 数据仓库特性的支持。pgAdmin III 支持 HashData 数据仓库的特性包括:
+如果您喜欢使用图形化接口，可以使用 pgAdmin III 工具。该图形工具能够支持 PostgreSQL 数据库所有标准特性，也添加了对 HashData 数据仓库特性的支持。pgAdmin III 支持 HashData 数据仓库的特性包括:
 
 * 外部表支持
 * Append 表（包括使用压缩特性的 Append 表）
@@ -61,7 +61,7 @@ gpdatabase=>
 
 ## 数据库应用接口
 
-您也许需要开发专有的客户端程序来连接 HashData 数据仓库系统。 postgres 为常用的数据库应用接口提供了驱动程序，这些驱动程序可以直接操作 HashData 数据仓库。具体驱动程序及下载链接如下：
+您也许需要开发专有的客户端程序来连接 HashData 数据仓库系统。 PostgreSQL 为常用的数据库应用接口提供了驱动程序，这些驱动程序可以直接操作 HashData 数据仓库。具体驱动程序及下载链接如下：
 
 | API | PostgreSQL 驱动程序名称 | 下载链接 |
 | :--- | :--- | :--- |
@@ -74,7 +74,26 @@ gpdatabase=>
 
 1. 根据使用语言和接口，下载相关程序。例如：从 Oracle 官方下载。
 2. 根据接口说明，编写您的客户端程序。在编写程序时，请注意 HashData 数据仓库的相关语法，这样可以避免您使用不支持的特性。
-3. 下载对应的 postgres 驱动程序，并配置连接 HashData 数据仓库主节点的信息。
+3. 下载对应的 PostgreSQL 驱动程序，并配置连接 HashData 数据仓库主节点的信息。
+
+
+### Maven
+
+```
+<!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+<dependency>
+    <groupId>postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.1-901-1.jdbc4</version>
+</dependency>
+```
+
+### Gradle
+
+```
+// https://mvnrepository.com/artifact/postgresql/postgresql
+compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+```
 
 ## 第三方客户工具
 

@@ -34,8 +34,8 @@
 
 
 - [5 开发指南](040-developer-guide/README.md)
-    - [5.1 HashData 数据仓库系统概述](040-developer-guide/020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.md)
-    - [5.2 访问 HashData 数据仓库](040-developer-guide/030-fang-wen-hashdata-shu-ju-cang-ku.md)
+    - [5.1 系统概述](040-developer-guide/020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.md)
+    - [5.2 访问数据仓库](040-developer-guide/030-fang-wen-hashdata-shu-ju-cang-ku.md)
     - [5.3 定义数据库对象](040-developer-guide/040-ding-yi-shu-ju-ku-dui-xiang.md)
     - [5.4 数据的管理](040-developer-guide/050-shu-ju-de-guan-li.md)
     - [5.5 导入导出数据](040-developer-guide/060-dao-ru-he-dao-chu-shu-ju.md)
