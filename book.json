@@ -1,5 +1,6 @@
 {
   "language": "zh-hans",
+  "title": "HashData",
   "plugins": [
     "-highlight",
     "-sharing",
