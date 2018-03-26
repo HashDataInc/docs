@@ -3,7 +3,7 @@ node_js:
   - '8'
 before_script:
   - sudo pip install -U qsctl
-  - npm install -g gitbook-cli
+  - npm install -g gitbook-cli markdown-link-check
   - sudo apt-get update -qq
   - sudo apt-get install -qq calibre xvfb fontconfig
   - echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
@@ -18,6 +18,8 @@ script:
   - bash build.sh
   - find . -name "*.pdf"
   - ls _book/
+  - 'find * -name \*.md -not -path "*node_modules*" -not -path "README.md" -not -path "*_book*" -exec echo "File: {}" \; -exec markdown-link-check {} \; | tee /tmp/checklink.txt'
+  - grep -qv ERROR /tmp/checklink.txt
 after_success:
   - bash deploy.sh
 env:
