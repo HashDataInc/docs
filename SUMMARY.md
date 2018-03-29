@@ -15,7 +15,7 @@
     - [3.1 管理概述](020-admin-guide/020-ji-qun-cao-zuo.md)
     - [3.2 集群性能监控](020-admin-guide/030-ji-qun-jian-kong.md)
     - [3.3 扩容和缩容](020-admin-guide/040-ji-qun-kuo-rong.md)
-    - [3.4 扩容和缩容](020-admin-guide/045-ji-qun-bei-fen.md)
+    - [3.4 备份](020-admin-guide/045-ji-qun-bei-fen.md)
     - [3.5 排查系统问题](020-admin-guide/050-pai-cha-xi-tong-wen-ti.md)
     - [3.6 系统目录参考](020-admin-guide/060-system-catalog-ref/README.md)
         - [3.6.1 系统表](020-admin-guide/060-system-catalog-ref/010-xi-tong-biao.md)
