@@ -23,9 +23,11 @@ HashData 数据仓库服务支持数据备份和恢复。为了数据安全，�
 你可以通过以下步骤对备份进行恢复操作
 
 1. 集群支持恢复操作，在集群详情页面的备份标签页下，可以从任意备份链的任意备份点进行恢复操作
+
 	![](assets/recover_from_backup_step1.png)
 
 2. 经过上步操作，将跳转到集群创建页面，设置配置信息创建集群
+
 	![](assets/recover_from_backup_step2.png)
 
 
