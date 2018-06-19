@@ -19,8 +19,5 @@
 - [7 步骤6: 寻找额外的资料和重设你的环境](070-shan-chu-ji-qun.md)
 
 
-- [8 JSON 函数和操作符](080-json-support.md)
-
-
 
 
