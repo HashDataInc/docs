@@ -1,0 +1,55 @@
+{
+  "language": "zh-hans",
+  "title": "HashData",
+  "plugins": [
+    "-highlight",
+    "-sharing",
+    "-fontsettings",
+    "-theme-default",
+    "editlink",
+    "prism",
+    "baidu",
+    "-toc2",
+    "summary2",
+    "versions",
+    "sitemap",
+    "-autocover",
+    "collapsible-menu",
+    "back-to-top-button",
+    "otherlink",
+    "theme-hashdata-document"
+  ],
+  "pluginsConfig": {
+    "editlink": {
+      "base": "https://github.com/HashDataInc/docs/blob/master/",
+      "label": "编辑本页"
+    },
+    "baidu": {
+      "token": "c2474dfbb51f64f6f0d882bcb8e617da"
+    },
+    "sitemap": {
+      "hostname": "http://docs.hashdata.cn"
+    },
+    "theme-default": {
+      "showLevel": false
+    },
+    "toc2": {
+      "addClass": true,
+      "className": "toc"
+    },
+    "versions": {
+      "gitbookConfigURL": "http://docs.hashdata.cn/latest/book.json",
+      "options": [
+        {
+          "value": "http://docs.hashdata.cn/latest",
+          "text": "Latest"
+        },
+        {
+          "value": "http://docs.hashdata.cn/v1.3.0/",
+          "text": "v1.3.0"
+        }
+      ]
+    }
+  },
+  "styles": {}
+}
