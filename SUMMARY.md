@@ -8,7 +8,6 @@
     - [2.4 步骤4: 连接样例集群](010-getting-started-guide/050-lian-jie-ji-qun.md)
     - [2.5 步骤5: 将样例数据从对象存储加载到 HashData 数据仓库中](010-getting-started-guide/060-jia-zai-shu-ju.md)
     - [2.6 步骤6: 寻找额外的资料和重设你的环境](010-getting-started-guide/070-shan-chu-ji-qun.md)
-    - [2.7 JSON 函数和操作符](010-getting-started-guide/080-json-support.md)
 
 
 - [3 管理指南](020-admin-guide/README.md)
