@@ -256,6 +256,9 @@
     - [4.12 PL/Python 语言扩展](040-developer-guide/0790-hashdata-de-pl-python-yu-yan-kuo-zhan.md)
     - [4.13 用于分析的 MADlib 扩展](040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.md)
     - [4.14 PostGIS 扩展](040-developer-guide/07920-hashdata-postgis-kuo-zhan.md)
+    - [4.15 HashData 增强](040-developer-guide/0800-hashdata-enhancement-ref/README.md)
+        - [4.15.1 数据加密](040-developer-guide/0800-hashdata-enhancement-ref/data-encryption.md)
+        - [4.15.2 对象存储历史文件](040-developer-guide/0800-hashdata-enhancement-ref/oss-workfile-support.md)
 
 
 - [5 最佳实践](060-best-practices/README.md)
