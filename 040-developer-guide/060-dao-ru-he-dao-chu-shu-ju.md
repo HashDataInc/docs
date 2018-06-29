@@ -21,36 +21,105 @@ CREATE EXTERNAL TABLE 可以创建可读外部表。外部表允许 HashData 数
 
 ```
 CREATE READABLE EXTERNAL TABLE foo (name TEXT, id INT)
-LOCATION ('qs://<your-bucket-name>.pek3a.qingstor.com/<your-data-path> access_key_id=<access-key-id> secret_access_key=<secret-access-key>') FORMAT 'csv';
+LOCATION ('oss://<your-bucket-name>.pek3a.qingstor.com/<your-data-path> access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') FORMAT 'csv';
 ```
 您需要将其中的 `<your-bucket-name>`、`<your-data-path>`、`<access-key-id>` 和 `<secret-access-key>` 替换成您自己相应的值。
 
-下面的示例，向您展示如何从青云对象存储中直接读取 1GB 规模 TPCH 测试数据的例子。由于示例中的 bucket hashdata-public 是公开只读的，因此您不指定 `access_key_id` 和 `secret_access_key` 也能够访问。
+下面的示例，向您展示如何从青云对象存储中直接读取 1GB 规模 TPCH 测试数据的例子。注意，在当前版本中，您必须提供您所拥有的正确的 `access_key_id` 和 `secret_access_key` 才能够正常导入数据。
 
 ```
-CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION)
-LOCATION ('qs://hashdata-public.pek3a.qingstor.com/tpch/1g/nation/') FORMAT 'csv';
+CREATE TABLE NATION  ( N_NATIONKEY  INTEGER NOT NULL,
+                       N_NAME       CHAR(25) NOT NULL,
+                       N_REGIONKEY  INTEGER NOT NULL,
+                       N_COMMENT    VARCHAR(152));
+CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION) 
+LOCATION ('oss://hashdata-public.pek3a.qingstor.com/tpch/1g/nation/ access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs')
+FORMAT 'csv';
 
-CREATE READABLE EXTERNAL TABLE e_REGION (LIKE REGION)
-LOCATION ('qs://hashdata-public.pek3a.qingstor.com/tpch/1g/region/') FORMAT 'csv';
+CREATE TABLE REGION  ( R_REGIONKEY  INTEGER NOT NULL,
+                       R_NAME       CHAR(25) NOT NULL,
+                       R_COMMENT    VARCHAR(152));
+CREATE READABLE EXTERNAL TABLE e_REGION (LIKE REGION) 
+LOCATION ('oss://hashdata-public.pek3a.qingstor.com/tpch/1g/region/ access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') 
+FORMAT 'csv';
 
-CREATE READABLE EXTERNAL TABLE e_PART (LIKE PART)
-LOCATION ('qs://hashdata-public.pek3a.qingstor.com/tpch/1g/part/') FORMAT 'csv';
+CREATE TABLE PART  ( P_PARTKEY     INTEGER NOT NULL,
+                     P_NAME        VARCHAR(55) NOT NULL,
+                     P_MFGR        CHAR(25) NOT NULL,
+                     P_BRAND       CHAR(10) NOT NULL,
+                     P_TYPE        VARCHAR(25) NOT NULL,
+                     P_SIZE        INTEGER NOT NULL,
+                     P_CONTAINER   CHAR(10) NOT NULL,
+                     P_RETAILPRICE DECIMAL(15,2) NOT NULL,
+                     P_COMMENT     VARCHAR(23) NOT NULL );
+CREATE READABLE EXTERNAL TABLE e_PART (LIKE PART) 
+LOCATION ('oss://hashdata-public.pek3a.qingstor.com/tpch/1g/part/ access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') 
+FORMAT 'csv';
 
-CREATE READABLE EXTERNAL TABLE e_SUPPLIER (LIKE SUPPLIER)
-LOCATION ('qs://hashdata-public.pek3a.qingstor.com/tpch/1g/supplier/') FORMAT 'csv';
+CREATE TABLE SUPPLIER ( S_SUPPKEY     INTEGER NOT NULL,
+                        S_NAME        CHAR(25) NOT NULL,
+                        S_ADDRESS     VARCHAR(40) NOT NULL,
+                        S_NATIONKEY   INTEGER NOT NULL,
+                        S_PHONE       CHAR(15) NOT NULL,
+                        S_ACCTBAL     DECIMAL(15,2) NOT NULL,
+                        S_COMMENT     VARCHAR(101) NOT NULL);
+CREATE READABLE EXTERNAL TABLE e_SUPPLIER (LIKE SUPPLIER) 
+LOCATION ('oss://hashdata-public.pek3a.qingstor.com/tpch/1g/supplier/ access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') 
+FORMAT 'csv';
 
-CREATE READABLE EXTERNAL TABLE e_PARTSUPP (LIKE PARTSUPP)
-LOCATION ('qs://hashdata-public.pek3a.qingstor.com/tpch/1g/partsupp/') FORMAT 'csv';
+CREATE TABLE PARTSUPP ( PS_PARTKEY     INTEGER NOT NULL,
+                        PS_SUPPKEY     INTEGER NOT NULL,
+                        PS_AVAILQTY    INTEGER NOT NULL,
+                        PS_SUPPLYCOST  DECIMAL(15,2)  NOT NULL,
+                        PS_COMMENT     VARCHAR(199) NOT NULL );
+CREATE READABLE EXTERNAL TABLE e_PARTSUPP (LIKE PARTSUPP) 
+LOCATION ('oss://hashdata-public.pek3a.qingstor.com/tpch/1g/partsupp/ access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') 
+FORMAT 'csv';
 
-CREATE READABLE EXTERNAL TABLE e_CUSTOMER (LIKE CUSTOMER)
-LOCATION ('qs://hashdata-public.pek3a.qingstor.com/tpch/1g/customer/') FORMAT 'csv';
+CREATE TABLE CUSTOMER ( C_CUSTKEY     INTEGER NOT NULL,
+                        C_NAME        VARCHAR(25) NOT NULL,
+                        C_ADDRESS     VARCHAR(40) NOT NULL,
+                        C_NATIONKEY   INTEGER NOT NULL,
+                        C_PHONE       CHAR(15) NOT NULL,
+                        C_ACCTBAL     DECIMAL(15,2)   NOT NULL,
+                        C_MKTSEGMENT  CHAR(10) NOT NULL,
+                        C_COMMENT     VARCHAR(117) NOT NULL);
+CREATE READABLE EXTERNAL TABLE e_CUSTOMER (LIKE CUSTOMER) 
+LOCATION ('oss://hashdata-public.pek3a.qingstor.com/tpch/1g/customer/ access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') 
+FORMAT 'csv';
 
-CREATE READABLE EXTERNAL TABLE e_ORDERS (LIKE ORDERS)
-LOCATION ('qs://hashdata-public.pek3a.qingstor.com/tpch/1g/orders/') FORMAT 'csv';
+CREATE TABLE ORDERS ( O_ORDERKEY       INT8 NOT NULL,
+                      O_CUSTKEY        INTEGER NOT NULL,
+                      O_ORDERSTATUS    CHAR(1) NOT NULL,
+                      O_TOTALPRICE     DECIMAL(15,2) NOT NULL,
+                      O_ORDERDATE      DATE NOT NULL,
+                      O_ORDERPRIORITY  CHAR(15) NOT NULL,
+                      O_CLERK          CHAR(15) NOT NULL,
+                      O_SHIPPRIORITY   INTEGER NOT NULL,
+                      O_COMMENT        VARCHAR(79) NOT NULL);
+CREATE READABLE EXTERNAL TABLE e_ORDERS (LIKE ORDERS) 
+LOCATION ('oss://hashdata-public.pek3a.qingstor.com/tpch/1g/orders/ access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') 
+FORMAT 'csv';
 
-CREATE READABLE EXTERNAL TABLE e_LINEITEM (LIKE LINEITEM)
-LOCATION ('qs://hashdata-public.pek3a.qingstor.com/tpch/1g/lineitem/') FORMAT 'csv';
+CREATE TABLE LINEITEM ( L_ORDERKEY    INT8 NOT NULL,
+                        L_PARTKEY     INTEGER NOT NULL,
+                        L_SUPPKEY     INTEGER NOT NULL,
+                        L_LINENUMBER  INTEGER NOT NULL,
+                        L_QUANTITY    DECIMAL(15,2) NOT NULL,
+                        L_EXTENDEDPRICE  DECIMAL(15,2) NOT NULL,
+                        L_DISCOUNT    DECIMAL(15,2) NOT NULL,
+                        L_TAX         DECIMAL(15,2) NOT NULL,
+                        L_RETURNFLAG  CHAR(1) NOT NULL,
+                        L_LINESTATUS  CHAR(1) NOT NULL,
+                        L_SHIPDATE    DATE NOT NULL,
+                        L_COMMITDATE  DATE NOT NULL,
+                        L_RECEIPTDATE DATE NOT NULL,
+                        L_SHIPINSTRUCT CHAR(25) NOT NULL,
+                        L_SHIPMODE     CHAR(10) NOT NULL,
+                        L_COMMENT      VARCHAR(44) NOT NULL);
+CREATE READABLE EXTERNAL TABLE e_LINEITEM (LIKE LINEITEM) 
+LOCATION ('oss://hashdata-public.pek3a.qingstor.com/tpch/1g/lineitem/ access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') 
+FORMAT 'csv';
 ```
 ## 处理错误
 
@@ -78,10 +147,9 @@ LOG ERRORS 子句允许您保留错误记录信息，在命令执行后进一步
 ```
 =# CREATE EXTERNAL TABLE ext_expenses ( name text,
    date date,  amount float4, category text, desc1 text )
-   LOCATION ('qs://hashdata-public.pek3a.qingstor.com/ext_expenses/')
+   LOCATION ('oss://hashdata-public.pek3a.qingstor.com/ext_expenses/ access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs')
    FORMAT 'TEXT' (DELIMITER '|')
-   LOG ERRORS SEGMENT REJECT LIMIT 10
-   ROWS;
+   LOG ERRORS SEGMENT REJECT LIMIT 10 ROWS;
 ```
 
 通过使用内置 SQL 函数 `gp_read_error_log(‘external_table’)` 可以读取错误记录数据。下面的示例命令可以显示 `ext_expenses` 的错误记录：
@@ -140,7 +208,7 @@ HashData 数据仓库充分考虑云平台优势，因此提供利用高效的�
 
 ```
 CREATE WRITABLE EXTERNAL TABLE test_writable_table (id INT, date DATE, desc TEXT)
-    location('qs://<your-bucket-name>.pek3a.qingstor.com/<your-data-path> access_key_id=<access-key-id> secret_access_key=<secret-access-key>') FORMAT 'csv';
+    location('oss://<your-bucket-name>.pek3a.qingstor.com/<your-data-path> access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') FORMAT 'csv';
 
 INSERT INTO test_writable_table VALUES(1, '2016-01-01', 'qingstor test');
 ```
@@ -165,7 +233,7 @@ data value 1|data value 2|data value 3
 
 ```
 =# CREATE EXTERNAL TABLE ext_table (name text, date date)
-LOCATION ('qs://<your-bucket-name>.pek3a.qingstor.com/filename.txt')
+LOCATION ('oss://<your-bucket-name>.pek3a.qingstor.com/filename.txt access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs')
 FORMAT 'TEXT' (DELIMITER '|');
 ```
 ### 在数据中表示空值
@@ -190,7 +258,7 @@ backslash =
 vertical bar = |
 exclamation point = !
 ```
-您指定 | 作为列分隔符，作为转义字符。您数据文件中，格式化后的数据行应该类似下面的样子：
+您指定 | 作为列分隔符，\作为转义字符。您数据文件中，格式化后的数据行应该类似下面的样子：
 
 ```
 backslash = \\ | vertical bar = \| | exclamation point = !
