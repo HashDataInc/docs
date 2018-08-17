@@ -163,5 +163,10 @@
 - [15 PostGIS 扩展](07920-hashdata-postgis-kuo-zhan.md)
 
 
+- [16 HashData 增强](0800-hashdata-enhancement-ref/README.md)
+    - [16.1 数据加密](0800-hashdata-enhancement-ref/data-encryption.md)
+    - [16.2 对象存储临时文件支持](0800-hashdata-enhancement-ref/oss-workfile-support.md)
+
+
 
 

@@ -258,7 +258,7 @@
     - [4.14 PostGIS 扩展](040-developer-guide/07920-hashdata-postgis-kuo-zhan.md)
     - [4.15 HashData 增强](040-developer-guide/0800-hashdata-enhancement-ref/README.md)
         - [4.15.1 数据加密](040-developer-guide/0800-hashdata-enhancement-ref/data-encryption.md)
-        - [4.15.2 对象存储历史文件](040-developer-guide/0800-hashdata-enhancement-ref/oss-workfile-support.md)
+        - [4.15.2 对象存储临时文件支持](040-developer-guide/0800-hashdata-enhancement-ref/oss-workfile-support.md)
 
 
 - [5 最佳实践](060-best-practices/README.md)
