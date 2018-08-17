@@ -252,6 +252,9 @@
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/0790-hashdata-de-pl-python-yu-yan-kuo-zhan.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/07920-hashdata-postgis-kuo-zhan.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/0800-hashdata-enhancement-ref/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/0800-hashdata-enhancement-ref/data-encryption.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/0800-hashdata-enhancement-ref/oss-workfile-support.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/060-best-practices/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/060-best-practices/010-zui-jia-shi-jian-ti-gang.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/060-best-practices/030-shu-ju-ku-mo-shi-she-ji.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>

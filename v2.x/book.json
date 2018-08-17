@@ -47,6 +47,10 @@
         {
           "value": "http://docs.hashdata.cn/v1.4.0/",
           "text": "v1.4.0"
+        },
+        {
+          "value": "http://docs.hashdata.cn/v2.1.0/",
+          "text": "v2.x"
         }
       ]
     }
