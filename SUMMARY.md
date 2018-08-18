@@ -257,10 +257,9 @@
     - [5.12 PL/Python 语言扩展](040-developer-guide/0790-hashdata-de-pl-python-yu-yan-kuo-zhan.md)
     - [5.13 用于分析的 MADlib 扩展](040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.md)
     - [5.14 PostGIS 扩展](040-developer-guide/07920-hashdata-postgis-kuo-zhan.md)
-    - [5.15 HashData的PL/Java语言扩展](040-developer-guide/07921-pl-java-yu-yan.md)
-    - [5.16 HashData与Oracle语法上的差异](040-developer-guide/07922-Oracle-to-HashData.md)
-    - [5.17 HashData 增强](040-developer-guide/0800-hashdata-enhancement-ref/README.md)
-        - [5.17.1 数据加密](040-developer-guide/0800-hashdata-enhancement-ref/data-encryption.md)
+    - [5.15 PL/Java语言扩展](040-developer-guide/07921-pl-java-yu-yan.md)
+    - [5.16 与Oracle语法上的差异](040-developer-guide/07922-Oracle-to-HashData.md)
+    - [5.17 数据加密](040-developer-guide/080-data-encryption.md)
 
 
 - [6 最佳实践](060-best-practices/README.md)

@@ -163,14 +163,13 @@
 - [15 PostGIS 扩展](07920-hashdata-postgis-kuo-zhan.md)
 
 
-- [16 HashData的PL/Java语言扩展](07921-pl-java-yu-yan.md)
+- [16 PL/Java语言扩展](07921-pl-java-yu-yan.md)
 
 
-- [17 HashData与Oracle语法上的差异](07922-Oracle-to-HashData.md)
+- [17 与Oracle语法上的差异](07922-Oracle-to-HashData.md)
 
 
-- [18 HashData 增强](0800-hashdata-enhancement-ref/README.md)
-    - [18.1 数据加密](0800-hashdata-enhancement-ref/data-encryption.md)
+- [18 数据加密](080-data-encryption.md)
 
 
 
