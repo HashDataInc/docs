@@ -41,8 +41,8 @@
       "gitbookConfigURL": "http://docs.hashdata.cn/latest/book.json",
       "options": [
         {
-          "value": "http://docs.hashdata.cn/latest",
-          "text": "Latest"
+          "value": "http://docs.hashdata.cn/v2.1.1/",
+          "text": "v2.1.1"
         },
         {
           "value": "http://docs.hashdata.cn/v1.4.0/",
