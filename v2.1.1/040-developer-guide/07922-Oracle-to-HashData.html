@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>5.16 HashData与Oracle语法上的差异 · HashData</title>
+        <title>5.16 与Oracle语法上的差异 · HashData</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -58,7 +58,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="0800-hashdata-enhancement-ref/" />
+    <link rel="next" href="080-data-encryption.html" />
     
     
     <link rel="prev" href="07921-pl-java-yu-yan.html" />
@@ -3467,7 +3467,7 @@
                 <a href="07921-pl-java-yu-yan.html">
             
                     
-                    5.15 HashData的PL/Java语言扩展
+                    5.15 PL/Java语言扩展
             
                 </a>
             
@@ -3480,7 +3480,7 @@
                 <a href="07922-Oracle-to-HashData.html">
             
                     
-                    5.16 HashData与Oracle语法上的差异
+                    5.16 与Oracle语法上的差异
             
                 </a>
             
@@ -3488,35 +3488,16 @@
             
         </li>
     
-        <li class="chapter " data-level="4.1.17" data-path="0800-hashdata-enhancement-ref/">
+        <li class="chapter " data-level="4.1.17" data-path="080-data-encryption.html">
             
-                <a href="0800-hashdata-enhancement-ref/">
+                <a href="080-data-encryption.html">
             
                     
-                    5.17 HashData 增强
+                    5.17 数据加密
             
                 </a>
             
 
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.17.1" data-path="0800-hashdata-enhancement-ref/data-encryption.html">
-            
-                <a href="0800-hashdata-enhancement-ref/data-encryption.html">
-            
-                    
-                    5.17.1 数据加密
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -3742,7 +3723,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >5.16 HashData与Oracle语法上的差异</a>
+        <a href=".." >5.16 与Oracle语法上的差异</a>
     </h1>
 </div>
 
@@ -3757,9 +3738,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="hashdata&#x4E0E;oracle&#x8BED;&#x6CD5;&#x4E0A;&#x7684;&#x5DEE;&#x5F02;">HashData&#x4E0E;Oracle&#x8BED;&#x6CD5;&#x4E0A;&#x7684;&#x5DEE;&#x5F02;</h3>
+                                <h1 id="&#x4E0E;oracle&#x8BED;&#x6CD5;&#x4E0A;&#x7684;&#x5DEE;&#x5F02;">&#x4E0E;Oracle&#x8BED;&#x6CD5;&#x4E0A;&#x7684;&#x5DEE;&#x5F02;</h1>
 <p>&#x5728;&#x8FD9;&#x4E00;&#x7AE0;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7B80;&#x5355;&#x6BD4;&#x8F83;&#x4E00;&#x4E0B;&#xFF0C;HashData &#x5728;&#x8BED;&#x6CD5;&#x5C42;&#x9762;&#x4E0E;Oracle&#x7684;&#x5DEE;&#x5F02;&#x3002;</p>
-<h4 id="&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x6570;&#x636E;&#x7C7B;&#x578B;</h4>
+<h2 id="&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x6570;&#x636E;&#x7C7B;&#x578B;</h2>
 <p><strong>&#x5B57;&#x7B26;&#x7C7B;&#x578B;</strong></p>
 <table>
 <thead>
@@ -3948,7 +3929,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="&#x5E38;&#x7528;&#x51FD;&#x6570;">&#x5E38;&#x7528;&#x51FD;&#x6570;</h4>
+<h2 id="&#x5E38;&#x7528;&#x51FD;&#x6570;">&#x5E38;&#x7528;&#x51FD;&#x6570;</h2>
 <p><strong>&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;&#x51FD;&#x6570;</strong></p>
 <table>
 <thead>
@@ -4121,7 +4102,7 @@ select decode(y.studentcode, null, &apos;0&apos;, &apos;1&apos;) studenttype fro
 
 -- HashData 
 select case when y.studentcode is null then &apos;0&apos; else &apos;1&apos; end studenttype from y;
-</code></pre><h4 id="&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;">&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</h4>
+</code></pre><h2 id="&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;">&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</h2>
 <p><strong>&#x6700;&#x7B80;&#x5355;&#x7684;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</strong></p>
 <p>Oracle</p>
 <pre class="language-"><code>CREATE OR REPLACE PROCEDURE procedure_name
@@ -4266,7 +4247,7 @@ BEGIN
     RETURN 1;
 END;
 $$ LANGUAGE PLPGSQL;
-</code></pre><h4 id="&#x6E38;&#x6807;">&#x6E38;&#x6807;</h4>
+</code></pre><h2 id="&#x6E38;&#x6807;">&#x6E38;&#x6807;</h2>
 <p>&#x5728;HashData &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x5F88;&#x5C11;&#x4F7F;&#x7528;&#x6E38;&#x6807;&#xFF0C;&#x56E0;&#x4E3A;&#x5F53;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<strong>FOR LOOP</strong>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x540E;&#x53F0;&#x81EA;&#x52A8;&#x5C31;&#x4F1A;&#x8F6C;&#x5316;&#x6210;&#x6E38;&#x6807;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;HashData &#x4E2D;&#x6E38;&#x6807;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
 <p><strong>&#x6E38;&#x6807;&#x7684;&#x58F0;&#x660E;</strong></p>
 <pre class="language-"><code>DECLARE
@@ -4314,12 +4295,12 @@ FETCH curs2 INTO foo, bar, baz;
 
             
                 
-                <a href="07921-pl-java-yu-yan.html" class="navigation navigation-prev " aria-label="Previous page: 5.15 HashData的PL/Java语言扩展">
+                <a href="07921-pl-java-yu-yan.html" class="navigation navigation-prev " aria-label="Previous page: 5.15 PL/Java语言扩展">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="0800-hashdata-enhancement-ref/" class="navigation navigation-next " aria-label="Next page: 5.17 HashData 增强">
+                <a href="080-data-encryption.html" class="navigation navigation-next " aria-label="Next page: 5.17 数据加密">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -4330,7 +4311,7 @@ FETCH curs2 INTO foo, bar, baz;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.16 HashData与Oracle语法上的差异","level":"4.1.16","depth":2,"next":{"title":"5.17 HashData 增强","level":"4.1.17","depth":2,"path":"040-developer-guide/0800-hashdata-enhancement-ref/README.md","ref":"040-developer-guide/0800-hashdata-enhancement-ref/README.md","articles":[{"title":"5.17.1 数据加密","level":"4.1.17.1","depth":3,"path":"040-developer-guide/0800-hashdata-enhancement-ref/data-encryption.md","ref":"040-developer-guide/0800-hashdata-enhancement-ref/data-encryption.md","articles":[]}]},"previous":{"title":"5.15 HashData的PL/Java语言扩展","level":"4.1.15","depth":2,"path":"040-developer-guide/07921-pl-java-yu-yan.md","ref":"040-developer-guide/07921-pl-java-yu-yan.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-highlight","-sharing","-fontsettings","-theme-default","editlink","prism","baidu","-toc2","summary2","versions","sitemap","-autocover","collapsible-menu","back-to-top-button","otherlink","theme-hashdata-document"],"styles":{},"pluginsConfig":{"prism":{},"collapsible-menu":{},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/HashDataInc/docs/blob/v2.1.1/"},"search":{},"otherlink":{},"toc2":{"addClass":true,"className":"toc"},"summary2":{},"theme-hashdata-document":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap":{"hostname":"http://docs.hashdata.cn"},"back-to-top-button":{},"baidu":{"token":"c2474dfbb51f64f6f0d882bcb8e617da"},"versions":{"type":"branches","gitbookConfigURL":"http://docs.hashdata.cn/latest/book.json","options":[{"value":"http://docs.hashdata.cn/v2.1.1/","text":"v2.1.1"},{"value":"http://docs.hashdata.cn/v1.4.0/","text":"v1.4.0"}]},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HashData","language":"zh-hans","gitbook":"*"},"file":{"path":"040-developer-guide/07922-Oracle-to-HashData.md","mtime":"2018-08-18T03:26:27.751Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-18T03:31:26.372Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.16 与Oracle语法上的差异","level":"4.1.16","depth":2,"next":{"title":"5.17 数据加密","level":"4.1.17","depth":2,"path":"040-developer-guide/080-data-encryption.md","ref":"040-developer-guide/080-data-encryption.md","articles":[]},"previous":{"title":"5.15 PL/Java语言扩展","level":"4.1.15","depth":2,"path":"040-developer-guide/07921-pl-java-yu-yan.md","ref":"040-developer-guide/07921-pl-java-yu-yan.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-highlight","-sharing","-fontsettings","-theme-default","editlink","prism","baidu","-toc2","summary2","versions","sitemap","-autocover","collapsible-menu","back-to-top-button","otherlink","theme-hashdata-document"],"styles":{},"pluginsConfig":{"prism":{},"collapsible-menu":{},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/HashDataInc/docs/blob/v2.1.1/"},"search":{},"otherlink":{},"toc2":{"addClass":true,"className":"toc"},"summary2":{},"theme-hashdata-document":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap":{"hostname":"http://docs.hashdata.cn"},"back-to-top-button":{},"baidu":{"token":"c2474dfbb51f64f6f0d882bcb8e617da"},"versions":{"type":"branches","gitbookConfigURL":"http://docs.hashdata.cn/latest/book.json","options":[{"value":"http://docs.hashdata.cn/v2.1.1/","text":"v2.1.1"},{"value":"http://docs.hashdata.cn/v1.4.0/","text":"v1.4.0"}]},"theme-default":{"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HashData","language":"zh-hans","gitbook":"*"},"file":{"path":"040-developer-guide/07922-Oracle-to-HashData.md","mtime":"2018-08-18T06:02:35.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-18T06:08:07.205Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
