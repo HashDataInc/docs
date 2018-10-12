@@ -6,6 +6,7 @@
     "-fontsettings",
     "editlink",
     "baidu",
+    "versions",
     "sitemap",
     "copy-code-button",
     "back-to-top-button",
@@ -16,12 +17,11 @@
     "-search", 
     "search-plus",
     "splitter",
-    "theme-hashdatadoc",
-    "tbfed-pagefooter"
+    "theme-hashdatadoc"
   ],
   "pluginsConfig": {
     "editlink": {
-      "base": "https://github.com/HashDataInc/docs/blob/master/",
+      "base": "https://github.com/HashDataInc/docs/blob/v2.1.1/",
       "label": "编辑本页"
     },
     "baidu": {
@@ -30,10 +30,18 @@
     "sitemap": {
       "hostname": "http://docs.hashdata.cn"
     },
-    "tbfed-pagefooter": {
-      "copyright":"",
-      "modify_label": "修订时间：",
-      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    "versions": {
+      "gitbookConfigURL": "http://docs.hashdata.cn/latest/book.json",
+      "options": [
+        {
+          "value": "http://docs.hashdata.cn/v2.1.1/",
+          "text": "v2.1.1"
+        },
+        {
+          "value": "http://docs.hashdata.cn/v1.4.0/",
+          "text": "v1.4.0"
+        }
+      ]
     }
   }
 }
