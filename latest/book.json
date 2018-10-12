@@ -35,7 +35,8 @@
       "options": [
         {
           "value": "http://docs.hashdata.cn/v2.1.1/",
-          "text": "v2.1.1"
+          "text": "v2.1.1",
+          "selected": true
         },
         {
           "value": "http://docs.hashdata.cn/v1.4.0/",
