@@ -2,22 +2,22 @@
   "language": "zh-hans",
   "title": "HashData",
   "plugins": [
-    "-highlight",
     "-sharing",
     "-fontsettings",
-    "-theme-default",
     "editlink",
-    "prism",
     "baidu",
-    "-toc2",
-    "summary2",
     "versions",
     "sitemap",
-    "-autocover",
-    "collapsible-menu",
+    "copy-code-button",
     "back-to-top-button",
     "otherlink",
-    "theme-hashdata-document"
+    "expandable-chapters",
+    "heading-anchors",
+    "-lunr",
+    "-search", 
+    "search-plus",
+    "splitter",
+    "theme-hashdatadoc"
   ],
   "pluginsConfig": {
     "editlink": {
@@ -29,13 +29,6 @@
     },
     "sitemap": {
       "hostname": "http://docs.hashdata.cn"
-    },
-    "theme-default": {
-      "showLevel": false
-    },
-    "toc2": {
-      "addClass": true,
-      "className": "toc"
     },
     "versions": {
       "gitbookConfigURL": "http://docs.hashdata.cn/latest/book.json",
@@ -51,6 +44,5 @@
         }
       ]
     }
-  },
-  "styles": {}
+  }
 }
