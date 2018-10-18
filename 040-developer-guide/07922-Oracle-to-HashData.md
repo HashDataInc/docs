@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 ###HashData与Oracle语法上的差异
 在这一章节中，我们简单比较一下，HashData 在语法层面与Oracle的差异。
 
 ####数据类型
+=======
+# 与Oracle语法上的差异
+
+在这一章节中，我们简单比较一下，HashData 在语法层面与Oracle的差异。
+
+##数据类型
+>>>>>>> b2f78643ec0115f91fe4fe97a99df3656849dfb2
 
 **字符类型**
 
@@ -59,7 +67,11 @@ Oracle | HashData  | 备注
 RAW | BYTEA | 
 RAWID | OID | 
 
+<<<<<<< HEAD
 ####常用函数
+=======
+##常用函数
+>>>>>>> b2f78643ec0115f91fe4fe97a99df3656849dfb2
 
 **字符串操作函数**
 
@@ -116,7 +128,11 @@ decode是Oracle固有的一个函数，用于条件判断。其格式为：
 	-- HashData 
 	select case when y.studentcode is null then '0' else '1' end studenttype from y;
 
+<<<<<<< HEAD
 ####存储过程
+=======
+##存储过程
+>>>>>>> b2f78643ec0115f91fe4fe97a99df3656849dfb2
 
 **最简单的存储过程**
 
@@ -300,7 +316,11 @@ Oracle和HashData 基本也是一样的：
 	END;
 	$$ LANGUAGE PLPGSQL;
 
+<<<<<<< HEAD
 ####游标
+=======
+##游标
+>>>>>>> b2f78643ec0115f91fe4fe97a99df3656849dfb2
 
 在HashData 中，我们一般很少使用游标，因为当我们使用**FOR LOOP**的时候，数据库后台自动就会转化成游标。不过，这里我们还是可以简单介绍一下HashData 中游标的使用。
 
