@@ -119,6 +119,7 @@
         - [3.7.8 queries_*](020-admin-guide/080-gpperfmon-database/queries.md)
         - [3.7.9 segment_*](020-admin-guide/080-gpperfmon-database/segment.md)
         - [3.7.10 system_*](020-admin-guide/080-gpperfmon-database/system.md)
+    - [3.8 使用资源队列进行工作负载管理](020-admin-guide/090-resouce-queue-manage.md)
 
 
 - [4 开发指南](040-developer-guide/README.md)
@@ -256,6 +257,8 @@
     - [4.12 PL/Python 语言扩展](040-developer-guide/0790-hashdata-de-pl-python-yu-yan-kuo-zhan.md)
     - [4.13 用于分析的 MADlib 扩展](040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.md)
     - [4.14 PostGIS 扩展](040-developer-guide/07920-hashdata-postgis-kuo-zhan.md)
+    - [4.15 HashData的PL/Java语言扩展](040-developer-guide/07921-pl-java-yu-yan.md)
+    - [4.16 HashData与Oracle语法上的差异](040-developer-guide/07922-Oracle-to-HashData.md)
 
 
 - [5 最佳实践](060-best-practices/README.md)

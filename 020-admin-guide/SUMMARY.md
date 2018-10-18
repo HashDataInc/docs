@@ -122,6 +122,7 @@
     - [8.9 segment_*](080-gpperfmon-database/segment.md)
     - [8.10 system_*](080-gpperfmon-database/system.md)
 
+- [9 使用资源队列进行工作负载管理](090-resouce-queue-manage.md)
 
 
 
