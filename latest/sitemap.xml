@@ -116,6 +116,7 @@
 <url> <loc>http://docs.hashdata.cn/020-admin-guide/080-gpperfmon-database/queries.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/020-admin-guide/080-gpperfmon-database/segment.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/020-admin-guide/080-gpperfmon-database/system.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/020-admin-guide/090-resouce-queue-manage.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/030-fang-wen-hashdata-shu-ju-cang-ku.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
