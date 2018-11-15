@@ -1,0 +1,4223 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>COPY · HashData</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-hashdatadoc/fexa.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+        <link rel="stylesheet" 
+            href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+
+    
+        <link rel="stylesheet" href="../../gitbook/hashdata.css">
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="create-aggregate.html" />
+    
+    
+    <link rel="prev" href="commit.html" />
+    
+
+    </head>
+    <body>
+        
+
+
+<div id="header">
+        <header class="navbar navbar-default" id="top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.hashdata.cn">
+                        <img alt="Brand" src="../../gitbook/images/logo.png">
+                    </a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="nav-index">
+                            <a href="http://www.hashdata.cn">首页</a>
+                        </li>
+                        <li id="nav-product">
+                            <a href="http://www.hashdata.cn/product">产品</a>
+                        </li>
+                        <li id="nav-case">
+                            <a href="http://www.hashdata.cn/case">案例</a>
+                        </li>
+                        <li id="nav-blog">
+                            <a href="http://www.hashdata.cn/blog">博客</a>
+                        </li>
+                        <li id="nav-doc" class="active">
+                            <a href="http://www.hashdata.cn/docs">文档</a>
+                        </li>
+                        <li class="dropdown" id="nav-aboutus">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">酷克数据<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="http://www.hashdata.cn/#block-aboutus-img">关于我们</a></li>
+                                <li><a href="http://www.hashdata.cn/aboutus">加入我们</a></li>
+                                <li> <a href="http://www.greenplum.net.cn/" target=_blank>社区</a></li>
+                            </ul>
+                        </li>
+                        <li class="try">
+			    <a target="_blank" href="https://appcenter.qingcloud.com/apps/app-iwacxg9z">点击试用</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+
+<div class="book">
+
+	<div class="book-summary">
+		
+		
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+		
+		<nav role="navigation">
+			
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    文档目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../010-getting-started-guide/">
+            
+                <a href="../../010-getting-started-guide/">
+            
+                    
+                    入门指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../010-getting-started-guide/020-zhun-bei-gong-zuo.html">
+            
+                <a href="../../010-getting-started-guide/020-zhun-bei-gong-zuo.html">
+            
+                    
+                    步骤1: 准备工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../010-getting-started-guide/030-qi-dong-ji-qun.html">
+            
+                <a href="../../010-getting-started-guide/030-qi-dong-ji-qun.html">
+            
+                    
+                    步骤2: 启动 HashData 数据仓库样例集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../010-getting-started-guide/040-shou-quan-lian-jie.html">
+            
+                <a href="../../010-getting-started-guide/040-shou-quan-lian-jie.html">
+            
+                    
+                    步骤3: 授权连接样例集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../010-getting-started-guide/050-lian-jie-ji-qun.html">
+            
+                <a href="../../010-getting-started-guide/050-lian-jie-ji-qun.html">
+            
+                    
+                    步骤4: 连接样例集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../010-getting-started-guide/060-jia-zai-shu-ju.html">
+            
+                <a href="../../010-getting-started-guide/060-jia-zai-shu-ju.html">
+            
+                    
+                    步骤5: 将样例数据从对象存储加载到 HashData 数据仓库中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../010-getting-started-guide/070-shan-chu-ji-qun.html">
+            
+                <a href="../../010-getting-started-guide/070-shan-chu-ji-qun.html">
+            
+                    
+                    步骤6: 寻找额外的资料和重设你的环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../020-admin-guide/">
+            
+                <a href="../../020-admin-guide/">
+            
+                    
+                    管理指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../020-admin-guide/020-ji-qun-cao-zuo.html">
+            
+                <a href="../../020-admin-guide/020-ji-qun-cao-zuo.html">
+            
+                    
+                    管理概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../020-admin-guide/030-ji-qun-jian-kong.html">
+            
+                <a href="../../020-admin-guide/030-ji-qun-jian-kong.html">
+            
+                    
+                    集群性能监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../020-admin-guide/050-pai-cha-xi-tong-wen-ti.html">
+            
+                <a href="../../020-admin-guide/050-pai-cha-xi-tong-wen-ti.html">
+            
+                    
+                    排查系统问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../020-admin-guide/060-system-catalog-ref/">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/">
+            
+                    
+                    系统目录参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.1" data-path="../../020-admin-guide/060-system-catalog-ref/010-xi-tong-biao.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/010-xi-tong-biao.html">
+            
+                    
+                    系统表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.2" data-path="../../020-admin-guide/060-system-catalog-ref/020-xi-tong-shi-tu.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/020-xi-tong-shi-tu.html">
+            
+                    
+                    系统视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/">
+            
+                    
+                    系统目录定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.3.1" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpconfiguration-history.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpconfiguration-history.html">
+            
+                    
+                    gp_configuration_history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.2" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpdb-interfaces.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpdb-interfaces.html">
+            
+                    
+                    gp_db_interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.3" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpdistributed-log.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpdistributed-log.html">
+            
+                    
+                    gp_distributed_log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.4" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpdistributed-xacts.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpdistributed-xacts.html">
+            
+                    
+                    gp_distributed_xacts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.5" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpdistribution-policy.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpdistribution-policy.html">
+            
+                    
+                    gp_distribution_policy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.6" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpexpandexpansionprogress.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpexpandexpansionprogress.html">
+            
+                    
+                    gpexpand.expansion_progress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.7" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpexpandstatus.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpexpandstatus.html">
+            
+                    
+                    gpexpand.status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.8" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpexpandstatusdetail.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpexpandstatusdetail.html">
+            
+                    
+                    gpexpand.status_detail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.9" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpfastsequence.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpfastsequence.html">
+            
+                    
+                    gp_fastsequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.10" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpfault-strategy.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpfault-strategy.html">
+            
+                    
+                    gp_fault_strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.11" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpglobal-sequence.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpglobal-sequence.html">
+            
+                    
+                    gp_global_sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.12" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpid.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpid.html">
+            
+                    
+                    gp_id
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.13" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpinterfaces.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpinterfaces.html">
+            
+                    
+                    gp_interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.14" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppersistent-database-node.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppersistent-database-node.html">
+            
+                    
+                    gp_persistent_database_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.15" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppersistent-filespace-node.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppersistent-filespace-node.html">
+            
+                    
+                    gp_persistent_filespace_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.16" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppersistent-relation-node.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppersistent-relation-node.html">
+            
+                    
+                    gp_persistent_relation_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.17" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppersistent-tablespace-node.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppersistent-tablespace-node.html">
+            
+                    
+                    gp_persistent_tablespace_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.18" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppgdatabase.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gppgdatabase.html">
+            
+                    
+                    gp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.19" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gprelation-node.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gprelation-node.html">
+            
+                    
+                    gp_relation_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.20" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpresqueue-status.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpresqueue-status.html">
+            
+                    
+                    gp_resqueue_status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.21" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpsegment-configuration.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpsegment-configuration.html">
+            
+                    
+                    gp_segment_configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.22" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gptransaction-log.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gptransaction-log.html">
+            
+                    
+                    gp_transaction_log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.23" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpversion-at-initdb.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/gpversion-at-initdb.html">
+            
+                    
+                    gp_version_at_initdb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.24" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgaggregate.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgaggregate.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.25" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgam.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgam.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.26" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgamop.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgamop.html">
+            
+                    
+                    pg_amop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.27" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgamproc.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgamproc.html">
+            
+                    
+                    pg_amproc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.28" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgappendonly.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgappendonly.html">
+            
+                    
+                    pg_appendonly
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.29" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgattrdef.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgattrdef.html">
+            
+                    
+                    pg_attrdef
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.30" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgattribute-encoding.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgattribute-encoding.html">
+            
+                    
+                    pg_attribute_encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.31" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgattribute.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgattribute.html">
+            
+                    
+                    pg_attribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.32" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgauth-members.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgauth-members.html">
+            
+                    
+                    pg_auth_members
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.33" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgauthid.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgauthid.html">
+            
+                    
+                    pg_authid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.34" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgavailable-extension-versions.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgavailable-extension-versions.html">
+            
+                    
+                    pg_available_extension_versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.35" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgavailable-extensions.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgavailable-extensions.html">
+            
+                    
+                    pg_available_extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.36" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgcast.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgcast.html">
+            
+                    
+                    pg_cast
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.37" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgclass.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgclass.html">
+            
+                    
+                    pg_class
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.38" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgcompression.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgcompression.html">
+            
+                    
+                    pg_compression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.39" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgconstraint.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgconstraint.html">
+            
+                    
+                    pg_constraint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.40" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgconversion.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgconversion.html">
+            
+                    
+                    pg_conversion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.41" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdatabase.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdatabase.html">
+            
+                    
+                    pg_database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.42" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdepend.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdepend.html">
+            
+                    
+                    pg_depend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.43" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdescription.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdescription.html">
+            
+                    
+                    pg_description
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.44" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgenum.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgenum.html">
+            
+                    
+                    pg_enum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.45" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgextension.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgextension.html">
+            
+                    
+                    pg_extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.46" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgexttable.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgexttable.html">
+            
+                    
+                    pg_exttable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.47" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgfilespace-entry.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgfilespace-entry.html">
+            
+                    
+                    pg_filespace_entry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.48" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgfilespace.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgfilespace.html">
+            
+                    
+                    pg_filespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.49" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgindex.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgindex.html">
+            
+                    
+                    pg_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.50" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pginherits.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pginherits.html">
+            
+                    
+                    pg_inherits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.51" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pglanguage.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pglanguage.html">
+            
+                    
+                    pg_language
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.52" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pglargeobject.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pglargeobject.html">
+            
+                    
+                    pg_largeobject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.53" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pglistener.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pglistener.html">
+            
+                    
+                    pg_listener
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.54" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pglocks.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pglocks.html">
+            
+                    
+                    pg_locks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.55" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgmax-external-files.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgmax-external-files.html">
+            
+                    
+                    pg_max_external_files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.56" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgnamespace.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgnamespace.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.57" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgopclass.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgopclass.html">
+            
+                    
+                    pg_opclass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.58" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgoperator.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgoperator.html">
+            
+                    
+                    pg_operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.59" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition-columns.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition-columns.html">
+            
+                    
+                    pg_partition_columns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.60" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition-encoding.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition-encoding.html">
+            
+                    
+                    pg_partition_encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.61" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition-rule.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition-rule.html">
+            
+                    
+                    pg_partition_rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.62" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition-templates.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition-templates.html">
+            
+                    
+                    pg_partition_templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.63" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartition.html">
+            
+                    
+                    pg_partition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.64" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartitions.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpartitions.html">
+            
+                    
+                    pg_partitions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.65" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpltemplate.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgpltemplate.html">
+            
+                    
+                    pg_pltemplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.66" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgproc.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgproc.html">
+            
+                    
+                    pg_proc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.67" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgresourcetype.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgresourcetype.html">
+            
+                    
+                    pg_resourcetype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.68" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgresqueue-attributes.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgresqueue-attributes.html">
+            
+                    
+                    pg_resqueue_attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.69" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgresqueue.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgresqueue.html">
+            
+                    
+                    pg_resqueue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.70" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgresqueuecapability.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgresqueuecapability.html">
+            
+                    
+                    pg_resqueuecapability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.71" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgrewrite.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgrewrite.html">
+            
+                    
+                    pg_rewrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.72" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgroles.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgroles.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.73" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgshdepend.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgshdepend.html">
+            
+                    
+                    pg_shdepend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.74" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgshdescription.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgshdescription.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.75" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-activity.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-activity.html">
+            
+                    
+                    pg_stat_activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.76" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-last-operation.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-last-operation.html">
+            
+                    
+                    pg_stat_last_operation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.77" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-last-shoperation.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-last-shoperation.html">
+            
+                    
+                    pg_stat_last_shoperation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.78" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-operations.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-operations.html">
+            
+                    
+                    pg_stat_operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.79" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-partition-operations.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-partition-operations.html">
+            
+                    
+                    pg_stat_partition_operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.80" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-replication.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-replication.html">
+            
+                    
+                    pg_stat_replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.81" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-resqueues.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstat-resqueues.html">
+            
+                    
+                    pg_stat_resqueues
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.82" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstatistic.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgstatistic.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.83" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgtablespace.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgtablespace.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.84" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgtrigger.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgtrigger.html">
+            
+                    
+                    pg_trigger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.85" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgtype-encoding.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgtype-encoding.html">
+            
+                    
+                    pg_type_encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.86" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgtype.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgtype.html">
+            
+                    
+                    pg_type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.87" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pguser-mapping.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pguser-mapping.html">
+            
+                    
+                    pg_user_mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.88" data-path="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgwindow.html">
+            
+                <a href="../../020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgwindow.html">
+            
+                    
+                    pg_window
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../020-admin-guide/070-gptoolkit-admin-plan.html">
+            
+                <a href="../../020-admin-guide/070-gptoolkit-admin-plan.html">
+            
+                    
+                    gp_toolkit 管理方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../../020-admin-guide/080-gpperfmon-database/">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/">
+            
+                    
+                    gpperfmon 数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.1" data-path="../../020-admin-guide/080-gpperfmon-database/database.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/database.html">
+            
+                    
+                    database_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.2" data-path="../../020-admin-guide/080-gpperfmon-database/diskspace.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/diskspace.html">
+            
+                    
+                    diskspace_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.3" data-path="../../020-admin-guide/080-gpperfmon-database/dynamicmemory-info.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/dynamicmemory-info.html">
+            
+                    
+                    dynamic_memory_info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.4" data-path="../../020-admin-guide/080-gpperfmon-database/filerep.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/filerep.html">
+            
+                    
+                    filerep_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.5" data-path="../../020-admin-guide/080-gpperfmon-database/interfacestats.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/interfacestats.html">
+            
+                    
+                    interfacestats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6" data-path="../../020-admin-guide/080-gpperfmon-database/logalert.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/logalert.html">
+            
+                    
+                    logalert*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7" data-path="../../020-admin-guide/080-gpperfmon-database/memoryinfo.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/memoryinfo.html">
+            
+                    
+                    memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.8" data-path="../../020-admin-guide/080-gpperfmon-database/queries.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/queries.html">
+            
+                    
+                    queries_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9" data-path="../../020-admin-guide/080-gpperfmon-database/segment.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/segment.html">
+            
+                    
+                    segment_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.10" data-path="../../020-admin-guide/080-gpperfmon-database/system.html">
+            
+                <a href="../../020-admin-guide/080-gpperfmon-database/system.html">
+            
+                    
+                    system_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../../020-admin-guide/090-resouce-queue-manage.html">
+            
+                <a href="../../020-admin-guide/090-resouce-queue-manage.html">
+            
+                    
+                    使用资源队列进行工作负载管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    开发指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.html">
+            
+                <a href="../020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.html">
+            
+                    
+                    系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../030-fang-wen-hashdata-shu-ju-cang-ku.html">
+            
+                <a href="../030-fang-wen-hashdata-shu-ju-cang-ku.html">
+            
+                    
+                    访问数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../031-python-fang-wen-shu-ju-ku.html">
+            
+                <a href="../031-python-fang-wen-shu-ju-ku.html">
+            
+                    
+                    使用 Python 访问 HashData 数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../032-R-fang-wen-shu-ju-ku.html">
+            
+                <a href="../032-R-fang-wen-shu-ju-ku.html">
+            
+                    
+                    使用 R 语言访问 HashData 数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../040-ding-yi-shu-ju-ku-dui-xiang.html">
+            
+                <a href="../040-ding-yi-shu-ju-ku-dui-xiang.html">
+            
+                    
+                    定义数据库对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../050-shu-ju-de-guan-li.html">
+            
+                <a href="../050-shu-ju-de-guan-li.html">
+            
+                    
+                    数据的管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../060-dao-ru-he-dao-chu-shu-ju.html">
+            
+                <a href="../060-dao-ru-he-dao-chu-shu-ju.html">
+            
+                    
+                    导入导出数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="../070-cha-xun-shu-ju.html">
+            
+                <a href="../070-cha-xun-shu-ju.html">
+            
+                    
+                    查询数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    SQL 命令参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.9.1" data-path="010-sqlyu-fa-gai-yao.html">
+            
+                <a href="010-sqlyu-fa-gai-yao.html">
+            
+                    
+                    SQL语法概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.2" data-path="abort.html">
+            
+                <a href="abort.html">
+            
+                    
+                    ABORT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.3" data-path="alter-aggregate.html">
+            
+                <a href="alter-aggregate.html">
+            
+                    
+                    ALTER AGGREGATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.4" data-path="alter-conversion.html">
+            
+                <a href="alter-conversion.html">
+            
+                    
+                    ALTER CONVERSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.5" data-path="alter-database.html">
+            
+                <a href="alter-database.html">
+            
+                    
+                    ALTER DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.6" data-path="alter-domain.html">
+            
+                <a href="alter-domain.html">
+            
+                    
+                    ALTER DOMAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.7" data-path="alter-extension.html">
+            
+                <a href="alter-extension.html">
+            
+                    
+                    ALTER EXTENSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.8" data-path="alter-external-table.html">
+            
+                <a href="alter-external-table.html">
+            
+                    
+                    ALTER EXTERNAL TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.9" data-path="alter-filespace.html">
+            
+                <a href="alter-filespace.html">
+            
+                    
+                    ALTER FILESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.10" data-path="alter-function.html">
+            
+                <a href="alter-function.html">
+            
+                    
+                    ALTER FUNCTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.11" data-path="alter-group.html">
+            
+                <a href="alter-group.html">
+            
+                    
+                    ALTER GROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.12" data-path="alter-index.html">
+            
+                <a href="alter-index.html">
+            
+                    
+                    ALTER INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.13" data-path="alter-language.html">
+            
+                <a href="alter-language.html">
+            
+                    
+                    ALTER LANGUAGE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.14" data-path="alter-operator-class.html">
+            
+                <a href="alter-operator-class.html">
+            
+                    
+                    ALTER OPERATOR CLASS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.15" data-path="alter-operator.html">
+            
+                <a href="alter-operator.html">
+            
+                    
+                    ALTER OPERATOR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.16" data-path="alter-protocol.html">
+            
+                <a href="alter-protocol.html">
+            
+                    
+                    ALTER PROTOCOL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.17" data-path="alter-resource-queue.html">
+            
+                <a href="alter-resource-queue.html">
+            
+                    
+                    ALTER RESOURCE QUEUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.18" data-path="alter-role.html">
+            
+                <a href="alter-role.html">
+            
+                    
+                    ALTER ROLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.19" data-path="alter-schema.html">
+            
+                <a href="alter-schema.html">
+            
+                    
+                    ALTER SCHEMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.20" data-path="alter-sequence.html">
+            
+                <a href="alter-sequence.html">
+            
+                    
+                    ALTER SEQUENCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.21" data-path="alter-table.html">
+            
+                <a href="alter-table.html">
+            
+                    
+                    ALTER TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.22" data-path="alter-tablespace.html">
+            
+                <a href="alter-tablespace.html">
+            
+                    
+                    ALTER TABLESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.23" data-path="alter-type.html">
+            
+                <a href="alter-type.html">
+            
+                    
+                    ALTER TYPE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.24" data-path="alter-user.html">
+            
+                <a href="alter-user.html">
+            
+                    
+                    ALTER USER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.25" data-path="analyze.html">
+            
+                <a href="analyze.html">
+            
+                    
+                    ANALYZE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.26" data-path="begin.html">
+            
+                <a href="begin.html">
+            
+                    
+                    BEGIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.27" data-path="checkpoint.html">
+            
+                <a href="checkpoint.html">
+            
+                    
+                    CHECKPOINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.28" data-path="close.html">
+            
+                <a href="close.html">
+            
+                    
+                    CLOSE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.29" data-path="cluster.html">
+            
+                <a href="cluster.html">
+            
+                    
+                    CLUSTER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.30" data-path="comment.html">
+            
+                <a href="comment.html">
+            
+                    
+                    COMMENT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.31" data-path="commit.html">
+            
+                <a href="commit.html">
+            
+                    
+                    COMMIT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.9.32" data-path="copy.html">
+            
+                <a href="copy.html">
+            
+                    
+                    COPY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.33" data-path="create-aggregate.html">
+            
+                <a href="create-aggregate.html">
+            
+                    
+                    CREATE AGGREGATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.34" data-path="create-cast.html">
+            
+                <a href="create-cast.html">
+            
+                    
+                    CREATE CAST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.35" data-path="create-conversion.html">
+            
+                <a href="create-conversion.html">
+            
+                    
+                    CREATE CONVERSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.36" data-path="create-database.html">
+            
+                <a href="create-database.html">
+            
+                    
+                    CREATE DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.37" data-path="create-domain.html">
+            
+                <a href="create-domain.html">
+            
+                    
+                    CREATE DOMAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.38" data-path="create-extension.html">
+            
+                <a href="create-extension.html">
+            
+                    
+                    CREATE EXTENSION(new)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.39" data-path="create-external-table.html">
+            
+                <a href="create-external-table.html">
+            
+                    
+                    CREATE EXTERNAL TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.40" data-path="create-function.html">
+            
+                <a href="create-function.html">
+            
+                    
+                    CREATE FUNCTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.41" data-path="create-group.html">
+            
+                <a href="create-group.html">
+            
+                    
+                    CREATE GROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.42" data-path="create-index.html">
+            
+                <a href="create-index.html">
+            
+                    
+                    CREATE INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.43" data-path="create-language.html">
+            
+                <a href="create-language.html">
+            
+                    
+                    CREATE LANGUAGE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.44" data-path="create-operator-class.html">
+            
+                <a href="create-operator-class.html">
+            
+                    
+                    CREATE OPERATOR CLASS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.45" data-path="create-operator-family.html">
+            
+                <a href="create-operator-family.html">
+            
+                    
+                    CREATE OPERATOR FAMILY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.46" data-path="create-operator.html">
+            
+                <a href="create-operator.html">
+            
+                    
+                    CREATE OPERATOR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.47" data-path="create-protocol.html">
+            
+                <a href="create-protocol.html">
+            
+                    
+                    CREATE PROTOCOL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.48" data-path="create-resource-queue.html">
+            
+                <a href="create-resource-queue.html">
+            
+                    
+                    CREATE RESOURCE QUEUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.49" data-path="create-role.html">
+            
+                <a href="create-role.html">
+            
+                    
+                    CREATE ROLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.50" data-path="create-rule.html">
+            
+                <a href="create-rule.html">
+            
+                    
+                    CREATE RULE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.51" data-path="create-schema.html">
+            
+                <a href="create-schema.html">
+            
+                    
+                    CREATE SCHEMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.52" data-path="create-sequence.html">
+            
+                <a href="create-sequence.html">
+            
+                    
+                    CREATE SEQUENCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.53" data-path="create-table-as.html">
+            
+                <a href="create-table-as.html">
+            
+                    
+                    CREATE TABLE AS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.54" data-path="create-table.html">
+            
+                <a href="create-table.html">
+            
+                    
+                    CREATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.55" data-path="create-tablespace.html">
+            
+                <a href="create-tablespace.html">
+            
+                    
+                    CREATE TABLESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.56" data-path="create-type.html">
+            
+                <a href="create-type.html">
+            
+                    
+                    CREATE TYPE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.57" data-path="create-user.html">
+            
+                <a href="create-user.html">
+            
+                    
+                    CREATE USER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.58" data-path="create-view.html">
+            
+                <a href="create-view.html">
+            
+                    
+                    CREATE VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.59" data-path="deallocate.html">
+            
+                <a href="deallocate.html">
+            
+                    
+                    DEALLOCATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.60" data-path="declare.html">
+            
+                <a href="declare.html">
+            
+                    
+                    DECLARE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.61" data-path="delete.html">
+            
+                <a href="delete.html">
+            
+                    
+                    DELETE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.62" data-path="discard.html">
+            
+                <a href="discard.html">
+            
+                    
+                    DISCARD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.63" data-path="do.html">
+            
+                <a href="do.html">
+            
+                    
+                    DO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.64" data-path="drop-aggregate.html">
+            
+                <a href="drop-aggregate.html">
+            
+                    
+                    DROP AGGREGATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.65" data-path="drop-cast.html">
+            
+                <a href="drop-cast.html">
+            
+                    
+                    DROP CAST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.66" data-path="drop-conversion.html">
+            
+                <a href="drop-conversion.html">
+            
+                    
+                    DROP CONVERSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.67" data-path="drop-database.html">
+            
+                <a href="drop-database.html">
+            
+                    
+                    DROP DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.68" data-path="drop-domain.html">
+            
+                <a href="drop-domain.html">
+            
+                    
+                    DROP DOMAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.69" data-path="drop-extension.html">
+            
+                <a href="drop-extension.html">
+            
+                    
+                    DROP EXTENSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.70" data-path="drop-external-table.html">
+            
+                <a href="drop-external-table.html">
+            
+                    
+                    DROP EXTERNAL TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.71" data-path="drop-filespace.html">
+            
+                <a href="drop-filespace.html">
+            
+                    
+                    DROP FILESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.72" data-path="drop-function.html">
+            
+                <a href="drop-function.html">
+            
+                    
+                    DROP FUNCTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.73" data-path="drop-group.html">
+            
+                <a href="drop-group.html">
+            
+                    
+                    DROP GROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.74" data-path="drop-index.html">
+            
+                <a href="drop-index.html">
+            
+                    
+                    DROP INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.75" data-path="drop-language.html">
+            
+                <a href="drop-language.html">
+            
+                    
+                    DROP LANGUAGE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.76" data-path="drop-operator-class.html">
+            
+                <a href="drop-operator-class.html">
+            
+                    
+                    DROP OPERATOR CLASS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.77" data-path="drop-operator-family.html">
+            
+                <a href="drop-operator-family.html">
+            
+                    
+                    DROP OPERATOR FAMILY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.78" data-path="drop-operator.html">
+            
+                <a href="drop-operator.html">
+            
+                    
+                    DROP OPERATOR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.79" data-path="drop-owned.html">
+            
+                <a href="drop-owned.html">
+            
+                    
+                    DROP OWNED
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.80" data-path="drop-protocol.html">
+            
+                <a href="drop-protocol.html">
+            
+                    
+                    DROP PROTOCOL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.81" data-path="drop-resource-queue.html">
+            
+                <a href="drop-resource-queue.html">
+            
+                    
+                    DROP RESOURCE QUEUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.82" data-path="drop-role.html">
+            
+                <a href="drop-role.html">
+            
+                    
+                    DROP ROLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.83" data-path="drop-rule.html">
+            
+                <a href="drop-rule.html">
+            
+                    
+                    DROP RULE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.84" data-path="drop-schema.html">
+            
+                <a href="drop-schema.html">
+            
+                    
+                    DROP SCHEMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.85" data-path="drop-sequence.html">
+            
+                <a href="drop-sequence.html">
+            
+                    
+                    DROP SEQUENCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.86" data-path="drop-table.html">
+            
+                <a href="drop-table.html">
+            
+                    
+                    DROP TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.87" data-path="drop-tablespace.html">
+            
+                <a href="drop-tablespace.html">
+            
+                    
+                    DROP TABLESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.88" data-path="drop-type.html">
+            
+                <a href="drop-type.html">
+            
+                    
+                    DROP TYPE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.89" data-path="drop-user.html">
+            
+                <a href="drop-user.html">
+            
+                    
+                    DROP USER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.90" data-path="drop-view.html">
+            
+                <a href="drop-view.html">
+            
+                    
+                    DROP VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.91" data-path="end.html">
+            
+                <a href="end.html">
+            
+                    
+                    END
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.92" data-path="execute.html">
+            
+                <a href="execute.html">
+            
+                    
+                    EXECUTE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.93" data-path="explain.html">
+            
+                <a href="explain.html">
+            
+                    
+                    EXPLAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.94" data-path="fetch.html">
+            
+                <a href="fetch.html">
+            
+                    
+                    FETCH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.95" data-path="grant.html">
+            
+                <a href="grant.html">
+            
+                    
+                    GRANT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.96" data-path="insert.html">
+            
+                <a href="insert.html">
+            
+                    
+                    INSERT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.97" data-path="load.html">
+            
+                <a href="load.html">
+            
+                    
+                    LOAD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.98" data-path="lock.html">
+            
+                <a href="lock.html">
+            
+                    
+                    LOCK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.99" data-path="move.html">
+            
+                <a href="move.html">
+            
+                    
+                    MOVE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.100" data-path="prepare.html">
+            
+                <a href="prepare.html">
+            
+                    
+                    PREPARE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.101" data-path="reassign-owned.html">
+            
+                <a href="reassign-owned.html">
+            
+                    
+                    REASSIGN OWNED
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.102" data-path="reindex.html">
+            
+                <a href="reindex.html">
+            
+                    
+                    REINDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.103" data-path="release-savepoint.html">
+            
+                <a href="release-savepoint.html">
+            
+                    
+                    RELEASE SAVEPOINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.104" data-path="reset.html">
+            
+                <a href="reset.html">
+            
+                    
+                    RESET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.105" data-path="revoke.html">
+            
+                <a href="revoke.html">
+            
+                    
+                    REVOKE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.106" data-path="rollback-to-savepoint.html">
+            
+                <a href="rollback-to-savepoint.html">
+            
+                    
+                    ROLLBACK TO SAVEPOINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.107" data-path="rollback.html">
+            
+                <a href="rollback.html">
+            
+                    
+                    ROLLBACK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.108" data-path="savepoint.html">
+            
+                <a href="savepoint.html">
+            
+                    
+                    SAVEPOINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.109" data-path="select-into.html">
+            
+                <a href="select-into.html">
+            
+                    
+                    SELECT INTO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.110" data-path="select.html">
+            
+                <a href="select.html">
+            
+                    
+                    SELECT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.111" data-path="set-role.html">
+            
+                <a href="set-role.html">
+            
+                    
+                    SET ROLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.112" data-path="set-session-authorization.html">
+            
+                <a href="set-session-authorization.html">
+            
+                    
+                    SET SESSION AUTHORIZATION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.113" data-path="set-transaction.html">
+            
+                <a href="set-transaction.html">
+            
+                    
+                    SET TRANSACTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.114" data-path="set.html">
+            
+                <a href="set.html">
+            
+                    
+                    SET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.115" data-path="show.html">
+            
+                <a href="show.html">
+            
+                    
+                    SHOW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.116" data-path="start-transaction.html">
+            
+                <a href="start-transaction.html">
+            
+                    
+                    START TRANSACTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.117" data-path="truncate.html">
+            
+                <a href="truncate.html">
+            
+                    
+                    TRUNCATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.118" data-path="update.html">
+            
+                <a href="update.html">
+            
+                    
+                    UPDATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.119" data-path="vacuum.html">
+            
+                <a href="vacuum.html">
+            
+                    
+                    VACUUM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.120" data-path="values.html">
+            
+                <a href="values.html">
+            
+                    
+                    VALUES
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="../0750-data-type.html">
+            
+                <a href="../0750-data-type.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.11" data-path="../0760-char-set-support.html">
+            
+                <a href="../0760-char-set-support.html">
+            
+                    
+                    字符集支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.12" data-path="../0770-system-configuration-parameters.html">
+            
+                <a href="../0770-system-configuration-parameters.html">
+            
+                    
+                    系统配置参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.13" data-path="../0780-built-in-function-summary.html">
+            
+                <a href="../0780-built-in-function-summary.html">
+            
+                    
+                    内置函数摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.14" data-path="../0790-hashdata-de-pl-python-yu-yan-kuo-zhan.html">
+            
+                <a href="../0790-hashdata-de-pl-python-yu-yan-kuo-zhan.html">
+            
+                    
+                    PL/Python 语言扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.15" data-path="../07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.html">
+            
+                <a href="../07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.html">
+            
+                    
+                    用于分析的 MADlib 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.16" data-path="../07920-hashdata-postgis-kuo-zhan.html">
+            
+                <a href="../07920-hashdata-postgis-kuo-zhan.html">
+            
+                    
+                    PostGIS 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.17" data-path="../07921-pl-java-yu-yan.html">
+            
+                <a href="../07921-pl-java-yu-yan.html">
+            
+                    
+                    HashData的PL/Java语言扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.18" data-path="../07922-Oracle-to-HashData.html">
+            
+                <a href="../07922-Oracle-to-HashData.html">
+            
+                    
+                    HashData与Oracle语法上的差异
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.19" data-path="../080-data-encryption.html">
+            
+                <a href="../080-data-encryption.html">
+            
+                    
+                    数据加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../060-best-practices/">
+            
+                <a href="../../060-best-practices/">
+            
+                    
+                    最佳实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../060-best-practices/010-zui-jia-shi-jian-ti-gang.html">
+            
+                <a href="../../060-best-practices/010-zui-jia-shi-jian-ti-gang.html">
+            
+                    
+                    最佳实践提纲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../060-best-practices/030-shu-ju-ku-mo-shi-she-ji.html">
+            
+                <a href="../../060-best-practices/030-shu-ju-ku-mo-shi-she-ji.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../060-best-practices/031-cun-chu-mo-xing.html">
+            
+                <a href="../../060-best-practices/031-cun-chu-mo-xing.html">
+            
+                    
+                    存储模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../060-best-practices/032-ya-suo.html">
+            
+                <a href="../../060-best-practices/032-ya-suo.html">
+            
+                    
+                    压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../../060-best-practices/033-fen-bu.html">
+            
+                <a href="../../060-best-practices/033-fen-bu.html">
+            
+                    
+                    分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../../060-best-practices/034-fen-qu.html">
+            
+                <a href="../../060-best-practices/034-fen-qu.html">
+            
+                    
+                    分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../../060-best-practices/035-suo-yin.html">
+            
+                <a href="../../060-best-practices/035-suo-yin.html">
+            
+                    
+                    索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../../060-best-practices/036-zi-duan-shun-xu.html">
+            
+                <a href="../../060-best-practices/036-zi-duan-shun-xu.html">
+            
+                    
+                    字段顺序和字节对齐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../../060-best-practices/040-nei-cun-he-fu-zai-guan-li.html">
+            
+                <a href="../../060-best-practices/040-nei-cun-he-fu-zai-guan-li.html">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../../060-best-practices/050-xi-tong-jian-kong-he-wei-hu.html">
+            
+                <a href="../../060-best-practices/050-xi-tong-jian-kong-he-wei-hu.html">
+            
+                    
+                    监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../../060-best-practices/060-jia-zai-shu-ju.html">
+            
+                <a href="../../060-best-practices/060-jia-zai-shu-ju.html">
+            
+                    
+                    数据加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../../060-best-practices/070-sqlcha-xun-diao-you.html">
+            
+                <a href="../../060-best-practices/070-sqlcha-xun-diao-you.html">
+            
+                    
+                    查询计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../../060-best-practices/080-dao-ru-shu-ju-dao-hashdata.html">
+            
+                <a href="../../060-best-practices/080-dao-ru-shu-ju-dao-hashdata.html">
+            
+                    
+                    数据库导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+		</nav>
+		
+		
+	</div>
+
+	<!-- Content nav -->
+	<div class="book-anchor">
+		<div class="book-anchor-title">在这篇文章中:</div>
+		<div class="book-anchor-body">
+
+		</div>
+	</div>
+
+	<div class="book-body">
+		
+		<div class="body-inner">
+			
+			
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >COPY</a>
+    </h1>
+</div>
+
+
+
+
+			<div class="page-wrapper" tabindex="-1" role="main">
+				<div class="page-inner">
+					
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+					<section class="normal markdown-section">
+						
+						<h1 id="copy">COPY</h1>
+<p>&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x548C;&#x4E00;&#x4E2A;&#x8868;&#x4E4B;&#x95F4;&#x590D;&#x5236;&#x6570;&#x636E;&#x3002;</p>
+<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<pre><code>COPY table [(column [, ...])] FROM {&apos;file&apos; | STDIN}
+     [ [WITH] 
+       [BINARY]
+       [OIDS]
+       [HEADER]
+       [DELIMITER [ AS ] &apos;delimiter&apos;]
+       [NULL [ AS ] &apos;null string&apos;]
+       [ESCAPE [ AS ] &apos;escape&apos; | &apos;OFF&apos;]
+       [NEWLINE [ AS ] &apos;LF&apos; | &apos;CR&apos; | &apos;CRLF&apos;]
+       [CSV [QUOTE [ AS ] &apos;quote&apos;] 
+            [FORCE NOT NULL column [, ...]]
+       [FILL MISSING FIELDS]
+       [[LOG ERRORS]  
+       SEGMENT REJECT LIMIT count [ROWS | PERCENT] ]
+
+COPY {table [(column [, ...])] | (query)} TO {&apos;file&apos; | STDOUT}
+      [ [WITH] 
+        [ON SEGMENT]
+        [BINARY]
+        [OIDS]
+        [HEADER]
+        [DELIMITER [ AS ] &apos;delimiter&apos;]
+        [NULL [ AS ] &apos;null string&apos;]
+        [ESCAPE [ AS ] &apos;escape&apos; | &apos;OFF&apos;]
+        [CSV [QUOTE [ AS ] &apos;quote&apos;] 
+             [FORCE QUOTE column [, ...]] ]
+      [IGNORE EXTERNAL PARTITIONS ]
+</code></pre><h2 id="&#x63CF;&#x8FF0;">&#x63CF;&#x8FF0;</h2>
+<p>COPY &#x5728;  HashData &#x6570;&#x636E;&#x5E93;&#x8868;&#x548C;&#x6807;&#x51C6;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x4E4B;&#x95F4;&#x79FB;&#x52A8;&#x6570;&#x636E;&#x3002; COPY TO &#x628A;&#x4E00;&#x4E2A;&#x8868;&#x7684;&#x5185;&#x5BB9;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6; (&#x5982;&#x679C;&#x590D;&#x5236;&#x5B58;&#x5728;  ON SEGMENT &#x6761;&#x4EF6;&#xFF0C;&#x5219;&#x6839;&#x636E; Segment &#x7684; ID &#x590D;&#x5236;&#x591A;&#x4E2A;&#x6587;&#x4EF6;), &#x800C; COPY FROM &#x5219;&#x4ECE;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x6570;&#x636E;&#x5230;&#x4E00;&#x4E2A;&#x8868; (&#x628A;&#x6570;&#x636E;&#x8FFD;&#x52A0;&#x5230;&#x8868;&#x4E2D;&#x539F;&#x6709;&#x6570;&#x636E;)&#x3002; COPY TO &#x4E5F;&#x80FD;&#x590D;&#x5236;&#x4E00;&#x4E2A; SELECT &#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;: COPY FROM &#x5F53;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x5E26; ON SEGMENT &#x9009;&#x9879;&#x7684; COPY TO &#x4EA7;&#x751F;&#x7684; Segment &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x4ED6;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6765;&#x6062;&#x590D;&#x6570;&#x636E;&#x3002;</p>
+</blockquote>
+<p>&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x5217;&#x5217;&#x8868;&#xFF0C;COPY &#x5C06;&#x53EA;&#x628A;&#x6307;&#x5B9A;&#x5217;&#x7684;&#x6570;&#x636E;&#x590D;&#x5236;&#x5230;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x4ECE;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x6570;&#x636E;&#x5230;&#x6307;&#x5B9A;&#x5217;&#x3002;&#x5982;&#x679C;&#x8868;&#x4E2D;&#x6709;&#x5217;&#x4E0D;&#x5728;&#x5217;&#x5217;&#x8868;&#x4E2D;&#xFF0C; COPY FROM &#x5C06;&#x4F1A;&#x4E3A;&#x90A3;&#x4E9B;&#x5217;&#x63D2;&#x5165;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<p>&#x5E26;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#x7684; COPY &#x6307;&#x793A; HashData &#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x76F4;&#x63A5;&#x4ECE;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x6216;&#x8005;&#x5199;&#x5165;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;&#x8BE5; master &#x4E3B;&#x673A;&#x5FC5;&#x987B;&#x53EF;&#x8BBF;&#x95EE;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x4ECE; master &#x4E3B;&#x673A;&#x7684;&#x89D2;&#x5EA6;&#x6307;&#x5B9A;&#x8BE5;&#x540D;&#x79F0;&#x3002;&#x5F53;&#x6307;&#x5B9A; STDIN &#x6216; STDOUT &#x65F6;&#xFF0C;&#x6570;&#x636E;&#x901A;&#x8FC7;&#x5BA2;&#x6237;&#x7AEF;&#x548C; master &#x4E3B;&#x673A;&#x4E4B;&#x95F4;&#x7684;&#x8FDE;&#x63A5;&#x6765;&#x4F20;&#x8F93;&#x3002;</p>
+<p>&#x5F53; COPY &#x548C; ON SEGMENT &#x9009;&#x9879;&#x4E00;&#x8D77;&#x88AB;&#x4F7F;&#x7528;&#x65F6;&#xFF0C; COPY TO &#x5BFC;&#x81F4; Segment &#x521B;&#x5EFA;&#x9762;&#x5411; Segment &#x7684;&#x4E2A;&#x4F53;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x4FDD;&#x7559;&#x5728; Segment &#x4E3B;&#x673A;&#x4E0A;&#x3002;ON SEGMENT &#x7684;&#x6587;&#x4EF6;&#x53C2;&#x6570;&#x662F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57; <code>&lt;SEGID&gt;</code> (&#x5FC5;&#x987B;) &#x5E76;&#x4F7F;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6216; <code>&lt;SEG_DATA_DIR&gt;</code> &#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x3002; &#x5F53;&#x8FD0;&#x884C; COPY &#x64CD;&#x4F5C;&#x65F6;&#xFF0C;Segment &#x7684; ID &#x548C; Segment &#x6570;&#x636E;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x5F84;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x503C;&#x3002;</p>
+<p>ON SEGMENT &#x9009;&#x9879;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5C06;&#x8868;&#x6570;&#x636E;&#x590D;&#x5236;&#x5230; Segment &#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x7528;&#x4E8E;&#x8BF8;&#x5982;&#x5728;&#x96C6;&#x7FA4;&#x4E4B;&#x95F4;&#x8FC1;&#x79FB;&#x6570;&#x636E;&#x6216;&#x6267;&#x884C;&#x5907;&#x4EFD;&#x7B49;&#x64CD;&#x4F5C;&#x3002; &#x901A;&#x8FC7; ON SEGMENT &#x9009;&#x9879;&#x521B;&#x5EFA;&#x7684; Segment &#x6570;&#x636E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; gpfdist &#x7B49;&#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x6062;&#x590D;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x9AD8;&#x901F;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002;</p>
+<p>COPY FROM &#x5F53;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x4ECE;&#x5E26; ON SEGMENT &#x9009;&#x9879;&#x7684; COPY TO &#x4EA7;&#x751F;&#x7684; Segment &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x4ED6;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6765;&#x6062;&#x590D;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x5F53;&#x6307;&#x5B9A; STDIN &#x6216; STDOUT &#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x4E3B;&#x673A;&#x4E4B;&#x95F4;&#x7684;&#x8FDE;&#x63A5;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x3002; STDOUT &#x4E0D;&#x80FD;&#x4E0E; ON SEGMENT &#x9009;&#x9879;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4E86; SEGMENT REJECT LIMIT &#xFF0C;&#x5219; COPY FROM &#x64CD;&#x4F5C;&#x5C06;&#x5728;&#x5355;&#x884C;&#x9519;&#x8BEF;&#x9694;&#x79BB;&#x6A21;&#x5F0F;&#x4E0B;&#x8FD0;&#x884C;&#x3002;&#x5728;&#x6B64;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x5355;&#x884C;&#x9519;&#x8BEF;&#x9694;&#x79BB;&#x6A21;&#x5F0F;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x5177;&#x6709;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x7684;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x884C; - &#x4F8B;&#x5982;&#xFF0C;&#x989D;&#x5916;&#x6216;&#x7F3A;&#x5C11;&#x5C5E;&#x6027;&#xFF0C;&#x9519;&#x8BEF;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x65E0;&#x6548;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7F16;&#x7801;&#x5E8F;&#x5217;&#x3002;&#x8BF8;&#x5982;&#x8FDD;&#x53CD;&#x4E86; NOT NULL, CHECK, &#x6216; UNIQUE &#x7EA6;&#x675F;&#x7684;&#x7EA6;&#x675F;&#x9519;&#x8BEF;&#x4ECD;&#x5C06;&#x4EE5; &apos;all-or-nothing&apos; &#x8F93;&#x5165;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x53EF;&#x63A5;&#x53D7;&#x7684;&#x9519;&#x8BEF;&#x884C;&#x6570;&#xFF08;&#x4EE5;&#x6BCF;&#x4E2A; Segment &#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#xFF0C;&#x4E4B;&#x540E;&#x6574;&#x4E2A; COPY FROM &#x64CD;&#x4F5C;&#x5C06;&#x88AB;&#x7EC8;&#x6B62;&#xFF0C; &#x5E76;&#x4E14;&#x4E0D;&#x518D;&#x52A0;&#x8F7D;&#x4EFB;&#x4F55;&#x884C;&#x3002; &#x9519;&#x8BEF;&#x884C;&#x7684;&#x8BA1;&#x6570;&#x4EE5;&#x6BCF;&#x4E2A; Segment &#x800C;&#x4E0D;&#x662F;&#x6574;&#x4E2A;&#x52A0;&#x8F7D;&#x64CD;&#x4F5C;&#x4E3A;&#x57FA;&#x7840;&#x3002;&#x5982;&#x679C;&#x672A;&#x8FBE;&#x5230;&#x6BCF; Segment &#x7684;&#x62D2;&#x7EDD;&#x9650;&#x5236;&#xFF0C;&#x5219;&#x5C06;&#x52A0;&#x8F7D;&#x4E0D;&#x5305;&#x542B;&#x9519;&#x8BEF;&#x7684;&#x6240;&#x6709;&#x884C;&#xFF0C;&#x5E76;&#x4E22;&#x5F03;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#x884C;&#x3002;&#x8981;&#x4FDD;&#x7559;&#x9519;&#x8BEF;&#x884C;&#x8FDB;&#x4E00;&#x6B65;&#x68C0;&#x67E5;&#xFF0C;&#x8BF7;&#x6307;&#x5B9A; LOG ERRORS &#x5B50;&#x53E5;&#x4EE5;&#x6355;&#x83B7;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x3002;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x548C;&#x884C;&#x5B58;&#x50A8;&#x5728; HashData &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002;</p>
+<p><strong>&#x8F93;&#x51FA;</strong></p>
+<p>&#x6210;&#x529F;&#x5B8C;&#x6210;&#x540E;&#xFF0C; COPY &#x547D;&#x4EE4;&#x5C06;&#x8FD4;&#x56DE;&#x8868;&#x5355;&#x7684;&#x547D;&#x4EE4;&#x6807;&#x7B7E;&#xFF0C;&#x5176;&#x4E2D; count &#x662F;&#x590D;&#x5236;&#x7684;&#x884C;&#x6570;&#xFF1A;</p>
+<pre><code>COPY count
+</code></pre><p>&#x5982;&#x679C;&#x5355;&#x884C;&#x9694;&#x79BB;&#x6A21;&#x5F0F;&#x4E0B;&#x8FD0;&#x884C; COPY FROM &#x547D;&#x4EE4;&#xFF0C; &#x5982;&#x679C;&#x7531;&#x4E8E;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x800C;&#x672A;&#x52A0;&#x8F7D;&#x4EFB;&#x4F55;&#x884C;&#xFF0C;&#x5219;&#x5C06;&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;&#x901A;&#x77E5;&#x6D88;&#x606F;&#xFF0C; &#x5176;&#x4E2D; count &#x662F;&#x62D2;&#x7EDD;&#x7684;&#x884C;&#x6570;&#xFF1A;</p>
+<pre><code>NOTICE: Rejected count badly formatted rows.
+</code></pre><h2 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h2>
+<p><em>table</em></p>
+<p>&#x4E00;&#x4E2A;&#x73B0;&#x6709;&#x8868;&#x7684;&#x540D;&#x79F0;&#xFF08;&#x53EF;&#x4EE5;&#x662F;&#x65B9;&#x6848;&#x9650;&#x5B9A;&#x7684;&#xFF09;&#x3002;</p>
+<p><em>column</em></p>
+<p>&#x53EF;&#x9009;&#x7684;&#x8981;&#x88AB;&#x590D;&#x5236;&#x7684;&#x5217;&#x5217;&#x8868;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5217;&#x5217;&#x8868;&#xFF0C;&#x5219;&#x8BE5;&#x8868;&#x7684;&#x6240;&#x6709;&#x5217;&#x90FD;&#x4F1A;&#x88AB;&#x590D;&#x5236;&#x3002;</p>
+<p>&#x5F53;&#x4EE5;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x590D;&#x5236;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x4E00;&#x5217;&#x6570;&#x636E;&#x7C7B;&#x578B; bytea &#x6700;&#x9AD8;&#x53EF;&#x8FBE; 256MB.</p>
+<p><em>query</em></p>
+<p>&#x4E00;&#x4E2A;SELECT &#x6216; VALUES &#x5176;&#x7ED3;&#x679C;&#x5C06;&#x88AB;&#x590D;&#x5236;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x67E5;&#x8BE2;&#x9700;&#x8981;&#x62EC;&#x53F7;&#x3002;</p>
+<p><em>file</em></p>
+<p>&#x8F93;&#x5165;&#x6216;&#x8005;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x540D;&#x3002;</p>
+<p>PROGRAM &apos;<em>command</em>&apos;</p>
+<p>&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x53BB;&#x6267;&#x884C;&#x3002;&#x8BE5;&#x547D;&#x4EE4;&#x884C;&#x5FC5;&#x987B;&#x4ECE; HashData &#x6570;&#x636E;&#x5E93;&#x7684; Master &#x4E3B;&#x673A;&#x7CFB;&#x7EDF;&#x6307;&#x5B9A;&#xFF0C;&#x5E76;&#x4E14;&#x5BF9; HashData &#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x5458;&#x7528;&#x6237;&#xFF08;gpadmin&#xFF09;&#x53EF;&#x6267;&#x884C;&#x3002;COPY FROM &#x547D;&#x4EE4;&#x884C;&#x4ECE;&#x8BE5;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x5BF9;&#x4E8E;  COPY TO &#x547D;&#x4EE4;&#x7684;&#x6570;&#x636E;&#x88AB;&#x5199;&#x5165;&#x8BE5;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x4E2D;&#x3002;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x884C;&#x662F;&#x88AB; shell &#x5524;&#x8D77;&#x7684;&#x3002;&#x5F53;&#x4F20;&#x8F93;&#x53C2;&#x6570;&#x5230; shell &#x65F6;&#xFF0C;&#x8981;&#x907F;&#x514D;&#x6216;&#x53BB;&#x9664;&#x4EFB;&#x4F55;&#x5BF9;&#x4E8E; shell &#x5B58;&#x5728;&#x7279;&#x6B8A;&#x610F;&#x4E49;&#x7684;&#x5B57;&#x7B26;&#x3002;&#x4E3A;&#x4E86;&#x5B89;&#x5168;&#x8003;&#x8651;&#xFF0C;&#x6700;&#x597D;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x7684;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x6216;&#x8005;&#x81F3;&#x5C11;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x4F20;&#x8F93;&#x4EFB;&#x4F55;&#x7528;&#x6237;&#x8F93;&#x5165;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x3002;</p>
+<p>&#x5F53;&#x6307;&#x5B9A; ON SEGMENT &#x9009;&#x9879;&#x65F6;&#xFF0C;&#x8BE5;&#x547D;&#x4EE4;&#x5FC5;&#x987B;&#x5728;&#x6240;&#x6709; HashData &#x6570;&#x636E;&#x5E93; primary segment &#x4E3B;&#x673A;&#x4E0A;&#xFF0C;&#x5BF9;&#x4E8E; HashData &#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x5458;&#x7528;&#x6237;&#xFF08;gpadmin&#xFF09;&#x662F;&#x53EF;&#x6267;&#x884C;&#x7684;&#x3002;&#x6BCF;&#x4E2A; HashData Segment Instance &#x90FD;&#x4F1A;&#x6267;&#x884C;&#x6B64;&#x547D;&#x4EE4;&#x3002;&#x6B64;&#x547D;&#x4EE4;&#x9700;&#x8981;&#x6307;&#x5B9A; <code>&lt;SEGID&gt;</code> &#x3002;</p>
+<p>STDIN</p>
+<p>&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x6765;&#x81EA;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x7528;&#x3002;</p>
+<p>STDOUT</p>
+<p>&#x6307;&#x5B9A;&#x8F93;&#x51FA;&#x4F1A;&#x53BB;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x7528;&#x3002;</p>
+<p>ON SEGMENT</p>
+<p>&#x5355;&#x72EC;&#x6307;&#x5B9A; Segment &#x4E3B;&#x673A;&#x4E0A;&#x9762;&#x7684; Segment &#x6570;&#x636E;&#x6587;&#x4EF6;&#x3002;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x90FD;&#x5305;&#x542B; primary Segment Instance &#x7BA1;&#x7406;&#x7684;&#x8868;&#x7684;&#x6570;&#x636E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x4F7F;&#x7528; COPY TO...ON SEGMENT &#x547D;&#x4EE4;&#x4ECE;&#x4E00;&#x4E2A;&#x8868;&#x4E2D;&#x62F7;&#x8D1D;&#x6570;&#x636E;&#x5230;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x8BE5;&#x547D;&#x4EE4;&#x4F1A;&#x4E3A;&#x5728; segment &#x4E3B;&#x673A;&#x4E0A;&#x9762;&#x7684;&#x6BCF;&#x4E2A; segment Instance &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x90FD;&#x5305;&#x542B;&#x7531; segment instance &#x7BA1;&#x7406;&#x7684;&#x8868;&#x7684;&#x6570;&#x636E;&#x3002;COPY &#x547D;&#x4EE4;&#x4E0D;&#x4F1A;&#x4ECE; mirror segment instances &#x548C; segment &#x6570;&#x636E;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x6570;&#x636E;&#x6216;&#x8005;&#x5199;&#x5165;&#x6570;&#x636E;&#x3002;</p>
+<p>STDIN &#x548C; STDOUT &#x5173;&#x952E;&#x5B57;&#x4E0D;&#x80FD;&#x4E0E; ON SEGMENT &#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x4F7F;&#x7528; <code>&lt;SEG_DATA_DIR&gt;</code> &#x548C; <code>&lt;SEGID&gt;</code> &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x8BED;&#x6CD5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x548C;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#xFF1A;</p>
+<pre><code>COPY table [TO|FROM] &apos;&lt;SEG_DATA_DIR&gt;/gpdumpname&lt;SEGID&gt;_suffix&apos; ON SEGMENT;
+</code></pre><p>&#x955C;&#x50CF; Segment &#x4E0D;&#x4F1A;&#x5C06;&#x5176;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#x5230; Segment &#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p><code>&lt;SEG_DATA_DIR&gt;</code></p>
+<p>&#x8868;&#x793A; ON SEGMENT &#x62F7;&#x8D1D;&#x7684; Segment &#x6570;&#x636E;&#x76EE;&#x5F55;&#x7684;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x3002;&apos;&lt;&apos; &#x548C; &apos;&gt;&apos; &#x662F;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002; COPY &#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x66FF;&#x6362;&#x6BB5;&#x8DEF;&#x5F84;&#x3002; &#x53EF;&#x4EE5;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x4EE3;&#x66FF;&#x4F7F;&#x7528; <code>&lt;SEG_DATA_DIR&gt;</code> &#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x3002;</p>
+<p><code>&lt;SEGID&gt;</code></p>
+<p>&#x8868;&#x793A;&#x590D;&#x5236; ON SEGMENT &#x65F6;&#x8981;&#x590D;&#x5236;&#x7684; Segment &#x7684;&#x5185;&#x5BB9; ID &#x53F7;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x3002; <code>&lt;SEGID&gt;</code> &#x662F; ON SEGMENT &#x9009;&#x9879;&#x7684;&#x5FC5;&#x9700;&#x90E8;&#x5206;&#x3002; &apos;&lt;&apos; &#x548C; &apos;&gt;&apos; &#x662F;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002; COPY &#x8FD0;&#x884C;&#x65F6;&#xFF0C; COPY &#x5C06;&#x4F7F;&#x7528;&#x5185;&#x5BB9; ID &#x66FF;&#x6362;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x3002;</p>
+<p>BINARY</p>
+<p>&#x4F7F;&#x6240;&#x6709;&#x6570;&#x636E;&#x4EE5;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x5B58;&#x50A8;&#x6216;&#x8BFB;&#x53D6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6587;&#x672C;&#x3002;&#x7528;&#x6237;&#x4E0D;&#x80FD;&#x6307;&#x5B9A; DELIMITER, NULL,&#x6216; CSV &#x4E8C;&#x8FDB;&#x5236;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x9009;&#x9879;&#x3002;</p>
+<p>&#x5F53;&#x4EE5;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x590D;&#x5236;&#x65F6;&#xFF0C;&#x4E00;&#x884C;&#x6570;&#x636E;&#x6700;&#x591A;&#x53EF;&#x8FBE; 1GB&#x3002;</p>
+<p>OIDS</p>
+<p>&#x6307;&#x5B9A;&#x590D;&#x5236;&#x6BCF;&#x884C;&#x7684; OID&#x3002;&#xFF08;&#x5982;&#x679C;&#x4E3A;&#x6CA1;&#x6709; OID &#x7684;&#x8868;&#x6307;&#x5B9A;&#x4E86; OIDS&#xFF0C;&#x6216;&#x8005;&#x5728;&#x590D;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5219;&#x4F1A;&#x5F15;&#x53D1;&#x9519;&#x8BEF;&#x3002;&#xFF09;</p>
+<p><em>delimiter</em></p>
+<p>&#x5355;&#x4E2A; ASCII &#x5B57;&#x7B26;&#xFF0C;&#x7528;&#x4E8E;&#x5206;&#x9694;&#x6587;&#x4EF6;&#x6BCF;&#x884C;&#xFF08;&#x884C;&#xFF09;&#x4E2D;&#x7684;&#x5217;&#x3002;&#x9ED8;&#x8BA4;&#x662F;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x5236;&#x8868;&#x7B26;&#xFF0C;&#x9017;&#x53F7;&#x5728; CSV &#x6A21;&#x5F0F;&#x3002;</p>
+<p><em>null string</em></p>
+<p>&#x8868;&#x793A;&#x7A7A;&#x503C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002; &#x6587;&#x672C;&#x6A21;&#x5F0F;&#x4E2D;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; \N (&#x53CD;&#x659C;&#x6760; - N) &#xFF0C; CSV &#x6A21;&#x5F0F;&#x4E2D;&#x4E0D;&#x542B;&#x5F15;&#x53F7;&#x7684;&#x7A7A;&#x503C;&#x3002; &#x5728;&#x4E0D;&#x60F3;&#x5C06;&#x7A7A;&#x503C;&#x4E0E;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x533A;&#x5206;&#x5F00;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5373;&#x4F7F;&#x5728;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x66F4;&#x559C;&#x6B22;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002; &#x5F53;&#x4F7F;&#x7528; COPY FROM &#x65F6;&#xFF0C;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x9879;&#x5C06;&#x88AB;&#x8F6C;&#x50A8;&#x4E3A;&#x7A7A;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x7528;&#x6237;&#x5E94;&#x8BE5;&#x786E;&#x4FDD;&#x4F7F;&#x7528;&#x4E0E; COPY TO &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x76F8;&#x540C;&#x3002;</p>
+<p><em>escape</em></p>
+<p>&#x6307;&#x5B9A;&#x7528;&#x4E8E; C &#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#x7684;&#x5355;&#x4E2A;&#x5B57;&#x7B26;(&#x5982; \n,\t,\100, &#x7B49;) &#x548C;&#x5F15;&#x7528;&#x53EF;&#x80FD;&#x88AB;&#x89C6;&#x4E3A;&#x884C;&#x6216;&#x5217;&#x5206;&#x9694;&#x7B26;&#x7684;&#x6570;&#x636E;&#x5B57;&#x7B26;&#x3002;&#x786E;&#x4FDD;&#x9009;&#x62E9;&#x5728;&#x5B9E;&#x9645;&#x5217;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x90FD;&#x4E0D;&#x4F7F;&#x7528;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x3002;&#x9ED8;&#x8BA4;&#x8F6C;&#x4E49;&#x7B26;&#x4E3A; (&#x53CD;&#x659C;&#x6760;)&#x7528;&#x4E8E;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x6216; &quot; (&#x53CC;&#x5F15;&#x53F7;) &#x7528;&#x4E8E; CSV &#x6587;&#x4EF6;, &#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x5B57;&#x7B26;&#x6765;&#x8868;&#x793A;&#x8F6C;&#x4E49;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x503C; &apos;OFF&apos; &#x4F5C;&#x4E3A;&#x8F6C;&#x4E49;&#x503C;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x8BF8;&#x5982; Web &#x65E5;&#x5FD7;&#x6570;&#x636E;&#x4E4B;&#x7C7B;&#x7684;&#x6570;&#x636E;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x8BE5;&#x6570;&#x636E;&#x5177;&#x6709;&#x8BB8;&#x591A;&#x5D4C;&#x5165;&#x5F0F;&#x53CD;&#x659C;&#x6760;&#xFF0C;&#x8FD9;&#x4E9B;&#x53CD;&#x659C;&#x6760;&#x4E0D;&#x662F;&#x8981;&#x8F6C;&#x4E49;&#x7684;&#x3002;</p>
+<p>NEWLINE</p>
+<p>&#x6307;&#x5B9A;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6362;&#x884C;&#x7B26; &#x2014; LF&#xFF08;&#x6362;&#x884C;&#xFF0C;0x0A&#xFF09;&#x3001;CR&#xFF08;&#x56DE;&#x8F66;&#xFF0C;0x0D&#xFF09;&#x6216;&#x8005; CRLF&#xFF08;&#x56DE;&#x8F66;&#x52A0;&#x6362;&#x884C;&#xFF0C;0x0D 0x0A&#xFF09;&#x3002;&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#xFF0C; HashData &#x6570;&#x636E;&#x5E93;&#x7684; Segment &#x5C06;&#x901A;&#x8FC7;&#x67E5;&#x770B;&#x5176;&#x63A5;&#x6536;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x6570;&#x636E;&#x5E76;&#x4F7F;&#x7528;&#x9047;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6362;&#x884C;&#x7B26;&#x6765;&#x68C0;&#x6D4B;&#x6362;&#x884C;&#x7C7B;&#x578B;&#x3002;</p>
+<p>CSV</p>
+<p>&#x9009;&#x62E9;&#x9017;&#x53F7;&#x5206;&#x9694;&#x503C;&#xFF08;CSV&#xFF09;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>HEADER</p>
+<p>&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#x884C;&#x548C;&#x6587;&#x4EF6;&#x4E2D;&#x6BCF;&#x5217;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5728;&#x8F93;&#x51FA;&#x65F6;&#xFF0C;&#x7B2C;&#x4E00;&#x884C;&#x5305;&#x542B;&#x8868;&#x4E2D;&#x7684;&#x5217;&#x540D;&#xFF0C;&#x5728;&#x8F93;&#x5165;&#x65F6;&#xFF0C;&#x7B2C;&#x4E00;&#x884C;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;</p>
+<p>&#x5F15;&#x7528;</p>
+<p>&#x4EE5; CSV &#x6A21;&#x5F0F;&#x6307;&#x5B9A;&#x5F15;&#x7528;&#x5B57;&#x7B26;&#x3002;&#x9ED8;&#x8BA4;&#x662F;&#x53CC;&#x5F15;&#x53F7;&#x3002;</p>
+<p>FORCE QUOTE</p>
+<p>&#x5728; CSV COPY TO &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5F3A;&#x5236;&#x5F15;&#x7528;&#x7528;&#x4E8E;&#x6BCF;&#x4E2A;&#x6307;&#x5B9A;&#x5217;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x975E; NULL &#x503C;&#x3002; NULL &#x503C;&#x8F93;&#x51FA;&#x4ECE;&#x4E0D;&#x5F15;&#x7528;&#x3002;</p>
+<p>FORCE NOT NULL</p>
+<p>&#x5728; CSV COPY FROM &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5904;&#x7406;&#x6BCF;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x5217;&#xFF0C;&#x5C31;&#x597D;&#x50CF;&#x5B83;&#x88AB;&#x5F15;&#x7528;&#x4E00;&#x6837;&#xFF0C; &#x56E0;&#x6B64;&#x4E0D;&#x662F; NULL &#x503C;&#x3002;&#x5BF9;&#x4E8E;  CSV &#x6A21;&#x5F0F;&#x9ED8;&#x8BA4;&#x7684;&#x5B57;&#x7B26;&#x4E32;(&#x4E24;&#x4E2A;&#x5206;&#x5272;&#x7B26;&#x4E4B;&#x95F4;&#x4E0D;&#x5B58;&#x5728;)&#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x5C06;&#x503C;&#x4F5C;&#x4E3A;&#x96F6;&#x957F;&#x5EA6;&#x5B57;&#x7B26;&#x4E32;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>FILL MISSING FIELDS</p>
+<p>&#x5728; TEXT &#x548C; CSV &#x4E2D;&#x7684; COPY FROM &#x4E2D;&#xFF0C;&#x6307;&#x5B9A; FILL MISSING FIELDS &#x65F6;&#xFF0C;&#x5F53;&#x4E00;&#x884C;&#x6570;&#x636E;&#x5728;&#x884C;&#x6216;&#x884C;&#x7684;&#x672B;&#x5C3E;&#x7F3A;&#x5C11;&#x6570;&#x636E;&#x5B57;&#x6BB5;&#x65F6;&#xFF0C;&#x5C06;&#x4E22;&#x5931;&#x5C3E;&#x5B57;&#x6BB5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A; NULL (&#x800C;&#x4E0D;&#x662F;&#x62A5;&#x544A;&#x9519;&#x8BEF;)&#x3002; &#x7A7A;&#x884C;&#xFF0C;&#x5177;&#x6709; NOT NULL &#x5728; TEXT &#x548C; CSV &#x4E2D;&#x7684; COPY FROM &#x4E2D;&#xFF0C;&#x6307;&#x5B9A; FILL MISSING FIELDS &#x65F6;&#xFF0C;&#x5F53;&#x4E00;&#x884C;&#x6570;&#x636E;&#x5728;&#x884C;&#x6216;&#x884C;&#x7684;&#x672B;&#x5C3E;&#x7F3A;&#x5C11;&#x6570;&#x636E;&#x5B57;&#x6BB5;&#x65F6;&#xFF0C;&#x5C06;&#x4E22;&#x5931;&#x5C3E;&#x5B57;&#x6BB5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A; NULL&#xFF08;&#x800C;&#x4E0D;&#x662F;&#x62A5;&#x544A;&#x9519;&#x8BEF;&#xFF09;&#x3002; &#x7A7A;&#x884C;&#xFF0C;&#x5177;&#x6709; NOT NULL &#x7EA6;&#x675F;&#x7684;&#x5B57;&#x6BB5;&#x548C;&#x884C;&#x4E0A;&#x7684;&#x5C3E;&#x968F;&#x5206;&#x9694;&#x7B26;&#x4ECD;&#x7136;&#x4F1A;&#x62A5;&#x544A;&#x9519;&#x8BEF;&#x3002;</p>
+<p>LOG ERRORS</p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x5B50;&#x53E5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; SEGMENT REJECT LIMIT &#x4E4B;&#x524D;&#x6355;&#x83B7;&#x6709;&#x5173;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x7684;&#x884C;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x5728;&#x5185;&#x90E8;&#x5B58;&#x50A8;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#x5185;&#x7F6E; SQL &#x51FD;&#x6570; <code>gp_read_error_log()</code> &#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x5B50;&#x53E5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; SEGMENT REJECT LIMIT &#x5B50;&#x53E5;&#x4E4B;&#x524D;&#x6355;&#x83B7;&#x6709;&#x5173;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x7684;&#x884C;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x3002;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x5728;&#x5185;&#x90E8;&#x5B58;&#x50A8;&#xFF0C; &#x5E76;&#x4F7F;&#x7528; HashData &#x6570;&#x636E;&#x5E93;&#x5185;&#x7F6E; SQL &#x51FD;&#x6570; <code>gp_read_error_log&#xFF08;&#xFF09;</code> &#x8BBF;&#x95EE;&#x3002;</p>
+<p>SEGMENT REJECT LIMIT count [ROWS | PERCENT]</p>
+<p>&#x5728;&#x5355;&#x884C;&#x6A21;&#x5F0F;&#x4E0B;&#x8FD0;&#x884C; COPY FROM &#x64CD;&#x4F5C;&#x3002; &#x5982;&#x679C;&#x8F93;&#x5165;&#x884C;&#x5177;&#x6709;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#xFF0C;&#x5219;&#x5B83;&#x4EEC;&#x5C06;&#x88AB;&#x4E22;&#x5F03;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x5728;&#x52A0;&#x8F7D;&#x64CD;&#x4F5C;&#x671F;&#x95F4;&#x5728;&#x4EFB;&#x4F55; HashData &#x6570;&#x636E;&#x5E93; Segment &#x5B9E;&#x4F8B;&#x4E0A;&#x672A;&#x8FBE;&#x5230;&#x62D2;&#x7EDD;&#x9650;&#x5236;&#x8BA1;&#x6570;&#x3002;&#x62D2;&#x7EDD;&#x9650;&#x5236;&#x8BA1;&#x6570;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E3A;&#x884C;&#x6570;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#x6216;&#x603B;&#x884C;&#x6570;&#x767E;&#x5206;&#x6BD4;&#xFF08;1-100&#xFF09;&#x3002; &#x5982;&#x679C; PERCENT &#x88AB;&#x4F7F;&#x7528;&#xFF0C;&#x6BCF;&#x4E2A; Segment &#x53EA;&#x6709;&#x5728;&#x5904;&#x7406;&#x53C2;&#x6570; <code>gp_reject_percent_threshold</code> &#x6240;&#x6307;&#x5B9A;&#x7684;&#x884C;&#x6570;&#x4E4B;&#x540E;&#x624D;&#x5F00;&#x59CB;&#x8BA1;&#x7B97;&#x884C;&#x767E;&#x5206;&#x6BD4;&#x3002;  <code>gp_reject_percent_threshold</code> &#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 300 &#x884C;&#x3002; &#x8BF8;&#x5982;&#x8FDD;&#x53CD; NOT NULL&#xFF0C; CHECK, &#x6216; UNIQUE&#x7684;&#x7EA6;&#x675F;&#x9519;&#x8BEF;&#x4ECD;&#x5C06;&#x4EE5; &apos;all-or-nothing&apos; &#x8F93;&#x5165;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FBE;&#x5230;&#x9650;&#x5236;&#xFF0C;&#x6240;&#x6709;&#x597D;&#x7684;&#x884C;&#x5C06;&#x88AB;&#x52A0;&#x8F7D;&#xFF0C;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#x5C06;&#x88AB;&#x4E22;&#x5F03;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;HashData &#x6570;&#x636E;&#x5E93;&#x9650;&#x5236;&#x4E86;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x7684;&#x521D;&#x59CB;&#x884C;&#x6570; SEGMENT REJECT LIMIT &#x4E0D;&#x662F;&#x9996;&#x5148;&#x88AB;&#x89E6;&#x53D1;&#x6216;&#x6CA1;&#x6709;&#x88AB;&#x6307;&#x5B9A;&#x3002; &#x5982;&#x679C;&#x524D; 1000 &#x884C;&#x88AB;&#x62D2;&#x7EDD;&#xFF0C;COPY &#x64CD;&#x4F5C;&#x505C;&#x6B62;&#x5E76;&#x56DE;&#x6EDA;&#x3002;</p>
+</blockquote>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; HashData  Database &#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x66F4;&#x6539;&#x521D;&#x59CB;&#x62D2;&#x7EDD;&#x884C;&#x6570;&#x7684;&#x9650;&#x5236; <code>gp_initial_bad_row_limit</code>&#x3002;</p>
+<p>IGNORE EXTERNAL PARTITIONS</p>
+<p>&#x4ECE;&#x5206;&#x533A;&#x8868;&#x590D;&#x5236;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x4E0D;&#x4F1A;&#x4ECE;&#x4F5C;&#x4E3A;&#x5916;&#x90E8;&#x8868;&#x7684;&#x53F6;&#x5B50;&#x5206;&#x533A;&#x590D;&#x5236;&#x3002;&#x5F53;&#x4E0D;&#x590D;&#x5236;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;&#x6D88;&#x606F;&#x6DFB;&#x52A0;&#x5230;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#x6B64;&#x5B50;&#x53E5;&#xFF0C;&#x5E76;&#x4E14; HashData &#x6570;&#x636E;&#x5E93;&#x5C1D;&#x8BD5;&#x4ECE;&#x4F5C;&#x4E3A;&#x5916;&#x90E8;&#x8868;&#x7684;&#x53F6;&#x5B50;&#x5206;&#x533A;&#x590D;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x4F1A;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x3002;</p>
+<h2 id="&#x6CE8;&#x89E3;">&#x6CE8;&#x89E3;</h2>
+<p>COPY &#x53EA;&#x80FD;&#x4E0E;&#x8868;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x4E0E;&#x5916;&#x90E8;&#x8868;&#x6216;&#x89C6;&#x56FE;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5199; COPY (SELECT * FROM viewname) TO ...</p>
+<p>&#x8981;&#x4ECE;&#x5177;&#x6709;&#x4F5C;&#x4E3A;&#x5916;&#x90E8;&#x8868;&#x7684;&#x53F6;&#x5B50;&#x5206;&#x533A;&#x7684;&#x5206;&#x533A;&#x8868;&#x590D;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; SQL &#x67E5;&#x8BE2;&#x6765;&#x590D;&#x5236;&#x6570;&#x636E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x8868; my_sales &#x5305;&#x542B;&#x4E00;&#x4E2A;&#x53F6;&#x5B50;&#x5B50;&#x5206;&#x533A;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5916;&#x90E8;&#x8868;&#xFF0C;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4; COPY my_sales TO stdout &#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x3002; &#x6B64;&#x547D;&#x4EE4;&#x5C06;&#x6570;&#x636E;&#x53D1;&#x9001;&#x5230; stdout&#xFF1A;</p>
+<pre><code>COPY (SELECT * from my_sales ) TO stdout
+</code></pre><p>&#x8BE5; BINARY &#x5173;&#x952E;&#x5B57;&#x5C06;&#x6240;&#x6709;&#x6570;&#x636E;&#x5B58;&#x50A8;/&#x8BFB;&#x53D6;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x800C;&#x4E0D;&#x662F;&#x6587;&#x672C;&#x3002;&#x5B83;&#x6BD4;&#x6B63;&#x5E38;&#x7684;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x8981;&#x5FEB;&#x4E00;&#x70B9;&#xFF0C;&#x4F46;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x5728;&#x673A;&#x5668;&#x67B6;&#x6784;&#x548C; HashData &#x6570;&#x636E;&#x5E93;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x79FB;&#x690D;&#x6027;&#x66F4;&#x4F4E;&#x3002; &#x53E6;&#x5916;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x662F;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;, &#x7528;&#x6237;&#x4E0D;&#x80FD;&#x8FD0;&#x884C; COPY FROM  &#x5728;&#x5355;&#x884C;&#x9519;&#x8BEF;&#x9694;&#x79BB;&#x6A21;&#x5F0F;&#x4E0B;&#x3002;</p>
+<p>&#x7528;&#x6237;&#x5FC5;&#x987B;&#x5BF9;&#x5176;&#x503C;&#x7531; COPY TO &#x8BFB;&#x53D6;&#x7684;&#x8868;&#x5177;&#x6709; SELECT &#x6743;&#x9650;&#xFF0C;&#x5E76;&#x5728; COPY FROM &#x63D2;&#x5165;&#x7684;&#x503C;&#x4E0A;&#x63D2;&#x5165;&#x7279;&#x6743;&#x3002;</p>
+<p>&#x5728; COPY &#x547D;&#x4EE4;&#x4E2D;&#x547D;&#x540D;&#x7684;&#x6587;&#x4EF6;&#x7531;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x76F4;&#x63A5;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7531;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x5B83;&#x4EEC;&#x5FC5;&#x987B;&#x9A7B;&#x7559;&#x5728; HashData &#x6570;&#x636E;&#x5E93; master &#x4E3B;&#x673A;&#x4E0A;&#x6216;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x3002; &#x5B83;&#x4EEC;&#x5FC5;&#x987B;&#x7531; HashData &#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#xFF08;&#x670D;&#x52A1;&#x5668;&#x8FD0;&#x884C;&#x7684;&#x7528;&#x6237; ID&#xFF09;&#x800C;&#x4E0D;&#x662F;&#x5BA2;&#x6237;&#x673A;&#x53EF;&#x8BBF;&#x95EE;&#x548C;&#x53EF;&#x8BFB;&#x5199;&#x3002; COPY &#x547D;&#x540D;&#x6587;&#x4EF6;&#x53EA;&#x5141;&#x8BB8;&#x6570;&#x636E;&#x5E93;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5141;&#x8BB8;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#x670D;&#x52A1;&#x5668;&#x5177;&#x6709;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x7684;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#x3002;</p>
+<p>COPY FROM &#x5C06;&#x8C03;&#x7528;&#x76EE;&#x6807;&#x8868;&#x4E0A;&#x7684;&#x4EFB;&#x4F55;&#x89E6;&#x53D1;&#x5668;&#x548C;&#x68C0;&#x67E5;&#x7EA6;&#x675F;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;&#x91CD;&#x5199;&#x89C4;&#x5219;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x6B64;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x4E0D;&#x5BF9;&#x5355;&#x884C;&#x9519;&#x8BEF;&#x9694;&#x79BB;&#x6A21;&#x5F0F;&#x8BC4;&#x4F30;&#x5BF9;&#x7EA6;&#x675F;&#x7684;&#x8FDD;&#x89C4;&#x3002;</p>
+<p>COPY &#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x53D7; DateStyle &#x5F71;&#x54CD;&#x3002;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x5BF9;&#x53EF;&#x80FD;&#x4F7F;&#x7528;&#x975E;&#x9ED8;&#x8BA4; DateStyle &#x8BBE;&#x7F6E;&#x7684;&#x5176;&#x4ED6; HashData &#x6570;&#x636E;&#x5E93;&#x5B89;&#x88C5;&#x7684;&#x53EF;&#x79FB;&#x690D;&#x6027;&#xFF0C;&#x5728;&#x4F7F;&#x7528; COPY TO &#x4E4B;&#x524D;&#xFF0C; &#x5E94;&#x5C06; DateStyle &#x8BBE;&#x7F6E;&#x4E3A; ISO&#x3002;</p>
+<p>&#x5728;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x4E0B;&#x4ECE;&#x6587;&#x4EF6;&#x590D;&#x5236; XML &#x6570;&#x636E;&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;&#x53C2;&#x6570; xmloption &#x5F71;&#x54CD;&#x590D;&#x5236;&#x7684; XML &#x6570;&#x636E;&#x7684;&#x9A8C;&#x8BC1;&#x3002; &#x5982;&#x679C;&#x503C;&#x4E3A; content (&#x9ED8;&#x8BA4;)&#xFF0C; XML &#x6570;&#x636E;&#x88AB;&#x9A8C;&#x8BC1;&#x4E3A; XML &#x5185;&#x5BB9;&#x7247;&#x6BB5;&#x3002;&#x5982;&#x679C;&#x53C2;&#x6570;&#x503C;&#x4E3A; document, XML &#x6570;&#x636E;&#x88AB;&#x9A8C;&#x8BC1;&#x4E3A; XML &#x6587;&#x6863;&#x3002;&#x5982;&#x679C; XML &#x6570;&#x636E;&#x65E0;&#x6548;&#xFF0C; COPY &#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C; COPY &#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x65F6;&#x505C;&#x6B62;&#x8FD0;&#x884C;&#x3002; &#x5728; COPY TO &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E0D;&#x5E94;&#x8BE5;&#x5BFC;&#x81F4;&#x95EE;&#x9898;&#x4F46;&#x662F;&#x76EE;&#x6807;&#x8868;&#x5DF2;&#x7ECF;&#x5728; COPY FROM &#x4E2D;&#x63A5;&#x53D7;&#x4E86;&#x8F83;&#x65E9;&#x7684;&#x884C;&#x3002;&#x8FD9;&#x4E9B;&#x884C;&#x5C06;&#x4E0D;&#x53EF;&#x89C1;&#x6216;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x4F46;&#x4ED6;&#x4EEC;&#x4ECD;&#x5360;&#x7528;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x6545;&#x969C;&#x53D1;&#x751F;&#x5728;&#x5927;&#x7684; COPY FROM &#x64CD;&#x4F5C;&#x4E2D;&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x76F8;&#x5F53;&#x5927;&#x91CF;&#x7684;&#x6D6A;&#x8D39;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x3002;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x5E0C;&#x671B; VACUUM &#x6765;&#x6062;&#x590D;&#x6D6A;&#x8D39;&#x7684;&#x7A7A;&#x95F4;&#x3002; &#x53E6;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x662F;&#x4F7F;&#x7528;&#x5355;&#x884C;&#x9519;&#x8BEF;&#x9694;&#x79BB;&#x6A21;&#x5F0F;&#x6765;&#x8FC7;&#x6EE4;&#x9519;&#x8BEF;&#x884C;&#xFF0C;&#x540C;&#x65F6;&#x4ECD;&#x7136;&#x52A0;&#x8F7D;&#x597D;&#x7684;&#x884C;&#x3002;</p>
+<p>&#x5F53;&#x7528;&#x6237;&#x6307;&#x5B9A; LOG ERRORS &#x5B50;&#x53E5;&#x65F6;&#xFF0C; HashData &#x6570;&#x636E;&#x5E93;&#x6355;&#x83B7;&#x8BFB;&#x53D6;&#x5916;&#x90E8;&#x8868;&#x6570;&#x636E;&#x65F6;&#x53D1;&#x751F;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x548C;&#x7BA1;&#x7406;&#x6355;&#x83B7;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6570;&#x636E;&#x3002;</p>
+<ul>
+<li><p>&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684; SQL &#x51FD;&#x6570; <code>gp_read_error_log(&apos;table_name&apos;)</code>&#x3002;&#x9700;&#x8981;&#x5728; table_name &#x4E0A;&#x6709; SELECT &#x7279;&#x6743;&#x3002; &#x6B64;&#x793A;&#x4F8B;&#x663E;&#x793A;&#x4F7F;&#x7528; COPY &#x547D;&#x4EE4;&#x52A0;&#x8F7D;&#x5230;&#x8868; ext_expenses &#x4E2D;&#x7684;&#x6570;&#x636E;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code>SELECT * from gp_read_error_log(&apos;ext_expenses&apos;);
+</code></pre><p>&#x5982;&#x679C; table_name &#x8868;&#x4E0D;&#x5B58;&#x5728;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE; FALSE &#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x6307;&#x5B9A;&#x7684;&#x8868;&#x5B58;&#x5728;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6570;&#x636E;&#xFF0C;&#x65B0;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6570;&#x636E;&#x5C06;&#x9644;&#x52A0;&#x5230;&#x73B0;&#x6709;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6570;&#x636E;&#x3002;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x4E0D;&#x4F1A;&#x590D;&#x5236;&#x5230;&#x955C;&#x50CF; Segment&#x3002;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684; SQL &#x51FD;&#x6570; <code>gp_truncate_error_log(&apos;table_name&apos;)</code> &#x5220;&#x9664; table_name&#x4E2D;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6570;&#x636E;&#x3002;&#x5B83;&#x9700;&#x8981;&#x8868;&#x6240;&#x6709;&#x8005;&#x6743;&#x9650;&#x3002;&#x6B64;&#x793A;&#x4F8B;&#x5220;&#x9664;&#x5C06;&#x6570;&#x636E;&#x79FB;&#x52A8;&#x5230;&#x8868;&#x4E2D;&#x65F6;&#x6355;&#x83B7;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F; ext_expenses:</p>
+<pre><code>SELECT gp_truncate_error_log(&apos;ext_expenses&apos;);
+</code></pre><p>&#x5982;&#x679C; table_name &#x8868;&#x4E0D;&#x5B58;&#x5728;&#x51FD;&#x6570;&#x8FD4;&#x56DE; FALSE &#x3002;</p>
+<p>&#x6307;&#x5B9A; * &#x901A;&#x914D;&#x7B26;&#x5220;&#x9664;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x73B0;&#x6709;&#x8868;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x3002;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4E32; *.* &#x5220;&#x9664;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#xFF0C;&#x5305;&#x62EC;&#x7531;&#x4E8E;&#x4EE5;&#x524D;&#x7684;&#x6570;&#x636E;&#x5E93;&#x95EE;&#x9898;&#x800C;&#x672A;&#x88AB;&#x5220;&#x9664;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x3002;&#x5982;&#x679C; * &#x6CA1;&#x88AB;&#x6307;&#x5B9A;&#xFF0C; &#x5219;&#x9700;&#x8981;&#x6570;&#x636E;&#x5E93;&#x6240;&#x6709;&#x8005;&#x6743;&#x9650;&#x3002;&#x5982;&#x679C; *.* &#x88AB;&#x6307;&#x5B9A;&#xFF0C;&#x9700;&#x8981;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x6743;&#x9650;&#x3002;</p>
+</li>
+</ul>
+<p>&#x5F53;&#x4E0D;&#x662F;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x7684; HashData &#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x8FD0;&#x884C; COPY &#x547D;&#x4EE4;&#x65F6;&#xFF0C; &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x7531;&#x8D44;&#x6E90;&#x961F;&#x5217;&#x63A7;&#x5236;&#x3002;&#x5FC5;&#x987B;&#x914D;&#x7F6E;&#x8D44;&#x6E90;&#x961F;&#x5217; ACTIVE_STATEMENTS &#x53C2;&#x6570;&#xFF0C;&#x6307;&#x5B9A;&#x5206;&#x914D;&#x7ED9;&#x8BE5;&#x961F;&#x5217;&#x7684;&#x89D2;&#x8272;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7684;&#x67E5;&#x8BE2;&#x6570;&#x91CF;&#x7684;&#x6700;&#x5927;&#x9650;&#x5236;&#x3002; HashData &#x6570;&#x636E;&#x5E93;&#x4E0D;&#x4F1A;&#x5C06;&#x6D88;&#x8017;&#x503C;&#x6216;&#x5185;&#x5B58;&#x503C;&#x5E94;&#x7528;&#x4E8E; COPY &#x547D;&#x4EE4;&#xFF0C; &#x53EA;&#x6709;&#x6D88;&#x8017;&#x6216;&#x5185;&#x5B58;&#x9650;&#x5236;&#x7684;&#x8D44;&#x6E90;&#x961F;&#x5217;&#x4E0D;&#x5F71;&#x54CD;&#x8FD0;&#x884C; COPY &#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x975E;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x53EA;&#x80FD;&#x8FD0;&#x884C;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B; COPY &#x547D;&#x4EE4;&#xFF1A;</p>
+<ul>
+<li>COPY FROM &#x547D;&#x4EE4;&#xFF0C;&#x5176;&#x4E2D;&#x6E90;&#x4E3A; stdin</li>
+<li>COPY TO &#x547D;&#x4EE4;&#xFF0C;&#x5176;&#x4E2D;&#x6E90;&#x4E3A; stdout</li>
+</ul>
+<h2 id="&#x6587;&#x4EF6;&#x683C;&#x5F0F;">&#x6587;&#x4EF6;&#x683C;&#x5F0F;</h2>
+<p>&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x652F;&#x6301; COPY&#x3002;</p>
+<p><strong>&#x6587;&#x672C;&#x683C;&#x5F0F;</strong></p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x7684; COPY &#x4E0D;&#x5E26; BINARY &#x6216; CSV &#x9009;&#x9879;&#x65F6;&#xFF0C;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#x7684;&#x6570;&#x636E;&#x662F;&#x6BCF;&#x4E2A;&#x8868;&#x884C;&#x4E00;&#x884C;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x3002;&#x4E00;&#x884C;&#x4E2D;&#x7684;&#x5217;&#x7531;&#x5206;&#x9694;&#x7B26;&#x5B57;&#x7B26; (&#x9ED8;&#x8BA4;&#x9009;&#x9879;&#x5361;)&#x5206;&#x5272;&#x3002;&#x5217;&#x503C;&#x672C;&#x8EAB;&#x662F;&#x7531;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x51FD;&#x6570;&#x751F;&#x6210;&#x7684;&#x6216;&#x8F93;&#x5165;&#x51FD;&#x6570;&#x53EF;&#x63A5;&#x53D7;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x4EE3;&#x66FF;&#x4E3A;&#x7A7A;&#x7684;&#x5217;&#x3002;&#x5982;&#x679C;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x4EFB;&#x4F55;&#x884C;&#x5305;&#x542B;&#x6BD4;&#x9884;&#x671F;&#x7684;&#x66F4;&#x591A;&#x6216;&#x66F4;&#x5C11;&#x7684;&#x5217;&#xFF0C; COPY FROM &#x5C06;&#x5F15;&#x53D1;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C; OIDS &#x88AB;&#x6307;&#x5B9A;&#xFF0C;OID&#x4F5C;&#x4E3A;&#x88AB;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#x7B2C;&#x4E00;&#x5217;&#xFF0C;&#x4F4D;&#x4E8E;&#x7528;&#x6237;&#x6570;&#x636E;&#x5217;&#x4E4B;&#x524D;&#x3002;</p>
+<p>&#x6570;&#x636E;&#x6587;&#x4EF6;&#x6709;&#x4E24;&#x4E2A;&#x5177;&#x6709; COPY &#x7279;&#x6B8A;&#x542B;&#x4E49;&#x7684;&#x4FDD;&#x7559;&#x5B57;&#x7B26;:</p>
+<ul>
+<li>&#x6307;&#x5B9A;&#x7684;&#x5206;&#x9694;&#x7B26;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A; tab&#xFF09;&#xFF0C;&#x7528;&#x4E8E;&#x5206;&#x9694;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x3002;</li>
+<li>UNIX &#x6837;&#x5F0F;&#x6362;&#x884C;&#x7B26; (n &#x6216; 0x0a), &#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x65B0;&#x884C;&#x3002;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x751F;&#x6210; COPY &#x6570;&#x636E;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;&#x6570;&#x636E;&#x6362;&#x884C;&#x7B26;&#x8F6C;&#x6362;&#x4E3A; UNIX &#x6837;&#x5F0F;&#x7684;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x800C;&#x4E0D;&#x662F; Microsoft Windows &#x6837;&#x5F0F;&#x56DE;&#x8F66;&#x6362;&#x884C; (rn &#x6216;0x0a 0x0d)&#x3002;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x7528;&#x6237;&#x7684;&#x6570;&#x636E;&#x5305;&#x542B;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#xFF0C;&#x7528;&#x6237;&#x5FC5;&#x987B;&#x8F6C;&#x4E49;&#x8BE5;&#x5B57;&#x7B26;&#xFF0C;&#x56E0;&#x6B64; COPY &#x5C06;&#x5176;&#x89C6;&#x4E3A;&#x6570;&#x636E;&#x800C;&#x4E0D;&#x662F;&#x5B57;&#x6BB5;&#x5206;&#x9694;&#x7B26;&#x6216;&#x65B0;&#x884C;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x662F;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#x7684;&#xFF08;&#x53CD;&#x659C;&#x6760;&#xFF09;&#x548C; &quot; (&#x53CC;&#x5F15;&#x53F7;) &#x4E3A; csv &#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x8981;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; ESCAPE AS &#x5B50;&#x53E5;&#x3002; &#x786E;&#x4FDD;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5728;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x4E0D;&#x88AB;&#x7528;&#x4F5C;&#x5B9E;&#x9645;&#x6570;&#x636E;&#x503C;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x3002;&#x7528;&#x6237;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x7981;&#x7528;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x8F6C;&#x4E49; ESCAPE &apos;OFF&apos;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x7528;&#x6237;&#x6709;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x4E09;&#x5217;&#x7684;&#x8868;&#xFF0C;&#x5E76;&#x4E14;&#x7528;&#x6237;&#x60F3;&#x4F7F;&#x7528; COPY &#x52A0;&#x8F7D;&#x4EE5;&#x4E0B;&#x4E09;&#x4E2A;&#x5B57;&#x6BB5;&#x3002;</p>
+<ul>
+<li>&#x767E;&#x5206;&#x6BD4; = %</li>
+<li>&#x5782;&#x76F4;&#x6761; = |</li>
+<li>&#x53CD;&#x659C;&#x6760; = </li>
+</ul>
+<p>&#x6307;&#x5B9A;&#x7684;&#x5206;&#x9694;&#x7B26;&#x662F; | (&#x7BA1;&#x9053;&#x5B57;&#x7B26;), &#x7528;&#x6237;&#x6307;&#x5B9A;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x662F; * (&#x661F;&#x53F7;)&#x3002;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4E2D;&#x683C;&#x5F0F;&#x5316;&#x7684;&#x884C;&#x5C06;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>percentage sign = % | vertical bar = ***|** | backslash =
+</code></pre><p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x4F7F;&#x7528;&#x661F;&#x53F7;&#xFF08;*&#xFF09;&#x8F6C;&#x4E49;&#x6570;&#x636E;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x7BA1;&#x9053;&#x5B57;&#x7B26;&#x3002; &#x8FD8;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x66FF;&#x4EE3;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x8F6C;&#x4E49;&#x53CD;&#x659C;&#x6760;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x5B57;&#x7B26;&#x5FC5;&#x987B;&#x5728;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x524D;&#x9762;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x4EEC;&#x663E;&#x793A;&#x4E3A;&#x5217;&#x503C;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF1A;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x672C;&#x8EAB;&#xFF0C;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x56DE;&#x8F66;&#x7B26;&#x548C;&#x5F53;&#x524D;&#x5206;&#x9694;&#x7B26;&#x5B57;&#x7B26;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; ESCAPE AS &#x5B50;&#x53E5;&#x6307;&#x5B9A;&#x5176;&#x4ED6;&#x8F6C;&#x4E49;&#x7B26;&#x3002;</p>
+<p><strong>CSV Format</strong></p>
+<p>&#x6B64;&#x683C;&#x5F0F;&#x7528;&#x4E8E;&#x5BFC;&#x5165;&#x548C;&#x5BFC;&#x51FA;&#x8BB8;&#x591A;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#xFF08;&#x5982;&#x7535;&#x5B50;&#x8868;&#x683C;&#xFF09;&#x4F7F;&#x7528;&#x7684;&#x9017;&#x53F7;&#x5206;&#x9694;&#x503C;&#xFF08;CSV&#xFF09;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x3002; &#x800C;&#x4E0D;&#x662F; HashData  Database &#x6807;&#x51C6;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x4F7F;&#x7528;&#x7684;&#x8F6C;&#x4E49;&#xFF0C;&#x5B83;&#x4F1A;&#x751F;&#x6210;&#x5E76;&#x8BC6;&#x522B;&#x5E38;&#x7528;&#x7684; CSV &#x8F6C;&#x4E49;&#x673A;&#x5236;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x8BB0;&#x5F55;&#x7684;&#x503C;&#x7531; DELIMITER &#x5B57;&#x7B26;&#x5206;&#x9694;&#x3002; &#x5982;&#x679C;&#x503C;&#x5305;&#x542B;&#x5206;&#x9694;&#x7B26;&#x5B57;&#x7B26;&#xFF0C;&#x5219; QUOTE &#x5B57;&#x7B26;&#xFF0C; ESCAPE &#x5B57;&#x7B26;(&#x9ED8;&#x8BA4;&#x4E3A;&#x53CC;&#x5F15;&#x53F7;), NULL &#x5B57;&#x7B26;&#x4E32;&#xFF0C; &#x56DE;&#x8F66;&#x7B26;&#x6216;&#x6362;&#x884C;&#x5B57;&#x7B26;&#xFF0C;&#x5219;&#x6574;&#x4E2A;&#x503C;&#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x540E;&#x7F00;&#x4E3A; QUOTE &#x5B57;&#x7B26;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; FORCE QUOTE &#x5F3A;&#x5236;&#x5F15;&#x7528;&#x5728;&#x7279;&#x5B9A;&#x5217;&#x4E2D;&#x8F93;&#x51FA;&#x975E;NULL &#x3002;</p>
+<p>CSV &#x683C;&#x5F0F;&#x6CA1;&#x6709;&#x6807;&#x51C6;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x533A;&#x5206; NULL &#x503C;&#x548C;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;  HashData &#x6570;&#x636E;&#x5E93;&#x901A;&#x8FC7; COPY &#x5F15;&#x7528;&#x6765;&#x5904;&#x7406; &#x3002;&#x4E00;&#x4E2A; NULL &#x4F5C;&#x4E3A; NULL &#x5B57;&#x7B26;&#x4E32;&#x8F93;&#x51FA;&#xFF0C;&#x4E0D;&#x5F15;&#x7528;&#xFF0C; &#x800C;&#x4E0E; NULL &#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x6570;&#x636E;&#x503C;&#x88AB;&#x5F15;&#x7528;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#xFF0C;NULL &#x5199;&#x4E3A;&#x65E0;&#x5F15;&#x53F7;&#x7684;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x800C;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#xFF08;&#x201C;&#x201D;&#xFF09;&#x5199;&#x5165;&#x3002;&#x9605;&#x8BFB;&#x503C;&#x9075;&#x5FAA;&#x76F8;&#x4F3C;&#x7684;&#x89C4;&#x5219;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; FORCE NOT NULL &#x6765;&#x963B;&#x6B62;&#x7279;&#x5B9A;&#x5217;&#x7684; NULL &#x8F93;&#x51FA;&#x6BD4;&#x8F83;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x53CD;&#x659C;&#x6760;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x5B57;&#x7B26; CSV &#x683C;&#x5F0F;&#xFF0C;&#x51FA;&#x73B0;&#x5728;&#x884C;&#x4E0A;&#x7684;&#x5355;&#x4E2A;&#x6761;&#x76EE;&#x7684;&#x6570;&#x636E;&#x503C;&#x5728;&#x8F93;&#x51FA;&#x4E0A;&#x81EA;&#x52A8;&#x5F15;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x8F93;&#x5165;&#x65F6;&#xFF08;&#x5982;&#x679C;&#x5F15;&#x7528;&#xFF09;&#x4E0D;&#x4F1A;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x6570;&#x636E;&#x7ED3;&#x5C3E;&#x6807;&#x8BB0;&#x3002; &#x5982;&#x679C;&#x7528;&#x6237;&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x53E6;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x521B;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x8BE5;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5177;&#x6709;&#x5355;&#x4E2A;&#x672A;&#x5F15;&#x7528;&#x7684;&#x5217;&#xFF0C; &#x5E76;&#x4E14;&#x503C;&#x53EF;&#x80FD;&#x4E3A; . &#xFF0C; &#x7528;&#x6237;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5728;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x4E2D;&#x5F15;&#x7528;&#x8BE5;&#x503C;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x89E3;&#xFF1A; &#x5728; CSV &#x6A21;&#x5F0F;&#xFF0C;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x90FD;&#x5F88;&#x91CD;&#x8981;&#x3002;&#x7531;&#x7A7A;&#x683C;&#x6216; DELIMITER &#x4EE5;&#x5916;&#x7684;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#x5305;&#x56F4;&#x7684;&#x5F15;&#x7528;&#x503C;&#x5C06;&#x5305;&#x542B;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x4ECE;&#x7CFB;&#x7EDF;&#x4E2D;&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x767D;&#x8272;&#x7A7A;&#x95F4;&#x586B;&#x5145;&#x5230;&#x67D0;&#x4E9B;&#x56FA;&#x5B9A;&#x5BBD;&#x5EA6;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5219;&#x5728;&#x5C06;&#x6570;&#x636E;&#x5BFC;&#x5165;&#x5230; HashData &#x6570;&#x636E;&#x5E93;&#x4E4B;&#x524D;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x9884;&#x5904;&#x7406; CSV &#x6587;&#x4EF6;&#x4EE5;&#x5220;&#x9664;&#x5C3E;&#x968F;&#x7684;&#x7A7A;&#x683C;&#x3002;</p>
+</blockquote>
+<p>CSV &#x6A21;&#x5F0F;&#x5C06;&#x4F1A;&#x8BC6;&#x522B;&#x5E76;&#x751F;&#x6210;&#x5305;&#x542B;&#x5D4C;&#x5165;&#x56DE;&#x8F66;&#x7B26;&#x548C;&#x6362;&#x884C;&#x7B26;&#x7684;&#x5F15;&#x7528;&#x503C;&#x7684; CSV &#x6587;&#x4EF6;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6587;&#x4EF6;&#x4E0D;&#x662F;&#x6BCF;&#x4E2A;&#x8868;&#x884C;&#x4E25;&#x683C;&#x4E00;&#x884C;&#xFF0C;&#x5982;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x6CE8;&#x89E3;&#xFF1A; &#x8BB8;&#x591A;&#x7A0B;&#x5E8F;&#x4EA7;&#x751F;&#x5947;&#x602A;&#x4E14;&#x5076;&#x7136;&#x7684; CSV &#x6587;&#x4EF6;&#xFF0C;&#x56E0;&#x6B64;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x6BD4;&#x6807;&#x51C6;&#x66F4;&#x4E3A;&#x5E38;&#x89C4;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x4E00;&#x4E9B;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x6B64;&#x673A;&#x5236;&#x5BFC;&#x5165;&#x7684;&#x6587;&#x4EF6;&#xFF0C;COPY &#x53EF;&#x80FD;&#x4F1A;&#x751F;&#x6210; &#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x65E0;&#x6CD5;&#x5904;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p><strong>&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;</strong></p>
+<p>&#x8BE5; BINARY &#x683C;&#x5F0F;&#x7531;&#x6587;&#x4EF6;&#x5934;&#xFF0C;&#x5305;&#x542B;&#x884C;&#x6570;&#x636E;&#x7684;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5143;&#x7EC4;&#x548C;&#x6587;&#x4EF6;&#x9884;&#x544A;&#x7247;&#x7EC4;&#x6210;&#x3002;&#x6807;&#x9898;&#x548C;&#x6570;&#x636E;&#x662F;&#x7F51;&#x7EDC;&#x5B57;&#x8282;&#x987A;&#x5E8F;</p>
+<ul>
+<li><strong>&#x6587;&#x4EF6;&#x5934;</strong> &#x2014; &#x6587;&#x4EF6;&#x5934;&#x7531; 15 &#x4E2A;&#x5B57;&#x8282;&#x7684;&#x56FA;&#x5B9A;&#x5B57;&#x6BB5;&#x7EC4;&#x6210;&#xFF0C;&#x540E;&#x9762;&#x662F;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x7684;&#x6807;&#x9898;&#x6269;&#x5C55;&#x533A;&#x3002;&#x56FA;&#x5B9A;&#x5B57;&#x6BB5;&#x662F;&#xFF1A;<ul>
+<li><strong>&#x7B7E;&#x540D;</strong> &#x2014; 11 &#x5B57;&#x8282;&#x5E8F;&#x5217; PGCOPY  n  377  r  n  0 - &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x96F6;&#x5B57;&#x8282;&#x662F;&#x7B7E;&#x540D;&#x7684;&#x5FC5;&#x9700;&#x90E8;&#x5206;&#x3002;&#xFF08;&#x7B7E;&#x540D;&#x88AB;&#x8BBE;&#x8BA1;&#x4E3A;&#x5BB9;&#x6613;&#x5730;&#x8BC6;&#x522B;&#x7531;&#x975E;8&#x4F4D;&#x6E05;&#x7406;&#x4F20;&#x8F93;&#x6240;&#x63A9;&#x76D6;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x8BE5;&#x7B7E;&#x540D;&#x5C06;&#x901A;&#x8FC7;&#x884C;&#x5C3E;&#x8F6C;&#x6362;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x4E22;&#x5F03;&#x7684;&#x96F6;&#x5B57;&#x8282;&#xFF0C;&#x4E22;&#x5F03;&#x7684;&#x9AD8;&#x4F4D;&#x6216;&#x5947;&#x5076;&#x53D8;&#x5316;&#x3002;&#xFF09;</li>
+<li><strong>&#x6807;&#x5FD7;&#x5B57;&#x6BB5;</strong> &#x2014; 32 &#x4F4D;&#x6574;&#x6570;&#x4F4D;&#x63A9;&#x7801;&#xFF0C;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x7684;&#x91CD;&#x8981;&#x65B9;&#x9762;&#x3002;&#x4F4D;&#x4ECE; 0&#xFF08;LSB&#xFF09;&#x5230;31&#xFF08;MSB&#xFF09;&#x7F16;&#x53F7;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x8BE5;&#x5B57;&#x6BB5;&#x4EE5;&#x7F51;&#x7EDC;&#x5B57;&#x8282;&#x987A;&#x5E8F;&#xFF08;&#x6700;&#x9AD8;&#x6709;&#x6548;&#x5B57;&#x8282;&#x4F18;&#x5148;&#xFF09;&#x5B58;&#x50A8;&#xFF0C;&#x4EE5;&#x53CA;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6240;&#x6709;&#x6574;&#x6570;&#x5B57;&#x6BB5;&#x3002;&#x4F4D; 16-31 &#x4FDD;&#x7559;&#x4EE5;&#x8868;&#x793A;&#x5173;&#x952E;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x95EE;&#x9898;; &#x5982;&#x679C;&#x53D1;&#x73B0;&#x5728;&#x6B64;&#x8303;&#x56F4;&#x5185;&#x8BBE;&#x7F6E;&#x4E86;&#x610F;&#x5916;&#x7684;&#x4F4D;&#xFF0C;&#x8BFB;&#x53D6;&#x5668;&#x5C06;&#x4E2D;&#x6B62;&#x3002;bit 0-15 &#x88AB;&#x4FDD;&#x7559;&#x4EE5;&#x8868;&#x793A;&#x5411;&#x540E;&#x517C;&#x5BB9;&#x7684;&#x683C;&#x5F0F;&#x95EE;&#x9898;; &#x8BFB;&#x8005;&#x5E94;&#x8BE5;&#x7B80;&#x5355;&#x5730;&#x5FFD;&#x7565;&#x5728;&#x6B64;&#x8303;&#x56F4;&#x5185;&#x8BBE;&#x7F6E;&#x7684;&#x4EFB;&#x4F55;&#x610F;&#x5916;&#x7684;&#x4F4D;&#x3002;&#x76EE;&#x524D;&#x53EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x6807;&#x5FD7;&#xFF0C;&#x5176;&#x4F59;&#x7684;&#x6807;&#x5FD7;&#x4F4D;&#x5FC5;&#x987B;&#x4E3A;&#x96F6;&#xFF08;&#x5982;&#x679C;&#x6570;&#x636E;&#x6709; OID&#xFF0C;&#x5219;&#x4E3A;16&#xFF1A;1&#xFF0C;&#x5426;&#x5219;&#x4E3A; 0&#xFF09;&#x3002;</li>
+<li><strong>&#x6807;&#x9898;&#x6269;&#x5C55;&#x533A;&#x957F;&#x5EA6;</strong> &#x2014; 32 &#x4F4D;&#x6574;&#x6570;&#xFF0C;&#x6807;&#x9898;&#x5269;&#x4F59;&#x5B57;&#x8282;&#x957F;&#x5EA6;&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x81EA;&#x8EAB;&#x3002;&#x76EE;&#x524D;&#xFF0C;&#x8FD9;&#x662F;&#x96F6;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#x7ACB;&#x5373;&#x8DDF;&#x968F;&#x3002;&#x683C;&#x5F0F;&#x7684;&#x672A;&#x6765;&#x66F4;&#x6539;&#x53EF;&#x80FD;&#x5141;&#x8BB8;&#x5728;&#x6807;&#x9898;&#x4E2D;&#x5B58;&#x5728;&#x9644;&#x52A0;&#x6570;&#x636E;&#x3002;&#x8BFB;&#x8005;&#x5E94;&#x8BE5;&#x9ED8;&#x9ED8;&#x5730;&#x8DF3;&#x8FC7;&#x4EFB;&#x4F55;&#x4E0D;&#x77E5;&#x9053;&#x8BE5;&#x600E;&#x4E48;&#x505A;&#x7684;&#x6807;&#x9898;&#x6269;&#x5C55;&#x540D;&#x6570;&#x636E;&#x3002;&#x6807;&#x9898;&#x6269;&#x5C55;&#x533A;&#x57DF;&#x88AB;&#x8BBE;&#x60F3;&#x4E3A;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x81EA;&#x8BC6;&#x522B;&#x5757;&#x3002; &#x6807;&#x5FD7;&#x5B57;&#x6BB5;&#x4E0D;&#x662F;&#x8981;&#x544A;&#x8BC9;&#x8BFB;&#x8005;&#x6269;&#x5C55;&#x533A;&#x57DF;&#x662F;&#x4EC0;&#x4E48;&#x3002;&#x6807;&#x9898;&#x6269;&#x5C55;&#x5185;&#x5BB9;&#x7684;&#x5177;&#x4F53;&#x8BBE;&#x8BA1;&#x7559;&#x5F85;&#x4EE5;&#x540E;&#x53D1;&#x5E03;&#x3002;</li>
+</ul>
+</li>
+<li><p><strong>&#x5143;&#x7EC4;</strong> &#x2014; &#x6BCF;&#x4E2A;&#x5143;&#x7EC4;&#x4ECE;&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x7684; 16 &#x4F4D;&#x6574;&#x6570;&#x5F00;&#x59CB;&#x3002;&#xFF08;&#x76EE;&#x524D;&#xFF0C;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7EC4;&#x90FD;&#x5C06;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x8BA1;&#x6570;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x5E76;&#x4E0D;&#x603B;&#x662F;&#x5982;&#x6B64;&#xFF09;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5BF9;&#x4E8E;&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5B57;&#x6BB5;&#x91CD;&#x590D;&#xFF0C;&#x90FD;&#x6709;&#x4E00;&#x4E2A; 32 &#x4F4D;&#x957F;&#x5EA6;&#x7684;&#x5B57;&#xFF0C; &#x540E;&#x8DDF;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#x3002;&#xFF08;&#x957F;&#x5EA6;&#x5B57;&#x4E0D;&#x5305;&#x62EC;&#x672C;&#x8EAB;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x96F6;&#xFF09;&#x3002;&#x4F5C;&#x4E3A;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF0C;-1 &#x8868;&#x793A; NULL &#x5B57;&#x6BB5;&#x503C;&#x3002;&#x5728; NULL &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6CA1;&#x6709;&#x503C;&#x5B57;&#x8282;&#x3002;</p>
+<p>&#x5B57;&#x6BB5;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;&#x5BF9;&#x9F50;&#x586B;&#x5145;&#x6216;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#xFF0C;COPY BINARY &#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x503C;&#x90FD;&#x88AB;&#x5047;&#x5B9A;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#xFF08;&#x683C;&#x5F0F;&#x4EE3;&#x7801;&#x4E00;&#xFF09;&#x3002;&#x9884;&#x8BA1;&#x672A;&#x6765;&#x7684;&#x6269;&#x5C55;&#x53EF;&#x80FD;&#x4F1A;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5934;&#x57DF;&#xFF0C;&#x5141;&#x8BB8;&#x6307;&#x5B9A;&#x6BCF;&#x5217;&#x683C;&#x5F0F;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x5982;&#x679C; OID &#x5305;&#x542B;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5219; OID &#x5B57;&#x6BB5;&#x7D27;&#x8DDF;&#x5728;&#x5B57;&#x6BB5;&#x8BA1;&#x6570;&#x5B57;&#x4E4B;&#x540E;&#x3002; &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6B63;&#x5E38;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x9664;&#x4E86;&#x5B83;&#x4E0D;&#x5305;&#x62EC;&#x5728;&#x5B57;&#x6BB5;&#x8BA1;&#x6570;&#x4E2D;&#x3002; &#x7279;&#x522B;&#x662F;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x5B57; - &#x8FD9;&#x5C06;&#x5141;&#x8BB8;&#x5904;&#x7406; 4 &#x5B57;&#x8282;&#x4E0E; 8 &#x5B57;&#x8282; OID &#x6CA1;&#x6709;&#x592A;&#x591A;&#x7684;&#x75DB;&#x82E6;&#xFF0C;&#x5E76;&#x5C06;&#x5141;&#x8BB8; OID &#x663E;&#x793A;&#x4E3A; null&#xFF0C;&#x5982;&#x679C;&#x6709;&#x8BC1;&#x660E;&#x662F;&#x53EF;&#x53D6;&#x7684;&#x3002;</p>
+</li>
+<li><p><strong>File Trailer</strong> &#x2014; file trailer &#x7531;&#x5305;&#x542B; -1 &#x7684; 16 &#x4F4D;&#x6574;&#x6570;&#x7EC4;&#x6210;&#x3002; &#x8FD9;&#x5F88;&#x5BB9;&#x6613;&#x4E0E;&#x5143;&#x7EC4;&#x7684;&#x5B57;&#x6BB5;&#x8BA1;&#x6570;&#x5B57;&#x533A;&#x5206;&#x5F00;&#x3002; &#x5982;&#x679C;&#x5B57;&#x6BB5;&#x8BA1;&#x6570;&#x5B57;&#x4E0D;&#x662F; -1 -1&#x4E5F;&#x4E0D;&#x662F;&#x9884;&#x671F;&#x7684;&#x5217;&#x6570;&#xFF0C;&#x8BFB;&#x8005;&#x5E94;&#x8BE5;&#x62A5;&#x544A;&#x9519;&#x8BEF;&#x3002; &#x8FD9;&#x63D0;&#x4F9B;&#x989D;&#x5916;&#x7684;&#x68C0;&#x67E5;&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x4E0E;&#x6570;&#x636E;&#x4E0D;&#x540C;&#x6B65;&#x3002;</p>
+</li>
+</ul>
+<h2 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h2>
+<p>&#x4F7F;&#x7528;&#x5782;&#x76F4;&#x6761;&#xFF08;|&#xFF09;&#x4F5C;&#x4E3A;&#x5B57;&#x6BB5;&#x5206;&#x9694;&#x7B26;&#x5C06;&#x8868;&#x590D;&#x5236;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#xFF1A;</p>
+<pre><code>COPY country TO STDOUT WITH DELIMITER &apos;|&apos;;
+</code></pre><p>&#x4ECE;&#x6587;&#x4EF6;&#x4E2D;&#x590D;&#x5236;&#x6570;&#x636E;&#x5230; country &#x8868;&#x4E2D;:</p>
+<pre><code>COPY country FROM &apos;/home/usr1/sql/country_data&apos;;
+</code></pre><p>&#x590D;&#x5236;&#x5230;&#x540D;&#x79F0;&#x4EE5; &apos;A&apos; &#x5F00;&#x5934;&#x7684;&#x56FD;&#x5BB6;/&#x5730;&#x533A;&#x7684;&#x6587;&#x4EF6;:</p>
+<pre><code>COPY (SELECT * FROM country WHERE country_name LIKE &apos;A%&apos;) TO 
+&apos;/home/usr1/sql/a_list_countries.copy&apos;;
+</code></pre><p>&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230; sales &#x8868;&#x4F7F;&#x7528;&#x5355;&#x884C;&#x9519;&#x8BEF;&#x9694;&#x79BB;&#x6A21;&#x5F0F;&#x548C;&#x65E5;&#x5FD7;&#x9519;&#x8BEF;&#xFF1A;</p>
+<pre><code>COPY sales FROM &apos;/home/usr1/sql/sales_data&apos; LOG ERRORS 
+   SEGMENT REJECT LIMIT 10 ROWS;
+</code></pre><p>&#x8981;&#x62F7;&#x8D1D; Segment &#x6570;&#x636E;&#x4F9B;&#x4EE5;&#x540E;&#x4F7F;&#x7528;&#xFF0C;&#x4F7F;&#x7528; ON SEGMENT &#x8BED;&#x53E5;&#x3002; &#x4F7F;&#x7528; ON SEGMENT &#x8BED;&#x53E5;&#x7684;&#x5F62;&#x5F0F;&#x4E3A;:</p>
+<pre><code>COPY table TO &apos;&lt;SEG_DATA_DIR&gt;/gpdumpname&lt;SEGID&gt;_suffix&apos; ON SEGMENT;
+</code></pre><p>&#x8BE5; <code>&lt;SEGID&gt;</code> &#x662F;&#x5FC5;&#x987B;&#x7684;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84; <code>&lt;SEG_DATA_DIR&gt;</code> &#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57;&#x5728;&#x8DEF;&#x5F84;&#x4E2D;&#x3002;</p>
+<p>&#x5F53;&#x7528;&#x6237;&#x4F20;&#x9012;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x5B57; <code>&lt;SEG_DATA_DIR&gt;</code> &#x548C; <code>&lt;SEGID&gt;</code> &#x5230; COPY, COPY &#x5C06;&#x5728;&#x8FD0;&#x884C;&#x64CD;&#x4F5C;&#x65F6;&#x586B;&#x5199;&#x9002;&#x5F53;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x4F8B;&#x5982;, &#x5982;&#x679C;&#x7528;&#x6237;&#x6709;&#x8868; mytable &#x4EE5;&#x53CA;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684; Segment &#x548C;&#x955C;&#x50CF; Segment&#xFF1A;</p>
+<pre><code>contentid | dbid | file segment location 
+    0     |  1   |/home/usr1/data1/gpsegdir0
+
+    0     |  3   | /home/usr1/data_mirror1/gpsegdir0 
+
+    1     |  4   | /home/usr1/data2/gpsegdir1
+
+    1     |  2   | /home/usr1/data_mirror2/gpsegdir1
+</code></pre><p>&#x8FD0;&#x884C;&#x547D;&#x4EE4;:</p>
+<pre><code>COPY mytable TO &apos;&lt;SEG_DATA_DIR&gt;/gpbackup&lt;SEGID&gt;.txt&apos; ON SEGMENT;
+</code></pre><p>&#x5C06;&#x5BFC;&#x81F4;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;:</p>
+<pre><code>/home/usr1/data1/gpsegdir0/gpbackup0.txt
+/home/usr1/data2/gpsegdir1/gpbackup1.txt
+</code></pre><p>&#x7B2C;&#x4E00;&#x5217;&#x4E2D;&#x7684;&#x5185;&#x5BB9; ID &#x662F;&#x63D2;&#x5165;&#x5230;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x4E2D;&#x7684;&#x6807;&#x8BC6;&#x7B26; (&#x4F8B;&#x5982;&#xFF0C; gpsegdir0/gpbackup0.txt above) &#x6587;&#x4EF6;&#x662F;&#x5728; Segment &#x4E3B;&#x673A;&#x4E0A;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x4E3B;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x5C06;&#x5728;&#x6807;&#x51C6;&#x4E2D; COPY &#x64CD;&#x4F5C;&#x3002; &#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x4E3A;&#x955C;&#x50CF; Segment &#x521B;&#x5EFA;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x6587;&#x4EF6; ON SEGMENT &#x590D;&#x5236;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6307;&#x5B9A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x800C;&#x4E0D;&#x662F; <code>&lt;SEG_DATA_DIR&gt;</code>,&#x5982;&#x5728;&#x58F0;&#x660E;&#x4E2D;</p>
+<pre><code>COPY mytable TO &apos;/tmp/gpdir/gpbackup_&lt;SEGID&gt;.txt&apos; ON SEGMENT;
+</code></pre><p>&#x6587;&#x4EF6;&#x5C06;&#x88AB;&#x653E;&#x7F6E;&#x5728;&#x6BCF;&#x4E2A;&#x6BB5;&#x4E0A;&#x7684; /tmp/gpdir &#x4E2D;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x89E3;&#xFF1A; &#x8BE5; COPY FROM &#x64CD;&#x4F5C;&#x76EE;&#x524D;&#x8FD8;&#x4E0D;&#x652F;&#x6301; ON SEGMENT &#x8BED;&#x53E5;&#x3002;&#x50CF; gpfdist &#x8FD9;&#x6837;&#x7684;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x6062;&#x590D;&#x6570;&#x636E;&#x3002;</p>
+</blockquote>
+<h2 id="&#x517C;&#x5BB9;&#x6027;">&#x517C;&#x5BB9;&#x6027;</h2>
+<p>&#x5728; SQL &#x6807;&#x51C6;&#x4E2D;&#x6CA1;&#x6709; COPY &#x8BED;&#x53E5;&#x3002;</p>
+<h2 id="&#x53E6;&#x89C1;">&#x53E6;&#x89C1;</h2>
+<p><a href="create-external-table.html">CREATE EXTERNAL TABLE</a></p>
+<p><strong>&#x4E0A;&#x7EA7;&#x4E3B;&#x9898;&#xFF1A;</strong> <a href="./">SQL&#x547D;&#x4EE4;&#x53C2;&#x8003;</a></p>
+
+						
+					</section>
+					
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+				</div>
+			</div>
+			
+		</div>
+
+		
+		
+		<a href="commit.html" class="navigation navigation-prev " aria-label="Previous page: COMMIT">
+			<i class="fa fa-angle-left"></i>
+		</a>
+		
+		
+		<a href="create-aggregate.html" class="navigation navigation-next " aria-label="Next page: CREATE AGGREGATE">
+			<i class="fa fa-angle-right"></i>
+		</a>
+		
+		
+		
+	</div>
+	<script>
+		var gitbook = gitbook || [];
+		gitbook.push(function() {
+			gitbook.page.hasChanged({"page":{"title":"COPY","level":"4.1.9.32","depth":3,"next":{"title":"CREATE AGGREGATE","level":"4.1.9.33","depth":3,"path":"040-developer-guide/0710-sql-command-ref/create-aggregate.md","ref":"040-developer-guide/0710-sql-command-ref/create-aggregate.md","articles":[]},"previous":{"title":"COMMIT","level":"4.1.9.31","depth":3,"path":"040-developer-guide/0710-sql-command-ref/commit.md","ref":"040-developer-guide/0710-sql-command-ref/commit.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-fontsettings","editlink","baidu","versions","sitemap","copy-code-button","back-to-top-button","otherlink","expandable-chapters","heading-anchors","-lunr","-search","search-plus","splitter","theme-hashdatadoc"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/HashDataInc/docs/blob/v2.1.1/"},"splitter":{},"otherlink":{},"heading-anchors":{},"highlight":{},"sitemap":{"hostname":"http://docs.hashdata.cn"},"back-to-top-button":{},"copy-code-button":{},"baidu":{"token":"c2474dfbb51f64f6f0d882bcb8e617da"},"versions":{"type":"branches","gitbookConfigURL":"http://docs.hashdata.cn/latest/book.json","options":[{"value":"http://docs.hashdata.cn/v2.1.1/","text":"v2.1.1","selected":true},{"value":"http://docs.hashdata.cn/v1.4.0/","text":"v1.4.0"}]},"theme-hashdatadoc":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HashData","language":"zh-hans","gitbook":"*"},"file":{"path":"040-developer-guide/0710-sql-command-ref/copy.md","mtime":"2018-11-15T06:12:11.035Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-15T06:16:46.010Z"},"basePath":"../..","book":{"language":""}});
+		});
+	</script>
+</div>
+
+
+<div id="footer">
+    <footer id="footer-1">
+    <div class="container">
+        <div class="footer-block col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-1 col-sm-5 col-xs-5">
+        <div class="logo">
+            <img src="../../gitbook/images/footer-logo.png"/>
+        </div>
+        <p>北京酷克数据科技有限公司</p>
+        <p>地址：北京市朝阳区望京洛娃大厦C座6层1603室</p>
+        </div>
+        <div class="footer-block col-lg-3 col-md-4 col-sm-5 col-xs-5">
+        <p class="title">联系地址</p>
+        <p>电话：010-80699945</p>
+        <p>微博：@HashData</p>
+        <p>邮件：business@hashdata.cn</p>
+        </div>
+        <div class="footer-block qrcode col-lg-3 col-md-3">
+        <p class="title">微信公众号</p>
+        <img src="../../gitbook/images/qrcode.png"/>
+        </div>
+    </div>
+    </footer>
+    <footer id="footer-2">
+    <p>Copyright © 2016 HashData Ltd. 京ICP备16019672号-1</p>
+    <p><span class="emblem"></span>京公安网备11010502031309号</p>
+    </footer>
+</div>
+<div id="m-footer">
+    <div id="m-footer-bg"></div>
+    <footer id="footer-1">
+    <div class="logo"><img src="../../gitbook/images/footer-logo.png" /></div>
+    <div class="address">
+        <p>北京酷克数据科技有限公司</p>
+        <p>地址：北京市朝阳区望京洛娃大厦C座6层1603室</p>
+    </div>
+    <div class="connect">
+        <p class="title">联系地址</p>
+        <p>电话：010-80699945</p>
+        <p>微博：@HashData</p>
+        <p>邮件：business@hashdata.cn</p>
+        <p>扫描二维码关注公众号：</p>
+        <div class="qrcode">
+        <img src="../../gitbook/images/qrcode.png"/>
+        </div>
+    </div>
+    </footer>
+    <footer id="footer-2">
+    <div class="copyright">
+        <p>Copyright © 2016 HashData Ltd. 京ICP备16019672号-1</p>
+        <p><span></span>京公安网备11010502031309号</p>
+    </div>
+    </footer>
+</div>
+
+
+
+        
+    
+    
+        <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
+        <script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-hashdatadoc/fexa.js"></script>
+        
+    
+
+    </body>
+</html>
+

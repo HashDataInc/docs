@@ -1,0 +1,4055 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>pg_depend · HashData</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-versions/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-theme-hashdatadoc/fexa.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+        <link rel="stylesheet" 
+            href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+
+    
+        <link rel="stylesheet" href="../../../gitbook/hashdata.css">
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="pgdescription.html" />
+    
+    
+    <link rel="prev" href="pgdatabase.html" />
+    
+
+    </head>
+    <body>
+        
+
+
+<div id="header">
+        <header class="navbar navbar-default" id="top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.hashdata.cn">
+                        <img alt="Brand" src="../../../gitbook/images/logo.png">
+                    </a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="nav-index">
+                            <a href="http://www.hashdata.cn">首页</a>
+                        </li>
+                        <li id="nav-product">
+                            <a href="http://www.hashdata.cn/product">产品</a>
+                        </li>
+                        <li id="nav-case">
+                            <a href="http://www.hashdata.cn/case">案例</a>
+                        </li>
+                        <li id="nav-blog">
+                            <a href="http://www.hashdata.cn/blog">博客</a>
+                        </li>
+                        <li id="nav-doc" class="active">
+                            <a href="http://www.hashdata.cn/docs">文档</a>
+                        </li>
+                        <li class="dropdown" id="nav-aboutus">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">酷克数据<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="http://www.hashdata.cn/#block-aboutus-img">关于我们</a></li>
+                                <li><a href="http://www.hashdata.cn/aboutus">加入我们</a></li>
+                                <li> <a href="http://www.greenplum.net.cn/" target=_blank>社区</a></li>
+                            </ul>
+                        </li>
+                        <li class="try">
+			    <a target="_blank" href="https://appcenter.qingcloud.com/apps/app-iwacxg9z">点击试用</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+
+<div class="book">
+
+	<div class="book-summary">
+		
+		
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+		
+		<nav role="navigation">
+			
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    文档目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../../010-getting-started-guide/">
+            
+                <a href="../../../010-getting-started-guide/">
+            
+                    
+                    入门指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../../010-getting-started-guide/020-zhun-bei-gong-zuo.html">
+            
+                <a href="../../../010-getting-started-guide/020-zhun-bei-gong-zuo.html">
+            
+                    
+                    步骤1: 准备工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../../010-getting-started-guide/030-qi-dong-ji-qun.html">
+            
+                <a href="../../../010-getting-started-guide/030-qi-dong-ji-qun.html">
+            
+                    
+                    步骤2: 启动 HashData 数据仓库样例集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../../010-getting-started-guide/040-shou-quan-lian-jie.html">
+            
+                <a href="../../../010-getting-started-guide/040-shou-quan-lian-jie.html">
+            
+                    
+                    步骤3: 授权连接样例集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../../010-getting-started-guide/050-lian-jie-ji-qun.html">
+            
+                <a href="../../../010-getting-started-guide/050-lian-jie-ji-qun.html">
+            
+                    
+                    步骤4: 连接样例集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../../010-getting-started-guide/060-jia-zai-shu-ju.html">
+            
+                <a href="../../../010-getting-started-guide/060-jia-zai-shu-ju.html">
+            
+                    
+                    步骤5: 将样例数据从对象存储加载到 HashData 数据仓库中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../../010-getting-started-guide/070-shan-chu-ji-qun.html">
+            
+                <a href="../../../010-getting-started-guide/070-shan-chu-ji-qun.html">
+            
+                    
+                    步骤6: 寻找额外的资料和重设你的环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    管理指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../020-ji-qun-cao-zuo.html">
+            
+                <a href="../../020-ji-qun-cao-zuo.html">
+            
+                    
+                    管理概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../030-ji-qun-jian-kong.html">
+            
+                <a href="../../030-ji-qun-jian-kong.html">
+            
+                    
+                    集群性能监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../050-pai-cha-xi-tong-wen-ti.html">
+            
+                <a href="../../050-pai-cha-xi-tong-wen-ti.html">
+            
+                    
+                    排查系统问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    系统目录参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.1" data-path="../010-xi-tong-biao.html">
+            
+                <a href="../010-xi-tong-biao.html">
+            
+                    
+                    系统表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.2" data-path="../020-xi-tong-shi-tu.html">
+            
+                <a href="../020-xi-tong-shi-tu.html">
+            
+                    
+                    系统视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    系统目录定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.3.1" data-path="gpconfiguration-history.html">
+            
+                <a href="gpconfiguration-history.html">
+            
+                    
+                    gp_configuration_history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.2" data-path="gpdb-interfaces.html">
+            
+                <a href="gpdb-interfaces.html">
+            
+                    
+                    gp_db_interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.3" data-path="gpdistributed-log.html">
+            
+                <a href="gpdistributed-log.html">
+            
+                    
+                    gp_distributed_log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.4" data-path="gpdistributed-xacts.html">
+            
+                <a href="gpdistributed-xacts.html">
+            
+                    
+                    gp_distributed_xacts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.5" data-path="gpdistribution-policy.html">
+            
+                <a href="gpdistribution-policy.html">
+            
+                    
+                    gp_distribution_policy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.6" data-path="gpexpandexpansionprogress.html">
+            
+                <a href="gpexpandexpansionprogress.html">
+            
+                    
+                    gpexpand.expansion_progress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.7" data-path="gpexpandstatus.html">
+            
+                <a href="gpexpandstatus.html">
+            
+                    
+                    gpexpand.status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.8" data-path="gpexpandstatusdetail.html">
+            
+                <a href="gpexpandstatusdetail.html">
+            
+                    
+                    gpexpand.status_detail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.9" data-path="gpfastsequence.html">
+            
+                <a href="gpfastsequence.html">
+            
+                    
+                    gp_fastsequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.10" data-path="gpfault-strategy.html">
+            
+                <a href="gpfault-strategy.html">
+            
+                    
+                    gp_fault_strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.11" data-path="gpglobal-sequence.html">
+            
+                <a href="gpglobal-sequence.html">
+            
+                    
+                    gp_global_sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.12" data-path="gpid.html">
+            
+                <a href="gpid.html">
+            
+                    
+                    gp_id
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.13" data-path="gpinterfaces.html">
+            
+                <a href="gpinterfaces.html">
+            
+                    
+                    gp_interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.14" data-path="gppersistent-database-node.html">
+            
+                <a href="gppersistent-database-node.html">
+            
+                    
+                    gp_persistent_database_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.15" data-path="gppersistent-filespace-node.html">
+            
+                <a href="gppersistent-filespace-node.html">
+            
+                    
+                    gp_persistent_filespace_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.16" data-path="gppersistent-relation-node.html">
+            
+                <a href="gppersistent-relation-node.html">
+            
+                    
+                    gp_persistent_relation_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.17" data-path="gppersistent-tablespace-node.html">
+            
+                <a href="gppersistent-tablespace-node.html">
+            
+                    
+                    gp_persistent_tablespace_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.18" data-path="gppgdatabase.html">
+            
+                <a href="gppgdatabase.html">
+            
+                    
+                    gp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.19" data-path="gprelation-node.html">
+            
+                <a href="gprelation-node.html">
+            
+                    
+                    gp_relation_node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.20" data-path="gpresqueue-status.html">
+            
+                <a href="gpresqueue-status.html">
+            
+                    
+                    gp_resqueue_status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.21" data-path="gpsegment-configuration.html">
+            
+                <a href="gpsegment-configuration.html">
+            
+                    
+                    gp_segment_configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.22" data-path="gptransaction-log.html">
+            
+                <a href="gptransaction-log.html">
+            
+                    
+                    gp_transaction_log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.23" data-path="gpversion-at-initdb.html">
+            
+                <a href="gpversion-at-initdb.html">
+            
+                    
+                    gp_version_at_initdb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.24" data-path="pgaggregate.html">
+            
+                <a href="pgaggregate.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.25" data-path="pgam.html">
+            
+                <a href="pgam.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.26" data-path="pgamop.html">
+            
+                <a href="pgamop.html">
+            
+                    
+                    pg_amop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.27" data-path="pgamproc.html">
+            
+                <a href="pgamproc.html">
+            
+                    
+                    pg_amproc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.28" data-path="pgappendonly.html">
+            
+                <a href="pgappendonly.html">
+            
+                    
+                    pg_appendonly
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.29" data-path="pgattrdef.html">
+            
+                <a href="pgattrdef.html">
+            
+                    
+                    pg_attrdef
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.30" data-path="pgattribute-encoding.html">
+            
+                <a href="pgattribute-encoding.html">
+            
+                    
+                    pg_attribute_encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.31" data-path="pgattribute.html">
+            
+                <a href="pgattribute.html">
+            
+                    
+                    pg_attribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.32" data-path="pgauth-members.html">
+            
+                <a href="pgauth-members.html">
+            
+                    
+                    pg_auth_members
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.33" data-path="pgauthid.html">
+            
+                <a href="pgauthid.html">
+            
+                    
+                    pg_authid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.34" data-path="pgavailable-extension-versions.html">
+            
+                <a href="pgavailable-extension-versions.html">
+            
+                    
+                    pg_available_extension_versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.35" data-path="pgavailable-extensions.html">
+            
+                <a href="pgavailable-extensions.html">
+            
+                    
+                    pg_available_extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.36" data-path="pgcast.html">
+            
+                <a href="pgcast.html">
+            
+                    
+                    pg_cast
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.37" data-path="pgclass.html">
+            
+                <a href="pgclass.html">
+            
+                    
+                    pg_class
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.38" data-path="pgcompression.html">
+            
+                <a href="pgcompression.html">
+            
+                    
+                    pg_compression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.39" data-path="pgconstraint.html">
+            
+                <a href="pgconstraint.html">
+            
+                    
+                    pg_constraint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.40" data-path="pgconversion.html">
+            
+                <a href="pgconversion.html">
+            
+                    
+                    pg_conversion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.41" data-path="pgdatabase.html">
+            
+                <a href="pgdatabase.html">
+            
+                    
+                    pg_database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.4.3.42" data-path="pgdepend.html">
+            
+                <a href="pgdepend.html">
+            
+                    
+                    pg_depend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.43" data-path="pgdescription.html">
+            
+                <a href="pgdescription.html">
+            
+                    
+                    pg_description
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.44" data-path="pgenum.html">
+            
+                <a href="pgenum.html">
+            
+                    
+                    pg_enum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.45" data-path="pgextension.html">
+            
+                <a href="pgextension.html">
+            
+                    
+                    pg_extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.46" data-path="pgexttable.html">
+            
+                <a href="pgexttable.html">
+            
+                    
+                    pg_exttable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.47" data-path="pgfilespace-entry.html">
+            
+                <a href="pgfilespace-entry.html">
+            
+                    
+                    pg_filespace_entry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.48" data-path="pgfilespace.html">
+            
+                <a href="pgfilespace.html">
+            
+                    
+                    pg_filespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.49" data-path="pgindex.html">
+            
+                <a href="pgindex.html">
+            
+                    
+                    pg_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.50" data-path="pginherits.html">
+            
+                <a href="pginherits.html">
+            
+                    
+                    pg_inherits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.51" data-path="pglanguage.html">
+            
+                <a href="pglanguage.html">
+            
+                    
+                    pg_language
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.52" data-path="pglargeobject.html">
+            
+                <a href="pglargeobject.html">
+            
+                    
+                    pg_largeobject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.53" data-path="pglistener.html">
+            
+                <a href="pglistener.html">
+            
+                    
+                    pg_listener
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.54" data-path="pglocks.html">
+            
+                <a href="pglocks.html">
+            
+                    
+                    pg_locks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.55" data-path="pgmax-external-files.html">
+            
+                <a href="pgmax-external-files.html">
+            
+                    
+                    pg_max_external_files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.56" data-path="pgnamespace.html">
+            
+                <a href="pgnamespace.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.57" data-path="pgopclass.html">
+            
+                <a href="pgopclass.html">
+            
+                    
+                    pg_opclass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.58" data-path="pgoperator.html">
+            
+                <a href="pgoperator.html">
+            
+                    
+                    pg_operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.59" data-path="pgpartition-columns.html">
+            
+                <a href="pgpartition-columns.html">
+            
+                    
+                    pg_partition_columns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.60" data-path="pgpartition-encoding.html">
+            
+                <a href="pgpartition-encoding.html">
+            
+                    
+                    pg_partition_encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.61" data-path="pgpartition-rule.html">
+            
+                <a href="pgpartition-rule.html">
+            
+                    
+                    pg_partition_rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.62" data-path="pgpartition-templates.html">
+            
+                <a href="pgpartition-templates.html">
+            
+                    
+                    pg_partition_templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.63" data-path="pgpartition.html">
+            
+                <a href="pgpartition.html">
+            
+                    
+                    pg_partition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.64" data-path="pgpartitions.html">
+            
+                <a href="pgpartitions.html">
+            
+                    
+                    pg_partitions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.65" data-path="pgpltemplate.html">
+            
+                <a href="pgpltemplate.html">
+            
+                    
+                    pg_pltemplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.66" data-path="pgproc.html">
+            
+                <a href="pgproc.html">
+            
+                    
+                    pg_proc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.67" data-path="pgresourcetype.html">
+            
+                <a href="pgresourcetype.html">
+            
+                    
+                    pg_resourcetype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.68" data-path="pgresqueue-attributes.html">
+            
+                <a href="pgresqueue-attributes.html">
+            
+                    
+                    pg_resqueue_attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.69" data-path="pgresqueue.html">
+            
+                <a href="pgresqueue.html">
+            
+                    
+                    pg_resqueue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.70" data-path="pgresqueuecapability.html">
+            
+                <a href="pgresqueuecapability.html">
+            
+                    
+                    pg_resqueuecapability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.71" data-path="pgrewrite.html">
+            
+                <a href="pgrewrite.html">
+            
+                    
+                    pg_rewrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.72" data-path="pgroles.html">
+            
+                <a href="pgroles.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.73" data-path="pgshdepend.html">
+            
+                <a href="pgshdepend.html">
+            
+                    
+                    pg_shdepend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.74" data-path="pgshdescription.html">
+            
+                <a href="pgshdescription.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.75" data-path="pgstat-activity.html">
+            
+                <a href="pgstat-activity.html">
+            
+                    
+                    pg_stat_activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.76" data-path="pgstat-last-operation.html">
+            
+                <a href="pgstat-last-operation.html">
+            
+                    
+                    pg_stat_last_operation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.77" data-path="pgstat-last-shoperation.html">
+            
+                <a href="pgstat-last-shoperation.html">
+            
+                    
+                    pg_stat_last_shoperation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.78" data-path="pgstat-operations.html">
+            
+                <a href="pgstat-operations.html">
+            
+                    
+                    pg_stat_operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.79" data-path="pgstat-partition-operations.html">
+            
+                <a href="pgstat-partition-operations.html">
+            
+                    
+                    pg_stat_partition_operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.80" data-path="pgstat-replication.html">
+            
+                <a href="pgstat-replication.html">
+            
+                    
+                    pg_stat_replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.81" data-path="pgstat-resqueues.html">
+            
+                <a href="pgstat-resqueues.html">
+            
+                    
+                    pg_stat_resqueues
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.82" data-path="pgstatistic.html">
+            
+                <a href="pgstatistic.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.83" data-path="pgtablespace.html">
+            
+                <a href="pgtablespace.html">
+            
+                    
+                    pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.84" data-path="pgtrigger.html">
+            
+                <a href="pgtrigger.html">
+            
+                    
+                    pg_trigger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.85" data-path="pgtype-encoding.html">
+            
+                <a href="pgtype-encoding.html">
+            
+                    
+                    pg_type_encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.86" data-path="pgtype.html">
+            
+                <a href="pgtype.html">
+            
+                    
+                    pg_type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.87" data-path="pguser-mapping.html">
+            
+                <a href="pguser-mapping.html">
+            
+                    
+                    pg_user_mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3.88" data-path="pgwindow.html">
+            
+                <a href="pgwindow.html">
+            
+                    
+                    pg_window
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../070-gptoolkit-admin-plan.html">
+            
+                <a href="../../070-gptoolkit-admin-plan.html">
+            
+                    
+                    gp_toolkit 管理方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../../080-gpperfmon-database/">
+            
+                <a href="../../080-gpperfmon-database/">
+            
+                    
+                    gpperfmon 数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.1" data-path="../../080-gpperfmon-database/database.html">
+            
+                <a href="../../080-gpperfmon-database/database.html">
+            
+                    
+                    database_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.2" data-path="../../080-gpperfmon-database/diskspace.html">
+            
+                <a href="../../080-gpperfmon-database/diskspace.html">
+            
+                    
+                    diskspace_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.3" data-path="../../080-gpperfmon-database/dynamicmemory-info.html">
+            
+                <a href="../../080-gpperfmon-database/dynamicmemory-info.html">
+            
+                    
+                    dynamic_memory_info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.4" data-path="../../080-gpperfmon-database/filerep.html">
+            
+                <a href="../../080-gpperfmon-database/filerep.html">
+            
+                    
+                    filerep_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.5" data-path="../../080-gpperfmon-database/interfacestats.html">
+            
+                <a href="../../080-gpperfmon-database/interfacestats.html">
+            
+                    
+                    interfacestats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6" data-path="../../080-gpperfmon-database/logalert.html">
+            
+                <a href="../../080-gpperfmon-database/logalert.html">
+            
+                    
+                    logalert*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7" data-path="../../080-gpperfmon-database/memoryinfo.html">
+            
+                <a href="../../080-gpperfmon-database/memoryinfo.html">
+            
+                    
+                    memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.8" data-path="../../080-gpperfmon-database/queries.html">
+            
+                <a href="../../080-gpperfmon-database/queries.html">
+            
+                    
+                    queries_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9" data-path="../../080-gpperfmon-database/segment.html">
+            
+                <a href="../../080-gpperfmon-database/segment.html">
+            
+                    
+                    segment_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.10" data-path="../../080-gpperfmon-database/system.html">
+            
+                <a href="../../080-gpperfmon-database/system.html">
+            
+                    
+                    system_*
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../../090-resouce-queue-manage.html">
+            
+                <a href="../../090-resouce-queue-manage.html">
+            
+                    
+                    使用资源队列进行工作负载管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../../040-developer-guide/">
+            
+                <a href="../../../040-developer-guide/">
+            
+                    
+                    开发指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../../040-developer-guide/020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.html">
+            
+                <a href="../../../040-developer-guide/020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.html">
+            
+                    
+                    系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../../040-developer-guide/030-fang-wen-hashdata-shu-ju-cang-ku.html">
+            
+                <a href="../../../040-developer-guide/030-fang-wen-hashdata-shu-ju-cang-ku.html">
+            
+                    
+                    访问数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../../040-developer-guide/031-python-fang-wen-shu-ju-ku.html">
+            
+                <a href="../../../040-developer-guide/031-python-fang-wen-shu-ju-ku.html">
+            
+                    
+                    使用 Python 访问 HashData 数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../../040-developer-guide/032-R-fang-wen-shu-ju-ku.html">
+            
+                <a href="../../../040-developer-guide/032-R-fang-wen-shu-ju-ku.html">
+            
+                    
+                    使用 R 语言访问 HashData 数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../../040-developer-guide/040-ding-yi-shu-ju-ku-dui-xiang.html">
+            
+                <a href="../../../040-developer-guide/040-ding-yi-shu-ju-ku-dui-xiang.html">
+            
+                    
+                    定义数据库对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../../040-developer-guide/050-shu-ju-de-guan-li.html">
+            
+                <a href="../../../040-developer-guide/050-shu-ju-de-guan-li.html">
+            
+                    
+                    数据的管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../../../040-developer-guide/060-dao-ru-he-dao-chu-shu-ju.html">
+            
+                <a href="../../../040-developer-guide/060-dao-ru-he-dao-chu-shu-ju.html">
+            
+                    
+                    导入导出数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="../../../040-developer-guide/070-cha-xun-shu-ju.html">
+            
+                <a href="../../../040-developer-guide/070-cha-xun-shu-ju.html">
+            
+                    
+                    查询数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="../../../040-developer-guide/0710-sql-command-ref/">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/">
+            
+                    
+                    SQL 命令参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.9.1" data-path="../../../040-developer-guide/0710-sql-command-ref/010-sqlyu-fa-gai-yao.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/010-sqlyu-fa-gai-yao.html">
+            
+                    
+                    SQL语法概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.2" data-path="../../../040-developer-guide/0710-sql-command-ref/abort.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/abort.html">
+            
+                    
+                    ABORT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.3" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-aggregate.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-aggregate.html">
+            
+                    
+                    ALTER AGGREGATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.4" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-conversion.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-conversion.html">
+            
+                    
+                    ALTER CONVERSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.5" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-database.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-database.html">
+            
+                    
+                    ALTER DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.6" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-domain.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-domain.html">
+            
+                    
+                    ALTER DOMAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.7" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-extension.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-extension.html">
+            
+                    
+                    ALTER EXTENSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.8" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-external-table.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-external-table.html">
+            
+                    
+                    ALTER EXTERNAL TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.9" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-filespace.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-filespace.html">
+            
+                    
+                    ALTER FILESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.10" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-function.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-function.html">
+            
+                    
+                    ALTER FUNCTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.11" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-group.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-group.html">
+            
+                    
+                    ALTER GROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.12" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-index.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-index.html">
+            
+                    
+                    ALTER INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.13" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-language.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-language.html">
+            
+                    
+                    ALTER LANGUAGE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.14" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-operator-class.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-operator-class.html">
+            
+                    
+                    ALTER OPERATOR CLASS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.15" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-operator.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-operator.html">
+            
+                    
+                    ALTER OPERATOR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.16" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-protocol.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-protocol.html">
+            
+                    
+                    ALTER PROTOCOL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.17" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-resource-queue.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-resource-queue.html">
+            
+                    
+                    ALTER RESOURCE QUEUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.18" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-role.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-role.html">
+            
+                    
+                    ALTER ROLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.19" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-schema.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-schema.html">
+            
+                    
+                    ALTER SCHEMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.20" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-sequence.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-sequence.html">
+            
+                    
+                    ALTER SEQUENCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.21" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-table.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-table.html">
+            
+                    
+                    ALTER TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.22" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-tablespace.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-tablespace.html">
+            
+                    
+                    ALTER TABLESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.23" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-type.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-type.html">
+            
+                    
+                    ALTER TYPE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.24" data-path="../../../040-developer-guide/0710-sql-command-ref/alter-user.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/alter-user.html">
+            
+                    
+                    ALTER USER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.25" data-path="../../../040-developer-guide/0710-sql-command-ref/analyze.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/analyze.html">
+            
+                    
+                    ANALYZE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.26" data-path="../../../040-developer-guide/0710-sql-command-ref/begin.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/begin.html">
+            
+                    
+                    BEGIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.27" data-path="../../../040-developer-guide/0710-sql-command-ref/checkpoint.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/checkpoint.html">
+            
+                    
+                    CHECKPOINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.28" data-path="../../../040-developer-guide/0710-sql-command-ref/close.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/close.html">
+            
+                    
+                    CLOSE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.29" data-path="../../../040-developer-guide/0710-sql-command-ref/cluster.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/cluster.html">
+            
+                    
+                    CLUSTER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.30" data-path="../../../040-developer-guide/0710-sql-command-ref/comment.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/comment.html">
+            
+                    
+                    COMMENT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.31" data-path="../../../040-developer-guide/0710-sql-command-ref/commit.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/commit.html">
+            
+                    
+                    COMMIT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.32" data-path="../../../040-developer-guide/0710-sql-command-ref/copy.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/copy.html">
+            
+                    
+                    COPY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.33" data-path="../../../040-developer-guide/0710-sql-command-ref/create-aggregate.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-aggregate.html">
+            
+                    
+                    CREATE AGGREGATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.34" data-path="../../../040-developer-guide/0710-sql-command-ref/create-cast.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-cast.html">
+            
+                    
+                    CREATE CAST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.35" data-path="../../../040-developer-guide/0710-sql-command-ref/create-conversion.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-conversion.html">
+            
+                    
+                    CREATE CONVERSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.36" data-path="../../../040-developer-guide/0710-sql-command-ref/create-database.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-database.html">
+            
+                    
+                    CREATE DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.37" data-path="../../../040-developer-guide/0710-sql-command-ref/create-domain.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-domain.html">
+            
+                    
+                    CREATE DOMAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.38" data-path="../../../040-developer-guide/0710-sql-command-ref/create-extension.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-extension.html">
+            
+                    
+                    CREATE EXTENSION(new)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.39" data-path="../../../040-developer-guide/0710-sql-command-ref/create-external-table.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-external-table.html">
+            
+                    
+                    CREATE EXTERNAL TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.40" data-path="../../../040-developer-guide/0710-sql-command-ref/create-function.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-function.html">
+            
+                    
+                    CREATE FUNCTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.41" data-path="../../../040-developer-guide/0710-sql-command-ref/create-group.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-group.html">
+            
+                    
+                    CREATE GROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.42" data-path="../../../040-developer-guide/0710-sql-command-ref/create-index.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-index.html">
+            
+                    
+                    CREATE INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.43" data-path="../../../040-developer-guide/0710-sql-command-ref/create-language.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-language.html">
+            
+                    
+                    CREATE LANGUAGE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.44" data-path="../../../040-developer-guide/0710-sql-command-ref/create-operator-class.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-operator-class.html">
+            
+                    
+                    CREATE OPERATOR CLASS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.45" data-path="../../../040-developer-guide/0710-sql-command-ref/create-operator-family.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-operator-family.html">
+            
+                    
+                    CREATE OPERATOR FAMILY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.46" data-path="../../../040-developer-guide/0710-sql-command-ref/create-operator.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-operator.html">
+            
+                    
+                    CREATE OPERATOR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.47" data-path="../../../040-developer-guide/0710-sql-command-ref/create-protocol.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-protocol.html">
+            
+                    
+                    CREATE PROTOCOL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.48" data-path="../../../040-developer-guide/0710-sql-command-ref/create-resource-queue.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-resource-queue.html">
+            
+                    
+                    CREATE RESOURCE QUEUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.49" data-path="../../../040-developer-guide/0710-sql-command-ref/create-role.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-role.html">
+            
+                    
+                    CREATE ROLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.50" data-path="../../../040-developer-guide/0710-sql-command-ref/create-rule.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-rule.html">
+            
+                    
+                    CREATE RULE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.51" data-path="../../../040-developer-guide/0710-sql-command-ref/create-schema.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-schema.html">
+            
+                    
+                    CREATE SCHEMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.52" data-path="../../../040-developer-guide/0710-sql-command-ref/create-sequence.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-sequence.html">
+            
+                    
+                    CREATE SEQUENCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.53" data-path="../../../040-developer-guide/0710-sql-command-ref/create-table-as.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-table-as.html">
+            
+                    
+                    CREATE TABLE AS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.54" data-path="../../../040-developer-guide/0710-sql-command-ref/create-table.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-table.html">
+            
+                    
+                    CREATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.55" data-path="../../../040-developer-guide/0710-sql-command-ref/create-tablespace.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-tablespace.html">
+            
+                    
+                    CREATE TABLESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.56" data-path="../../../040-developer-guide/0710-sql-command-ref/create-type.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-type.html">
+            
+                    
+                    CREATE TYPE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.57" data-path="../../../040-developer-guide/0710-sql-command-ref/create-user.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-user.html">
+            
+                    
+                    CREATE USER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.58" data-path="../../../040-developer-guide/0710-sql-command-ref/create-view.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/create-view.html">
+            
+                    
+                    CREATE VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.59" data-path="../../../040-developer-guide/0710-sql-command-ref/deallocate.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/deallocate.html">
+            
+                    
+                    DEALLOCATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.60" data-path="../../../040-developer-guide/0710-sql-command-ref/declare.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/declare.html">
+            
+                    
+                    DECLARE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.61" data-path="../../../040-developer-guide/0710-sql-command-ref/delete.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/delete.html">
+            
+                    
+                    DELETE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.62" data-path="../../../040-developer-guide/0710-sql-command-ref/discard.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/discard.html">
+            
+                    
+                    DISCARD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.63" data-path="../../../040-developer-guide/0710-sql-command-ref/do.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/do.html">
+            
+                    
+                    DO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.64" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-aggregate.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-aggregate.html">
+            
+                    
+                    DROP AGGREGATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.65" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-cast.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-cast.html">
+            
+                    
+                    DROP CAST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.66" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-conversion.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-conversion.html">
+            
+                    
+                    DROP CONVERSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.67" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-database.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-database.html">
+            
+                    
+                    DROP DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.68" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-domain.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-domain.html">
+            
+                    
+                    DROP DOMAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.69" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-extension.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-extension.html">
+            
+                    
+                    DROP EXTENSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.70" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-external-table.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-external-table.html">
+            
+                    
+                    DROP EXTERNAL TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.71" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-filespace.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-filespace.html">
+            
+                    
+                    DROP FILESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.72" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-function.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-function.html">
+            
+                    
+                    DROP FUNCTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.73" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-group.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-group.html">
+            
+                    
+                    DROP GROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.74" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-index.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-index.html">
+            
+                    
+                    DROP INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.75" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-language.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-language.html">
+            
+                    
+                    DROP LANGUAGE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.76" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-operator-class.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-operator-class.html">
+            
+                    
+                    DROP OPERATOR CLASS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.77" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-operator-family.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-operator-family.html">
+            
+                    
+                    DROP OPERATOR FAMILY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.78" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-operator.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-operator.html">
+            
+                    
+                    DROP OPERATOR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.79" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-owned.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-owned.html">
+            
+                    
+                    DROP OWNED
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.80" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-protocol.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-protocol.html">
+            
+                    
+                    DROP PROTOCOL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.81" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-resource-queue.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-resource-queue.html">
+            
+                    
+                    DROP RESOURCE QUEUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.82" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-role.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-role.html">
+            
+                    
+                    DROP ROLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.83" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-rule.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-rule.html">
+            
+                    
+                    DROP RULE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.84" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-schema.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-schema.html">
+            
+                    
+                    DROP SCHEMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.85" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-sequence.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-sequence.html">
+            
+                    
+                    DROP SEQUENCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.86" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-table.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-table.html">
+            
+                    
+                    DROP TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.87" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-tablespace.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-tablespace.html">
+            
+                    
+                    DROP TABLESPACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.88" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-type.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-type.html">
+            
+                    
+                    DROP TYPE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.89" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-user.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-user.html">
+            
+                    
+                    DROP USER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.90" data-path="../../../040-developer-guide/0710-sql-command-ref/drop-view.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/drop-view.html">
+            
+                    
+                    DROP VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.91" data-path="../../../040-developer-guide/0710-sql-command-ref/end.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/end.html">
+            
+                    
+                    END
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.92" data-path="../../../040-developer-guide/0710-sql-command-ref/execute.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/execute.html">
+            
+                    
+                    EXECUTE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.93" data-path="../../../040-developer-guide/0710-sql-command-ref/explain.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/explain.html">
+            
+                    
+                    EXPLAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.94" data-path="../../../040-developer-guide/0710-sql-command-ref/fetch.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/fetch.html">
+            
+                    
+                    FETCH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.95" data-path="../../../040-developer-guide/0710-sql-command-ref/grant.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/grant.html">
+            
+                    
+                    GRANT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.96" data-path="../../../040-developer-guide/0710-sql-command-ref/insert.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/insert.html">
+            
+                    
+                    INSERT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.97" data-path="../../../040-developer-guide/0710-sql-command-ref/load.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/load.html">
+            
+                    
+                    LOAD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.98" data-path="../../../040-developer-guide/0710-sql-command-ref/lock.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/lock.html">
+            
+                    
+                    LOCK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.99" data-path="../../../040-developer-guide/0710-sql-command-ref/move.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/move.html">
+            
+                    
+                    MOVE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.100" data-path="../../../040-developer-guide/0710-sql-command-ref/prepare.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/prepare.html">
+            
+                    
+                    PREPARE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.101" data-path="../../../040-developer-guide/0710-sql-command-ref/reassign-owned.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/reassign-owned.html">
+            
+                    
+                    REASSIGN OWNED
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.102" data-path="../../../040-developer-guide/0710-sql-command-ref/reindex.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/reindex.html">
+            
+                    
+                    REINDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.103" data-path="../../../040-developer-guide/0710-sql-command-ref/release-savepoint.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/release-savepoint.html">
+            
+                    
+                    RELEASE SAVEPOINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.104" data-path="../../../040-developer-guide/0710-sql-command-ref/reset.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/reset.html">
+            
+                    
+                    RESET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.105" data-path="../../../040-developer-guide/0710-sql-command-ref/revoke.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/revoke.html">
+            
+                    
+                    REVOKE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.106" data-path="../../../040-developer-guide/0710-sql-command-ref/rollback-to-savepoint.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/rollback-to-savepoint.html">
+            
+                    
+                    ROLLBACK TO SAVEPOINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.107" data-path="../../../040-developer-guide/0710-sql-command-ref/rollback.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/rollback.html">
+            
+                    
+                    ROLLBACK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.108" data-path="../../../040-developer-guide/0710-sql-command-ref/savepoint.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/savepoint.html">
+            
+                    
+                    SAVEPOINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.109" data-path="../../../040-developer-guide/0710-sql-command-ref/select-into.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/select-into.html">
+            
+                    
+                    SELECT INTO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.110" data-path="../../../040-developer-guide/0710-sql-command-ref/select.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/select.html">
+            
+                    
+                    SELECT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.111" data-path="../../../040-developer-guide/0710-sql-command-ref/set-role.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/set-role.html">
+            
+                    
+                    SET ROLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.112" data-path="../../../040-developer-guide/0710-sql-command-ref/set-session-authorization.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/set-session-authorization.html">
+            
+                    
+                    SET SESSION AUTHORIZATION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.113" data-path="../../../040-developer-guide/0710-sql-command-ref/set-transaction.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/set-transaction.html">
+            
+                    
+                    SET TRANSACTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.114" data-path="../../../040-developer-guide/0710-sql-command-ref/set.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/set.html">
+            
+                    
+                    SET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.115" data-path="../../../040-developer-guide/0710-sql-command-ref/show.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/show.html">
+            
+                    
+                    SHOW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.116" data-path="../../../040-developer-guide/0710-sql-command-ref/start-transaction.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/start-transaction.html">
+            
+                    
+                    START TRANSACTION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.117" data-path="../../../040-developer-guide/0710-sql-command-ref/truncate.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/truncate.html">
+            
+                    
+                    TRUNCATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.118" data-path="../../../040-developer-guide/0710-sql-command-ref/update.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/update.html">
+            
+                    
+                    UPDATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.119" data-path="../../../040-developer-guide/0710-sql-command-ref/vacuum.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/vacuum.html">
+            
+                    
+                    VACUUM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.120" data-path="../../../040-developer-guide/0710-sql-command-ref/values.html">
+            
+                <a href="../../../040-developer-guide/0710-sql-command-ref/values.html">
+            
+                    
+                    VALUES
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="../../../040-developer-guide/0750-data-type.html">
+            
+                <a href="../../../040-developer-guide/0750-data-type.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.11" data-path="../../../040-developer-guide/0760-char-set-support.html">
+            
+                <a href="../../../040-developer-guide/0760-char-set-support.html">
+            
+                    
+                    字符集支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.12" data-path="../../../040-developer-guide/0770-system-configuration-parameters.html">
+            
+                <a href="../../../040-developer-guide/0770-system-configuration-parameters.html">
+            
+                    
+                    系统配置参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.13" data-path="../../../040-developer-guide/0780-built-in-function-summary.html">
+            
+                <a href="../../../040-developer-guide/0780-built-in-function-summary.html">
+            
+                    
+                    内置函数摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.14" data-path="../../../040-developer-guide/0790-hashdata-de-pl-python-yu-yan-kuo-zhan.html">
+            
+                <a href="../../../040-developer-guide/0790-hashdata-de-pl-python-yu-yan-kuo-zhan.html">
+            
+                    
+                    PL/Python 语言扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.15" data-path="../../../040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.html">
+            
+                <a href="../../../040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.html">
+            
+                    
+                    用于分析的 MADlib 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.16" data-path="../../../040-developer-guide/07920-hashdata-postgis-kuo-zhan.html">
+            
+                <a href="../../../040-developer-guide/07920-hashdata-postgis-kuo-zhan.html">
+            
+                    
+                    PostGIS 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.17" data-path="../../../040-developer-guide/07921-pl-java-yu-yan.html">
+            
+                <a href="../../../040-developer-guide/07921-pl-java-yu-yan.html">
+            
+                    
+                    HashData的PL/Java语言扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.18" data-path="../../../040-developer-guide/07922-Oracle-to-HashData.html">
+            
+                <a href="../../../040-developer-guide/07922-Oracle-to-HashData.html">
+            
+                    
+                    HashData与Oracle语法上的差异
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.19" data-path="../../../040-developer-guide/080-data-encryption.html">
+            
+                <a href="../../../040-developer-guide/080-data-encryption.html">
+            
+                    
+                    数据加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../../060-best-practices/">
+            
+                <a href="../../../060-best-practices/">
+            
+                    
+                    最佳实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../../060-best-practices/010-zui-jia-shi-jian-ti-gang.html">
+            
+                <a href="../../../060-best-practices/010-zui-jia-shi-jian-ti-gang.html">
+            
+                    
+                    最佳实践提纲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../../060-best-practices/030-shu-ju-ku-mo-shi-she-ji.html">
+            
+                <a href="../../../060-best-practices/030-shu-ju-ku-mo-shi-she-ji.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../../060-best-practices/031-cun-chu-mo-xing.html">
+            
+                <a href="../../../060-best-practices/031-cun-chu-mo-xing.html">
+            
+                    
+                    存储模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../../060-best-practices/032-ya-suo.html">
+            
+                <a href="../../../060-best-practices/032-ya-suo.html">
+            
+                    
+                    压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../../../060-best-practices/033-fen-bu.html">
+            
+                <a href="../../../060-best-practices/033-fen-bu.html">
+            
+                    
+                    分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../../../060-best-practices/034-fen-qu.html">
+            
+                <a href="../../../060-best-practices/034-fen-qu.html">
+            
+                    
+                    分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../../../060-best-practices/035-suo-yin.html">
+            
+                <a href="../../../060-best-practices/035-suo-yin.html">
+            
+                    
+                    索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../../../060-best-practices/036-zi-duan-shun-xu.html">
+            
+                <a href="../../../060-best-practices/036-zi-duan-shun-xu.html">
+            
+                    
+                    字段顺序和字节对齐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../../../060-best-practices/040-nei-cun-he-fu-zai-guan-li.html">
+            
+                <a href="../../../060-best-practices/040-nei-cun-he-fu-zai-guan-li.html">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../../../060-best-practices/050-xi-tong-jian-kong-he-wei-hu.html">
+            
+                <a href="../../../060-best-practices/050-xi-tong-jian-kong-he-wei-hu.html">
+            
+                    
+                    监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../../../060-best-practices/060-jia-zai-shu-ju.html">
+            
+                <a href="../../../060-best-practices/060-jia-zai-shu-ju.html">
+            
+                    
+                    数据加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../../../060-best-practices/070-sqlcha-xun-diao-you.html">
+            
+                <a href="../../../060-best-practices/070-sqlcha-xun-diao-you.html">
+            
+                    
+                    查询计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../../../060-best-practices/080-dao-ru-shu-ju-dao-hashdata.html">
+            
+                <a href="../../../060-best-practices/080-dao-ru-shu-ju-dao-hashdata.html">
+            
+                    
+                    数据库导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+		</nav>
+		
+		
+	</div>
+
+	<!-- Content nav -->
+	<div class="book-anchor">
+		<div class="book-anchor-title">在这篇文章中:</div>
+		<div class="book-anchor-body">
+
+		</div>
+	</div>
+
+	<div class="book-body">
+		
+		<div class="body-inner">
+			
+			
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >pg_depend</a>
+    </h1>
+</div>
+
+
+
+
+			<div class="page-wrapper" tabindex="-1" role="main">
+				<div class="page-inner">
+					
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+					<section class="normal markdown-section">
+						
+						<h1 id="pgdepend">pg_depend</h1>
+<p>pg_depend &#x7CFB;&#x7EDF;&#x76EE;&#x5F55;&#x8868;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;&#x6B64;&#x4FE1;&#x606F;&#x5141;&#x8BB8; DROP &#x547D;&#x4EE4;&#x67E5;&#x627E;&#x54EA;&#x4E9B;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x7531; DROP CASCADE &#x5220;&#x9664;&#x6216;&#x8005;&#x5FC5;&#x987B;&#x9632;&#x6B62;&#x5728; DROP RESTRICT &#x60C5;&#x51B5;&#x4E2D;&#x88AB;&#x5220;&#x9664;&#x3002;&#x53E6;&#x8BF7;&#x53C2;&#x89C1; <a href="pgshdepend.html">pg_shdepend</a>&#xFF0C;&#x5B83;&#x5BF9;&#x6D89;&#x53CA; HashData &#x7CFB;&#x7EDF;&#x5171;&#x4EAB;&#x5BF9;&#x8C61;&#x7684;&#x4F9D;&#x8D56;&#x6267;&#x884C;&#x7C7B;&#x4F3C;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5728;&#x6240;&#x6709;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;pg_depend &#x9879;&#x8868;&#x793A;&#x5728;&#x4E0D;&#x5220;&#x9664;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x4E5F;&#x4E0D;&#x80FD;&#x5220;&#x9664;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6709;&#x51E0;&#x79CD;&#x7531; deptype &#x533A;&#x5206;&#x7684;&#x5B50;&#x7C7B;&#x578B;&#xFF1A;</p>
+<ul>
+<li><strong>DEPENDENCY_NORMAL (n)</strong> &#x2014; &#x5355;&#x72EC;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x6B63;&#x5E38;&#x5173;&#x7CFB;&#x3002;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x800C;&#x4E0D;&#x5F71;&#x54CD;&#x88AB;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x6307;&#x5B9A;CASCADE&#x6765;&#x5220;&#x9664;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x4E5F;&#x4F1A;&#x88AB;&#x5220;&#x9664;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x8868;&#x5217;&#x5BF9;&#x5176;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5177;&#x6709;&#x6B63;&#x5E38;&#x7684;&#x4F9D;&#x8D56;&#x6027;&#x3002;</li>
+<li><strong>DEPENDENCY_AUTO (a)</strong> &#x2014; &#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x4E8E;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x800C;&#x5220;&#x9664;&#xFF0C;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x5219;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x5E94;&#x8BE5;&#x81EA;&#x52A8;&#x88AB;&#x5220;&#x9664;&#xFF08;&#x4E0D;&#x7BA1;&#x662F;RESTRICT&#x8FD8;&#x662F;CASCADE&#x6A21;&#x5F0F;&#xFF09;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x8868;&#x4E0A;&#x7684;&#x547D;&#x540D;&#x7EA6;&#x675F;&#x81EA;&#x52A8;&#x4F9D;&#x8D56;&#x8868;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x8868;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x8BE5;&#x7EA6;&#x675F;&#x4E5F;&#x5C06;&#x6D88;&#x5931;&#x3002;</li>
+<li><strong>DEPENDENCY_INTERNAL (i)</strong> &#x2014; &#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x521B;&#x5EFA;&#xFF0C;&#x5B9E;&#x9645;&#x53EA;&#x662F;&#x5176;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x7684;DROP &#x64CD;&#x4F5C;&#x5C06;&#x88AB;&#x5B8C;&#x5168;&#x7981;&#x6B62;&#xFF08;&#x6211;&#x4EEC;&#x4F1A;&#x544A;&#x8BC9;&#x7528;&#x6237;&#x9488;&#x5BF9;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x53D1;&#x51FA;DROP&#x547D;&#x4EE4;&#x6765;&#x4EE3;&#x66FF;&#xFF09;&#x3002;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x7684;DROP&#x547D;&#x4EE4;&#x4F1A;&#x88AB;&#x4F20;&#x64AD;&#x4EE5;&#x5220;&#x9664;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x5426;&#x6307;&#x5B9A;CASCADE&#xFF08;&#x7EA7;&#x8054;&#x5220;&#x9664;&#xFF09;&#x3002;</li>
+<li><strong>DEPENDENCY_PIN (p)</strong> &#x2014; &#x6CA1;&#x6709;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#xFF1B;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x9879;&#x662F;&#x7CFB;&#x7EDF;&#x672C;&#x8EAB;&#x4F9D;&#x8D56;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x4FE1;&#x53F7;&#xFF0C;&#x6B64;&#x7C7B;&#x578B;&#x7684;&#x9879;&#x4EC5;&#x901A;&#x8FC7;&#x7CFB;&#x7EDF;&#x521D;&#x59CB;&#x5316;&#x521B;&#x5EFA;&#xFF0C;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x5305;&#x542B;0&#x3002;</li>
+</ul>
+<h5 id="&#x8868;-1-pgcatalogpgdepend">&#x8868; 1. pg_catalog.pg_depend</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5217;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x8003;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">classid</td>
+<td style="text-align:left">oid</td>
+<td style="text-align:left">pg_class.oid</td>
+<td style="text-align:left">&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x6240;&#x5728;&#x7684;&#x7CFB;&#x7EDF;&#x76EE;&#x5F55;&#x7684;OID&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">objid</td>
+<td style="text-align:left">oid</td>
+<td style="text-align:left">any OID column</td>
+<td style="text-align:left">&#x7279;&#x5B9A;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x7684;OID&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">objsubid</td>
+<td style="text-align:left">int4</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x5BF9;&#x4E8E;&#x8868;&#x5217;&#xFF0C;&#x8FD9;&#x662F;&#x5217;&#x7F16;&#x53F7;&#x3002;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#xFF0C;&#x6B64;&#x5217;&#x4E3A;0&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">refclassid</td>
+<td style="text-align:left">oid</td>
+<td style="text-align:left">pg_class.oid</td>
+<td style="text-align:left">&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x6240;&#x5728;&#x7684;&#x7CFB;&#x7EDF;&#x76EE;&#x5F55;&#x7684;OID&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">refobjid</td>
+<td style="text-align:left">oid</td>
+<td style="text-align:left">any OID column</td>
+<td style="text-align:left">&#x7279;&#x5B9A;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x7684;OID&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">refobjsubid</td>
+<td style="text-align:left">int4</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x5BF9;&#x4E8E;&#x8868;&#x5217;&#xFF0C;&#x8FD9;&#x662F;&#x88AB;&#x5F15;&#x7528;&#x7684;&#x5217;&#x7F16;&#x53F7;&#x3002;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#xFF0C;&#x8BE5;&#x5217;&#x4E3A;0&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">deptype</td>
+<td style="text-align:left">char</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x5B9A;&#x4E49;&#x6B64;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7684;&#x7279;&#x5B9A;&#x8BED;&#x4E49;&#x7684;&#x4EE3;&#x7801;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x4E0A;&#x7EA7;&#x4E3B;&#x9898;&#xFF1A;</strong> <a href="./">&#x7CFB;&#x7EDF;&#x76EE;&#x5F55;&#x5B9A;&#x4E49;</a></p>
+
+						
+					</section>
+					
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+				</div>
+			</div>
+			
+		</div>
+
+		
+		
+		<a href="pgdatabase.html" class="navigation navigation-prev " aria-label="Previous page: pg_database">
+			<i class="fa fa-angle-left"></i>
+		</a>
+		
+		
+		<a href="pgdescription.html" class="navigation navigation-next " aria-label="Next page: pg_description">
+			<i class="fa fa-angle-right"></i>
+		</a>
+		
+		
+		
+	</div>
+	<script>
+		var gitbook = gitbook || [];
+		gitbook.push(function() {
+			gitbook.page.hasChanged({"page":{"title":"pg_depend","level":"3.1.4.3.42","depth":4,"next":{"title":"pg_description","level":"3.1.4.3.43","depth":4,"path":"020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdescription.md","ref":"020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdescription.md","articles":[]},"previous":{"title":"pg_database","level":"3.1.4.3.41","depth":4,"path":"020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdatabase.md","ref":"020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdatabase.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-fontsettings","editlink","baidu","versions","sitemap","copy-code-button","back-to-top-button","otherlink","expandable-chapters","heading-anchors","-lunr","-search","search-plus","splitter","theme-hashdatadoc"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/HashDataInc/docs/blob/v2.1.1/"},"splitter":{},"otherlink":{},"heading-anchors":{},"highlight":{},"sitemap":{"hostname":"http://docs.hashdata.cn"},"back-to-top-button":{},"copy-code-button":{},"baidu":{"token":"c2474dfbb51f64f6f0d882bcb8e617da"},"versions":{"type":"branches","gitbookConfigURL":"http://docs.hashdata.cn/latest/book.json","options":[{"value":"http://docs.hashdata.cn/v2.1.1/","text":"v2.1.1","selected":true},{"value":"http://docs.hashdata.cn/v1.4.0/","text":"v1.4.0"}]},"theme-hashdatadoc":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HashData","language":"zh-hans","gitbook":"*"},"file":{"path":"020-admin-guide/060-system-catalog-ref/030-system-catalog-define/pgdepend.md","mtime":"2018-11-15T06:12:11.023Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-15T06:16:46.010Z"},"basePath":"../../..","book":{"language":""}});
+		});
+	</script>
+</div>
+
+
+<div id="footer">
+    <footer id="footer-1">
+    <div class="container">
+        <div class="footer-block col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-1 col-sm-5 col-xs-5">
+        <div class="logo">
+            <img src="../../../gitbook/images/footer-logo.png"/>
+        </div>
+        <p>北京酷克数据科技有限公司</p>
+        <p>地址：北京市朝阳区望京洛娃大厦C座6层1603室</p>
+        </div>
+        <div class="footer-block col-lg-3 col-md-4 col-sm-5 col-xs-5">
+        <p class="title">联系地址</p>
+        <p>电话：010-80699945</p>
+        <p>微博：@HashData</p>
+        <p>邮件：business@hashdata.cn</p>
+        </div>
+        <div class="footer-block qrcode col-lg-3 col-md-3">
+        <p class="title">微信公众号</p>
+        <img src="../../../gitbook/images/qrcode.png"/>
+        </div>
+    </div>
+    </footer>
+    <footer id="footer-2">
+    <p>Copyright © 2016 HashData Ltd. 京ICP备16019672号-1</p>
+    <p><span class="emblem"></span>京公安网备11010502031309号</p>
+    </footer>
+</div>
+<div id="m-footer">
+    <div id="m-footer-bg"></div>
+    <footer id="footer-1">
+    <div class="logo"><img src="../../../gitbook/images/footer-logo.png" /></div>
+    <div class="address">
+        <p>北京酷克数据科技有限公司</p>
+        <p>地址：北京市朝阳区望京洛娃大厦C座6层1603室</p>
+    </div>
+    <div class="connect">
+        <p class="title">联系地址</p>
+        <p>电话：010-80699945</p>
+        <p>微博：@HashData</p>
+        <p>邮件：business@hashdata.cn</p>
+        <p>扫描二维码关注公众号：</p>
+        <div class="qrcode">
+        <img src="../../../gitbook/images/qrcode.png"/>
+        </div>
+    </div>
+    </footer>
+    <footer id="footer-2">
+    <div class="copyright">
+        <p>Copyright © 2016 HashData Ltd. 京ICP备16019672号-1</p>
+        <p><span></span>京公安网备11010502031309号</p>
+    </div>
+    </footer>
+</div>
+
+
+
+        
+    
+    
+        <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
+        <script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-versions/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-theme-hashdatadoc/fexa.js"></script>
+        
+    
+
+    </body>
+</html>
+
