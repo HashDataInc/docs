@@ -119,7 +119,9 @@
     - [segment_*](080-gpperfmon-database/segment.md)
     - [system_*](080-gpperfmon-database/system.md)
 
-- [9 使用资源队列进行工作负载管理](090-resouce-queue-manage.md)
+
+- [使用资源队列进行工作负载管理](090-resouce-queue-manage.md)
+
 
 
 
