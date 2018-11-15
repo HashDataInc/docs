@@ -120,6 +120,8 @@
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/030-fang-wen-hashdata-shu-ju-cang-ku.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/031-python-fang-wen-shu-ju-ku.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/032-R-fang-wen-shu-ju-ku.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/040-ding-yi-shu-ju-ku-dui-xiang.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/050-shu-ju-de-guan-li.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/060-dao-ru-he-dao-chu-shu-ju.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
