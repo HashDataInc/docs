@@ -1,5 +1,5 @@
 # 使用 R 语言访问数据仓库
---
+
 本文将介绍如何使用 R 语言，访问 HashData 数据仓库。本文以 CentOS 7 操作系统为例进行讲解，其它操作系统的操作类似。
 
 RPostgreSQL 是一个用于访问 PostgreSQL 数据库的开源 R 模块，由于 HashData 数据仓库完全兼容 PostgreSQL 的客户端协议，所以我们通过 RPostgreSQL 模块来访问 HashData 数据仓库。
