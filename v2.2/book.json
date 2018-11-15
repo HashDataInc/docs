@@ -21,7 +21,7 @@
   ],
   "pluginsConfig": {
     "editlink": {
-      "base": "https://github.com/HashDataInc/docs/blob/v2.1.1/",
+      "base": "https://github.com/HashDataInc/docs/blob/v2.2/",
       "label": "编辑本页"
     },
     "baidu": {
@@ -34,8 +34,8 @@
       "gitbookConfigURL": "http://docs.hashdata.cn/latest/book.json",
       "options": [
         {
-          "value": "http://docs.hashdata.cn/v2.1.1/",
-          "text": "v2.1.1",
+          "value": "http://docs.hashdata.cn/v2.2/",
+          "text": "v2.2",
           "selected": true
         },
         {
