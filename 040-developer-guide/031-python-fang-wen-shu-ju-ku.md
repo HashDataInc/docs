@@ -1,4 +1,4 @@
-# 使用 Python 访问 HashData 数据仓库
+# 使用 Python 访问数据仓库
 
 本文将介绍如何使用 python 编程语言，访问 HashData 数据仓库。本文以 CentOS 7  操作系统为例进行讲解，其它操作系统的操作类似。本文如果没有特殊说明，相关代码在 python 2 与 python 3 两个版本上都可以使用。
 

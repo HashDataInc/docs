@@ -126,8 +126,8 @@
 - [开发指南](040-developer-guide/README.md)
     - [系统概述](040-developer-guide/020-hashdata-shu-ju-cang-ku-xi-tong-gai-shu.md)
     - [访问数据仓库](040-developer-guide/030-fang-wen-hashdata-shu-ju-cang-ku.md)
-    - [使用 Python 访问 HashData 数据仓库](040-developer-guide/031-python-fang-wen-shu-ju-ku.md)
-    - [使用 R 语言访问 HashData 数据仓库](040-developer-guide/032-R-fang-wen-shu-ju-ku.md)
+    - [使用 Python 访问数据仓库](040-developer-guide/031-python-fang-wen-shu-ju-ku.md)
+    - [使用 R 语言访问数据仓库](040-developer-guide/032-R-fang-wen-shu-ju-ku.md)
     - [定义数据库对象](040-developer-guide/040-ding-yi-shu-ju-ku-dui-xiang.md)
     - [数据的管理](040-developer-guide/050-shu-ju-de-guan-li.md)
     - [导入导出数据](040-developer-guide/060-dao-ru-he-dao-chu-shu-ju.md)
@@ -260,8 +260,8 @@
     - [PL/Python 语言扩展](040-developer-guide/0790-hashdata-de-pl-python-yu-yan-kuo-zhan.md)
     - [用于分析的 MADlib 扩展](040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.md)
     - [PostGIS 扩展](040-developer-guide/07920-hashdata-postgis-kuo-zhan.md)
-    - [HashData的PL/Java语言扩展](040-developer-guide/07921-pl-java-yu-yan.md)
-    - [HashData与Oracle语法上的差异](040-developer-guide/07922-Oracle-to-HashData.md)
+    - [PL/Java语言扩展](040-developer-guide/07921-pl-java-yu-yan.md)
+    - [与Oracle语法上的差异](040-developer-guide/07922-Oracle-to-HashData.md)
     - [数据加密](040-developer-guide/080-data-encryption.md)
 
 

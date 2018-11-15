@@ -1,4 +1,4 @@
-###HashData与Oracle语法上的差异
+### 与Oracle语法上的差异
 在这一章节中，我们简单比较一下，HashData 在语法层面与Oracle的差异。
 
 ####数据类型

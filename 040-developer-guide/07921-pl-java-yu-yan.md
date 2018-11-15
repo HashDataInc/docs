@@ -1,4 +1,4 @@
-# HashData的PL/Java语言扩展
+# PL/Java语言扩展
 
 本节包含 HashData 数据库的 PL/Java 语言的概述。
 
