@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # HashData的PL/Java语言扩展
-=======
-# PL/Java语言扩展
->>>>>>> b2f78643ec0115f91fe4fe97a99df3656849dfb2
 
 本节包含 HashData 数据库的 PL/Java 语言的概述。
 

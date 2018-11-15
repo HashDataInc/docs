@@ -7,6 +7,12 @@
 - [访问数据仓库](030-fang-wen-hashdata-shu-ju-cang-ku.md)
 
 
+- [使用 Python 访问 HashData 数据仓库](031-python-fang-wen-shu-ju-ku.md)
+
+
+- [使用 R 语言访问 HashData 数据仓库](032-R-fang-wen-shu-ju-ku.md)
+
+
 - [定义数据库对象](040-ding-yi-shu-ju-ku-dui-xiang.md)
 
 
@@ -163,10 +169,10 @@
 - [PostGIS 扩展](07920-hashdata-postgis-kuo-zhan.md)
 
 
-- [PL/Java语言扩展](07921-pl-java-yu-yan.md)
+- [HashData的PL/Java语言扩展](07921-pl-java-yu-yan.md)
 
 
-- [与Oracle语法上的差异](07922-Oracle-to-HashData.md)
+- [HashData与Oracle语法上的差异](07922-Oracle-to-HashData.md)
 
 
 - [数据加密](080-data-encryption.md)
