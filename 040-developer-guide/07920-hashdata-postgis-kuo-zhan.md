@@ -140,9 +140,7 @@ CREATE READABLE EXTERNAL TABLE osstbl_example(filename text, rast raster, metada
 
 #### 导入矢量数据格式
 
-**查看矢量数据**
-
-矢量数据带有多个图层信息，用户需要创建SQL函数查看矢量数据的图层信息。创建SQL函数Ogr_Fdw_Info并执行该方法，创建成功后用户可执行查询语句查看矢量数据的图层信息。
+查看矢量数据: 矢量数据带有多个图层信息，用户需要创建SQL函数查看矢量数据的图层信息。创建SQL函数Ogr_Fdw_Info并执行该方法，创建成功后用户可执行查询语句查看矢量数据的图层信息。
 
 ```sql
 --Create SQL Function:
@@ -151,9 +149,7 @@ CREATE OR REPLACE FUNCTION ogr_fdw_info(text) returns setof record as '$libdir/g
 select * from ogr_fdw_info('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS') AS tbl(name text, sqlq text);
 ```
 
-**创建外部表导入矢量数据**
-
-创建外部表格式选择Shapefile格式。填写layer字段选择要导入的图层，创建成功后用户可执行查询语句查看。
+创建外部表导入矢量数据: 创建外部表格式选择Shapefile格式。填写layer字段选择要导入的图层，创建成功后用户可执行查询语句查看。
 
 ```sql
 --Create shapefile table:
@@ -162,9 +158,7 @@ create readable external table launder (fid bigint, geom Geometry(Point,4326), n
 
 #### 导入netcdf数据格式
 
-**查看netcdf子数据集**
-
-netcdf数据具有多个子数据集。用户需要创建SQL函数查看子数据集。创建SQL函数nc_subdataset_info并执行该方法，创建成功后用户可执行查询语句查看子数据集。
+查看netcdf子数据集: netcdf数据具有多个子数据集。用户需要创建SQL函数查看子数据集。创建SQL函数nc_subdataset_info并执行该方法，创建成功后用户可执行查询语句查看子数据集。
 
 ```sql
 --Create SQL Function:
@@ -173,9 +167,7 @@ CREATE OR REPLACE FUNCTION nc_subdataset_info(text) returns setof record as  '$l
 select * from nc_subdataset_info ('oss://ossext-example.sh1a.qingstor.com/netcdf/input.nc access_key_id=xxx secret_access_key=xxx oss_type=QS ') AS tbl(name text, sqlq text);
 ```
 
-**创建外部表导入netcdf数据**
-
-创建外部表为netcdf格式，用户填写subdataset选择子数据集。创建成功后用户可执行查询语句查看。
+创建外部表导入netcdf数据: 创建外部表为netcdf格式，用户填写subdataset选择子数据集。创建成功后用户可执行查询语句查看。
 
 ```sql
 --Create netcdf table:
