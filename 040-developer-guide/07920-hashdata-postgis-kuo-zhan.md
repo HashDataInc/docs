@@ -149,7 +149,7 @@ CREATE OR REPLACE FUNCTION ogr_fdw_info(text) returns setof record as '$libdir/g
 select * from ogr_fdw_info('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS') AS tbl(name text, sqlq text);
 ```
 
-导入数据: 创建外部表格式选择Shapefile格式。填写layer字段选择要导入的图层，创建成功后用户可执行查询语句查看。
+导入数据: 创建外部表格式选择Shapefile格式。用户填写layer字段选择图层，创建成功后用户可执行查询语句查看。
 
 ```sql
 --Create shapefile table:
@@ -167,7 +167,7 @@ CREATE OR REPLACE FUNCTION nc_subdataset_info(text) returns setof record as  '$l
 select * from nc_subdataset_info ('oss://ossext-example.sh1a.qingstor.com/netcdf/input.nc access_key_id=xxx secret_access_key=xxx oss_type=QS ') AS tbl(name text, sqlq text);
 ```
 
-导入数据: 创建外部表为netcdf格式，用户填写subdataset选择子数据集。创建成功后用户可执行查询语句查看。
+导入数据: 创建外部表为netcdf格式，用户填写subdataset字段选择子数据集。创建成功后用户可执行查询语句查看。
 
 ```sql
 --Create netcdf table:
