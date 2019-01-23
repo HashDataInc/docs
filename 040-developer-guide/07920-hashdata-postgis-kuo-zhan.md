@@ -127,7 +127,7 @@ subdataset
 
 **layer** 创建外部表格式为**SHAPEFILE**时使用，layer 表示外部表导入的矢量图层。
 
-**subdataset ** 创建外部表格式为**NETCDF**时使用，subdataset 表示外部表导入的子数据集。
+**subdataset** 创建外部表格式为**NETCDF**时使用，subdataset 表示外部表导入的子数据集。
 
 #### 导入栅格数据格式
 
