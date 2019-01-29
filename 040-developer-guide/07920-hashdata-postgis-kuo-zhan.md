@@ -97,7 +97,7 @@ ON tablename
 USING GIST ( geometryfield );
 ```
 
-### 创建外部表导入栅格、 矢量、netcdf 等格式数据
+### 创建外部表导入栅格、 矢量、netcdf 等数据格式
 
 HashData 可以通过外部表导入栅格、矢量和netcdf等数据格式。您可以按如下所示构建外部表。
 
@@ -107,81 +107,31 @@ CREATE [ READABLE | WRITABLE ] EXTERNAL TABLE table_name ( [
     | table_constraint
     | LIKE source_table [ like_option ... ] }
 ] ) LOCATION (oss_parameters) FORMAT '[ CSV | TEXT | ORC | RASTER | SHAPEFILE | NETCDF]';
+```
 
-where oss_parameters are:
+oss_parameters 参数描述：
+
+```sql
 resource_URI
-oss_type
+oss_type={QS|KS3|S3|S3B|ALI|COS}
 access_key_id
 secret_access_key
-cos_appid
-isvirtual
+isvirtual={true|false}
 layer
 subdataset
 ```
 
-##### resource_URI
+**resource_URI** 资源url路径，必须以 "**oss://**"作为开始。
 
-资源url路径，必须以 "**oss://**"作为开始。
+**isvirtual** 资源url是**virtual-host-style**格式**isvirtual**字段为**true**，否则为**false**。
 
-oss各个云平台url常见的有两种格式**virtual-host-style** 和 **path-host-style**。以下以青云举例子。
+**layer** 创建外部表格式为**SHAPEFILE**时使用，layer 表示外部表导入的矢量图层。
 
-virtual-host-style：oss://<bucketName>.<zone>.qingstor.com/<objectPath>
-
-path-host-style：oss://<zone>.qingstor.com/<bucketName>/<objectPath>
-
-在使用中推荐使用path-host-style格式。以下是各云平台path-host-style格式：
-
-**QingStor**: oss://<zone>.qingstor.com/<bucketName>/<objectPath>
-
-**Tencent COS**: oss://cos.<zone>.myqcloud.com/<bucketNameWithAppid>/<objectPath>
-
-**Ali OSS**: oss://<zone>.aliyuncs.com/<bucketName>/<objectPath>
-
-**S3**: oss://s3.<zone>.amazonaws.com.cn/<bucketName>/<objectPath>
-
-**KS3**: oss://<zone>.ksyun.com/<bucketName>/<objectPath>
-
-##### oss_type
-
-各个oss云的平台。目前支持云平台有：
-
-**Qingstor** (青云): QS 
-
-**Tencent COS ** (腾讯云): COS
-
-**Ali OSS **(阿里云): ALi 
-
-**S3** (亚马逊云): S3B 
-
-**KS3** (金山云):KS3 
-
-##### access_key_id
-
-可选参数：oss云的公共密钥，如果是公有云可以不提供，否则必须提供。
-
-##### secret_access_key
-
-可选参数：oss云的私有密钥，如果是公有云可以不提供，否则必须提供。
-
-##### cos_appid
-
-可选参数：腾讯云使用的appid。
-
-##### isvirtual
-
-可选参数：该字段只会应用于私有部署的情况。如果当前你的resource_URI 是一个私有部署(私有部署指你的url是类似ip格式“oss://192.168.0.0” 或者 “oss://www.test.com”格式，不具备oss各个云平台通用url格式情况。oss各个通用url参考resource_URI 字段) 你必须设置isvirtual这个字段。如果你使用的是**virtual-host-style** 的url格式，该字段必须设置成为true。如果你使用的是  **path-host-style**的url格式，该字段需要设置成false。当然这个字段默认是false。
-
-##### layer
-
-可选字段：该字段只会应用在格式是**SHAPEFILE**情况下。layer表示当前外部表要导入矢量图层的名称。
-
-##### subdataset
-
-可选字段：该字段只会应用在格式是**NETCDF**情况下。subdataset 表示外部表导入那个子数据集。
+**subdataset** 创建外部表格式为**NETCDF**时使用，subdataset 表示外部表导入的子数据集。
 
 #### 导入栅格数据格式
 
-外部表导入栅格数据格式。这里提供一个简单示例。
+外部表导入栅格数据格式，这里提供一个简单示例。
 
 ```sql
 --Import Gis raster data to table:
@@ -190,33 +140,36 @@ CREATE READABLE EXTERNAL TABLE osstbl_example(filename text, rast raster, metada
 
 #### 导入矢量数据格式
 
-由于矢量数据带有多个图层信息，首先需要用户创建function展示当前bucket下面全部的图层信息。这里使用ogr_fdw_info方法创建。执行select用户可以查看当前bucket下面全部图层信息。在用户获取需要图层名称后，创建外部表格式选择Shapefile格式。用户填写layer字段选择要导入图层名称，创建成功后执行select语句就可以通过外部表导入矢量数据了。
-
-以下示例展示外部表导入矢量数据的方法：
+查看图层信息: 矢量数据带有多个图层信息，用户需要创建SQL函数查看矢量数据的图层信息。创建SQL函数Ogr_Fdw_Info并执行该方法，创建成功后用户可执行查询语句查看矢量数据的图层信息。
 
 ```sql
---Create layer Function:
+--Create SQL Function:
 CREATE OR REPLACE FUNCTION ogr_fdw_info(text) returns setof record as '$libdir/gpossext.so', 'Ogr_Fdw_Info'  LANGUAGE C STRICT;
 
---Display layer name from oss cloud:
 select * from ogr_fdw_info('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS') AS tbl(name text, sqlq text);
+```
 
+导入数据: 创建外部表格式选择Shapefile格式。用户填写layer字段选择图层，创建成功后用户可执行查询语句查看。
+
+```sql
 --Create shapefile table:
 create readable external table launder (fid bigint, geom Geometry(Point,4326), name varchar, age integer, height real, birthdate date) location('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS layer=2launder') format 'Shapefile';
 ```
 
 #### 导入netcdf数据格式
 
-由于netcdf数据具有多个子数据集。首先要通过创建function显示用户当前文件中有哪些子数据集。这里使用nc_subdataset_info方法创建function，执行select显示子数据集。当用户获取到子数据集后，创建netcdf格式的外部表，用户填写subdataset选择子数据集。创建成功后执行select语句就可以通过外部表导入netcdf的数据了。
-
-以下示例展示外部表导入netcdf的方法：
+查看子数据集: netcdf数据具有多个子数据集。用户需要创建SQL函数查看子数据集。创建SQL函数nc_subdataset_info并执行该方法，创建成功后用户可执行查询语句查看子数据集。
 
 ```sql
---Display subdataset.
+--Create SQL Function:
 CREATE OR REPLACE FUNCTION nc_subdataset_info(text) returns setof record as  '$libdir/gpossext.so', 'nc_subdataset_info' LANGUAGE C STRICT;
 
 select * from nc_subdataset_info ('oss://ossext-example.sh1a.qingstor.com/netcdf/input.nc access_key_id=xxx secret_access_key=xxx oss_type=QS ') AS tbl(name text, sqlq text);
+```
 
+导入数据: 创建外部表为netcdf格式，用户填写subdataset字段选择子数据集。创建成功后用户可执行查询语句查看。
+
+```sql
 --Create netcdf table:
 CREATE READABLE EXTERNAL TABLE osstbl_netcdf(filename text, rast raster, metadata text) LOCATION('oss://ossext-example.sh1a.qingstor.com/netcdf/input.nc subdataset=1 access_key_id=xxx secret_access_key=xxx oss_type=QS') FORMAT 'netcdf';
 ```
