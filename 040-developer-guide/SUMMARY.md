@@ -7,6 +7,12 @@
 - [访问数据仓库](030-fang-wen-hashdata-shu-ju-cang-ku.md)
 
 
+- [使用 Python 访问数据仓库](031-python-fang-wen-shu-ju-ku.md)
+
+
+- [使用 R 语言访问数据仓库](032-R-fang-wen-shu-ju-ku.md)
+
+
 - [定义数据库对象](040-ding-yi-shu-ju-ku-dui-xiang.md)
 
 
