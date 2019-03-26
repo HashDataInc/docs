@@ -6,22 +6,21 @@
 =======
 # 与Oracle语法上的差异
 
-在这一章节中，我们简单比较一下，HashData 在语法层面与Oracle的差异。
+在这一章节中，我们简单比较一下，HashData 在语法层面与 Oracle 的差异。
 
 ##数据类型
->>>>>>> b2f78643ec0115f91fe4fe97a99df3656849dfb2
 
 **字符类型**
 
 Oracle | HashData  | 备注
 :-: | :-: | :-:
-char(n) |  | 字节为单位，定长，不足用空格填充
+char(n) | char(n) | 字节为单位，定长，不足用空格填充
 nchar(n) | char(n) | 字符为单位，定长，不足用空格填充
-varchar2(n) |  | 字节为单位，变长，有长度限制
+varchar2(n) | varchar(n) | 字节为单位，变长，有长度限制
 nvarchar2(n) | varchar(n) | 字符为单位，变长，有长度限制
-| text | 字符为单位，变长，没有长度限制
+string | text | 字符为单位，变长，没有长度限制
 
-一般情况下，对于Oracle的char和nchar类型，直接换成HashData 的char是没有问题的；而对于变长的varchar2和nvarchar2，想图省事的话，直接换成HashData 的TEXT就可以。
+一般情况下，对于 Oracle 的 char 和 nchar 类型，直接换成 HashData 的 char 是没有问题的；而对于变长的 varchar2 和 nvarchar2，想图省事的话，直接换成HashData 的TEXT就可以。
 
 **数值类型**
 
@@ -38,20 +37,20 @@ REAL | REAL | 4个字节，6位精度
 DECIMAL | DECIMAL | 没有精度限制
 NUMBER | NUMERIC | 没有精度限制
 
-Oracle的数值类型向HashData 的数值类型迁移过程中，只要根据Oracle数据的精度，在HashData 中选择相同或者更大精度的类型，数据就能够顺利地迁移过来。但是为了转换过来后数据库的效率（特别是整数类型的时候），需要选择合适的数据类型，才能够完整、正确并且高效地完成Oracle数据类型向HashData 数据类型的迁移。
+Oracle 的数值类型向 HashData 的数值类型迁移过程中，只要根据 Oracle 数据的精度，在 HashData 中选择相同或者更大精度的类型，数据就能够顺利地迁移过来。但是为了转换过来后数据库的效率（特别是整数类型的时候），需要选择合适的数据类型，才能够完整、正确并且高效地完成 Oracle 数据类型向 HashData 数据类型的迁移。
 
 **时间类型**
 
 Oracle | HashData  | 备注
 :-: | :-: | :-:
 Date | Timestamp(0) without time zone | 包含年，月，日，时，分和秒6个字段
-| Date | 只包含年，月和日3个字段
+Date | Date | 只包含年，月和日3个字段
 Timestamp | Timestamp without time zone | 包含年，月，日，时，分，秒和毫秒
 Timestamp with time zone | Timestamp with time zone | 带时区的时间戳
 Timestamp with local time zone | Timestamp with time zone | 带时区的时间戳
 Interval | Interval | 时间间隔
 
-Oracle的日期时间类型向HashData 的数据迁移相对来说简单一些。由于HashData 的数据类型的极值超越Oracle，因此，数据迁移过程中，只要根据Oracle的数据精度，在HashData 中选择正确的数据类型，并留意一下二者写法的不同，应该就能够完整正确地迁移过来。
+Oracle 的日期时间类型向 HashData 的数据迁移相对来说简单一些。由于 HashData 的数据类型的极值超越 Oracle，因此，数据迁移过程中，只要根据 Oracle 的数据精度，在HashData 中选择正确的数据类型，并留意一下二者写法的不同，应该就能够完整正确地迁移过来。
 
 **大对象**
 
@@ -67,11 +66,9 @@ Oracle | HashData  | 备注
 RAW | BYTEA | 
 RAWID | OID | 
 
-<<<<<<< HEAD
 ####常用函数
 =======
 ##常用函数
->>>>>>> b2f78643ec0115f91fe4fe97a99df3656849dfb2
 
 **字符串操作函数**
 
@@ -128,12 +125,9 @@ decode是Oracle固有的一个函数，用于条件判断。其格式为：
 	-- HashData 
 	select case when y.studentcode is null then '0' else '1' end studenttype from y;
 
-<<<<<<< HEAD
 ####存储过程
 =======
 ##存储过程
->>>>>>> b2f78643ec0115f91fe4fe97a99df3656849dfb2
-
 **最简单的存储过程**
 
 Oracle
@@ -316,11 +310,9 @@ Oracle和HashData 基本也是一样的：
 	END;
 	$$ LANGUAGE PLPGSQL;
 
-<<<<<<< HEAD
 ####游标
 =======
 ##游标
->>>>>>> b2f78643ec0115f91fe4fe97a99df3656849dfb2
 
 在HashData 中，我们一般很少使用游标，因为当我们使用**FOR LOOP**的时候，数据库后台自动就会转化成游标。不过，这里我们还是可以简单介绍一下HashData 中游标的使用。
 
