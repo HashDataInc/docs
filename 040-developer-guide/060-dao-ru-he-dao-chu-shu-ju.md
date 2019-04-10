@@ -2,37 +2,56 @@
 
 本节的主题是描述如何高效地往 HashData 数据仓库导入数据和从 HashData 数据仓库往外导出数据，以及如何格式化导入的文件格式。
 
-HashData 数据仓库支持高效地并发导入和导出数据功能，利用青云的对象存储，可以与不同系统更加简单地进行数据交换操作。
+HashData 数据仓库支持高效地并发导入和导出数据功能，利用各云平台的对象存储，可以与不同系统更加简单地进行数据交换操作。
 
 通过使用外部表，HashData 数据仓库让您能够通过 SQL 命令在数据库内直接利用并行机制访问外部数据资源，例如：SELECT，JOIN，ORDER BY 或者在外部表上创建视图。 外部表一般用来将外部数据导入到数据库内部普通表，例如：
 
-```
+```sql
 CREATE TABLE table AS SELECT * FROM ext_table;
 ```
 ## 通过外部表访问对象存储
 
 CREATE EXTERNAL TABLE 可以创建可读外部表。外部表允许 HashData 数据仓库将外部数据源当作数据库普通表来进行处理。
 
-### 使用青云对象存储
+### 使用对象存储
 
-通过在外部表的 LOCATION 子句，您可以指定青云对象存储的位置和访问键值。这样，在每次使用 SQL 命令读取外部表时，HashData 数据仓库会将青云对象存储中该目录下的所有数据文件读取到数据库中进行处理。 如果您需要多次处理该数据，建议您通过 `CREATE TABE table AS SELECT * FROM ext_table` 的方式，将对象存储的数据导入到 HashData 数据仓库的内置表。这样可以更好的利用优化过的存储结构来优化您的数据分析流程。
+HashData 数据仓库目前支持多种不同的对象存储服务平台，包括青云、腾讯云、阿里云、亚马逊S3、金山云等，同时也支持兼容S3协议的私有部署。
 
-您可以通过如下的语法来定义访问青云对象存储上面数据的外部表：
+通过在外部表的 LOCATION 子句，您可以指定对象存储的位置和访问键值。这样，在每次使用 SQL 命令读取外部表时，HashData 数据仓库会将对象存储中该目录下的所有数据文件读取到数据库中进行处理。 如果您需要多次处理该数据，建议您通过 `CREATE TABE table AS SELECT * FROM ext_table` 的方式，将对象存储的数据导入到 HashData 数据仓库的内置表。这样可以更好的利用优化过的存储结构来优化您的数据分析流程。
 
+您可以通过如下的语法来定义访问对象存储上面数据的外部表：
+
+```sql
+CREATE READABLE EXTERNAL TABLE table_name ( [
+  { column_name data_type [ COLLATE collation ] [ column_constraint [ ... ] ]
+    | table_constraint
+    | LIKE source_table [ like_option ... ] }
+] ) LOCATION (oss_parameters) FORMAT '[ CSV | TEXT | ORC ]';
 ```
-CREATE READABLE EXTERNAL TABLE XXX (XXX)
-LOCATION ('oss://<your-bucket-name>.pek3a.qingstor.com/<your-data-path> access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs')
-FORMAT <file-format>;
-```
-您需要将其中的 `<your-bucket-name>`、`<your-data-path>`、`<access-key-id>` 和 `<secret-access-key>` 替换为您自己相应的值，`<file-format>` 为待导入数据文件的类型，可选值为csv或者orc。
+其中 oss_parameters 由以下部分组成：
 
-如果您访问的数据为公开读取权限，则可以不填写`<access-key-id>` 和 `<secret-access-key>` 。
+- resource_URI ：对象存储中数据文件位置，必填，以"**oss://**"开始，推荐用户使用各对象存储云平台的路径URI模式，创建读外部表时，URI可以指向文件目录或者单个文件。
 
-#### 导入CSV格式数据
+- oss_type ：对象存储平台，必填，不区分大小写。
+  - 青云: QS
+  - 腾讯云: COS
+  - 阿里云: ALI
+  - 亚马逊S3: S3B
+  - 金山云: KS3
+
+- access_key_id ：对象存储平台密钥ID，如果访问具有公开读取权限的数据可不填。
+
+- secret_access_key ： 对象存储平台密钥，如果访问具有公开读取权限的数据可不填。
+
+- cos_appid ： 仅在使用腾讯云时需要填入的appid。
+
+- isvirtual ： 默认值为false，仅当使用兼容S3协议的私有部署，且使用virtual-host-style的URI路径时需要将其指定为true。
+
+#### 青云导入CSV格式数据
 
 在下面的示例中，我们将向您展示如何从青云对象存储中直接读取 1GB 规模 TPCH 测试数据的例子，数据文件为CSV格式。我们提供的此份数据为公开读取权限， 故不用填写key信息。
 
-```
+```sql
 CREATE TABLE NATION  ( N_NATIONKEY  INTEGER NOT NULL,
                        N_NAME       CHAR(25) NOT NULL,
                        N_REGIONKEY  INTEGER NOT NULL,
@@ -126,11 +145,11 @@ CREATE READABLE EXTERNAL TABLE e_LINEITEM (LIKE LINEITEM)
 LOCATION ('oss://hashdata-public.pek3a.qingstor.com/tpch/1g/lineitem/ oss_type=qs') 
 FORMAT 'csv';
 ```
-#### 导入ORC格式数据
+#### 青云导入ORC格式数据
 
 示例数据为公开读取权限，您不需要提供key信息。
 
-```
+```sql
 CREATE READABLE EXTERNAL TABLE e_STOCK (DATE CHAR(15),
                                         OPEN_PRICE FLOAT,
                                         HIGH_PRICE FLOAT,
@@ -140,6 +159,57 @@ CREATE READABLE EXTERNAL TABLE e_STOCK (DATE CHAR(15),
                                         ADJ_PRICE FLOAT)
 LOCATION ('oss://ossext-orc-example.pek3b.qingstor.com/orc oss_type=qs') FORMAT 'orc';
 SELECT COUNT(*) FROM e_STOCK;
+```
+
+#### 其他云平台示例
+##### 腾讯云
+
+```sql
+--Import data from ORC files:
+CREATE READABLE EXTERNAL table xxx (xxx) LOCATION('oss://ossext-example-1255522018.cos.ap-beijing.myqcloud.com/orc oss_type=COS cos_appid=1255522018 access_key_id=xxx secret_access_key=xxx') FORMAT 'orc';
+
+--Import csv format data from files/file:
+CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION) LOCATION ('oss://ossext-example-1255522018.cos.ap-beijing.myqcloud.com/readable/nation oss_type=COS cos_appid=1255522018 access_key_id=xxx secret_access_key=xxx') FORMAT 'csv';
+
+--Import text format data from files/file:
+CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION) LOCATION ('oss://ossext-example-1255522018.cos.ap-beijing.myqcloud.com/readable/nation oss_type=COS cos_appid=1255522018 access_key_id=xxx secret_access_key=xxx') FORMAT 'text';
+```
+##### 阿里云
+
+```sql
+--Import data from ORC files:
+CREATE READABLE EXTERNAL table xxx (xxx) LOCATION('oss://ossext-example.oss-cn-beijing.aliyuncs.com/orc oss_type=ali access_key_id=xxx secret_access_key=xxx') FORMAT 'orc';
+
+--Import csv format data from files/file:
+CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION) LOCATION ('oss://ossext-example.oss-cn-beijing.aliyuncs.com/readable/nation oss_type=ali access_key_id=xxx secret_access_key=xxx') FORMAT 'csv';
+
+--Import text format data from uncompressed files/file:
+CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION) LOCATION ('oss://ossext-example.oss-cn-beijing.aliyuncs.com/readable/nation oss_type=ali access_key_id=xxx secret_access_key=xxx') FORMAT 'text';
+```
+##### 亚马逊S3
+
+```sql
+--Import data from ORC files:
+CREATE READABLE EXTERNAL table xxx (xxx) LOCATION('oss://s3.cn-north-1.amazonaws.com.cn/ossext-example/orc oss_type=S3B access_key_id=xxx secret_access_key=xxx') FORMAT 'orc';
+
+--Import csv format data from files/file:
+CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION) LOCATION ('oss://s3.cn-north-1.amazonaws.com.cn/ossext-example/readable/nation oss_type=S3B access_key_id=xxx secret_access_key=xxx') FORMAT 'csv';
+
+--Import text format data from files/file:
+CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION) LOCATION ('oss://s3.cn-north-1.amazonaws.com.cn/ossext-example/readable/nation oss_type=S3B access_key_id=xxx secret_access_key=xxx') FORMAT 'text';
+```
+
+##### 金山云
+
+```sql
+--Import data from ORC files:
+CREATE READABLE EXTERNAL table xxx (xxx) location('oss://ossext-example.ks3-cn-beijing.ksyun.com/orc oss_type=KS3 access_key_id=xxx secret_access_key=xxx') FORMAT 'orc';
+
+--Import csv format data from files/file:
+CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION) LOCATION ('oss://ossext-example.ks3-cn-beijing.ksyun.com/readable/nation oss_type=KS3 access_key_id=xxx secret_access_key=xxx') FORMAT 'csv';
+
+--Import text format data from files/file:
+CREATE READABLE EXTERNAL TABLE e_NATION (LIKE NATION) LOCATION ('oss://ossext-example.ks3-cn-beijing.ksyun.com/readable/nation oss_type=KS3 access_key_id=xxx secret_access_key=xxx') FORMAT 'text';
 ```
 
 ## 处理错误
@@ -221,23 +291,15 @@ SELECT gp_read_error_log('ext_expenses');
 
 本章节向您介绍如何利用可写外部表将数据库内部数据导出到外部存储。
 
-### 使用青云对象存储
+### 使用对象存储
 
-HashData 数据仓库充分考虑云平台优势，因此提供利用高效的青云对象存储来作为数据导出目的地。HashData 数据仓库将会利用其自身并行的架构将数据并行写入到青云对象存储。
+HashData 数据仓库充分考虑云平台优势，因此提供利用高效的对象存储来作为数据导出目的地。HashData 数据仓库将会利用其自身并行的架构将数据并行写入到对象存储。
 
-下面的例子向您介绍如何利用青云对象存储作为可写外部表的输出目标。
-
-```
-CREATE WRITABLE EXTERNAL TABLE test_writable_table (id INT, date DATE, desc TEXT)
-    location('oss://<your-bucket-name>.pek3a.qingstor.com/<your-data-path> access_key_id=<access-key-id> secret_access_key=<secret-access-key> oss_type=qs') FORMAT 'csv';
-
-INSERT INTO test_writable_table VALUES(1, '2016-01-01', 'qingstor test');
-```
-在实际使用的时候，您需要将 `<your-bucket-name>`、`<your-data-path>`、`<access-key-id>` 和 `<secret-access-key>` 换成您自己相应的值，目前仅支持导出为CSV格式的文件。
+创建可写外部表的语法与可读外部表的类似，唯一的区别在于可读外部表为CREATE READABLE EXTERNAL，可写外部表为CREATE WRITABLE EXTERNAL TABLE。另外resource_URI为目录路径，如果不存在将被创建。
 
 ## 格式化数据文件
 
-在使用青云对象存储来进行数据的导入导出时，需要您指定数据的格式信息。CREATE EXTERNAL TABLE 允许您描述数据的存储格式。数据可以是使用特定分隔符的文本文件或者逗号分隔值的 CSV 格式。只有格式正确的数据才能被 HashData 数据仓库正确读取。本小结向您介绍 HashData 数据仓库期望的数据文件格式。
+在使用对象存储来进行数据的导入导出时，需要您指定数据的格式信息。CREATE EXTERNAL TABLE 允许您描述数据的存储格式。数据可以是使用特定分隔符的文本文件或者逗号分隔值的 CSV 格式。只有格式正确的数据才能被 HashData 数据仓库正确读取。本小结向您介绍 HashData 数据仓库期望的数据文件格式。
 
 ### 数据行的格式
 
