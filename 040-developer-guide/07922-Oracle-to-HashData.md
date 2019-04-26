@@ -37,7 +37,7 @@ Oracle 的数值类型向 HashData 的数值类型迁移过程中，只要根据
 Oracle | HashData  | 备注
 :-: | :-: | :-:
 Date | Timestamp(0) without time zone | 包含年，月，日，时，分和秒6个字段
-|| Date | 只包含年，月和日3个字段
+ | Date | 只包含年，月和日3个字段
 Timestamp | Timestamp without time zone | 包含年，月，日，时，分，秒和毫秒
 Timestamp with time zone | Timestamp with time zone | 带时区的时间戳
 Timestamp with local time zone | Timestamp with time zone | 带时区的时间戳
