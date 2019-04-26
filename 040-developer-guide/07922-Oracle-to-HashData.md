@@ -66,9 +66,9 @@ RAWID | OID |
 **字符串操作函数**
 
 Oracle | HashData  | 备注
-:-: | :-: | :-:
-`||` | `||` | 字符串连接符
-concat | `||` | 字符串连接函数
+|:-: | :-: | :-:|
+| \|\| | \|\| | 字符串连接符|
+|concat | \|\| | 字符串连接函数|
 to_number | to_number | 将字符串转换成数值
 to_char | ::TEXT | 类型转换
 to_date | to_timestamp | 将字符串转化为时间戳
