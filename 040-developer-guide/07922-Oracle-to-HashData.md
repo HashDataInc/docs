@@ -37,7 +37,7 @@ Oracle 的数值类型向 HashData 的数值类型迁移过程中，只要根据
 Oracle | HashData  | 备注
 :-: | :-: | :-:
 Date | Timestamp(0) without time zone | 包含年，月，日，时，分和秒6个字段
-\|\|| Date | 只包含年，月和日3个字段
+|| Date | 只包含年，月和日3个字段
 Timestamp | Timestamp without time zone | 包含年，月，日，时，分，秒和毫秒
 Timestamp with time zone | Timestamp with time zone | 带时区的时间戳
 Timestamp with local time zone | Timestamp with time zone | 带时区的时间戳
@@ -67,8 +67,8 @@ RAWID | OID |
 
 Oracle | HashData  | 备注
 :-: | :-: | :-:
-\|\| | \|\| | 字符串连接符
-concat | \|\| | 字符串连接函数
+`||` | `||` | 字符串连接符
+concat | `||` | 字符串连接函数
 to_number | to_number | 将字符串转换成数值
 to_char | ::TEXT | 类型转换
 to_date | to_timestamp | 将字符串转化为时间戳
@@ -305,10 +305,10 @@ Oracle 和 HashData 基本也是一样的：
 	END;
 	$$ LANGUAGE PLPGSQL;
 
-<<<<<<< HEAD
-####游标
-=======
+
 ##游标
+=======
+
 
 在 HashData 中，我们一般很少使用游标，因为当我们使用 **FOR LOOP** 的时候，数据库后台自动就会转化成游标。不过，这里我们还是可以简单介绍一下HashData 中游标的使用。
 
