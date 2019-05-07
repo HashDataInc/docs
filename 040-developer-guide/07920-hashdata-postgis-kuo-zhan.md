@@ -97,9 +97,53 @@ ON tablename
 USING GIST ( geometryfield );
 ```
 
-### 创建外部表导入栅格、 矢量、netcdf 等数据格式
+### 利用插件本地导入GIS数据
 
-HashData 可以通过外部表导入栅格、矢量和netcdf等数据格式。您可以按如下所示构建外部表。
+GIS数据分为栅格和矢量两种格式。可以利用Postgis插件工具（raster2pgsql、shp2pgsql）将本地GIS数据转为sql文件，再将sql文件导入到数据库中。
+
+#### 导入矢量数据格式
+
+矢量数据导入按照以下格式构建。
+
+```
+shp2pgsql [<options>] <shapefile> [[<schema>.]<table>]
+```
+
+示例
+
+把**/data/shapefile/enc.shp**文件转换成sql文件，public.table_shapefile是要创建的表名称。load.sql是转换的sql文件。
+
+```
+shp2pgsql /data/shapefile/enc.shp public.table_shapefile > load.sql
+```
+
+执行SQL文件导入数据库。
+
+#### 导入栅格数据格式
+
+栅格数据导入按照以下格式构建。
+
+```
+raster2pgsql [<options>] <raster>[ <raster>[...]] [[<schema>.]<table>]
+```
+
+示例
+
+把**/data/raster/input.tif** 文件按照20x20瓦片大小切分，public.table_raster是要创建的表名称。load.sql是转换的sql文件。
+
+**-F**：增加一列为raster文件的文件名。
+
+**-t**：按照 num x num的瓦片进行大小切分。
+
+```
+raster2pgsql -F -t 20x20 /data/raster/input.tif public.table_raster > load.sql
+```
+
+执行SQL文件导入数据库。
+
+### 创建外部表导入GIS和NETCDF等数据格式
+
+HashData 可以通过外部表导入GIS和NETCDF等数据格式。GIS数据分为栅格和矢量两种格式，您可以按如下所示构建外部表。
 
 ```sql
 CREATE [ READABLE | WRITABLE ] EXTERNAL TABLE table_name ( [
@@ -156,9 +200,9 @@ select * from ogr_fdw_info('oss://ossext-example.sh1a.qingstor.com/shape access_
 create readable external table launder (fid bigint, geom Geometry(Point,4326), name varchar, age integer, height real, birthdate date) location('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS layer=2launder') format 'Shapefile';
 ```
 
-#### 导入netcdf数据格式
+#### 导入NETCDF数据格式
 
-查看子数据集: netcdf数据具有多个子数据集。用户需要创建SQL函数查看子数据集。创建SQL函数nc_subdataset_info并执行该方法，创建成功后用户可执行查询语句查看子数据集。
+查看子数据集: NETCDF数据具有多个子数据集。用户需要创建SQL函数查看子数据集。创建SQL函数nc_subdataset_info并执行该方法，创建成功后用户可执行查询语句查看子数据集。
 
 ```sql
 --Create SQL Function:
@@ -167,7 +211,7 @@ CREATE OR REPLACE FUNCTION nc_subdataset_info(text) returns setof record as  '$l
 select * from nc_subdataset_info ('oss://ossext-example.sh1a.qingstor.com/netcdf/input.nc access_key_id=xxx secret_access_key=xxx oss_type=QS ') AS tbl(name text, sqlq text);
 ```
 
-导入数据: 创建外部表为netcdf格式，用户填写subdataset字段选择子数据集。创建成功后用户可执行查询语句查看。
+导入数据: 创建外部表为NETCDF格式，用户填写subdataset字段选择子数据集。创建成功后用户可执行查询语句查看。
 
 ```sql
 --Create netcdf table:
