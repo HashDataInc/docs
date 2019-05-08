@@ -59,9 +59,7 @@ Oracle | HashData  | 备注
 RAW | BYTEA | 
 RAWID | OID | 
 
-####常用函数
-=======
-##常用函数
+#### 常用函数
 
 **字符串操作函数**
 
@@ -118,10 +116,8 @@ decode 是 Oracle 固有的一个函数，用于条件判断。其格式为：
 	-- HashData 
 	select case when y.studentcode is null then '0' else '1' end studenttype from y;
 
-<<<<<<< HEAD
-####存储过程
-=======
-##存储过程
+
+#### 存储过程
 
 **最简单的存储过程**
 
@@ -306,8 +302,7 @@ Oracle 和 HashData 基本也是一样的：
 	$$ LANGUAGE PLPGSQL;
 
 
-##游标
-=======
+#### 游标
 
 
 在 HashData 中，我们一般很少使用游标，因为当我们使用 **FOR LOOP** 的时候，数据库后台自动就会转化成游标。不过，这里我们还是可以简单介绍一下HashData 中游标的使用。
