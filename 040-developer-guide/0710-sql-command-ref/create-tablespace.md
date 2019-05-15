@@ -59,9 +59,13 @@ CREATE TABLESPACE mytblspace FILESPACE myfilespace;
 ```
 
 通过指定UFSPATH来创建青云对象存储表空间。注意这里的filespace需固定填写dfs_system。
-
+Before 2.3.0
 ```
 CREATE TABLESPACE mytblspace FILESPACE dfs_system WITH UFSPATH "qingstore://bucket-name/path";
+```
+After 2.5.1
+```
+CREATE TABLESPACE mytblspace FILESPACE dfs_system UFSPATH='qingstor://bucket/folder' UFSINFO='access_key_id=myAccessKey secret_access_key=mySecretKey region=pek3a'
 ```
 
 ## 兼容性
