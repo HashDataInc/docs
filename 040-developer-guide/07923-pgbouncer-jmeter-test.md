@@ -1,4 +1,7 @@
+
 # 使用 Jmeter、pgbouncer 对 hashdata 数据库进行压力测试
+
+本章节主要介绍了如何使用 Jmeter 与 pgbouncer 对 HashData 数据仓库进行压力测试。
 
 ## Jmeter 概述
 Jmeter 是压力测试和性能测量的工具，能够对 HTTP 和 FTP 服务器等进行压力和性能测试，也可以对任何数据库进行同样的测试。
