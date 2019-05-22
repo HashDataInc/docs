@@ -256,6 +256,7 @@
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/07920-hashdata-postgis-kuo-zhan.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/07921-pl-java-yu-yan.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/07922-Oracle-to-HashData.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.hashdata.cn/040-developer-guide/07923-pgbouncer-jmeter-test.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/040-developer-guide/080-data-encryption.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/060-best-practices/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.hashdata.cn/060-best-practices/010-zui-jia-shi-jian-ti-gang.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
