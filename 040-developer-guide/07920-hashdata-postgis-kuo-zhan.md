@@ -167,7 +167,7 @@ subdataset
 
 **resource_URI** 资源url路径，必须以 "**oss://**"作为开始。
 
-**isvirtual** 资源url是**virtual-host-style**格式**isvirtual**字段为**true**，否则为**false**。
+**isvirtual** 资源url是**virtual-host-style**格式**isvirtual**字段为**true**，否则默认为**false**。
 
 **layer** 创建外部表格式为**SHAPEFILE**时使用，layer 表示外部表导入的矢量图层。
 
@@ -180,24 +180,88 @@ subdataset
 ```sql
 --Import Gis raster data to table:
 CREATE READABLE EXTERNAL TABLE osstbl_example(filename text, rast raster, metadata text) LOCATION('oss://ossext-example.sh1a.qingstor.com/raster oss_type=QS access_key_id=xxx secret_access_key=xxx') FORMAT 'raster';
+
+SELECT filename, st_value(rast, 3, 4) from osstbl_example order by filename;
+
+--Results of the raster
+    filename             |     st_value
+-------------------------+------------------
+ raster/test_input.tiff  | 260.100006103516
+ raster/test_output.tiff | 260.100006103516
 ```
 
 #### 导入矢量数据格式
 
-查看图层信息: 矢量数据带有多个图层信息，用户需要创建SQL函数查看矢量数据的图层信息。创建SQL函数Ogr_Fdw_Info并执行该方法，创建成功后用户可执行查询语句查看矢量数据的图层信息。
+查看矢量数据详细信息: 创建SQL函数Ogr_Fdw_Info并执行该方法，创建成功后用户可获取shapefile建表SQL语句。
 
 ```sql
 --Create SQL Function:
 CREATE OR REPLACE FUNCTION ogr_fdw_info(text) returns setof record as '$libdir/gpossext.so', 'Ogr_Fdw_Info'  LANGUAGE C STRICT;
 
 select * from ogr_fdw_info('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS') AS tbl(name text, sqlq text);
+
+--Results of the ogr_fdw_info SQL function
+   name   |                                                                                               sqlq
+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 2launder | CREATE READABLE EXTERNAL TABLE shp_2launder (
+          :   fid bigint,
+          :   geom Geometry(Point,4326),
+          :   n2ame varchar OPTIONS (column_name 2ame),
+          :   age integer,
+          :   height real,
+          :   b_rthdate date OPTIONS (column_name b-rthdate)
+          : )
+          : LOCATION ('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS layer=2launder')
+          :  FORMAT 'Shapefile';
+          :
+ enc      | CREATE READABLE EXTERNAL TABLE shp_enc (
+          :   fid bigint,
+          :   geom Geometry(Point,4326),
+          :   name varchar,
+          :   age integer,
+          :   height real,
+          :   birthdate date
+          : )
+          : LOCATION ('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS layer=enc')
+          :  FORMAT 'Shapefile';
+          :
+ pt_two   | CREATE READABLE EXTERNAL TABLE shp_pt_two (
+          :   fid bigint,
+          :   geom Geometry(Point,4326),
+          :   name varchar,
+          :   age integer,
+          :   height real,
+          :   birthdate date
+          : )
+          : LOCATION ('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS layer=pt_two')
+          :  FORMAT 'Shapefile';
+          :
+ natural  | CREATE READABLE EXTERNAL TABLE shp_natural (
+          :   fid bigint,
+          :   id real,
+          :   natural varchar
+          : )
+          : LOCATION ('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS layer=natural')
+          :  FORMAT 'Shapefile';
+          :
+(4 rows)
 ```
 
 导入数据: 创建外部表格式选择Shapefile格式。用户填写layer字段选择图层，创建成功后用户可执行查询语句查看。
 
 ```sql
 --Create shapefile table:
-create readable external table launder (fid bigint, geom Geometry(Point,4326), name varchar, age integer, height real, birthdate date) location('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS layer=2launder') format 'Shapefile';
+create readable external table shp_2launder (fid bigint, geom Geometry(Point,4326), name varchar, age integer, height real, birthdate date) location('oss://ossext-example.sh1a.qingstor.com/shape access_key_id=xxx secret_access_key=xxx oss_type=QS layer=2launder') format 'Shapefile';
+
+SELECT * FROM shp_2launder;
+
+--Results of the shapefile
+ fid |                        geom                        | name  | age | height | birthdate
+-----+----------------------------------------------------+-------+-----+--------+------------
+   0 | 0101000020E6100000C00497D1162CB93F8CBAEF08A080E63F | Peter |  45 |    5.6 | 04-12-1965
+   1 | 0101000020E610000054E943ACD697E2BFC0895EE54A46CF3F | Paul  |  33 |   5.84 | 03-25-1971
+(2 rows)
+
 ```
 
 #### 导入NETCDF数据格式
@@ -209,6 +273,15 @@ create readable external table launder (fid bigint, geom Geometry(Point,4326), n
 CREATE OR REPLACE FUNCTION nc_subdataset_info(text) returns setof record as  '$libdir/gpossext.so', 'nc_subdataset_info' LANGUAGE C STRICT;
 
 select * from nc_subdataset_info ('oss://ossext-example.sh1a.qingstor.com/netcdf/input.nc access_key_id=xxx secret_access_key=xxx oss_type=QS ') AS tbl(name text, sqlq text);
+
+--Results of the netcdf SQL Function
+          name           |                                      sqlq
+-------------------------+--------------------------------------------------------------------------------
+ icg/gis/netcdf/input.nc | SUBDATASET_1_NAME=NETCDF:"/vsiossext/netcdf/input.nc":TMP_P0_L103_GLL0
+                         : SUBDATASET_1_DESC=[1x205x253] TMP_P0_L103_GLL0 (32-bit floating-point)
+                         : SUBDATASET_2_NAME=NETCDF:"/vsiossext/netcdf/input.nc":initial_time0
+                         : SUBDATASET_2_DESC=[1x18] initial_time0 (8-bit character)
+                         :
 ```
 
 导入数据: 创建外部表为NETCDF格式，用户填写subdataset字段选择子数据集。创建成功后用户可执行查询语句查看。
@@ -216,6 +289,14 @@ select * from nc_subdataset_info ('oss://ossext-example.sh1a.qingstor.com/netcdf
 ```sql
 --Create netcdf table:
 CREATE READABLE EXTERNAL TABLE osstbl_netcdf(filename text, rast raster, metadata text) LOCATION('oss://ossext-example.sh1a.qingstor.com/netcdf/input.nc subdataset=1 access_key_id=xxx secret_access_key=xxx oss_type=QS') FORMAT 'netcdf';
+
+SELECT filename, st_value(rast, 3, 4) from osstbl_netcdf order by filename;
+
+--Results of the netcdf
+    filename     |     st_value
+-----------------+------------------
+ netcdf/input.nc | 260.100006103516
+(1 row)
 ```
 
 ## <h2 id='topic5'> PostGIS 扩展支持和限制
