@@ -4024,44 +4024,112 @@
 </table>
 <h4 id="&#x5E38;&#x7528;&#x51FD;&#x6570;">&#x5E38;&#x7528;&#x51FD;&#x6570;</h4>
 <p><strong>&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;&#x51FD;&#x6570;</strong></p>
-<p>Oracle | HashData  | &#x5907;&#x6CE8;
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-:-: | :-: | :-:
-|| | || | &#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x7B26;</p>
-<h1 id="concat----&#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x51FD;&#x6570;">concat | || | &#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x51FD;&#x6570;</h1>
-<p>|:-: | :-: | :-:|
-| || | || | &#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x7B26;|
-|concat | || | &#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x51FD;&#x6570;|</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>a3ac9d872f2c3c8970eacb0761fe5293a6b3ad59
-to_number | to_number | &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x503C;
-to_char | ::TEXT | &#x7C7B;&#x578B;&#x8F6C;&#x6362;
-to_date | to_timestamp | &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5316;&#x4E3A;&#x65F6;&#x95F4;&#x6233;
-last_date | (date_trun(&apos;MONTH&apos;, mydate) + INTERVAL &apos;1 MONTH&apos; - INTERVAL &apos;1 DAY&apos;)::DATE | &#x5F53;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5929;
-instr | position | &#x5728;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x51FA;&#x73B0;&#x7684;&#x4F4D;&#x7F6E;
-substr | substr | &#x622A;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4E00;&#x90E8;&#x5206;
-length | length | &#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;
-trim | trim | &#x51FA;&#x53BB;&#x5B57;&#x7B26;&#x4E32;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x7684;&#x6307;&#x5B9A;&#x5B57;&#x7B26;
-initcap | initcap | &#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;
-upper | upper | &#x8F6C;&#x5927;&#x5199;
-lower | lower | &#x8F6C;&#x5C0F;&#x5199;
-regexp_replace | regexp_replace | &#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x66FF;&#x6362;
-regexp_substr | substring | &#x6839;&#x636E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5BFB;&#x627E;&#x5B50;&#x4E32;
-regexp_instr | position(substring) | &#x5728;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x67E5;&#x627E;&#x7B26;&#x5408;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4F4D;&#x7F6E;
-regexp_like | length(substring) | &#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x5B50;&#x4E32;</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Oracle</th>
+<th style="text-align:center">HashData</th>
+<th style="text-align:center">&#x5907;&#x6CE8;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">\</td>
+<td style="text-align:center">\</td>
+<td></td>
+<td>\</td>
+<td>\</td>
+<td></td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x7B26;</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">concat</td>
+<td style="text-align:center">\</td>
+<td>\</td>
+<td></td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x51FD;&#x6570;</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">to_number</td>
+<td style="text-align:center">to_number</td>
+<td style="text-align:center">&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">to_char</td>
+<td style="text-align:center">::TEXT</td>
+<td style="text-align:center">&#x7C7B;&#x578B;&#x8F6C;&#x6362;</td>
+</tr>
+<tr>
+<td style="text-align:center">to_date</td>
+<td style="text-align:center">to_timestamp</td>
+<td style="text-align:center">&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5316;&#x4E3A;&#x65F6;&#x95F4;&#x6233;</td>
+</tr>
+<tr>
+<td style="text-align:center">last_date</td>
+<td style="text-align:center">(date_trun(&apos;MONTH&apos;, mydate) + INTERVAL &apos;1 MONTH&apos; - INTERVAL &apos;1 DAY&apos;)::DATE</td>
+<td style="text-align:center">&#x5F53;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5929;</td>
+</tr>
+<tr>
+<td style="text-align:center">instr</td>
+<td style="text-align:center">position</td>
+<td style="text-align:center">&#x5728;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x51FA;&#x73B0;&#x7684;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td style="text-align:center">substr</td>
+<td style="text-align:center">substr</td>
+<td style="text-align:center">&#x622A;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4E00;&#x90E8;&#x5206;</td>
+</tr>
+<tr>
+<td style="text-align:center">length</td>
+<td style="text-align:center">length</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:center">trim</td>
+<td style="text-align:center">trim</td>
+<td style="text-align:center">&#x51FA;&#x53BB;&#x5B57;&#x7B26;&#x4E32;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x7684;&#x6307;&#x5B9A;&#x5B57;&#x7B26;</td>
+</tr>
+<tr>
+<td style="text-align:center">initcap</td>
+<td style="text-align:center">initcap</td>
+<td style="text-align:center">&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;</td>
+</tr>
+<tr>
+<td style="text-align:center">upper</td>
+<td style="text-align:center">upper</td>
+<td style="text-align:center">&#x8F6C;&#x5927;&#x5199;</td>
+</tr>
+<tr>
+<td style="text-align:center">lower</td>
+<td style="text-align:center">lower</td>
+<td style="text-align:center">&#x8F6C;&#x5C0F;&#x5199;</td>
+</tr>
+<tr>
+<td style="text-align:center">regexp_replace</td>
+<td style="text-align:center">regexp_replace</td>
+<td style="text-align:center">&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x66FF;&#x6362;</td>
+</tr>
+<tr>
+<td style="text-align:center">regexp_substr</td>
+<td style="text-align:center">substring</td>
+<td style="text-align:center">&#x6839;&#x636E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5BFB;&#x627E;&#x5B50;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:center">regexp_instr</td>
+<td style="text-align:center">position(substring)</td>
+<td style="text-align:center">&#x5728;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x67E5;&#x627E;&#x7B26;&#x5408;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td style="text-align:center">regexp_like</td>
+<td style="text-align:center">length(substring)</td>
+<td style="text-align:center">&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x5B50;&#x4E32;</td>
+</tr>
+</tbody>
+</table>
 <p><strong>&#x6570;&#x503C;&#x51FD;&#x6570;</strong></p>
 <table>
 <thead>
@@ -4339,7 +4407,7 @@ FETCH curs2 INTO foo, bar, baz;
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"与Oracle语法上的差异","level":"4.1.18","depth":2,"next":{"title":"使用 Jmeter、pgbouncer 对 hashdata 数据库进行压力测试","level":"4.1.19","depth":2,"path":"040-developer-guide/07923-pgbouncer-jmeter-test.md","ref":"040-developer-guide/07923-pgbouncer-jmeter-test.md","articles":[]},"previous":{"title":"PL/Java语言扩展","level":"4.1.17","depth":2,"path":"040-developer-guide/07921-pl-java-yu-yan.md","ref":"040-developer-guide/07921-pl-java-yu-yan.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-fontsettings","editlink","baidu","versions","sitemap","copy-code-button","back-to-top-button","otherlink","expandable-chapters","heading-anchors","-lunr","-search","search-plus","splitter","theme-hashdatadoc"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/HashDataInc/docs/blob/v2.2/"},"splitter":{},"otherlink":{},"heading-anchors":{},"highlight":{},"sitemap":{"hostname":"http://docs.hashdata.cn"},"back-to-top-button":{},"copy-code-button":{},"baidu":{"token":"c2474dfbb51f64f6f0d882bcb8e617da"},"versions":{"type":"branches","gitbookConfigURL":"http://docs.hashdata.cn/latest/book.json","options":[{"value":"http://docs.hashdata.cn/v2.2/","text":"v2.2","selected":true},{"value":"http://docs.hashdata.cn/v1.4.0/","text":"v1.4.0"}]},"theme-hashdatadoc":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HashData","language":"zh-hans","gitbook":"*"},"file":{"path":"040-developer-guide/07922-Oracle-to-HashData.md","mtime":"2019-05-24T09:57:44.801Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-24T10:02:25.662Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"与Oracle语法上的差异","level":"4.1.18","depth":2,"next":{"title":"使用 Jmeter、pgbouncer 对 hashdata 数据库进行压力测试","level":"4.1.19","depth":2,"path":"040-developer-guide/07923-pgbouncer-jmeter-test.md","ref":"040-developer-guide/07923-pgbouncer-jmeter-test.md","articles":[]},"previous":{"title":"PL/Java语言扩展","level":"4.1.17","depth":2,"path":"040-developer-guide/07921-pl-java-yu-yan.md","ref":"040-developer-guide/07921-pl-java-yu-yan.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-fontsettings","editlink","baidu","versions","sitemap","copy-code-button","back-to-top-button","otherlink","expandable-chapters","heading-anchors","-lunr","-search","search-plus","splitter","theme-hashdatadoc"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/HashDataInc/docs/blob/v2.2/"},"splitter":{},"otherlink":{},"heading-anchors":{},"highlight":{},"sitemap":{"hostname":"http://docs.hashdata.cn"},"back-to-top-button":{},"copy-code-button":{},"baidu":{"token":"c2474dfbb51f64f6f0d882bcb8e617da"},"versions":{"type":"branches","gitbookConfigURL":"http://docs.hashdata.cn/latest/book.json","options":[{"value":"http://docs.hashdata.cn/v2.2/","text":"v2.2","selected":true},{"value":"http://docs.hashdata.cn/v1.4.0/","text":"v1.4.0"}]},"theme-hashdatadoc":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HashData","language":"zh-hans","gitbook":"*"},"file":{"path":"040-developer-guide/07922-Oracle-to-HashData.md","mtime":"2019-06-24T11:06:14.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T11:14:29.221Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>
