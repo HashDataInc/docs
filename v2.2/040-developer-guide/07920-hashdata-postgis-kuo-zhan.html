@@ -3931,23 +3931,48 @@ secretaccesskey
 isvirtualtruefalse
 layer
 subdataset
+tilesize
 
 resourceuri-&#x8D44;&#x6E90;url&#x8DEF;&#x5F84;&#xFF0C;&#x5FC5;&#x987B;&#x4EE5;-oss&#x4F5C;&#x4E3A;&#x5F00;&#x59CB;&#x3002;
 isvirtual-&#x8D44;&#x6E90;url&#x662F;virtual-host-style&#x683C;&#x5F0F;isvirtual&#x5B57;&#x6BB5;&#x4E3A;true&#xFF0C;&#x5426;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;false&#x3002;
 layer-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;shapefile&#x65F6;&#x4F7F;&#x7528;&#xFF0C;layer-&#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x77E2;&#x91CF;&#x56FE;&#x5C42;&#x3002;
 subdataset-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;netcdf&#x65F6;&#x4F7F;&#x7528;&#xFF0C;subdataset-&#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x5B50;&#x6570;&#x636E;&#x96C6;&#x3002;
+tilesize-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;raster&#x65F6;&#x4F7F;&#x7528;&#xFF0C;tilesize-&#x8868;&#x793A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x7684;&#x5927;&#x5C0F;&#x3002;
 &#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;
-&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;
+&#x7531;&#x4E8E;&#x6709;&#x4E9B;tiff&#x6587;&#x4EF6;&#x50CF;&#x7D20;&#x5F88;&#x5927;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x5BFC;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;tilesize-&#x662F;&#x8BBE;&#x7F6E;&#x5207;&#x5206;&#x6570;&#x636E;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5982;&#x679C;&#x5728;ossparameters&#x4E2D;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5176;&#x5927;&#x5C0F;&#x9ED8;&#x8BA4;&#x6309;&#x7167;512x512&#x5904;&#x7406;&#x3002;&#x5207;&#x5206;&#x6570;&#x636E;&#x5206;&#x7247;&#x6700;&#x5927;&#x503C;&#x4E0D;&#x80FD;&#x5927;&#x4E8E;10000x10000&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E;&#x6309;&#x7167;&#x6700;&#x5927;&#x503C;10000&#x6765;&#x8FDB;&#x884C;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;
+&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;
 --import-gis-raster-data-to-table
-create-readable-external-table-osstblexamplefilename-text-rast-raster-metadata-text-locationossossext-examplesh1aqingstorcomraster-osstypeqs-accesskeyidxxx-secretaccesskeyxxx-format-raster
+create-readable-external-table-osstblexamplefilename-text-rast-raster-metadata-text-locationossossext-examplesh1aqingstorcomraster-tilesize100x100-osstypeqs-accesskeyidxxx-secretaccesskeyxxx-format-raster
 
 select-filename-stvaluerast-3-4-from-osstblexample-order-by-filename
 
 --results-of-the-raster
-----filename------------------stvalue
--------------------------------------------
--rastertestinputtiff---260100006103516
--rastertestoutputtiff--260100006103516
+---filename&#x5217;&#x8BF4;&#x660E;
+---icggisrastertestinputtiff-&#x662F;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;
+---tilenum-&#x662F;&#x5F53;&#x524D;&#x5207;&#x5206;&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---xtile-&#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;x&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---ytile-&#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;y&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---tilesize-&#x662F;&#x5F53;&#x524D;&#x5207;&#x7247;&#x5927;&#x5C0F;&#x3002;
+----------------------------------filename----------------------------------------stvalue
+-----------------------------------------------------------------------------------------------
+-icggisrastertestinputtiff-tilenum0-xtile0-ytile0-tilesize100x100---260100006103516
+-icggisrastertestinputtiff-tilenum1-xtile1-ytile0-tilesize100x100---252389999389648
+-icggisrastertestinputtiff-tilenum2-xtile2-ytile0-tilesize100x100---255429992675781
+-icggisrastertestinputtiff-tilenum3-xtile3-ytile0-tilesize100x100---288690002441406
+-icggisrastertestinputtiff-tilenum4-xtile1-ytile1-tilesize100x100---280169982910156
+-icggisrastertestinputtiff-tilenum5-xtile2-ytile1-tilesize100x100----28472998046875
+-icggisrastertestinputtiff-tilenum6-xtile3-ytile1-tilesize100x100---301100006103516
+-icggisrastertestinputtiff-tilenum7-xtile1-ytile2-tilesize100x100---297639984130859
+-icggisrastertestinputtiff-tilenum8-xtile2-ytile2-tilesize100x100---301940002441406
+-icggisrastertestoutputtiff-tilenum0-xtile0-ytile0-tilesize100x100--260100006103516
+-icggisrastertestoutputtiff-tilenum1-xtile1-ytile0-tilesize100x100--252389999389648
+-icggisrastertestoutputtiff-tilenum2-xtile2-ytile0-tilesize100x100--255429992675781
+-icggisrastertestoutputtiff-tilenum3-xtile3-ytile0-tilesize100x100--288690002441406
+-icggisrastertestoutputtiff-tilenum4-xtile1-ytile1-tilesize100x100--280169982910156
+-icggisrastertestoutputtiff-tilenum5-xtile2-ytile1-tilesize100x100---28472998046875
+-icggisrastertestoutputtiff-tilenum6-xtile3-ytile1-tilesize100x100--301100006103516
+-icggisrastertestoutputtiff-tilenum7-xtile1-ytile2-tilesize100x100--297639984130859
+-icggisrastertestoutputtiff-tilenum8-xtile2-ytile2-tilesize100x100--301940002441406
 
 &#x5BFC;&#x5165;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x683C;&#x5F0F;
 &#x67E5;&#x770B;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;-&#x521B;&#x5EFA;sql&#x51FD;&#x6570;ogrfdwinfo&#x5E76;&#x6267;&#x884C;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7528;&#x6237;&#x53EF;&#x83B7;&#x53D6;shapefile&#x5EFA;&#x8868;sql&#x8BED;&#x53E5;&#x3002;
@@ -4172,23 +4197,48 @@ secretaccesskey
 isvirtualtruefalse
 layer
 subdataset
+tilesize
 
 resourceuri-&#x8D44;&#x6E90;url&#x8DEF;&#x5F84;&#xFF0C;&#x5FC5;&#x987B;&#x4EE5;-oss&#x4F5C;&#x4E3A;&#x5F00;&#x59CB;&#x3002;
 isvirtual-&#x8D44;&#x6E90;url&#x662F;virtual-host-style&#x683C;&#x5F0F;isvirtual&#x5B57;&#x6BB5;&#x4E3A;true&#xFF0C;&#x5426;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;false&#x3002;
 layer-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;shapefile&#x65F6;&#x4F7F;&#x7528;&#xFF0C;layer-&#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x77E2;&#x91CF;&#x56FE;&#x5C42;&#x3002;
 subdataset-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;netcdf&#x65F6;&#x4F7F;&#x7528;&#xFF0C;subdataset-&#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x5B50;&#x6570;&#x636E;&#x96C6;&#x3002;
+tilesize-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;raster&#x65F6;&#x4F7F;&#x7528;&#xFF0C;tilesize-&#x8868;&#x793A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x7684;&#x5927;&#x5C0F;&#x3002;
 &#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;
-&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;
+&#x7531;&#x4E8E;&#x6709;&#x4E9B;tiff&#x6587;&#x4EF6;&#x50CF;&#x7D20;&#x5F88;&#x5927;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x5BFC;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;tilesize-&#x662F;&#x8BBE;&#x7F6E;&#x5207;&#x5206;&#x6570;&#x636E;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5982;&#x679C;&#x5728;ossparameters&#x4E2D;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5176;&#x5927;&#x5C0F;&#x9ED8;&#x8BA4;&#x6309;&#x7167;512x512&#x5904;&#x7406;&#x3002;&#x5207;&#x5206;&#x6570;&#x636E;&#x5206;&#x7247;&#x6700;&#x5927;&#x503C;&#x4E0D;&#x80FD;&#x5927;&#x4E8E;10000x10000&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E;&#x6309;&#x7167;&#x6700;&#x5927;&#x503C;10000&#x6765;&#x8FDB;&#x884C;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;
+&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;
 --import-gis-raster-data-to-table
-create-readable-external-table-osstblexamplefilename-text-rast-raster-metadata-text-locationossossext-examplesh1aqingstorcomraster-osstypeqs-accesskeyidxxx-secretaccesskeyxxx-format-raster
+create-readable-external-table-osstblexamplefilename-text-rast-raster-metadata-text-locationossossext-examplesh1aqingstorcomraster-tilesize100x100-osstypeqs-accesskeyidxxx-secretaccesskeyxxx-format-raster
 
 select-filename-stvaluerast-3-4-from-osstblexample-order-by-filename
 
 --results-of-the-raster
-----filename------------------stvalue
--------------------------------------------
--rastertestinputtiff---260100006103516
--rastertestoutputtiff--260100006103516
+---filename&#x5217;&#x8BF4;&#x660E;
+---icggisrastertestinputtiff-&#x662F;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;
+---tilenum-&#x662F;&#x5F53;&#x524D;&#x5207;&#x5206;&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---xtile-&#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;x&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---ytile-&#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;y&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---tilesize-&#x662F;&#x5F53;&#x524D;&#x5207;&#x7247;&#x5927;&#x5C0F;&#x3002;
+----------------------------------filename----------------------------------------stvalue
+-----------------------------------------------------------------------------------------------
+-icggisrastertestinputtiff-tilenum0-xtile0-ytile0-tilesize100x100---260100006103516
+-icggisrastertestinputtiff-tilenum1-xtile1-ytile0-tilesize100x100---252389999389648
+-icggisrastertestinputtiff-tilenum2-xtile2-ytile0-tilesize100x100---255429992675781
+-icggisrastertestinputtiff-tilenum3-xtile3-ytile0-tilesize100x100---288690002441406
+-icggisrastertestinputtiff-tilenum4-xtile1-ytile1-tilesize100x100---280169982910156
+-icggisrastertestinputtiff-tilenum5-xtile2-ytile1-tilesize100x100----28472998046875
+-icggisrastertestinputtiff-tilenum6-xtile3-ytile1-tilesize100x100---301100006103516
+-icggisrastertestinputtiff-tilenum7-xtile1-ytile2-tilesize100x100---297639984130859
+-icggisrastertestinputtiff-tilenum8-xtile2-ytile2-tilesize100x100---301940002441406
+-icggisrastertestoutputtiff-tilenum0-xtile0-ytile0-tilesize100x100--260100006103516
+-icggisrastertestoutputtiff-tilenum1-xtile1-ytile0-tilesize100x100--252389999389648
+-icggisrastertestoutputtiff-tilenum2-xtile2-ytile0-tilesize100x100--255429992675781
+-icggisrastertestoutputtiff-tilenum3-xtile3-ytile0-tilesize100x100--288690002441406
+-icggisrastertestoutputtiff-tilenum4-xtile1-ytile1-tilesize100x100--280169982910156
+-icggisrastertestoutputtiff-tilenum5-xtile2-ytile1-tilesize100x100---28472998046875
+-icggisrastertestoutputtiff-tilenum6-xtile3-ytile1-tilesize100x100--301100006103516
+-icggisrastertestoutputtiff-tilenum7-xtile1-ytile2-tilesize100x100--297639984130859
+-icggisrastertestoutputtiff-tilenum8-xtile2-ytile2-tilesize100x100--301940002441406
 
 &#x5BFC;&#x5165;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x683C;&#x5F0F;
 &#x67E5;&#x770B;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;-&#x521B;&#x5EFA;sql&#x51FD;&#x6570;ogrfdwinfo&#x5E76;&#x6267;&#x884C;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7528;&#x6237;&#x53EF;&#x83B7;&#x53D6;shapefile&#x5EFA;&#x8868;sql&#x8BED;&#x53E5;&#x3002;
@@ -4409,23 +4459,48 @@ secretaccesskey
 isvirtualtruefalse
 layer
 subdataset
+tilesize
 
 resourceuri-&#x8D44;&#x6E90;url&#x8DEF;&#x5F84;&#xFF0C;&#x5FC5;&#x987B;&#x4EE5;-oss&#x4F5C;&#x4E3A;&#x5F00;&#x59CB;&#x3002;
 isvirtual-&#x8D44;&#x6E90;url&#x662F;virtual-host-style&#x683C;&#x5F0F;isvirtual&#x5B57;&#x6BB5;&#x4E3A;true&#xFF0C;&#x5426;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;false&#x3002;
 layer-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;shapefile&#x65F6;&#x4F7F;&#x7528;&#xFF0C;layer-&#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x77E2;&#x91CF;&#x56FE;&#x5C42;&#x3002;
 subdataset-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;netcdf&#x65F6;&#x4F7F;&#x7528;&#xFF0C;subdataset-&#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x5B50;&#x6570;&#x636E;&#x96C6;&#x3002;
+tilesize-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;raster&#x65F6;&#x4F7F;&#x7528;&#xFF0C;tilesize-&#x8868;&#x793A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x7684;&#x5927;&#x5C0F;&#x3002;
 &#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;
-&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;
+&#x7531;&#x4E8E;&#x6709;&#x4E9B;tiff&#x6587;&#x4EF6;&#x50CF;&#x7D20;&#x5F88;&#x5927;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x5BFC;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;tilesize-&#x662F;&#x8BBE;&#x7F6E;&#x5207;&#x5206;&#x6570;&#x636E;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5982;&#x679C;&#x5728;ossparameters&#x4E2D;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5176;&#x5927;&#x5C0F;&#x9ED8;&#x8BA4;&#x6309;&#x7167;512x512&#x5904;&#x7406;&#x3002;&#x5207;&#x5206;&#x6570;&#x636E;&#x5206;&#x7247;&#x6700;&#x5927;&#x503C;&#x4E0D;&#x80FD;&#x5927;&#x4E8E;10000x10000&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E;&#x6309;&#x7167;&#x6700;&#x5927;&#x503C;10000&#x6765;&#x8FDB;&#x884C;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;
+&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;
 --import-gis-raster-data-to-table
-create-readable-external-table-osstblexamplefilename-text-rast-raster-metadata-text-locationossossext-examplesh1aqingstorcomraster-osstypeqs-accesskeyidxxx-secretaccesskeyxxx-format-raster
+create-readable-external-table-osstblexamplefilename-text-rast-raster-metadata-text-locationossossext-examplesh1aqingstorcomraster-tilesize100x100-osstypeqs-accesskeyidxxx-secretaccesskeyxxx-format-raster
 
 select-filename-stvaluerast-3-4-from-osstblexample-order-by-filename
 
 --results-of-the-raster
-----filename------------------stvalue
--------------------------------------------
--rastertestinputtiff---260100006103516
--rastertestoutputtiff--260100006103516
+---filename&#x5217;&#x8BF4;&#x660E;
+---icggisrastertestinputtiff-&#x662F;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;
+---tilenum-&#x662F;&#x5F53;&#x524D;&#x5207;&#x5206;&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---xtile-&#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;x&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---ytile-&#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;y&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---tilesize-&#x662F;&#x5F53;&#x524D;&#x5207;&#x7247;&#x5927;&#x5C0F;&#x3002;
+----------------------------------filename----------------------------------------stvalue
+-----------------------------------------------------------------------------------------------
+-icggisrastertestinputtiff-tilenum0-xtile0-ytile0-tilesize100x100---260100006103516
+-icggisrastertestinputtiff-tilenum1-xtile1-ytile0-tilesize100x100---252389999389648
+-icggisrastertestinputtiff-tilenum2-xtile2-ytile0-tilesize100x100---255429992675781
+-icggisrastertestinputtiff-tilenum3-xtile3-ytile0-tilesize100x100---288690002441406
+-icggisrastertestinputtiff-tilenum4-xtile1-ytile1-tilesize100x100---280169982910156
+-icggisrastertestinputtiff-tilenum5-xtile2-ytile1-tilesize100x100----28472998046875
+-icggisrastertestinputtiff-tilenum6-xtile3-ytile1-tilesize100x100---301100006103516
+-icggisrastertestinputtiff-tilenum7-xtile1-ytile2-tilesize100x100---297639984130859
+-icggisrastertestinputtiff-tilenum8-xtile2-ytile2-tilesize100x100---301940002441406
+-icggisrastertestoutputtiff-tilenum0-xtile0-ytile0-tilesize100x100--260100006103516
+-icggisrastertestoutputtiff-tilenum1-xtile1-ytile0-tilesize100x100--252389999389648
+-icggisrastertestoutputtiff-tilenum2-xtile2-ytile0-tilesize100x100--255429992675781
+-icggisrastertestoutputtiff-tilenum3-xtile3-ytile0-tilesize100x100--288690002441406
+-icggisrastertestoutputtiff-tilenum4-xtile1-ytile1-tilesize100x100--280169982910156
+-icggisrastertestoutputtiff-tilenum5-xtile2-ytile1-tilesize100x100---28472998046875
+-icggisrastertestoutputtiff-tilenum6-xtile3-ytile1-tilesize100x100--301100006103516
+-icggisrastertestoutputtiff-tilenum7-xtile1-ytile2-tilesize100x100--297639984130859
+-icggisrastertestoutputtiff-tilenum8-xtile2-ytile2-tilesize100x100--301940002441406
 
 &#x5BFC;&#x5165;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x683C;&#x5F0F;
 &#x67E5;&#x770B;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;-&#x521B;&#x5EFA;sql&#x51FD;&#x6570;ogrfdwinfo&#x5E76;&#x6267;&#x884C;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7528;&#x6237;&#x53EF;&#x83B7;&#x53D6;shapefile&#x5EFA;&#x8868;sql&#x8BED;&#x53E5;&#x3002;
@@ -4629,23 +4704,48 @@ secretaccesskey
 isvirtualtruefalse
 layer
 subdataset
+tilesize
 
 resourceuri-&#x8D44;&#x6E90;url&#x8DEF;&#x5F84;&#xFF0C;&#x5FC5;&#x987B;&#x4EE5;-oss&#x4F5C;&#x4E3A;&#x5F00;&#x59CB;&#x3002;
 isvirtual-&#x8D44;&#x6E90;url&#x662F;virtual-host-style&#x683C;&#x5F0F;isvirtual&#x5B57;&#x6BB5;&#x4E3A;true&#xFF0C;&#x5426;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;false&#x3002;
 layer-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;shapefile&#x65F6;&#x4F7F;&#x7528;&#xFF0C;layer-&#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x77E2;&#x91CF;&#x56FE;&#x5C42;&#x3002;
 subdataset-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;netcdf&#x65F6;&#x4F7F;&#x7528;&#xFF0C;subdataset-&#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x5B50;&#x6570;&#x636E;&#x96C6;&#x3002;
+tilesize-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;raster&#x65F6;&#x4F7F;&#x7528;&#xFF0C;tilesize-&#x8868;&#x793A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x7684;&#x5927;&#x5C0F;&#x3002;
 &#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;
-&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;
+&#x7531;&#x4E8E;&#x6709;&#x4E9B;tiff&#x6587;&#x4EF6;&#x50CF;&#x7D20;&#x5F88;&#x5927;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x5BFC;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;tilesize-&#x662F;&#x8BBE;&#x7F6E;&#x5207;&#x5206;&#x6570;&#x636E;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5982;&#x679C;&#x5728;ossparameters&#x4E2D;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5176;&#x5927;&#x5C0F;&#x9ED8;&#x8BA4;&#x6309;&#x7167;512x512&#x5904;&#x7406;&#x3002;&#x5207;&#x5206;&#x6570;&#x636E;&#x5206;&#x7247;&#x6700;&#x5927;&#x503C;&#x4E0D;&#x80FD;&#x5927;&#x4E8E;10000x10000&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E;&#x6309;&#x7167;&#x6700;&#x5927;&#x503C;10000&#x6765;&#x8FDB;&#x884C;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;
+&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;
 --import-gis-raster-data-to-table
-create-readable-external-table-osstblexamplefilename-text-rast-raster-metadata-text-locationossossext-examplesh1aqingstorcomraster-osstypeqs-accesskeyidxxx-secretaccesskeyxxx-format-raster
+create-readable-external-table-osstblexamplefilename-text-rast-raster-metadata-text-locationossossext-examplesh1aqingstorcomraster-tilesize100x100-osstypeqs-accesskeyidxxx-secretaccesskeyxxx-format-raster
 
 select-filename-stvaluerast-3-4-from-osstblexample-order-by-filename
 
 --results-of-the-raster
-----filename------------------stvalue
--------------------------------------------
--rastertestinputtiff---260100006103516
--rastertestoutputtiff--260100006103516
+---filename&#x5217;&#x8BF4;&#x660E;
+---icggisrastertestinputtiff-&#x662F;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;
+---tilenum-&#x662F;&#x5F53;&#x524D;&#x5207;&#x5206;&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---xtile-&#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;x&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---ytile-&#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;y&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;
+---tilesize-&#x662F;&#x5F53;&#x524D;&#x5207;&#x7247;&#x5927;&#x5C0F;&#x3002;
+----------------------------------filename----------------------------------------stvalue
+-----------------------------------------------------------------------------------------------
+-icggisrastertestinputtiff-tilenum0-xtile0-ytile0-tilesize100x100---260100006103516
+-icggisrastertestinputtiff-tilenum1-xtile1-ytile0-tilesize100x100---252389999389648
+-icggisrastertestinputtiff-tilenum2-xtile2-ytile0-tilesize100x100---255429992675781
+-icggisrastertestinputtiff-tilenum3-xtile3-ytile0-tilesize100x100---288690002441406
+-icggisrastertestinputtiff-tilenum4-xtile1-ytile1-tilesize100x100---280169982910156
+-icggisrastertestinputtiff-tilenum5-xtile2-ytile1-tilesize100x100----28472998046875
+-icggisrastertestinputtiff-tilenum6-xtile3-ytile1-tilesize100x100---301100006103516
+-icggisrastertestinputtiff-tilenum7-xtile1-ytile2-tilesize100x100---297639984130859
+-icggisrastertestinputtiff-tilenum8-xtile2-ytile2-tilesize100x100---301940002441406
+-icggisrastertestoutputtiff-tilenum0-xtile0-ytile0-tilesize100x100--260100006103516
+-icggisrastertestoutputtiff-tilenum1-xtile1-ytile0-tilesize100x100--252389999389648
+-icggisrastertestoutputtiff-tilenum2-xtile2-ytile0-tilesize100x100--255429992675781
+-icggisrastertestoutputtiff-tilenum3-xtile3-ytile0-tilesize100x100--288690002441406
+-icggisrastertestoutputtiff-tilenum4-xtile1-ytile1-tilesize100x100--280169982910156
+-icggisrastertestoutputtiff-tilenum5-xtile2-ytile1-tilesize100x100---28472998046875
+-icggisrastertestoutputtiff-tilenum6-xtile3-ytile1-tilesize100x100--301100006103516
+-icggisrastertestoutputtiff-tilenum7-xtile1-ytile2-tilesize100x100--297639984130859
+-icggisrastertestoutputtiff-tilenum8-xtile2-ytile2-tilesize100x100--301940002441406
 
 &#x5BFC;&#x5165;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x683C;&#x5F0F;
 &#x67E5;&#x770B;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;-&#x521B;&#x5EFA;sql&#x51FD;&#x6570;ogrfdwinfo&#x5E76;&#x6267;&#x884C;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7528;&#x6237;&#x53EF;&#x83B7;&#x53D6;shapefile&#x5EFA;&#x8868;sql&#x8BED;&#x53E5;&#x3002;
@@ -4841,23 +4941,48 @@ secret_access_key
 isvirtual={true|false}
 layer
 subdataset
+tile_size
 </code></pre>
 <p><strong>resource_URI</strong> &#x8D44;&#x6E90;url&#x8DEF;&#x5F84;&#xFF0C;&#x5FC5;&#x987B;&#x4EE5; &quot;<strong>oss://</strong>&quot;&#x4F5C;&#x4E3A;&#x5F00;&#x59CB;&#x3002;</p>
 <p><strong>isvirtual</strong> &#x8D44;&#x6E90;url&#x662F;<strong>virtual-host-style</strong>&#x683C;&#x5F0F;<strong>isvirtual</strong>&#x5B57;&#x6BB5;&#x4E3A;<strong>true</strong>&#xFF0C;&#x5426;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;<strong>false</strong>&#x3002;</p>
 <p><strong>layer</strong> &#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;<strong>SHAPEFILE</strong>&#x65F6;&#x4F7F;&#x7528;&#xFF0C;layer &#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x77E2;&#x91CF;&#x56FE;&#x5C42;&#x3002;</p>
 <p><strong>subdataset</strong> &#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;<strong>NETCDF</strong>&#x65F6;&#x4F7F;&#x7528;&#xFF0C;subdataset &#x8868;&#x793A;&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x7684;&#x5B50;&#x6570;&#x636E;&#x96C6;&#x3002;</p>
+<p><strong>tile_size</strong> &#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x683C;&#x5F0F;&#x4E3A;<strong>RASTER</strong>&#x65F6;&#x4F7F;&#x7528;&#xFF0C;tile_size &#x8868;&#x793A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
 <h4 id="&#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;">&#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;</h4>
-<p>&#x5916;&#x90E8;&#x8868;&#x5BFC;&#x5165;&#x6805;&#x683C;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x6709;&#x4E9B;TIFF&#x6587;&#x4EF6;&#x50CF;&#x7D20;&#x5F88;&#x5927;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x5BFC;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x5BF9;&#x6805;&#x683C;&#x6570;&#x636E;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;tile_size &#x662F;&#x8BBE;&#x7F6E;&#x5207;&#x5206;&#x6570;&#x636E;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5982;&#x679C;&#x5728;oss_parameters&#x4E2D;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5176;&#x5927;&#x5C0F;&#x9ED8;&#x8BA4;&#x6309;&#x7167;512x512&#x5904;&#x7406;&#x3002;&#x5207;&#x5206;&#x6570;&#x636E;&#x5206;&#x7247;&#x6700;&#x5927;&#x503C;&#x4E0D;&#x80FD;&#x5927;&#x4E8E;10000x10000&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E;&#x6309;&#x7167;&#x6700;&#x5927;&#x503C;10000&#x6765;&#x8FDB;&#x884C;&#x5206;&#x7247;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;</p>
 <pre><code class="lang-sql"><span class="hljs-comment">--Import Gis raster data to table:</span>
-<span class="hljs-keyword">CREATE</span> READABLE <span class="hljs-keyword">EXTERNAL</span> <span class="hljs-keyword">TABLE</span> osstbl_example(filename <span class="hljs-built_in">text</span>, rast raster, metadata <span class="hljs-built_in">text</span>) LOCATION(<span class="hljs-string">&apos;oss://ossext-example.sh1a.qingstor.com/raster oss_type=QS access_key_id=xxx secret_access_key=xxx&apos;</span>) <span class="hljs-keyword">FORMAT</span> <span class="hljs-string">&apos;raster&apos;</span>;
+<span class="hljs-keyword">CREATE</span> READABLE <span class="hljs-keyword">EXTERNAL</span> <span class="hljs-keyword">TABLE</span> osstbl_example(filename <span class="hljs-built_in">text</span>, rast raster, metadata <span class="hljs-built_in">text</span>) LOCATION(<span class="hljs-string">&apos;oss://ossext-example.sh1a.qingstor.com/raster tile_size=100x100 oss_type=QS access_key_id=xxx secret_access_key=xxx&apos;</span>) <span class="hljs-keyword">FORMAT</span> <span class="hljs-string">&apos;raster&apos;</span>;
 
 <span class="hljs-keyword">SELECT</span> filename, st_value(rast, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>) <span class="hljs-keyword">from</span> osstbl_example <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> filename;
 
 <span class="hljs-comment">--Results of the raster</span>
-    filename             |     st_value
-<span class="hljs-comment">-------------------------+------------------</span>
- raster/test_input.tiff  | 260.100006103516
- raster/test_output.tiff | 260.100006103516
+<span class="hljs-comment">-- filename&#x5217;&#x8BF4;&#x660E;</span>
+<span class="hljs-comment">-- icg/gis/raster/test_input.tiff &#x662F;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</span>
+<span class="hljs-comment">-- tilenum &#x662F;&#x5F53;&#x524D;&#x5207;&#x5206;&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;</span>
+<span class="hljs-comment">-- xtile &#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;x&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;</span>
+<span class="hljs-comment">-- ytile &#x8868;&#x793A;&#x5750;&#x6807;&#x7CFB;y&#x7B2C;&#x51E0;&#x4E2A;&#x74E6;&#x7247;&#x3002;</span>
+<span class="hljs-comment">-- tile_size &#x662F;&#x5F53;&#x524D;&#x5207;&#x7247;&#x5927;&#x5C0F;&#x3002;</span>
+                                  filename                                   |     st_value
+<span class="hljs-comment">-----------------------------------------------------------------------------+------------------</span>
+ icg/gis/raster/test_input.tiff tilenum:0 xtile:0 ytile:0 tile_size:100x100  | 260.100006103516
+ icg/gis/raster/test_input.tiff tilenum:1 xtile:1 ytile:0 tile_size:100x100  | 252.389999389648
+ icg/gis/raster/test_input.tiff tilenum:2 xtile:2 ytile:0 tile_size:100x100  | 255.429992675781
+ icg/gis/raster/test_input.tiff tilenum:3 xtile:3 ytile:0 tile_size:100x100  | 288.690002441406
+ icg/gis/raster/test_input.tiff tilenum:4 xtile:1 ytile:1 tile_size:100x100  | 280.169982910156
+ icg/gis/raster/test_input.tiff tilenum:5 xtile:2 ytile:1 tile_size:100x100  |  284.72998046875
+ icg/gis/raster/test_input.tiff tilenum:6 xtile:3 ytile:1 tile_size:100x100  | 301.100006103516
+ icg/gis/raster/test_input.tiff tilenum:7 xtile:1 ytile:2 tile_size:100x100  | 297.639984130859
+ icg/gis/raster/test_input.tiff tilenum:8 xtile:2 ytile:2 tile_size:100x100  | 301.940002441406
+ icg/gis/raster/test_output.tiff tilenum:0 xtile:0 ytile:0 tile_size:100x100 | 260.100006103516
+ icg/gis/raster/test_output.tiff tilenum:1 xtile:1 ytile:0 tile_size:100x100 | 252.389999389648
+ icg/gis/raster/test_output.tiff tilenum:2 xtile:2 ytile:0 tile_size:100x100 | 255.429992675781
+ icg/gis/raster/test_output.tiff tilenum:3 xtile:3 ytile:0 tile_size:100x100 | 288.690002441406
+ icg/gis/raster/test_output.tiff tilenum:4 xtile:1 ytile:1 tile_size:100x100 | 280.169982910156
+ icg/gis/raster/test_output.tiff tilenum:5 xtile:2 ytile:1 tile_size:100x100 |  284.72998046875
+ icg/gis/raster/test_output.tiff tilenum:6 xtile:3 ytile:1 tile_size:100x100 | 301.100006103516
+ icg/gis/raster/test_output.tiff tilenum:7 xtile:1 ytile:2 tile_size:100x100 | 297.639984130859
+ icg/gis/raster/test_output.tiff tilenum:8 xtile:2 ytile:2 tile_size:100x100 | 301.940002441406
 </code></pre>
 <h4 id="&#x5BFC;&#x5165;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x683C;&#x5F0F;">&#x5BFC;&#x5165;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x683C;&#x5F0F;</h4>
 <p>&#x67E5;&#x770B;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;: &#x521B;&#x5EFA;SQL&#x51FD;&#x6570;Ogr_Fdw_Info&#x5E76;&#x6267;&#x884C;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7528;&#x6237;&#x53EF;&#x83B7;&#x53D6;shapefile&#x5EFA;&#x8868;SQL&#x8BED;&#x53E5;&#x3002;</p>
@@ -5135,7 +5260,7 @@ postgis-&#x4F9D;&#x8D56;&#x89E6;&#x53D1;&#x5668;&#x548C;-postgis-&#x8868;-public
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"PostGIS 扩展","level":"4.1.16","depth":2,"next":{"title":"PL/Java语言扩展","level":"4.1.17","depth":2,"path":"040-developer-guide/07921-pl-java-yu-yan.md","ref":"040-developer-guide/07921-pl-java-yu-yan.md","articles":[]},"previous":{"title":"用于分析的 MADlib 扩展","level":"4.1.15","depth":2,"path":"040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.md","ref":"040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-fontsettings","editlink","baidu","versions","sitemap","copy-code-button","back-to-top-button","otherlink","expandable-chapters","heading-anchors","-lunr","-search","search-plus","splitter","theme-hashdatadoc"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/HashDataInc/docs/blob/v2.2/"},"splitter":{},"otherlink":{},"heading-anchors":{},"highlight":{},"sitemap":{"hostname":"http://docs.hashdata.cn"},"back-to-top-button":{},"copy-code-button":{},"baidu":{"token":"c2474dfbb51f64f6f0d882bcb8e617da"},"versions":{"type":"branches","gitbookConfigURL":"http://docs.hashdata.cn/latest/book.json","options":[{"value":"http://docs.hashdata.cn/v2.2/","text":"v2.2","selected":true},{"value":"http://docs.hashdata.cn/v1.4.0/","text":"v1.4.0"}]},"theme-hashdatadoc":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HashData","language":"zh-hans","gitbook":"*"},"file":{"path":"040-developer-guide/07920-hashdata-postgis-kuo-zhan.md","mtime":"2019-06-24T12:05:11.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T12:13:06.123Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"PostGIS 扩展","level":"4.1.16","depth":2,"next":{"title":"PL/Java语言扩展","level":"4.1.17","depth":2,"path":"040-developer-guide/07921-pl-java-yu-yan.md","ref":"040-developer-guide/07921-pl-java-yu-yan.md","articles":[]},"previous":{"title":"用于分析的 MADlib 扩展","level":"4.1.15","depth":2,"path":"040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.md","ref":"040-developer-guide/07910-yong-yu-fen-xi-de-hashdata-madlib-kuo-zhan.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-fontsettings","editlink","baidu","versions","sitemap","copy-code-button","back-to-top-button","otherlink","expandable-chapters","heading-anchors","-lunr","-search","search-plus","splitter","theme-hashdatadoc"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/HashDataInc/docs/blob/v2.2/"},"splitter":{},"otherlink":{},"heading-anchors":{},"highlight":{},"sitemap":{"hostname":"http://docs.hashdata.cn"},"back-to-top-button":{},"copy-code-button":{},"baidu":{"token":"c2474dfbb51f64f6f0d882bcb8e617da"},"versions":{"type":"branches","gitbookConfigURL":"http://docs.hashdata.cn/latest/book.json","options":[{"value":"http://docs.hashdata.cn/v2.2/","text":"v2.2","selected":true},{"value":"http://docs.hashdata.cn/v1.4.0/","text":"v1.4.0"}]},"theme-hashdatadoc":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HashData","language":"zh-hans","gitbook":"*"},"file":{"path":"040-developer-guide/07920-hashdata-postgis-kuo-zhan.md","mtime":"2019-06-27T05:36:57.990Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-27T05:41:31.710Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>
