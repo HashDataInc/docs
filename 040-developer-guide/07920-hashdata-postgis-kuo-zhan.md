@@ -163,6 +163,7 @@ secret_access_key
 isvirtual={true|false}
 layer
 subdataset
+tile_size
 ```
 
 **resource_URI** 资源url路径，必须以 "**oss://**"作为开始。
@@ -173,22 +174,50 @@ subdataset
 
 **subdataset** 创建外部表格式为**NETCDF**时使用，subdataset 表示外部表导入的子数据集。
 
+**tile_size** 创建外部表格式为**RASTER**时使用，tile_size 表示对栅格数据分片的大小。
+
 #### 导入栅格数据格式
 
-外部表导入栅格数据格式，这里提供一个简单示例。
+由于有些TIFF文件像素很大无法直接导入到数据库中，这里会对栅格数据分片处理。tile_size 是设置切分数据的大小，如果在oss_parameters中没有设置其大小默认按照512x512处理。切分数据分片最大值不能大于10000x10000，如果大于按照最大值10000来进行分片处理。
+
+这里提供一个简单示例。
 
 ```sql
 --Import Gis raster data to table:
-CREATE READABLE EXTERNAL TABLE osstbl_example(filename text, rast raster, metadata text) LOCATION('oss://ossext-example.sh1a.qingstor.com/raster oss_type=QS access_key_id=xxx secret_access_key=xxx') FORMAT 'raster';
+CREATE READABLE EXTERNAL TABLE osstbl_example(filename text, rast raster, metadata text) LOCATION('oss://ossext-example.sh1a.qingstor.com/raster tile_size=100x100 oss_type=QS access_key_id=xxx secret_access_key=xxx') FORMAT 'raster';
 
 SELECT filename, st_value(rast, 3, 4) from osstbl_example order by filename;
 
 --Results of the raster
-    filename             |     st_value
--------------------------+------------------
- raster/test_input.tiff  | 260.100006103516
- raster/test_output.tiff | 260.100006103516
+-- filename列说明
+-- icg/gis/raster/test_input.tiff 是对象存储的文件路径。
+-- tilenum 是当前切分的第几个瓦片。
+-- xtile 表示坐标系x第几个瓦片。
+-- ytile 表示坐标系y第几个瓦片。
+-- tile_size 是当前切片大小。
+                                  filename                                   |     st_value
+-----------------------------------------------------------------------------+------------------
+ icg/gis/raster/test_input.tiff tilenum:0 xtile:0 ytile:0 tile_size:100x100  | 260.100006103516
+ icg/gis/raster/test_input.tiff tilenum:1 xtile:1 ytile:0 tile_size:100x100  | 252.389999389648
+ icg/gis/raster/test_input.tiff tilenum:2 xtile:2 ytile:0 tile_size:100x100  | 255.429992675781
+ icg/gis/raster/test_input.tiff tilenum:3 xtile:3 ytile:0 tile_size:100x100  | 288.690002441406
+ icg/gis/raster/test_input.tiff tilenum:4 xtile:1 ytile:1 tile_size:100x100  | 280.169982910156
+ icg/gis/raster/test_input.tiff tilenum:5 xtile:2 ytile:1 tile_size:100x100  |  284.72998046875
+ icg/gis/raster/test_input.tiff tilenum:6 xtile:3 ytile:1 tile_size:100x100  | 301.100006103516
+ icg/gis/raster/test_input.tiff tilenum:7 xtile:1 ytile:2 tile_size:100x100  | 297.639984130859
+ icg/gis/raster/test_input.tiff tilenum:8 xtile:2 ytile:2 tile_size:100x100  | 301.940002441406
+ icg/gis/raster/test_output.tiff tilenum:0 xtile:0 ytile:0 tile_size:100x100 | 260.100006103516
+ icg/gis/raster/test_output.tiff tilenum:1 xtile:1 ytile:0 tile_size:100x100 | 252.389999389648
+ icg/gis/raster/test_output.tiff tilenum:2 xtile:2 ytile:0 tile_size:100x100 | 255.429992675781
+ icg/gis/raster/test_output.tiff tilenum:3 xtile:3 ytile:0 tile_size:100x100 | 288.690002441406
+ icg/gis/raster/test_output.tiff tilenum:4 xtile:1 ytile:1 tile_size:100x100 | 280.169982910156
+ icg/gis/raster/test_output.tiff tilenum:5 xtile:2 ytile:1 tile_size:100x100 |  284.72998046875
+ icg/gis/raster/test_output.tiff tilenum:6 xtile:3 ytile:1 tile_size:100x100 | 301.100006103516
+ icg/gis/raster/test_output.tiff tilenum:7 xtile:1 ytile:2 tile_size:100x100 | 297.639984130859
+ icg/gis/raster/test_output.tiff tilenum:8 xtile:2 ytile:2 tile_size:100x100 | 301.940002441406
 ```
+
+
 
 #### 导入矢量数据格式
 
