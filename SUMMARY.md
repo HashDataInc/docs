@@ -262,6 +262,7 @@
     - [PostGIS 扩展](040-developer-guide/07920-hashdata-postgis-kuo-zhan.md)
     - [PL/Java语言扩展](040-developer-guide/07921-pl-java-yu-yan.md)
     - [与Oracle语法上的差异](040-developer-guide/07922-Oracle-to-HashData.md)
+    - [使用 Jmeter、pgbouncer 对 hashdata 数据库进行压力测试](040-developer-guide/07923-pgbouncer-jmeter-test.md)
     - [数据加密](040-developer-guide/080-data-encryption.md)
 
 
@@ -279,5 +280,7 @@
     - [数据加载](060-best-practices/060-jia-zai-shu-ju.md)
     - [查询计划](060-best-practices/070-sqlcha-xun-diao-you.md)
     - [数据库导入](060-best-practices/080-dao-ru-shu-ju-dao-hashdata.md)
+
+
 
 

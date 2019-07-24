@@ -175,6 +175,9 @@
 - [与Oracle语法上的差异](07922-Oracle-to-HashData.md)
 
 
+- [使用 Jmeter、pgbouncer 对 hashdata 数据库进行压力测试](07923-pgbouncer-jmeter-test.md)
+
+
 - [数据加密](080-data-encryption.md)
 
 
