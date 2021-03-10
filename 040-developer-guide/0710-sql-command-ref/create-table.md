@@ -56,7 +56,7 @@ CREATE [[GLOBAL | LOCAL] {TEMPORARY | TEMP}] TABLE table_name (
 其中一列的 `storage_directive` 是：
 
 ```
-   COMPRESSTYPE={ZLIB | QUICKLZ | RLE_TYPE | NONE}
+   COMPRESSTYPE={ZLIB | DICT_RLE | RLE_TYPE | NONE}
     [COMPRESSLEVEL={0-9} ]
     [BLOCKSIZE={8192-2097152} ]
 ```
@@ -68,7 +68,7 @@ CREATE [[GLOBAL | LOCAL] {TEMPORARY | TEMP}] TABLE table_name (
    BLOCKSIZE={8192-2097152}
    ORIENTATION={COLUMN|ROW}
    CHECKSUM={TRUE|FALSE}
-   COMPRESSTYPE={ZLIB|QUICKLZ|RLE_TYPE|NONE}
+   COMPRESSTYPE={ZLIB|DICT_RLE|RLE_TYPE|NONE}
    COMPRESSLEVEL={0-9}
    FILLFACTOR={10-100}
    OIDS[=TRUE|FALSE]
@@ -178,7 +178,7 @@ subpartition_element [, ...]
    BLOCKSIZE={8192-2097152}
    ORIENTATION={COLUMN|ROW}
    CHECKSUM={TRUE|FALSE}
-   COMPRESSTYPE={ZLIB|QUICKLZ|RLE_TYPE|NONE}
+   COMPRESSTYPE={ZLIB|DICT_RLE|RLE_TYPE|NONE}
    COMPRESSLEVEL={1-9}
    FILLFACTOR={10-100}
    OIDS[=TRUE|FALSE]
@@ -310,19 +310,19 @@ REFERENCES table_name [ ( column_name [, ... ] )
 
 **CHECKSUM** — 该存储表仅对追加优化表（append-optimized tables）才是有效的，即（APPENDONLY=TRUE）。该值 TRUE 时默认的并且为追加优化表启用 CRC 校验和验证。该校验在块创建期间计算并存储在磁盘上。校验验证在块读取期间执行。如果读取期间计算的校验和存储的校验不匹配，则事务终止。如果用户设置该值为 FALSE 来禁用校验验证，则会启动检查表数据防止磁盘损坏。
 
-**COMPRESSTYPE** — 设置为 ZLIB（默认值）， `RLE-TYPE`，或 QUICKLZ1 来指明使用的压缩类型。该值 NONE 禁用压缩。QuickLZ 比 zlib 使用更少量的 CPU 功率，具有更低的压缩比和更快的数据压缩。zlib 提供了在低压缩速度下高压缩比。该选项仅当 APPENDONLY=TRUE 时才有效。
+**COMPRESSTYPE** — 设置为 ZLIB（默认值）， `RLE-TYPE`，或 `DICT_RLE` 来指明使用的压缩类型。NONE 禁用压缩。该选项仅当 APPENDONLY=TRUE 时才有效。
 
-该值 `RLE_TYPE` 仅在指定 ORIENTATION =column 的时候才支持。 HashData 数据库使用运行长度编码（RLE）压缩算法。当同样的数据出现在连续的行中，RLE 比 zlib 和 QuickLZ 压缩算法能更好压缩数据。
+`RLE_TYPE` 和 `DICT_RLE` 仅在指定 ORIENTATION =column 的时候才支持。 HashData 数据库使用运行长度编码（RLE）压缩算法。当同样的数据出现在连续的行中，RLE 比 zlib 压缩算法能更好压缩数据。
 
-对于类型为 BIGINT， INTEGER，DATE，TIME，或 TIMESTAMP 的列，如果 COMPRESSTYPE 选项设置为 RLE-TYPE 压缩，同样会应用增量压缩。该增量压缩算法是基于连续的行中列值之间的增量，并且设计为当加载的数据是有序或者要压缩的列数据是有序时，能提高压缩性能。
+对于类型为 BIGINT，INTEGER，DATE，TIME 或 TIMESTAMP 的列，如果 COMPRESSTYPE 选项设置为 `RLE_TYPE` 压缩，同样会应用增量压缩。该增量压缩算法是基于连续的行中列值之间的增量，并且设计为当加载的数据是有序或者要压缩的列数据是有序时，能提高压缩性能。
 
-**COMPRESSLEVEL** — 对于追加优化表的 zlib 压缩，设置为 1（最快压缩）到 9（最高压缩比）之间的整数。QuickLZ 压缩等级只能设置为 1，如果没有指定，则默认为 1。对于 `RLE_TYPE`，该压缩比能设置在 1 （最快压缩）到 4（最高压缩比）之间的整数。
+**COMPRESSLEVEL** — 对于追加优化表的 zlib 压缩，设置为 1（最快压缩）到 9（最高压缩比）之间的整数。对于 `RLE_TYPE` 和 `DICT_RLE`，该压缩比能设置在 1 （最快压缩）到 4（最高压缩比）之间的整数。
 
 该选项仅当 APPENDONLY=TRUE 时才有效。
 
 **FILLFACTOR** — 参阅 [CREATE INDEX](./create-index.md) 获取更多关于该索引存储参数的信息。
 
-**OIDS** — 设置为 OIDS=FALSE （默认值），以便行没有分配对象表示符。 HashData  强烈推荐用户在创建表时不启用 OIDs。在大型表中（如典型的 HashData 数据库系统中的表），对表行使用 OIDs 会导致 32 位 OID 计数器环绕。一旦计数器环绕，OID 就不能被认为是唯一的，这不仅会导致他们对用户程序无用，而且还可能在 HashData 数据库系统目录中引起问题。此外，从表中排出 OID 会减少表在磁盘所需存储的空间，每行 4 字节，这会稍微提升性能。OIDs 不允许在分区表或者追加优化表面向列的表中使用。
+**OIDS** — 设置为 OIDS=FALSE （默认值），以便行没有分配对象表示符。 HashData 强烈推荐用户在创建表时不启用 OIDs。在大型表中（如典型的 HashData 数据库系统中的表），对表行使用 OIDs 会导致 32 位 OID 计数器环绕。一旦计数器环绕，OID 就不能被认为是唯一的，这不仅会导致他们对用户程序无用，而且还可能在 HashData 数据库系统目录中引起问题。此外，从表中排出 OID 会减少表在磁盘所需存储的空间，每行 4 字节，这会稍微提升性能。OIDs 不允许在分区表或者追加优化表面向列的表中使用。
 
 ON COMMIT
 
